@@ -33,13 +33,15 @@ jobs:
         run: python scripts/history.py
       - name: Validate data quality before risk scoring
         run: python scripts/quality.py
+      - name: Calibrate Taiwan risk signals without lookahead
+        run: python scripts/calibration.py
       - name: Generate separate provisional risk scores
         run: python scripts/scores.py
       - name: Persist state for next scheduled run
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add docs/data.json docs/history/observations.json docs/quality.json docs/scores.json storage/history.sqlite
+          git add docs/data.json docs/history/observations.json docs/quality.json docs/calibration.json docs/scores.json storage/history.sqlite
           if ! git diff --cached --quiet; then
             git commit -m 'Update radar snapshot [skip ci]'
             for attempt in 1 2 3; do
