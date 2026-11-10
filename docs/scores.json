@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-10T17:55:30.686914+00:00",
+  "model_status": "uncalibrated_prototype",
+  "disclaimer": "Risk scores are provisional and not validated by historical backtests.",
+  "global": {
+    "status": "provisional",
+    "score": 29.5,
+    "coverage": 0.85,
+    "min_coverage": 0.85,
+    "components": [
+      {
+        "metric": "hy",
+        "weight": 25,
+        "signal": 23.67,
+        "eligible": true,
+        "reason": null
+      },
+      {
+        "metric": "ig",
+        "weight": 10,
+        "signal": 17.2,
+        "eligible": true,
+        "reason": null
+      },
+      {
+        "metric": "vix",
+        "weight": 20,
+        "signal": 41.33,
+        "eligible": true,
+        "reason": null
+      },
+      {
+        "metric": "indices",
+        "weight": 20,
+        "signal": 39.5,
+        "eligible": true,
+        "reason": null
+      },
+      {
+        "metric": "nfci",
+        "weight": 10,
+        "signal": 12.93,
+        "eligible": true,
+        "reason": null
+      },
+      {
+        "metric": "us10y",
+        "weight": 5,
+        "signal": null,
+        "eligible": false,
+        "reason": "signal_not_yet_calibrated"
+      },
+      {
+        "metric": "breadth",
+        "weight": 10,
+        "signal": null,
+        "eligible": false,
+        "reason": "quality_gate_not_passed"
+      }
+    ]
+  },
+  "taiwan": {
+    "status": "insufficient_coverage",
+    "score": null,
+    "coverage": 0.35,
+    "min_coverage": 0.85,
+    "components": [
+      {
+        "metric": "taiex",
+        "weight": 35,
+        "signal": 54.6,
+        "eligible": true,
+        "reason": null
+      },
+      {
+        "metric": "margin",
+        "weight": 20,
+        "signal": null,
+        "eligible": false,
+        "reason": "signal_not_yet_calibrated"
+      },
+      {
+        "metric": "inst.cash_inst",
+        "weight": 15,
+        "signal": null,
+        "eligible": false,
+        "reason": "signal_not_yet_calibrated"
+      },
+      {
+        "metric": "inst.futures",
+        "weight": 15,
+        "signal": null,
+        "eligible": false,
+        "reason": "signal_not_yet_calibrated"
+      },
+      {
+        "metric": "fx",
+        "weight": 15,
+        "signal": null,
+        "eligible": false,
+        "reason": "signal_not_yet_calibrated"
+      }
+    ]
+  }
+}
