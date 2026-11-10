@@ -90,18 +90,22 @@ def telegram(msg):
 def main():
  try:old=json.loads(OUT.read_text())
  except (FileNotFoundError,ValueError):old={}
- previous=old.get("active_alerts",{})\n previous_failures=old.get("source_failure_streaks",{})
+ previous=old.get("active_alerts",{})
+ previous_failures=old.get("source_failure_streaks",{})
  metrics={k:{"name":n,"group":g,"source":s,"frequency":f,"status":"unavailable","reason":"尚未接入可靠來源"} for k,n,g,s,f in CATALOG}
  def fetch_one_fred(item):
   k,series=item
   rows,provider=fred(series)
   e=entry(rows,"https://fred.stlouisfed.org/series/"+series,"index" if k in ("nfci","vix") else "%")
-  e["provider"]=provider\n  e["checked_at"]=NOW.isoformat()
+  e["provider"]=provider
+  e["checked_at"]=NOW.isoformat()
   if provider.startswith("DBnomics"):e["mirror_url"]="https://db.nomics.world/FRED/"+series
   if k=="hy" and len(rows)>20:e["change20bp"]=round((rows[-1][1]-rows[-21][1])*100,1)
   return k,e
  with ThreadPoolExecutor(max_workers=5) as pool:
-  futures={pool.submit(fetch_one_fred,item):item[0] for item in FRED.items() if due(old,item[0],168 if item[0]=="nfci" else 24)}\n  for k in FRED:\n   if not due(old,k,168 if k=="nfci" else 24):cached(metrics,old,k)
+  futures={pool.submit(fetch_one_fred,item):item[0] for item in FRED.items() if due(old,item[0],168 if item[0]=="nfci" else 24)}
+  for k in FRED:
+   if not due(old,k,168 if k=="nfci" else 24):cached(metrics,old,k)
   for future in as_completed(futures):
    k=futures[future]
    try:
@@ -109,7 +113,8 @@ def main():
     metrics[k].update(e)
     print("FRED",k,e["provider"],e["date"],e["value"],flush=True)
    except Exception as exc:
-    if not cached(metrics,old,k):metrics[k]["reason"]="來源錯誤："+str(exc)[:150]\n    metrics[k]["last_error"]=str(exc)[:150]
+    if not cached(metrics,old,k):metrics[k]["reason"]="來源錯誤："+str(exc)[:150]
+    metrics[k]["last_error"]=str(exc)[:150]
     print("FRED",k,"unavailable",str(exc)[:150],flush=True)
  prices={}
  for k,s in YAHOO.items():
@@ -119,17 +124,22 @@ def main():
   a=prices["ndx"];high=max(v for _,v in a);e=entry(a,"https://finance.yahoo.com/quote/%5ENDX/","points")
   e["drawdown_pct"]=round(100*(high-a[-1][1])/high,2);e["reference"]="近一年最高收盤價"
   if "spx" in prices:e["spx"]=round(prices["spx"][-1][1],2)
-  e["checked_at"]=NOW.isoformat()\n  metrics["indices"].update(e)
+  e["checked_at"]=NOW.isoformat()
+  metrics["indices"].update(e)
  if "tw" in prices:
   a=prices["tw"];high=max(v for _,v in a);e=entry(a,"https://finance.yahoo.com/quote/%5ETWII/","points")
   e["drawdown_pct"]=round(100*(high-a[-1][1])/high,2);e["reference"]="近一年最高收盤價"
-  e["checked_at"]=NOW.isoformat()\n  metrics["taiex"].update(e)
+  e["checked_at"]=NOW.isoformat()
+  metrics["taiex"].update(e)
  if "twd" in prices:
-  metrics["fx"].update(entry(prices["twd"],"https://finance.yahoo.com/quote/TWD=X/","TWD per USD"))\n  metrics["fx"]["checked_at"]=NOW.isoformat()
+  metrics["fx"].update(entry(prices["twd"],"https://finance.yahoo.com/quote/TWD=X/","TWD per USD"))
+  metrics["fx"]["checked_at"]=NOW.isoformat()
   if "dxy" in prices:metrics["fx"]["dxy"]=round(prices["dxy"][-1][1],2)
  if "sox" in prices and "ndx" in prices:
   metrics["breadth"].update({"status":"partial","value":round(prices["sox"][-1][1]/prices["ndx"][-1][1],4),"date":min(prices["sox"][-1][0],prices["ndx"][-1][0]),"unit":"SOX/NDX","reason":"只有半導體相對強弱，市場廣度未取得","source_url":"https://finance.yahoo.com/quote/%5ESOX/"})
- for key in ("indices","taiex","fx","breadth"):\n  if metrics[key]["status"]=="unavailable" and cached(metrics,old,key):metrics[key]["cache_status"]="stale"\n alerts={}
+ for key in ("indices","taiex","fx","breadth"):
+  if metrics[key]["status"]=="unavailable" and cached(metrics,old,key):metrics[key]["cache_status"]="stale"
+ alerts={}
  for prefix,k in [("hy","hy"),("vix","vix"),("ndx","indices"),("tw","taiex")]:
   if metrics[k]["status"]!="ok" or metrics[k].get("cache_status")=="stale" or metrics[k].get("last_error"):alerts.update({key:v for key,v in previous.items() if key.startswith(prefix)})
  def rule(key,trigger,severity,message):
