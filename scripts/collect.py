@@ -12,7 +12,7 @@ FRED={"hy":"BAMLH0A0HYM2","ig":"BAMLC0A0CM","vix":"VIXCLS","us10y":"DGS10","nfci
 YAHOO={"ndx":"%5ENDX","spx":"%5EGSPC","tw":"%5ETWII","twd":"TWD%3DX","sox":"%5ESOX","dxy":"DX-Y.NYB"}
 # Fixed monthly-friendly request ceiling; all HTTP requests, including fallbacks and alerts, are counted.
 MAX_REQUESTS=int(os.getenv("MAX_REQUESTS_PER_RUN","25"))
-MAX_RETRIES=1
+MAX_RETRIES=0
 STATS={"requests":0,"success":0,"failure":0,"by_host":{},"errors":[],"skipped":[]}
 def fetch(url,timeout=9):
  host=urllib.parse.urlparse(url).hostname or "unknown"
@@ -105,7 +105,7 @@ def main():
  with ThreadPoolExecutor(max_workers=5) as pool:
   futures={pool.submit(fetch_one_fred,item):item[0] for item in FRED.items() if due(old,item[0],168 if item[0]=="nfci" else 24)}
   for k in FRED:
-   if not due(old,k,168 if k=="nfci" else 24):cached(metrics,old,k)
+   if not due(old,k,168 if k=="nfci" else 24):\n   if not cached(metrics,old,k):metrics[k].update({field:value for field,value in old.get("metrics",{}).get(k,{}).items() if field not in ("name","group","source","frequency")})
   for future in as_completed(futures):
    k=futures[future]
    try:
