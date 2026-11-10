@@ -91,6 +91,7 @@ def pick(row,*names):
  return None
 def date_of(row):
  raw=str(pick(row,"Date","date","日期","交易日期","日期(交易日)") or "")
+ if raw.isdigit() and len(raw)==7:return f"{int(raw[:3])+1911:04d}-{raw[3:5]}-{raw[5:7]}"
  if len(raw)==8 and raw.isdigit():return raw[:4]+"-"+raw[4:6]+"-"+raw[6:]
  if "/" in raw:
   p=raw.split("/")
@@ -130,7 +131,7 @@ def taiwan(metrics,old):
      balances=[num(r.get("融資今日餘額")) for r in rows if "融資今日餘額" in r and str(r.get("股票代號","")).strip().isdigit()]
      balances=[v for v in balances if v is not None]
      if len(balances)>100:
-      record.update(status="partial",value=round(sum(balances)),unit="股",provider="TWSE",reason="上市個股融資股數合計；非融資金額、不含上櫃",security_count=len(balances))
+      record.update(status="partial",value=round(sum(balances)),unit="來源原始單位（待核對）",provider="TWSE",reason="上市個股融資餘額原始欄位加總；未確認單位，不得當成股數或融資金額；不含上櫃",security_count=len(balances))
     elif kind=="cash_inst":
      categories=[]
      for r in rows:
@@ -167,7 +168,7 @@ def taiwan(metrics,old):
    metrics["margin"].update({k:v for k,v in record.items() if k not in ("sample_fields","records")})
   elif kind=="cash_inst" and record.get("status")=="ok":
    metrics["inst"]["cash_categories"]=record["categories"]
-   metrics["inst"]["cash_date"]=record.get("date") or checks.get("tw_cash_inst","")[:10]
+   metrics["inst"]["cash_date"]=record.get("date")
   elif kind=="futures" and record.get("status")=="ok":
    metrics["inst"]["foreign_tx_net_oi"]=record["foreign_tx_net_oi"]
    metrics["inst"]["futures_date"]=record.get("date")
