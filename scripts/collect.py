@@ -10,28 +10,56 @@ CATALOG=[
 ("margin","台股融資餘額","台股","TWSE/TPEx","daily"),("maint","台股融資維持率","台股","待驗證","daily"),("inst","三大法人及期貨部位","台股","TWSE/TAIFEX","daily"),("taiex","台股回撤與成交量","台股","Yahoo Finance 非官方","daily"),("fx","美元兌新台幣與美元指數","匯率","Yahoo Finance 非官方","daily")]
 FRED={"hy":"BAMLH0A0HYM2","ig":"BAMLC0A0CM","vix":"VIXCLS","us10y":"DGS10","nfci":"NFCI"}
 YAHOO={"ndx":"%5ENDX","spx":"%5EGSPC","tw":"%5ETWII","twd":"TWD%3DX","sox":"%5ESOX","dxy":"DX-Y.NYB"}
-def fetch(url):
- req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0"})
- with urllib.request.urlopen(req,timeout=16) as r:return r.read().decode()
+# Fixed monthly-friendly request ceiling; all HTTP requests, including fallbacks and alerts, are counted.
+MAX_REQUESTS=int(os.getenv("MAX_REQUESTS_PER_RUN","25"))
+MAX_RETRIES=1
+STATS={"requests":0,"success":0,"failure":0,"by_host":{},"errors":[],"skipped":[]}
+def fetch(url,timeout=9):
+ host=urllib.parse.urlparse(url).hostname or "unknown"
+ last=None
+ for attempt in range(MAX_RETRIES+1):
+  if STATS["requests"]>=MAX_REQUESTS:raise RuntimeError("request_budget_exceeded")
+  STATS["requests"]+=1
+  STATS["by_host"][host]=STATS["by_host"].get(host,0)+1
+  try:
+   req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0","Accept":"application/json,text/csv,*/*"})
+   with urllib.request.urlopen(req,timeout=timeout) as r:body=r.read().decode("utf-8-sig")
+   STATS["success"]+=1
+   return body
+  except Exception as exc:
+   STATS["failure"]+=1
+   last=exc
+   STATS["errors"].append(host+":"+type(exc).__name__)
+   if attempt<MAX_RETRIES:time.sleep(0.5)
+ raise last
+def due(old,key,hours):
+ oldmetric=old.get("metrics",{}).get(key,{})
+ stamp=oldmetric.get("checked_at")
+ if not stamp:return True
+ try:return (NOW-datetime.datetime.fromisoformat(stamp)).total_seconds()>=hours*3600
+ except (TypeError,ValueError):return True
+def cached(metrics,old,key):
+ oldmetric=old.get("metrics",{}).get(key)
+ if oldmetric and oldmetric.get("status") in ("ok","partial"):
+  metrics[key]=dict(oldmetric)
+  metrics[key]["cache_status"]="cached"
+  return True
+ return False
 def fred(series):
  # FRED original feed is preferred. A recent-date filter avoids downloading decades of CSV.
  since=(NOW-datetime.timedelta(days=130)).date().isoformat()
  primary="https://fred.stlouisfed.org/graph/fredgraph.csv?id="+series+"&cosd="+since
  errors=[]
- for attempt in range(2):
-  try:
-   req=urllib.request.Request(primary,headers={"User-Agent":"Mozilla/5.0","Accept":"text/csv"})
-   with urllib.request.urlopen(req,timeout=9) as response:
-    data=csv.DictReader(io.StringIO(response.read().decode("utf-8-sig")))
-   rows=[]
-   for r in data:
-    try:rows.append((r.get("DATE") or r.get("observation_date"),float(r[series])))
-    except (ValueError,TypeError,KeyError):pass
-   if rows:return rows,"FRED"
-   raise ValueError("FRED CSV has no numeric observations")
-  except Exception as exc:
-   errors.append(type(exc).__name__)
-   if attempt==0:time.sleep(1)
+ try:
+  content=fetch(primary)
+  data=csv.DictReader(io.StringIO(content))
+  rows=[]
+  for r in data:
+   try:rows.append((r.get("DATE") or r.get("observation_date"),float(r[series])))
+   except (ValueError,TypeError,KeyError):pass
+  if rows:return rows,"FRED"
+  raise ValueError("FRED CSV has no numeric observations")
+ except Exception as exc:errors.append(type(exc).__name__)
  # DBnomics mirrors FRED observations. It is a fallback, not an official real-time feed.
  try:
   url="https://api.db.nomics.world/v22/series/FRED/"+series+"?observations=1"
@@ -62,18 +90,18 @@ def telegram(msg):
 def main():
  try:old=json.loads(OUT.read_text())
  except (FileNotFoundError,ValueError):old={}
- previous=old.get("active_alerts",{})
+ previous=old.get("active_alerts",{})\n previous_failures=old.get("source_failure_streaks",{})
  metrics={k:{"name":n,"group":g,"source":s,"frequency":f,"status":"unavailable","reason":"尚未接入可靠來源"} for k,n,g,s,f in CATALOG}
  def fetch_one_fred(item):
   k,series=item
   rows,provider=fred(series)
   e=entry(rows,"https://fred.stlouisfed.org/series/"+series,"index" if k in ("nfci","vix") else "%")
-  e["provider"]=provider
+  e["provider"]=provider\n  e["checked_at"]=NOW.isoformat()
   if provider.startswith("DBnomics"):e["mirror_url"]="https://db.nomics.world/FRED/"+series
   if k=="hy" and len(rows)>20:e["change20bp"]=round((rows[-1][1]-rows[-21][1])*100,1)
   return k,e
  with ThreadPoolExecutor(max_workers=5) as pool:
-  futures={pool.submit(fetch_one_fred,item):item[0] for item in FRED.items()}
+  futures={pool.submit(fetch_one_fred,item):item[0] for item in FRED.items() if due(old,item[0],168 if item[0]=="nfci" else 24)}\n  for k in FRED:\n   if not due(old,k,168 if k=="nfci" else 24):cached(metrics,old,k)
   for future in as_completed(futures):
    k=futures[future]
    try:
@@ -81,7 +109,7 @@ def main():
     metrics[k].update(e)
     print("FRED",k,e["provider"],e["date"],e["value"],flush=True)
    except Exception as exc:
-    metrics[k]["reason"]="來源錯誤："+str(exc)[:150]
+    if not cached(metrics,old,k):metrics[k]["reason"]="來源錯誤："+str(exc)[:150]\n    metrics[k]["last_error"]=str(exc)[:150]
     print("FRED",k,"unavailable",str(exc)[:150],flush=True)
  prices={}
  for k,s in YAHOO.items():
@@ -91,17 +119,17 @@ def main():
   a=prices["ndx"];high=max(v for _,v in a);e=entry(a,"https://finance.yahoo.com/quote/%5ENDX/","points")
   e["drawdown_pct"]=round(100*(high-a[-1][1])/high,2);e["reference"]="近一年最高收盤價"
   if "spx" in prices:e["spx"]=round(prices["spx"][-1][1],2)
-  metrics["indices"].update(e)
+  e["checked_at"]=NOW.isoformat()\n  metrics["indices"].update(e)
  if "tw" in prices:
   a=prices["tw"];high=max(v for _,v in a);e=entry(a,"https://finance.yahoo.com/quote/%5ETWII/","points")
   e["drawdown_pct"]=round(100*(high-a[-1][1])/high,2);e["reference"]="近一年最高收盤價"
-  metrics["taiex"].update(e)
+  e["checked_at"]=NOW.isoformat()\n  metrics["taiex"].update(e)
  if "twd" in prices:
-  metrics["fx"].update(entry(prices["twd"],"https://finance.yahoo.com/quote/TWD=X/","TWD per USD"))
+  metrics["fx"].update(entry(prices["twd"],"https://finance.yahoo.com/quote/TWD=X/","TWD per USD"))\n  metrics["fx"]["checked_at"]=NOW.isoformat()
   if "dxy" in prices:metrics["fx"]["dxy"]=round(prices["dxy"][-1][1],2)
  if "sox" in prices and "ndx" in prices:
   metrics["breadth"].update({"status":"partial","value":round(prices["sox"][-1][1]/prices["ndx"][-1][1],4),"date":min(prices["sox"][-1][0],prices["ndx"][-1][0]),"unit":"SOX/NDX","reason":"只有半導體相對強弱，市場廣度未取得","source_url":"https://finance.yahoo.com/quote/%5ESOX/"})
- alerts={}
+ for key in ("indices","taiex","fx","breadth"):\n  if metrics[key]["status"]=="unavailable" and cached(metrics,old,key):metrics[key]["cache_status"]="stale"\n alerts={}
  for prefix,k in [("hy","hy"),("vix","vix"),("ndx","indices"),("tw","taiex")]:
   if metrics[k]["status"]!="ok":alerts.update({key:v for key,v in previous.items() if key.startswith(prefix)})
  def rule(key,trigger,severity,message):
@@ -123,8 +151,8 @@ def main():
   try:
    if telegram("全球金融風險雷達\n"+"\n".join("• "+p["message"] for p in pending)+"\n詳情請查看儀表板"):pending=[]
   except Exception as exc:print("Telegram delivery failed:",type(exc).__name__)
- payload={"updated_utc":datetime.datetime.now(datetime.timezone.utc).isoformat(),"metrics":metrics,"active_alerts":alerts,"pending_notifications":pending,"notes":["無資料不代表安全；免費端點可能延遲或停用","回撤基準：近一年最高收盤價，非個人45,211點加碼基準","18項已列示，但尚未全部完成資料串接"]}
+ payload={"updated_utc":datetime.datetime.now(datetime.timezone.utc).isoformat(),"request_stats":STATS,"source_failure_streaks":streaks,"metrics":metrics,"active_alerts":alerts,"pending_notifications":pending,"notes":["無資料不代表安全；免費端點可能延遲或停用","回撤基準：近一年最高收盤價，非個人45,211點加碼基準","18項已列示，但尚未全部完成資料串接"]}
  OUT.parent.mkdir(parents=True,exist_ok=True)
  OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2))
- print("Updated:",sum(m["status"]=="ok" for m in metrics.values()),"full metrics;",len(alerts),"active alerts")
+ print("Updated:",sum(m["status"]=="ok" for m in metrics.values()),"full metrics;",len(alerts),"active alerts; requests",STATS["requests"],"failures",STATS["failure"])
 if __name__=="__main__":main()
