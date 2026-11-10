@@ -102,7 +102,11 @@ def official_rows(url):
  if isinstance(obj,list):return obj
  if isinstance(obj,dict):
   for field in ("data","Data","records"):
-   if isinstance(obj.get(field),list):return obj[field]
+   if isinstance(obj.get(field),list):
+    rows=obj[field]
+    if obj.get("fields") and all(isinstance(x,list) for x in rows):return [dict(zip(obj["fields"],x)) for x in rows]
+    if all(isinstance(x,list) and len(x)==4 for x in rows):return [dict(zip(("單位名稱","買進金額","賣出金額","買賣差額"),x)) for x in rows]
+    return rows
  raise ValueError("unexpected_official_schema")
 def taiwan(metrics,old):
  # At most four official calls per 24h; preserve previously verified snapshots on failure.
@@ -131,6 +135,10 @@ def taiwan(metrics,old):
      balances=[v for v in balances if v is not None]
      if len(balances)>100:
       record.update({"status":"partial","value":sum(balances),"date":date_of(rows[0]),"unit":"股（上市個股融資餘額合計）","provider":"TWSE","reason":"僅上市個股融資股數合計，非融資金額；不含上櫃"})
+    if record.get("status")!="ok":
+     balances=[num(pick(r,"融資今日餘額")) for r in rows]
+     balances=[v for v in balances if v is not None]
+     if len(balances)>100:record.update({"status":"partial","value":sum(balances),"unit":"股（上市個股融資餘額合計）","provider":"TWSE","reason":"融資股數，不是融資金額；不含上櫃"})
    elif kind=="cash_inst":
     record["categories"]=[]
     for r in rows:
@@ -162,9 +170,13 @@ def taiwan(metrics,old):
     metrics["taiex"]["official_close"]=record["value"]
     if "volume_shares" in record:metrics["taiex"]["official_volume_shares"]=record["volume_shares"]
     if "turnover_twd" in record:metrics["taiex"]["official_turnover_twd"]=record["turnover_twd"]
+    if "volume_shares" in record:metrics["taiex"]["official_volume_shares"]=record["volume_shares"]
+    if "turnover_twd" in record:metrics["taiex"]["official_turnover_twd"]=record["turnover_twd"]
     metrics["taiex"]["official_close_date"]=record["date"]
    if kind in ("cash_inst","futures") and record.get("status") in ("ok","partial"):
     metrics["inst"]["status"]="partial"
+    if kind=="cash_inst":metrics["inst"]["cash_categories"]=record.get("categories",[])
+    if kind=="futures":metrics["inst"]["foreign_tx_net_oi"]=record.get("foreign_tx_net_oi");metrics["inst"]["date"]=record.get("date")
     if kind=="futures":metrics["inst"]["value"]=record.get("foreign_tx_net_oi");metrics["inst"]["unit"]="口（期貨外資淨未平倉，待契約確認）";metrics["inst"]["date"]=record.get("date")
     if kind=="cash_inst":metrics["inst"]["cash_categories"]=record.get("categories",[])
     metrics["inst"]["reason"]="官方現貨與期貨分項資料；勿將不同單位直接相加"
