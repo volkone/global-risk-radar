@@ -2,10 +2,10 @@
   "source_checks": {
     "tw_cash_inst": "2026-11-10T16:16:30.376480+00:00",
     "tw_futures": "2026-11-10T15:00:04.034118+00:00",
-    "tw_margin": "2026-11-10T15:54:32.249017+00:00",
+    "tw_margin": "2026-11-10T16:38:56.377186+00:00",
     "tw_tw_price": "2026-11-10T15:54:32.249017+00:00"
   },
-  "updated_utc": "2026-11-10T16:31:47.557322+00:00",
+  "updated_utc": "2026-11-10T16:38:58.776586+00:00",
   "request_stats": {
     "requests": 7,
     "success": 7,
@@ -1625,7 +1625,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 27673.346,
+      "value": 27642.055,
       "date": "2026-11-10",
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ENDX/",
@@ -1988,13 +1988,13 @@
         },
         {
           "date": "2026-11-10",
-          "value": 27673.346
+          "value": 27642.055
         }
       ],
-      "drawdown_pct": 11.37,
+      "drawdown_pct": 11.47,
       "reference": "近一年最高收盤價",
-      "spx": 7499.11,
-      "checked_at": "2026-11-10T16:31:45.198796+00:00"
+      "spx": 7495.92,
+      "checked_at": "2026-11-10T16:38:56.377186+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -2003,7 +2003,7 @@
       "frequency": "daily",
       "status": "partial",
       "reason": "只有半導體相對強弱，市場廣度未取得",
-      "value": 0.3593,
+      "value": 0.3591,
       "date": "2026-11-10",
       "unit": "SOX/NDX",
       "source_url": "https://finance.yahoo.com/quote/%5ESOX/"
@@ -2061,46 +2061,41 @@
       "group": "台股",
       "source": "TWSE/TPEx",
       "frequency": "daily",
-      "status": "partial",
-      "reason": "上市個股融資餘額原始欄位加總；未確認單位，不得當成股數或融資金額；不含上櫃",
+      "status": "ok",
+      "reason": "證交所信用交易統計：融資金額（仟元）今日餘額；次日可能調帳",
       "official_sources": {
         "margin": {
-          "checked_at": "2026-11-10T15:54:32.249017+00:00",
-          "source_url": "https://openapi.twse.com.tw/v1/exchangeReport/MI_MARGN",
-          "records": 1306,
+          "checked_at": "2026-11-10T16:38:56.377186+00:00",
+          "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?selectType=ALL&response=json",
+          "records": 3,
           "sample_fields": [
-            "股票代號",
-            "股票名稱",
-            "融資買進",
-            "融資賣出",
-            "融資現金償還",
-            "融資前日餘額",
-            "融資今日餘額",
-            "融資限額",
-            "融券買進",
-            "融券賣出",
-            "融券現券償還",
-            "融券前日餘額",
-            "融券今日餘額",
-            "融券限額",
-            "資券互抵",
-            "註記"
+            "項目",
+            "買進",
+            "賣出",
+            "現金(券)償還",
+            "前日餘額",
+            "今日餘額"
           ],
-          "status": "partial",
-          "value": 6467319,
-          "unit": "來源原始單位（待核對）",
+          "date": "2026-11-10",
+          "status": "ok",
+          "value": 536678732000,
+          "unit": "TWD",
           "provider": "TWSE",
-          "reason": "上市個股融資餘額原始欄位加總；未確認單位，不得當成股數或融資金額；不含上櫃",
-          "security_count": 1149
+          "scope": "TWSE上市市場",
+          "reason": "證交所信用交易統計：融資金額（仟元）今日餘額；次日可能調帳",
+          "source_unit": "仟元",
+          "amount_thousands": 536678732
         }
       },
-      "checked_at": "2026-11-10T15:54:32.249017+00:00",
-      "source_url": "https://openapi.twse.com.tw/v1/exchangeReport/MI_MARGN",
-      "value": 6467319,
-      "unit": "來源原始單位（待核對）",
+      "checked_at": "2026-11-10T16:38:56.377186+00:00",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?selectType=ALL&response=json",
+      "date": "2026-11-10",
+      "value": 536678732000,
+      "unit": "TWD",
       "provider": "TWSE",
-      "security_count": 1149,
-      "cache_status": "stale"
+      "scope": "TWSE上市市場",
+      "source_unit": "仟元",
+      "amount_thousands": 536678732
     },
     "maint": {
       "name": "台股融資維持率",
@@ -2623,7 +2618,7 @@
       ],
       "drawdown_pct": 16.38,
       "reference": "近一年最高收盤價",
-      "checked_at": "2026-11-10T16:31:45.198796+00:00"
+      "checked_at": "2026-11-10T16:38:56.377186+00:00"
     },
     "fx": {
       "name": "美元兌新台幣與美元指數",
@@ -2632,7 +2627,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 33.015,
+      "value": 33.016,
       "date": "2026-11-10",
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/",
@@ -2995,11 +2990,11 @@
         },
         {
           "date": "2026-11-10",
-          "value": 33.015
+          "value": 33.016
         }
       ],
-      "checked_at": "2026-11-10T16:31:45.198796+00:00",
-      "dxy": 102.36
+      "checked_at": "2026-11-10T16:38:56.377186+00:00",
+      "dxy": 102.38
     }
   },
   "active_alerts": {
@@ -3010,7 +3005,7 @@
     },
     "ndx10": {
       "severity": "warning",
-      "message": "Nasdaq 100 近一年高點回撤 ≥10%：11.37%",
+      "message": "Nasdaq 100 近一年高點回撤 ≥10%：11.47%",
       "first_seen": "2026-11-10T08:42:05.496990+00:00"
     },
     "tw5": {
