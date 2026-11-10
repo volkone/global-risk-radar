@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-10T08:57:18.226910+00:00",
+  "updated_utc": "2026-11-10T09:02:48.235616+00:00",
   "metrics": {
     "hy": {
       "name": "美國高收益債利差",
@@ -7,7 +7,7 @@
       "source": "FRED",
       "frequency": "daily",
       "status": "unavailable",
-      "reason": "來源錯誤：TimeoutError"
+      "reason": "來源錯誤：TimeoutError; TimeoutError; DBnomics:HTTPError"
     },
     "ig": {
       "name": "美國投資等級債利差",
@@ -15,7 +15,7 @@
       "source": "FRED",
       "frequency": "daily",
       "status": "unavailable",
-      "reason": "來源錯誤：TimeoutError"
+      "reason": "來源錯誤：TimeoutError; TimeoutError; DBnomics:HTTPError"
     },
     "vix": {
       "name": "VIX",
@@ -23,7 +23,7 @@
       "source": "FRED",
       "frequency": "daily",
       "status": "unavailable",
-      "reason": "來源錯誤：TimeoutError"
+      "reason": "來源錯誤：TimeoutError; TimeoutError; DBnomics:HTTPError"
     },
     "us10y": {
       "name": "美國10年期公債殖利率",
@@ -31,7 +31,7 @@
       "source": "FRED",
       "frequency": "daily",
       "status": "unavailable",
-      "reason": "來源錯誤：TimeoutError"
+      "reason": "來源錯誤：TimeoutError; TimeoutError; DBnomics:HTTPError"
     },
     "nfci": {
       "name": "芝加哥金融情勢指數",
@@ -39,7 +39,7 @@
       "source": "FRED",
       "frequency": "weekly",
       "status": "unavailable",
-      "reason": "來源錯誤：TimeoutError"
+      "reason": "來源錯誤：TimeoutError; TimeoutError; DBnomics:HTTPError"
     },
     "indices": {
       "name": "S&P 500 / Nasdaq 100",
@@ -885,7 +885,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 32.837,
+      "value": 32.901,
       "date": "2026-11-10",
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/",
@@ -1248,10 +1248,10 @@
         },
         {
           "date": "2026-11-10",
-          "value": 32.837
+          "value": 32.901
         }
       ],
-      "dxy": 101.51
+      "dxy": 101.49
     }
   },
   "active_alerts": {
