@@ -102,7 +102,8 @@ def main():
     print("FRED",k,e["provider"],e["date"],e["value"],flush=True)
    except Exception as exc:
     if not cached(metrics,old,k):metrics[k]["reason"]="來源錯誤："+str(exc)[:150]
-    metrics[k]["last_error"]=str(exc)[:150]\n    metrics[k]["checked_at"]=NOW.isoformat()
+    metrics[k]["last_error"]=str(exc)[:150]
+    metrics[k]["checked_at"]=NOW.isoformat()
     print("FRED",k,"unavailable",str(exc)[:150],flush=True)
  prices={}
  for k,s in YAHOO.items():
