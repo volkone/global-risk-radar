@@ -1,15 +1,17 @@
 {
   "source_checks": {
     "tw_cash_inst": "2026-11-10T15:00:04.034118+00:00",
-    "tw_futures": "2026-11-10T15:00:04.034118+00:00"
+    "tw_futures": "2026-11-10T15:00:04.034118+00:00",
+    "tw_margin": "2026-11-10T15:54:32.249017+00:00",
+    "tw_tw_price": "2026-11-10T15:54:32.249017+00:00"
   },
-  "updated_utc": "2026-11-10T15:53:58.045073+00:00",
+  "updated_utc": "2026-11-10T15:54:35.448447+00:00",
   "request_stats": {
-    "requests": 7,
-    "success": 7,
+    "requests": 8,
+    "success": 8,
     "failure": 0,
     "by_host": {
-      "openapi.twse.com.tw": 1,
+      "openapi.twse.com.tw": 2,
       "query1.finance.yahoo.com": 6
     },
     "errors": [],
@@ -1623,7 +1625,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 27627.818,
+      "value": 27635.016,
       "date": "2026-11-10",
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ENDX/",
@@ -1986,13 +1988,13 @@
         },
         {
           "date": "2026-11-10",
-          "value": 27627.818
+          "value": 27635.016
         }
       ],
-      "drawdown_pct": 11.52,
+      "drawdown_pct": 11.5,
       "reference": "近一年最高收盤價",
-      "spx": 7486.24,
-      "checked_at": "2026-11-10T15:53:56.362935+00:00"
+      "spx": 7489.39,
+      "checked_at": "2026-11-10T15:54:32.249017+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -2001,7 +2003,7 @@
       "frequency": "daily",
       "status": "partial",
       "reason": "只有半導體相對強弱，市場廣度未取得",
-      "value": 0.3582,
+      "value": 0.3583,
       "date": "2026-11-10",
       "unit": "SOX/NDX",
       "source_url": "https://finance.yahoo.com/quote/%5ESOX/"
@@ -2060,10 +2062,10 @@
       "source": "TWSE/TPEx",
       "frequency": "daily",
       "status": "partial",
-      "reason": "上市個股融資股數合計；非融資金額、不含上櫃",
+      "reason": "上市個股融資餘額原始欄位加總；未確認單位，不得當成股數或融資金額；不含上櫃",
       "official_sources": {
         "margin": {
-          "checked_at": "2026-11-10T14:56:52.984655+00:00",
+          "checked_at": "2026-11-10T15:54:32.249017+00:00",
           "source_url": "https://openapi.twse.com.tw/v1/exchangeReport/MI_MARGN",
           "records": 1306,
           "sample_fields": [
@@ -2086,16 +2088,16 @@
           ],
           "status": "partial",
           "value": 6467319,
-          "unit": "股",
+          "unit": "來源原始單位（待核對）",
           "provider": "TWSE",
-          "reason": "上市個股融資股數合計；非融資金額、不含上櫃",
+          "reason": "上市個股融資餘額原始欄位加總；未確認單位，不得當成股數或融資金額；不含上櫃",
           "security_count": 1149
         }
       },
-      "checked_at": "2026-11-10T14:56:52.984655+00:00",
+      "checked_at": "2026-11-10T15:54:32.249017+00:00",
       "source_url": "https://openapi.twse.com.tw/v1/exchangeReport/MI_MARGN",
       "value": 6467319,
-      "unit": "股",
+      "unit": "來源原始單位（待核對）",
       "provider": "TWSE",
       "security_count": 1149
     },
@@ -2227,7 +2229,7 @@
       "reason": "尚未接入可靠來源",
       "official_sources": {
         "tw_price": {
-          "checked_at": "2026-11-10T15:53:56.362935+00:00",
+          "checked_at": "2026-11-10T15:54:32.249017+00:00",
           "source_url": "https://openapi.twse.com.tw/v1/exchangeReport/FMTQIK",
           "records": 6,
           "sample_fields": [
@@ -2482,7 +2484,7 @@
         },
         {
           "date": "2026-09-17",
-          "value": 46288
+          "value": 46288.0
         },
         {
           "date": "2026-09-18",
@@ -2619,7 +2621,7 @@
       ],
       "drawdown_pct": 14.27,
       "reference": "近一年最高收盤價",
-      "checked_at": "2026-11-10T15:53:56.362935+00:00"
+      "checked_at": "2026-11-10T15:54:32.249017+00:00"
     },
     "fx": {
       "name": "美元兌新台幣與美元指數",
@@ -2628,7 +2630,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 32.965,
+      "value": 32.955,
       "date": "2026-11-10",
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/",
@@ -2991,11 +2993,11 @@
         },
         {
           "date": "2026-11-10",
-          "value": 32.965
+          "value": 32.955
         }
       ],
-      "checked_at": "2026-11-10T15:53:56.362935+00:00",
-      "dxy": 102.2
+      "checked_at": "2026-11-10T15:54:32.249017+00:00",
+      "dxy": 102.21
     }
   },
   "active_alerts": {
@@ -3006,7 +3008,7 @@
     },
     "ndx10": {
       "severity": "warning",
-      "message": "Nasdaq 100 近一年高點回撤 ≥10%：11.52%",
+      "message": "Nasdaq 100 近一年高點回撤 ≥10%：11.5%",
       "first_seen": "2026-11-10T08:42:05.496990+00:00"
     },
     "tw5": {
