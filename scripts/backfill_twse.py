@@ -1,6 +1,6 @@
 """Bounded, auditable TWSE historical backfill (listed market only).
 
-Run with --month YYYY-MM. Fetches two official monthly reports, validates the
+Run with --month YYYY-MM. Fetches two official daily reports, validates the
 reported date and units, and saves raw provenance in a separate JSON file.
 Never fabricates TAIFEX history or changes the live risk score.
 """
@@ -55,8 +55,13 @@ def parse_roc_date(raw):
     import re
     m = re.search(r"(\d{2,4})[年/\-](\d{1,2})[月/\-](\d{1,2})", raw)
     if not m:
-        return None
-    y, mo, day = map(int, m.groups())
+        compact = re.fullmatch(r"\\s*(\\d{7,8})\\s*", raw)
+        if not compact:
+            return None
+        v = compact.group(1)
+        y, mo, day = int(v[:-4]), int(v[-4:-2]), int(v[-2:])
+    else:
+        y, mo, day = map(int, m.groups())
     if y < 1911:
         y += 1911
     try:
@@ -82,10 +87,10 @@ def parse_cash(obj, requested_month):
              "unit": "TWD", "scope": "TWSE上市市場", "provider": "TWSE"}]
 
 
-def run(month, days=5):
+def run(month, days=31):
     dt.date.fromisoformat(month + "-01")
-    if not 1 <= days <= 23:
-        raise ValueError("days must be 1..23")
+    if not 1 <= days <= 31:
+        raise ValueError("days must be 1..31")
     existing = json.loads(OUT.read_text()) if OUT.exists() else {"records": [], "attempts": []}
     records = {(r["metric_id"], r["date"]): r for r in existing["records"]}
     attempts = existing["attempts"]
@@ -117,12 +122,12 @@ def run(month, days=5):
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps({"schema_version": 1, "records": list(records.values()),
                                "attempts": attempts[-1000:]}, ensure_ascii=False, indent=2))
-    print("TWSE backfill:", count, "verified observations; requests:", days * 2)
+    print("TWSE backfill:", count, "verified observations; maximum requests:", days * 2)
 
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
     p.add_argument("--month", required=True, help="YYYY-MM")
-    p.add_argument("--days", type=int, default=5)
+    p.add_argument("--days", type=int, default=31)
     a = p.parse_args()
     run(a.month, a.days)
