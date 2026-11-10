@@ -131,18 +131,18 @@ def main():
   metrics["breadth"].update({"status":"partial","value":round(prices["sox"][-1][1]/prices["ndx"][-1][1],4),"date":min(prices["sox"][-1][0],prices["ndx"][-1][0]),"unit":"SOX/NDX","reason":"只有半導體相對強弱，市場廣度未取得","source_url":"https://finance.yahoo.com/quote/%5ESOX/"})
  for key in ("indices","taiex","fx","breadth"):\n  if metrics[key]["status"]=="unavailable" and cached(metrics,old,key):metrics[key]["cache_status"]="stale"\n alerts={}
  for prefix,k in [("hy","hy"),("vix","vix"),("ndx","indices"),("tw","taiex")]:
-  if metrics[k]["status"]!="ok":alerts.update({key:v for key,v in previous.items() if key.startswith(prefix)})
+  if metrics[k]["status"]!="ok" or metrics[k].get("cache_status")=="stale" or metrics[k].get("last_error"):alerts.update({key:v for key,v in previous.items() if key.startswith(prefix)})
  def rule(key,trigger,severity,message):
   if trigger:alerts[key]={"severity":severity,"message":message,"first_seen":previous.get(key,{}).get("first_seen",NOW.isoformat())}
  h=metrics["hy"];v=metrics["vix"];n=metrics["indices"];t=metrics["taiex"]
- if h["status"]=="ok":
+ if h["status"]=="ok" and not h.get("last_error") and h.get("cache_status")!="stale":
   rule("hy4",h["value"]>=4,"warning","HY OAS ≥4%："+str(h["value"])+"%")
   if "change20bp" in h:rule("hy75",h["change20bp"]>=75,"warning","HY OAS 20交易日擴大 ≥75bp："+str(h["change20bp"])+"bp")
- if v["status"]=="ok":
+ if v["status"]=="ok" and not v.get("last_error") and v.get("cache_status")!="stale":
   for threshold in (25,35):rule("vix"+str(threshold),v["value"]>=threshold,"critical" if threshold==35 else "warning","VIX ≥"+str(threshold)+"："+str(v["value"]))
- if n["status"]=="ok":
+ if n["status"]=="ok" and n.get("cache_status")!="stale":
   for threshold in (10,20):rule("ndx"+str(threshold),n["drawdown_pct"]>=threshold,"critical" if threshold==20 else "warning","Nasdaq 100 近一年高點回撤 ≥"+str(threshold)+"%："+str(n["drawdown_pct"])+"%")
- if t["status"]=="ok":
+ if t["status"]=="ok" and t.get("cache_status")!="stale":
   for threshold in (5,10,15,20,25):rule("tw"+str(threshold),t["drawdown_pct"]>=threshold,"critical" if threshold>=20 else "warning","台股近一年高點回撤 ≥"+str(threshold)+"%："+str(t["drawdown_pct"])+"%")
  pending=old.get("pending_notifications",[])
  for key,a in alerts.items():
