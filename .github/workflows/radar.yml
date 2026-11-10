@@ -32,7 +32,17 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add docs/data.json
-          git diff --cached --quiet || (git commit -m 'Update radar snapshot [skip ci]' && git push)
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update radar snapshot [skip ci]'
+            for attempt in 1 2 3; do
+              git fetch origin main
+              git rebase -X ours origin/main
+              if git push origin HEAD:main; then exit 0; fi
+              sleep $((attempt * 2))
+            done
+            echo 'Failed to persist snapshot after retries' >&2
+            exit 1
+          fi
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:
