@@ -24,7 +24,6 @@ jobs:
       - name: Collect risk indicators and evaluate alerts
         env:
           FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
-          FORCE_FRED_REFRESH: '1'
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python scripts/collect.py
