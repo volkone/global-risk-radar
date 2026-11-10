@@ -55,7 +55,7 @@ def parse_roc_date(raw):
     import re
     m = re.search(r"(\d{2,4})[年/\-](\d{1,2})[月/\-](\d{1,2})", raw)
     if not m:
-        compact = re.fullmatch(r"\\s*(\\d{7,8})\\s*", raw)
+        compact = re.fullmatch(r"\s*(\d{7,8})\s*", raw)
         if not compact:
             return None
         v = compact.group(1)
