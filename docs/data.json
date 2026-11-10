@@ -1,5 +1,48 @@
 {
-  "updated_utc": "2026-11-10T09:02:48.235616+00:00",
+  "updated_utc": "2026-11-10T13:48:16.854935+00:00",
+  "request_stats": {
+    "requests": 25,
+    "success": 5,
+    "failure": 20,
+    "by_host": {
+      "fred.stlouisfed.org": 10,
+      "api.db.nomics.world": 10,
+      "query1.finance.yahoo.com": 5
+    },
+    "errors": [
+      "fred.stlouisfed.org:TimeoutError",
+      "fred.stlouisfed.org:TimeoutError",
+      "fred.stlouisfed.org:TimeoutError",
+      "fred.stlouisfed.org:TimeoutError",
+      "fred.stlouisfed.org:TimeoutError",
+      "fred.stlouisfed.org:TimeoutError",
+      "fred.stlouisfed.org:TimeoutError",
+      "fred.stlouisfed.org:TimeoutError",
+      "fred.stlouisfed.org:TimeoutError",
+      "fred.stlouisfed.org:TimeoutError",
+      "api.db.nomics.world:HTTPError",
+      "api.db.nomics.world:HTTPError",
+      "api.db.nomics.world:HTTPError",
+      "api.db.nomics.world:HTTPError",
+      "api.db.nomics.world:HTTPError",
+      "api.db.nomics.world:HTTPError",
+      "api.db.nomics.world:HTTPError",
+      "api.db.nomics.world:HTTPError",
+      "api.db.nomics.world:HTTPError",
+      "api.db.nomics.world:HTTPError"
+    ],
+    "skipped": []
+  },
+  "source_failure_streaks": {
+    "hy": 1,
+    "ig": 1,
+    "vix": 1,
+    "us10y": 1,
+    "nfci": 1,
+    "indices": 0,
+    "taiex": 0,
+    "fx": 0
+  },
   "metrics": {
     "hy": {
       "name": "美國高收益債利差",
@@ -7,7 +50,8 @@
       "source": "FRED",
       "frequency": "daily",
       "status": "unavailable",
-      "reason": "來源錯誤：TimeoutError; TimeoutError; DBnomics:HTTPError"
+      "reason": "來源錯誤：TimeoutError; DBnomics:HTTPError",
+      "last_error": "TimeoutError; DBnomics:HTTPError"
     },
     "ig": {
       "name": "美國投資等級債利差",
@@ -15,7 +59,8 @@
       "source": "FRED",
       "frequency": "daily",
       "status": "unavailable",
-      "reason": "來源錯誤：TimeoutError; TimeoutError; DBnomics:HTTPError"
+      "reason": "來源錯誤：TimeoutError; DBnomics:HTTPError",
+      "last_error": "TimeoutError; DBnomics:HTTPError"
     },
     "vix": {
       "name": "VIX",
@@ -23,7 +68,8 @@
       "source": "FRED",
       "frequency": "daily",
       "status": "unavailable",
-      "reason": "來源錯誤：TimeoutError; TimeoutError; DBnomics:HTTPError"
+      "reason": "來源錯誤：TimeoutError; DBnomics:HTTPError",
+      "last_error": "TimeoutError; DBnomics:HTTPError"
     },
     "us10y": {
       "name": "美國10年期公債殖利率",
@@ -31,7 +77,8 @@
       "source": "FRED",
       "frequency": "daily",
       "status": "unavailable",
-      "reason": "來源錯誤：TimeoutError; TimeoutError; DBnomics:HTTPError"
+      "reason": "來源錯誤：TimeoutError; DBnomics:HTTPError",
+      "last_error": "TimeoutError; DBnomics:HTTPError"
     },
     "nfci": {
       "name": "芝加哥金融情勢指數",
@@ -39,7 +86,8 @@
       "source": "FRED",
       "frequency": "weekly",
       "status": "unavailable",
-      "reason": "來源錯誤：TimeoutError; TimeoutError; DBnomics:HTTPError"
+      "reason": "來源錯誤：TimeoutError; DBnomics:HTTPError",
+      "last_error": "TimeoutError; DBnomics:HTTPError"
     },
     "indices": {
       "name": "S&P 500 / Nasdaq 100",
@@ -416,7 +464,8 @@
       ],
       "drawdown_pct": 10.62,
       "reference": "近一年最高收盤價",
-      "spx": 7549.94
+      "spx": 7549.94,
+      "checked_at": "2026-11-10T13:47:55.782852+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -876,7 +925,8 @@
         }
       ],
       "drawdown_pct": 14.27,
-      "reference": "近一年最高收盤價"
+      "reference": "近一年最高收盤價",
+      "checked_at": "2026-11-10T13:47:55.782852+00:00"
     },
     "fx": {
       "name": "美元兌新台幣與美元指數",
@@ -885,7 +935,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 32.901,
+      "value": 32.949,
       "date": "2026-11-10",
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/",
@@ -1248,10 +1298,10 @@
         },
         {
           "date": "2026-11-10",
-          "value": 32.901
+          "value": 32.949
         }
       ],
-      "dxy": 101.49
+      "checked_at": "2026-11-10T13:47:55.782852+00:00"
     }
   },
   "active_alerts": {
@@ -1283,6 +1333,10 @@
     {
       "key": "tw10",
       "message": "台股近一年高點回撤 ≥10%：14.27%"
+    },
+    {
+      "key": "health_budget",
+      "message": "API請求達單次上限：25"
     }
   ],
   "notes": [
