@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-10T18:00:13.774928+00:00",
+  "model_status": "research_only_not_backtested",
+  "notes": [
+    "Percentile calibration is descriptive, not a validated predictive risk threshold.",
+    "20-session FX appreciation/depreciation is directional; negative FX change is not a safe-market guarantee.",
+    "Margin decreases may indicate deleveraging or forced liquidation; directional risk must be tested against future returns.",
+    "Historical backtesting requires timestamped observations, benchmark forward returns and out-of-sample evaluation."
+  ],
+  "signals": {
+    "margin": {
+      "status": "insufficient_history",
+      "score": null,
+      "current_date": "2026-11-10",
+      "current_value": 536678732000,
+      "raw_observations": 1,
+      "transformed_observations": 0,
+      "min_prior_transformed_observations": 60,
+      "lookback_sessions": 20,
+      "method": "prior_only_empirical_percentile",
+      "errors": [
+        "insufficient_historical_sessions",
+        "insufficient_transformed_history"
+      ]
+    },
+    "inst.cash_inst": {
+      "status": "insufficient_history",
+      "score": null,
+      "current_date": "2026-11-10",
+      "current_value": -11761616175,
+      "raw_observations": 1,
+      "transformed_observations": 0,
+      "min_prior_transformed_observations": 60,
+      "lookback_sessions": null,
+      "method": "awaiting_turnover_or_open_interest_normalization",
+      "errors": [
+        "insufficient_historical_sessions",
+        "normalization_denominator_unavailable",
+        "insufficient_transformed_history"
+      ]
+    },
+    "inst.futures": {
+      "status": "insufficient_history",
+      "score": null,
+      "current_date": "2026-11-09",
+      "current_value": -101771,
+      "raw_observations": 1,
+      "transformed_observations": 0,
+      "min_prior_transformed_observations": 60,
+      "lookback_sessions": null,
+      "method": "awaiting_turnover_or_open_interest_normalization",
+      "errors": [
+        "insufficient_historical_sessions",
+        "normalization_denominator_unavailable",
+        "insufficient_transformed_history"
+      ]
+    },
+    "fx": {
+      "status": "experimental",
+      "score": 98.55,
+      "current_date": "2026-11-10",
+      "current_value": 32.974,
+      "raw_observations": 90,
+      "transformed_observations": 70,
+      "min_prior_transformed_observations": 60,
+      "lookback_sessions": 20,
+      "method": "prior_only_empirical_percentile",
+      "errors": []
+    }
+  },
+  "backtest": {
+    "status": "not_run",
+    "reason": "No complete synchronized historical panel and forward return labels."
+  }
+}
