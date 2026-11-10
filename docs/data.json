@@ -2,16 +2,16 @@
   "source_checks": {
     "tw_margin": "2026-11-10T15:00:04.034118+00:00",
     "tw_cash_inst": "2026-11-10T15:00:04.034118+00:00",
-    "tw_futures": "2026-11-10T15:00:04.034118+00:00"
+    "tw_futures": "2026-11-10T15:00:04.034118+00:00",
+    "tw_tw_price": "2026-11-10T15:53:56.362935+00:00"
   },
-  "updated_utc": "2026-11-10T15:00:10.467356+00:00",
+  "updated_utc": "2026-11-10T15:53:58.045073+00:00",
   "request_stats": {
-    "requests": 9,
-    "success": 9,
+    "requests": 7,
+    "success": 7,
     "failure": 0,
     "by_host": {
-      "openapi.twse.com.tw": 2,
-      "openapi.taifex.com.tw": 1,
+      "openapi.twse.com.tw": 1,
       "query1.finance.yahoo.com": 6
     },
     "errors": [],
@@ -1625,7 +1625,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 27855.873,
+      "value": 27627.818,
       "date": "2026-11-10",
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ENDX/",
@@ -1988,13 +1988,13 @@
         },
         {
           "date": "2026-11-10",
-          "value": 27855.873
+          "value": 27627.818
         }
       ],
-      "drawdown_pct": 10.79,
+      "drawdown_pct": 11.52,
       "reference": "近一年最高收盤價",
-      "spx": 7518.91,
-      "checked_at": "2026-11-10T14:56:52.984655+00:00"
+      "spx": 7486.24,
+      "checked_at": "2026-11-10T15:53:56.362935+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -2003,7 +2003,7 @@
       "frequency": "daily",
       "status": "partial",
       "reason": "只有半導體相對強弱，市場廣度未取得",
-      "value": 0.3627,
+      "value": 0.3582,
       "date": "2026-11-10",
       "unit": "SOX/NDX",
       "source_url": "https://finance.yahoo.com/quote/%5ESOX/"
@@ -2214,7 +2214,7 @@
           "net_twd": -11761616175
         }
       ],
-      "cash_date": "2026-11-10",
+      "cash_date": null,
       "foreign_tx_net_oi": -101771,
       "futures_date": "2026-11-09",
       "futures_contract": "臺股期貨",
@@ -2229,7 +2229,7 @@
       "reason": "尚未接入可靠來源",
       "official_sources": {
         "tw_price": {
-          "checked_at": "2026-11-10T14:56:52.984655+00:00",
+          "checked_at": "2026-11-10T15:53:56.362935+00:00",
           "source_url": "https://openapi.twse.com.tw/v1/exchangeReport/FMTQIK",
           "records": 6,
           "sample_fields": [
@@ -2240,10 +2240,19 @@
             "TAIEX",
             "Change"
           ],
-          "status": "unavailable",
-          "reason": "schema_validation_failed"
+          "status": "ok",
+          "value": 41661.7,
+          "date": "2026-11-09",
+          "unit": "points",
+          "volume_shares": 12160730783,
+          "turnover_twd": 877025617232,
+          "provider": "TWSE"
         }
       },
+      "official_close": 41661.7,
+      "official_close_date": "2026-11-09",
+      "official_volume_shares": 12160730783,
+      "official_turnover_twd": 877025617232,
       "value": 42711.922,
       "date": "2026-11-10",
       "unit": "points",
@@ -2612,7 +2621,7 @@
       ],
       "drawdown_pct": 14.27,
       "reference": "近一年最高收盤價",
-      "checked_at": "2026-11-10T14:56:52.984655+00:00"
+      "checked_at": "2026-11-10T15:53:56.362935+00:00"
     },
     "fx": {
       "name": "美元兌新台幣與美元指數",
@@ -2621,7 +2630,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 32.968,
+      "value": 32.965,
       "date": "2026-11-10",
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/",
@@ -2984,11 +2993,11 @@
         },
         {
           "date": "2026-11-10",
-          "value": 32.968
+          "value": 32.965
         }
       ],
-      "checked_at": "2026-11-10T14:56:52.984655+00:00",
-      "dxy": 102.08
+      "checked_at": "2026-11-10T15:53:56.362935+00:00",
+      "dxy": 102.2
     }
   },
   "active_alerts": {
@@ -2999,7 +3008,7 @@
     },
     "ndx10": {
       "severity": "warning",
-      "message": "Nasdaq 100 近一年高點回撤 ≥10%：10.79%",
+      "message": "Nasdaq 100 近一年高點回撤 ≥10%：11.52%",
       "first_seen": "2026-11-10T08:42:05.496990+00:00"
     },
     "tw5": {
