@@ -1,5 +1,7 @@
 name: Verify TWSE historical backfill
 on:
+  schedule:
+    - cron: '43 3 * * *'
   workflow_dispatch:
     inputs:
       month:
@@ -7,9 +9,9 @@ on:
         required: true
         default: '2026-10'
       days:
-        description: 'Days to probe from start of month (max 23, two requests/day)'
+        description: 'Days to probe from start of month (max 31, two requests/day)'
         required: true
-        default: '5'
+        default: '31'
 permissions:
   contents: write
 concurrency:
@@ -27,12 +29,17 @@ jobs:
       - name: Run regression tests
         run: python -m unittest discover -s tests -v
       - name: Query and verify historical TWSE observations
-        run: python scripts/backfill_twse.py --month "${{ inputs.month }}" --days "${{ inputs.days }}"
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            python -m scripts.backfill_batch
+          else
+            python -m scripts.backfill_twse --month "${{ inputs.month }}" --days "${{ inputs.days }}"
+          fi
       - name: Persist only validated provenance records
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add storage/twse_backfill.json
+          git add storage/twse_backfill.json storage/backfill_progress.json 2>/dev/null || git add storage/twse_backfill.json
           if ! git diff --cached --quiet; then
             git commit -m 'Backfill verified TWSE observations [skip ci]'
             git fetch origin main
