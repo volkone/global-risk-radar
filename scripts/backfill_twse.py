@@ -104,9 +104,10 @@ def run(month, days=31, kinds=("margin", "cash_inst")):
         for kind in kinds:
             base = URLS[kind]
             # Each request is one day; cap requests to 2*days.
-            url = base + "?" + urllib.parse.urlencode({
-                "date": date.replace("-", ""), "response": "json",
-                **({"selectType": "ALL"} if kind == "margin" else {})})
+            params = ({"date": date.replace("-", ""), "response": "json", "selectType": "ALL"}
+                      if kind == "margin" else
+                      {"dayDate": date.replace("-", ""), "type": "day", "response": "json"})
+            url = base + "?" + urllib.parse.urlencode(params)
             try:
                 obj = request_json(url)
                 parsed = parse_margin(obj, month) if kind == "margin" else parse_cash(obj, month)
