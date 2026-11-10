@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "records": [],
+  "attempts": [
+    {
+      "requested_date": "2026-10-01",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2026-10-01",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2026-10-02",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2026-10-02",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2026-10-03",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2026-10-03",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2026-10-04",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2026-10-04",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2026-10-05",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2026-10-05",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    }
+  ]
+}
