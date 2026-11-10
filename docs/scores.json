@@ -5,7 +5,7 @@
   "disclaimer": "Risk scores are provisional and not validated by historical backtests.",
   "global": {
     "status": "provisional",
-    "score": 29.5,
+    "score": 29.6,
     "coverage": 0.85,
     "min_coverage": 0.85,
     "components": [
