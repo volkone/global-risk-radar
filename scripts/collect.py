@@ -76,7 +76,7 @@ def telegram(msg):
 
 # Taiwan official public-data endpoints; field mappings are validated before publishing values.
 TW_ENDPOINTS={
- "margin":"https://www.twse.com.tw/rwd/zh/exchangeReport/MI_MARGN?response=json",
+ "margin":"https://www.twse.com.tw/exchangeReport/MI_MARGN?response=json",
  "cash_inst":"https://www.twse.com.tw/rwd/zh/fund/BFI82U?response=json",
  "tw_price":"https://openapi.twse.com.tw/v1/exchangeReport/FMTQIK",
  "futures":"https://openapi.taifex.com.tw/v1/MarketDataOfMajorInstitutionalTradersDetailsOfFuturesContractsBytheDate",
