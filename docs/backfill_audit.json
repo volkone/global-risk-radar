@@ -1,0 +1,33 @@
+{
+  "status": "partial_verified",
+  "accepted_unique_records": 19,
+  "duplicate_records": 0,
+  "attempt_count": 72,
+  "accepted_attempt_count": 19,
+  "rejected_attempt_count": 53,
+  "rejections": [
+    {
+      "kind": "margin",
+      "reason": "ValueError:margin_response_date_not_requested_month",
+      "count": 17
+    },
+    {
+      "kind": "cash_inst",
+      "reason": "ValueError:cash_response_date_not_requested_month",
+      "count": 36
+    }
+  ],
+  "months": {
+    "2026-10": {
+      "margin_unique_dates": 19,
+      "cash_unique_dates": 0,
+      "official_trading_day_count": null,
+      "trading_day_completeness": null,
+      "reason": "Official trading calendar not yet joined"
+    }
+  },
+  "cash_source_status": "blocked_until_historical_date_parameter_verified",
+  "taifex_source_status": "not_backfilled",
+  "out_of_sample_backtest_status": "blocked_incomplete_panel",
+  "live_thresholds_status": "not_authorized"
+}
