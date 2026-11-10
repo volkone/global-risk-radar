@@ -76,7 +76,7 @@ def telegram(msg):
 
 # Taiwan official public-data endpoints; field mappings are validated before publishing values.
 TW_ENDPOINTS={
- "margin":"https://www.twse.com.tw/exchangeReport/MI_MARGN?response=json",
+ "margin":"https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?selectType=ALL&response=json",
  "cash_inst":"https://www.twse.com.tw/rwd/zh/fund/BFI82U?response=json",
  "tw_price":"https://openapi.twse.com.tw/v1/exchangeReport/FMTQIK",
  "futures":"https://openapi.taifex.com.tw/v1/MarketDataOfMajorInstitutionalTradersDetailsOfFuturesContractsBytheDate",
@@ -130,15 +130,22 @@ def taiwan(metrics,old):
     raw_date=None
     if kind in ("cash_inst","margin"):
      obj=json.loads(fetch(url,timeout=12))
-     raw_date=obj.get("date") if isinstance(obj,dict) else None
      if not isinstance(obj,dict):raise ValueError("unexpected_summary_schema")
-     data=obj.get("data")
-     fields=obj.get("fields")
-     if not isinstance(data,list):raise ValueError("missing_data")
-     if kind=="cash_inst":
-      rows=[dict(zip(fields or ("單位名稱","買進金額","賣出金額","買賣差額"),r)) for r in data if isinstance(r,list)]
+     raw_date=obj.get("date")
+     if kind=="margin":
+      tables=obj.get("tables")
+      if not isinstance(tables,list):raise ValueError("margin_missing_tables")
+      summary_tables=[t for t in tables if isinstance(t,dict) and isinstance(t.get("data"),list) and isinstance(t.get("fields"),list) and any("融資金額" in str(row[0]) for row in t["data"] if isinstance(row,list) and row)]
+      if len(summary_tables)!=1:raise ValueError("margin_summary_table_not_unique")
+      t=summary_tables[0]
+      fields=t["fields"]
+      if "今日餘額" not in fields:raise ValueError("margin_today_balance_missing")
+      rows=[dict(zip(fields,row)) for row in t["data"] if isinstance(row,list) and len(row)==len(fields)]
      else:
-      rows=[dict(zip(fields or ("項目","買進","賣出","現金(券)償還","前日餘額","今日餘額"),r)) for r in data if isinstance(r,list)]
+      data=obj.get("data")
+      fields=obj.get("fields")
+      if not isinstance(data,list):raise ValueError("cash_missing_data")
+      rows=[dict(zip(fields or ("單位名稱","買進金額","賣出金額","買賣差額"),r)) for r in data if isinstance(r,list)]
     else:rows=official_rows(url)
     if not rows or not isinstance(rows[0],dict):raise ValueError("unexpected_rows")
     record={"checked_at":NOW.isoformat(),"source_url":url,"records":len(rows),"sample_fields":list(rows[0])[:25]}
@@ -147,9 +154,11 @@ def taiwan(metrics,old):
      if normalized:record["date"]=normalized
     if kind=="margin":
      summary=[r for r in rows if "融資金額" in str(pick(r,"項目","Item") or "")]
+     if len(summary)!=1:raise ValueError("margin_amount_row_not_unique")
      if len(summary)==1:
       r=summary[0]
       thousands=num(pick(r,"今日餘額","TodayBalance","Balance"))
+      if thousands is None or thousands<=0:raise ValueError("margin_invalid_amount")
       if thousands is not None and thousands>=0:
        record.update(status="ok",value=round(thousands*1000),unit="TWD",provider="TWSE",scope="TWSE上市市場",reason="證交所信用交易統計：融資金額（仟元）今日餘額；次日可能調帳",source_unit="仟元",amount_thousands=round(thousands))
     elif kind=="cash_inst":
@@ -174,13 +183,14 @@ def taiwan(metrics,old):
       r=candidates[0];net=num(pick(r,"OpenInterest(Net)","未平倉口數(淨額)","未平倉淨額"))
       if net is not None and date_of(r):
        record.update(status="ok",foreign_tx_net_oi=round(net),date=date_of(r),unit="口",provider="TAIFEX",contract=str(pick(r,"ContractCode","商品名稱","契約")),trader=str(pick(r,"Item","身份別","交易人類別")))
+    if kind=="margin" and not record.get("date"):raise ValueError("margin_missing_trade_date")
     if record.get("status") in ("ok","partial"):checks["tw_"+kind]=NOW.isoformat()
     else:record["status"]="unavailable";record["reason"]="schema_validation_failed"
     print("Taiwan",kind,record["status"],record.get("date",""),flush=True)
    except Exception as exc:
     record=dict(prev_record) if prev_record.get("status") in ("ok","partial") else {"status":"unavailable","source_url":url}
     record["cache_status"]="stale" if record.get("status") in ("ok","partial") else "unavailable"
-    record["last_error"]=type(exc).__name__
+    record["last_error"]=type(exc).__name__+": "+str(exc)[:120]
     print("Taiwan",kind,"fallback",type(exc).__name__,flush=True)
   if not record and prev_record:record=dict(prev_record)
   if record:metrics[key].setdefault("official_sources",{})[kind]=record
