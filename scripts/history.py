@@ -32,6 +32,15 @@ def observations(snapshot):
         candidates = [(metric_id, metric)]
         for source_id, record in metric.get("official_sources", {}).items():
             if isinstance(record, dict):
+                # If the primary metric is a mirror of this official observation,
+                # keep only the explicitly sourced record.
+                if (metric.get("status") == "ok" and
+                    metric.get("provider") == record.get("provider") and
+                    metric.get("date") == record.get("date") and
+                    metric.get("unit") == record.get("unit") and
+                    metric.get("value") == record.get("value") and
+                    metric.get("source_url") == record.get("source_url")):
+                    candidates = [item for item in candidates if item[0] != metric_id]
                 candidates.append((metric_id + "." + source_id, record))
         for key, record in candidates:
             if record.get("status") != "ok" or record.get("cache_status") == "stale":
@@ -74,6 +83,17 @@ def run():
             old_value REAL NOT NULL,
             new_value REAL NOT NULL,
             changed_at TEXT NOT NULL
+        )""")
+        # Remove legacy duplicate created by the original Phase 3A-02 importer.
+        db.execute("""DELETE FROM observations WHERE metric_id = 'margin' AND EXISTS (
+            SELECT 1 FROM observations AS official
+            WHERE official.metric_id = 'margin.margin'
+            AND official.provider = observations.provider
+            AND official.scope = observations.scope
+            AND official.observation_date = observations.observation_date
+            AND official.value = observations.value
+            AND official.unit = observations.unit
+            AND official.source_url = observations.source_url
         )""")
         changed_at = dt.datetime.now(dt.timezone.utc).isoformat()
         for row in observations(snapshot):
