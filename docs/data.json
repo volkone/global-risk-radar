@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-10T08:42:05.496990+00:00",
+  "updated_utc": "2026-11-10T08:52:25.139040+00:00",
   "metrics": {
     "hy": {
       "name": "美國高收益債利差",
@@ -885,7 +885,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 32.84,
+      "value": 32.825,
       "date": "2026-11-10",
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/",
@@ -1248,10 +1248,10 @@
         },
         {
           "date": "2026-11-10",
-          "value": 32.84
+          "value": 32.825
         }
       ],
-      "dxy": 101.53
+      "dxy": 101.51
     }
   },
   "active_alerts": {
