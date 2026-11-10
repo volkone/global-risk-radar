@@ -1,6 +1,10 @@
 {
-  "source_checks": {},
-  "updated_utc": "2026-11-10T14:51:29.178637+00:00",
+  "source_checks": {
+    "tw_margin": "2026-11-10T15:00:04.034118+00:00",
+    "tw_cash_inst": "2026-11-10T15:00:04.034118+00:00",
+    "tw_futures": "2026-11-10T15:00:04.034118+00:00"
+  },
+  "updated_utc": "2026-11-10T15:00:10.467356+00:00",
   "request_stats": {
     "requests": 9,
     "success": 9,
@@ -2114,7 +2118,7 @@
       "reason": "法人現貨金額與期貨口數分別顯示",
       "official_sources": {
         "cash_inst": {
-          "checked_at": "2026-11-10T14:51:27.279159+00:00",
+          "checked_at": "2026-11-10T15:00:04.034118+00:00",
           "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?response=json",
           "records": 6,
           "sample_fields": [
@@ -2123,34 +2127,34 @@
             "賣出金額",
             "買賣差額"
           ],
+          "status": "ok",
           "categories": [
             {
               "name": "自營商(自行買賣)",
-              "net": -5539126345
+              "net_twd": -5539126345
             },
             {
               "name": "自營商(避險)",
-              "net": -11996867441
+              "net_twd": -11996867441
             },
             {
               "name": "投信",
-              "net": 39891067517
+              "net_twd": 39891067517
             },
             {
               "name": "外資及陸資(不含外資自營商)",
-              "net": -34116689906
+              "net_twd": -34116689906
             },
             {
               "name": "外資自營商",
-              "net": 0
+              "net_twd": 0
             },
             {
               "name": "合計",
-              "net": -11761616175
+              "net_twd": -11761616175
             }
           ],
-          "status": "partial",
-          "date": "",
+          "unit": "TWD",
           "provider": "TWSE",
           "reason": "已取得法人分項；需確認原始金額單位"
         },
@@ -2187,29 +2191,34 @@
       "cash_categories": [
         {
           "name": "自營商(自行買賣)",
-          "net": -5539126345
+          "net_twd": -5539126345
         },
         {
           "name": "自營商(避險)",
-          "net": -11996867441
+          "net_twd": -11996867441
         },
         {
           "name": "投信",
-          "net": 39891067517
+          "net_twd": 39891067517
         },
         {
           "name": "外資及陸資(不含外資自營商)",
-          "net": -34116689906
+          "net_twd": -34116689906
         },
         {
           "name": "外資自營商",
-          "net": 0
+          "net_twd": 0
         },
         {
           "name": "合計",
-          "net": -11761616175
+          "net_twd": -11761616175
         }
-      ]
+      ],
+      "cash_date": "2026-11-10",
+      "foreign_tx_net_oi": -101771,
+      "futures_date": "2026-11-09",
+      "futures_contract": "臺股期貨",
+      "date": "2026-11-09"
     },
     "taiex": {
       "name": "台股回撤與成交量",
@@ -2466,7 +2475,7 @@
         },
         {
           "date": "2026-09-17",
-          "value": 46288
+          "value": 46288.0
         },
         {
           "date": "2026-09-18",
