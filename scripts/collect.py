@@ -109,82 +109,82 @@ def official_rows(url):
     return rows
  raise ValueError("unexpected_official_schema")
 def taiwan(metrics,old):
- # At most four official calls per 24h; preserve previously verified snapshots on failure.
+ previous=old.get("metrics",{})
+ checks=old.setdefault("source_checks",{})
  for kind,url in TW_ENDPOINTS.items():
   key="margin" if kind=="margin" else ("taiex" if kind=="tw_price" else "inst")
-  stamp=old.get("source_checks",{}).get("tw_"+kind)
-  if stamp:
+  prev=previous.get(key,{})
+  prev_record=prev.get("official_sources",{}).get(kind,{})
+  stamp=checks.get("tw_"+kind)
+  fresh=False
+  if stamp and prev_record.get("status") in ("ok","partial"):
+   try:fresh=(NOW-datetime.datetime.fromisoformat(stamp)).total_seconds()<86400
+   except (ValueError,TypeError):pass
+  record=dict(prev_record) if fresh else {}
+  if not fresh:
    try:
-    if (NOW-datetime.datetime.fromisoformat(stamp)).total_seconds()<86400:continue
-   except ValueError:pass
-   continue
-  try:
-   rows=official_rows(url)
-   if not rows:raise ValueError("empty_official_data")
-   record={"checked_at":NOW.isoformat(),"source_url":url,"records":len(rows),"sample_fields":list(rows[0])[:30]}
-   if kind=="margin":
-    # MI_MARGN may contain both market totals and per-security records.
-    totals=[r for r in rows if any("合計" in str(v) or "總計" in str(v) for v in r.values())]
-    for r in totals:
-     value=num(pick(r,"融資今日餘額","融資餘額","MarginPurchaseTodayBalance","融資餘額(仟元)"))
-     if value is not None:
-      record.update({"status":"ok","value":value,"date":date_of(r),"unit":"來源原始單位","provider":"TWSE","reason":"請核對官方欄位單位"})
-      break
-    if record.get("status")!="ok":
-     balances=[num(pick(r,"融資今日餘額")) for r in rows]
+    rows=official_rows(url)
+    if not rows or not isinstance(rows[0],dict):raise ValueError("unexpected_rows")
+    record={"checked_at":NOW.isoformat(),"source_url":url,"records":len(rows),"sample_fields":list(rows[0])[:25]}
+    if kind=="margin":
+     balances=[num(r.get("融資今日餘額")) for r in rows if "融資今日餘額" in r and str(r.get("股票代號","")).strip().isdigit()]
      balances=[v for v in balances if v is not None]
      if len(balances)>100:
-      record.update({"status":"partial","value":sum(balances),"date":date_of(rows[0]),"unit":"股（上市個股融資餘額合計）","provider":"TWSE","reason":"僅上市個股融資股數合計，非融資金額；不含上櫃"})
-    if record.get("status")!="ok":
-     balances=[num(pick(r,"融資今日餘額")) for r in rows]
-     balances=[v for v in balances if v is not None]
-     if len(balances)>100:record.update({"status":"partial","value":sum(balances),"unit":"股（上市個股融資餘額合計）","provider":"TWSE","reason":"融資股數，不是融資金額；不含上櫃"})
-   elif kind=="cash_inst":
-    record["categories"]=[]
-    for r in rows:
-     name=pick(r,"單位名稱","名稱","Name")
-     net=num(pick(r,"買賣差額","買賣超金額","買賣超","Difference"))
-     if name is not None and net is not None:record["categories"].append({"name":name,"net":net})
-    if record["categories"]:
-     record.update({"status":"partial","date":date_of(rows[0]),"provider":"TWSE","reason":"已取得法人分項；需確認原始金額單位"})
-   elif kind=="tw_price":
-    r=rows[-1]
-    value=num(pick(r,"TAIEX","TradeIndex","發行量加權股價指數","加權指數"))
-    volume=num(pick(r,"TradeVolume","成交股數"))
-    amount=num(pick(r,"TradeValue","成交金額"))
-    if value is not None:
-     record.update({"status":"ok","value":value,"date":date_of(r),"unit":"points","provider":"TWSE"})
-     if volume is not None:record["volume_shares"]=volume
-     if amount is not None:record["turnover_twd"]=amount
-   elif kind=="futures":
-    candidates=[r for r in rows if str(pick(r,"ContractCode","商品名稱","契約") or "") in ("臺股期貨","台股期貨","TX") and "外資" in str(pick(r,"Item","身份別","交易人類別") or "")]
-    for r in candidates:
-     net=num(pick(r,"OpenInterest(Net)","未平倉口數(淨額)","未平倉淨額"))
-     if net is not None:
-      record.update({"status":"partial","foreign_tx_net_oi":net,"date":date_of(r),"unit":"口","provider":"TAIFEX","reason":"外資臺股期貨淨未平倉"})
-      break
-   metrics.setdefault(key,{}).setdefault("official_sources",{})[kind]=record
-   if kind=="margin" and record.get("status") in ("ok","partial"):metrics["margin"].update({k:v for k,v in record.items() if k!="sample_fields"})
-   if kind=="tw_price" and record.get("status")=="ok":
-    # Keep Yahoo one-year drawdown until official historical prices are available.
-    metrics["taiex"]["official_close"]=record["value"]
-    if "volume_shares" in record:metrics["taiex"]["official_volume_shares"]=record["volume_shares"]
-    if "turnover_twd" in record:metrics["taiex"]["official_turnover_twd"]=record["turnover_twd"]
-    if "volume_shares" in record:metrics["taiex"]["official_volume_shares"]=record["volume_shares"]
-    if "turnover_twd" in record:metrics["taiex"]["official_turnover_twd"]=record["turnover_twd"]
-    metrics["taiex"]["official_close_date"]=record["date"]
-   if kind in ("cash_inst","futures") and record.get("status") in ("ok","partial"):
-    metrics["inst"]["status"]="partial"
-    if kind=="cash_inst":metrics["inst"]["cash_categories"]=record.get("categories",[])
-    if kind=="futures":metrics["inst"]["foreign_tx_net_oi"]=record.get("foreign_tx_net_oi");metrics["inst"]["date"]=record.get("date")
-    if kind=="futures":metrics["inst"]["value"]=record.get("foreign_tx_net_oi");metrics["inst"]["unit"]="口（期貨外資淨未平倉，待契約確認）";metrics["inst"]["date"]=record.get("date")
-    if kind=="cash_inst":metrics["inst"]["cash_categories"]=record.get("categories",[])
-    metrics["inst"]["reason"]="官方現貨與期貨分項資料；勿將不同單位直接相加"
-   if record.get("status") in ("ok","partial"):old.setdefault("source_checks",{})["tw_"+kind]=NOW.isoformat()
-   print("Taiwan",kind,record.get("status","schema_pending"),record.get("date",""),flush=True)
-  except Exception as exc:
-   metrics.setdefault(key,{}).setdefault("official_sources",{})[kind]={"status":"unavailable","reason":type(exc).__name__,"source_url":url}
-   print("Taiwan",kind,"unavailable",type(exc).__name__,flush=True)
+      record.update(status="partial",value=round(sum(balances)),unit="股",provider="TWSE",reason="上市個股融資股數合計；非融資金額、不含上櫃",security_count=len(balances))
+    elif kind=="cash_inst":
+     categories=[]
+     for r in rows:
+      name=pick(r,"單位名稱","名稱","Name")
+      net=num(pick(r,"買賣差額","買賣超金額","買賣超","Difference"))
+      if name is not None and net is not None:categories.append({"name":name,"net_twd":round(net)})
+     if len(categories)>=5 and any("合計" in x["name"] for x in categories):
+      record.update(status="ok",categories=categories,unit="TWD",provider="TWSE",reason="集中市場法人現貨買賣超金額")
+    elif kind=="tw_price":
+     r=rows[-1]
+     value=num(pick(r,"TAIEX","TradeIndex","發行量加權股價指數","加權指數"))
+     volume=num(pick(r,"TradeVolume","成交股數"))
+     amount=num(pick(r,"TradeValue","成交金額"))
+     date=date_of(r)
+     if value is not None and volume is not None and amount is not None and date:
+      record.update(status="ok",value=value,date=date,unit="points",volume_shares=round(volume),turnover_twd=round(amount),provider="TWSE")
+    elif kind=="futures":
+     candidates=[r for r in rows if str(pick(r,"ContractCode","商品名稱","契約") or "").strip() in ("臺股期貨","台股期貨","TX") and "外資" in str(pick(r,"Item","身份別","交易人類別") or "")]
+     if len(candidates)==1:
+      r=candidates[0];net=num(pick(r,"OpenInterest(Net)","未平倉口數(淨額)","未平倉淨額"))
+      if net is not None and date_of(r):
+       record.update(status="ok",foreign_tx_net_oi=round(net),date=date_of(r),unit="口",provider="TAIFEX",contract=str(pick(r,"ContractCode","商品名稱","契約")),trader=str(pick(r,"Item","身份別","交易人類別")))
+    if record.get("status") in ("ok","partial"):checks["tw_"+kind]=NOW.isoformat()
+    else:record["status"]="unavailable";record["reason"]="schema_validation_failed"
+    print("Taiwan",kind,record["status"],record.get("date",""),flush=True)
+   except Exception as exc:
+    record=dict(prev_record) if prev_record.get("status") in ("ok","partial") else {"status":"unavailable","source_url":url}
+    record["cache_status"]="stale" if record.get("status") in ("ok","partial") else "unavailable"
+    record["last_error"]=type(exc).__name__
+    print("Taiwan",kind,"fallback",type(exc).__name__,flush=True)
+  if not record and prev_record:record=dict(prev_record)
+  if record:metrics[key].setdefault("official_sources",{})[kind]=record
+  if kind=="margin" and record.get("status") in ("ok","partial"):
+   metrics["margin"].update({k:v for k,v in record.items() if k not in ("sample_fields","records")})
+  elif kind=="cash_inst" and record.get("status")=="ok":
+   metrics["inst"]["cash_categories"]=record["categories"]
+   metrics["inst"]["cash_date"]=record.get("date") or checks.get("tw_cash_inst","")[:10]
+  elif kind=="futures" and record.get("status")=="ok":
+   metrics["inst"]["foreign_tx_net_oi"]=record["foreign_tx_net_oi"]
+   metrics["inst"]["futures_date"]=record.get("date")
+   metrics["inst"]["futures_contract"]=record.get("contract")
+  elif kind=="tw_price" and record.get("status")=="ok":
+   metrics["taiex"]["official_close"]=record["value"]
+   metrics["taiex"]["official_close_date"]=record["date"]
+   metrics["taiex"]["official_volume_shares"]=record["volume_shares"]
+   metrics["taiex"]["official_turnover_twd"]=record["turnover_twd"]
+ if metrics["inst"].get("cash_categories") or metrics["inst"].get("foreign_tx_net_oi") is not None:
+  metrics["inst"]["status"]="partial"
+  metrics["inst"]["reason"]="法人現貨金額與期貨口數分別顯示"
+  metrics["inst"]["date"]=metrics["inst"].get("futures_date") or metrics["inst"].get("cash_date")
+ if metrics["margin"]["status"]=="unavailable" and previous.get("margin",{}).get("status") in ("ok","partial"):
+  for field,value in previous["margin"].items():
+   if field not in ("name","group","source","frequency"):metrics["margin"][field]=value
+  metrics["margin"]["cache_status"]="stale"
 
 def main():
  try:old=json.loads(OUT.read_text())
