@@ -65,7 +65,7 @@ def evaluate(snapshot, history, today=None):
             if age < 0:
                 errors.append("future_observation_date")
             elif age > AGE_LIMITS.get(key, 7):
-                warnings.append("observation_older_than_limit")
+                errors.append("observation_older_than_limit")
         if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value):
             errors.append("missing_or_invalid_numeric_value")
         elif key in RANGES and not RANGES[key][0] <= value <= RANGES[key][1]:
@@ -100,6 +100,40 @@ def evaluate(snapshot, history, today=None):
             issues.append({"metric": key, "severity": "error", "code": issue})
         for issue in warnings:
             issues.append({"metric": key, "severity": "warning", "code": issue})
+    # Composite institutional metrics are not scalar scores. Validate official
+    # cash and futures independently instead of treating the whole group as data.
+    inst = snapshot.get("metrics", {}).get("inst", {})
+    for source_id, record in inst.get("official_sources", {}).items():
+        if source_id not in ("cash_inst", "futures") or not isinstance(record, dict):
+            continue
+        name = "inst." + source_id
+        errors = []
+        date = date_value(record.get("date"))
+        if record.get("status") != "ok":
+            errors.append("source_not_verified")
+        if date is None:
+            errors.append("missing_or_invalid_date")
+        elif (today - date).days < 0:
+            errors.append("future_observation_date")
+        elif (today - date).days > 5:
+            errors.append("observation_older_than_limit")
+        if source_id == "cash_inst":
+            categories = record.get("categories", [])
+            total = [x.get("net_twd") for x in categories if x.get("name") == "合計"]
+            if (record.get("unit") != "TWD" or len(total) != 1
+                    or not isinstance(total[0], (int, float)) or isinstance(total[0], bool)):
+                errors.append("invalid_cash_inst_total")
+        else:
+            net = record.get("foreign_tx_net_oi")
+            if (record.get("unit") != "口" or isinstance(net, bool)
+                    or not isinstance(net, (int, float)) or not math.isfinite(net)):
+                errors.append("invalid_foreign_futures_net_oi")
+        results[name] = {"quality": "blocked" if errors else "pass", "source": name,
+                         "date": date.isoformat() if date else None,
+                         "age_days": (today - date).days if date else None,
+                         "errors": errors, "warnings": []}
+        for issue in errors:
+            issues.append({"metric": name, "severity": "error", "code": issue})
     counts = {label: sum(x["quality"] == label for x in results.values())
               for label in ("pass", "caution", "blocked")}
     return {"schema_version": VERSION, "evaluated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
