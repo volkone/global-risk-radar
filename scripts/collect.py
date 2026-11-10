@@ -77,7 +77,7 @@ def telegram(msg):
 # Taiwan official public-data endpoints; field mappings are validated before publishing values.
 TW_ENDPOINTS={
  "margin":"https://openapi.twse.com.tw/v1/exchangeReport/MI_MARGN",
- "cash_inst":"https://openapi.twse.com.tw/v1/exchangeReport/BFI82U",
+ "cash_inst":"https://www.twse.com.tw/rwd/zh/fund/BFI82U?response=json",
  "tw_price":"https://openapi.twse.com.tw/v1/exchangeReport/FMTQIK",
  "futures":"https://openapi.taifex.com.tw/v1/MarketDataOfMajorInstitutionalTradersDetailsOfFuturesContractsBytheDate",
 }
@@ -126,6 +126,11 @@ def taiwan(metrics,old):
      if value is not None:
       record.update({"status":"ok","value":value,"date":date_of(r),"unit":"來源原始單位","provider":"TWSE","reason":"請核對官方欄位單位"})
       break
+    if record.get("status")!="ok":
+     balances=[num(pick(r,"融資今日餘額")) for r in rows]
+     balances=[v for v in balances if v is not None]
+     if len(balances)>100:
+      record.update({"status":"partial","value":sum(balances),"date":date_of(rows[0]),"unit":"股（上市個股融資餘額合計）","provider":"TWSE","reason":"僅上市個股融資股數合計，非融資金額；不含上櫃"})
    elif kind=="cash_inst":
     record["categories"]=[]
     for r in rows:
@@ -136,7 +141,7 @@ def taiwan(metrics,old):
      record.update({"status":"partial","date":date_of(rows[0]),"provider":"TWSE","reason":"已取得法人分項；需確認原始金額單位"})
    elif kind=="tw_price":
     r=rows[-1]
-    value=num(pick(r,"TradeIndex","發行量加權股價指數","加權指數"))
+    value=num(pick(r,"TAIEX","TradeIndex","發行量加權股價指數","加權指數"))
     volume=num(pick(r,"TradeVolume","成交股數"))
     amount=num(pick(r,"TradeValue","成交金額"))
     if value is not None:
@@ -151,15 +156,19 @@ def taiwan(metrics,old):
       record.update({"status":"partial","foreign_tx_net_oi":net,"date":date_of(r),"unit":"口","provider":"TAIFEX","reason":"外資臺股期貨淨未平倉"})
       break
    metrics.setdefault(key,{}).setdefault("official_sources",{})[kind]=record
-   if kind=="margin" and record.get("status")=="ok":metrics["margin"].update({k:v for k,v in record.items() if k!="sample_fields"})
+   if kind=="margin" and record.get("status") in ("ok","partial"):metrics["margin"].update({k:v for k,v in record.items() if k!="sample_fields"})
    if kind=="tw_price" and record.get("status")=="ok":
     # Keep Yahoo one-year drawdown until official historical prices are available.
     metrics["taiex"]["official_close"]=record["value"]
+    if "volume_shares" in record:metrics["taiex"]["official_volume_shares"]=record["volume_shares"]
+    if "turnover_twd" in record:metrics["taiex"]["official_turnover_twd"]=record["turnover_twd"]
     metrics["taiex"]["official_close_date"]=record["date"]
    if kind in ("cash_inst","futures") and record.get("status") in ("ok","partial"):
     metrics["inst"]["status"]="partial"
+    if kind=="futures":metrics["inst"]["value"]=record.get("foreign_tx_net_oi");metrics["inst"]["unit"]="口（期貨外資淨未平倉，待契約確認）";metrics["inst"]["date"]=record.get("date")
+    if kind=="cash_inst":metrics["inst"]["cash_categories"]=record.get("categories",[])
     metrics["inst"]["reason"]="官方現貨與期貨分項資料；勿將不同單位直接相加"
-   old.setdefault("source_checks",{})["tw_"+kind]=NOW.isoformat()
+   if record.get("status") in ("ok","partial"):old.setdefault("source_checks",{})["tw_"+kind]=NOW.isoformat()
    print("Taiwan",kind,record.get("status","schema_pending"),record.get("date",""),flush=True)
   except Exception as exc:
    metrics.setdefault(key,{}).setdefault("official_sources",{})[kind]={"status":"unavailable","reason":type(exc).__name__,"source_url":url}
