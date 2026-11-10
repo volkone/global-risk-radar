@@ -42,6 +42,21 @@ def observations(snapshot):
                     metric.get("source_url") == record.get("source_url")):
                     candidates = [item for item in candidates if item[0] != metric_id]
                 candidates.append((metric_id + "." + source_id, record))
+        # Extract scalar values from separately verified institutional sources.
+        if metric_id == "inst":
+            sources = metric.get("official_sources", {})
+            for source_id in ("cash_inst", "futures"):
+                record = sources.get(source_id, {})
+                if not isinstance(record, dict) or record.get("status") != "ok":
+                    continue
+                if source_id == "cash_inst":
+                    values = [x.get("net_twd") for x in record.get("categories", [])
+                              if isinstance(x, dict) and x.get("name") == "合計"]
+                    value = values[0] if len(values) == 1 else None
+                else:
+                    value = record.get("foreign_tx_net_oi")
+                if isinstance(value, (int, float)) and not isinstance(value, bool) and math.isfinite(value):
+                    candidates.append(("inst." + source_id, dict(record, value=value)))
         for key, record in candidates:
             if record.get("status") != "ok" or record.get("cache_status") == "stale":
                 continue
