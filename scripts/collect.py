@@ -157,6 +157,16 @@ def main():
  pending=old.get("pending_notifications",[])
  for key,a in alerts.items():
   if key not in previous and not any(x["key"]==key for x in pending):pending.append({"key":key,"message":a["message"]})
+ # Monitor source health without repeatedly creating the same incident.
+ streaks={}
+ for key in list(FRED)+["indices","taiex","fx"]:
+  m=metrics[key]
+  failed=(m["status"]=="unavailable" or m.get("cache_status")=="stale" or bool(m.get("last_error")))
+  streaks[key]=(previous_failures.get(key,0)+1) if failed else 0
+  if streaks[key]>=3 and previous_failures.get(key,0)<3:
+   pending.append({"key":"health_"+key,"message":"資料來源連續失敗3次："+key})
+ if STATS["requests"]>=MAX_REQUESTS and old.get("request_stats",{}).get("requests",0)<MAX_REQUESTS:
+  pending.append({"key":"health_budget","message":"API請求達單次上限："+str(MAX_REQUESTS)})
  if pending:
   try:
    if telegram("全球金融風險雷達\n"+"\n".join("• "+p["message"] for p in pending)+"\n詳情請查看儀表板"):pending=[]
