@@ -1,4 +1,5 @@
-import csv,io,json,urllib.request,urllib.parse,datetime,pathlib,os
+import csv,io,json,urllib.request,urllib.parse,datetime,pathlib,os,time
+from concurrent.futures import ThreadPoolExecutor,as_completed
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 OUT=ROOT/"docs"/"data.json"
 NOW=datetime.datetime.now(datetime.timezone.utc)
@@ -13,12 +14,39 @@ def fetch(url):
  req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0"})
  with urllib.request.urlopen(req,timeout=16) as r:return r.read().decode()
 def fred(series):
- data=csv.DictReader(io.StringIO(fetch("https://fred.stlouisfed.org/graph/fredgraph.csv?id="+series)))
- rows=[]
- for r in data:
-  try:rows.append((r.get("DATE") or r.get("observation_date"),float(r[series])))
-  except (ValueError,TypeError,KeyError):pass
- return rows
+ # FRED original feed is preferred. A recent-date filter avoids downloading decades of CSV.
+ since=(NOW-datetime.timedelta(days=130)).date().isoformat()
+ primary="https://fred.stlouisfed.org/graph/fredgraph.csv?id="+series+"&cosd="+since
+ errors=[]
+ for attempt in range(2):
+  try:
+   req=urllib.request.Request(primary,headers={"User-Agent":"Mozilla/5.0","Accept":"text/csv"})
+   with urllib.request.urlopen(req,timeout=9) as response:
+    data=csv.DictReader(io.StringIO(response.read().decode("utf-8-sig")))
+   rows=[]
+   for r in data:
+    try:rows.append((r.get("DATE") or r.get("observation_date"),float(r[series])))
+    except (ValueError,TypeError,KeyError):pass
+   if rows:return rows,"FRED"
+   raise ValueError("FRED CSV has no numeric observations")
+  except Exception as exc:
+   errors.append(type(exc).__name__)
+   if attempt==0:time.sleep(1)
+ # DBnomics mirrors FRED observations. It is a fallback, not an official real-time feed.
+ try:
+  url="https://api.db.nomics.world/v22/series/FRED/"+series+"?observations=1"
+  j=json.loads(fetch(url))
+  doc=j["series"]["docs"][0]
+  rows=[]
+  for date,value in zip(doc["period"],doc["value"]):
+   try:rows.append((date,float(value)))
+   except (TypeError,ValueError):pass
+  rows=[(d,v) for d,v in rows if d>=since]
+  if rows:return rows,"DBnomics (FRED mirror)"
+  raise ValueError("DBnomics has no recent numeric observations")
+ except Exception as exc:
+  errors.append("DBnomics:"+type(exc).__name__)
+  raise RuntimeError("; ".join(errors))
 def yahoo(symbol):
  j=json.loads(fetch("https://query1.finance.yahoo.com/v8/finance/chart/"+symbol+"?range=1y&interval=1d"))["chart"]["result"][0]
  return [(datetime.datetime.fromtimestamp(t,datetime.timezone.utc).strftime("%Y-%m-%d"),float(v)) for t,v in zip(j["timestamp"],j["indicators"]["quote"][0]["close"]) if v is not None]
@@ -36,12 +64,25 @@ def main():
  except (FileNotFoundError,ValueError):old={}
  previous=old.get("active_alerts",{})
  metrics={k:{"name":n,"group":g,"source":s,"frequency":f,"status":"unavailable","reason":"尚未接入可靠來源"} for k,n,g,s,f in CATALOG}
- for k,s in FRED.items():
-  try:
-   a=fred(s);e=entry(a,"https://fred.stlouisfed.org/series/"+s,"index" if k=="nfci" else ("index" if k=="vix" else "%"))
-   if k=="hy" and len(a)>20:e["change20bp"]=round((a[-1][1]-a[-21][1])*100,1)
-   metrics[k].update(e)
-  except Exception as exc:metrics[k]["reason"]="來源錯誤："+type(exc).__name__
+ def fetch_one_fred(item):
+  k,series=item
+  rows,provider=fred(series)
+  e=entry(rows,"https://fred.stlouisfed.org/series/"+series,"index" if k in ("nfci","vix") else "%")
+  e["provider"]=provider
+  if provider.startswith("DBnomics"):e["mirror_url"]="https://db.nomics.world/FRED/"+series
+  if k=="hy" and len(rows)>20:e["change20bp"]=round((rows[-1][1]-rows[-21][1])*100,1)
+  return k,e
+ with ThreadPoolExecutor(max_workers=5) as pool:
+  futures={pool.submit(fetch_one_fred,item):item[0] for item in FRED.items()}
+  for future in as_completed(futures):
+   k=futures[future]
+   try:
+    _,e=future.result()
+    metrics[k].update(e)
+    print("FRED",k,e["provider"],e["date"],e["value"],flush=True)
+   except Exception as exc:
+    metrics[k]["reason"]="來源錯誤："+str(exc)[:150]
+    print("FRED",k,"unavailable",str(exc)[:150],flush=True)
  prices={}
  for k,s in YAHOO.items():
   try:prices[k]=yahoo(s)
@@ -82,7 +123,7 @@ def main():
   try:
    if telegram("全球金融風險雷達\n"+"\n".join("• "+p["message"] for p in pending)+"\n詳情請查看儀表板"):pending=[]
   except Exception as exc:print("Telegram delivery failed:",type(exc).__name__)
- payload={"updated_utc":NOW.isoformat(),"metrics":metrics,"active_alerts":alerts,"pending_notifications":pending,"notes":["無資料不代表安全；免費端點可能延遲或停用","回撤基準：近一年最高收盤價，非個人45,211點加碼基準","18項已列示，但尚未全部完成資料串接"]}
+ payload={"updated_utc":datetime.datetime.now(datetime.timezone.utc).isoformat(),"metrics":metrics,"active_alerts":alerts,"pending_notifications":pending,"notes":["無資料不代表安全；免費端點可能延遲或停用","回撤基準：近一年最高收盤價，非個人45,211點加碼基準","18項已列示，但尚未全部完成資料串接"]}
  OUT.parent.mkdir(parents=True,exist_ok=True)
  OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2))
  print("Updated:",sum(m["status"]=="ok" for m in metrics.values()),"full metrics;",len(alerts),"active alerts")
