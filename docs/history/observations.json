@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-10T16:44:28.954689+00:00",
-  "record_count": 11,
-  "revision_count": 0,
+  "generated_at": "2026-11-10T16:47:20.613670+00:00",
+  "record_count": 10,
+  "revision_count": 2,
   "observations": [
     {
       "metric_id": "fx",
       "provider": "Yahoo Finance 非官方",
       "scope": "",
       "observation_date": "2026-11-10",
-      "value": 33.014,
+      "value": 33.035,
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/"
     },
@@ -18,18 +18,9 @@
       "provider": "Yahoo Finance 非官方",
       "scope": "",
       "observation_date": "2026-11-10",
-      "value": 27635.963,
+      "value": 27587.254,
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ENDX/"
-    },
-    {
-      "metric_id": "margin",
-      "provider": "TWSE",
-      "scope": "TWSE上市市場",
-      "observation_date": "2026-11-10",
-      "value": 536678732000.0,
-      "unit": "TWD",
-      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?selectType=ALL&response=json"
     },
     {
       "metric_id": "margin.margin",
