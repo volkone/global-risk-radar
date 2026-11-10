@@ -7,6 +7,10 @@ class BackfillTests(unittest.TestCase):
     def test_roc_date(self):
         self.assertEqual(parse_roc_date("115年10月05日"), "2026-10-05")
 
+    def test_compact_dates(self):
+        self.assertEqual(parse_roc_date("1151005"), "2026-10-05")
+        self.assertEqual(parse_roc_date("20261005"), "2026-10-05")
+
     def test_margin_thousands_to_twd_and_scope(self):
         obj = {"date": "115年10月05日", "tables": [{"fields": ["項目", "今日餘額"],
             "data": [["融資金額", "536,678,732"]]}]}
