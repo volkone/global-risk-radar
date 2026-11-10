@@ -91,7 +91,9 @@ def main():
  with ThreadPoolExecutor(max_workers=5) as pool:
   futures={pool.submit(fetch_one_fred,item):item[0] for item in FRED.items() if (old.get("metrics",{}).get(item[0],{}).get("provider")!="FRED official API" or due(old,item[0],168 if item[0]=="nfci" else 24))}
   for k in FRED:
-   if not due(old,k,168 if k=="nfci" else 24):\n   if not cached(metrics,old,k):metrics[k].update({field:value for field,value in old.get("metrics",{}).get(k,{}).items() if field not in ("name","group","source","frequency")})
+   if old.get("metrics",{}).get(k,{}).get("provider")=="FRED official API" and not due(old,k,168 if k=="nfci" else 24):
+    if not cached(metrics,old,k):
+     metrics[k].update({field:value for field,value in old.get("metrics",{}).get(k,{}).items() if field not in ("name","group","source","frequency")})
   for future in as_completed(futures):
    k=futures[future]
    try:
