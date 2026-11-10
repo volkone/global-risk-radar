@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "evaluated_at": "2026-11-10T17:43:41.702194+00:00",
-  "snapshot_updated_at": "2026-11-10T17:43:41.541089+00:00",
-  "history_generated_at": "2026-11-10T17:43:41.635813+00:00",
+  "evaluated_at": "2026-11-10T17:50:05.925979+00:00",
+  "snapshot_updated_at": "2026-11-10T17:50:05.701209+00:00",
+  "history_generated_at": "2026-11-10T17:50:05.874102+00:00",
   "summary": {
-    "pass": 9,
+    "pass": 11,
     "caution": 0,
     "blocked": 9
   },
@@ -191,6 +191,22 @@
       "source": "fx",
       "date": "2026-11-10",
       "age_days": 0,
+      "errors": [],
+      "warnings": []
+    },
+    "inst.cash_inst": {
+      "quality": "pass",
+      "source": "inst.cash_inst",
+      "date": "2026-11-10",
+      "age_days": 0,
+      "errors": [],
+      "warnings": []
+    },
+    "inst.futures": {
+      "quality": "pass",
+      "source": "inst.futures",
+      "date": "2026-11-09",
+      "age_days": 1,
       "errors": [],
       "warnings": []
     }
