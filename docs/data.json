@@ -4,14 +4,13 @@
     "tw_tw_price": "2026-11-10T14:18:51.422493+00:00",
     "tw_futures": "2026-11-10T14:18:51.422493+00:00"
   },
-  "updated_utc": "2026-11-10T14:18:57.178255+00:00",
+  "updated_utc": "2026-11-10T14:25:30.890117+00:00",
   "request_stats": {
-    "requests": 10,
-    "success": 10,
+    "requests": 7,
+    "success": 7,
     "failure": 0,
     "by_host": {
-      "openapi.twse.com.tw": 3,
-      "openapi.taifex.com.tw": 1,
+      "www.twse.com.tw": 1,
       "query1.finance.yahoo.com": 6
     },
     "errors": [],
@@ -1994,7 +1993,7 @@
       "drawdown_pct": 10.62,
       "reference": "近一年最高收盤價",
       "spx": 7549.94,
-      "checked_at": "2026-11-10T14:18:51.422493+00:00"
+      "checked_at": "2026-11-10T14:25:29.502580+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -2062,32 +2061,7 @@
       "source": "TWSE/TPEx",
       "frequency": "daily",
       "status": "unavailable",
-      "reason": "尚未接入可靠來源",
-      "official_sources": {
-        "margin": {
-          "checked_at": "2026-11-10T14:18:51.422493+00:00",
-          "source_url": "https://openapi.twse.com.tw/v1/exchangeReport/MI_MARGN",
-          "records": 1306,
-          "sample_fields": [
-            "股票代號",
-            "股票名稱",
-            "融資買進",
-            "融資賣出",
-            "融資現金償還",
-            "融資前日餘額",
-            "融資今日餘額",
-            "融資限額",
-            "融券買進",
-            "融券賣出",
-            "融券現券償還",
-            "融券前日餘額",
-            "融券今日餘額",
-            "融券限額",
-            "資券互抵",
-            "註記"
-          ]
-        }
-      }
+      "reason": "尚未接入可靠來源"
     },
     "maint": {
       "name": "台股融資維持率",
@@ -2102,41 +2076,20 @@
       "group": "台股",
       "source": "TWSE/TAIFEX",
       "frequency": "daily",
-      "status": "partial",
-      "reason": "官方現貨與期貨分項資料；勿將不同單位直接相加",
+      "status": "unavailable",
+      "reason": "尚未接入可靠來源",
       "official_sources": {
         "cash_inst": {
-          "status": "unavailable",
-          "reason": "JSONDecodeError",
-          "source_url": "https://openapi.twse.com.tw/v1/exchangeReport/BFI82U"
-        },
-        "futures": {
-          "checked_at": "2026-11-10T14:18:51.422493+00:00",
-          "source_url": "https://openapi.taifex.com.tw/v1/MarketDataOfMajorInstitutionalTradersDetailsOfFuturesContractsBytheDate",
-          "records": 66,
+          "checked_at": "2026-11-10T14:25:29.502580+00:00",
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?response=json",
+          "records": 6,
           "sample_fields": [
-            "Date",
-            "ContractCode",
-            "Item",
-            "TradingVolume(Long)",
-            "TradingValue(Long)(Thousands)",
-            "TradingVolume(Short)",
-            "TradingValue(Short)(Thousands)",
-            "TradingVolume(Net)",
-            "TradingValue(Net)(Thousands)",
-            "OpenInterest(Long)",
-            "ContractValueofOpenInterest(Long)(Thousands)",
-            "OpenInterest(Short)",
-            "ContractValueofOpenInterest(Short)(Thousands)",
-            "OpenInterest(Net)",
-            "ContractValueofOpenInterest(Net)(Thousands)"
+            "自營商(自行買賣)",
+            "8,231,070,590",
+            "13,770,196,935",
+            "-5,539,126,345"
           ],
-          "status": "partial",
-          "foreign_tx_net_oi": -101771.0,
-          "date": "2026-11-09",
-          "unit": "口",
-          "provider": "TAIFEX",
-          "reason": "外資臺股期貨淨未平倉"
+          "categories": []
         }
       }
     },
@@ -2147,21 +2100,6 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "official_sources": {
-        "tw_price": {
-          "checked_at": "2026-11-10T14:18:51.422493+00:00",
-          "source_url": "https://openapi.twse.com.tw/v1/exchangeReport/FMTQIK",
-          "records": 6,
-          "sample_fields": [
-            "Date",
-            "TradeVolume",
-            "TradeValue",
-            "Transaction",
-            "TAIEX",
-            "Change"
-          ]
-        }
-      },
       "value": 42711.922,
       "date": "2026-11-10",
       "unit": "points",
@@ -2530,7 +2468,7 @@
       ],
       "drawdown_pct": 14.27,
       "reference": "近一年最高收盤價",
-      "checked_at": "2026-11-10T14:18:51.422493+00:00"
+      "checked_at": "2026-11-10T14:25:29.502580+00:00"
     },
     "fx": {
       "name": "美元兌新台幣與美元指數",
@@ -2539,7 +2477,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 32.956,
+      "value": 32.953,
       "date": "2026-11-10",
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/",
@@ -2902,11 +2840,11 @@
         },
         {
           "date": "2026-11-10",
-          "value": 32.956
+          "value": 32.953
         }
       ],
-      "checked_at": "2026-11-10T14:18:51.422493+00:00",
-      "dxy": 102.05
+      "checked_at": "2026-11-10T14:25:29.502580+00:00",
+      "dxy": 102.02
     }
   },
   "active_alerts": {
