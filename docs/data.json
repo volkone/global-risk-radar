@@ -4,7 +4,7 @@
     "tw_tw_price": "2026-11-10T14:18:51.422493+00:00",
     "tw_futures": "2026-11-10T14:18:51.422493+00:00"
   },
-  "updated_utc": "2026-11-10T14:25:30.890117+00:00",
+  "updated_utc": "2026-11-10T14:28:51.598817+00:00",
   "request_stats": {
     "requests": 7,
     "success": 7,
@@ -1993,7 +1993,7 @@
       "drawdown_pct": 10.62,
       "reference": "近一年最高收盤價",
       "spx": 7549.94,
-      "checked_at": "2026-11-10T14:25:29.502580+00:00"
+      "checked_at": "2026-11-10T14:28:50.359578+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -2080,7 +2080,7 @@
       "reason": "尚未接入可靠來源",
       "official_sources": {
         "cash_inst": {
-          "checked_at": "2026-11-10T14:25:29.502580+00:00",
+          "checked_at": "2026-11-10T14:28:50.359578+00:00",
           "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?response=json",
           "records": 6,
           "sample_fields": [
@@ -2468,7 +2468,7 @@
       ],
       "drawdown_pct": 14.27,
       "reference": "近一年最高收盤價",
-      "checked_at": "2026-11-10T14:25:29.502580+00:00"
+      "checked_at": "2026-11-10T14:28:50.359578+00:00"
     },
     "fx": {
       "name": "美元兌新台幣與美元指數",
@@ -2477,7 +2477,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 32.953,
+      "value": 32.954,
       "date": "2026-11-10",
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/",
@@ -2840,11 +2840,11 @@
         },
         {
           "date": "2026-11-10",
-          "value": 32.953
+          "value": 32.954
         }
       ],
-      "checked_at": "2026-11-10T14:25:29.502580+00:00",
-      "dxy": 102.02
+      "checked_at": "2026-11-10T14:28:50.359578+00:00",
+      "dxy": 102.0
     }
   },
   "active_alerts": {
