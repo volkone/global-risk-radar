@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-10T16:44:28.954689+00:00",
+  "record_count": 11,
+  "revision_count": 0,
+  "observations": [
+    {
+      "metric_id": "fx",
+      "provider": "Yahoo Finance 非官方",
+      "scope": "",
+      "observation_date": "2026-11-10",
+      "value": 33.014,
+      "unit": "TWD per USD",
+      "source_url": "https://finance.yahoo.com/quote/TWD=X/"
+    },
+    {
+      "metric_id": "indices",
+      "provider": "Yahoo Finance 非官方",
+      "scope": "",
+      "observation_date": "2026-11-10",
+      "value": 27635.963,
+      "unit": "points",
+      "source_url": "https://finance.yahoo.com/quote/%5ENDX/"
+    },
+    {
+      "metric_id": "margin",
+      "provider": "TWSE",
+      "scope": "TWSE上市市場",
+      "observation_date": "2026-11-10",
+      "value": 536678732000.0,
+      "unit": "TWD",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?selectType=ALL&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "provider": "TWSE",
+      "scope": "TWSE上市市場",
+      "observation_date": "2026-11-10",
+      "value": 536678732000.0,
+      "unit": "TWD",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?selectType=ALL&response=json"
+    },
+    {
+      "metric_id": "taiex",
+      "provider": "Yahoo Finance 非官方",
+      "scope": "",
+      "observation_date": "2026-11-09",
+      "value": 41661.699,
+      "unit": "points",
+      "source_url": "https://finance.yahoo.com/quote/%5ETWII/"
+    },
+    {
+      "metric_id": "taiex.tw_price",
+      "provider": "TWSE",
+      "scope": "",
+      "observation_date": "2026-11-09",
+      "value": 41661.7,
+      "unit": "points",
+      "source_url": "https://openapi.twse.com.tw/v1/exchangeReport/FMTQIK"
+    },
+    {
+      "metric_id": "hy",
+      "provider": "FRED official API",
+      "scope": "",
+      "observation_date": "2026-11-06",
+      "value": 3.42,
+      "unit": "%",
+      "source_url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
+    },
+    {
+      "metric_id": "ig",
+      "provider": "FRED official API",
+      "scope": "",
+      "observation_date": "2026-11-06",
+      "value": 0.93,
+      "unit": "%",
+      "source_url": "https://fred.stlouisfed.org/series/BAMLC0A0CM"
+    },
+    {
+      "metric_id": "us10y",
+      "provider": "FRED official API",
+      "scope": "",
+      "observation_date": "2026-11-06",
+      "value": 4.86,
+      "unit": "%",
+      "source_url": "https://fred.stlouisfed.org/series/DGS10"
+    },
+    {
+      "metric_id": "vix",
+      "provider": "FRED official API",
+      "scope": "",
+      "observation_date": "2026-11-06",
+      "value": 25.64,
+      "unit": "index",
+      "source_url": "https://fred.stlouisfed.org/series/VIXCLS"
+    },
+    {
+      "metric_id": "nfci",
+      "provider": "FRED official API",
+      "scope": "",
+      "observation_date": "2026-10-30",
+      "value": -0.459,
+      "unit": "index",
+      "source_url": "https://fred.stlouisfed.org/series/NFCI"
+    }
+  ]
+}
