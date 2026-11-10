@@ -87,7 +87,7 @@ def parse_cash(obj, requested_month):
              "unit": "TWD", "scope": "TWSE上市市場", "provider": "TWSE"}]
 
 
-def run(month, days=31):
+def run(month, days=31, kinds=("margin", "cash_inst")):
     dt.date.fromisoformat(month + "-01")
     if not 1 <= days <= 31:
         raise ValueError("days must be 1..31")
@@ -101,7 +101,8 @@ def run(month, days=31):
             dt.date.fromisoformat(date)
         except ValueError:
             break
-        for kind, base in URLS.items():
+        for kind in kinds:
+            base = URLS[kind]
             # Each request is one day; cap requests to 2*days.
             url = base + "?" + urllib.parse.urlencode({
                 "date": date.replace("-", ""), "response": "json",
@@ -122,7 +123,7 @@ def run(month, days=31):
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps({"schema_version": 1, "records": list(records.values()),
                                "attempts": attempts[-1000:]}, ensure_ascii=False, indent=2))
-    print("TWSE backfill:", count, "verified observations; maximum requests:", days * 2)
+    print("TWSE backfill:", count, "verified observations; maximum requests:", days * len(kinds))
 
 
 if __name__ == "__main__":
