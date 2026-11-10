@@ -46,35 +46,21 @@ def cached(metrics,old,key):
   return True
  return False
 def fred(series):
- # FRED original feed is preferred. A recent-date filter avoids downloading decades of CSV.
  since=(NOW-datetime.timedelta(days=130)).date().isoformat()
- primary="https://fred.stlouisfed.org/graph/fredgraph.csv?id="+series+"&cosd="+since
- errors=[]
- try:
-  content=fetch(primary)
-  data=csv.DictReader(io.StringIO(content))
-  rows=[]
-  for r in data:
-   try:rows.append((r.get("DATE") or r.get("observation_date"),float(r[series])))
-   except (ValueError,TypeError,KeyError):pass
-  if rows:return rows,"FRED"
-  raise ValueError("FRED CSV has no numeric observations")
- except Exception as exc:errors.append(type(exc).__name__)
- # DBnomics mirrors FRED observations. It is a fallback, not an official real-time feed.
- try:
-  url="https://api.db.nomics.world/v22/series/FRED/"+series+"?observations=1"
-  j=json.loads(fetch(url))
-  doc=j["series"]["docs"][0]
-  rows=[]
-  for date,value in zip(doc["period"],doc["value"]):
-   try:rows.append((date,float(value)))
-   except (TypeError,ValueError):pass
-  rows=[(d,v) for d,v in rows if d>=since]
-  if rows:return rows,"DBnomics (FRED mirror)"
-  raise ValueError("DBnomics has no recent numeric observations")
- except Exception as exc:
-  errors.append("DBnomics:"+type(exc).__name__)
-  raise RuntimeError("; ".join(errors))
+ key=os.getenv("FRED_API_KEY","").strip()
+ if not key:raise RuntimeError("FRED_API_KEY_missing")
+ params=urllib.parse.urlencode({"series_id":series,"api_key":key,"file_type":"json","observation_start":since})
+ url="https://api.stlouisfed.org/fred/series/observations?"+params
+ # Never log the full request URL: it contains the private API key.
+ raw=fetch(url,timeout=12)
+ obj=json.loads(raw)
+ if "error_code" in obj:raise RuntimeError("FRED_API_error_"+str(obj["error_code"]))
+ rows=[]
+ for item in obj.get("observations",[]):
+  try:rows.append((item["date"],float(item["value"])))
+  except (ValueError,TypeError,KeyError):pass
+ if not rows:raise ValueError("FRED_empty_observations")
+ return rows,"FRED official API"
 def yahoo(symbol):
  j=json.loads(fetch("https://query1.finance.yahoo.com/v8/finance/chart/"+symbol+"?range=1y&interval=1d"))["chart"]["result"][0]
  return [(datetime.datetime.fromtimestamp(t,datetime.timezone.utc).strftime("%Y-%m-%d"),float(v)) for t,v in zip(j["timestamp"],j["indicators"]["quote"][0]["close"]) if v is not None]
@@ -103,7 +89,7 @@ def main():
   if k=="hy" and len(rows)>20:e["change20bp"]=round((rows[-1][1]-rows[-21][1])*100,1)
   return k,e
  with ThreadPoolExecutor(max_workers=5) as pool:
-  futures={pool.submit(fetch_one_fred,item):item[0] for item in FRED.items() if due(old,item[0],168 if item[0]=="nfci" else 24)}
+  futures={pool.submit(fetch_one_fred,item):item[0] for item in FRED.items() if (os.getenv("FORCE_FRED_REFRESH")=="1" or due(old,item[0],168 if item[0]=="nfci" else 24))}
   for k in FRED:
    if not due(old,k,168 if k=="nfci" else 24):\n   if not cached(metrics,old,k):metrics[k].update({field:value for field,value in old.get("metrics",{}).get(k,{}).items() if field not in ("name","group","source","frequency")})
   for future in as_completed(futures):
@@ -114,7 +100,7 @@ def main():
     print("FRED",k,e["provider"],e["date"],e["value"],flush=True)
    except Exception as exc:
     if not cached(metrics,old,k):metrics[k]["reason"]="來源錯誤："+str(exc)[:150]
-    metrics[k]["last_error"]=str(exc)[:150]
+    metrics[k]["last_error"]=str(exc)[:150]\n    metrics[k]["checked_at"]=NOW.isoformat()
     print("FRED",k,"unavailable",str(exc)[:150],flush=True)
  prices={}
  for k,s in YAHOO.items():
