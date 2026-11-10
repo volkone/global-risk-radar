@@ -1,0 +1,41 @@
+name: Verify TWSE historical backfill
+on:
+  workflow_dispatch:
+    inputs:
+      month:
+        description: 'Month YYYY-MM (official listed market)'
+        required: true
+        default: '2026-10'
+      days:
+        description: 'Days to probe from start of month (max 23, two requests/day)'
+        required: true
+        default: '5'
+permissions:
+  contents: write
+concurrency:
+  group: twse-history-backfill
+  cancel-in-progress: false
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run regression tests
+        run: python -m unittest discover -s tests -v
+      - name: Query and verify historical TWSE observations
+        run: python scripts/backfill_twse.py --month "${{ inputs.month }}" --days "${{ inputs.days }}"
+      - name: Persist only validated provenance records
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add storage/twse_backfill.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Backfill verified TWSE observations [skip ci]'
+            git fetch origin main
+            git rebase -X ours origin/main
+            git push origin HEAD:main
+          fi
