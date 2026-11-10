@@ -27,8 +27,8 @@ def main():
     if next_month is None:
         print("TWSE backfill: all 36 months attempted; audit coverage before use")
         return
-    # Cash endpoint did not honor historical dates in the first audit; disable until verified.
-    run(next_month, 31, kinds=("margin",))
+    # TWSE BFI82U historical query now uses dayDate + type=day.
+    run(next_month, 31, kinds=("margin", "cash_inst"))
     done.add(next_month)
     payload = json.loads(OUT.read_text())
     progress = {"attempted_months": sorted(done),
