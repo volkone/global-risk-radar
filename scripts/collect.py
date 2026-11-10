@@ -73,6 +73,98 @@ def telegram(msg):
  data=urllib.parse.urlencode({"chat_id":chat,"text":msg}).encode()
  req=urllib.request.Request("https://api.telegram.org/bot"+token+"/sendMessage",data=data,method="POST")
  with urllib.request.urlopen(req,timeout=12) as r:return r.status==200
+
+# Taiwan official public-data endpoints; field mappings are validated before publishing values.
+TW_ENDPOINTS={
+ "margin":"https://openapi.twse.com.tw/v1/exchangeReport/MI_MARGN",
+ "cash_inst":"https://openapi.twse.com.tw/v1/exchangeReport/BFI82U",
+ "tw_price":"https://openapi.twse.com.tw/v1/exchangeReport/FMTQIK",
+ "futures":"https://openapi.taifex.com.tw/v1/MarketDataOfMajorInstitutionalTradersDetailsOfFuturesContractsBytheDate",
+}
+def num(value):
+ if value is None:return None
+ try:return float(str(value).replace(",","").replace("%","").strip())
+ except (ValueError,TypeError):return None
+def pick(row,*names):
+ for name in names:
+  if name in row and row[name] not in (None,"","--","-"):return row[name]
+ return None
+def date_of(row):
+ raw=str(pick(row,"Date","date","日期","交易日期","日期(交易日)") or "")
+ if len(raw)==8 and raw.isdigit():return raw[:4]+"-"+raw[4:6]+"-"+raw[6:]
+ if "/" in raw:
+  p=raw.split("/")
+  if len(p)==3 and all(v.isdigit() for v in p):
+   year=int(p[0]);return f"{year+1911 if year<1911 else year:04d}-{int(p[1]):02d}-{int(p[2]):02d}"
+ return raw[:10] if len(raw)>=10 else ""
+def official_rows(url):
+ obj=json.loads(fetch(url,timeout=12))
+ if isinstance(obj,list):return obj
+ if isinstance(obj,dict):
+  for field in ("data","Data","records"):
+   if isinstance(obj.get(field),list):return obj[field]
+ raise ValueError("unexpected_official_schema")
+def taiwan(metrics,old):
+ # At most four official calls per 24h; preserve previously verified snapshots on failure.
+ for kind,url in TW_ENDPOINTS.items():
+  key="margin" if kind=="margin" else ("taiex" if kind=="tw_price" else "inst")
+  stamp=old.get("source_checks",{}).get("tw_"+kind)
+  if stamp:
+   try:
+    if (NOW-datetime.datetime.fromisoformat(stamp)).total_seconds()<86400:continue
+   except ValueError:pass
+   continue
+  try:
+   rows=official_rows(url)
+   if not rows:raise ValueError("empty_official_data")
+   record={"checked_at":NOW.isoformat(),"source_url":url,"records":len(rows),"sample_fields":list(rows[0])[:30]}
+   if kind=="margin":
+    # MI_MARGN may contain both market totals and per-security records.
+    totals=[r for r in rows if any("合計" in str(v) or "總計" in str(v) for v in r.values())]
+    for r in totals:
+     value=num(pick(r,"融資今日餘額","融資餘額","MarginPurchaseTodayBalance","融資餘額(仟元)"))
+     if value is not None:
+      record.update({"status":"ok","value":value,"date":date_of(r),"unit":"來源原始單位","provider":"TWSE","reason":"請核對官方欄位單位"})
+      break
+   elif kind=="cash_inst":
+    record["categories"]=[]
+    for r in rows:
+     name=pick(r,"單位名稱","名稱","Name")
+     net=num(pick(r,"買賣差額","買賣超金額","買賣超","Difference"))
+     if name is not None and net is not None:record["categories"].append({"name":name,"net":net})
+    if record["categories"]:
+     record.update({"status":"partial","date":date_of(rows[0]),"provider":"TWSE","reason":"已取得法人分項；需確認原始金額單位"})
+   elif kind=="tw_price":
+    r=rows[-1]
+    value=num(pick(r,"TradeIndex","發行量加權股價指數","加權指數"))
+    volume=num(pick(r,"TradeVolume","成交股數"))
+    amount=num(pick(r,"TradeValue","成交金額"))
+    if value is not None:
+     record.update({"status":"ok","value":value,"date":date_of(r),"unit":"points","provider":"TWSE"})
+     if volume is not None:record["volume_shares"]=volume
+     if amount is not None:record["turnover_twd"]=amount
+   elif kind=="futures":
+    candidates=[r for r in rows if str(pick(r,"ContractCode","商品名稱","契約") or "") in ("臺股期貨","台股期貨","TX") and "外資" in str(pick(r,"Item","身份別","交易人類別") or "")]
+    for r in candidates:
+     net=num(pick(r,"OpenInterest(Net)","未平倉口數(淨額)","未平倉淨額"))
+     if net is not None:
+      record.update({"status":"partial","foreign_tx_net_oi":net,"date":date_of(r),"unit":"口","provider":"TAIFEX","reason":"外資臺股期貨淨未平倉"})
+      break
+   metrics.setdefault(key,{}).setdefault("official_sources",{})[kind]=record
+   if kind=="margin" and record.get("status")=="ok":metrics["margin"].update({k:v for k,v in record.items() if k!="sample_fields"})
+   if kind=="tw_price" and record.get("status")=="ok":
+    # Keep Yahoo one-year drawdown until official historical prices are available.
+    metrics["taiex"]["official_close"]=record["value"]
+    metrics["taiex"]["official_close_date"]=record["date"]
+   if kind in ("cash_inst","futures") and record.get("status") in ("ok","partial"):
+    metrics["inst"]["status"]="partial"
+    metrics["inst"]["reason"]="官方現貨與期貨分項資料；勿將不同單位直接相加"
+   old.setdefault("source_checks",{})["tw_"+kind]=NOW.isoformat()
+   print("Taiwan",kind,record.get("status","schema_pending"),record.get("date",""),flush=True)
+  except Exception as exc:
+   metrics.setdefault(key,{}).setdefault("official_sources",{})[kind]={"status":"unavailable","reason":type(exc).__name__,"source_url":url}
+   print("Taiwan",kind,"unavailable",type(exc).__name__,flush=True)
+
 def main():
  try:old=json.loads(OUT.read_text())
  except (FileNotFoundError,ValueError):old={}
@@ -105,6 +197,7 @@ def main():
     metrics[k]["last_error"]=str(exc)[:150]
     metrics[k]["checked_at"]=NOW.isoformat()
     print("FRED",k,"unavailable",str(exc)[:150],flush=True)
+ taiwan(metrics,old)
  prices={}
  for k,s in YAHOO.items():
   try:prices[k]=yahoo(s)
@@ -160,7 +253,7 @@ def main():
   try:
    if telegram("全球金融風險雷達\n"+"\n".join("• "+p["message"] for p in pending)+"\n詳情請查看儀表板"):pending=[]
   except Exception as exc:print("Telegram delivery failed:",type(exc).__name__)
- payload={"updated_utc":datetime.datetime.now(datetime.timezone.utc).isoformat(),"request_stats":STATS,"source_failure_streaks":streaks,"metrics":metrics,"active_alerts":alerts,"pending_notifications":pending,"notes":["無資料不代表安全；免費端點可能延遲或停用","回撤基準：近一年最高收盤價，非個人45,211點加碼基準","18項已列示，但尚未全部完成資料串接"]}
+ payload={"source_checks":old.get("source_checks",{}),"updated_utc":datetime.datetime.now(datetime.timezone.utc).isoformat(),"request_stats":STATS,"source_failure_streaks":streaks,"metrics":metrics,"active_alerts":alerts,"pending_notifications":pending,"notes":["無資料不代表安全；免費端點可能延遲或停用","回撤基準：近一年最高收盤價，非個人45,211點加碼基準","18項已列示，但尚未全部完成資料串接"]}
  OUT.parent.mkdir(parents=True,exist_ok=True)
  OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2))
  print("Updated:",sum(m["status"]=="ok" for m in metrics.values()),"full metrics;",len(alerts),"active alerts; requests",STATS["requests"],"failures",STATS["failure"])
