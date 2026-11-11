@@ -1,0 +1,52 @@
+name: Repair 2024-01-29 TWSE gaps and re-audit
+on:
+  push:
+    paths:
+      - '.github/workflows/repair_20240129.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: twse-history-backfill
+  cancel-in-progress: false
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run regression tests
+        run: python -m unittest discover -s tests -v
+      - name: Fetch only missing official TWSE records
+        run: python -m scripts.repair_twse_dates --execute
+      - name: Re-audit against verified 726-session calendar
+        id: audit
+        continue-on-error: true
+        run: |
+          python scripts/audit_calendar.py \
+            --calendar storage/official_calendar/trading_days.csv \
+            --source-url https://www.twse.com.tw/rwd/zh/afterTrading/FMTQIK \
+            --retrieved-at "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+      - name: Persist records and acceptance report
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add storage/twse_backfill.json
+          if [ -f docs/calendar_coverage_audit.json ]; then
+            git add docs/calendar_coverage_audit.json
+          fi
+          if ! git diff --cached --quiet; then
+            git commit -m 'Repair official TWSE 2024-01-29 gaps and re-audit [skip ci]'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
+      - name: Enforce acceptance
+        if: always() && steps.audit.outcome != 'success'
+        run: |
+          echo '2024-01-29 TWSE data gap remains; formal backtest blocked'
+          exit 1
