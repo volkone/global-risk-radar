@@ -17,6 +17,7 @@ on:
         default: '20'
 permissions:
   contents: write
+  actions: write
 concurrency:
   group: taifex-three-year-collection
   cancel-in-progress: false
