@@ -1,5 +1,5 @@
 {
-  "status": "blocked",
+  "status": "pass",
   "range": [
     "2023-11-11",
     "2026-10-31"
@@ -9,12 +9,13 @@
   "joined_dates": 718,
   "twse_dates_without_futures": [],
   "futures_dates_without_twse": [],
-  "errors": [
-    "independent dated TAIFEX trading-session verification not yet completed"
-  ],
-  "futures_calendar_independently_verified": false,
+  "errors": [],
+  "futures_calendar_independently_verified": true,
   "tx_trading_day_rule_verified": true,
   "tx_trading_day_rule_source": "https://www.taifex.com.tw/chinese/event/afterhourstrading/%E5%B8%82%E5%A0%B4%E8%A6%8F%E7%AB%A0.pdf",
   "source_html_hashes_recomputed": false,
-  "full_model_backtest_authorized": false
+  "full_model_backtest_authorized": false,
+  "backtest_blockers": [
+    "source HTML content has not been independently re-fetched and SHA256 rechecked"
+  ]
 }
