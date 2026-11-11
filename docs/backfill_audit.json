@@ -1,10 +1,10 @@
 {
   "status": "partial_verified",
-  "accepted_unique_records": 396,
+  "accepted_unique_records": 518,
   "duplicate_records": 0,
-  "attempt_count": 806,
-  "accepted_attempt_count": 491,
-  "rejected_attempt_count": 315,
+  "attempt_count": 990,
+  "accepted_attempt_count": 613,
+  "rejected_attempt_count": 377,
   "rejections": [
     {
       "kind": "cash_inst",
@@ -19,7 +19,7 @@
     {
       "kind": "cash_inst",
       "reason": "ValueError:cash_response_date_not_requested_month",
-      "count": 164
+      "count": 195
     },
     {
       "kind": "margin",
@@ -29,7 +29,7 @@
     {
       "kind": "margin",
       "reason": "ValueError:margin_response_date_not_requested_month",
-      "count": 145
+      "count": 176
     }
   ],
   "months": {
@@ -132,6 +132,39 @@
       "cash_missing_vs_margin_dates": [],
       "margin_missing_vs_cash_dates": [],
       "paired_observation_dates": 21,
+      "official_trading_day_count": null,
+      "trading_day_completeness": null,
+      "reason": "Official trading calendar and verified listed-market sessions not joined"
+    },
+    "2024-08": {
+      "margin_unique_dates": 22,
+      "cash_unique_dates": 22,
+      "weekday_reference_count_not_official_calendar": 22,
+      "cash_missing_vs_margin_dates": [],
+      "margin_missing_vs_cash_dates": [],
+      "paired_observation_dates": 22,
+      "official_trading_day_count": null,
+      "trading_day_completeness": null,
+      "reason": "Official trading calendar and verified listed-market sessions not joined"
+    },
+    "2024-09": {
+      "margin_unique_dates": 20,
+      "cash_unique_dates": 20,
+      "weekday_reference_count_not_official_calendar": 21,
+      "cash_missing_vs_margin_dates": [],
+      "margin_missing_vs_cash_dates": [],
+      "paired_observation_dates": 20,
+      "official_trading_day_count": null,
+      "trading_day_completeness": null,
+      "reason": "Official trading calendar and verified listed-market sessions not joined"
+    },
+    "2024-10": {
+      "margin_unique_dates": 19,
+      "cash_unique_dates": 19,
+      "weekday_reference_count_not_official_calendar": 23,
+      "cash_missing_vs_margin_dates": [],
+      "margin_missing_vs_cash_dates": [],
+      "paired_observation_dates": 19,
       "official_trading_day_count": null,
       "trading_day_completeness": null,
       "reason": "Official trading calendar and verified listed-market sessions not joined"
