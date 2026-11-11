@@ -13,7 +13,7 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/"storage"/"official_calendar"
-BASE="https://www.twse.com.tw/rwd/zh/indicesReport/FMTQIK"
+BASE="https://www.twse.com.tw/rwd/zh/exchangeReport/FMTQIK"
 
 def fetch_month(year,month):
     url=BASE+"?"+urllib.parse.urlencode({"response":"json","date":f"{year:04d}{month:02d}01"})
