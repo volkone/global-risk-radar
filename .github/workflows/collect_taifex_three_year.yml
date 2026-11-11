@@ -3,12 +3,14 @@ on:
   push:
     paths:
       - '.github/workflows/collect_taifex_three_year.yml'
+  schedule:
+    - cron: "17,47 * * * *"
   workflow_dispatch:
     inputs:
       offset:
         description: 'TWSE reference session offset (0..717)'
         required: false
-        default: '0'
+        default: '-1'
       limit:
         description: 'Maximum dates per run (1..30)'
         required: false
@@ -31,7 +33,7 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Collect bounded TXF foreign OI batch with per-date checkpoints
         env:
-          BATCH_OFFSET: ${{ inputs.offset || '0' }}
+          BATCH_OFFSET: ${{ inputs.offset || '-1' }}
           BATCH_LIMIT: ${{ inputs.limit || '20' }}
         run: python scripts/collect_taifex_three_year.py --offset "$BATCH_OFFSET" --limit "$BATCH_LIMIT"
       - name: Audit completeness and source identity (expected blocked until full calendar)
