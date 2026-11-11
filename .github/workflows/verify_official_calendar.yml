@@ -3,6 +3,8 @@ on:
   push:
     paths:
       - '.github/workflows/verify_official_calendar.yml'
+      - 'scripts/fetch_official_calendar.py'
+      - 'scripts/build_official_calendar.py'
   workflow_dispatch:
 permissions:
   contents: write
