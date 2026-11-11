@@ -1,0 +1,41 @@
+name: Audit TAIFEX TX foreign OI readiness
+on:
+  push:
+    paths:
+      - '.github/workflows/audit_taifex.yml'
+      - 'scripts/audit_taifex_coverage.py'
+      - 'storage/taifex_backfill.json'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Regression tests
+        run: python -m unittest discover -s tests -v
+      - name: Audit TX foreign open interest and cross-market dates
+        id: audit
+        continue-on-error: true
+        run: python scripts/audit_taifex_coverage.py
+      - name: Persist audit evidence
+        if: always()
+        run: |
+          if [ -f docs/taifex_coverage_audit.json ]; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add docs/taifex_coverage_audit.json
+            if ! git diff --cached --quiet; then
+              git commit -m 'Record TAIFEX readiness audit [skip ci]'
+              git fetch origin main
+              git rebase origin/main
+              git push origin HEAD:main
+            fi
+          fi
+      - name: Enforce complete futures source gate
+        if: always() && steps.audit.outcome != 'success'
+        run: exit 1
