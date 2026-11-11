@@ -80,11 +80,11 @@ def atomic_json(path, data):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--limit", type=int, default=20, help="maximum attempted dates, 1..30")
-    parser.add_argument("--offset", type=int, default=0, help="start at candidate-date index")
+    parser.add_argument("--offset", type=int, default=-1, help="-1 automatically resumes next batch; >=0 selects candidate-date index")
     parser.add_argument("--timeout", type=int, default=12)
     args = parser.parse_args()
-    if not 1 <= args.limit <= 30 or args.offset < 0 or not 1 <= args.timeout <= 30:
-        parser.error("limit must be 1..30, offset >=0, timeout 1..30")
+    if not 1 <= args.limit <= 30 or args.offset < -1 or not 1 <= args.timeout <= 30:
+        parser.error("limit must be 1..30, offset >=-1, timeout 1..30")
 
     with (ROOT / "storage/official_calendar/trading_days.csv").open(encoding="utf-8-sig", newline="") as f:
         dates = sorted(r["date"] for r in csv.DictReader(f)
@@ -93,6 +93,8 @@ def main():
     accepted = {r["date"]: r for r in previous.get("records", [])
                 if r.get("metric_id") == "inst.futures" and START <= r.get("date", "") <= END}
     previous_report = json.loads(REPORT.read_text(encoding="utf-8")) if REPORT.exists() else {}
+    if args.offset == -1:
+        args.offset = int(previous_report.get("last_batch_offset", 0)) + int(previous_report.get("last_batch_size", 0))
     failures = {r["date"]: r for r in previous_report.get("errors", []) if "date" in r}
     attempts = 0
     newly_accepted = 0
