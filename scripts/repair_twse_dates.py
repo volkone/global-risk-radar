@@ -9,7 +9,7 @@ import urllib.parse
 from pathlib import Path
 from scripts.backfill_twse import OUT, URLS, request_json, parse_margin, parse_cash
 
-TARGETS = (("2023-12-29", "cash_inst"), ("2024-01-24", "margin"))
+TARGETS = (("2023-12-29", "cash_inst"), ("2024-01-24", "margin"), ("2024-01-29", "margin"), ("2024-01-29", "cash_inst"))
 
 def repair(fetch=request_json, path=OUT):
     payload = json.loads(path.read_text(encoding="utf-8"))
@@ -43,7 +43,7 @@ def repair(fetch=request_json, path=OUT):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--execute", action="store_true", help="Perform two targeted official TWSE requests")
+    parser.add_argument("--execute", action="store_true", help="Perform only missing targeted official TWSE requests")
     args = parser.parse_args()
     if not args.execute:
         parser.error("explicit --execute required; default is no network and no mutation")
