@@ -4,30 +4,10 @@
     "2023-11-11",
     "2026-10-31"
   ],
-  "taifex_observations": 340,
+  "taifex_observations": 360,
   "twse_sessions": 718,
-  "joined_dates": 340,
+  "joined_dates": 360,
   "twse_dates_without_futures": [
-    "2025-04-15",
-    "2025-04-16",
-    "2025-04-17",
-    "2025-04-18",
-    "2025-04-21",
-    "2025-04-22",
-    "2025-04-23",
-    "2025-04-24",
-    "2025-04-25",
-    "2025-04-28",
-    "2025-04-29",
-    "2025-04-30",
-    "2025-05-02",
-    "2025-05-05",
-    "2025-05-06",
-    "2025-05-07",
-    "2025-05-08",
-    "2025-05-09",
-    "2025-05-12",
-    "2025-05-13",
     "2025-05-14",
     "2025-05-15",
     "2025-05-16",
@@ -390,7 +370,7 @@
   "futures_dates_without_twse": [],
   "errors": [
     "independent TAIFEX trading-session calendar not yet verified",
-    "TWSE dates without futures observation: 378; requires independent futures-session classification"
+    "TWSE dates without futures observation: 358; requires independent futures-session classification"
   ],
   "futures_calendar_independently_verified": false,
   "full_model_backtest_authorized": false
