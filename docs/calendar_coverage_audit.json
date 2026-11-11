@@ -1,26 +1,22 @@
 {
-  "status": "blocked",
+  "status": "pass",
   "calendar_days": 1096,
   "metrics": {
     "margin.margin": {
       "expected_sessions": 726,
-      "observed_sessions": 725,
-      "missing_dates": [
-        "2024-01-29"
-      ],
+      "observed_sessions": 726,
+      "missing_dates": [],
       "unexpected_dates": [],
-      "coverage_ratio": 0.9986225895316805
+      "coverage_ratio": 1.0
     },
     "inst.cash_inst": {
       "expected_sessions": 726,
-      "observed_sessions": 725,
-      "missing_dates": [
-        "2024-01-29"
-      ],
+      "observed_sessions": 726,
+      "missing_dates": [],
       "unexpected_dates": [],
-      "coverage_ratio": 0.9986225895316805
+      "coverage_ratio": 1.0
     }
   },
-  "calendar_source_url": "https://www.twse.com.tw/rwd/zh/indicesReport/FMTQIK",
-  "calendar_retrieved_at": "2026-11-11T06:07:30Z"
+  "calendar_source_url": "https://www.twse.com.tw/rwd/zh/afterTrading/FMTQIK",
+  "calendar_retrieved_at": "2026-11-11T06:09:58Z"
 }

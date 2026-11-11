@@ -1119,6 +1119,24 @@
     },
     {
       "metric_id": "inst.cash_inst",
+      "date": "2024-01-29",
+      "value": 16915464790,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20240129&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2024-01-29",
+      "value": 247456105000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20240129&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
       "date": "2024-01-30",
       "value": 278642833,
       "unit": "TWD",
@@ -13054,16 +13072,6 @@
   ],
   "attempts": [
     {
-      "requested_date": "2025-06-20",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2025-06-20",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
       "requested_date": "2025-06-21",
       "kind": "margin",
       "status": "rejected",
@@ -18385,6 +18393,16 @@
     {
       "requested_date": "2024-01-24",
       "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2024-01-29",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2024-01-29",
+      "kind": "cash_inst",
       "status": "accepted"
     }
   ]
