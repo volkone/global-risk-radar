@@ -23,13 +23,22 @@ def months():
 def main():
     progress = json.loads(STATE.read_text()) if STATE.exists() else {"attempted_months": []}
     done = set(progress["attempted_months"])
-    next_month = next((m for m in months() if m not in done), None)
+    # Gate: October 2026 cash history must be verified before three-year expansion.
+    oct_cash = {r["date"] for r in json.loads(OUT.read_text()).get("records", [])
+                if r["metric_id"] == "inst.cash_inst" and r["date"].startswith("2026-10")} if OUT.exists() else set()
+    if len(oct_cash) < 15:
+        next_month = "2026-10"
+        print("Validation gate: October 2026 institutional cash records", len(oct_cash), "/ 15 minimum")
+    else:
+        next_month = next((m for m in months() if m not in done), None)
     if next_month is None:
         print("TWSE backfill: all 36 months attempted; audit coverage before use")
         return
     # TWSE BFI82U historical query now uses dayDate + type=day.
     run(next_month, 31, kinds=("margin", "cash_inst"))
-    done.add(next_month)
+    if next_month != "2026-10" or len({r["date"] for r in json.loads(OUT.read_text()).get("records", [])
+                                     if r["metric_id"] == "inst.cash_inst" and r["date"].startswith("2026-10")}) >= 15:
+        done.add(next_month)
     payload = json.loads(OUT.read_text())
     progress = {"attempted_months": sorted(done),
                 "accepted_records": len(payload["records"]),
