@@ -5,7 +5,7 @@
     "tw_margin": "2026-11-11T16:43:06.654465+00:00",
     "tw_tw_price": "2026-11-11T16:43:06.654465+00:00"
   },
-  "updated_utc": "2026-11-11T17:18:35.751645+00:00",
+  "updated_utc": "2026-11-11T17:25:58.599736+00:00",
   "request_stats": {
     "requests": 6,
     "success": 6,
@@ -1628,7 +1628,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 28509.301,
+      "value": 28533.639,
       "date": "2026-11-11",
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ENDX/",
@@ -1991,13 +1991,13 @@
         },
         {
           "date": "2026-11-11",
-          "value": 28509.301
+          "value": 28533.639
         }
       ],
-      "drawdown_pct": 8.7,
+      "drawdown_pct": 8.62,
       "reference": "近一年最高收盤價",
-      "spx": 7627.13,
-      "checked_at": "2026-11-11T17:18:34.755258+00:00"
+      "spx": 7630.36,
+      "checked_at": "2026-11-11T17:25:57.815881+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -2006,7 +2006,7 @@
       "frequency": "daily",
       "status": "partial",
       "reason": "只有半導體相對強弱，市場廣度未取得",
-      "value": 0.3765,
+      "value": 0.3768,
       "date": "2026-11-11",
       "unit": "SOX/NDX",
       "source_url": "https://finance.yahoo.com/quote/%5ESOX/"
@@ -2621,7 +2621,7 @@
       ],
       "drawdown_pct": 14.27,
       "reference": "近一年最高收盤價",
-      "checked_at": "2026-11-11T17:18:34.755258+00:00"
+      "checked_at": "2026-11-11T17:25:57.815881+00:00"
     },
     "fx": {
       "name": "美元兌新台幣與美元指數",
@@ -2630,7 +2630,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 32.884,
+      "value": 32.885,
       "date": "2026-11-11",
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/",
@@ -2993,11 +2993,11 @@
         },
         {
           "date": "2026-11-11",
-          "value": 32.884
+          "value": 32.885
         }
       ],
-      "checked_at": "2026-11-11T17:18:34.755258+00:00",
-      "dxy": 102.93
+      "checked_at": "2026-11-11T17:25:57.815881+00:00",
+      "dxy": 102.96
     }
   },
   "active_alerts": {
