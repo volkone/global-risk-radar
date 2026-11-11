@@ -4,7 +4,7 @@ on:
     paths:
       - '.github/workflows/collect_taifex_three_year.yml'
   schedule:
-    - cron: "17,47 * * * *"
+    - cron: "*/5 * * * *"
   workflow_dispatch:
     inputs:
       offset:
