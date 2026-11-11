@@ -1,35 +1,20 @@
 {
   "status": "partial_verified",
-  "accepted_unique_records": 754,
+  "accepted_unique_records": 882,
   "duplicate_records": 0,
   "attempt_count": 1000,
-  "accepted_attempt_count": 650,
-  "rejected_attempt_count": 350,
+  "accepted_attempt_count": 668,
+  "rejected_attempt_count": 332,
   "rejections": [
     {
       "kind": "cash_inst",
-      "reason": "HTTPError:HTTP Error 307: Temporary Redirect",
-      "count": 2
-    },
-    {
-      "kind": "cash_inst",
-      "reason": "TimeoutError:The read operation timed out",
-      "count": 1
-    },
-    {
-      "kind": "cash_inst",
       "reason": "ValueError:cash_response_date_not_requested_month",
-      "count": 172
-    },
-    {
-      "kind": "margin",
-      "reason": "HTTPError:HTTP Error 307: Temporary Redirect",
-      "count": 3
+      "count": 166
     },
     {
       "kind": "margin",
       "reason": "ValueError:margin_response_date_not_requested_month",
-      "count": 172
+      "count": 166
     }
   ],
   "months": {
@@ -231,6 +216,39 @@
       "cash_missing_vs_margin_dates": [],
       "margin_missing_vs_cash_dates": [],
       "paired_observation_dates": 20,
+      "official_trading_day_count": null,
+      "trading_day_completeness": null,
+      "reason": "Official trading calendar and verified listed-market sessions not joined"
+    },
+    "2025-05": {
+      "margin_unique_dates": 20,
+      "cash_unique_dates": 20,
+      "weekday_reference_count_not_official_calendar": 22,
+      "cash_missing_vs_margin_dates": [],
+      "margin_missing_vs_cash_dates": [],
+      "paired_observation_dates": 20,
+      "official_trading_day_count": null,
+      "trading_day_completeness": null,
+      "reason": "Official trading calendar and verified listed-market sessions not joined"
+    },
+    "2025-06": {
+      "margin_unique_dates": 21,
+      "cash_unique_dates": 21,
+      "weekday_reference_count_not_official_calendar": 21,
+      "cash_missing_vs_margin_dates": [],
+      "margin_missing_vs_cash_dates": [],
+      "paired_observation_dates": 21,
+      "official_trading_day_count": null,
+      "trading_day_completeness": null,
+      "reason": "Official trading calendar and verified listed-market sessions not joined"
+    },
+    "2025-07": {
+      "margin_unique_dates": 23,
+      "cash_unique_dates": 23,
+      "weekday_reference_count_not_official_calendar": 23,
+      "cash_missing_vs_margin_dates": [],
+      "margin_missing_vs_cash_dates": [],
+      "paired_observation_dates": 23,
       "official_trading_day_count": null,
       "trading_day_completeness": null,
       "reason": "Official trading calendar and verified listed-market sessions not joined"
