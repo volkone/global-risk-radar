@@ -7,6 +7,9 @@ Never fabricates TAIFEX history or changes the live risk score.
 import argparse
 import datetime as dt
 import json
+import os
+import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -19,10 +22,38 @@ URLS = {
 }
 
 
+# One worker per workflow (concurrency group); delay every HTTP attempt.
+REQUEST_DELAY_SECONDS = float(os.getenv("TWSE_REQUEST_DELAY_SECONDS", "1.5"))
+RETRY_BACKOFF_SECONDS = float(os.getenv("TWSE_RETRY_BACKOFF_SECONDS", "3"))
+MAX_RETRIES = 2
+RETRYABLE_HTTP = {307, 408, 429, 500, 502, 503, 504}
+
+
 def request_json(url):
+    if REQUEST_DELAY_SECONDS < 0 or RETRY_BACKOFF_SECONDS < 0:
+        raise ValueError("request delays must be nonnegative")
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0", "Accept": "application/json"})
-    with urllib.request.urlopen(req, timeout=20) as r:
-        return json.load(r)
+    for attempt in range(MAX_RETRIES + 1):
+        time.sleep(REQUEST_DELAY_SECONDS)
+        try:
+            with urllib.request.urlopen(req, timeout=20) as response:
+                return json.load(response)
+        except urllib.error.HTTPError as exc:
+            if exc.code not in RETRYABLE_HTTP or attempt == MAX_RETRIES:
+                raise
+            retry_after = exc.headers.get("Retry-After") if exc.headers else None
+            try:
+                wait = min(60, max(0, float(retry_after))) if retry_after else RETRY_BACKOFF_SECONDS * (2 ** attempt)
+            except ValueError:
+                wait = RETRY_BACKOFF_SECONDS * (2 ** attempt)
+            time.sleep(wait)
+        except (TimeoutError, urllib.error.URLError) as exc:
+            if isinstance(exc, urllib.error.URLError) and not isinstance(exc.reason, (TimeoutError, ConnectionError, OSError)):
+                raise
+            if attempt == MAX_RETRIES:
+                raise
+            time.sleep(RETRY_BACKOFF_SECONDS * (2 ** attempt))
+    raise RuntimeError("retry loop exhausted")
 
 
 def money(value):
