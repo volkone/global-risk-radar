@@ -1,10 +1,10 @@
 {
   "status": "partial_verified",
-  "accepted_unique_records": 164,
+  "accepted_unique_records": 272,
   "duplicate_records": 0,
-  "attempt_count": 442,
-  "accepted_attempt_count": 259,
-  "rejected_attempt_count": 183,
+  "attempt_count": 622,
+  "accepted_attempt_count": 367,
+  "rejected_attempt_count": 255,
   "rejections": [
     {
       "kind": "cash_inst",
@@ -19,7 +19,7 @@
     {
       "kind": "cash_inst",
       "reason": "ValueError:cash_response_date_not_requested_month",
-      "count": 98
+      "count": 134
     },
     {
       "kind": "margin",
@@ -29,7 +29,7 @@
     {
       "kind": "margin",
       "reason": "ValueError:margin_response_date_not_requested_month",
-      "count": 79
+      "count": 115
     }
   ],
   "months": {
@@ -53,6 +53,30 @@
       "margin_unique_dates": 20,
       "cash_unique_dates": 21,
       "weekday_reference_count_not_official_calendar": 23,
+      "official_trading_day_count": null,
+      "trading_day_completeness": null,
+      "reason": "Official trading calendar and verified listed-market sessions not joined"
+    },
+    "2024-02": {
+      "margin_unique_dates": 13,
+      "cash_unique_dates": 13,
+      "weekday_reference_count_not_official_calendar": 21,
+      "official_trading_day_count": null,
+      "trading_day_completeness": null,
+      "reason": "Official trading calendar and verified listed-market sessions not joined"
+    },
+    "2024-03": {
+      "margin_unique_dates": 21,
+      "cash_unique_dates": 21,
+      "weekday_reference_count_not_official_calendar": 21,
+      "official_trading_day_count": null,
+      "trading_day_completeness": null,
+      "reason": "Official trading calendar and verified listed-market sessions not joined"
+    },
+    "2024-04": {
+      "margin_unique_dates": 20,
+      "cash_unique_dates": 20,
+      "weekday_reference_count_not_official_calendar": 22,
       "official_trading_day_count": null,
       "trading_day_completeness": null,
       "reason": "Official trading calendar and verified listed-market sessions not joined"
