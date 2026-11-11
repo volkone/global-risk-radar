@@ -27,6 +27,9 @@ def main():
     oct_cash = {r["date"] for r in json.loads(OUT.read_text()).get("records", [])
                 if r["metric_id"] == "inst.cash_inst" and r["date"].startswith("2026-10")} if OUT.exists() else set()
     if len(oct_cash) < 15:
+        if progress.get("october_gate_attempts", 0) >= 2:
+            print("October institutional validation failed twice; automatic backfill halted")
+            return
         next_month = "2026-10"
         print("Validation gate: October 2026 institutional cash records", len(oct_cash), "/ 15 minimum")
     else:
@@ -36,11 +39,14 @@ def main():
         return
     # TWSE BFI82U historical query now uses dayDate + type=day.
     run(next_month, 31, kinds=("margin", "cash_inst"))
+    if next_month == "2026-10" and len(oct_cash) < 15:
+        progress["october_gate_attempts"] = progress.get("october_gate_attempts", 0) + 1
     if next_month != "2026-10" or len({r["date"] for r in json.loads(OUT.read_text()).get("records", [])
                                      if r["metric_id"] == "inst.cash_inst" and r["date"].startswith("2026-10")}) >= 15:
         done.add(next_month)
     payload = json.loads(OUT.read_text())
-    progress = {"attempted_months": sorted(done),
+    progress = {"october_gate_attempts": progress.get("october_gate_attempts", 0),
+                "attempted_months": sorted(done),
                 "accepted_records": len(payload["records"]),
                 "rejected_requests": sum(x["status"] == "rejected" for x in payload["attempts"]),
                 "last_attempted_month": next_month,
