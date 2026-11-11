@@ -10,8 +10,11 @@
   "twse_dates_without_futures": [],
   "futures_dates_without_twse": [],
   "errors": [
-    "independent TAIFEX trading-session calendar not yet verified"
+    "independent dated TAIFEX trading-session verification not yet completed"
   ],
   "futures_calendar_independently_verified": false,
+  "tx_trading_day_rule_verified": true,
+  "tx_trading_day_rule_source": "https://www.taifex.com.tw/chinese/event/afterhourstrading/%E5%B8%82%E5%A0%B4%E8%A6%8F%E7%AB%A0.pdf",
+  "source_html_hashes_recomputed": false,
   "full_model_backtest_authorized": false
 }
