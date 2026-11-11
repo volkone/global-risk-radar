@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       offset:
-        description: 'TWSE reference session offset (0..717)'
+        description: 'Reference offset; -1 resumes automatically and retries remaining gaps'
         required: false
         default: '-1'
       limit:
