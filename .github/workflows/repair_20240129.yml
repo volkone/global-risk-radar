@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - '.github/workflows/repair_20240129.yml'
+      - 'tests/test_repair_twse_dates.py'
   workflow_dispatch:
 permissions:
   contents: write
