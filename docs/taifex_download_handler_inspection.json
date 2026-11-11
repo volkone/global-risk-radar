@@ -1,0 +1,299 @@
+{
+  "forms": [
+    {
+      "attributes": {
+        "name": "myHeaderform",
+        "id": "myHeaderform",
+        "method": "post"
+      },
+      "controls": [
+        {
+          "tag": "input",
+          "name": "pstring",
+          "id": "pstring",
+          "type": "text",
+          "placeholder": "請輸入查詢字詞"
+        }
+      ]
+    },
+    {
+      "attributes": {
+        "name": "myHeaderform",
+        "id": "myHeaderform",
+        "method": "post"
+      },
+      "controls": [
+        {
+          "tag": "input",
+          "name": "pstring",
+          "id": "pstring",
+          "type": "text",
+          "placeholder": "請輸入查詢字詞",
+          "style": "display: none;"
+        }
+      ]
+    },
+    {
+      "attributes": {
+        "name": "myHeaderform",
+        "id": "mMyHeaderform",
+        "method": "post"
+      },
+      "controls": [
+        {
+          "tag": "input",
+          "name": "pstring",
+          "id": "m-pstring",
+          "type": "text",
+          "placeholder": "請輸入查詢字詞"
+        }
+      ]
+    },
+    {
+      "attributes": {
+        "id": "uForm",
+        "name": "uForm",
+        "action": "dailyFXRate",
+        "method": "post"
+      },
+      "controls": [
+        {
+          "tag": "input",
+          "id": "firstDate",
+          "name": "firstDate",
+          "type": "hidden",
+          "value": "2023/11/11 00:00"
+        },
+        {
+          "tag": "input",
+          "id": "lastDate",
+          "name": "lastDate",
+          "type": "hidden",
+          "value": "2026/11/11 00:00"
+        },
+        {
+          "tag": "input",
+          "name": "queryStartDate",
+          "type": "text",
+          "id": "queryStartDate",
+          "value": "2026/11/11"
+        },
+        {
+          "tag": "input",
+          "name": "queryEndDate",
+          "type": "text",
+          "id": "queryEndDate",
+          "value": "2026/11/11"
+        },
+        {
+          "tag": "select",
+          "id": "commodityId",
+          "name": "commodityId"
+        },
+        {
+          "tag": "input",
+          "type": "button",
+          "id": "downloadButton",
+          "value": "下載",
+          "title": "三大法人-依日期區分各期貨契約下載(csv)",
+          "class": "btn_orange"
+        }
+      ]
+    }
+  ],
+  "buttons": [
+    {
+      "tag": "input",
+      "id": "api_url",
+      "type": "hidden",
+      "value": "/cht/quotesApi/getQuotes?"
+    },
+    {
+      "tag": "input",
+      "id": "product_type",
+      "type": "hidden",
+      "value": "1"
+    },
+    {
+      "tag": "input",
+      "id": "major_type",
+      "type": "hidden",
+      "value": "1"
+    },
+    {
+      "tag": "input",
+      "id": "major_data_type",
+      "type": "hidden",
+      "value": "1"
+    },
+    {
+      "tag": "input",
+      "name": "pstring",
+      "id": "pstring",
+      "type": "text",
+      "placeholder": "請輸入查詢字詞"
+    },
+    {
+      "tag": "input",
+      "name": "pstring",
+      "id": "pstring",
+      "type": "text",
+      "placeholder": "請輸入查詢字詞",
+      "style": "display: none;"
+    },
+    {
+      "tag": "button",
+      "class": "pageMenu-btn"
+    },
+    {
+      "tag": "input",
+      "name": "pstring",
+      "id": "m-pstring",
+      "type": "text",
+      "placeholder": "請輸入查詢字詞"
+    },
+    {
+      "tag": "button",
+      "class": "pause",
+      "id": "pause",
+      "aria-pressed": "false",
+      "title": "輪播控制按鈕"
+    },
+    {
+      "tag": "button",
+      "class": "m_sidebar_menu_btn",
+      "title": "手機版次選單開合按鈕"
+    },
+    {
+      "tag": "input",
+      "id": "firstDate",
+      "name": "firstDate",
+      "type": "hidden",
+      "value": "2023/11/11 00:00"
+    },
+    {
+      "tag": "input",
+      "id": "lastDate",
+      "name": "lastDate",
+      "type": "hidden",
+      "value": "2026/11/11 00:00"
+    },
+    {
+      "tag": "input",
+      "name": "queryStartDate",
+      "type": "text",
+      "id": "queryStartDate",
+      "value": "2026/11/11"
+    },
+    {
+      "tag": "input",
+      "name": "queryEndDate",
+      "type": "text",
+      "id": "queryEndDate",
+      "value": "2026/11/11"
+    },
+    {
+      "tag": "input",
+      "type": "button",
+      "id": "downloadButton",
+      "value": "下載",
+      "title": "三大法人-依日期區分各期貨契約下載(csv)",
+      "class": "btn_orange"
+    },
+    {
+      "tag": "input",
+      "type": "hidden",
+      "id": "popupbox_url"
+    },
+    {
+      "tag": "input",
+      "type": "button",
+      "name": "button",
+      "id": "button",
+      "value": "確定",
+      "class": "btn_orange",
+      "onclick": "javascript:popup_ok();"
+    },
+    {
+      "tag": "input",
+      "type": "submit",
+      "name": "button2",
+      "id": "button2",
+      "value": "取消",
+      "class": "btn_orange",
+      "onclick": "javascript:popup_close();"
+    },
+    {
+      "tag": "input",
+      "type": "submit",
+      "name": "button",
+      "id": "button",
+      "value": "確定",
+      "class": "btn_orange"
+    },
+    {
+      "tag": "input",
+      "type": "submit",
+      "name": "button2",
+      "id": "button2",
+      "value": "取消",
+      "class": "btn_orange"
+    },
+    {
+      "tag": "button",
+      "class": "m_sidebar_menu_btn",
+      "title": "手機版次選單開合按鈕"
+    }
+  ],
+  "script_srcs": [
+    "/cht/resources/front/js/jquery-3.7.1.min.js",
+    "/cht/resources/front/js/jquery-ui-1.12.1.js",
+    "/cht/resources/front/js/jquery.ui.datepicker-zh-TW.js",
+    "/cht/resources/front/js/jquery.placeholder.js",
+    "/cht/resources/front/js/jquery.ifixpng.js",
+    "/cht/resources/front/js/common.js",
+    "/cht/resources/front/js/chart/Chart.min.js",
+    "/cht/resources/front/js/chart/chartjs-plugin-annotation.min.js",
+    "/cht/resources/front/cht/js/main.js",
+    "/cht/resources/front/js/gtm-loader.js",
+    "/cht/resources/front/js/swiper-bundle.min.js",
+    "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+  ],
+  "relevant_html_excerpts": [
+    "TF-8\"> -->\r\n<!-- <link rel=\"shortcut icon\" type=\"image/x-icon\" -->\r\n<!-- <meta property=\"og:image\" -->\r\n<!-- \tcontent=\"https://www.taifex.com.tw/chinese/images/fb_logo.jpg\" /> -->\r\n<!-- <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" /> -->\r\n<!-- <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"> -->\r\n<title>臺灣期貨交易所-交易資訊-三大法人-下載-區分各期貨契約-依日期</title>\r\n<!-- favicon -->\r\n<link rel=\"shortcut icon\" type=\"image/x-icon\"\r\n\thref=\"/cht/resources/front/cht/images/favicon.ico\">\r\n<meta property=\"og:type\" content=\"website\" />\r\n<meta property=\"og:title\" content=\"臺灣期貨交易所\" />\r\n<meta name=\"description\" content=\"臺灣期貨交易所網站摘要\">\r\n<meta property=\"og:image\"\r\n\tcontent=\"http://www.taifex.com.tw/cht/images/fb_logo.jpg\" />\r\n<!--請再更新為http網址-->\r\n<meta",
+    "k\"\r\n\t\t\t\t\t\ttitle=\"臺灣期貨交易所 AI客服\">臺灣期貨交易所 AI客服</a>\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t<a href=\"https://www.facebook.com/taifexsocial\"\r\n\t\t\t\t\t\t\t\tclass=\"fb free_txt\" target=\"_blank\" title='臺灣期貨交易所 Facebook'>臺灣期貨交易所\r\n\t\t\t\t\t\t\t\tFacebook</a> <a\r\n\t\t\t\t\t\t\t\thref=\"https://itunes.apple.com/tw/app/qi-jiao-suo/id686377410?l=zh&mt=8\"\r\n\t\t\t\t\t\t\t\tclass=\"ios free_txt\" target=\"_blank\" title='下載iOS APP'>下載iOS\r\n\t\t\t\t\t\t\t\tAPP</a> <a\r\n\t\t\t\t\t\t\t\thref=\"https://play.google.com/store/apps/details?id=com.mitake.taifex.impl&hl=zh_TW\"\r\n\t\t\t\t\t\t\t\tclass=\"android free_txt\" target=\"_blank\" title='下載Android APP'>下載Android\r\n\t\t\t\t\t\t\t\tAPP</a>\r\n\t\t\t\t\t\t\t<a href=\"/cht/11/RSS0\"\r\n\t\t\t\t\t\t\t\t\t\tclass=\"rss free_txt\" target=\"_blank\" title='RSS訂閱'>RSS訂閱</a>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t<form name=\"myHeaderform\" id=\"myHea",
+    "itle=\"臺灣期貨交易所 AI客服\">臺灣期貨交易所 AI客服</a>\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t<a href=\"https://www.facebook.com/taifexsocial\"\r\n\t\t\t\t\t\t\t\tclass=\"fb free_txt\" target=\"_blank\" title='臺灣期貨交易所 Facebook'>臺灣期貨交易所\r\n\t\t\t\t\t\t\t\tFacebook</a> <a\r\n\t\t\t\t\t\t\t\thref=\"https://itunes.apple.com/tw/app/qi-jiao-suo/id686377410?l=zh&mt=8\"\r\n\t\t\t\t\t\t\t\tclass=\"ios free_txt\" target=\"_blank\" title='下載iOS APP'>下載iOS\r\n\t\t\t\t\t\t\t\tAPP</a> <a\r\n\t\t\t\t\t\t\t\thref=\"https://play.google.com/store/apps/details?id=com.mitake.taifex.impl&hl=zh_TW\"\r\n\t\t\t\t\t\t\t\tclass=\"android free_txt\" target=\"_blank\" title='下載Android APP'>下載Android\r\n\t\t\t\t\t\t\t\tAPP</a>\r\n\t\t\t\t\t\t\t<a href=\"/cht/11/RSS0\"\r\n\t\t\t\t\t\t\t\t\t\tclass=\"rss free_txt\" target=\"_blank\" title='RSS訂閱'>RSS訂閱</a>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t<form name=\"myHeaderform\" id=\"myHeaderform\" me",
+    "所\r\n\t\t\t\t\t\t\t\tFacebook</a> <a\r\n\t\t\t\t\t\t\t\thref=\"https://itunes.apple.com/tw/app/qi-jiao-suo/id686377410?l=zh&mt=8\"\r\n\t\t\t\t\t\t\t\tclass=\"ios free_txt\" target=\"_blank\" title='下載iOS APP'>下載iOS\r\n\t\t\t\t\t\t\t\tAPP</a> <a\r\n\t\t\t\t\t\t\t\thref=\"https://play.google.com/store/apps/details?id=com.mitake.taifex.impl&hl=zh_TW\"\r\n\t\t\t\t\t\t\t\tclass=\"android free_txt\" target=\"_blank\" title='下載Android APP'>下載Android\r\n\t\t\t\t\t\t\t\tAPP</a>\r\n\t\t\t\t\t\t\t<a href=\"/cht/11/RSS0\"\r\n\t\t\t\t\t\t\t\t\t\tclass=\"rss free_txt\" target=\"_blank\" title='RSS訂閱'>RSS訂閱</a>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t<form name=\"myHeaderform\" id=\"myHeaderform\" method=\"post\">\r\n\t\t\t\t<div class=\"search\">\r\n\t\t\t\t\t<label class=\"free_none\" for=\"pstring\">  \r\n\t\t        \tplaceholder=\"請輸入查詢字詞\"\r\n\t\t        </label> <input name=\"pstring\" id=\"pstring\" t",
+    "book</a> <a\r\n\t\t\t\t\t\t\t\thref=\"https://itunes.apple.com/tw/app/qi-jiao-suo/id686377410?l=zh&mt=8\"\r\n\t\t\t\t\t\t\t\tclass=\"ios free_txt\" target=\"_blank\" title='下載iOS APP'>下載iOS\r\n\t\t\t\t\t\t\t\tAPP</a> <a\r\n\t\t\t\t\t\t\t\thref=\"https://play.google.com/store/apps/details?id=com.mitake.taifex.impl&hl=zh_TW\"\r\n\t\t\t\t\t\t\t\tclass=\"android free_txt\" target=\"_blank\" title='下載Android APP'>下載Android\r\n\t\t\t\t\t\t\t\tAPP</a>\r\n\t\t\t\t\t\t\t<a href=\"/cht/11/RSS0\"\r\n\t\t\t\t\t\t\t\t\t\tclass=\"rss free_txt\" target=\"_blank\" title='RSS訂閱'>RSS訂閱</a>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t<form name=\"myHeaderform\" id=\"myHeaderform\" method=\"post\">\r\n\t\t\t\t<div class=\"search\">\r\n\t\t\t\t\t<label class=\"free_none\" for=\"pstring\">  \r\n\t\t        \tplaceholder=\"請輸入查詢字詞\"\r\n\t\t        </label> <input name=\"pstring\" id=\"pstring\" type=\"text\"\r\n\t\t\t",
+    "\t\t\t\t\t\t\t大額交易人未沖銷部位結構</a></li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/3/dailyFXRate\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t每日外幣參考匯率查詢</a></li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/3/hisAppForm\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t交易歷史資料申請</a></li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/3/dlFutDailyMarketView\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t資料下載專區</a></li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/3/inforVendor\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t資訊廠商</a></li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\ttarget=\"_blank\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\thref=\"https://mis.taifex.com.tw/futures/\" /> 臺灣期貨交易所行情資訊網站</a></li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/3/tradeHalt\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t訊息面暫停交易之股票期貨及選擇權</a></li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\ttarg",
+    "\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/7/traderAgeDistribution\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t交易人年齡分布統計表</a></li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\ttarget=\"_blank\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/../file/taifex/CHINESE/7/trade_volume.ods\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t前一月份各商品每日交易量統計表</a></li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/7/vixMinNew\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t臺指選擇權波動率指數下載</a></li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\ttarget=\"_blank\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\thref=\"https://mis.taifex.com.tw/futures/VolatilityQuotes/\" /> 臺指選擇權波動率指數即時行情</a></li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/7/dailyIndOptChgData\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t市場統計資料</a></li>\r\n\t\t\t\t\t\t\t\t\t\t\t</ul></li>\r\n\t\t\t\t<li class=\"hasSub\"><a\r\n\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\thref=\"#\" title=\"期貨業專區\">期貨業專區</a>\r\n\t\t\t\t\t\t\t\t\t<ul>\r\n\t\t\t",
+    "i>\r\n\t\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/8/futInfoStation\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t期貨商公開資訊觀測站</a></li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/8/historicalViolationCase\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t違規處置歷史案例</a></li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/8/spanRiskParameterFile\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t期貨商SPAN相關檔案下載</a></li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/8/participationReq\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t期貨業設置條件一覽表</a></li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/8/usReg\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t期貨商向美國投資人推廣本公司期貨商品應注意之事項</a></li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/8/techDocs\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t電腦技術文件下載區</a></li>\r\n\t\t\t\t\t\t\t\t\t\t\t</ul></li>\r\n\t\t\t\t<li class=\"hasSub\"><",
+    "商SPAN相關檔案下載</a></li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/8/participationReq\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t期貨業設置條件一覽表</a></li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/8/usReg\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t期貨商向美國投資人推廣本公司期貨商品應注意之事項</a></li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/8/techDocs\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t電腦技術文件下載區</a></li>\r\n\t\t\t\t\t\t\t\t\t\t\t</ul></li>\r\n\t\t\t\t<li class=\"hasSub\"><a\r\n\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\thref=\"#\" title=\"交易人服務與保護\">交易人服務與保護</a>\r\n\t\t\t\t\t\t\t\t\t<ul>\r\n\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/9/forInvestor\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t交易人及繼承人資料查詢申請</a></li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/9/futuresQA\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t問題與解答</a></li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t",
+    "-->\r\n\t\t\t\t<ul class=\"m_info_links\">\t\t\t\t\t\r\n\t\t\t\t\t<li><a href=\"https://www.facebook.com/taifexsocial\"\r\n\t\t\t\t\t\tclass=\"fb free_txt\" target=\"_blank\"\r\n\t\t\t\t\t\ttitle=\"臺灣期貨交易所 Facebook（另開新視窗）\">臺灣期貨交易所 Facebook</a></li>\r\n\t\t\t\t\t<li><a\r\n\t\t\t\t\t\thref=\"https://itunes.apple.com/tw/app/qi-jiao-suo/id686377410?l=zh&mt=8\"\r\n\t\t\t\t\t\tclass=\"ios free_txt\" target=\"_blank\" title=\"下載iOS APP（另開新視窗）\">下載iOS\r\n\t\t\t\t\t\t\tAPP</a></li>\r\n\t\t\t\t\t<li><a\r\n\t\t\t\t\t\thref=\"https://play.google.com/store/apps/details?id=com.mitake.taifex.impl&hl=zh_TW\"\r\n\t\t\t\t\t\tclass=\"android free_txt\" target=\"_blank\"\r\n\t\t\t\t\t\ttitle=\"下載Android APP（另開新視窗）\">下載Android APP</a></li>\r\n\t\t\t\t\t<li><a href=\"/cht/11/RSS0\"\r\n\t\t\t\t\t\t\t\t\tclass=\"rss free_txt\" target=\"_blank\" title='RSS訂閱'>RSS訂閱</a>\r\n\t\t\t\t\t\t\t</li>\r\n\t\t\t\t</ul>\r\n\t\t\t</div>\r\n\t\t</",
+    "=\"m_info_links\">\t\t\t\t\t\r\n\t\t\t\t\t<li><a href=\"https://www.facebook.com/taifexsocial\"\r\n\t\t\t\t\t\tclass=\"fb free_txt\" target=\"_blank\"\r\n\t\t\t\t\t\ttitle=\"臺灣期貨交易所 Facebook（另開新視窗）\">臺灣期貨交易所 Facebook</a></li>\r\n\t\t\t\t\t<li><a\r\n\t\t\t\t\t\thref=\"https://itunes.apple.com/tw/app/qi-jiao-suo/id686377410?l=zh&mt=8\"\r\n\t\t\t\t\t\tclass=\"ios free_txt\" target=\"_blank\" title=\"下載iOS APP（另開新視窗）\">下載iOS\r\n\t\t\t\t\t\t\tAPP</a></li>\r\n\t\t\t\t\t<li><a\r\n\t\t\t\t\t\thref=\"https://play.google.com/store/apps/details?id=com.mitake.taifex.impl&hl=zh_TW\"\r\n\t\t\t\t\t\tclass=\"android free_txt\" target=\"_blank\"\r\n\t\t\t\t\t\ttitle=\"下載Android APP（另開新視窗）\">下載Android APP</a></li>\r\n\t\t\t\t\t<li><a href=\"/cht/11/RSS0\"\r\n\t\t\t\t\t\t\t\t\tclass=\"rss free_txt\" target=\"_blank\" title='RSS訂閱'>RSS訂閱</a>\r\n\t\t\t\t\t\t\t</li>\r\n\t\t\t\t</ul>\r\n\t\t\t</div>\r\n\t\t</nav>\r\n\t</div>\r\n\r\n\t",
+    "<li><a\r\n\t\t\t\t\t\thref=\"https://itunes.apple.com/tw/app/qi-jiao-suo/id686377410?l=zh&mt=8\"\r\n\t\t\t\t\t\tclass=\"ios free_txt\" target=\"_blank\" title=\"下載iOS APP（另開新視窗）\">下載iOS\r\n\t\t\t\t\t\t\tAPP</a></li>\r\n\t\t\t\t\t<li><a\r\n\t\t\t\t\t\thref=\"https://play.google.com/store/apps/details?id=com.mitake.taifex.impl&hl=zh_TW\"\r\n\t\t\t\t\t\tclass=\"android free_txt\" target=\"_blank\"\r\n\t\t\t\t\t\ttitle=\"下載Android APP（另開新視窗）\">下載Android APP</a></li>\r\n\t\t\t\t\t<li><a href=\"/cht/11/RSS0\"\r\n\t\t\t\t\t\t\t\t\tclass=\"rss free_txt\" target=\"_blank\" title='RSS訂閱'>RSS訂閱</a>\r\n\t\t\t\t\t\t\t</li>\r\n\t\t\t\t</ul>\r\n\t\t\t</div>\r\n\t\t</nav>\r\n\t</div>\r\n\r\n\t<!-- 選單下拉_web_main_menu -->\r\n\t<nav class=\"web_main_menu\" aria-label=\"主要功能選單\">\r\n\r\n\t\t<a accesskey=\"M\" href=\"#M\" title=\"主要選單區[快捷鍵Alt+M]\" class=\"guide\">:::</a>\r\n\t\t\t<ul>\r\n\t\t\t<li class=\"nav01\"\r\n\t\t\t\t\to",
+    "tps://itunes.apple.com/tw/app/qi-jiao-suo/id686377410?l=zh&mt=8\"\r\n\t\t\t\t\t\tclass=\"ios free_txt\" target=\"_blank\" title=\"下載iOS APP（另開新視窗）\">下載iOS\r\n\t\t\t\t\t\t\tAPP</a></li>\r\n\t\t\t\t\t<li><a\r\n\t\t\t\t\t\thref=\"https://play.google.com/store/apps/details?id=com.mitake.taifex.impl&hl=zh_TW\"\r\n\t\t\t\t\t\tclass=\"android free_txt\" target=\"_blank\"\r\n\t\t\t\t\t\ttitle=\"下載Android APP（另開新視窗）\">下載Android APP</a></li>\r\n\t\t\t\t\t<li><a href=\"/cht/11/RSS0\"\r\n\t\t\t\t\t\t\t\t\tclass=\"rss free_txt\" target=\"_blank\" title='RSS訂閱'>RSS訂閱</a>\r\n\t\t\t\t\t\t\t</li>\r\n\t\t\t\t</ul>\r\n\t\t\t</div>\r\n\t\t</nav>\r\n\t</div>\r\n\r\n\t<!-- 選單下拉_web_main_menu -->\r\n\t<nav class=\"web_main_menu\" aria-label=\"主要功能選單\">\r\n\r\n\t\t<a accesskey=\"M\" href=\"#M\" title=\"主要選單區[快捷鍵Alt+M]\" class=\"guide\">:::</a>\r\n\t\t\t<ul>\r\n\t\t\t<li class=\"nav01\"\r\n\t\t\t\t\tonmouseover=\"javascript",
+    " />\r\n\t\t\t\t\t\t\t\t\t\t\t\t大額交易人未沖銷部位結構</a></li>\r\n\t\t\t\t\t\t\t\t\t\t<li><a \r\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/3/dailyFXRate\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t每日外幣參考匯率查詢</a></li>\r\n\t\t\t\t\t\t\t\t\t\t<li><a \r\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/3/hisAppForm\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t交易歷史資料申請</a></li>\r\n\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/3/dlFutDailyMarketView\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t資料下載專區</a></li>\r\n\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/3/inforVendor\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t資訊廠商</a></li>\r\n\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\ttarget=\"_blank\"\r\n\t\t\t\t\t\t\t\t\t\t\t\thref=\"https://mis.taifex.com.tw/futures/\" /> 臺灣期貨交易所行情資訊網站</a></li>\r\n\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/3/tradeHalt\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t訊息面暫停交易之股票期貨及選擇權</a></li>\r\n\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\ttarget=\"_blank\"\r\n",
+    "\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/7/traderAgeDistribution\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t交易人年齡分布統計表</a></li>\r\n\t\t\t\t\t\t\t\t\t\t<li><a \r\n\t\t\t\t\t\t\t\t\t\t\t\ttarget=\"_blank\"\r\n\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/../file/taifex/CHINESE/7/trade_volume.ods\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t前一月份各商品每日交易量統計表</a></li>\r\n\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/7/vixMinNew\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t臺指選擇權波動率指數下載</a></li>\r\n\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\ttarget=\"_blank\"\r\n\t\t\t\t\t\t\t\t\t\t\t\thref=\"https://mis.taifex.com.tw/futures/VolatilityQuotes/\" /> 臺指選擇權波動率指數即時行情</a></li>\r\n\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/7/dailyIndOptChgData\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t市場統計資料</a></li>\r\n\t\t\t\t\t\t\t\t\t\t</ul></li>\r\n\t\t\t<li class=\"nav08\"\r\n\t\t\t\t\tonmouseover=\"javascript:mastermenu('08')\"\r\n\t\t\t\t\tonmouseout=\"javascript:mastermenu('0",
+    "各項表單</a></li>\r\n\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/8/futInfoStation\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t期貨商公開資訊觀測站</a></li>\r\n\t\t\t\t\t\t\t\t\t\t<li><a \r\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/8/historicalViolationCase\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t違規處置歷史案例</a></li>\r\n\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/8/spanRiskParameterFile\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t期貨商SPAN相關檔案下載</a></li>\r\n\t\t\t\t\t\t\t\t\t\t<li><a \r\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/8/participationReq\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t期貨業設置條件一覽表</a></li>\r\n\t\t\t\t\t\t\t\t\t\t<li><a \r\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/8/usReg\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t期貨商向美國投資人推廣本公司期貨商品應注意之事項</a></li>\r\n\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/8/techDocs\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t電腦技術文件下載區</a></li>\r\n\t\t\t\t\t\t\t\t\t\t</ul></li>\r\n\t\t\t<li class=\"nav09\"\r\n\t\t\t\t\tonmouseo",
+    "\t\t\t\t\t\t\t\t期貨商SPAN相關檔案下載</a></li>\r\n\t\t\t\t\t\t\t\t\t\t<li><a \r\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/8/participationReq\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t期貨業設置條件一覽表</a></li>\r\n\t\t\t\t\t\t\t\t\t\t<li><a \r\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/8/usReg\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t期貨商向美國投資人推廣本公司期貨商品應注意之事項</a></li>\r\n\t\t\t\t\t\t\t\t\t\t<li><a\r\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\thref=\"/cht/8/techDocs\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t電腦技術文件下載區</a></li>\r\n\t\t\t\t\t\t\t\t\t\t</ul></li>\r\n\t\t\t<li class=\"nav09\"\r\n\t\t\t\t\tonmouseover=\"javascript:mastermenu('09')\"\r\n\t\t\t\t\tonmouseout=\"javascript:mastermenu('0');\"><a style=\"padding: 6px 5px;\"\r\n\t\t\t\t\t\t\t\t\t\tonfocus=\"javascript:mastermenu('09')\"\r\n\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\thref=\"/cht/9/futuresQA\"\r\n\t\t\t\t\t\t\t\t\t\ttitle=\"交易人服務與保護\">交易人服務與保護</a>\r\n\t\t\t\t\t\t\t\t<ul id=\"mastermenu_09\"\r\n\t\t\t\t\t\tstyle=\"left:0px;width:315px;display:none;\r\n  ",
+    "灣生技期貨\",\"櫃買期貨\",\"富櫃200期貨\",\"日本東證期貨\",\"美國道瓊期貨\",\"美國標普500期貨\",\"美國那斯達克100期貨\",\"美國費城半導體期貨\",\"英國富時100期貨\",\"個股期貨類\",\"股票期貨/ETF期貨\",\"股價指數選擇權類\",\"臺指選擇權\",\"電子選擇權\",\"金融選擇權\",\"個股選擇權類\",\"股票選擇權/ETF選擇權\",\"商品期貨類\",\"黃金期貨\",\"臺幣黃金期貨\",\"布蘭特原油期貨\",\"商品選擇權類\",\"黃金選擇權\",\"匯率期貨類\",\"小型美元兌人民幣期貨\",\"美元兌人民幣期貨\",\"歐元兌美元期貨\",\"美元兌日圓期貨\",\"英鎊兌美元期貨\",\"澳幣兌美元期貨\",\"客製化商品類\",\"客製化小型臺指期貨\",\"交易資訊\",\"期貨\",\"期貨每日交易行情查詢\",\"期貨每日交易行情下載\",\"前30個交易日期貨每筆成交資料\",\"前30個交易日期貨價差委託成交概況表\",\"前30個交易日期貨價差每筆成交資料\",\"期貨流動性資訊\",\"期貨流動性資訊排序專頁\",\"期貨多維度流動性參考資訊\",\"選擇權\",\"選擇權每日交易行情查詢\",\"選擇權每日交易行情簡表\",\"選擇權每日交易行情下載\",\"前30個交易日選擇權每筆成交資料\",\"選擇權每日Delta值\",\"臺指選擇權Put/Call比\",\"選擇權流動性資訊\",\"選擇權流動性資訊排序專頁\",\"客製化交易資訊\",\"客製化期貨\",\"客製化期貨每日交易行情查詢\",\"客製化期貨每日交易行情下載\",\"前30個交易日客製化期貨每筆成交資料\",\"客製化期貨流動性資訊\",\"客製化期貨流動性資訊排序專頁\",\"客製化未沖銷部位資訊\",\"連續九個交易日未沖銷部位合計為零查詢\",\"前30個交易日檔案下載\",\"期貨商申請客製化契約資訊下載\",\"鉅額交易\",\"每日",
+    "\",\"個股選擇權類\",\"股票選擇權/ETF選擇權\",\"商品期貨類\",\"黃金期貨\",\"臺幣黃金期貨\",\"布蘭特原油期貨\",\"商品選擇權類\",\"黃金選擇權\",\"匯率期貨類\",\"小型美元兌人民幣期貨\",\"美元兌人民幣期貨\",\"歐元兌美元期貨\",\"美元兌日圓期貨\",\"英鎊兌美元期貨\",\"澳幣兌美元期貨\",\"客製化商品類\",\"客製化小型臺指期貨\",\"交易資訊\",\"期貨\",\"期貨每日交易行情查詢\",\"期貨每日交易行情下載\",\"前30個交易日期貨每筆成交資料\",\"前30個交易日期貨價差委託成交概況表\",\"前30個交易日期貨價差每筆成交資料\",\"期貨流動性資訊\",\"期貨流動性資訊排序專頁\",\"期貨多維度流動性參考資訊\",\"選擇權\",\"選擇權每日交易行情查詢\",\"選擇權每日交易行情簡表\",\"選擇權每日交易行情下載\",\"前30個交易日選擇權每筆成交資料\",\"選擇權每日Delta值\",\"臺指選擇權Put/Call比\",\"選擇權流動性資訊\",\"選擇權流動性資訊排序專頁\",\"客製化交易資訊\",\"客製化期貨\",\"客製化期貨每日交易行情查詢\",\"客製化期貨每日交易行情下載\",\"前30個交易日客製化期貨每筆成交資料\",\"客製化期貨流動性資訊\",\"客製化期貨流動性資訊排序專頁\",\"客製化未沖銷部位資訊\",\"連續九個交易日未沖銷部位合計為零查詢\",\"前30個交易日檔案下載\",\"期貨商申請客製化契約資訊下載\",\"鉅額交易\",\"每日成交資訊\",\"逐筆撮合之單式委託成交\",\"逐筆撮合之組合式委託成交\",\"議價申報成交\",\"逐筆撮合之單式委託成交-下載\",\"逐筆撮合之組合式委託成交-下載\",\"議價申報成交-下載\",\"每日成交資訊-客製化商品\",\"客製化交易之議價申報成交\",\"客製化交易之議價申報成交-下載\",\"各商品成交資",
+    "貨\",\"英鎊兌美元期貨\",\"澳幣兌美元期貨\",\"客製化商品類\",\"客製化小型臺指期貨\",\"交易資訊\",\"期貨\",\"期貨每日交易行情查詢\",\"期貨每日交易行情下載\",\"前30個交易日期貨每筆成交資料\",\"前30個交易日期貨價差委託成交概況表\",\"前30個交易日期貨價差每筆成交資料\",\"期貨流動性資訊\",\"期貨流動性資訊排序專頁\",\"期貨多維度流動性參考資訊\",\"選擇權\",\"選擇權每日交易行情查詢\",\"選擇權每日交易行情簡表\",\"選擇權每日交易行情下載\",\"前30個交易日選擇權每筆成交資料\",\"選擇權每日Delta值\",\"臺指選擇權Put/Call比\",\"選擇權流動性資訊\",\"選擇權流動性資訊排序專頁\",\"客製化交易資訊\",\"客製化期貨\",\"客製化期貨每日交易行情查詢\",\"客製化期貨每日交易行情下載\",\"前30個交易日客製化期貨每筆成交資料\",\"客製化期貨流動性資訊\",\"客製化期貨流動性資訊排序專頁\",\"客製化未沖銷部位資訊\",\"連續九個交易日未沖銷部位合計為零查詢\",\"前30個交易日檔案下載\",\"期貨商申請客製化契約資訊下載\",\"鉅額交易\",\"每日成交資訊\",\"逐筆撮合之單式委託成交\",\"逐筆撮合之組合式委託成交\",\"議價申報成交\",\"逐筆撮合之單式委託成交-下載\",\"逐筆撮合之組合式委託成交-下載\",\"議價申報成交-下載\",\"每日成交資訊-客製化商品\",\"客製化交易之議價申報成交\",\"客製化交易之議價申報成交-下載\",\"各商品成交資訊\",\"成交量統計\",\"各商品成交資訊-下載\",\"期貨商買賣日報表\",\"期貨商買賣日報表-客製化商品\",\"三大法人\",\"查詢\",\"總表\",\"依日期\",\"依週別\",\"區分期貨與選擇權二類\",\"區分各期貨契約\",\"夜盤\",\"區分各選擇權契約\",\"選擇權買賣",
+    ",\"前30個交易日期貨價差委託成交概況表\",\"前30個交易日期貨價差每筆成交資料\",\"期貨流動性資訊\",\"期貨流動性資訊排序專頁\",\"期貨多維度流動性參考資訊\",\"選擇權\",\"選擇權每日交易行情查詢\",\"選擇權每日交易行情簡表\",\"選擇權每日交易行情下載\",\"前30個交易日選擇權每筆成交資料\",\"選擇權每日Delta值\",\"臺指選擇權Put/Call比\",\"選擇權流動性資訊\",\"選擇權流動性資訊排序專頁\",\"客製化交易資訊\",\"客製化期貨\",\"客製化期貨每日交易行情查詢\",\"客製化期貨每日交易行情下載\",\"前30個交易日客製化期貨每筆成交資料\",\"客製化期貨流動性資訊\",\"客製化期貨流動性資訊排序專頁\",\"客製化未沖銷部位資訊\",\"連續九個交易日未沖銷部位合計為零查詢\",\"前30個交易日檔案下載\",\"期貨商申請客製化契約資訊下載\",\"鉅額交易\",\"每日成交資訊\",\"逐筆撮合之單式委託成交\",\"逐筆撮合之組合式委託成交\",\"議價申報成交\",\"逐筆撮合之單式委託成交-下載\",\"逐筆撮合之組合式委託成交-下載\",\"議價申報成交-下載\",\"每日成交資訊-客製化商品\",\"客製化交易之議價申報成交\",\"客製化交易之議價申報成交-下載\",\"各商品成交資訊\",\"成交量統計\",\"各商品成交資訊-下載\",\"期貨商買賣日報表\",\"期貨商買賣日報表-客製化商品\",\"三大法人\",\"查詢\",\"總表\",\"依日期\",\"依週別\",\"區分期貨與選擇權二類\",\"區分各期貨契約\",\"夜盤\",\"區分各選擇權契約\",\"選擇權買賣權分計\",\"下載\",\"大額交易人未沖銷部位結構\",\"期貨大額交易人未沖銷部位結構表\",\"選擇權大額交易人未沖銷部位結構表\",\"期貨大額交易人未沖銷部位資料下載\",\"選擇權大額交易人未沖銷部位資料下載",
+    "概況表\",\"前30個交易日期貨價差每筆成交資料\",\"期貨流動性資訊\",\"期貨流動性資訊排序專頁\",\"期貨多維度流動性參考資訊\",\"選擇權\",\"選擇權每日交易行情查詢\",\"選擇權每日交易行情簡表\",\"選擇權每日交易行情下載\",\"前30個交易日選擇權每筆成交資料\",\"選擇權每日Delta值\",\"臺指選擇權Put/Call比\",\"選擇權流動性資訊\",\"選擇權流動性資訊排序專頁\",\"客製化交易資訊\",\"客製化期貨\",\"客製化期貨每日交易行情查詢\",\"客製化期貨每日交易行情下載\",\"前30個交易日客製化期貨每筆成交資料\",\"客製化期貨流動性資訊\",\"客製化期貨流動性資訊排序專頁\",\"客製化未沖銷部位資訊\",\"連續九個交易日未沖銷部位合計為零查詢\",\"前30個交易日檔案下載\",\"期貨商申請客製化契約資訊下載\",\"鉅額交易\",\"每日成交資訊\",\"逐筆撮合之單式委託成交\",\"逐筆撮合之組合式委託成交\",\"議價申報成交\",\"逐筆撮合之單式委託成交-下載\",\"逐筆撮合之組合式委託成交-下載\",\"議價申報成交-下載\",\"每日成交資訊-客製化商品\",\"客製化交易之議價申報成交\",\"客製化交易之議價申報成交-下載\",\"各商品成交資訊\",\"成交量統計\",\"各商品成交資訊-下載\",\"期貨商買賣日報表\",\"期貨商買賣日報表-客製化商品\",\"三大法人\",\"查詢\",\"總表\",\"依日期\",\"依週別\",\"區分期貨與選擇權二類\",\"區分各期貨契約\",\"夜盤\",\"區分各選擇權契約\",\"選擇權買賣權分計\",\"下載\",\"大額交易人未沖銷部位結構\",\"期貨大額交易人未沖銷部位結構表\",\"選擇權大額交易人未沖銷部位結構表\",\"期貨大額交易人未沖銷部位資料下載\",\"選擇權大額交易人未沖銷部位資料下載\",\"每日外幣參考匯率查詢\",\"交",
+    "選擇權每日交易行情查詢\",\"選擇權每日交易行情簡表\",\"選擇權每日交易行情下載\",\"前30個交易日選擇權每筆成交資料\",\"選擇權每日Delta值\",\"臺指選擇權Put/Call比\",\"選擇權流動性資訊\",\"選擇權流動性資訊排序專頁\",\"客製化交易資訊\",\"客製化期貨\",\"客製化期貨每日交易行情查詢\",\"客製化期貨每日交易行情下載\",\"前30個交易日客製化期貨每筆成交資料\",\"客製化期貨流動性資訊\",\"客製化期貨流動性資訊排序專頁\",\"客製化未沖銷部位資訊\",\"連續九個交易日未沖銷部位合計為零查詢\",\"前30個交易日檔案下載\",\"期貨商申請客製化契約資訊下載\",\"鉅額交易\",\"每日成交資訊\",\"逐筆撮合之單式委託成交\",\"逐筆撮合之組合式委託成交\",\"議價申報成交\",\"逐筆撮合之單式委託成交-下載\",\"逐筆撮合之組合式委託成交-下載\",\"議價申報成交-下載\",\"每日成交資訊-客製化商品\",\"客製化交易之議價申報成交\",\"客製化交易之議價申報成交-下載\",\"各商品成交資訊\",\"成交量統計\",\"各商品成交資訊-下載\",\"期貨商買賣日報表\",\"期貨商買賣日報表-客製化商品\",\"三大法人\",\"查詢\",\"總表\",\"依日期\",\"依週別\",\"區分期貨與選擇權二類\",\"區分各期貨契約\",\"夜盤\",\"區分各選擇權契約\",\"選擇權買賣權分計\",\"下載\",\"大額交易人未沖銷部位結構\",\"期貨大額交易人未沖銷部位結構表\",\"選擇權大額交易人未沖銷部位結構表\",\"期貨大額交易人未沖銷部位資料下載\",\"選擇權大額交易人未沖銷部位資料下載\",\"每日外幣參考匯率查詢\",\"交易歷史資料申請\",\"資料下載專區\",\"客製化未沖銷部位資訊下載\",\"三大法人-下載\",\"總表-依日期\",\"總表-依週別\",\"區分期貨與選擇權二",
+    "日交易行情簡表\",\"選擇權每日交易行情下載\",\"前30個交易日選擇權每筆成交資料\",\"選擇權每日Delta值\",\"臺指選擇權Put/Call比\",\"選擇權流動性資訊\",\"選擇權流動性資訊排序專頁\",\"客製化交易資訊\",\"客製化期貨\",\"客製化期貨每日交易行情查詢\",\"客製化期貨每日交易行情下載\",\"前30個交易日客製化期貨每筆成交資料\",\"客製化期貨流動性資訊\",\"客製化期貨流動性資訊排序專頁\",\"客製化未沖銷部位資訊\",\"連續九個交易日未沖銷部位合計為零查詢\",\"前30個交易日檔案下載\",\"期貨商申請客製化契約資訊下載\",\"鉅額交易\",\"每日成交資訊\",\"逐筆撮合之單式委託成交\",\"逐筆撮合之組合式委託成交\",\"議價申報成交\",\"逐筆撮合之單式委託成交-下載\",\"逐筆撮合之組合式委託成交-下載\",\"議價申報成交-下載\",\"每日成交資訊-客製化商品\",\"客製化交易之議價申報成交\",\"客製化交易之議價申報成交-下載\",\"各商品成交資訊\",\"成交量統計\",\"各商品成交資訊-下載\",\"期貨商買賣日報表\",\"期貨商買賣日報表-客製化商品\",\"三大法人\",\"查詢\",\"總表\",\"依日期\",\"依週別\",\"區分期貨與選擇權二類\",\"區分各期貨契約\",\"夜盤\",\"區分各選擇權契約\",\"選擇權買賣權分計\",\"下載\",\"大額交易人未沖銷部位結構\",\"期貨大額交易人未沖銷部位結構表\",\"選擇權大額交易人未沖銷部位結構表\",\"期貨大額交易人未沖銷部位資料下載\",\"選擇權大額交易人未沖銷部位資料下載\",\"每日外幣參考匯率查詢\",\"交易歷史資料申請\",\"資料下載專區\",\"客製化未沖銷部位資訊下載\",\"三大法人-下載\",\"總表-依日期\",\"總表-依週別\",\"區分期貨與選擇權二類-依日期\",\"區分期貨與選擇權二類",
+    "權每日交易行情下載\",\"前30個交易日選擇權每筆成交資料\",\"選擇權每日Delta值\",\"臺指選擇權Put/Call比\",\"選擇權流動性資訊\",\"選擇權流動性資訊排序專頁\",\"客製化交易資訊\",\"客製化期貨\",\"客製化期貨每日交易行情查詢\",\"客製化期貨每日交易行情下載\",\"前30個交易日客製化期貨每筆成交資料\",\"客製化期貨流動性資訊\",\"客製化期貨流動性資訊排序專頁\",\"客製化未沖銷部位資訊\",\"連續九個交易日未沖銷部位合計為零查詢\",\"前30個交易日檔案下載\",\"期貨商申請客製化契約資訊下載\",\"鉅額交易\",\"每日成交資訊\",\"逐筆撮合之單式委託成交\",\"逐筆撮合之組合式委託成交\",\"議價申報成交\",\"逐筆撮合之單式委託成交-下載\",\"逐筆撮合之組合式委託成交-下載\",\"議價申報成交-下載\",\"每日成交資訊-客製化商品\",\"客製化交易之議價申報成交\",\"客製化交易之議價申報成交-下載\",\"各商品成交資訊\",\"成交量統計\",\"各商品成交資訊-下載\",\"期貨商買賣日報表\",\"期貨商買賣日報表-客製化商品\",\"三大法人\",\"查詢\",\"總表\",\"依日期\",\"依週別\",\"區分期貨與選擇權二類\",\"區分各期貨契約\",\"夜盤\",\"區分各選擇權契約\",\"選擇權買賣權分計\",\"下載\",\"大額交易人未沖銷部位結構\",\"期貨大額交易人未沖銷部位結構表\",\"選擇權大額交易人未沖銷部位結構表\",\"期貨大額交易人未沖銷部位資料下載\",\"選擇權大額交易人未沖銷部位資料下載\",\"每日外幣參考匯率查詢\",\"交易歷史資料申請\",\"資料下載專區\",\"客製化未沖銷部位資訊下載\",\"三大法人-下載\",\"總表-依日期\",\"總表-依週別\",\"區分期貨與選擇權二類-依日期\",\"區分期貨與選擇權二類-依週別\",\"區分各期貨",
+    "擇權Put/Call比\",\"選擇權流動性資訊\",\"選擇權流動性資訊排序專頁\",\"客製化交易資訊\",\"客製化期貨\",\"客製化期貨每日交易行情查詢\",\"客製化期貨每日交易行情下載\",\"前30個交易日客製化期貨每筆成交資料\",\"客製化期貨流動性資訊\",\"客製化期貨流動性資訊排序專頁\",\"客製化未沖銷部位資訊\",\"連續九個交易日未沖銷部位合計為零查詢\",\"前30個交易日檔案下載\",\"期貨商申請客製化契約資訊下載\",\"鉅額交易\",\"每日成交資訊\",\"逐筆撮合之單式委託成交\",\"逐筆撮合之組合式委託成交\",\"議價申報成交\",\"逐筆撮合之單式委託成交-下載\",\"逐筆撮合之組合式委託成交-下載\",\"議價申報成交-下載\",\"每日成交資訊-客製化商品\",\"客製化交易之議價申報成交\",\"客製化交易之議價申報成交-下載\",\"各商品成交資訊\",\"成交量統計\",\"各商品成交資訊-下載\",\"期貨商買賣日報表\",\"期貨商買賣日報表-客製化商品\",\"三大法人\",\"查詢\",\"總表\",\"依日期\",\"依週別\",\"區分期貨與選擇權二類\",\"區分各期貨契約\",\"夜盤\",\"區分各選擇權契約\",\"選擇權買賣權分計\",\"下載\",\"大額交易人未沖銷部位結構\",\"期貨大額交易人未沖銷部位結構表\",\"選擇權大額交易人未沖銷部位結構表\",\"期貨大額交易人未沖銷部位資料下載\",\"選擇權大額交易人未沖銷部位資料下載\",\"每日外幣參考匯率查詢\",\"交易歷史資料申請\",\"資料下載專區\",\"客製化未沖銷部位資訊下載\",\"三大法人-下載\",\"總表-依日期\",\"總表-依週別\",\"區分期貨與選擇權二類-依日期\",\"區分期貨與選擇權二類-依週別\",\"區分各期貨契約-依日期\",\"區分各期貨契約-依週別\",\"區分各選擇權契約-依日期\",\"區分各選擇權契約-依",
+    "資訊排序專頁\",\"客製化交易資訊\",\"客製化期貨\",\"客製化期貨每日交易行情查詢\",\"客製化期貨每日交易行情下載\",\"前30個交易日客製化期貨每筆成交資料\",\"客製化期貨流動性資訊\",\"客製化期貨流動性資訊排序專頁\",\"客製化未沖銷部位資訊\",\"連續九個交易日未沖銷部位合計為零查詢\",\"前30個交易日檔案下載\",\"期貨商申請客製化契約資訊下載\",\"鉅額交易\",\"每日成交資訊\",\"逐筆撮合之單式委託成交\",\"逐筆撮合之組合式委託成交\",\"議價申報成交\",\"逐筆撮合之單式委託成交-下載\",\"逐筆撮合之組合式委託成交-下載\",\"議價申報成交-下載\",\"每日成交資訊-客製化商品\",\"客製化交易之議價申報成交\",\"客製化交易之議價申報成交-下載\",\"各商品成交資訊\",\"成交量統計\",\"各商品成交資訊-下載\",\"期貨商買賣日報表\",\"期貨商買賣日報表-客製化商品\",\"三大法人\",\"查詢\",\"總表\",\"依日期\",\"依週別\",\"區分期貨與選擇權二類\",\"區分各期貨契約\",\"夜盤\",\"區分各選擇權契約\",\"選擇權買賣權分計\",\"下載\",\"大額交易人未沖銷部位結構\",\"期貨大額交易人未沖銷部位結構表\",\"選擇權大額交易人未沖銷部位結構表\",\"期貨大額交易人未沖銷部位資料下載\",\"選擇權大額交易人未沖銷部位資料下載\",\"每日外幣參考匯率查詢\",\"交易歷史資料申請\",\"資料下載專區\",\"客製化未沖銷部位資訊下載\",\"三大法人-下載\",\"總表-依日期\",\"總表-依週別\",\"區分期貨與選擇權二類-依日期\",\"區分期貨與選擇權二類-依週別\",\"區分各期貨契約-依日期\",\"區分各期貨契約-依週別\",\"區分各選擇權契約-依日期\",\"區分各選擇權契約-依週別\",\"選擇權買賣權分計-依日期\",\"選擇權買賣權分計-依週",
+    "化未沖銷部位資訊\",\"連續九個交易日未沖銷部位合計為零查詢\",\"前30個交易日檔案下載\",\"期貨商申請客製化契約資訊下載\",\"鉅額交易\",\"每日成交資訊\",\"逐筆撮合之單式委託成交\",\"逐筆撮合之組合式委託成交\",\"議價申報成交\",\"逐筆撮合之單式委託成交-下載\",\"逐筆撮合之組合式委託成交-下載\",\"議價申報成交-下載\",\"每日成交資訊-客製化商品\",\"客製化交易之議價申報成交\",\"客製化交易之議價申報成交-下載\",\"各商品成交資訊\",\"成交量統計\",\"各商品成交資訊-下載\",\"期貨商買賣日報表\",\"期貨商買賣日報表-客製化商品\",\"三大法人\",\"查詢\",\"總表\",\"依日期\",\"依週別\",\"區分期貨與選擇權二類\",\"區分各期貨契約\",\"夜盤\",\"區分各選擇權契約\",\"選擇權買賣權分計\",\"下載\",\"大額交易人未沖銷部位結構\",\"期貨大額交易人未沖銷部位結構表\",\"選擇權大額交易人未沖銷部位結構表\",\"期貨大額交易人未沖銷部位資料下載\",\"選擇權大額交易人未沖銷部位資料下載\",\"每日外幣參考匯率查詢\",\"交易歷史資料申請\",\"資料下載專區\",\"客製化未沖銷部位資訊下載\",\"三大法人-下載\",\"總表-依日期\",\"總表-依週別\",\"區分期貨與選擇權二類-依日期\",\"區分期貨與選擇權二類-依週別\",\"區分各期貨契約-依日期\",\"區分各期貨契約-依週別\",\"區分各選擇權契約-依日期\",\"區分各選擇權契約-依週別\",\"選擇權買賣權分計-依日期\",\"選擇權買賣權分計-依週別\",\"每日外幣參考匯率\",\"結算業務\",\"最後結算價一覽表-最後結算價檔案下載\",\"到期契約履約交割下載\",\"統計資料\",\"期貨商交易量日報表\",\"期貨商交易量週報表\",\"期貨商交易量月報表\",\"期貨商交易量年報表\",\"前",
+    "日成交資訊\",\"逐筆撮合之單式委託成交\",\"逐筆撮合之組合式委託成交\",\"議價申報成交\",\"逐筆撮合之單式委託成交-下載\",\"逐筆撮合之組合式委託成交-下載\",\"議價申報成交-下載\",\"每日成交資訊-客製化商品\",\"客製化交易之議價申報成交\",\"客製化交易之議價申報成交-下載\",\"各商品成交資訊\",\"成交量統計\",\"各商品成交資訊-下載\",\"期貨商買賣日報表\",\"期貨商買賣日報表-客製化商品\",\"三大法人\",\"查詢\",\"總表\",\"依日期\",\"依週別\",\"區分期貨與選擇權二類\",\"區分各期貨契約\",\"夜盤\",\"區分各選擇權契約\",\"選擇權買賣權分計\",\"下載\",\"大額交易人未沖銷部位結構\",\"期貨大額交易人未沖銷部位結構表\",\"選擇權大額交易人未沖銷部位結構表\",\"期貨大額交易人未沖銷部位資料下載\",\"選擇權大額交易人未沖銷部位資料下載\",\"每日外幣參考匯率查詢\",\"交易歷史資料申請\",\"資料下載專區\",\"客製化未沖銷部位資訊下載\",\"三大法人-下載\",\"總表-依日期\",\"總表-依週別\",\"區分期貨與選擇權二類-依日期\",\"區分期貨與選擇權二類-依週別\",\"區分各期貨契約-依日期\",\"區分各期貨契約-依週別\",\"區分各選擇權契約-依日期\",\"區分各選擇權契約-依週別\",\"選擇權買賣權分計-依日期\",\"選擇權買賣權分計-依週別\",\"每日外幣參考匯率\",\"結算業務\",\"最後結算價一覽表-最後結算價檔案下載\",\"到期契約履約交割下載\",\"統計資料\",\"期貨商交易量日報表\",\"期貨商交易量週報表\",\"期貨商交易量月報表\",\"期貨商交易量年報表\",\"前一月份各商品每日交易量統計表\",\"資訊廠商\",\"授權德國交易所集團行銷\",\"臺灣期貨交易所行情資訊網站\",\"訊息面暫停交易之股票期貨及選擇權\"",
+    ",\"逐筆撮合之組合式委託成交\",\"議價申報成交\",\"逐筆撮合之單式委託成交-下載\",\"逐筆撮合之組合式委託成交-下載\",\"議價申報成交-下載\",\"每日成交資訊-客製化商品\",\"客製化交易之議價申報成交\",\"客製化交易之議價申報成交-下載\",\"各商品成交資訊\",\"成交量統計\",\"各商品成交資訊-下載\",\"期貨商買賣日報表\",\"期貨商買賣日報表-客製化商品\",\"三大法人\",\"查詢\",\"總表\",\"依日期\",\"依週別\",\"區分期貨與選擇權二類\",\"區分各期貨契約\",\"夜盤\",\"區分各選擇權契約\",\"選擇權買賣權分計\",\"下載\",\"大額交易人未沖銷部位結構\",\"期貨大額交易人未沖銷部位結構表\",\"選擇權大額交易人未沖銷部位結構表\",\"期貨大額交易人未沖銷部位資料下載\",\"選擇權大額交易人未沖銷部位資料下載\",\"每日外幣參考匯率查詢\",\"交易歷史資料申請\",\"資料下載專區\",\"客製化未沖銷部位資訊下載\",\"三大法人-下載\",\"總表-依日期\",\"總表-依週別\",\"區分期貨與選擇權二類-依日期\",\"區分期貨與選擇權二類-依週別\",\"區分各期貨契約-依日期\",\"區分各期貨契約-依週別\",\"區分各選擇權契約-依日期\",\"區分各選擇權契約-依週別\",\"選擇權買賣權分計-依日期\",\"選擇權買賣權分計-依週別\",\"每日外幣參考匯率\",\"結算業務\",\"最後結算價一覽表-最後結算價檔案下載\",\"到期契約履約交割下載\",\"統計資料\",\"期貨商交易量日報表\",\"期貨商交易量週報表\",\"期貨商交易量月報表\",\"期貨商交易量年報表\",\"前一月份各商品每日交易量統計表\",\"資訊廠商\",\"授權德國交易所集團行銷\",\"臺灣期貨交易所行情資訊網站\",\"訊息面暫停交易之股票期貨及選擇權\",\"夜盤訊息面暫停交易時點\",\"指數專區",
+    "單式委託成交-下載\",\"逐筆撮合之組合式委託成交-下載\",\"議價申報成交-下載\",\"每日成交資訊-客製化商品\",\"客製化交易之議價申報成交\",\"客製化交易之議價申報成交-下載\",\"各商品成交資訊\",\"成交量統計\",\"各商品成交資訊-下載\",\"期貨商買賣日報表\",\"期貨商買賣日報表-客製化商品\",\"三大法人\",\"查詢\",\"總表\",\"依日期\",\"依週別\",\"區分期貨與選擇權二類\",\"區分各期貨契約\",\"夜盤\",\"區分各選擇權契約\",\"選擇權買賣權分計\",\"下載\",\"大額交易人未沖銷部位結構\",\"期貨大額交易人未沖銷部位結構表\",\"選擇權大額交易人未沖銷部位結構表\",\"期貨大額交易人未沖銷部位資料下載\",\"選擇權大額交易人未沖銷部位資料下載\",\"每日外幣參考匯率查詢\",\"交易歷史資料申請\",\"資料下載專區\",\"客製化未沖銷部位資訊下載\",\"三大法人-下載\",\"總表-依日期\",\"總表-依週別\",\"區分期貨與選擇權二類-依日期\",\"區分期貨與選擇權二類-依週別\",\"區分各期貨契約-依日期\",\"區分各期貨契約-依週別\",\"區分各選擇權契約-依日期\",\"區分各選擇權契約-依週別\",\"選擇權買賣權分計-依日期\",\"選擇權買賣權分計-依週別\",\"每日外幣參考匯率\",\"結算業務\",\"最後結算價一覽表-最後結算價檔案下載\",\"到期契約履約交割下載\",\"統計資料\",\"期貨商交易量日報表\",\"期貨商交易量週報表\",\"期貨商交易量月報表\",\"期貨商交易量年報表\",\"前一月份各商品每日交易量統計表\",\"資訊廠商\",\"授權德國交易所集團行銷\",\"臺灣期貨交易所行情資訊網站\",\"訊息面暫停交易之股票期貨及選擇權\",\"夜盤訊息面暫停交易時點\",\"指數專區\",\"期貨交易資訊觀測站\",\"交易制度\",\"期貨市場架構\",\"",
+    "組合式委託成交-下載\",\"議價申報成交-下載\",\"每日成交資訊-客製化商品\",\"客製化交易之議價申報成交\",\"客製化交易之議價申報成交-下載\",\"各商品成交資訊\",\"成交量統計\",\"各商品成交資訊-下載\",\"期貨商買賣日報表\",\"期貨商買賣日報表-客製化商品\",\"三大法人\",\"查詢\",\"總表\",\"依日期\",\"依週別\",\"區分期貨與選擇權二類\",\"區分各期貨契約\",\"夜盤\",\"區分各選擇權契約\",\"選擇權買賣權分計\",\"下載\",\"大額交易人未沖銷部位結構\",\"期貨大額交易人未沖銷部位結構表\",\"選擇權大額交易人未沖銷部位結構表\",\"期貨大額交易人未沖銷部位資料下載\",\"選擇權大額交易人未沖銷部位資料下載\",\"每日外幣參考匯率查詢\",\"交易歷史資料申請\",\"資料下載專區\",\"客製化未沖銷部位資訊下載\",\"三大法人-下載\",\"總表-依日期\",\"總表-依週別\",\"區分期貨與選擇權二類-依日期\",\"區分期貨與選擇權二類-依週別\",\"區分各期貨契約-依日期\",\"區分各期貨契約-依週別\",\"區分各選擇權契約-依日期\",\"區分各選擇權契約-依週別\",\"選擇權買賣權分計-依日期\",\"選擇權買賣權分計-依週別\",\"每日外幣參考匯率\",\"結算業務\",\"最後結算價一覽表-最後結算價檔案下載\",\"到期契約履約交割下載\",\"統計資料\",\"期貨商交易量日報表\",\"期貨商交易量週報表\",\"期貨商交易量月報表\",\"期貨商交易量年報表\",\"前一月份各商品每日交易量統計表\",\"資訊廠商\",\"授權德國交易所集團行銷\",\"臺灣期貨交易所行情資訊網站\",\"訊息面暫停交易之股票期貨及選擇權\",\"夜盤訊息面暫停交易時點\",\"指數專區\",\"期貨交易資訊觀測站\",\"交易制度\",\"期貨市場架構\",\"期貨交易作業細節\",\"期貨交易開戶",
+    "\",\"議價申報成交-下載\",\"每日成交資訊-客製化商品\",\"客製化交易之議價申報成交\",\"客製化交易之議價申報成交-下載\",\"各商品成交資訊\",\"成交量統計\",\"各商品成交資訊-下載\",\"期貨商買賣日報表\",\"期貨商買賣日報表-客製化商品\",\"三大法人\",\"查詢\",\"總表\",\"依日期\",\"依週別\",\"區分期貨與選擇權二類\",\"區分各期貨契約\",\"夜盤\",\"區分各選擇權契約\",\"選擇權買賣權分計\",\"下載\",\"大額交易人未沖銷部位結構\",\"期貨大額交易人未沖銷部位結構表\",\"選擇權大額交易人未沖銷部位結構表\",\"期貨大額交易人未沖銷部位資料下載\",\"選擇權大額交易人未沖銷部位資料下載\",\"每日外幣參考匯率查詢\",\"交易歷史資料申請\",\"資料下載專區\",\"客製化未沖銷部位資訊下載\",\"三大法人-下載\",\"總表-依日期\",\"總表-依週別\",\"區分期貨與選擇權二類-依日期\",\"區分期貨與選擇權二類-依週別\",\"區分各期貨契約-依日期\",\"區分各期貨契約-依週別\",\"區分各選擇權契約-依日期\",\"區分各選擇權契約-依週別\",\"選擇權買賣權分計-依日期\",\"選擇權買賣權分計-依週別\",\"每日外幣參考匯率\",\"結算業務\",\"最後結算價一覽表-最後結算價檔案下載\",\"到期契約履約交割下載\",\"統計資料\",\"期貨商交易量日報表\",\"期貨商交易量週報表\",\"期貨商交易量月報表\",\"期貨商交易量年報表\",\"前一月份各商品每日交易量統計表\",\"資訊廠商\",\"授權德國交易所集團行銷\",\"臺灣期貨交易所行情資訊網站\",\"訊息面暫停交易之股票期貨及選擇權\",\"夜盤訊息面暫停交易時點\",\"指數專區\",\"期貨交易資訊觀測站\",\"交易制度\",\"期貨市場架構\",\"期貨交易作業細節\",\"期貨交易開戶作業\",\"期貨交易及",
+    "區分各選擇權契約\",\"選擇權買賣權分計\",\"下載\",\"大額交易人未沖銷部位結構\",\"期貨大額交易人未沖銷部位結構表\",\"選擇權大額交易人未沖銷部位結構表\",\"期貨大額交易人未沖銷部位資料下載\",\"選擇權大額交易人未沖銷部位資料下載\",\"每日外幣參考匯率查詢\",\"交易歷史資料申請\",\"資料下載專區\",\"客製化未沖銷部位資訊下載\",\"三大法人-下載\",\"總表-依日期\",\"總表-依週別\",\"區分期貨與選擇權二類-依日期\",\"區分期貨與選擇權二類-依週別\",\"區分各期貨契約-依日期\",\"區分各期貨契約-依週別\",\"區分各選擇權契約-依日期\",\"區分各選擇權契約-依週別\",\"選擇權買賣權分計-依日期\",\"選擇權買賣權分計-依週別\",\"每日外幣參考匯率\",\"結算業務\",\"最後結算價一覽表-最後結算價檔案下載\",\"到期契約履約交割下載\",\"統計資料\",\"期貨商交易量日報表\",\"期貨商交易量週報表\",\"期貨商交易量月報表\",\"期貨商交易量年報表\",\"前一月份各商品每日交易量統計表\",\"資訊廠商\",\"授權德國交易所集團行銷\",\"臺灣期貨交易所行情資訊網站\",\"訊息面暫停交易之股票期貨及選擇權\",\"夜盤訊息面暫停交易時點\",\"指數專區\",\"期貨交易資訊觀測站\",\"交易制度\",\"期貨市場架構\",\"期貨交易作業細節\",\"期貨交易開戶作業\",\"期貨交易及保證金控管作業\",\"交易人違約\",\"期貨商錯帳及更正帳號申報作業\",\"期貨市場交易監視\",\"造市制度\",\"造市者作業辦法\",\"造市者相關措施\",\"造市者名單與商品\",\"鉅額交易介紹\",\"鉅額交易法規\",\"鉅額交易行情\",\"鉅額交易QA\",\"盤後交易\",\"盤後交易介紹\",\"盤後交易QA\",\"客製化交易\",\"客製化交易介紹\",\"客製化交易QA\",\"動態價格穩定",
+    "權買賣權分計\",\"下載\",\"大額交易人未沖銷部位結構\",\"期貨大額交易人未沖銷部位結構表\",\"選擇權大額交易人未沖銷部位結構表\",\"期貨大額交易人未沖銷部位資料下載\",\"選擇權大額交易人未沖銷部位資料下載\",\"每日外幣參考匯率查詢\",\"交易歷史資料申請\",\"資料下載專區\",\"客製化未沖銷部位資訊下載\",\"三大法人-下載\",\"總表-依日期\",\"總表-依週別\",\"區分期貨與選擇權二類-依日期\",\"區分期貨與選擇權二類-依週別\",\"區分各期貨契約-依日期\",\"區分各期貨契約-依週別\",\"區分各選擇權契約-依日期\",\"區分各選擇權契約-依週別\",\"選擇權買賣權分計-依日期\",\"選擇權買賣權分計-依週別\",\"每日外幣參考匯率\",\"結算業務\",\"最後結算價一覽表-最後結算價檔案下載\",\"到期契約履約交割下載\",\"統計資料\",\"期貨商交易量日報表\",\"期貨商交易量週報表\",\"期貨商交易量月報表\",\"期貨商交易量年報表\",\"前一月份各商品每日交易量統計表\",\"資訊廠商\",\"授權德國交易所集團行銷\",\"臺灣期貨交易所行情資訊網站\",\"訊息面暫停交易之股票期貨及選擇權\",\"夜盤訊息面暫停交易時點\",\"指數專區\",\"期貨交易資訊觀測站\",\"交易制度\",\"期貨市場架構\",\"期貨交易作業細節\",\"期貨交易開戶作業\",\"期貨交易及保證金控管作業\",\"交易人違約\",\"期貨商錯帳及更正帳號申報作業\",\"期貨市場交易監視\",\"造市制度\",\"造市者作業辦法\",\"造市者相關措施\",\"造市者名單與商品\",\"鉅額交易介紹\",\"鉅額交易法規\",\"鉅額交易行情\",\"鉅額交易QA\",\"盤後交易\",\"盤後交易介紹\",\"盤後交易QA\",\"客製化交易\",\"客製化交易介紹\",\"客製化交易QA\",\"動態價格穩定措施\",\"介紹\",\"法規\""
+  ]
+}
