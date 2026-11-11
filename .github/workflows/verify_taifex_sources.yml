@@ -1,0 +1,38 @@
+name: Verify TAIFEX official source provenance
+on:
+  push:
+    paths:
+      - 'scripts/verify_taifex_sources.py'
+      - '.github/workflows/verify_taifex_sources.yml'
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: taifex-source-verification
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify official source batch (maximum 20 requests)
+        run: python scripts/verify_taifex_sources.py --limit 20
+      - name: Save verification checkpoints
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/taifex_source_verification.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Checkpoint TAIFEX source verification [skip ci]'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
