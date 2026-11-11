@@ -25,10 +25,15 @@ def audit(payload):
         y, m = map(int, month.split("-"))
         weekdays = sum(__import__("datetime").date(y, m, d).weekday() < 5
                        for d in range(1, calendar.monthrange(y, m)[1] + 1))
+        margin_days = {d for d in grouped["margin.margin"] if d.startswith(month)}
+        cash_days = {d for d in grouped["inst.cash_inst"] if d.startswith(month)}
         by_month[month] = {
             "margin_unique_dates": len([d for d in grouped["margin.margin"] if d.startswith(month)]),
             "cash_unique_dates": len([d for d in grouped["inst.cash_inst"] if d.startswith(month)]),
             "weekday_reference_count_not_official_calendar": weekdays,
+            "cash_missing_vs_margin_dates": sorted(margin_days - cash_days),
+            "margin_missing_vs_cash_dates": sorted(cash_days - margin_days),
+            "paired_observation_dates": len(margin_days & cash_days),
             "official_trading_day_count": None,
             "trading_day_completeness": None,
             "reason": "Official trading calendar and verified listed-market sessions not joined",
