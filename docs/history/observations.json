@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-11T16:43:11.382554+00:00",
+  "generated_at": "2026-11-11T16:49:41.093814+00:00",
   "record_count": 24,
-  "revision_count": 77,
+  "revision_count": 78,
   "observations": [
     {
       "metric_id": "fx",
@@ -18,7 +18,7 @@
       "provider": "Yahoo Finance 非官方",
       "scope": "",
       "observation_date": "2026-11-11",
-      "value": 28468.438,
+      "value": 28477.49,
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ENDX/"
     },

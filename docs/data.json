@@ -5,16 +5,12 @@
     "tw_margin": "2026-11-11T16:43:06.654465+00:00",
     "tw_tw_price": "2026-11-11T16:43:06.654465+00:00"
   },
-  "updated_utc": "2026-11-11T16:43:11.323066+00:00",
+  "updated_utc": "2026-11-11T16:49:41.038698+00:00",
   "request_stats": {
-    "requests": 14,
-    "success": 14,
+    "requests": 6,
+    "success": 6,
     "failure": 0,
     "by_host": {
-      "api.stlouisfed.org": 4,
-      "www.twse.com.tw": 2,
-      "openapi.twse.com.tw": 1,
-      "openapi.taifex.com.tw": 1,
       "query1.finance.yahoo.com": 6
     },
     "errors": [],
@@ -406,7 +402,8 @@
       ],
       "provider": "FRED official API",
       "checked_at": "2026-11-11T16:43:06.654465+00:00",
-      "change20bp": 23.0
+      "change20bp": 23.0,
+      "cache_status": "cached"
     },
     "ig": {
       "name": "美國投資等級債利差",
@@ -782,7 +779,8 @@
         }
       ],
       "provider": "FRED official API",
-      "checked_at": "2026-11-11T16:43:06.654465+00:00"
+      "checked_at": "2026-11-11T16:43:06.654465+00:00",
+      "cache_status": "cached"
     },
     "vix": {
       "name": "VIX",
@@ -1158,7 +1156,8 @@
         }
       ],
       "provider": "FRED official API",
-      "checked_at": "2026-11-11T16:43:06.654465+00:00"
+      "checked_at": "2026-11-11T16:43:06.654465+00:00",
+      "cache_status": "cached"
     },
     "us10y": {
       "name": "美國10年期公債殖利率",
@@ -1530,7 +1529,8 @@
         }
       ],
       "provider": "FRED official API",
-      "checked_at": "2026-11-11T16:43:06.654465+00:00"
+      "checked_at": "2026-11-11T16:43:06.654465+00:00",
+      "cache_status": "cached"
     },
     "nfci": {
       "name": "芝加哥金融情勢指數",
@@ -1628,7 +1628,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 28468.438,
+      "value": 28477.49,
       "date": "2026-11-11",
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ENDX/",
@@ -1991,13 +1991,13 @@
         },
         {
           "date": "2026-11-11",
-          "value": 28468.438
+          "value": 28477.49
         }
       ],
-      "drawdown_pct": 8.83,
+      "drawdown_pct": 8.8,
       "reference": "近一年最高收盤價",
-      "spx": 7616.83,
-      "checked_at": "2026-11-11T16:43:06.654465+00:00"
+      "spx": 7617.87,
+      "checked_at": "2026-11-11T16:49:40.627470+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -2006,7 +2006,7 @@
       "frequency": "daily",
       "status": "partial",
       "reason": "只有半導體相對強弱，市場廣度未取得",
-      "value": 0.3758,
+      "value": 0.3764,
       "date": "2026-11-11",
       "unit": "SOX/NDX",
       "source_url": "https://finance.yahoo.com/quote/%5ESOX/"
@@ -2621,7 +2621,7 @@
       ],
       "drawdown_pct": 14.27,
       "reference": "近一年最高收盤價",
-      "checked_at": "2026-11-11T16:43:06.654465+00:00"
+      "checked_at": "2026-11-11T16:49:40.627470+00:00"
     },
     "fx": {
       "name": "美元兌新台幣與美元指數",
@@ -2996,7 +2996,7 @@
           "value": 32.892
         }
       ],
-      "checked_at": "2026-11-11T16:43:06.654465+00:00",
+      "checked_at": "2026-11-11T16:49:40.627470+00:00",
       "dxy": 102.88
     }
   },
