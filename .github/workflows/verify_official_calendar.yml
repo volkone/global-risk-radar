@@ -5,6 +5,7 @@ on:
       - '.github/workflows/verify_official_calendar.yml'
       - 'scripts/fetch_official_calendar.py'
       - 'scripts/build_official_calendar.py'
+      - 'scripts/fetch_official_sessions.py'
   workflow_dispatch:
 permissions:
   contents: write
@@ -22,17 +23,15 @@ jobs:
           python-version: '3.11'
       - name: Regression tests
         run: python -m unittest discover -s tests -v
-      - name: Retrieve official annual schedules
-        run: python scripts/fetch_official_calendar.py
-      - name: Construct daily calendar
-        run: python scripts/build_official_calendar.py
+      - name: Retrieve actual historical trading sessions from independent TWSE monthly reports
+        run: python scripts/fetch_official_sessions.py
       - name: Compare historical observations to official sessions
         id: audit
         continue-on-error: true
         run: |
           python scripts/audit_calendar.py \
             --calendar storage/official_calendar/trading_days.csv \
-            --source-url https://www.twse.com.tw/holidaySchedule/holidaySchedule \
+            --source-url https://www.twse.com.tw/rwd/zh/indicesReport/FMTQIK \
             --retrieved-at "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
       - name: Save audit artifacts
         if: always()
