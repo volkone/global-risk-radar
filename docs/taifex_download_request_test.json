@@ -1,0 +1,33 @@
+{
+  "endpoint": "https://www.taifex.com.tw/cht/3/futContractsDateExcel",
+  "params": {
+    "queryStartDate": "2026/10/30",
+    "queryEndDate": "2026/10/30",
+    "commodityId": "TX"
+  },
+  "results": [
+    {
+      "method": "GET",
+      "status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 3653,
+      "sha256": "e3e3905bd89b46e393f1e9d6474cdbab710b6e818614b931ea5eee934801aeb4",
+      "contains_tx": false,
+      "contains_foreign": false,
+      "excel_signature": false,
+      "preview": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\r \r \r <head><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"></hea"
+    },
+    {
+      "method": "POST",
+      "status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 3653,
+      "sha256": "e3e3905bd89b46e393f1e9d6474cdbab710b6e818614b931ea5eee934801aeb4",
+      "contains_tx": false,
+      "contains_foreign": false,
+      "excel_signature": false,
+      "preview": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\r \r \r <head><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"></hea"
+    }
+  ],
+  "full_history_imported": false
+}
