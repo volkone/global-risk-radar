@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "storage" / "official_calendar"
-BASE = "https://www.twse.com.tw/holidaySchedule/holidaySchedule"
+BASE = "https://www.twse.com.tw/rwd/zh/holidaySchedule/holidaySchedule"
 
 def fetch_year(year):
     url = BASE + "?" + urllib.parse.urlencode({"response":"json","queryYear":year-1911})
