@@ -72,15 +72,17 @@ def parse_roc_date(raw):
 
 def parse_cash(obj, requested_month):
     # BFI82U date=YYYYMMDD is a one-day report, never infer a month of data.
-    date = parse_roc_date(str(obj.get("date", "")))
+    date = parse_roc_date(str(obj.get("date", ""))) or parse_roc_date(str(obj.get("title", "")))
     if not date or date[:7] != requested_month:
         raise ValueError("cash_response_date_not_requested_month")
     fields = obj.get("fields", [])
     rows = obj.get("data", [])
-    if "買賣差額" not in fields or "單位名稱" not in fields:
+    name_col = next((i for i, name in enumerate(fields) if "單位名稱" in str(name)), None)
+    net_col = next((i for i, name in enumerate(fields) if "買賣差額" in str(name)), None)
+    if name_col is None or net_col is None:
         raise ValueError("cash_schema_unverified")
-    totals = [money(row[fields.index("買賣差額")]) for row in rows
-              if len(row) == len(fields) and row[fields.index("單位名稱")] == "合計"]
+    totals = [money(row[net_col]) for row in rows
+              if len(row) == len(fields) and str(row[name_col]).strip() == "合計"]
     if len(totals) != 1:
         raise ValueError("cash_total_not_unique")
     return [{"metric_id": "inst.cash_inst", "date": date, "value": totals[0],
