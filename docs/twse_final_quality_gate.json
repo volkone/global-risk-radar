@@ -1,0 +1,21 @@
+{
+  "status": "pass",
+  "period": [
+    "2023-11-01",
+    "2026-10-31"
+  ],
+  "official_sessions": 726,
+  "metric_counts": {
+    "inst.cash_inst": 726,
+    "margin.margin": 726
+  },
+  "observations": 1452,
+  "problems": [],
+  "taifex_imported": false,
+  "full_model_backtest_authorized": false,
+  "sha256": {
+    "storage/twse_backfill.json": "a9d36e35403255d4a1728315e61c5c7db5dc614ac878a0671c07c22de2aca421",
+    "storage/official_calendar/trading_days.csv": "02b6126a174c03461bf280c380e9c42d0daa98a14de228bd8373580895d56601",
+    "storage/official_calendar/source_manifest.json": "84cfbc1c84853bc9e23a1fc2e9fef8641f250d90c920814a02cf8503360e16e3"
+  }
+}
