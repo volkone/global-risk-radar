@@ -10,7 +10,7 @@ OUT = ROOT / "storage" / "official_calendar"
 BASE = "https://www.twse.com.tw/rwd/zh/holidaySchedule/holidaySchedule"
 
 def fetch_year(year):
-    url = BASE + "?" + urllib.parse.urlencode({"response":"json","queryYear":year-1911})
+    url = BASE + "?" + urllib.parse.urlencode({"response":"json","queryYear":year})
     req = urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0","Accept":"application/json"})
     with urllib.request.urlopen(req,timeout=30) as f:
         obj=json.load(f)
