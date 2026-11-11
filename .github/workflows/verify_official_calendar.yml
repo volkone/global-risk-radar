@@ -44,6 +44,8 @@ jobs:
           fi
           if ! git diff --cached --quiet; then
             git commit -m 'Record official session calendar audit [skip ci]'
+            git fetch origin main
+            git rebase origin/main
             git push origin HEAD:main
           fi
       - name: Enforce quality gate
