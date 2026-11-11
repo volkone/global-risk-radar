@@ -1,0 +1,30 @@
+name: Verify TAIFEX official historical download request
+on:
+  push:
+    paths:
+      - '.github/workflows/test_taifex_download.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Probe official download GET and POST
+        run: python scripts/test_taifex_download_request.py
+      - name: Save evidence and original response
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/taifex_download_request_test.json
+          if [ -d storage/taifex_raw ]; then git add storage/taifex_raw; fi
+          if ! git diff --cached --quiet; then
+            git commit -m 'Record official TAIFEX download test [skip ci]'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
