@@ -1,9 +1,9 @@
 {
   "status": "blocked",
   "total_records": 718,
-  "checked_records": 120,
+  "checked_records": 150,
   "counts": {
-    "pass": 110,
+    "pass": 140,
     "hash_mismatch": 0,
     "value_mismatch": 0,
     "fetch_or_parse_error": 10
@@ -673,53 +673,233 @@
       "expected_sha256": "01918c094f3b6739c9cd096e2d4f14c6b1db480181fb3a43bc2c1f19e32924c5"
     },
     "2024-04-30": {
-      "status": "fetch_or_parse_error",
+      "status": "pass",
       "record_fingerprint": "8d193c10ef36cf5318cfd2701bfeb77e67a8a475bf720aa1039b826a567c49f2",
-      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+      "actual_sha256": "6afc07e86d8ff5b901384d19c8b1094c56b984801f06a33d4409ba98bdbfd6c1",
+      "expected_sha256": "6afc07e86d8ff5b901384d19c8b1094c56b984801f06a33d4409ba98bdbfd6c1"
     },
     "2024-05-02": {
-      "status": "fetch_or_parse_error",
+      "status": "pass",
       "record_fingerprint": "d9528a214f5316d9c64e9ba46db7e018775225c48a29d9c52f3497b6b75fe42f",
-      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+      "actual_sha256": "9f5449d3684b65bf1f04ed3f932f83cdd2dca12c2203cea60f3de26f0b9b3a2b",
+      "expected_sha256": "9f5449d3684b65bf1f04ed3f932f83cdd2dca12c2203cea60f3de26f0b9b3a2b"
     },
     "2024-05-03": {
-      "status": "fetch_or_parse_error",
+      "status": "pass",
       "record_fingerprint": "7632b018e1dc329932333a6b5ddb07b89b7b6c5268271aa2bfadcff40c4a4b12",
-      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+      "actual_sha256": "a1ea50d8352d3e66bee73e9bdf01a53cce36e8372c4a6192d7b5d36176aafd75",
+      "expected_sha256": "a1ea50d8352d3e66bee73e9bdf01a53cce36e8372c4a6192d7b5d36176aafd75"
     },
     "2024-05-06": {
-      "status": "fetch_or_parse_error",
+      "status": "pass",
       "record_fingerprint": "424597f58a55e63d054689c9bde12ac106f57354c69d4df4e79798648df6af9d",
-      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+      "actual_sha256": "33533c315e3a80457e8a240929891c4682b88c3eb09dc3560d36c1300a28de44",
+      "expected_sha256": "33533c315e3a80457e8a240929891c4682b88c3eb09dc3560d36c1300a28de44"
     },
     "2024-05-07": {
-      "status": "fetch_or_parse_error",
+      "status": "pass",
       "record_fingerprint": "8157e8354ff3ed28ad4d6448507e022d8fe84ea0c59d954dc1c2958ae913f70d",
-      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+      "actual_sha256": "8e5d75dae9f512b29456cf83a49042116f060eeb327ec021047c54634456b133",
+      "expected_sha256": "8e5d75dae9f512b29456cf83a49042116f060eeb327ec021047c54634456b133"
     },
     "2024-05-08": {
-      "status": "fetch_or_parse_error",
+      "status": "pass",
       "record_fingerprint": "b02e02505122e9e999c9d1fefeb20149b7d9e46ccb03f15e13b5fed82c987c4a",
-      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+      "actual_sha256": "b5861509514bd6ffe2c4123dd77a1d62a8ef07187302c3b598c419416433e8d1",
+      "expected_sha256": "b5861509514bd6ffe2c4123dd77a1d62a8ef07187302c3b598c419416433e8d1"
     },
     "2024-05-09": {
-      "status": "fetch_or_parse_error",
+      "status": "pass",
       "record_fingerprint": "33e4874fff474023db9ef642f593376e9011773f9318646e0441034b0cb4ea90",
-      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+      "actual_sha256": "9bb49d68163be3001f5735d18b3ff1f160b184dafee288d07fc0a0effc3f8cf5",
+      "expected_sha256": "9bb49d68163be3001f5735d18b3ff1f160b184dafee288d07fc0a0effc3f8cf5"
     },
     "2024-05-10": {
-      "status": "fetch_or_parse_error",
+      "status": "pass",
       "record_fingerprint": "fee6cb1d28fdb1be3f90370efbe0fdcf46c49ce0e15e421471bbc993425b42c7",
-      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+      "actual_sha256": "21b327877cc9137d35ca135c961fea72908e56530d3bf7c89faaf07214934eb6",
+      "expected_sha256": "21b327877cc9137d35ca135c961fea72908e56530d3bf7c89faaf07214934eb6"
     },
     "2024-05-13": {
-      "status": "fetch_or_parse_error",
+      "status": "pass",
       "record_fingerprint": "5eecbd14cf8ab4f5810cbc1a21e6d2d822b3af8d2c134312e68d8d50441281da",
-      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+      "actual_sha256": "12617ae0bbc33151b4132aa6cb645892154a5f500d20e81d7212dbeaca0d16f5",
+      "expected_sha256": "12617ae0bbc33151b4132aa6cb645892154a5f500d20e81d7212dbeaca0d16f5"
     },
     "2024-05-14": {
-      "status": "fetch_or_parse_error",
+      "status": "pass",
       "record_fingerprint": "31f8c5d873b39141b90df4e45b1c14bd56a26e164509c95ae2330c10b7c3247f",
+      "actual_sha256": "3da4a7a92bb89316df3e095701016acc37699f13fd8803d5593cc0a75bd63f75",
+      "expected_sha256": "3da4a7a92bb89316df3e095701016acc37699f13fd8803d5593cc0a75bd63f75"
+    },
+    "2024-05-15": {
+      "status": "pass",
+      "record_fingerprint": "bcd3be8882ce4cbe5b1e578f87479bd7199d7fa056c03d68060506e9bfc6d180",
+      "actual_sha256": "4cd5c8ebc8d2e6e4478054fa221ae1870cdc109480acccc9a53a942f7ec407bf",
+      "expected_sha256": "4cd5c8ebc8d2e6e4478054fa221ae1870cdc109480acccc9a53a942f7ec407bf"
+    },
+    "2024-05-16": {
+      "status": "pass",
+      "record_fingerprint": "0d65d3abab2b5be5bec5c6b62ae0786326b2a7f986e922769ec586a7a9b1d776",
+      "actual_sha256": "e9cca01e74ae02ea57efb416430e7433a9fa6c603a5203451aa49ae9088adf0b",
+      "expected_sha256": "e9cca01e74ae02ea57efb416430e7433a9fa6c603a5203451aa49ae9088adf0b"
+    },
+    "2024-05-17": {
+      "status": "pass",
+      "record_fingerprint": "56d278311ae345e8b0909dab2b87b9afd34a7f1a67269d8a9496cf921bb7f5dc",
+      "actual_sha256": "c34ab55cf930bf89443e6e772503664d266dd3eb7ca213ceb5c1f2c389058acc",
+      "expected_sha256": "c34ab55cf930bf89443e6e772503664d266dd3eb7ca213ceb5c1f2c389058acc"
+    },
+    "2024-05-20": {
+      "status": "pass",
+      "record_fingerprint": "8b042e9d6539615e637423379099990d28e0e047a7258f67ca95690262eac4fe",
+      "actual_sha256": "f5819a1f207798fde5c9c2c3b7beb171afe79d40d46f0d54c0e370f68e5ac783",
+      "expected_sha256": "f5819a1f207798fde5c9c2c3b7beb171afe79d40d46f0d54c0e370f68e5ac783"
+    },
+    "2024-05-21": {
+      "status": "pass",
+      "record_fingerprint": "d3cbc1c3bbadafb30b8b20de84f36cb69c2393e5494c2f00aa58505899fad842",
+      "actual_sha256": "218492d269c5ac116cb598b5fa3b93fa284e01d1cd910d39a7a88037dbfe27a4",
+      "expected_sha256": "218492d269c5ac116cb598b5fa3b93fa284e01d1cd910d39a7a88037dbfe27a4"
+    },
+    "2024-05-22": {
+      "status": "pass",
+      "record_fingerprint": "452200baf582e4764371484a11337bb95582dc5cf17fcbba5881869b4b8d3293",
+      "actual_sha256": "f85f768ef6deeeaece8dd3de60dcf52a9ed6ba43f99b1a22e3417aa56134f6fc",
+      "expected_sha256": "f85f768ef6deeeaece8dd3de60dcf52a9ed6ba43f99b1a22e3417aa56134f6fc"
+    },
+    "2024-05-23": {
+      "status": "pass",
+      "record_fingerprint": "25cf8345330d3bd05249e7300268dd2311e73595b5393604ffd6325aaf588da5",
+      "actual_sha256": "49c34a0418ccc067f66ff68fe314933f3dc12614edadc18d617bb9fa99569a10",
+      "expected_sha256": "49c34a0418ccc067f66ff68fe314933f3dc12614edadc18d617bb9fa99569a10"
+    },
+    "2024-05-24": {
+      "status": "pass",
+      "record_fingerprint": "baf4c837d1daf035102100af09fc2b5a4f571f9bc5e1e0feae2d6e181b43b6d5",
+      "actual_sha256": "1f355d097df0a5ab962ea16318c3621584b7318efe0f6a7efd88caa46741d60c",
+      "expected_sha256": "1f355d097df0a5ab962ea16318c3621584b7318efe0f6a7efd88caa46741d60c"
+    },
+    "2024-05-27": {
+      "status": "pass",
+      "record_fingerprint": "a833490eaa7aafd814b5504c8a02632cd90a2ea8a021b9d9ec843ea636f97e4f",
+      "actual_sha256": "2ec329f42ce42cfd6fdb8dd01f55205b8da7f4894b2a66dcaa24de23d0bf3cb9",
+      "expected_sha256": "2ec329f42ce42cfd6fdb8dd01f55205b8da7f4894b2a66dcaa24de23d0bf3cb9"
+    },
+    "2024-05-28": {
+      "status": "pass",
+      "record_fingerprint": "191dd81b451f9f7a7fa1a7f605285a49013cc2184ccfa6ef27f97df7b8d0477d",
+      "actual_sha256": "aea4c9f8a6bdf86eb4f46d8743581167d46884bee1005def7adfe91f7c165bb9",
+      "expected_sha256": "aea4c9f8a6bdf86eb4f46d8743581167d46884bee1005def7adfe91f7c165bb9"
+    },
+    "2024-05-29": {
+      "status": "pass",
+      "record_fingerprint": "1585bc563c5fcb96f2f3b5992fb84be9494e0292ad46e3e52acc063414bdd77e",
+      "actual_sha256": "3426e5d01258e4e784fc8ebba0fe1b660436a8c46d521ad3024a11278f3d49a2",
+      "expected_sha256": "3426e5d01258e4e784fc8ebba0fe1b660436a8c46d521ad3024a11278f3d49a2"
+    },
+    "2024-05-30": {
+      "status": "pass",
+      "record_fingerprint": "fc9601ae83df00646a33610ae62507b7e2437a9a4f7298802a738cc69d8368f1",
+      "actual_sha256": "a791d88b325d1f746724ac92374aa55da98f7f7c6dd6247d7b9a967ff018b6cf",
+      "expected_sha256": "a791d88b325d1f746724ac92374aa55da98f7f7c6dd6247d7b9a967ff018b6cf"
+    },
+    "2024-05-31": {
+      "status": "pass",
+      "record_fingerprint": "2b9d1a6b0e2f1f99805b0b05707db84eb8ef5aa626d9230c26e9622f5fc5475c",
+      "actual_sha256": "85539e34b761b02caca9b766c6593045500f41341e85129084f37a71c6fafc7c",
+      "expected_sha256": "85539e34b761b02caca9b766c6593045500f41341e85129084f37a71c6fafc7c"
+    },
+    "2024-06-03": {
+      "status": "pass",
+      "record_fingerprint": "dff92fd80c67a3055bfeeb26c80bae943e43ec88ee8c63b3b9f293a0742fcb43",
+      "actual_sha256": "393cf376b3d010818c43b092fb6bf291a40d9e5c83c25d629db57b6580434be8",
+      "expected_sha256": "393cf376b3d010818c43b092fb6bf291a40d9e5c83c25d629db57b6580434be8"
+    },
+    "2024-06-04": {
+      "status": "pass",
+      "record_fingerprint": "fef942eb54e952acc5e84f134825d072af3d0480e767917da329b2fd1dbfcbc6",
+      "actual_sha256": "ae9d73517d1e7f257ecf9e03c7cef4b7b4ad4fdd491a8bb7ccca2fa105d10cca",
+      "expected_sha256": "ae9d73517d1e7f257ecf9e03c7cef4b7b4ad4fdd491a8bb7ccca2fa105d10cca"
+    },
+    "2024-06-05": {
+      "status": "pass",
+      "record_fingerprint": "4a010297830f5f52c11586955b346ecc4f0f8bc38e00efd3b316e7ce8d9d7a55",
+      "actual_sha256": "9d959629f98fdc987035699b44d0be7189b63a577e4efd058f57dce4bf8d9ade",
+      "expected_sha256": "9d959629f98fdc987035699b44d0be7189b63a577e4efd058f57dce4bf8d9ade"
+    },
+    "2024-06-06": {
+      "status": "pass",
+      "record_fingerprint": "eca8e7d7f107753993a8a6b1e2420582d666962c6c58e430bacf06a777f9aeab",
+      "actual_sha256": "1ee75324e7519e0ee4e011b26542ff12a2197ad0139c47c3cf82b7387d1f7c2e",
+      "expected_sha256": "1ee75324e7519e0ee4e011b26542ff12a2197ad0139c47c3cf82b7387d1f7c2e"
+    },
+    "2024-06-07": {
+      "status": "pass",
+      "record_fingerprint": "8ba68f9a07f2f326db4a9373e71e86f73236212dfa0318b7b73d8242654a6f72",
+      "actual_sha256": "5c365b43ba0c569f20bc0198ae2dce088d14312bf3670fc774e2a2922ebc0658",
+      "expected_sha256": "5c365b43ba0c569f20bc0198ae2dce088d14312bf3670fc774e2a2922ebc0658"
+    },
+    "2024-06-11": {
+      "status": "pass",
+      "record_fingerprint": "f83929f1bf6be2a06072b55e5fe800f79f1e4dffab8c58fa625cb0b68a58bc76",
+      "actual_sha256": "9a5ac8795aa1fb6edd600795f0588e9d1f5c2ccec0ec6b76279298c09f7cd3c9",
+      "expected_sha256": "9a5ac8795aa1fb6edd600795f0588e9d1f5c2ccec0ec6b76279298c09f7cd3c9"
+    },
+    "2024-06-12": {
+      "status": "pass",
+      "record_fingerprint": "b76199de2d5c856cb248c42a5779713bae35a0198909351668d2d0e61aec552f",
+      "actual_sha256": "bc07974168c8fd80c8876697372fc5e0025f22f43cab791ca6474e36e8c0114d",
+      "expected_sha256": "bc07974168c8fd80c8876697372fc5e0025f22f43cab791ca6474e36e8c0114d"
+    },
+    "2024-06-13": {
+      "status": "fetch_or_parse_error",
+      "record_fingerprint": "09f9e850d484dc1161040a1722d737272cee070ba41a3323d309fb1ac5304f5d",
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    "2024-06-14": {
+      "status": "fetch_or_parse_error",
+      "record_fingerprint": "f97a4ac50c78ac9883f52bb99a79e70aa3cad0d2020cf53912c37cf6323c97cb",
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    "2024-06-17": {
+      "status": "fetch_or_parse_error",
+      "record_fingerprint": "7a8c0d217f2e22dcc610f7443b4ec39524f7f545ff8b2b6da15cfa23e05f22a2",
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    "2024-06-18": {
+      "status": "fetch_or_parse_error",
+      "record_fingerprint": "82de889440155e8f8ed2edb1684a7e861913f54e3c83d5816494816f8fd67e50",
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    "2024-06-19": {
+      "status": "fetch_or_parse_error",
+      "record_fingerprint": "33552b4ae95bcbf571357e6dbbce06919bb5b3d26a236134cc6e9137bc99a2c8",
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    "2024-06-20": {
+      "status": "fetch_or_parse_error",
+      "record_fingerprint": "d7df3dc75c36a05af9cc9ab51d8f880b1fd90a0095ac7263959cd8a4cf443fd6",
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    "2024-06-21": {
+      "status": "fetch_or_parse_error",
+      "record_fingerprint": "c1ae00214d567cd6030ab88bdc16b1a516e54e9268ef8a14f3da97cfc67bfd4c",
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    "2024-06-24": {
+      "status": "fetch_or_parse_error",
+      "record_fingerprint": "58d8b4e6e73d42c6310c5c3d37fae84f92f58172784636083baa1c7c403e19f8",
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    "2024-06-25": {
+      "status": "fetch_or_parse_error",
+      "record_fingerprint": "16d885d682ff168e978572b6d3e9e9f9ce79c67a44e27e18d69da966bbfb3971",
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    "2024-06-26": {
+      "status": "fetch_or_parse_error",
+      "record_fingerprint": "30c3fc7b4c52d660123d680b34781762597dcc3040e3192a690d094c11ac2fc9",
       "error": "HTTPError: HTTP Error 429: Too Many Requests"
     }
   }
