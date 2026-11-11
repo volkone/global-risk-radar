@@ -93,12 +93,25 @@ def main():
     accepted = {r["date"]: r for r in previous.get("records", [])
                 if r.get("metric_id") == "inst.futures" and START <= r.get("date", "") <= END}
     previous_report = json.loads(REPORT.read_text(encoding="utf-8")) if REPORT.exists() else {}
+    if args.offset == -1 and len(accepted) == len(dates):
+        print("All reference dates already collected; no requests required.", flush=True)
+        return
     if args.offset == -1:
         args.offset = int(previous_report.get("last_batch_offset", 0)) + int(previous_report.get("last_batch_size", 0))
     failures = {r["date"]: r for r in previous_report.get("errors", []) if "date" in r}
     attempts = 0
     newly_accepted = 0
-    batch = dates[args.offset:args.offset + args.limit]
+    if args.offset >= len(dates):
+        missing = [date for date in dates if date not in accepted]
+        if missing:
+            print(f"Reached end; retrying {len(missing)} missing dates.", flush=True)
+            batch = missing[:args.limit]
+            args.offset = len(dates)
+        else:
+            print("No outstanding reference dates.", flush=True)
+            return
+    else:
+        batch = dates[args.offset:args.offset + args.limit]
 
     def persist():
         atomic_json(OUT, {
