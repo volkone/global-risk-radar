@@ -27,11 +27,14 @@
     "2025-10",
     "2025-11",
     "2025-12",
-    "2026-01"
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04"
   ],
-  "accepted_records": 1132,
-  "rejected_requests": 332,
-  "last_attempted_month": "2026-01",
-  "updated_at": "2026-11-11T04:15:20.428268+00:00",
+  "accepted_records": 1240,
+  "rejected_requests": 342,
+  "last_attempted_month": "2026-04",
+  "updated_at": "2026-11-11T04:28:51.860643+00:00",
   "status": "attempted_not_verified_complete"
 }
