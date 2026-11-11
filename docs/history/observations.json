@@ -1,17 +1,44 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-11T13:25:21.666462+00:00",
-  "record_count": 14,
-  "revision_count": 76,
+  "generated_at": "2026-11-11T16:43:11.382554+00:00",
+  "record_count": 24,
+  "revision_count": 77,
   "observations": [
     {
       "metric_id": "fx",
       "provider": "Yahoo Finance 非官方",
       "scope": "",
       "observation_date": "2026-11-11",
-      "value": 32.85,
+      "value": 32.892,
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/"
+    },
+    {
+      "metric_id": "indices",
+      "provider": "Yahoo Finance 非官方",
+      "scope": "",
+      "observation_date": "2026-11-11",
+      "value": 28468.438,
+      "unit": "points",
+      "source_url": "https://finance.yahoo.com/quote/%5ENDX/"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "provider": "TWSE",
+      "scope": "",
+      "observation_date": "2026-11-11",
+      "value": 24075892995.0,
+      "unit": "TWD",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "provider": "TWSE",
+      "scope": "TWSE上市市場",
+      "observation_date": "2026-11-11",
+      "value": 541158093000.0,
+      "unit": "TWD",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?selectType=ALL&response=json"
     },
     {
       "metric_id": "taiex",
@@ -50,6 +77,15 @@
       "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?response=json"
     },
     {
+      "metric_id": "inst.futures",
+      "provider": "TAIFEX",
+      "scope": "",
+      "observation_date": "2026-11-10",
+      "value": -103473.0,
+      "unit": "口",
+      "source_url": "https://openapi.taifex.com.tw/v1/MarketDataOfMajorInstitutionalTradersDetailsOfFuturesContractsBytheDate"
+    },
+    {
       "metric_id": "margin.margin",
       "provider": "TWSE",
       "scope": "TWSE上市市場",
@@ -57,6 +93,51 @@
       "value": 536678732000.0,
       "unit": "TWD",
       "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?selectType=ALL&response=json"
+    },
+    {
+      "metric_id": "taiex",
+      "provider": "Yahoo Finance 非官方",
+      "scope": "",
+      "observation_date": "2026-11-10",
+      "value": 42711.922,
+      "unit": "points",
+      "source_url": "https://finance.yahoo.com/quote/%5ETWII/"
+    },
+    {
+      "metric_id": "taiex.tw_price",
+      "provider": "TWSE",
+      "scope": "",
+      "observation_date": "2026-11-10",
+      "value": 42711.92,
+      "unit": "points",
+      "source_url": "https://openapi.twse.com.tw/v1/exchangeReport/FMTQIK"
+    },
+    {
+      "metric_id": "vix",
+      "provider": "FRED official API",
+      "scope": "",
+      "observation_date": "2026-11-10",
+      "value": 19.46,
+      "unit": "index",
+      "source_url": "https://fred.stlouisfed.org/series/VIXCLS"
+    },
+    {
+      "metric_id": "hy",
+      "provider": "FRED official API",
+      "scope": "",
+      "observation_date": "2026-11-09",
+      "value": 3.34,
+      "unit": "%",
+      "source_url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
+    },
+    {
+      "metric_id": "ig",
+      "provider": "FRED official API",
+      "scope": "",
+      "observation_date": "2026-11-09",
+      "value": 0.91,
+      "unit": "%",
+      "source_url": "https://fred.stlouisfed.org/series/BAMLC0A0CM"
     },
     {
       "metric_id": "inst.futures",
@@ -84,6 +165,15 @@
       "value": 41661.7,
       "unit": "points",
       "source_url": "https://openapi.twse.com.tw/v1/exchangeReport/FMTQIK"
+    },
+    {
+      "metric_id": "us10y",
+      "provider": "FRED official API",
+      "scope": "",
+      "observation_date": "2026-11-09",
+      "value": 4.88,
+      "unit": "%",
+      "source_url": "https://fred.stlouisfed.org/series/DGS10"
     },
     {
       "metric_id": "hy",

@@ -1,39 +1,39 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-11T13:25:21.852845+00:00",
+  "generated_at": "2026-11-11T16:43:11.614861+00:00",
   "model_status": "uncalibrated_prototype",
   "disclaimer": "Risk scores are provisional and not validated by historical backtests.",
   "global": {
     "status": "provisional",
-    "score": 29.0,
+    "score": 22.3,
     "coverage": 0.85,
     "min_coverage": 0.85,
     "components": [
       {
         "metric": "hy",
         "weight": 25,
-        "signal": 23.67,
+        "signal": 22.33,
         "eligible": true,
         "reason": null
       },
       {
         "metric": "ig",
         "weight": 10,
-        "signal": 17.2,
+        "signal": 16.4,
         "eligible": true,
         "reason": null
       },
       {
         "metric": "vix",
         "weight": 20,
-        "signal": 41.33,
+        "signal": 22.61,
         "eligible": true,
         "reason": null
       },
       {
         "metric": "indices",
         "weight": 20,
-        "signal": 37.2,
+        "signal": 29.43,
         "eligible": true,
         "reason": null
       },
@@ -63,15 +63,15 @@
   "taiwan": {
     "status": "insufficient_coverage",
     "score": null,
-    "coverage": 0.0,
+    "coverage": 0.35,
     "min_coverage": 0.85,
     "components": [
       {
         "metric": "taiex",
         "weight": 35,
-        "signal": null,
-        "eligible": false,
-        "reason": "quality_gate_not_passed"
+        "signal": 47.57,
+        "eligible": true,
+        "reason": null
       },
       {
         "metric": "margin",

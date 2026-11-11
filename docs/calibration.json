@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-11T13:25:21.770601+00:00",
+  "generated_at": "2026-11-11T16:43:11.536963+00:00",
   "model_status": "research_only_not_backtested",
   "notes": [
     "Percentile calibration is descriptive, not a validated predictive risk threshold.",
@@ -12,9 +12,9 @@
     "margin": {
       "status": "insufficient_history",
       "score": null,
-      "current_date": "2026-11-10",
-      "current_value": 536678732000,
-      "raw_observations": 1,
+      "current_date": "2026-11-11",
+      "current_value": 541158093000,
+      "raw_observations": 2,
       "transformed_observations": 0,
       "min_prior_transformed_observations": 60,
       "lookback_sessions": 20,
@@ -27,9 +27,9 @@
     "inst.cash_inst": {
       "status": "insufficient_history",
       "score": null,
-      "current_date": "2026-11-10",
-      "current_value": -11761616175,
-      "raw_observations": 1,
+      "current_date": "2026-11-11",
+      "current_value": 24075892995,
+      "raw_observations": 2,
       "transformed_observations": 0,
       "min_prior_transformed_observations": 60,
       "lookback_sessions": null,
@@ -43,9 +43,9 @@
     "inst.futures": {
       "status": "insufficient_history",
       "score": null,
-      "current_date": "2026-11-09",
-      "current_value": -101771,
-      "raw_observations": 1,
+      "current_date": "2026-11-10",
+      "current_value": -103473,
+      "raw_observations": 2,
       "transformed_observations": 0,
       "min_prior_transformed_observations": 60,
       "lookback_sessions": null,
@@ -58,9 +58,9 @@
     },
     "fx": {
       "status": "experimental",
-      "score": 82.61,
+      "score": 86.96,
       "current_date": "2026-11-11",
-      "current_value": 32.85,
+      "current_value": 32.892,
       "raw_observations": 90,
       "transformed_observations": 70,
       "min_prior_transformed_observations": 60,
