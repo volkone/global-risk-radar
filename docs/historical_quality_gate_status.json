@@ -1,0 +1,238 @@
+{
+  "status": "blocked_official_calendar_unverified",
+  "scope": "TWSE listed market, 2023-11 through 2026-10",
+  "metric_ids": [
+    "margin.margin",
+    "inst.cash_inst"
+  ],
+  "unique_observations": 1450,
+  "paired_dates": 725,
+  "duplicate_records": 0,
+  "months_checked": 36,
+  "cross_source_date_gaps": 0,
+  "weekday_reference_difference": 58,
+  "important": "Weekday difference includes holidays and special closures; NOT a count of missing trading days. Official trading calendar has not been imported or validated.",
+  "official_trading_calendar": "not_imported",
+  "taifex_history": "not_backfilled",
+  "eligible_for_formal_backtest": false,
+  "source_audit": "docs/backfill_audit.json",
+  "official_calendar_reference": "https://www.twse.com.tw/zh/trading/holiday.html",
+  "months": [
+    {
+      "month": "2023-11",
+      "paired": 22,
+      "weekday_reference": 22,
+      "unresolved_weekday_difference": 0
+    },
+    {
+      "month": "2023-12",
+      "paired": 21,
+      "weekday_reference": 21,
+      "unresolved_weekday_difference": 0
+    },
+    {
+      "month": "2024-01",
+      "paired": 21,
+      "weekday_reference": 23,
+      "unresolved_weekday_difference": 2
+    },
+    {
+      "month": "2024-02",
+      "paired": 13,
+      "weekday_reference": 21,
+      "unresolved_weekday_difference": 8
+    },
+    {
+      "month": "2024-03",
+      "paired": 21,
+      "weekday_reference": 21,
+      "unresolved_weekday_difference": 0
+    },
+    {
+      "month": "2024-04",
+      "paired": 20,
+      "weekday_reference": 22,
+      "unresolved_weekday_difference": 2
+    },
+    {
+      "month": "2024-05",
+      "paired": 22,
+      "weekday_reference": 23,
+      "unresolved_weekday_difference": 1
+    },
+    {
+      "month": "2024-06",
+      "paired": 19,
+      "weekday_reference": 20,
+      "unresolved_weekday_difference": 1
+    },
+    {
+      "month": "2024-07",
+      "paired": 21,
+      "weekday_reference": 23,
+      "unresolved_weekday_difference": 2
+    },
+    {
+      "month": "2024-08",
+      "paired": 22,
+      "weekday_reference": 22,
+      "unresolved_weekday_difference": 0
+    },
+    {
+      "month": "2024-09",
+      "paired": 20,
+      "weekday_reference": 21,
+      "unresolved_weekday_difference": 1
+    },
+    {
+      "month": "2024-10",
+      "paired": 19,
+      "weekday_reference": 23,
+      "unresolved_weekday_difference": 4
+    },
+    {
+      "month": "2024-11",
+      "paired": 21,
+      "weekday_reference": 21,
+      "unresolved_weekday_difference": 0
+    },
+    {
+      "month": "2024-12",
+      "paired": 22,
+      "weekday_reference": 22,
+      "unresolved_weekday_difference": 0
+    },
+    {
+      "month": "2025-01",
+      "paired": 15,
+      "weekday_reference": 23,
+      "unresolved_weekday_difference": 8
+    },
+    {
+      "month": "2025-02",
+      "paired": 19,
+      "weekday_reference": 20,
+      "unresolved_weekday_difference": 1
+    },
+    {
+      "month": "2025-03",
+      "paired": 21,
+      "weekday_reference": 21,
+      "unresolved_weekday_difference": 0
+    },
+    {
+      "month": "2025-04",
+      "paired": 20,
+      "weekday_reference": 22,
+      "unresolved_weekday_difference": 2
+    },
+    {
+      "month": "2025-05",
+      "paired": 20,
+      "weekday_reference": 22,
+      "unresolved_weekday_difference": 2
+    },
+    {
+      "month": "2025-06",
+      "paired": 21,
+      "weekday_reference": 21,
+      "unresolved_weekday_difference": 0
+    },
+    {
+      "month": "2025-07",
+      "paired": 23,
+      "weekday_reference": 23,
+      "unresolved_weekday_difference": 0
+    },
+    {
+      "month": "2025-08",
+      "paired": 21,
+      "weekday_reference": 21,
+      "unresolved_weekday_difference": 0
+    },
+    {
+      "month": "2025-09",
+      "paired": 21,
+      "weekday_reference": 22,
+      "unresolved_weekday_difference": 1
+    },
+    {
+      "month": "2025-10",
+      "paired": 20,
+      "weekday_reference": 23,
+      "unresolved_weekday_difference": 3
+    },
+    {
+      "month": "2025-11",
+      "paired": 20,
+      "weekday_reference": 20,
+      "unresolved_weekday_difference": 0
+    },
+    {
+      "month": "2025-12",
+      "paired": 22,
+      "weekday_reference": 23,
+      "unresolved_weekday_difference": 1
+    },
+    {
+      "month": "2026-01",
+      "paired": 21,
+      "weekday_reference": 22,
+      "unresolved_weekday_difference": 1
+    },
+    {
+      "month": "2026-02",
+      "paired": 12,
+      "weekday_reference": 20,
+      "unresolved_weekday_difference": 8
+    },
+    {
+      "month": "2026-03",
+      "paired": 22,
+      "weekday_reference": 22,
+      "unresolved_weekday_difference": 0
+    },
+    {
+      "month": "2026-04",
+      "paired": 20,
+      "weekday_reference": 22,
+      "unresolved_weekday_difference": 2
+    },
+    {
+      "month": "2026-05",
+      "paired": 20,
+      "weekday_reference": 21,
+      "unresolved_weekday_difference": 1
+    },
+    {
+      "month": "2026-06",
+      "paired": 21,
+      "weekday_reference": 22,
+      "unresolved_weekday_difference": 1
+    },
+    {
+      "month": "2026-07",
+      "paired": 22,
+      "weekday_reference": 23,
+      "unresolved_weekday_difference": 1
+    },
+    {
+      "month": "2026-08",
+      "paired": 21,
+      "weekday_reference": 21,
+      "unresolved_weekday_difference": 0
+    },
+    {
+      "month": "2026-09",
+      "paired": 20,
+      "weekday_reference": 22,
+      "unresolved_weekday_difference": 2
+    },
+    {
+      "month": "2026-10",
+      "paired": 19,
+      "weekday_reference": 22,
+      "unresolved_weekday_difference": 3
+    }
+  ]
+}
