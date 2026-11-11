@@ -12,11 +12,14 @@
     "2024-07",
     "2024-08",
     "2024-09",
-    "2024-10"
+    "2024-10",
+    "2024-11",
+    "2024-12",
+    "2025-01"
   ],
-  "accepted_records": 518,
-  "rejected_requests": 377,
-  "last_attempted_month": "2024-10",
-  "updated_at": "2026-11-11T02:54:13.497796+00:00",
+  "accepted_records": 634,
+  "rejected_requests": 354,
+  "last_attempted_month": "2025-01",
+  "updated_at": "2026-11-11T03:13:25.768203+00:00",
   "status": "attempted_not_verified_complete"
 }
