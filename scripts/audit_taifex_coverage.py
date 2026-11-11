@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 START="2023-11-11"
-END="2026-11-11"
+END="2026-10-31"
 
 def audit(records, calendar_dates):
     errors=[]
