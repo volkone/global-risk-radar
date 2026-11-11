@@ -1,0 +1,41 @@
+name: Final TWSE quality gate and next-stage readiness
+on:
+  push:
+    paths:
+      - '.github/workflows/final_twse_quality.yml'
+      - 'scripts/validate_twse_final.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Regression tests
+        run: python -m unittest discover -s tests -v
+      - name: Verify TWSE numeric provenance and complete official sessions
+        id: gate
+        continue-on-error: true
+        run: python scripts/validate_twse_final.py
+      - name: Publish quality evidence
+        if: always()
+        run: |
+          if [ -f docs/twse_final_quality_gate.json ]; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add docs/twse_final_quality_gate.json
+            if ! git diff --cached --quiet; then
+              git commit -m 'Publish final TWSE quality evidence [skip ci]'
+              git fetch origin main
+              git rebase origin/main
+              git push origin HEAD:main
+            fi
+          fi
+      - name: Enforce gate
+        if: always() && steps.gate.outcome != 'success'
+        run: exit 1
