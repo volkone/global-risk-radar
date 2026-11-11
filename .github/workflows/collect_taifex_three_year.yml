@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - '.github/workflows/collect_taifex_three_year.yml'
+      - 'scripts/audit_taifex_coverage.py'
   schedule:
     - cron: "*/5 * * * *"
   workflow_dispatch:
