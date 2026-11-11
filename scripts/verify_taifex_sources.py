@@ -16,10 +16,10 @@ OUT=ROOT/"docs/taifex_source_verification.json"
 
 def main():
     p=argparse.ArgumentParser()
-    p.add_argument("--limit",type=int,default=20)
+    p.add_argument("--limit",type=int,default=40)
     p.add_argument("--timeout",type=int,default=12)
     a=p.parse_args()
-    if not 1<=a.limit<=30 or not 1<=a.timeout<=30:p.error("limit and timeout must be 1..30")
+    if not 1<=a.limit<=40 or not 1<=a.timeout<=30:p.error("limit must be 1..40 and timeout 1..30")
     records=json.loads(DATA.read_text(encoding="utf-8"))["records"]
     prior=json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
     checked=prior.get("results",{})
