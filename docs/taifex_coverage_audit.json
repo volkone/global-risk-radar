@@ -2,32 +2,12 @@
   "status": "blocked",
   "range": [
     "2023-11-11",
-    "2026-11-11"
+    "2026-10-31"
   ],
-  "taifex_observations": 0,
+  "taifex_observations": 20,
   "twse_sessions": 718,
-  "joined_dates": 0,
+  "joined_dates": 20,
   "twse_dates_without_futures": [
-    "2023-11-13",
-    "2023-11-14",
-    "2023-11-15",
-    "2023-11-16",
-    "2023-11-17",
-    "2023-11-20",
-    "2023-11-21",
-    "2023-11-22",
-    "2023-11-23",
-    "2023-11-24",
-    "2023-11-27",
-    "2023-11-28",
-    "2023-11-29",
-    "2023-11-30",
-    "2023-12-01",
-    "2023-12-04",
-    "2023-12-05",
-    "2023-12-06",
-    "2023-12-07",
-    "2023-12-08",
     "2023-12-11",
     "2023-12-12",
     "2023-12-13",
@@ -729,9 +709,8 @@
   ],
   "futures_dates_without_twse": [],
   "errors": [
-    "TAIFEX history not imported",
     "independent TAIFEX trading-session calendar not yet verified",
-    "TWSE dates without futures observation: 718; requires independent futures-session classification"
+    "TWSE dates without futures observation: 698; requires independent futures-session classification"
   ],
   "futures_calendar_independently_verified": false,
   "full_model_backtest_authorized": false
