@@ -6,8 +6,8 @@ import json
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
-START="2023-11-01"
-END="2026-10-31"
+START="2023-11-11"
+END="2026-11-11"
 
 def audit(records, calendar_dates):
     errors=[]
@@ -52,7 +52,7 @@ def main():
     a=p.parse_args()
     records=json.loads(a.data.read_text(encoding="utf-8")).get("records",[]) if a.data.exists() else []
     with a.calendar.open(encoding="utf-8-sig",newline="") as f:
-        dates={r["date"] for r in csv.DictReader(f) if r["is_trading_day"]=="1"}
+        dates={r["date"] for r in csv.DictReader(f) if r["is_trading_day"]=="1" and START<=r["date"]<=END}
     result=audit(records,dates)
     a.output.parent.mkdir(parents=True,exist_ok=True)
     a.output.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
