@@ -9054,988 +9054,1144 @@
       "scope": "TWSE上市市場",
       "provider": "TWSE",
       "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251031&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-11-03",
+      "value": 304336086000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251103&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-11-03",
+      "value": -8475089855,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251103&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-11-04",
+      "value": 300318118000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251104&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-11-04",
+      "value": -10827505101,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251104&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-11-05",
+      "value": 302885861000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251105&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-11-05",
+      "value": -65091101456,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251105&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-11-06",
+      "value": 307908099000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251106&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-11-06",
+      "value": 1942263419,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251106&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-11-07",
+      "value": 307760690000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251107&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-11-07",
+      "value": -47329974944,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251107&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-11-10",
+      "value": 310128798000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251110&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-11-10",
+      "value": 1452373998,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251110&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-11-11",
+      "value": 309815189000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251111&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-11-11",
+      "value": -19816706638,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251111&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-11-12",
+      "value": 312952699000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251112&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-11-12",
+      "value": -7494954375,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251112&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-11-13",
+      "value": 313950396000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251113&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-11-13",
+      "value": -6018450946,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251113&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-11-14",
+      "value": 311008013000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251114&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-11-14",
+      "value": -83979866452,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251114&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-11-17",
+      "value": 311090494000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251117&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-11-17",
+      "value": -16059566278,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251117&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-11-18",
+      "value": 306328571000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251118&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-11-18",
+      "value": -70870198585,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251118&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-11-19",
+      "value": 306204612000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251119&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-11-19",
+      "value": -32681801582,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251119&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-11-20",
+      "value": 309665154000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251120&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-11-20",
+      "value": 19975683903,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251120&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-11-21",
+      "value": 303707617000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251121&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-11-21",
+      "value": -107896793184,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251121&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-11-24",
+      "value": 306380271000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251124&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-11-24",
+      "value": -29129222994,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251124&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-11-25",
+      "value": 311368884000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251125&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-11-25",
+      "value": 7214541039,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251125&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-11-26",
+      "value": 311060645000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251126&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-11-26",
+      "value": 22741833954,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251126&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-11-27",
+      "value": 314005988000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251127&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-11-27",
+      "value": 24030038799,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251127&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-11-28",
+      "value": 317182219000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251128&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-11-28",
+      "value": -2923717856,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251128&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-12-01",
+      "value": 319360271000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251201&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-12-01",
+      "value": -18869762707,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251201&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-12-02",
+      "value": 319737013000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251202&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-12-02",
+      "value": 18343136423,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251202&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-12-03",
+      "value": 321425021000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251203&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-12-03",
+      "value": 21483426973,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251203&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-12-04",
+      "value": 322826443000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251204&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-12-04",
+      "value": 10999634400,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251204&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-12-05",
+      "value": 322916644000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251205&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-12-05",
+      "value": 42021522420,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251205&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-12-08",
+      "value": 324739391000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251208&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-12-08",
+      "value": 19201868550,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251208&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-12-09",
+      "value": 326884262000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251209&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-12-09",
+      "value": -4373601675,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251209&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-12-10",
+      "value": 327694562000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251210&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-12-10",
+      "value": 26708547160,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251210&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-12-11",
+      "value": 326671838000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251211&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-12-11",
+      "value": -19364014237,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251211&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-12-12",
+      "value": 329349582000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251212&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-12-12",
+      "value": 25392749639,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251212&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-12-15",
+      "value": 331859338000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251215&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-12-15",
+      "value": -54773795499,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251215&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-12-16",
+      "value": 328789479000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251216&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-12-16",
+      "value": -70793756365,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251216&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-12-17",
+      "value": 332174898000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251217&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-12-17",
+      "value": -23644801205,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251217&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-12-18",
+      "value": 332380151000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251218&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-12-18",
+      "value": -15960075696,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251218&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-12-19",
+      "value": 333308741000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251219&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-12-19",
+      "value": 11763659962,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251219&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-12-22",
+      "value": 335196079000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251222&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-12-22",
+      "value": 39571508536,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251222&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-12-23",
+      "value": 337588452000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251223&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-12-23",
+      "value": 1756532478,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251223&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-12-24",
+      "value": 338902814000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251224&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-12-24",
+      "value": 1289993287,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251224&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-12-26",
+      "value": 340337126000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251226&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-12-26",
+      "value": 9691609211,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251226&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-12-29",
+      "value": 339886882000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251229&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-12-29",
+      "value": 15021589586,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251229&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-12-30",
+      "value": 341367756000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251230&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-12-30",
+      "value": 2601364988,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251230&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2025-12-31",
+      "value": 343409624000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20251231&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2025-12-31",
+      "value": -6755288627,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20251231&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2026-01-02",
+      "value": 346634298000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20260102&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2026-01-02",
+      "value": 19063127949,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20260102&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2026-01-05",
+      "value": 350948272000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20260105&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2026-01-05",
+      "value": 2794854110,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20260105&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2026-01-06",
+      "value": 354549156000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20260106&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2026-01-06",
+      "value": 9260010384,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20260106&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2026-01-07",
+      "value": 357058834000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20260107&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2026-01-07",
+      "value": -35444680088,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20260107&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2026-01-08",
+      "value": 352387558000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20260108&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2026-01-08",
+      "value": -11487815782,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20260108&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2026-01-09",
+      "value": 351492667000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20260109&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2026-01-09",
+      "value": -11222525184,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20260109&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2026-01-12",
+      "value": 356489999000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20260112&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2026-01-12",
+      "value": -14495099821,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20260112&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2026-01-13",
+      "value": 355638826000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20260113&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2026-01-13",
+      "value": 12838953750,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20260113&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2026-01-14",
+      "value": 358452806000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20260114&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2026-01-14",
+      "value": 13883925663,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20260114&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2026-01-15",
+      "value": 359299228000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20260115&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2026-01-15",
+      "value": -8832604255,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20260115&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2026-01-16",
+      "value": 363391797000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20260116&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2026-01-16",
+      "value": 37251394460,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20260116&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2026-01-19",
+      "value": 369415656000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20260119&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2026-01-19",
+      "value": -46217974258,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20260119&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2026-01-20",
+      "value": 371225738000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20260120&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2026-01-20",
+      "value": -15714749555,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20260120&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2026-01-21",
+      "value": 367750150000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20260121&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2026-01-21",
+      "value": -77637249435,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20260121&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2026-01-22",
+      "value": 371734427000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20260122&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2026-01-22",
+      "value": 24402346890,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20260122&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2026-01-23",
+      "value": 376076978000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20260123&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2026-01-23",
+      "value": 27058339306,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20260123&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2026-01-26",
+      "value": 381580658000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20260126&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2026-01-26",
+      "value": -8941043184,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20260126&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2026-01-27",
+      "value": 382728015000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20260127&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2026-01-27",
+      "value": 22576145840,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20260127&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2026-01-28",
+      "value": 384920473000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20260128&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2026-01-28",
+      "value": 30041341685,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20260128&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2026-01-29",
+      "value": 381778070000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20260129&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2026-01-29",
+      "value": -1715891067,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20260129&type=day&response=json"
+    },
+    {
+      "metric_id": "margin.margin",
+      "date": "2026-01-30",
+      "value": 383893252000,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20260130&response=json&selectType=ALL"
+    },
+    {
+      "metric_id": "inst.cash_inst",
+      "date": "2026-01-30",
+      "value": -63934202107,
+      "unit": "TWD",
+      "scope": "TWSE上市市場",
+      "provider": "TWSE",
+      "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate=20260130&type=day&response=json"
     }
   ],
   "attempts": [
     {
-      "requested_date": "2024-06-19",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-06-19",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-06-20",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-06-20",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-06-21",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-06-21",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-06-22",
-      "kind": "margin",
-      "status": "rejected",
-      "reason": "ValueError:margin_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-06-22",
-      "kind": "cash_inst",
-      "status": "rejected",
-      "reason": "ValueError:cash_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-06-23",
-      "kind": "margin",
-      "status": "rejected",
-      "reason": "ValueError:margin_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-06-23",
-      "kind": "cash_inst",
-      "status": "rejected",
-      "reason": "ValueError:cash_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-06-24",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-06-24",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-06-25",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-06-25",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-06-26",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-06-26",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-06-27",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-06-27",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-06-28",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-06-28",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-06-29",
-      "kind": "margin",
-      "status": "rejected",
-      "reason": "ValueError:margin_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-06-29",
-      "kind": "cash_inst",
-      "status": "rejected",
-      "reason": "ValueError:cash_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-06-30",
-      "kind": "margin",
-      "status": "rejected",
-      "reason": "ValueError:margin_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-06-30",
-      "kind": "cash_inst",
-      "status": "rejected",
-      "reason": "ValueError:cash_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-07-01",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-01",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-02",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-02",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-03",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-03",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-04",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-04",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-05",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-05",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-06",
-      "kind": "margin",
-      "status": "rejected",
-      "reason": "ValueError:margin_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-07-06",
-      "kind": "cash_inst",
-      "status": "rejected",
-      "reason": "ValueError:cash_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-07-07",
-      "kind": "margin",
-      "status": "rejected",
-      "reason": "ValueError:margin_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-07-07",
-      "kind": "cash_inst",
-      "status": "rejected",
-      "reason": "ValueError:cash_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-07-08",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-08",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-09",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-09",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-10",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-10",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-11",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-11",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-12",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-12",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-13",
-      "kind": "margin",
-      "status": "rejected",
-      "reason": "ValueError:margin_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-07-13",
-      "kind": "cash_inst",
-      "status": "rejected",
-      "reason": "ValueError:cash_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-07-14",
-      "kind": "margin",
-      "status": "rejected",
-      "reason": "ValueError:margin_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-07-14",
-      "kind": "cash_inst",
-      "status": "rejected",
-      "reason": "ValueError:cash_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-07-15",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-15",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-16",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-16",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-17",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-17",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-18",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-18",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-19",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-19",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-20",
-      "kind": "margin",
-      "status": "rejected",
-      "reason": "ValueError:margin_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-07-20",
-      "kind": "cash_inst",
-      "status": "rejected",
-      "reason": "ValueError:cash_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-07-21",
-      "kind": "margin",
-      "status": "rejected",
-      "reason": "ValueError:margin_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-07-21",
-      "kind": "cash_inst",
-      "status": "rejected",
-      "reason": "ValueError:cash_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-07-22",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-22",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-23",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-23",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-24",
-      "kind": "margin",
-      "status": "rejected",
-      "reason": "ValueError:margin_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-07-24",
-      "kind": "cash_inst",
-      "status": "rejected",
-      "reason": "ValueError:cash_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-07-25",
-      "kind": "margin",
-      "status": "rejected",
-      "reason": "ValueError:margin_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-07-25",
-      "kind": "cash_inst",
-      "status": "rejected",
-      "reason": "ValueError:cash_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-07-26",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-26",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-27",
-      "kind": "margin",
-      "status": "rejected",
-      "reason": "ValueError:margin_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-07-27",
-      "kind": "cash_inst",
-      "status": "rejected",
-      "reason": "ValueError:cash_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-07-28",
-      "kind": "margin",
-      "status": "rejected",
-      "reason": "ValueError:margin_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-07-28",
-      "kind": "cash_inst",
-      "status": "rejected",
-      "reason": "ValueError:cash_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-07-29",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-29",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-30",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-30",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-31",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-07-31",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-01",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-01",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-02",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-02",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-03",
-      "kind": "margin",
-      "status": "rejected",
-      "reason": "ValueError:margin_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-08-03",
-      "kind": "cash_inst",
-      "status": "rejected",
-      "reason": "ValueError:cash_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-08-04",
-      "kind": "margin",
-      "status": "rejected",
-      "reason": "ValueError:margin_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-08-04",
-      "kind": "cash_inst",
-      "status": "rejected",
-      "reason": "ValueError:cash_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-08-05",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-05",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-06",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-06",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-07",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-07",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-08",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-08",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-09",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-09",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-10",
-      "kind": "margin",
-      "status": "rejected",
-      "reason": "ValueError:margin_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-08-10",
-      "kind": "cash_inst",
-      "status": "rejected",
-      "reason": "ValueError:cash_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-08-11",
-      "kind": "margin",
-      "status": "rejected",
-      "reason": "ValueError:margin_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-08-11",
-      "kind": "cash_inst",
-      "status": "rejected",
-      "reason": "ValueError:cash_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-08-12",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-12",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-13",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-13",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-14",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-14",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-15",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-15",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-16",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-16",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-17",
-      "kind": "margin",
-      "status": "rejected",
-      "reason": "ValueError:margin_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-08-17",
-      "kind": "cash_inst",
-      "status": "rejected",
-      "reason": "ValueError:cash_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-08-18",
-      "kind": "margin",
-      "status": "rejected",
-      "reason": "ValueError:margin_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-08-18",
-      "kind": "cash_inst",
-      "status": "rejected",
-      "reason": "ValueError:cash_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-08-19",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-19",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-20",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-20",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-21",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-21",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-22",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-22",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-23",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-23",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-24",
-      "kind": "margin",
-      "status": "rejected",
-      "reason": "ValueError:margin_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-08-24",
-      "kind": "cash_inst",
-      "status": "rejected",
-      "reason": "ValueError:cash_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-08-25",
-      "kind": "margin",
-      "status": "rejected",
-      "reason": "ValueError:margin_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-08-25",
-      "kind": "cash_inst",
-      "status": "rejected",
-      "reason": "ValueError:cash_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-08-26",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-26",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-27",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-27",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-28",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-28",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-29",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-29",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-30",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-30",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-08-31",
-      "kind": "margin",
-      "status": "rejected",
-      "reason": "ValueError:margin_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-08-31",
-      "kind": "cash_inst",
-      "status": "rejected",
-      "reason": "ValueError:cash_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-09-01",
-      "kind": "margin",
-      "status": "rejected",
-      "reason": "ValueError:margin_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-09-01",
-      "kind": "cash_inst",
-      "status": "rejected",
-      "reason": "ValueError:cash_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-09-02",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-09-02",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-09-03",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-09-03",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-09-04",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-09-04",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-09-05",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-09-05",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-09-06",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-09-06",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-09-07",
-      "kind": "margin",
-      "status": "rejected",
-      "reason": "ValueError:margin_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-09-07",
-      "kind": "cash_inst",
-      "status": "rejected",
-      "reason": "ValueError:cash_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-09-08",
-      "kind": "margin",
-      "status": "rejected",
-      "reason": "ValueError:margin_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-09-08",
-      "kind": "cash_inst",
-      "status": "rejected",
-      "reason": "ValueError:cash_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-09-09",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-09-09",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-09-10",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-09-10",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-09-11",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-09-11",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-09-12",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-09-12",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-09-13",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-09-13",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-09-14",
-      "kind": "margin",
-      "status": "rejected",
-      "reason": "ValueError:margin_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-09-14",
-      "kind": "cash_inst",
-      "status": "rejected",
-      "reason": "ValueError:cash_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-09-15",
-      "kind": "margin",
-      "status": "rejected",
-      "reason": "ValueError:margin_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-09-15",
-      "kind": "cash_inst",
-      "status": "rejected",
-      "reason": "ValueError:cash_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-09-16",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-09-16",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-09-17",
-      "kind": "margin",
-      "status": "rejected",
-      "reason": "ValueError:margin_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-09-17",
-      "kind": "cash_inst",
-      "status": "rejected",
-      "reason": "ValueError:cash_response_date_not_requested_month"
-    },
-    {
-      "requested_date": "2024-09-18",
-      "kind": "margin",
-      "status": "accepted"
-    },
-    {
-      "requested_date": "2024-09-18",
-      "kind": "cash_inst",
-      "status": "accepted"
-    },
-    {
       "requested_date": "2024-09-19",
       "kind": "margin",
       "status": "accepted"
@@ -14388,6 +14544,984 @@
       "requested_date": "2025-10-31",
       "kind": "cash_inst",
       "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-01",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-11-01",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-11-02",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-11-02",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-11-03",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-03",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-04",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-04",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-05",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-05",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-06",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-06",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-07",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-07",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-08",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-11-08",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-11-09",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-11-09",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-11-10",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-10",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-11",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-11",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-12",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-12",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-13",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-13",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-14",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-14",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-15",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-11-15",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-11-16",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-11-16",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-11-17",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-17",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-18",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-18",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-19",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-19",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-20",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-20",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-21",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-21",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-22",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-11-22",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-11-23",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-11-23",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-11-24",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-24",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-25",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-25",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-26",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-26",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-27",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-27",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-28",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-28",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-11-29",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-11-29",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-11-30",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-11-30",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-12-01",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-01",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-02",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-02",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-03",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-03",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-04",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-04",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-05",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-05",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-06",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-12-06",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-12-07",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-12-07",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-12-08",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-08",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-09",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-09",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-10",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-10",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-11",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-11",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-12",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-12",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-13",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-12-13",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-12-14",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-12-14",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-12-15",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-15",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-16",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-16",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-17",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-17",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-18",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-18",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-19",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-19",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-20",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-12-20",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-12-21",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-12-21",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-12-22",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-22",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-23",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-23",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-24",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-24",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-25",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-12-25",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-12-26",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-26",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-27",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-12-27",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-12-28",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-12-28",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2025-12-29",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-29",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-30",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-30",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-31",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2025-12-31",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-01",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2026-01-01",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2026-01-02",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-02",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-03",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2026-01-03",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2026-01-04",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2026-01-04",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2026-01-05",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-05",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-06",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-06",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-07",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-07",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-08",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-08",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-09",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-09",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-10",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2026-01-10",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2026-01-11",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2026-01-11",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2026-01-12",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-12",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-13",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-13",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-14",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-14",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-15",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-15",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-16",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-16",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-17",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2026-01-17",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2026-01-18",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2026-01-18",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2026-01-19",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-19",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-20",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-20",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-21",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-21",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-22",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-22",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-23",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-23",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-24",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2026-01-24",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2026-01-25",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2026-01-25",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2026-01-26",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-26",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-27",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-27",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-28",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-28",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-29",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-29",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-30",
+      "kind": "margin",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-30",
+      "kind": "cash_inst",
+      "status": "accepted"
+    },
+    {
+      "requested_date": "2026-01-31",
+      "kind": "margin",
+      "status": "rejected",
+      "reason": "ValueError:margin_response_date_not_requested_month"
+    },
+    {
+      "requested_date": "2026-01-31",
+      "kind": "cash_inst",
+      "status": "rejected",
+      "reason": "ValueError:cash_response_date_not_requested_month"
     }
   ]
 }
