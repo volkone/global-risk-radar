@@ -1,13 +1,20 @@
 name: Verify TWSE historical backfill
 on:
   schedule:
-    - cron: '43 3 * * *'
+    - cron: '43 1,5,9,13 * * *'
   workflow_dispatch:
     inputs:
       month:
         description: 'Month YYYY-MM (official listed market)'
         required: true
         default: '2026-10'
+      mode:
+        description: 'batch = next three months; single = selected month'
+        type: choice
+        options:
+          - batch
+          - single
+        default: batch
       days:
         description: 'Days to probe from start of month (max 31, two requests/day)'
         required: true
@@ -30,7 +37,7 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Query and verify historical TWSE observations
         run: |
-          if [ "${{ github.event_name }}" = "schedule" ]; then
+          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.mode }}" = "batch" ]; then
             python -m scripts.backfill_batch
           else
             python -m scripts.backfill_twse --month "${{ inputs.month }}" --days "${{ inputs.days }}"
