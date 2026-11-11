@@ -13,13 +13,20 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/"storage"/"official_calendar"
-BASE="https://www.twse.com.tw/rwd/zh/exchangeReport/FMTQIK"
+BASE="https://www.twse.com.tw/rwd/zh/afterTrading/FMTQIK"
 
 def fetch_month(year,month):
     url=BASE+"?"+urllib.parse.urlencode({"response":"json","date":f"{year:04d}{month:02d}01"})
     req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0","Accept":"application/json"})
     with urllib.request.urlopen(req,timeout=30) as response:
-        payload=json.load(response)
+        status=response.status
+        content_type=response.headers.get("Content-Type","")
+        raw=response.read()
+    try:
+        payload=json.loads(raw.decode("utf-8-sig"))
+    except (ValueError,UnicodeDecodeError) as exc:
+        sample=raw[:160].decode("utf-8",errors="replace").replace("\\n"," ")
+        raise ValueError(f"{year}-{month:02d}: invalid JSON; HTTP={status}; type={content_type}; bytes={len(raw)}; sample={sample!r}; url={url}") from exc
     if not isinstance(payload,dict) or not isinstance(payload.get("data"),list):
         raise ValueError(f"{year}-{month:02d}: missing official FMTQIK data")
     fields=payload.get("fields",[])
