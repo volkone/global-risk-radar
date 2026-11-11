@@ -2249,7 +2249,7 @@
       "official_close_date": "2026-11-09",
       "official_volume_shares": 12160730783,
       "official_turnover_twd": 877025617232,
-      "value": 44041.66,
+      "value": 44257.148,
       "date": "2026-11-11",
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ETWII/",
@@ -2612,10 +2612,10 @@
         },
         {
           "date": "2026-11-11",
-          "value": 44041.66
+          "value": 44257.148
         }
       ],
-      "drawdown_pct": 11.6,
+      "drawdown_pct": 11.17,
       "reference": "近一年最高收盤價",
       "checked_at": "2026-11-11T05:53:02.174047+00:00"
     },
@@ -3009,12 +3009,12 @@
     },
     "tw5": {
       "severity": "warning",
-      "message": "台股近一年高點回撤 ≥5%：11.6%",
+      "message": "台股近一年高點回撤 ≥5%：11.17%",
       "first_seen": "2026-11-10T08:42:05.496990+00:00"
     },
     "tw10": {
       "severity": "warning",
-      "message": "台股近一年高點回撤 ≥10%：11.6%",
+      "message": "台股近一年高點回撤 ≥10%：11.17%",
       "first_seen": "2026-11-10T08:42:05.496990+00:00"
     }
   },
