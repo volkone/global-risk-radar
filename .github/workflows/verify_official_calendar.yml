@@ -1,0 +1,49 @@
+name: Verify official TWSE session calendar
+on:
+  push:
+    paths:
+      - '.github/workflows/verify_official_calendar.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: twse-history-backfill
+  cancel-in-progress: false
+jobs:
+  calendar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Regression tests
+        run: python -m unittest discover -s tests -v
+      - name: Retrieve official annual schedules
+        run: python scripts/fetch_official_calendar.py
+      - name: Construct daily calendar
+        run: python scripts/build_official_calendar.py
+      - name: Compare historical observations to official sessions
+        id: audit
+        continue-on-error: true
+        run: |
+          python scripts/audit_calendar.py \
+            --calendar storage/official_calendar/trading_days.csv \
+            --source-url https://www.twse.com.tw/holidaySchedule/holidaySchedule \
+            --retrieved-at "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+      - name: Save audit artifacts
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add storage/official_calendar docs/calendar_coverage_audit.json || true
+          if ! git diff --cached --quiet; then
+            git commit -m 'Record official session calendar audit [skip ci]'
+            git push origin HEAD:main
+          fi
+      - name: Enforce quality gate
+        if: steps.audit.outcome != 'success'
+        run: |
+          echo 'Official session completeness not verified; no targeted repairs or backtest allowed.'
+          exit 1
