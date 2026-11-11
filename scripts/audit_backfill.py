@@ -45,7 +45,8 @@ def audit(payload):
         "rejections": [{"kind": k, "reason": reason, "count": n}
                        for (k, reason), n in sorted(failures.items())],
         "months": by_month,
-        "cash_source_status": "blocked_until_historical_date_parameter_verified",
+        "cash_source_status": ("historical_dates_observed_pending_official_calendar"
+                               if grouped["inst.cash_inst"] else "historical_dates_not_verified"),
         "taifex_source_status": "not_backfilled",
         "out_of_sample_backtest_status": "blocked_incomplete_panel",
         "live_thresholds_status": "not_authorized",
