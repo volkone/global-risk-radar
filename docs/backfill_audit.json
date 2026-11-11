@@ -1,23 +1,62 @@
 {
   "status": "partial_verified",
-  "accepted_unique_records": 38,
+  "accepted_unique_records": 164,
   "duplicate_records": 0,
-  "attempt_count": 258,
-  "accepted_attempt_count": 133,
-  "rejected_attempt_count": 125,
+  "attempt_count": 442,
+  "accepted_attempt_count": 259,
+  "rejected_attempt_count": 183,
   "rejections": [
     {
       "kind": "cash_inst",
+      "reason": "HTTPError:HTTP Error 307: Temporary Redirect",
+      "count": 2
+    },
+    {
+      "kind": "cash_inst",
+      "reason": "TimeoutError:The read operation timed out",
+      "count": 1
+    },
+    {
+      "kind": "cash_inst",
       "reason": "ValueError:cash_response_date_not_requested_month",
-      "count": 72
+      "count": 98
+    },
+    {
+      "kind": "margin",
+      "reason": "HTTPError:HTTP Error 307: Temporary Redirect",
+      "count": 3
     },
     {
       "kind": "margin",
       "reason": "ValueError:margin_response_date_not_requested_month",
-      "count": 53
+      "count": 79
     }
   ],
   "months": {
+    "2023-11": {
+      "margin_unique_dates": 22,
+      "cash_unique_dates": 22,
+      "weekday_reference_count_not_official_calendar": 22,
+      "official_trading_day_count": null,
+      "trading_day_completeness": null,
+      "reason": "Official trading calendar and verified listed-market sessions not joined"
+    },
+    "2023-12": {
+      "margin_unique_dates": 21,
+      "cash_unique_dates": 20,
+      "weekday_reference_count_not_official_calendar": 21,
+      "official_trading_day_count": null,
+      "trading_day_completeness": null,
+      "reason": "Official trading calendar and verified listed-market sessions not joined"
+    },
+    "2024-01": {
+      "margin_unique_dates": 20,
+      "cash_unique_dates": 21,
+      "weekday_reference_count_not_official_calendar": 23,
+      "official_trading_day_count": null,
+      "trading_day_completeness": null,
+      "reason": "Official trading calendar and verified listed-market sessions not joined"
+    },
     "2026-10": {
       "margin_unique_dates": 19,
       "cash_unique_dates": 19,

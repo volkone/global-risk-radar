@@ -1,0 +1,13 @@
+{
+  "october_gate_attempts": 0,
+  "attempted_months": [
+    "2023-11",
+    "2023-12",
+    "2024-01"
+  ],
+  "accepted_records": 164,
+  "rejected_requests": 183,
+  "last_attempted_month": "2024-01",
+  "updated_at": "2026-11-11T02:03:27.953336+00:00",
+  "status": "attempted_not_verified_complete"
+}
