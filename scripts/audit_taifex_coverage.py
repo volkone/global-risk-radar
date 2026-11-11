@@ -39,6 +39,7 @@ def audit(records, calendar_dates):
     twse_without_futures=sorted(calendar_dates-observed)
     futures_without_twse=sorted(observed-calendar_dates)
     if not records:errors.append("TAIFEX history not imported")
+    errors.append("independent TAIFEX trading-session calendar not yet verified")
     if twse_without_futures:errors.append(f"TWSE dates without futures observation: {len(twse_without_futures)}; requires independent futures-session classification")
     if futures_without_twse:errors.append(f"futures-only dates: {len(futures_without_twse)}; do not discard without exchange-calendar verification")
     return {"status":"pass" if not errors else "blocked","range":[START,END],"taifex_observations":len(records),"twse_sessions":len(calendar_dates),"joined_dates":len(common),"twse_dates_without_futures":twse_without_futures,"futures_dates_without_twse":futures_without_twse,"errors":errors,"futures_calendar_independently_verified":False,"full_model_backtest_authorized":False}
