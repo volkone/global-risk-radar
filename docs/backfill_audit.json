@@ -2,19 +2,19 @@
   "status": "partial_verified",
   "accepted_unique_records": 38,
   "duplicate_records": 0,
-  "attempt_count": 196,
-  "accepted_attempt_count": 95,
-  "rejected_attempt_count": 101,
+  "attempt_count": 258,
+  "accepted_attempt_count": 133,
+  "rejected_attempt_count": 125,
   "rejections": [
     {
       "kind": "cash_inst",
       "reason": "ValueError:cash_response_date_not_requested_month",
-      "count": 60
+      "count": 72
     },
     {
       "kind": "margin",
       "reason": "ValueError:margin_response_date_not_requested_month",
-      "count": 41
+      "count": 53
     }
   ],
   "months": {
