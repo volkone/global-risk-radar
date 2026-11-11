@@ -2,19 +2,19 @@
   "status": "partial_verified",
   "accepted_unique_records": 38,
   "duplicate_records": 0,
-  "attempt_count": 134,
-  "accepted_attempt_count": 57,
-  "rejected_attempt_count": 77,
+  "attempt_count": 196,
+  "accepted_attempt_count": 95,
+  "rejected_attempt_count": 101,
   "rejections": [
     {
       "kind": "cash_inst",
       "reason": "ValueError:cash_response_date_not_requested_month",
-      "count": 48
+      "count": 60
     },
     {
       "kind": "margin",
       "reason": "ValueError:margin_response_date_not_requested_month",
-      "count": 29
+      "count": 41
     }
   ],
   "months": {
@@ -27,7 +27,7 @@
       "reason": "Official trading calendar and verified listed-market sessions not joined"
     }
   },
-  "cash_source_status": "blocked_until_historical_date_parameter_verified",
+  "cash_source_status": "historical_dates_observed_pending_official_calendar",
   "taifex_source_status": "not_backfilled",
   "out_of_sample_backtest_status": "blocked_incomplete_panel",
   "live_thresholds_status": "not_authorized"
