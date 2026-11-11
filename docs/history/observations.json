@@ -14,6 +14,15 @@
       "source_url": "https://finance.yahoo.com/quote/TWD=X/"
     },
     {
+      "metric_id": "taiex",
+      "provider": "Yahoo Finance 非官方",
+      "scope": "",
+      "observation_date": "2026-11-11",
+      "value": 42995.352,
+      "unit": "points",
+      "source_url": "https://finance.yahoo.com/quote/%5ETWII/"
+    },
+    {
       "metric_id": "fx",
       "provider": "Yahoo Finance 非官方",
       "scope": "",

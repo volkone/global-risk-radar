@@ -2249,15 +2249,11 @@
       "official_close_date": "2026-11-09",
       "official_volume_shares": 12160730783,
       "official_turnover_twd": 877025617232,
-      "value": 41661.699,
-      "date": "2026-11-09",
+      "value": 42995.352,
+      "date": "2026-11-11",
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ETWII/",
       "history": [
-        {
-          "date": "2026-06-29",
-          "value": 44999.898
-        },
         {
           "date": "2026-06-30",
           "value": 46125.91
@@ -2613,9 +2609,13 @@
         {
           "date": "2026-11-09",
           "value": 41661.699
+        },
+        {
+          "date": "2026-11-11",
+          "value": 42995.352
         }
       ],
-      "drawdown_pct": 16.38,
+      "drawdown_pct": 13.7,
       "reference": "近一年最高收盤價",
       "checked_at": "2026-11-11T01:16:48.201837+00:00"
     },
@@ -3009,18 +3009,13 @@
     },
     "tw5": {
       "severity": "warning",
-      "message": "台股近一年高點回撤 ≥5%：16.38%",
+      "message": "台股近一年高點回撤 ≥5%：13.7%",
       "first_seen": "2026-11-10T08:42:05.496990+00:00"
     },
     "tw10": {
       "severity": "warning",
-      "message": "台股近一年高點回撤 ≥10%：16.38%",
+      "message": "台股近一年高點回撤 ≥10%：13.7%",
       "first_seen": "2026-11-10T08:42:05.496990+00:00"
-    },
-    "tw15": {
-      "severity": "warning",
-      "message": "台股近一年高點回撤 ≥15%：16.38%",
-      "first_seen": "2026-11-10T16:16:30.376480+00:00"
     }
   },
   "pending_notifications": [

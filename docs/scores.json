@@ -63,15 +63,15 @@
   "taiwan": {
     "status": "insufficient_coverage",
     "score": null,
-    "coverage": 0.35,
+    "coverage": 0.0,
     "min_coverage": 0.85,
     "components": [
       {
         "metric": "taiex",
         "weight": 35,
-        "signal": 54.6,
-        "eligible": true,
-        "reason": null
+        "signal": null,
+        "eligible": false,
+        "reason": "quality_gate_not_passed"
       },
       {
         "metric": "margin",
