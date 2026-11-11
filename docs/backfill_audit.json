@@ -1,6 +1,6 @@
 {
   "status": "partial_verified",
-  "accepted_unique_records": 1448,
+  "accepted_unique_records": 1450,
   "duplicate_records": 0,
   "attempt_count": 1000,
   "accepted_attempt_count": 666,
@@ -31,26 +31,22 @@
     },
     "2023-12": {
       "margin_unique_dates": 21,
-      "cash_unique_dates": 20,
+      "cash_unique_dates": 21,
       "weekday_reference_count_not_official_calendar": 21,
-      "cash_missing_vs_margin_dates": [
-        "2023-12-29"
-      ],
+      "cash_missing_vs_margin_dates": [],
       "margin_missing_vs_cash_dates": [],
-      "paired_observation_dates": 20,
+      "paired_observation_dates": 21,
       "official_trading_day_count": null,
       "trading_day_completeness": null,
       "reason": "Official trading calendar and verified listed-market sessions not joined"
     },
     "2024-01": {
-      "margin_unique_dates": 20,
+      "margin_unique_dates": 21,
       "cash_unique_dates": 21,
       "weekday_reference_count_not_official_calendar": 23,
       "cash_missing_vs_margin_dates": [],
-      "margin_missing_vs_cash_dates": [
-        "2024-01-24"
-      ],
-      "paired_observation_dates": 20,
+      "margin_missing_vs_cash_dates": [],
+      "paired_observation_dates": 21,
       "official_trading_day_count": null,
       "trading_day_completeness": null,
       "reason": "Official trading calendar and verified listed-market sessions not joined"
