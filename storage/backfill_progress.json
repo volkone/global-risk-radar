@@ -21,11 +21,14 @@
     "2025-04",
     "2025-05",
     "2025-06",
-    "2025-07"
+    "2025-07",
+    "2025-08",
+    "2025-09",
+    "2025-10"
   ],
-  "accepted_records": 882,
+  "accepted_records": 1006,
   "rejected_requests": 332,
-  "last_attempted_month": "2025-07",
-  "updated_at": "2026-11-11T03:44:26.091925+00:00",
+  "last_attempted_month": "2025-10",
+  "updated_at": "2026-11-11T03:59:18.473910+00:00",
   "status": "attempted_not_verified_complete"
 }
