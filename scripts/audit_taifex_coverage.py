@@ -3,6 +3,8 @@ import argparse
 import csv
 import datetime as dt
 import json
+import re
+import urllib.parse
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -32,17 +34,28 @@ def audit(records, calendar_dates):
         long_oi,short_oi,net=r.get("long_oi"),r.get("short_oi"),r.get("value")
         if any(type(v) is not int for v in (long_oi,short_oi,net)) or (type(long_oi) is int and long_oi<0) or (type(short_oi) is int and short_oi<0) or (all(type(v) is int for v in (long_oi,short_oi,net)) and long_oi-short_oi!=net):
             errors.append(f"OI identity invalid {date}")
-        if r.get("provider")!="TAIFEX" or r.get("unit")!="contracts":
-            errors.append(f"provenance/unit invalid {date}")
+        if r.get("provider")!="TAIFEX" or r.get("unit")!="contracts" or r.get("scope")!="TX臺股期貨;外資及陸資;未平倉淨額":
+            errors.append(f"provenance/unit/scope invalid {date}")
+        url=r.get("source_url","")
+        parsed_url=urllib.parse.urlparse(url)
+        params=urllib.parse.parse_qs(parsed_url.query)
+        if (parsed_url.scheme!="https" or parsed_url.netloc!="www.taifex.com.tw"
+                or parsed_url.path!="/cht/3/futContractsDate"
+                or params.get("commodityId")!=["TXF"]
+                or params.get("queryDate")!=[date.replace("-","/")]
+                or params.get("queryType")!=["1"] or params.get("doQuery")!=["1"]):
+            errors.append(f"official source URL invalid {date}")
+        if not re.fullmatch(r"[0-9a-f]{64}",str(r.get("source_sha256",""))):
+            errors.append(f"source hash format invalid {date}")
     # TWSE is only a comparison reference, NOT a futures exchange calendar.
     common=observed & calendar_dates
     twse_without_futures=sorted(calendar_dates-observed)
     futures_without_twse=sorted(observed-calendar_dates)
     if not records:errors.append("TAIFEX history not imported")
-    errors.append("independent TAIFEX trading-session calendar not yet verified")
+    errors.append("independent dated TAIFEX trading-session verification not yet completed")
     if twse_without_futures:errors.append(f"TWSE dates without futures observation: {len(twse_without_futures)}; requires independent futures-session classification")
     if futures_without_twse:errors.append(f"futures-only dates: {len(futures_without_twse)}; do not discard without exchange-calendar verification")
-    return {"status":"pass" if not errors else "blocked","range":[START,END],"taifex_observations":len(records),"twse_sessions":len(calendar_dates),"joined_dates":len(common),"twse_dates_without_futures":twse_without_futures,"futures_dates_without_twse":futures_without_twse,"errors":errors,"futures_calendar_independently_verified":False,"full_model_backtest_authorized":False}
+    return {"status":"pass" if not errors else "blocked","range":[START,END],"taifex_observations":len(records),"twse_sessions":len(calendar_dates),"joined_dates":len(common),"twse_dates_without_futures":twse_without_futures,"futures_dates_without_twse":futures_without_twse,"errors":errors,"futures_calendar_independently_verified":False,"tx_trading_day_rule_verified":True,"tx_trading_day_rule_source":"https://www.taifex.com.tw/chinese/event/afterhourstrading/%E5%B8%82%E5%A0%B4%E8%A6%8F%E7%AB%A0.pdf","source_html_hashes_recomputed":False,"full_model_backtest_authorized":False}
 
 def main():
     p=argparse.ArgumentParser()
