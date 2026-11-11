@@ -33,11 +33,14 @@
     "2026-04",
     "2026-05",
     "2026-06",
-    "2026-07"
+    "2026-07",
+    "2026-08",
+    "2026-09",
+    "2026-10"
   ],
-  "accepted_records": 1366,
-  "rejected_requests": 330,
-  "last_attempted_month": "2026-07",
-  "updated_at": "2026-11-11T04:40:56.083910+00:00",
+  "accepted_records": 1448,
+  "rejected_requests": 334,
+  "last_attempted_month": "2026-10",
+  "updated_at": "2026-11-11T04:54:13.993346+00:00",
   "status": "attempted_not_verified_complete"
 }
