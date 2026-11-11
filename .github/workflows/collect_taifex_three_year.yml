@@ -1,0 +1,45 @@
+name: Collect TAIFEX official three-year TXF foreign OI
+on:
+  push:
+    paths:
+      - '.github/workflows/collect_taifex_three_year.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: taifex-three-year-collection
+  cancel-in-progress: false
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify regression tests
+        run: python -m unittest discover -s tests -v
+      - name: Collect verified dated TXF foreign OI from official TAIFEX
+        run: python scripts/collect_taifex_three_year.py
+      - name: Audit completeness and source identity
+        id: audit
+        continue-on-error: true
+        run: python scripts/audit_taifex_coverage.py
+      - name: Save official observations and reports
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A storage/taifex_backfill.json docs/taifex_collection_report.json docs/taifex_coverage_audit.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Collect and audit official TAIFEX TXF foreign OI [skip ci]'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
+      - name: Keep final model blocked until independent futures calendar is verified
+        if: always() && steps.audit.outcome != 'success'
+        run: |
+          echo 'TAIFEX data quality acceptance remains blocked until futures-session calendar verified'
+          exit 1
