@@ -2,7 +2,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
-from scripts.repair_twse_dates import repair
+from scripts.repair_twse_dates import repair, TARGETS
 
 class RepairTests(unittest.TestCase):
     def test_wrong_date_rejected_without_fabrication(self):
@@ -14,5 +14,5 @@ class RepairTests(unittest.TestCase):
             self.assertEqual(repair(fetch=fake, path=path), [])
             saved = json.loads(path.read_text())
             self.assertEqual(saved["records"], [])
-            self.assertEqual(len(saved["attempts"]), 2)
+            self.assertEqual(len(saved["attempts"]), len(TARGETS))
             self.assertTrue(all(a["status"] == "rejected" for a in saved["attempts"]))
