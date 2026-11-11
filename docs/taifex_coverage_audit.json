@@ -4,30 +4,10 @@
     "2023-11-11",
     "2026-10-31"
   ],
-  "taifex_observations": 200,
+  "taifex_observations": 220,
   "twse_sessions": 718,
-  "joined_dates": 200,
+  "joined_dates": 220,
   "twse_dates_without_futures": [
-    "2024-09-09",
-    "2024-09-10",
-    "2024-09-11",
-    "2024-09-12",
-    "2024-09-13",
-    "2024-09-16",
-    "2024-09-18",
-    "2024-09-19",
-    "2024-09-20",
-    "2024-09-23",
-    "2024-09-24",
-    "2024-09-25",
-    "2024-09-26",
-    "2024-09-27",
-    "2024-09-30",
-    "2024-10-01",
-    "2024-10-04",
-    "2024-10-07",
-    "2024-10-08",
-    "2024-10-09",
     "2024-10-11",
     "2024-10-14",
     "2024-10-15",
@@ -530,7 +510,7 @@
   "futures_dates_without_twse": [],
   "errors": [
     "independent TAIFEX trading-session calendar not yet verified",
-    "TWSE dates without futures observation: 518; requires independent futures-session classification"
+    "TWSE dates without futures observation: 498; requires independent futures-session classification"
   ],
   "futures_calendar_independently_verified": false,
   "full_model_backtest_authorized": false
