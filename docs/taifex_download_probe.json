@@ -1,0 +1,51 @@
+{
+  "status": "form_inspected",
+  "url": "https://www.taifex.com.tw/cht/3/futContractsDateView",
+  "http_status": 200,
+  "content_type": "text/html;charset=UTF-8",
+  "candidate_forms": [
+    {
+      "action": "dailyFXRate",
+      "method": "post",
+      "fields": [
+        {
+          "tag": "input",
+          "name": "firstDate",
+          "type": "hidden",
+          "value": "2023/11/11 00:00"
+        },
+        {
+          "tag": "input",
+          "name": "lastDate",
+          "type": "hidden",
+          "value": "2026/11/11 00:00"
+        },
+        {
+          "tag": "input",
+          "name": "queryStartDate",
+          "type": "text",
+          "value": "2026/11/11"
+        },
+        {
+          "tag": "input",
+          "name": "queryEndDate",
+          "type": "text",
+          "value": "2026/11/11"
+        },
+        {
+          "tag": "select",
+          "name": "commodityId",
+          "type": null,
+          "value": null
+        },
+        {
+          "tag": "input",
+          "name": null,
+          "type": "button",
+          "value": "下載"
+        }
+      ]
+    }
+  ],
+  "records_imported": 0
+}
