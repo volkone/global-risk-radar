@@ -22,6 +22,36 @@
       "request_method": "POST",
       "query_year": "2023",
       "coverage_verified": false,
+      "pagination_links": [
+        {
+          "label": "回首頁",
+          "url": "https://www.taifex.com.tw/cht/index"
+        },
+        {
+          "label": "回首頁",
+          "url": "https://www.taifex.com.tw/cht/index"
+        },
+        {
+          "label": "回首頁",
+          "url": "https://www.taifex.com.tw/cht/index"
+        },
+        {
+          "label": "",
+          "url": "https://www.ey.gov.tw/Page/5A8A0CB5B41DA11E/c93637bd-ddc2-4447-8829-246a5ca0befc"
+        },
+        {
+          "label": "首頁",
+          "url": "https://www.taifex.com.tw/cht/index"
+        }
+      ],
+      "html_pagination_hints": [
+        "\t\t\t<div class=\"swiper-pagination\"></div>\r",
+        "<div class=\"pagesize\">\r",
+        "\t    pagination: {\r",
+        "\t      el: '.vision .swiper-pagination',\r",
+        "\t\t\t\t\t\t\t\t\t\t\t<label for=\"query_year\">年度：</label>\r",
+        "\t\t\t\t\t\t\t\t\t\t\t<select id=\"query_year\" name=\"query_year\" onChange=\"javascript:document.uForm.submit();\"><option value=\"2026\"\r"
+      ],
       "http_status": 200,
       "sha256": "3c9c67ea38d5e0dbecae586249112df26d814f7a10769ce2b2f0f4d01b717319",
       "selected_year": [
@@ -133,6 +163,80 @@
             "id": null,
             "value": null
           }
+        ],
+        "inputs": [
+          {
+            "name": null,
+            "id": "api_url",
+            "type": "hidden",
+            "value": "/cht/quotesApi/getQuotes?"
+          },
+          {
+            "name": null,
+            "id": "product_type",
+            "type": "hidden",
+            "value": "1"
+          },
+          {
+            "name": null,
+            "id": "major_type",
+            "type": "hidden",
+            "value": "1"
+          },
+          {
+            "name": null,
+            "id": "major_data_type",
+            "type": "hidden",
+            "value": "1"
+          },
+          {
+            "name": "pstring",
+            "id": "pstring",
+            "type": "text",
+            "value": null
+          },
+          {
+            "name": "pstring",
+            "id": "pstring",
+            "type": "text",
+            "value": null
+          },
+          {
+            "name": "pstring",
+            "id": "m-pstring",
+            "type": "text",
+            "value": null
+          },
+          {
+            "name": null,
+            "id": "popupbox_url",
+            "type": "hidden",
+            "value": null
+          },
+          {
+            "name": "button",
+            "id": "button",
+            "type": "button",
+            "value": "確定"
+          },
+          {
+            "name": "button2",
+            "id": "button2",
+            "type": "submit",
+            "value": "取消"
+          },
+          {
+            "name": "button",
+            "id": "button",
+            "type": "submit",
+            "value": "確定"
+          },
+          {
+            "name": "button2",
+            "id": "button2",
+            "type": "submit",
+            "value": "取消"
+          }
         ]
       }
     },
@@ -142,6 +246,40 @@
       "request_method": "POST",
       "query_year": "2024",
       "coverage_verified": false,
+      "pagination_links": [
+        {
+          "label": "回首頁",
+          "url": "https://www.taifex.com.tw/cht/index"
+        },
+        {
+          "label": "回首頁",
+          "url": "https://www.taifex.com.tw/cht/index"
+        },
+        {
+          "label": "回首頁",
+          "url": "https://www.taifex.com.tw/cht/index"
+        },
+        {
+          "label": "",
+          "url": "https://www.ey.gov.tw/Page/5A8A0CB5B41DA11E/c93637bd-ddc2-4447-8829-246a5ca0befc"
+        },
+        {
+          "label": "首頁",
+          "url": "https://www.taifex.com.tw/cht/index"
+        },
+        {
+          "label": "行政院消費者保護處本年度製作「小心終身優惠有陷阱」等多則消保圖卡，歡迎多加利用。",
+          "url": "https://cpc.ey.gov.tw/Page/A24D52B481E12568"
+        }
+      ],
+      "html_pagination_hints": [
+        "\t\t\t<div class=\"swiper-pagination\"></div>\r",
+        "<div class=\"pagesize\">\r",
+        "\t    pagination: {\r",
+        "\t      el: '.vision .swiper-pagination',\r",
+        "\t\t\t\t\t\t\t\t\t\t\t<label for=\"query_year\">年度：</label>\r",
+        "\t\t\t\t\t\t\t\t\t\t\t<select id=\"query_year\" name=\"query_year\" onChange=\"javascript:document.uForm.submit();\"><option value=\"2026\"\r"
+      ],
       "http_status": 200,
       "sha256": "06590b30a9f5f99523369608dcc699f03b76b5a0c82dcdee71d89d52ec1ec968",
       "selected_year": [
@@ -253,6 +391,80 @@
             "id": null,
             "value": null
           }
+        ],
+        "inputs": [
+          {
+            "name": null,
+            "id": "api_url",
+            "type": "hidden",
+            "value": "/cht/quotesApi/getQuotes?"
+          },
+          {
+            "name": null,
+            "id": "product_type",
+            "type": "hidden",
+            "value": "1"
+          },
+          {
+            "name": null,
+            "id": "major_type",
+            "type": "hidden",
+            "value": "1"
+          },
+          {
+            "name": null,
+            "id": "major_data_type",
+            "type": "hidden",
+            "value": "1"
+          },
+          {
+            "name": "pstring",
+            "id": "pstring",
+            "type": "text",
+            "value": null
+          },
+          {
+            "name": "pstring",
+            "id": "pstring",
+            "type": "text",
+            "value": null
+          },
+          {
+            "name": "pstring",
+            "id": "m-pstring",
+            "type": "text",
+            "value": null
+          },
+          {
+            "name": null,
+            "id": "popupbox_url",
+            "type": "hidden",
+            "value": null
+          },
+          {
+            "name": "button",
+            "id": "button",
+            "type": "button",
+            "value": "確定"
+          },
+          {
+            "name": "button2",
+            "id": "button2",
+            "type": "submit",
+            "value": "取消"
+          },
+          {
+            "name": "button",
+            "id": "button",
+            "type": "submit",
+            "value": "確定"
+          },
+          {
+            "name": "button2",
+            "id": "button2",
+            "type": "submit",
+            "value": "取消"
+          }
         ]
       }
     },
@@ -262,6 +474,36 @@
       "request_method": "POST",
       "query_year": "2025",
       "coverage_verified": false,
+      "pagination_links": [
+        {
+          "label": "回首頁",
+          "url": "https://www.taifex.com.tw/cht/index"
+        },
+        {
+          "label": "回首頁",
+          "url": "https://www.taifex.com.tw/cht/index"
+        },
+        {
+          "label": "回首頁",
+          "url": "https://www.taifex.com.tw/cht/index"
+        },
+        {
+          "label": "",
+          "url": "https://www.ey.gov.tw/Page/5A8A0CB5B41DA11E/c93637bd-ddc2-4447-8829-246a5ca0befc"
+        },
+        {
+          "label": "首頁",
+          "url": "https://www.taifex.com.tw/cht/index"
+        }
+      ],
+      "html_pagination_hints": [
+        "\t\t\t<div class=\"swiper-pagination\"></div>\r",
+        "<div class=\"pagesize\">\r",
+        "\t    pagination: {\r",
+        "\t      el: '.vision .swiper-pagination',\r",
+        "\t\t\t\t\t\t\t\t\t\t\t<label for=\"query_year\">年度：</label>\r",
+        "\t\t\t\t\t\t\t\t\t\t\t<select id=\"query_year\" name=\"query_year\" onChange=\"javascript:document.uForm.submit();\"><option value=\"2026\"\r"
+      ],
       "http_status": 200,
       "sha256": "4dfd1083a351a9f634e7e41dff1727822edb6d7bc6b71586a3af5e7c1999940a",
       "selected_year": [
@@ -390,6 +632,80 @@
             "id": null,
             "value": null
           }
+        ],
+        "inputs": [
+          {
+            "name": null,
+            "id": "api_url",
+            "type": "hidden",
+            "value": "/cht/quotesApi/getQuotes?"
+          },
+          {
+            "name": null,
+            "id": "product_type",
+            "type": "hidden",
+            "value": "1"
+          },
+          {
+            "name": null,
+            "id": "major_type",
+            "type": "hidden",
+            "value": "1"
+          },
+          {
+            "name": null,
+            "id": "major_data_type",
+            "type": "hidden",
+            "value": "1"
+          },
+          {
+            "name": "pstring",
+            "id": "pstring",
+            "type": "text",
+            "value": null
+          },
+          {
+            "name": "pstring",
+            "id": "pstring",
+            "type": "text",
+            "value": null
+          },
+          {
+            "name": "pstring",
+            "id": "m-pstring",
+            "type": "text",
+            "value": null
+          },
+          {
+            "name": null,
+            "id": "popupbox_url",
+            "type": "hidden",
+            "value": null
+          },
+          {
+            "name": "button",
+            "id": "button",
+            "type": "button",
+            "value": "確定"
+          },
+          {
+            "name": "button2",
+            "id": "button2",
+            "type": "submit",
+            "value": "取消"
+          },
+          {
+            "name": "button",
+            "id": "button",
+            "type": "submit",
+            "value": "確定"
+          },
+          {
+            "name": "button2",
+            "id": "button2",
+            "type": "submit",
+            "value": "取消"
+          }
         ]
       }
     },
@@ -399,6 +715,152 @@
       "request_method": "POST",
       "query_year": "2026",
       "coverage_verified": false,
+      "pagination_links": [
+        {
+          "label": "回首頁",
+          "url": "https://www.taifex.com.tw/cht/index"
+        },
+        {
+          "label": "回首頁",
+          "url": "https://www.taifex.com.tw/cht/index"
+        },
+        {
+          "label": "回首頁",
+          "url": "https://www.taifex.com.tw/cht/index"
+        },
+        {
+          "label": "",
+          "url": "https://www.ey.gov.tw/Page/5A8A0CB5B41DA11E/c93637bd-ddc2-4447-8829-246a5ca0befc"
+        },
+        {
+          "label": "首頁",
+          "url": "https://www.taifex.com.tw/cht/index"
+        },
+        {
+          "label": "公告本公司小型臺指期貨暨臺指選擇權週三到期契約(契約代號:202611W2)最後結算價",
+          "url": "https://www.taifex.com.tw/cht/5/futIndxFSP?commodityIds=1&start_year=2025&start_month=11&end_year=2026&end_month=11"
+        },
+        {
+          "label": "公告本公司臺指選擇權週五到期契約(契約代號:202611F1)最後結算價",
+          "url": "https://www.taifex.com.tw/cht/5/optIndxFSP?commodityIds=2&start_year=2025&start_month=11&end_year=2026&end_month=11"
+        },
+        {
+          "label": "公告本公司小型臺指期貨暨臺指選擇權週三到期契約(契約代號:202611W1)最後結算價",
+          "url": "https://www.taifex.com.tw/cht/5/futIndxFSP?commodityIds=1&start_year=2025&start_month=11&end_year=2026&end_month=11"
+        },
+        {
+          "label": "公告本公司布蘭特原油期貨2026年12月契約最後結算價",
+          "url": "https://www.taifex.com.tw/cht/5/goldFSP?commodityIds=31&start_year=2025&start_month=12&end_year=2026&end_month=12"
+        },
+        {
+          "label": "公告本公司臺指選擇權週五到期契約(契約代號:202610F5)最後結算價",
+          "url": "https://www.taifex.com.tw/cht/5/optIndxFSP?commodityIds=2&start_year=2025&start_month=10&end_year=2026&end_month=10"
+        },
+        {
+          "label": "公告本公司黃金類期貨及選擇權2026年10月契約最後結算價",
+          "url": "https://www.taifex.com.tw/cht/5/goldFSP?commodityIds=10&commodityIds=17&commodityIds=18&start_year=2025&start_month=10&end_year=2026&end_month=10"
+        },
+        {
+          "label": "公告本公司小型美元兌人民幣期貨(RTF)2026年10月契約最後結算價",
+          "url": "https://www.taifex.com.tw/cht/5/fXFSP?commodityIds=19&commodityIds=20&commodityIds=22&commodityIds=23&start_year=2025&start_month=10&end_year=2026&end_month=10"
+        },
+        {
+          "label": "公告本公司小型臺指期貨暨臺指選擇權週三到期契約(契約代號:202610W2)最後結算價",
+          "url": "https://www.taifex.com.tw/cht/5/futIndxFSP?commodityIds=1&start_year=2025&start_month=10&end_year=2026&end_month=10"
+        },
+        {
+          "label": "公告本公司小型臺指期貨暨臺指選擇權週三到期契約(契約代號:202610W1)最後結算價",
+          "url": "https://www.taifex.com.tw/cht/5/futIndxFSP?commodityIds=1&start_year=2025&start_month=10&end_year=2026&end_month=10"
+        },
+        {
+          "label": "公告本公司各類指數期貨及選擇權2026年09月契約最後結算價",
+          "url": "https://www.taifex.com.tw/cht/5/futIndxFSP?commodityIds=1&commodityIds=3&commodityIds=4&commodityIds=5&commodityIds=12&commodityIds=13&commodityIds=15&commodityIds=32&commodityIds=34&commodityIds=35&commodityIds=37&commodityIds=38&commodityIds=40&start_year=2025&start_month=09&end_year=2026&end_month=09"
+        },
+        {
+          "label": "公告本公司歐元兌美元期貨、美元兌日圓期貨、英鎊兌美元期貨及澳幣兌美元期貨2026年09月契約最後結算價",
+          "url": "https://www.taifex.com.tw/cht/5/fXFSP?commodityIds=25&commodityIds=26&commodityIds=29&commodityIds=30&start_year=2025&start_month=09&end_year=2026&end_month=09"
+        },
+        {
+          "label": "公告本公司美元兌人民幣期貨(RHF)及小型美元兌人民幣期貨(RTF)2026年09月契約最後結算價",
+          "url": "https://www.taifex.com.tw/cht/5/fXFSP?commodityIds=19&commodityIds=20&commodityIds=22&commodityIds=23&start_year=2025&start_month=09&end_year=2026&end_month=09"
+        },
+        {
+          "label": "公告本公司小型臺指期貨暨臺指選擇權週三到期契約(契約代號:202609W2)最後結算價",
+          "url": "https://www.taifex.com.tw/cht/5/futIndxFSP?commodityIds=1&start_year=2025&start_month=09&end_year=2026&end_month=09"
+        },
+        {
+          "label": "公告本公司臺指選擇權週五到期契約(契約代號:202608F4)最後結算價",
+          "url": "https://www.taifex.com.tw/cht/5/optIndxFSP?commodityIds=2&start_year=2025&start_month=08&end_year=2026&end_month=08"
+        },
+        {
+          "label": "公告本公司各類指數期貨及選擇權2026年08月契約最後結算價",
+          "url": "https://www.taifex.com.tw/cht/5/futIndxFSP?commodityIds=1&commodityIds=3&commodityIds=4&commodityIds=5&commodityIds=12&commodityIds=13&commodityIds=15&commodityIds=32&commodityIds=34&commodityIds=35&commodityIds=37&commodityIds=38&commodityIds=40&start_year=2025&start_month=08&end_year=2026&end_month=08"
+        },
+        {
+          "label": "公告本公司小型臺指期貨暨臺指選擇權週三到期契約(契約代號:202608W1)最後結算價",
+          "url": "https://www.taifex.com.tw/cht/5/futIndxFSP?commodityIds=1&start_year=2025&start_month=08&end_year=2026&end_month=08"
+        },
+        {
+          "label": "公告本公司布蘭特原油期貨2026年09月契約最後結算價",
+          "url": "https://www.taifex.com.tw/cht/5/goldFSP?commodityIds=31&start_year=2025&start_month=09&end_year=2026&end_month=09"
+        },
+        {
+          "label": "公告本公司臺指選擇權週五到期契約(契約代號:202607F4)最後結算價",
+          "url": "https://www.taifex.com.tw/cht/5/optIndxFSP?commodityIds=2&start_year=2025&start_month=07&end_year=2026&end_month=07"
+        },
+        {
+          "label": "公告本公司各類指數期貨及選擇權2026年07月契約最後結算價",
+          "url": "https://www.taifex.com.tw/cht/5/futIndxFSP?commodityIds=1&commodityIds=3&commodityIds=4&commodityIds=5&commodityIds=12&commodityIds=13&commodityIds=15&commodityIds=32&commodityIds=34&commodityIds=35&commodityIds=37&commodityIds=38&commodityIds=40&start_year=2025&start_month=07&end_year=2026&end_month=07"
+        },
+        {
+          "label": "公告本公司小型臺指期貨暨臺指選擇權週三到期契約(契約代號:202607W2)最後結算價",
+          "url": "https://www.taifex.com.tw/cht/5/futIndxFSP?commodityIds=1&start_year=2025&start_month=07&end_year=2026&end_month=07"
+        },
+        {
+          "label": "公告本公司黃金類期貨及選擇權2026年06月契約最後結算價",
+          "url": "https://www.taifex.com.tw/cht/5/goldFSP?commodityIds=10&commodityIds=17&commodityIds=18&start_year=2025&start_month=06&end_year=2026&end_month=06"
+        },
+        {
+          "label": "公告本公司臺指選擇權週五到期契約(契約代號:202606F4)最後結算價",
+          "url": "https://www.taifex.com.tw/cht/5/optIndxFSP?commodityIds=2&start_year=2025&start_month=06&end_year=2026&end_month=06"
+        },
+        {
+          "label": "公告本公司美元兌人民幣期貨(RHF)及小型美元兌人民幣期貨(RTF)2026年06月契約最後結算價",
+          "url": "https://www.taifex.com.tw/cht/5/fXFSP?commodityIds=19&commodityIds=20&commodityIds=22&commodityIds=23&start_year=2025&start_month=06&end_year=2026&end_month=06"
+        },
+        {
+          "label": "公告本公司東證期貨2026年06月契約最後結算價",
+          "url": "https://www.taifex.com.tw/cht/5/futIndxFSP?commodityIds=21&start_year=2025&start_month=06&end_year=2026&end_month=06"
+        },
+        {
+          "label": "公告本公司臺指選擇權週五到期契約(契約代號:202606F2)最後結算價",
+          "url": "https://www.taifex.com.tw/cht/5/optIndxFSP?commodityIds=2&start_year=2025&start_month=06&end_year=2026&end_month=06"
+        },
+        {
+          "label": "公告本公司臺指選擇權週五到期契約(契約代號:202605F5)最後結算價",
+          "url": "https://www.taifex.com.tw/cht/5/optIndxFSP?commodityIds=2&start_year=2025&start_month=05&end_year=2026&end_month=05"
+        },
+        {
+          "label": "公告本公司臺指選擇權週五到期契約(契約代號:202605F4)最後結算價",
+          "url": "https://www.taifex.com.tw/cht/5/optIndxFSP?commodityIds=2&start_year=2025&start_month=05&end_year=2026&end_month=05"
+        },
+        {
+          "label": "公告本公司臺指選擇權週五到期契約(契約代號:202605F3)最後結算價",
+          "url": "https://www.taifex.com.tw/cht/5/optIndxFSP?commodityIds=2&start_year=2025&start_month=05&end_year=2026&end_month=05"
+        },
+        {
+          "label": "公告本公司臺指選擇權週五到期契約(契約代號:202605F2)最後結算價",
+          "url": "https://www.taifex.com.tw/cht/5/optIndxFSP?commodityIds=2&start_year=2025&start_month=05&end_year=2026&end_month=05"
+        }
+      ],
+      "html_pagination_hints": [
+        "\t\t\t<div class=\"swiper-pagination\"></div>\r",
+        "<div class=\"pagesize\">\r",
+        "\t    pagination: {\r",
+        "\t      el: '.vision .swiper-pagination',\r",
+        "\t\t\t\t\t\t\t\t\t\t\t<label for=\"query_year\">年度：</label>\r",
+        "\t\t\t\t\t\t\t\t\t\t\t<select id=\"query_year\" name=\"query_year\" onChange=\"javascript:document.uForm.submit();\"><option value=\"2026\"\r"
+      ],
       "http_status": 200,
       "sha256": "431b1f34c409d8dbecdb823b07975bcac50bda55390235402c48f55119f91fcf",
       "selected_year": [
@@ -546,6 +1008,80 @@
             "name": null,
             "id": null,
             "value": null
+          }
+        ],
+        "inputs": [
+          {
+            "name": null,
+            "id": "api_url",
+            "type": "hidden",
+            "value": "/cht/quotesApi/getQuotes?"
+          },
+          {
+            "name": null,
+            "id": "product_type",
+            "type": "hidden",
+            "value": "1"
+          },
+          {
+            "name": null,
+            "id": "major_type",
+            "type": "hidden",
+            "value": "1"
+          },
+          {
+            "name": null,
+            "id": "major_data_type",
+            "type": "hidden",
+            "value": "1"
+          },
+          {
+            "name": "pstring",
+            "id": "pstring",
+            "type": "text",
+            "value": null
+          },
+          {
+            "name": "pstring",
+            "id": "pstring",
+            "type": "text",
+            "value": null
+          },
+          {
+            "name": "pstring",
+            "id": "m-pstring",
+            "type": "text",
+            "value": null
+          },
+          {
+            "name": null,
+            "id": "popupbox_url",
+            "type": "hidden",
+            "value": null
+          },
+          {
+            "name": "button",
+            "id": "button",
+            "type": "button",
+            "value": "確定"
+          },
+          {
+            "name": "button2",
+            "id": "button2",
+            "type": "submit",
+            "value": "取消"
+          },
+          {
+            "name": "button",
+            "id": "button",
+            "type": "submit",
+            "value": "確定"
+          },
+          {
+            "name": "button2",
+            "id": "button2",
+            "type": "submit",
+            "value": "取消"
           }
         ]
       }
