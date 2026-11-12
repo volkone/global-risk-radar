@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "scope": "TAIFEX TXF foreign open-interest calendar 2023-11-11 through 2026-10-31",
+  "method": "Direct review of TAIFEX official notice webpages; annual PDFs remain unverified",
+  "annual_calendar": {
+    "status": "pending_primary_document_review",
+    "note": "Annual source URLs in audit script have not been independently opened and parsed; do not treat them as verified evidence."
+  },
+  "special_dates": [
+    {
+      "dates": [
+        "2024-10-31"
+      ],
+      "reason": "Typhoon Kong-rey",
+      "status": "verified_primary",
+      "official_url": "https://www.taifex.com.tw/cht/11/newsDetail?idx=15446&newsType=1",
+      "published": "2024-10-30",
+      "session_scope": "regular and after-hours"
+    },
+    {
+      "dates": [
+        "2026-07-10"
+      ],
+      "reason": "Typhoon Bavi",
+      "status": "verified_primary",
+      "official_url": "https://www.taifex.com.tw/enl/eng11/newsDetail?idx=10470&newsType=1",
+      "published": "2026-07-09",
+      "session_scope": "regular and after-hours per Chinese announcement listing"
+    },
+    {
+      "dates": [
+        "2026-10-23"
+      ],
+      "reason": "Typhoon Changpi",
+      "status": "verified_primary_listing",
+      "official_url": "https://www.taifex.com.tw/cht/11/announcement",
+      "published": "2026-10-22",
+      "session_scope": "regular and after-hours"
+    },
+    {
+      "dates": [
+        "2024-07-24",
+        "2024-07-25",
+        "2024-10-02",
+        "2024-10-03",
+        "2025-09-29",
+        "2025-10-24",
+        "2025-12-25"
+      ],
+      "status": "pending_individual_primary_notice_links",
+      "reason": "Prior provisional reconciliation only; specific primary evidence not independently retrieved in this pass"
+    }
+  ],
+  "gate": {
+    "calendar_set_comparison": "718 of 718 matched provisional rule set",
+    "primary_evidence_complete": false,
+    "independent_taifex_calendar_verified": false,
+    "full_model_backtest_authorized": false
+  },
+  "review_note": "Do not infer official calendar validity from agreement with TWSE reference dates or hard-coded exceptions."
+}
