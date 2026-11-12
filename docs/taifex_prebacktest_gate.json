@@ -1,4 +1,9 @@
 {
+  "blockers": [
+    "full_notice_sweep_not_verified",
+    "primary_evidence_not_complete"
+  ],
+  "evidence_urls_accessible": true,
   "record_count": 718,
   "annual_source_links_present": true,
   "special_source_links_present": true,
