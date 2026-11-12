@@ -1,0 +1,26 @@
+{
+  "status": "needs_ad_hoc_closure_review",
+  "window": [
+    "2023-11-11",
+    "2026-10-31"
+  ],
+  "observed_count": 718,
+  "annual_calendar_candidate_count": 728,
+  "provisional_candidate_only_dates": [
+    "2024-07-24",
+    "2024-07-25",
+    "2024-10-02",
+    "2024-10-03",
+    "2024-10-31",
+    "2025-09-29",
+    "2025-10-24",
+    "2025-12-25",
+    "2026-07-10",
+    "2026-10-23"
+  ],
+  "unexpected_observations": [],
+  "duplicate_observation_dates": [],
+  "independent_taifex_calendar_verified": false,
+  "full_model_backtest_authorized": false,
+  "note": "Provisional JavaScript execution of the audit's hard-coded holiday logic against live GitHub data. Candidate-only dates are NOT confirmed missing sessions; independently validate official annual calendars, statutory holiday changes, typhoon and ad-hoc closures before unlocking."
+}
