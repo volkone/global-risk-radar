@@ -1,0 +1,213 @@
+{
+  "status": "BLOCKED_RESEARCH_DIAGNOSTICS_COMPLETED",
+  "phase": 3,
+  "data_sha256": "20e0c7ecf9ead9393b6f1518b1c6cb659ea2745335c00293a253808c4777edc8",
+  "source_sample_audit": {
+    "status": "probe_complete_with_violations",
+    "sample_count": 18,
+    "violations": 9,
+    "errors": 0,
+    "per_factor_violations": {
+      "fx": 3,
+      "hy": 0,
+      "ig": 0,
+      "vix": 0,
+      "us10y": 3,
+      "nfci": 3
+    }
+  },
+  "stability_summary": {
+    "5d": {
+      "phase2_baseline": {
+        "n": 211,
+        "alert_n": 58,
+        "event_n": 53,
+        "alert_event_n": 25,
+        "precision": 0.431,
+        "base_rate": 0.2512,
+        "precision_minus_base": 0.1798
+      },
+      "fx_h10_and_two_tx_session_delay_stress": {
+        "n": 211,
+        "alert_n": 56,
+        "event_n": 53,
+        "alert_event_n": 20,
+        "precision": 0.3571,
+        "base_rate": 0.2512,
+        "precision_minus_base": 0.106
+      },
+      "alert_precision_change_stress_minus_baseline": -0.0739,
+      "approx_lift_interval": [
+        0.0565,
+        0.303
+      ],
+      "nonoverlap_offset_count": 5,
+      "holdout_quarters": {
+        "2025-Q4": {
+          "summary": {
+            "n": 18,
+            "alert_n": 0,
+            "event_n": 1,
+            "alert_event_n": 0,
+            "precision": null,
+            "base_rate": 0.0556,
+            "precision_minus_base": null
+          },
+          "minimum_alert_count_for_interpretation": 8,
+          "enough_alerts": false
+        },
+        "2026-Q1": {
+          "summary": {
+            "n": 55,
+            "alert_n": 21,
+            "event_n": 14,
+            "alert_event_n": 9,
+            "precision": 0.4286,
+            "base_rate": 0.2545,
+            "precision_minus_base": 0.174
+          },
+          "minimum_alert_count_for_interpretation": 8,
+          "enough_alerts": true
+        },
+        "2026-Q2": {
+          "summary": {
+            "n": 61,
+            "alert_n": 8,
+            "event_n": 14,
+            "alert_event_n": 1,
+            "precision": 0.125,
+            "base_rate": 0.2295,
+            "precision_minus_base": -0.1045
+          },
+          "minimum_alert_count_for_interpretation": 8,
+          "enough_alerts": true
+        },
+        "2026-Q3": {
+          "summary": {
+            "n": 63,
+            "alert_n": 20,
+            "event_n": 18,
+            "alert_event_n": 11,
+            "precision": 0.55,
+            "base_rate": 0.2857,
+            "precision_minus_base": 0.2643
+          },
+          "minimum_alert_count_for_interpretation": 8,
+          "enough_alerts": true
+        },
+        "2026-Q4": {
+          "summary": {
+            "n": 14,
+            "alert_n": 9,
+            "event_n": 6,
+            "alert_event_n": 4,
+            "precision": 0.4444,
+            "base_rate": 0.4286,
+            "precision_minus_base": 0.0159
+          },
+          "minimum_alert_count_for_interpretation": 8,
+          "enough_alerts": true
+        }
+      }
+    },
+    "20d": {
+      "phase2_baseline": {
+        "n": 196,
+        "alert_n": 49,
+        "event_n": 45,
+        "alert_event_n": 28,
+        "precision": 0.5714,
+        "base_rate": 0.2296,
+        "precision_minus_base": 0.3418
+      },
+      "fx_h10_and_two_tx_session_delay_stress": {
+        "n": 196,
+        "alert_n": 50,
+        "event_n": 45,
+        "alert_event_n": 23,
+        "precision": 0.46,
+        "base_rate": 0.2296,
+        "precision_minus_base": 0.2304
+      },
+      "alert_precision_change_stress_minus_baseline": -0.1114,
+      "approx_lift_interval": [
+        0.1338,
+        0.5635
+      ],
+      "nonoverlap_offset_count": 20,
+      "holdout_quarters": {
+        "2025-Q4": {
+          "summary": {
+            "n": 18,
+            "alert_n": 0,
+            "event_n": 0,
+            "alert_event_n": 0,
+            "precision": null,
+            "base_rate": 0.0,
+            "precision_minus_base": null
+          },
+          "minimum_alert_count_for_interpretation": 8,
+          "enough_alerts": false
+        },
+        "2026-Q1": {
+          "summary": {
+            "n": 55,
+            "alert_n": 21,
+            "event_n": 15,
+            "alert_event_n": 11,
+            "precision": 0.5238,
+            "base_rate": 0.2727,
+            "precision_minus_base": 0.2511
+          },
+          "minimum_alert_count_for_interpretation": 8,
+          "enough_alerts": true
+        },
+        "2026-Q2": {
+          "summary": {
+            "n": 61,
+            "alert_n": 8,
+            "event_n": 11,
+            "alert_event_n": 3,
+            "precision": 0.375,
+            "base_rate": 0.1803,
+            "precision_minus_base": 0.1947
+          },
+          "minimum_alert_count_for_interpretation": 8,
+          "enough_alerts": true
+        },
+        "2026-Q3": {
+          "summary": {
+            "n": 62,
+            "alert_n": 20,
+            "event_n": 19,
+            "alert_event_n": 14,
+            "precision": 0.7,
+            "base_rate": 0.3065,
+            "precision_minus_base": 0.3935
+          },
+          "minimum_alert_count_for_interpretation": 8,
+          "enough_alerts": true
+        }
+      }
+    }
+  },
+  "important_observation": "If as-of vintage checks find absent or revised panel observations, the phase-2 alert precision cannot be treated as point-in-time performance.",
+  "blockers": [
+    "sampled_panel_uses_observations_unavailable_or_revised_asof",
+    "all_718_fred_observations_not_point_in_time_vintage_certified",
+    "intraday_publication_times_and_us_holidays_not_integrated",
+    "phase2_holdout_previously_inspected_post_hoc_tests_not_independent_confirmation",
+    "multi_regime_fresh_walk_forward_validation_not_completed",
+    "full_taifex_calendar_primary_evidence_not_signed_off",
+    "full_model_and_tradable_instrument_cost_contract_not_approved"
+  ],
+  "future_requirements": [
+    "Create real publication-timestamp/calendar-aware PIT panel from audited ALFRED vintages or first-seen timestamps.",
+    "Freeze research hypothesis, feature weights, threshold, horizon and execution restrictions BEFORE collecting a fresh holdout.",
+    "Expand historical periods/rolling time splits or reserve genuinely unseen new data and quantify nonoverlap event count.",
+    "Separately document TAIFEX market calendar evidence and TXF executable contract/roll/costs if studying trade PnL.",
+    "Only a separate explicit quality gate can authorize production model validation and live threshold changes."
+  ],
+  "full_model_backtest_authorized": false,
+  "live_threshold_changes_authorized": false
+}
