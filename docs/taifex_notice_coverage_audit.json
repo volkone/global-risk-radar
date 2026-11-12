@@ -52,8 +52,69 @@
       "limitations": "Only first response was captured; form selection does not prove full archive pagination."
     }
   ],
-  "known_special_dates": [],
-  "known_dates_total": 0,
+  "known_special_dates": [
+    {
+      "date": "2024-07-24",
+      "evidence_url": "https://www.taifex.com.tw/enl/eng11/newsDetail?idx=8785&newsType=1",
+      "found_in_candidate_listing": false,
+      "listing_years": []
+    },
+    {
+      "date": "2024-07-25",
+      "evidence_url": "https://www.taifex.com.tw/enl/eng11/newsDetail?idx=8785&newsType=1",
+      "found_in_candidate_listing": false,
+      "listing_years": []
+    },
+    {
+      "date": "2024-10-02",
+      "evidence_url": "https://www.taifex.com.tw/cht/11/newsDetail.do?idx=15394&thetype=2",
+      "found_in_candidate_listing": false,
+      "listing_years": []
+    },
+    {
+      "date": "2024-10-03",
+      "evidence_url": "https://www.taifex.com.tw/cht/11/newsDetail.do?idx=15394&thetype=2",
+      "found_in_candidate_listing": false,
+      "listing_years": []
+    },
+    {
+      "date": "2024-10-31",
+      "evidence_url": "https://www.taifex.com.tw/cht/11/newsDetail?idx=15446&newsType=1",
+      "found_in_candidate_listing": false,
+      "listing_years": []
+    },
+    {
+      "date": "2025-09-29",
+      "evidence_url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/%E5%8F%B0%E6%9C%9F%E4%BA%A4%E5%AD%97%E7%AC%AC1140001929%E8%99%9F%E5%87%BD.pdf",
+      "found_in_candidate_listing": false,
+      "listing_years": []
+    },
+    {
+      "date": "2025-10-24",
+      "evidence_url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/%E5%8F%B0%E6%9C%9F%E4%BA%A4%E5%AD%97%E7%AC%AC1140001929%E8%99%9F%E5%87%BD.pdf",
+      "found_in_candidate_listing": false,
+      "listing_years": []
+    },
+    {
+      "date": "2025-12-25",
+      "evidence_url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/%E5%8F%B0%E6%9C%9F%E4%BA%A4%E5%AD%97%E7%AC%AC1140001929%E8%99%9F%E5%87%BD.pdf",
+      "found_in_candidate_listing": false,
+      "listing_years": []
+    },
+    {
+      "date": "2026-07-10",
+      "evidence_url": "https://www.taifex.com.tw/enl/eng11/newsDetail?idx=10470&newsType=1",
+      "found_in_candidate_listing": false,
+      "listing_years": []
+    },
+    {
+      "date": "2026-10-23",
+      "evidence_url": "https://www.taifex.com.tw/cht/11/announcement",
+      "found_in_candidate_listing": false,
+      "listing_years": []
+    }
+  ],
+  "known_dates_total": 10,
   "known_dates_in_listing": 0,
   "year_listing_completeness_verified": false,
   "full_notice_sweep_verified": false,
