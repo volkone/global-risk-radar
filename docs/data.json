@@ -5,7 +5,7 @@
     "tw_margin": "2026-11-11T16:43:06.654465+00:00",
     "tw_tw_price": "2026-11-11T16:43:06.654465+00:00"
   },
-  "updated_utc": "2026-11-12T01:32:51.434356+00:00",
+  "updated_utc": "2026-11-12T01:33:18.792542+00:00",
   "request_stats": {
     "requests": 6,
     "success": 6,
@@ -1997,7 +1997,7 @@
       "drawdown_pct": 9.13,
       "reference": "近一年最高收盤價",
       "spx": 7619.38,
-      "checked_at": "2026-11-12T01:32:50.064668+00:00"
+      "checked_at": "2026-11-12T01:33:17.320556+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -2253,7 +2253,7 @@
       "official_close_date": "2026-11-10",
       "official_volume_shares": 12827159729,
       "official_turnover_twd": 1034012240502,
-      "value": 44224.898,
+      "value": 44231.609,
       "date": "2026-11-12",
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ETWII/",
@@ -2616,12 +2616,12 @@
         },
         {
           "date": "2026-11-12",
-          "value": 44224.898
+          "value": 44231.609
         }
       ],
-      "drawdown_pct": 11.24,
+      "drawdown_pct": 11.22,
       "reference": "近一年最高收盤價",
-      "checked_at": "2026-11-12T01:32:50.064668+00:00"
+      "checked_at": "2026-11-12T01:33:17.320556+00:00"
     },
     "fx": {
       "name": "美元兌新台幣與美元指數",
@@ -2630,7 +2630,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 32.861,
+      "value": 32.863,
       "date": "2026-11-12",
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/",
@@ -2993,22 +2993,22 @@
         },
         {
           "date": "2026-11-12",
-          "value": 32.861
+          "value": 32.863
         }
       ],
-      "checked_at": "2026-11-12T01:32:50.064668+00:00",
-      "dxy": 102.87
+      "checked_at": "2026-11-12T01:33:17.320556+00:00",
+      "dxy": 102.86
     }
   },
   "active_alerts": {
     "tw5": {
       "severity": "warning",
-      "message": "台股近一年高點回撤 ≥5%：11.24%",
+      "message": "台股近一年高點回撤 ≥5%：11.22%",
       "first_seen": "2026-11-10T08:42:05.496990+00:00"
     },
     "tw10": {
       "severity": "warning",
-      "message": "台股近一年高點回撤 ≥10%：11.24%",
+      "message": "台股近一年高點回撤 ≥10%：11.22%",
       "first_seen": "2026-11-10T08:42:05.496990+00:00"
     }
   },
