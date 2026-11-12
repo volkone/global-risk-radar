@@ -180,7 +180,7 @@ def collect_one(api,name,series):
         date=parsed_date(x["date"])
         columns=[(k,v) for k,v in x.items() if k.startswith(prefix)]
         if not columns:
-            raise ValueError("missing_FRED_wide_vintage_columns")
+            continue  # Sparse ALFRED type-3 date-only row: no changes, keep existing value
         for col,raw_value in columns:
             stamp=col[len(prefix):]
             if len(stamp)!=8 or not stamp.isdigit():
