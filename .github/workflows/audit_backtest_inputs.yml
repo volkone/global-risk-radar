@@ -1,0 +1,58 @@
+name: Phase 1 audit TX backtest required inputs
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/audit_backtest_inputs.yml'
+      - 'scripts/audit_backtest_inputs.py'
+permissions:
+  contents: write
+concurrency:
+  group: taifex-phase1-input-audit
+  cancel-in-progress: false
+jobs:
+  audit-inputs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Audit 718 sessions, raw TXF OI, known closures and actual model history
+        run: python scripts/audit_backtest_inputs.py
+      - name: Assert report does not authorize full backtest
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("docs/taifex_backtest_input_audit.json")
+          r=json.loads(p.read_text(encoding="utf-8"))
+          assert r["status"]=="phase1_input_audit_complete"
+          assert r["full_model_backtest_authorized"] is False
+          assert r["live_threshold_changes_authorized"] is False
+          assert r["tx_panel"]["raw_rows"] > 0
+          assert len(r["trading_dates"]["known_special_days"]) > 0
+          print("Material backtest gaps:",r["backtest_impacting_gaps"])
+          PY
+      - name: Upload reproducible audit snapshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: taifex-phase1-input-audit
+          path: docs/taifex_backtest_input_audit.json
+          if-no-files-found: warn
+      - name: Save audit to repository
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/taifex_backtest_input_audit.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Publish phase-1 backtest input audit [skip ci]'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
