@@ -1,0 +1,281 @@
+{
+  "status": "phase1_input_audit_complete",
+  "scope": [
+    "2023-11-11",
+    "2026-10-31"
+  ],
+  "audit_type": "repository_snapshot_no_network_fetch",
+  "input_sha256": {
+    "storage/taifex_backfill.json": "8bfd8c50cd3db2954173c949c8f6aaae43fdbfcf200e04f74995ca8d5c007109",
+    "storage/twse_backfill.json": "a9d36e35403255d4a1728315e61c5c7db5dc614ac878a0671c07c22de2aca421",
+    "storage/official_calendar/trading_days.csv": "02b6126a174c03461bf280c380e9c42d0daa98a14de228bd8373580895d56601",
+    "docs/taifex_source_verification.json": "e155c7e85f525ad0f613e1f36bf0405cc9dddaef6c0049d0767e4a14c12aedd3",
+    "docs/taifex_calendar_evidence.json": "c7753aa20eca64995accf22a4e06d00cb43e821c1032ad0ef31de3c2bccc7c26",
+    "docs/data.json": "64690cb50925b7cb3e36674dccea08e20e8444d7b1a614ca6841cf8531972fda"
+  },
+  "tx_panel": {
+    "raw_rows": 718,
+    "distinct_dates": 718,
+    "first_date": "2023-11-13",
+    "last_date": "2026-10-30",
+    "twse_reference_sessions": 718,
+    "missing_vs_twse_reference": [],
+    "extra_vs_twse_reference": [],
+    "duplicate_dates": [],
+    "invalid_dates": [],
+    "oi_identity_errors": [],
+    "metadata_or_source_url_errors": [],
+    "source_verification_report_status": "pass",
+    "source_verified_records": 718,
+    "fingerprint_or_value_hash_verification_failures": [],
+    "every_current_tx_record_matches_persisted_verification": true,
+    "has_tx_futures_ohlc_prices": false,
+    "explanation": "This dataset stores foreign/China investor TXF long/short/net open interest, not TXF traded OHLC prices."
+  },
+  "trading_dates": {
+    "candidate_718_dates_match_twse": true,
+    "calendar_provisional_reconciliation_status": "calendar_dates_reconciled_pending_documentary_audit",
+    "independent_taifex_calendar_verified": false,
+    "known_special_closed_days_count": 10,
+    "known_special_days": [
+      {
+        "date": "2024-07-24",
+        "reason": "Typhoon Gaemi",
+        "no_tx_record": true,
+        "not_a_twse_session": true,
+        "evidence_status": "verified_primary",
+        "evidence_url": "https://www.taifex.com.tw/enl/eng11/newsDetail?idx=8785&newsType=1",
+        "evidence_is_annual_pdf": false,
+        "evidence_is_generic_listing": false
+      },
+      {
+        "date": "2024-07-25",
+        "reason": "Typhoon Gaemi",
+        "no_tx_record": true,
+        "not_a_twse_session": true,
+        "evidence_status": "verified_primary",
+        "evidence_url": "https://www.taifex.com.tw/enl/eng11/newsDetail?idx=8785&newsType=1",
+        "evidence_is_annual_pdf": false,
+        "evidence_is_generic_listing": false
+      },
+      {
+        "date": "2024-10-02",
+        "reason": "Typhoon Krathon",
+        "no_tx_record": true,
+        "not_a_twse_session": true,
+        "evidence_status": "verified_primary",
+        "evidence_url": "https://www.taifex.com.tw/cht/11/newsDetail.do?idx=15394&thetype=2",
+        "evidence_is_annual_pdf": false,
+        "evidence_is_generic_listing": false
+      },
+      {
+        "date": "2024-10-03",
+        "reason": "Typhoon Krathon",
+        "no_tx_record": true,
+        "not_a_twse_session": true,
+        "evidence_status": "verified_primary",
+        "evidence_url": "https://www.taifex.com.tw/cht/11/newsDetail.do?idx=15394&thetype=2",
+        "evidence_is_annual_pdf": false,
+        "evidence_is_generic_listing": false
+      },
+      {
+        "date": "2024-10-31",
+        "reason": "Typhoon Kong-rey",
+        "no_tx_record": true,
+        "not_a_twse_session": true,
+        "evidence_status": "previously_verified_primary",
+        "evidence_url": "https://www.taifex.com.tw/cht/11/newsDetail?idx=15446&newsType=1",
+        "evidence_is_annual_pdf": false,
+        "evidence_is_generic_listing": false
+      },
+      {
+        "date": "2025-09-29",
+        "reason": "Revised 2025 TAIFEX annual calendar",
+        "no_tx_record": true,
+        "not_a_twse_session": true,
+        "evidence_status": "verified_primary",
+        "evidence_url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/%E5%8F%B0%E6%9C%9F%E4%BA%A4%E5%AD%97%E7%AC%AC1140001929%E8%99%9F%E5%87%BD.pdf",
+        "evidence_is_annual_pdf": true,
+        "evidence_is_generic_listing": false
+      },
+      {
+        "date": "2025-10-24",
+        "reason": "Revised 2025 TAIFEX annual calendar",
+        "no_tx_record": true,
+        "not_a_twse_session": true,
+        "evidence_status": "verified_primary",
+        "evidence_url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/%E5%8F%B0%E6%9C%9F%E4%BA%A4%E5%AD%97%E7%AC%AC1140001929%E8%99%9F%E5%87%BD.pdf",
+        "evidence_is_annual_pdf": true,
+        "evidence_is_generic_listing": false
+      },
+      {
+        "date": "2025-12-25",
+        "reason": "Revised 2025 TAIFEX annual calendar",
+        "no_tx_record": true,
+        "not_a_twse_session": true,
+        "evidence_status": "verified_primary",
+        "evidence_url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/%E5%8F%B0%E6%9C%9F%E4%BA%A4%E5%AD%97%E7%AC%AC1140001929%E8%99%9F%E5%87%BD.pdf",
+        "evidence_is_annual_pdf": true,
+        "evidence_is_generic_listing": false
+      },
+      {
+        "date": "2026-07-10",
+        "reason": "Typhoon closure",
+        "no_tx_record": true,
+        "not_a_twse_session": true,
+        "evidence_status": "previously_verified_primary",
+        "evidence_url": "https://www.taifex.com.tw/enl/eng11/newsDetail?idx=10470&newsType=1",
+        "evidence_is_annual_pdf": false,
+        "evidence_is_generic_listing": false
+      },
+      {
+        "date": "2026-10-23",
+        "reason": "Typhoon closure",
+        "no_tx_record": true,
+        "not_a_twse_session": true,
+        "evidence_status": "verified_official_announcement_listing",
+        "evidence_url": "https://www.taifex.com.tw/cht/11/announcement",
+        "evidence_is_annual_pdf": false,
+        "evidence_is_generic_listing": true
+      }
+    ],
+    "special_dates_conflicting_with_observations_or_calendar": [],
+    "generic_listing_evidence_only_dates": [
+      "2026-10-23"
+    ],
+    "annual_notice_archive_sweep_required_for_completeness_claim": true,
+    "note": "TWSE date agreement is a cross-check, not independent proof of every TAIFEX exceptional closure."
+  },
+  "twse_overlap": {
+    "margin.margin": {
+      "all_records": 726,
+      "records_in_window": 718,
+      "dates_in_window": 718,
+      "missing_tx_session_dates": [],
+      "extra_vs_tx_session_dates": [],
+      "duplicate_dates_in_window": 0
+    },
+    "inst.cash_inst": {
+      "all_records": 726,
+      "records_in_window": 718,
+      "dates_in_window": 718,
+      "missing_tx_session_dates": [],
+      "extra_vs_tx_session_dates": [],
+      "duplicate_dates_in_window": 0
+    }
+  },
+  "current_market_histories": {
+    "taiex": {
+      "history_records": 90,
+      "valid_unique_dates": 90,
+      "first_date": "2026-07-02",
+      "last_date": "2026-11-12",
+      "dates_in_target_window": 81,
+      "matching_tx_sessions": 81,
+      "missing_tx_sessions": 637,
+      "duplicate_history_dates": 0,
+      "is_historical_718_session_panel": false
+    },
+    "fx": {
+      "history_records": 90,
+      "valid_unique_dates": 90,
+      "first_date": "2026-07-09",
+      "last_date": "2026-11-12",
+      "dates_in_target_window": 81,
+      "matching_tx_sessions": 64,
+      "missing_tx_sessions": 654,
+      "duplicate_history_dates": 0,
+      "is_historical_718_session_panel": false
+    },
+    "hy": {
+      "history_records": 90,
+      "valid_unique_dates": 90,
+      "first_date": "2026-07-07",
+      "last_date": "2026-11-09",
+      "dates_in_target_window": 84,
+      "matching_tx_sessions": 78,
+      "missing_tx_sessions": 640,
+      "duplicate_history_dates": 0,
+      "is_historical_718_session_panel": false
+    },
+    "ig": {
+      "history_records": 90,
+      "valid_unique_dates": 90,
+      "first_date": "2026-07-07",
+      "last_date": "2026-11-09",
+      "dates_in_target_window": 84,
+      "matching_tx_sessions": 78,
+      "missing_tx_sessions": 640,
+      "duplicate_history_dates": 0,
+      "is_historical_718_session_panel": false
+    },
+    "vix": {
+      "history_records": 90,
+      "valid_unique_dates": 90,
+      "first_date": "2026-07-08",
+      "last_date": "2026-11-10",
+      "dates_in_target_window": 83,
+      "matching_tx_sessions": 77,
+      "missing_tx_sessions": 641,
+      "duplicate_history_dates": 0,
+      "is_historical_718_session_panel": false
+    },
+    "indices": {
+      "history_records": 90,
+      "valid_unique_dates": 90,
+      "first_date": "2026-07-08",
+      "last_date": "2026-11-11",
+      "dates_in_target_window": 82,
+      "matching_tx_sessions": 76,
+      "missing_tx_sessions": 642,
+      "duplicate_history_dates": 0,
+      "is_historical_718_session_panel": false
+    },
+    "us10y": {
+      "history_records": 89,
+      "valid_unique_dates": 89,
+      "first_date": "2026-07-06",
+      "last_date": "2026-11-09",
+      "dates_in_target_window": 83,
+      "matching_tx_sessions": 77,
+      "missing_tx_sessions": 641,
+      "duplicate_history_dates": 0,
+      "is_historical_718_session_panel": false
+    },
+    "nfci": {
+      "history_records": 18,
+      "valid_unique_dates": 18,
+      "first_date": "2026-07-03",
+      "last_date": "2026-10-30",
+      "dates_in_target_window": 18,
+      "matching_tx_sessions": 14,
+      "missing_tx_sessions": 704,
+      "duplicate_history_dates": 0,
+      "is_historical_718_session_panel": false
+    }
+  },
+  "tx_taiex_fx_same_day_intersection": {
+    "count": 64,
+    "first_date": "2026-07-09",
+    "last_date": "2026-10-30",
+    "note": "Same-date intersections alone do not ensure availability-time alignment or enough holdout samples."
+  },
+  "current_diagnostic_backtest": {
+    "status": "insufficient_samples",
+    "common_sessions": 57,
+    "method": "expanding_window_walk_forward"
+  },
+  "backtest_impacting_gaps": [
+    "taiex_historical_outcome_prices_incomplete",
+    "fx_historical_signal_incomplete",
+    "global_risk_factor_histories_incomplete_for_full_model",
+    "point_in_time_release_lag_and_holdout_method_not_frozen",
+    "independent_taifex_calendar_evidence_not_finalized"
+  ],
+  "risk_only_vs_trading_backtest": {
+    "risk_prediction": "Needs full historical target TAIEX prices and contemporaneously available historical signals; TXF OHLC prices are not required solely to predict TAIEX drawdowns.",
+    "tradeable_txf_strategy": "Additionally requires TXF settlement/tradable prices, contract roll rules, fees and slippage; not supplied by this OI panel."
+  },
+  "full_model_backtest_authorized": false,
+  "live_threshold_changes_authorized": false
+}
