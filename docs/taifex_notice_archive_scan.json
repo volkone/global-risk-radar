@@ -60,7 +60,113 @@
           "title": "公告115年2月28日(星期六)為和平紀念日，依規定於115年2 月27日(星期五)補假一日，本公司期貨集中交易市場配合休市1日。",
           "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150200266號函.pdf"
         }
-      ]
+      ],
+      "form_controls": {
+        "forms": [
+          {
+            "action": null,
+            "method": "post"
+          },
+          {
+            "action": null,
+            "method": "post"
+          },
+          {
+            "action": null,
+            "method": "post"
+          },
+          {
+            "action": "announcement",
+            "method": "post"
+          }
+        ],
+        "selects": [
+          {
+            "name": "query_year",
+            "id": "query_year",
+            "options": [
+              {
+                "value": "2026",
+                "selected": true
+              },
+              {
+                "value": "2025",
+                "selected": false
+              },
+              {
+                "value": "2024",
+                "selected": false
+              },
+              {
+                "value": "2023",
+                "selected": false
+              },
+              {
+                "value": "2022",
+                "selected": false
+              },
+              {
+                "value": "2021",
+                "selected": false
+              },
+              {
+                "value": "2019",
+                "selected": false
+              }
+            ]
+          }
+        ],
+        "buttons": [
+          {
+            "tag": "button",
+            "name": null,
+            "id": null,
+            "value": null
+          },
+          {
+            "tag": "button",
+            "name": null,
+            "id": "pause",
+            "value": null
+          },
+          {
+            "tag": "button",
+            "name": null,
+            "id": null,
+            "value": null
+          },
+          {
+            "tag": "input",
+            "name": "button",
+            "id": "button",
+            "value": "確定"
+          },
+          {
+            "tag": "input",
+            "name": "button2",
+            "id": "button2",
+            "value": "取消"
+          },
+          {
+            "tag": "input",
+            "name": "button",
+            "id": "button",
+            "value": "確定"
+          },
+          {
+            "tag": "input",
+            "name": "button2",
+            "id": "button2",
+            "value": "取消"
+          },
+          {
+            "tag": "button",
+            "name": null,
+            "id": null,
+            "value": null
+          }
+        ]
+      }
     }
   ],
   "partitions_total": 36,
