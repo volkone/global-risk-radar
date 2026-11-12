@@ -2630,7 +2630,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 32.919,
+      "value": 32.917,
       "date": "2026-11-12",
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/",
@@ -2993,7 +2993,7 @@
         },
         {
           "date": "2026-11-12",
-          "value": 32.919
+          "value": 32.917
         }
       ],
       "checked_at": "2026-11-12T09:41:37.696883+00:00",
