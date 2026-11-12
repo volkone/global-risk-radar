@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "evaluated_at": "2026-11-12T14:29:37.713490+00:00",
-  "snapshot_updated_at": "2026-11-12T14:29:37.623587+00:00",
-  "history_generated_at": "2026-11-12T14:29:37.674109+00:00",
+  "evaluated_at": "2026-11-12T14:30:37.421874+00:00",
+  "snapshot_updated_at": "2026-11-12T14:30:37.331386+00:00",
+  "history_generated_at": "2026-11-12T14:30:37.382023+00:00",
   "summary": {
     "pass": 10,
     "caution": 1,
@@ -52,16 +52,16 @@
     "indices": {
       "quality": "pass",
       "source": "indices",
-      "date": "2026-11-11",
-      "age_days": 1,
+      "date": "2026-11-12",
+      "age_days": 0,
       "errors": [],
       "warnings": []
     },
     "breadth": {
       "quality": "blocked",
       "source": "breadth",
-      "date": "2026-11-11",
-      "age_days": 1,
+      "date": "2026-11-12",
+      "age_days": 0,
       "errors": [
         "source_not_verified"
       ],
