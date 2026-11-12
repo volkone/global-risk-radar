@@ -32,7 +32,8 @@ jobs:
           j=json.loads(p.read_text(encoding="utf-8"))
           assert j["full_notice_sweep_verified"] is False
           assert j["full_model_backtest_authorized"] is False
-          assert j["listing_fetches"]==1
+          assert j["listing_fetches"]==4
+          assert j["years_requested"]==[2023,2024,2025,2026]
           print("Discovery completed; archive coverage is NOT verified")
           PY
       - name: Save discovery report
