@@ -1,16 +1,16 @@
 {
-  "status": "blocked",
+  "status": "pass",
   "total_records": 718,
   "checked_records": 718,
   "retry_after_utc": null,
   "counts": {
-    "pass": 710,
+    "pass": 718,
     "hash_mismatch": 0,
     "value_mismatch": 0,
-    "fetch_or_parse_error": 8,
+    "fetch_or_parse_error": 0,
     "rate_limited": 0
   },
-  "source_html_hashes_recomputed": false,
+  "source_html_hashes_recomputed": true,
   "full_model_backtest_authorized": false,
   "note": "Source verification only; backtest authorization requires a separate quality gate.",
   "results": {
@@ -1047,44 +1047,52 @@
       "expected_sha256": "ff4feea6cbab35394264370b16c4fe621f679d7458945ee0a6f2aef9d0fc6c2d"
     },
     "2024-07-31": {
-      "status": "fetch_or_parse_error",
+      "status": "pass",
       "record_fingerprint": "73cb0d87963d3bbd0cc99e1b5fd56aaf7be253eb349536d05758ae275c4f6b52",
-      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+      "actual_sha256": "278b1cb43593a5cbd87c5251624868c355a6dc8fc43728d4a3e2789ff2a9cf0d",
+      "expected_sha256": "278b1cb43593a5cbd87c5251624868c355a6dc8fc43728d4a3e2789ff2a9cf0d"
     },
     "2024-08-01": {
-      "status": "fetch_or_parse_error",
+      "status": "pass",
       "record_fingerprint": "66c32bf42668a740a30d6221a6c140000dd06beb3e3b22b8b136f2a30c26738c",
-      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+      "actual_sha256": "35c3c328490e5acf9bd861ac91bc479447a98bd10dc38ef9916581f3c69bab02",
+      "expected_sha256": "35c3c328490e5acf9bd861ac91bc479447a98bd10dc38ef9916581f3c69bab02"
     },
     "2024-08-02": {
-      "status": "fetch_or_parse_error",
+      "status": "pass",
       "record_fingerprint": "431b08943df85cb128536433b0d73c1b034b44757569cdf0b32c08bfd8106a81",
-      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+      "actual_sha256": "17ae078adc5921f5b8bf62d7872201f618ffbbeef634154bf97e78abe6d68b87",
+      "expected_sha256": "17ae078adc5921f5b8bf62d7872201f618ffbbeef634154bf97e78abe6d68b87"
     },
     "2024-08-05": {
-      "status": "fetch_or_parse_error",
+      "status": "pass",
       "record_fingerprint": "91a21793f9ca0e572f8c4c0209cb20a0f0ee740718a60db808f48a0414ac84f4",
-      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+      "actual_sha256": "55f942fd7ccdc4208d3db6ef97305505074d5d07d022946b11721586226581b1",
+      "expected_sha256": "55f942fd7ccdc4208d3db6ef97305505074d5d07d022946b11721586226581b1"
     },
     "2024-08-06": {
-      "status": "fetch_or_parse_error",
+      "status": "pass",
       "record_fingerprint": "ceb41c549ca4c5e4c5b6b69ea35fdf841ae679d6759f4a7728b333ede95ce5f7",
-      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+      "actual_sha256": "5baab5421b3b290865a6503c5afdeec5480c9cd83eb1a53a5807ce3c1afcab89",
+      "expected_sha256": "5baab5421b3b290865a6503c5afdeec5480c9cd83eb1a53a5807ce3c1afcab89"
     },
     "2024-08-07": {
-      "status": "fetch_or_parse_error",
+      "status": "pass",
       "record_fingerprint": "971509bc6f54f9d7f4c886718a36e9963e201003e6d96ffef7a89afa03718fc6",
-      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+      "actual_sha256": "207623a1b90247e51793ec1cb1d9571f9a9a6fc9155f58de7742f70660c9a3d6",
+      "expected_sha256": "207623a1b90247e51793ec1cb1d9571f9a9a6fc9155f58de7742f70660c9a3d6"
     },
     "2024-08-08": {
-      "status": "fetch_or_parse_error",
+      "status": "pass",
       "record_fingerprint": "ee33fb97224b5f15379fb84cec8b2c6751532e214b75d534654f8d87613b85eb",
-      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+      "actual_sha256": "adddbc6c09f348109f8447df7795503cfbbfa94ccedd8e477ab9cf09915175a5",
+      "expected_sha256": "adddbc6c09f348109f8447df7795503cfbbfa94ccedd8e477ab9cf09915175a5"
     },
     "2024-08-09": {
-      "status": "fetch_or_parse_error",
+      "status": "pass",
       "record_fingerprint": "b9efa514b4d1b0f2d310d9d8dddd005d6dee2f29b589aa22ea1bb9e7911c1e22",
-      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+      "actual_sha256": "2fd0d6330f64b372ea870552a501655a769754ec0e1d8a15f05592ab083a6980",
+      "expected_sha256": "2fd0d6330f64b372ea870552a501655a769754ec0e1d8a15f05592ab083a6980"
     },
     "2024-08-12": {
       "status": "pass",
