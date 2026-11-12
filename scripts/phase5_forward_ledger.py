@@ -46,6 +46,11 @@ def verified_snapshot(path):
         raise ValueError("snapshot_not_first_seen_on_source_date")
     if not (end>=dt.datetime.fromisoformat(d+"T20:00:00+08:00")):
         raise ValueError("snapshot_taken_before_after_close_cutoff")
+    if "previous_month_calendar" in j["sources"]:
+        _,past=j["sources"]["previous_month_calendar"]["value"]
+        target=(dt.date.fromisoformat(d[:7]+"-01")-dt.timedelta(days=1)).strftime("%Y-%m")
+        if not past or any(p[:7]!=target for p in past):
+            raise ValueError("previous_month_official_calendar_invalid")
     for k,obj in j["sources"].items():
         ts=dt.datetime.fromisoformat(obj["fetched_at_utc"])
         if ts<start or ts>end or len(obj["response_sha256"])!=64:
@@ -99,9 +104,12 @@ def score(feat,distributions):
 def session_sequence(snapshots):
     expected=set()
     for snap in snapshots.values():
-        for date in snap["sources"]["taiex"]["value"][1]:
-            if date>=FIRST and date<=snap["session_date"]:
-                expected.add(date)
+        for name in ("taiex","previous_month_calendar"):
+            if name not in snap["sources"]:
+                continue
+            for date in snap["sources"][name]["value"][1]:
+                if FIRST<=date<=snap["session_date"]:
+                    expected.add(date)
     return sorted(expected)
 
 def maturity(forecast_date,pred,snapshots,expected):
@@ -183,6 +191,14 @@ def main():
         elif expected and [x for x in expected if recent[0]<=x<=recent[-1]]!=recent:
             status="missing_first_seen_sessions_in_signal_window"
             why="Missing daily snapshots within official observed market-session window; cannot retroactively fill"
+        elif (len({d[:7] for d in recent})>1 and
+              any(not any(
+                    "previous_month_calendar" in snapshots[d]["sources"] and
+                    snapshots[d]["sources"]["previous_month_calendar"]["value"][1][0][:7]==month
+                    for d in recent if d[:7]>month)
+                  for month in sorted({d[:7] for d in recent})[:-1])):
+            status="missing_month_end_official_calendar_crosscheck"
+            why="Cannot certify full cross-month Taiwan trading session sequence without next-month TWSE FMTQIK evidence"
         elif recent[-1]!=today:
             status="latest_snapshot_not_collected_today"
             why="Never issue a retrospective forecast"
