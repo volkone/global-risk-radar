@@ -93,7 +93,8 @@ class API:
                 return obj,hashlib.sha256(raw).hexdigest()
             except urllib.error.HTTPError as exc:
                 if exc.code in (400,401,403,404) or attempt==2:
-                    raise RuntimeError("FRED_HTTP_"+str(exc.code)) from None
+                    body=exc.read(600).decode("utf-8",errors="replace").replace(self.key,"<redacted>")
+                    raise RuntimeError("FRED_HTTP_"+str(exc.code)+"_series_"+series+"_mode_"+str(mode)+"_message_"+body[:260]) from None
             except (urllib.error.URLError,TimeoutError) as exc:
                 if attempt==2:
                     raise RuntimeError("FRED_NETWORK_"+type(exc).__name__) from None
@@ -204,7 +205,7 @@ def construct(series,market_dates,verify_checks):
         observed=max(eligible) if eligible else None
         age=((dt.date.fromisoformat(market_session)-dt.date.fromisoformat(observed)).days
              if observed else None)
-        max_age=14 if series["series_id"]=="NFCI" else 7
+        max_age=14 if series["series_id"] in ("NFCI","DEXTAUS") else 7
         result={"market_session":market_session,"asof_us_calendar_date":cutoff,
                 "observed_date":observed,"age_calendar_days":age,
                 "value":state[observed] if observed and age<=max_age else None,
