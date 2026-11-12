@@ -1,0 +1,112 @@
+{
+  "window": [
+    "2023-11-11",
+    "2026-10-31"
+  ],
+  "keywords": [
+    "颱風",
+    "休市",
+    "停止交易",
+    "停止上班",
+    "天然災害",
+    "暫停交易",
+    "交易日曆",
+    "交易日期",
+    "補班",
+    "交易所停止"
+  ],
+  "partitions": [
+    {
+      "month": "unfiltered_listing",
+      "url": "https://www.taifex.com.tw/cht/11/announcement",
+      "filter_applied": false,
+      "coverage_verified": false,
+      "http_status": 200,
+      "sha256": "431b1f34c409d8dbecdb823b07975bcac50bda55390235402c48f55119f91fcf",
+      "candidates": [
+        {
+          "title": "因薔琵颱風來襲，115年10月23日(星期五)臺灣期貨交易所集中交易市場休市1日(包含一般交易時段及盤後交易時段)，店頭集中結算業務暫停營業1日。本公司115年10月23日到期結算之臺指選擇權週五到期契約，其最後交易日及最後結算日順延至最近之次一營業日。",
+          "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17441"
+        },
+        {
+          "title": "公告中光電期貨(代號NMF)契約自115年8月11日起停止加掛新月份契約，並自115年8月24日起停止交易。",
+          "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150002443號.pdf"
+        },
+        {
+          "title": "因巴威颱風來襲，115年7月10日(星期五)臺灣期貨交易所集中交易市場休市1日(包含一般交易時段及盤後交易時段)，店頭集中結算業務暫停營業1日。本公司115年7月10日到期結算之臺指選擇權週五到期契約，其最後交易日及最後結算日順延至最近之次一營業日，另本公司115年7月到期東證期貨最後結算日順延至最近之次一營業日。原定於 7 月 10 日契約調整的4檔股票期貨及1檔股票選擇權，將同步順延至次一營業日。",
+          "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17137"
+        },
+        {
+          "title": "公告貿聯-KY期貨（契約代號：VE）及小型貿聯-KY期貨（契約代號：VF）自115年6月10日起暫停交易。",
+          "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/公告貿聯期貨及小型貿聯期貨暫停交易.pdf"
+        },
+        {
+          "title": "公告本公司期貨集中交易市場115年6月19日(星期五)端午節休市1日。",
+          "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150201003號函.pdf"
+        },
+        {
+          "title": "公告正崴期貨（契約代號：GL）自115年5月13日起暫停交易。",
+          "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150200871號.pdf"
+        },
+        {
+          "title": "公告本公司期貨集中交易市場115年5月1日(星期五)勞動節休市1日。",
+          "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150200726號函.pdf"
+        },
+        {
+          "title": "公告115年4月4日兒童節適逢星期六及4月5日清明節適逢星期日，依規定於115年4月3日(星期五)及4月6日(星期一)補假2日，本公司期貨集中交易市場配合休市2日。",
+          "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150200471號函.pdf"
+        },
+        {
+          "title": "公告115年2月28日(星期六)為和平紀念日，依規定於115年2 月27日(星期五)補假一日，本公司期貨集中交易市場配合休市1日。",
+          "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150200266號函.pdf"
+        }
+      ]
+    }
+  ],
+  "partitions_total": 36,
+  "listing_fetches": 1,
+  "months_pending_verification": [
+    "2023-11",
+    "2023-12",
+    "2024-01",
+    "2024-02",
+    "2024-03",
+    "2024-04",
+    "2024-05",
+    "2024-06",
+    "2024-07",
+    "2024-08",
+    "2024-09",
+    "2024-10",
+    "2024-11",
+    "2024-12",
+    "2025-01",
+    "2025-02",
+    "2025-03",
+    "2025-04",
+    "2025-05",
+    "2025-06",
+    "2025-07",
+    "2025-08",
+    "2025-09",
+    "2025-10",
+    "2025-11",
+    "2025-12",
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06",
+    "2026-07",
+    "2026-08",
+    "2026-09",
+    "2026-10"
+  ],
+  "partitions_coverage_verified": 0,
+  "full_notice_sweep_verified": false,
+  "primary_evidence_complete": false,
+  "independent_taifex_calendar_verified": false,
+  "full_model_backtest_authorized": false,
+  "limitations": "The listing is not proven to be month-filtered or exhaustive; repeated responses must not be counted as independent month coverage."
+}
