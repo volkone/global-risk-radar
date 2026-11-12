@@ -1,11 +1,11 @@
 {
-  "schema_version": 1,
-  "generated_at": "2026-11-12T14:34:59.601816+00:00",
+  "schema_version": 2,
+  "generated_at": "2026-11-12T15:06:40.568976+00:00",
   "model_status": "uncalibrated_prototype",
   "disclaimer": "Risk scores are provisional and not validated by historical backtests.",
   "global": {
     "status": "provisional",
-    "score": 23.2,
+    "score": 23.0,
     "coverage": 0.85,
     "min_coverage": 0.85,
     "components": [
@@ -14,53 +14,141 @@
         "weight": 25,
         "signal": 22.33,
         "eligible": true,
-        "reason": null
+        "reason": null,
+        "contribution": 6.567647058823529
       },
       {
         "metric": "ig",
         "weight": 10,
         "signal": 16.4,
         "eligible": true,
-        "reason": null
+        "reason": null,
+        "contribution": 1.9294117647058824
       },
       {
         "metric": "vix",
         "weight": 20,
         "signal": 22.61,
         "eligible": true,
-        "reason": null
+        "reason": null,
+        "contribution": 5.32
       },
       {
         "metric": "indices",
         "weight": 20,
-        "signal": 33.33,
+        "signal": 32.73,
         "eligible": true,
-        "reason": null
+        "reason": null,
+        "contribution": 7.701176470588234
       },
       {
         "metric": "nfci",
         "weight": 10,
         "signal": 12.93,
         "eligible": true,
-        "reason": null
+        "reason": null,
+        "contribution": 1.5211764705882354
       },
       {
         "metric": "us10y",
         "weight": 5,
         "signal": null,
         "eligible": false,
-        "reason": "signal_not_yet_calibrated"
+        "reason": "signal_not_yet_calibrated",
+        "contribution": null
       },
       {
         "metric": "breadth",
         "weight": 10,
         "signal": null,
         "eligible": false,
-        "reason": "quality_gate_not_passed"
+        "reason": "quality_gate_not_passed",
+        "contribution": null
       }
-    ]
+    ],
+    "as_of": "2026-11-12T15:06:40.359442+00:00"
   },
   "taiwan": {
+    "status": "formal_model_blocked",
+    "score": null,
+    "coverage": 1.0,
+    "components": [],
+    "formal_model_validated": false,
+    "reason": "來源發布時刻、交易日曆證據與獨立驗證尚未完成",
+    "latest_research": {
+      "date": "2026-10-30",
+      "score": 81.1251,
+      "coverage": 1.0,
+      "signal_date": "2026-10-28",
+      "components": [
+        {
+          "metric": "foreign_tx_short_pressure",
+          "label": "外資台指期淨空壓力",
+          "raw_value": 0.8015801844492482,
+          "signal": 92.12034383954155,
+          "eligible": true,
+          "reason": null,
+          "effective_weight": 0.16666666666666666,
+          "contribution": 15.35339063992359
+        },
+        {
+          "metric": "margin_deleveraging_20d",
+          "label": "融資 20 日減槓桿",
+          "raw_value": -4.276565739264737,
+          "signal": 53.58166189111748,
+          "eligible": true,
+          "reason": null,
+          "effective_weight": 0.16666666666666666,
+          "contribution": 8.930276981852913
+        },
+        {
+          "metric": "institutional_net_selling_5d",
+          "label": "法人現貨 5 日淨賣超",
+          "raw_value": 158753594469,
+          "signal": 86.81948424068769,
+          "eligible": true,
+          "reason": null,
+          "effective_weight": 0.16666666666666666,
+          "contribution": 14.469914040114615
+        },
+        {
+          "metric": "twd_depreciation_20d",
+          "label": "台幣 20 日貶值",
+          "raw_value": 2.402022756005051,
+          "signal": 95.12893982808023,
+          "eligible": true,
+          "reason": null,
+          "effective_weight": 0.16666666666666666,
+          "contribution": 15.854823304680039
+        },
+        {
+          "metric": "hy_oas_widening_20d",
+          "label": "高收益債利差 20 日擴大",
+          "raw_value": 0.5,
+          "signal": 94.48698315467075,
+          "eligible": true,
+          "reason": null,
+          "effective_weight": 0.16666666666666666,
+          "contribution": 15.74783052577846
+        },
+        {
+          "metric": "prior_us_vix_level",
+          "label": "VIX 水準",
+          "raw_value": 17.52,
+          "signal": 64.61318051575931,
+          "eligible": true,
+          "reason": null,
+          "effective_weight": 0.16666666666666666,
+          "contribution": 10.768863419293218
+        }
+      ],
+      "status": "historical_reconstruction"
+    },
+    "research_threshold": 63.91871,
+    "research_min_factors": 5,
+    "research_factor_count": 6
+  },
+  "taiwan_legacy_prototype": {
     "status": "insufficient_coverage",
     "score": null,
     "coverage": 0.0,
@@ -102,5 +190,6 @@
         "reason": "signal_not_yet_calibrated"
       }
     ]
-  }
+  },
+  "formal_model_status": "BLOCKED"
 }
