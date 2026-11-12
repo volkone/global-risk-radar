@@ -25,6 +25,7 @@ START="2023-11-11"
 END="2026-10-31"
 BOOTSTRAP_DATE="2023-11-09"
 UPDATES_START="2023-11-10"
+BOOTSTRAP_CANDIDATES=("2023-11-09","2024-01-15","2024-06-19","2025-01-15","2026-01-15")
 OBS_START="2023-09-01"
 FACTORS={
     "fx":"DEXTAUS","hy":"BAMLH0A0HYM2","ig":"BAMLC0A0CM",
@@ -52,7 +53,7 @@ class API:
             raise RuntimeError("FRED_API_KEY_not_configured")
         self.key=key
         self.requests=0
-    def fetch(self,series,mode,offset=0):
+    def fetch(self,series,mode,offset=0,bootstrap_date=BOOTSTRAP_DATE):
         if self.requests>=MAX_REQUESTS:
             raise RuntimeError("request_budget_exhausted")
         params={
@@ -66,10 +67,10 @@ class API:
             "offset":offset
         }
         if mode==1:
-            params["realtime_start"]=BOOTSTRAP_DATE
-            params["realtime_end"]=BOOTSTRAP_DATE
+            params["realtime_start"]=bootstrap_date
+            params["realtime_end"]=bootstrap_date
         elif mode==3:
-            params["realtime_start"]=UPDATES_START
+            params["realtime_start"]=(dt.date.fromisoformat(bootstrap_date)+dt.timedelta(days=1)).isoformat()
             params["realtime_end"]=END
         else:
             raise ValueError("unsupported_mode")
@@ -103,13 +104,13 @@ class API:
             time.sleep(attempt+2)
         raise AssertionError("unreachable")
 
-def collect_pages(api,series,mode):
+def collect_pages(api,series,mode,bootstrap_date=BOOTSTRAP_DATE):
     rows=[]
     source_hashes=[]
     offset=0
     total=None
     while True:
-        obj,sha=api.fetch(series,mode,offset)
+        obj,sha=api.fetch(series,mode,offset,bootstrap_date)
         source_hashes.append(sha)
         if total is None:
             total=int(obj.get("count",-1))
@@ -143,12 +144,26 @@ def value(x):
     return f
 
 def collect_one(api,name,series):
-    base,base_hashes=collect_pages(api,series,1)
-    changes,change_hashes=collect_pages(api,series,3)
+    # Some FRED series have no ALFRED vintage at the historical start.
+    # Bootstrap at the first available later vintage; earlier sessions remain NULL.
+    base=None
+    bootstrap_date=None
+    for candidate in BOOTSTRAP_CANDIDATES:
+        try:
+            base,base_hashes=collect_pages(api,series,1,candidate)
+            bootstrap_date=candidate
+            break
+        except RuntimeError as exc:
+            if "does not exist in ALFRED" not in str(exc):
+                raise
+            print("ALFRED_NOT_AVAILABLE_ON",series,candidate,flush=True)
+    if base is None:
+        raise RuntimeError("no_ALFRED_bootstrap_supported_for_"+series)
+    changes,change_hashes=collect_pages(api,series,3,bootstrap_date)
     baseline={}
     for x in base:
         d=parsed_date(x["date"])
-        if d>BOOTSTRAP_DATE:
+        if d>bootstrap_date:
             raise ValueError("bootstrap_observation_from_future")
         v=value(x)
         if v is not None:
@@ -171,7 +186,7 @@ def collect_one(api,name,series):
             if len(stamp)!=8 or not stamp.isdigit():
                 raise ValueError("invalid_FRED_vintage_column_"+col)
             vintage=dt.date(int(stamp[:4]),int(stamp[4:6]),int(stamp[6:])).isoformat()
-            if vintage<UPDATES_START or vintage>END or date>vintage:
+            if vintage<=bootstrap_date or vintage>END or date>vintage:
                 raise ValueError("invalid_vintage_date_or_observation")
             key=(vintage,date)
             if key in seen:
@@ -180,7 +195,7 @@ def collect_one(api,name,series):
             events.append({"vintage_date":vintage,"observed_date":date,
                            "value":value({"value":raw_value})})
     events.sort(key=lambda x:(x["vintage_date"],x["observed_date"]))
-    return {"series_id":series,"bootstrap_date":BOOTSTRAP_DATE,
+    return {"series_id":series,"bootstrap_date":bootstrap_date,
             "bootstrap":[{"date":d,"value":baseline[d]} for d in sorted(baseline)],
             "changes":events,"source_response_sha256":{"bootstrap":base_hashes,"changes":change_hashes},
             "n_bootstrap":len(base),"n_changes":len(events)}
@@ -193,6 +208,13 @@ def construct(series,market_dates,verify_checks):
     mismatch=[]
     for market_session in market_dates:
         cutoff=(dt.date.fromisoformat(market_session)-dt.timedelta(days=1)).isoformat()
+        if cutoff<series["bootstrap_date"]:
+            results.append({"market_session":market_session,"asof_us_calendar_date":cutoff,
+                            "observed_date":None,"age_calendar_days":None,
+                            "value":None,"stale":False,
+                            "missing_reason":"ALFRED_historical_vintage_not_available",
+                            "source_method":"ALFRED_bootstrap_and_new_revised_observations"})
+            continue
         while cursor<len(changes) and changes[cursor]["vintage_date"]<=cutoff:
             item=changes[cursor]
             date=item["observed_date"]
@@ -256,7 +278,7 @@ def main():
                       "series":completed,"publication_time_certified":False,
                       "full_model_backtest_authorized":False})
             reports[name]={"status":"validated_against_three_asof_samples",
-                           "bootstrap":data_one["n_bootstrap"],
+                           "bootstrap":data_one["n_bootstrap"],"bootstrap_asof_date":data_one["bootstrap_date"],
                            "changes":data_one["n_changes"],
                            "valid_asof_dates":sum(r["value"] is not None for r in constructed)}
             print("PIT_SERIES_OK",name,
