@@ -1,0 +1,76 @@
+name: Correct historical FRED availability using ALFRED vintages
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/phase3_correct_historical_pit.yml'
+      - 'scripts/collect_phase3_pit_fred.py'
+      - 'scripts/build_phase3_pit_panel.py'
+permissions:
+  contents: write
+concurrency:
+  group: phase3-correct-pit-historical
+  cancel-in-progress: false
+jobs:
+  correct-pit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Gather historical vintage snapshots and revisions with limited requests
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+        run: python -u scripts/collect_phase3_pit_fred.py
+      - name: Assemble new corrected historical PIT research panel
+        run: python scripts/build_phase3_pit_panel.py
+      - name: Check revised PIT coverage and fail-closed flags
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          a=json.loads(Path("docs/phase3_pit_source_audit.json").read_text(encoding="utf-8"))
+          b=json.loads(Path("docs/phase3_pit_join_audit.json").read_text(encoding="utf-8"))
+          p=Path("storage/phase3_pit_joined_panel.json")
+          j=json.loads(p.read_text(encoding="utf-8"))
+          assert a["historical_pit_daily_panel_ready"] is True
+          assert a["full_model_backtest_authorized"] is False
+          assert j["formal_backtest_authorized"] is False
+          assert b["full_model_backtest_authorized"] is False
+          assert len(j["rows"]) == 718
+          assert hashlib.sha256(p.read_bytes()).hexdigest()==b["new_pit_snapshot_sha256"]
+          assert all(r["us_previous_dated_observations"]["fx"]["observed_date"] is None
+                     or r["us_previous_dated_observations"]["fx"]["observed_date"] < r["date"]
+                     for r in j["rows"])
+          print("Corrected PIT panel:",b["field_coverage_count"])
+          print("Changed from latest-history alignment:",b["changed_vs_previous_latest_history"])
+          PY
+      - name: Upload diagnostics even if collection is incomplete
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase3-corrected-pit-source-report
+          if-no-files-found: warn
+          path: |
+            docs/phase3_pit_source_audit.json
+            docs/phase3_pit_join_audit.json
+      - name: Save validated vintages and checked historical panel
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for path in storage/phase3_fred_pit_vintages.json storage/phase3_pit_joined_panel.json docs/phase3_pit_source_audit.json docs/phase3_pit_join_audit.json; do
+            if test -f "$path"; then git add "$path"; fi
+          done
+          if ! git diff --cached --quiet; then
+            git commit -m 'Save ALFRED historical availability reconstruction [skip ci]'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
