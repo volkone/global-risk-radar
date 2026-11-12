@@ -15,7 +15,7 @@
       "announcement_page_controls": [],
       "candidate_notice_ids": [],
       "pagination_exhaustiveness_verified": false,
-      "limitations": "Only first response was captured; form selection does not prove full archive pagination."
+      "limitations": "The selected-year response may be truncated or use server-side limits. No announcement-specific page control was discovered; listing completeness remains unproven."
     },
     {
       "year": 2024,
@@ -28,7 +28,7 @@
       "announcement_page_controls": [],
       "candidate_notice_ids": [],
       "pagination_exhaustiveness_verified": false,
-      "limitations": "Only first response was captured; form selection does not prove full archive pagination."
+      "limitations": "The selected-year response may be truncated or use server-side limits. No announcement-specific page control was discovered; listing completeness remains unproven."
     },
     {
       "year": 2025,
@@ -41,7 +41,7 @@
       "announcement_page_controls": [],
       "candidate_notice_ids": [],
       "pagination_exhaustiveness_verified": false,
-      "limitations": "Only first response was captured; form selection does not prove full archive pagination."
+      "limitations": "The selected-year response may be truncated or use server-side limits. No announcement-specific page control was discovered; listing completeness remains unproven."
     },
     {
       "year": 2026,
@@ -57,7 +57,7 @@
         "17137"
       ],
       "pagination_exhaustiveness_verified": false,
-      "limitations": "Only first response was captured; form selection does not prove full archive pagination."
+      "limitations": "The selected-year response may be truncated or use server-side limits. No announcement-specific page control was discovered; listing completeness remains unproven."
     }
   ],
   "known_special_dates": [
@@ -65,85 +65,96 @@
       "date": "2024-07-24",
       "evidence_url": "https://www.taifex.com.tw/enl/eng11/newsDetail?idx=8785&newsType=1",
       "found_in_candidate_listing": false,
+      "found_in_all_official_links": false,
       "listing_years": [],
-      "matching_rule": "exact_url_or_official_notice_idx",
+      "matching_rule": "exact_url_or_official_notice_idx_against_all_official_links",
       "warning": "Listing absence does not invalidate direct primary evidence"
     },
     {
       "date": "2024-07-25",
       "evidence_url": "https://www.taifex.com.tw/enl/eng11/newsDetail?idx=8785&newsType=1",
       "found_in_candidate_listing": false,
+      "found_in_all_official_links": false,
       "listing_years": [],
-      "matching_rule": "exact_url_or_official_notice_idx",
+      "matching_rule": "exact_url_or_official_notice_idx_against_all_official_links",
       "warning": "Listing absence does not invalidate direct primary evidence"
     },
     {
       "date": "2024-10-02",
       "evidence_url": "https://www.taifex.com.tw/cht/11/newsDetail.do?idx=15394&thetype=2",
       "found_in_candidate_listing": false,
+      "found_in_all_official_links": false,
       "listing_years": [],
-      "matching_rule": "exact_url_or_official_notice_idx",
+      "matching_rule": "exact_url_or_official_notice_idx_against_all_official_links",
       "warning": "Listing absence does not invalidate direct primary evidence"
     },
     {
       "date": "2024-10-03",
       "evidence_url": "https://www.taifex.com.tw/cht/11/newsDetail.do?idx=15394&thetype=2",
       "found_in_candidate_listing": false,
+      "found_in_all_official_links": false,
       "listing_years": [],
-      "matching_rule": "exact_url_or_official_notice_idx",
+      "matching_rule": "exact_url_or_official_notice_idx_against_all_official_links",
       "warning": "Listing absence does not invalidate direct primary evidence"
     },
     {
       "date": "2024-10-31",
       "evidence_url": "https://www.taifex.com.tw/cht/11/newsDetail?idx=15446&newsType=1",
       "found_in_candidate_listing": false,
+      "found_in_all_official_links": false,
       "listing_years": [],
-      "matching_rule": "exact_url_or_official_notice_idx",
+      "matching_rule": "exact_url_or_official_notice_idx_against_all_official_links",
       "warning": "Listing absence does not invalidate direct primary evidence"
     },
     {
       "date": "2025-09-29",
       "evidence_url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/%E5%8F%B0%E6%9C%9F%E4%BA%A4%E5%AD%97%E7%AC%AC1140001929%E8%99%9F%E5%87%BD.pdf",
       "found_in_candidate_listing": false,
+      "found_in_all_official_links": false,
       "listing_years": [],
-      "matching_rule": "exact_url_or_official_notice_idx",
+      "matching_rule": "exact_url_or_official_notice_idx_against_all_official_links",
       "warning": "Listing absence does not invalidate direct primary evidence"
     },
     {
       "date": "2025-10-24",
       "evidence_url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/%E5%8F%B0%E6%9C%9F%E4%BA%A4%E5%AD%97%E7%AC%AC1140001929%E8%99%9F%E5%87%BD.pdf",
       "found_in_candidate_listing": false,
+      "found_in_all_official_links": false,
       "listing_years": [],
-      "matching_rule": "exact_url_or_official_notice_idx",
+      "matching_rule": "exact_url_or_official_notice_idx_against_all_official_links",
       "warning": "Listing absence does not invalidate direct primary evidence"
     },
     {
       "date": "2025-12-25",
       "evidence_url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/%E5%8F%B0%E6%9C%9F%E4%BA%A4%E5%AD%97%E7%AC%AC1140001929%E8%99%9F%E5%87%BD.pdf",
       "found_in_candidate_listing": false,
+      "found_in_all_official_links": false,
       "listing_years": [],
-      "matching_rule": "exact_url_or_official_notice_idx",
+      "matching_rule": "exact_url_or_official_notice_idx_against_all_official_links",
       "warning": "Listing absence does not invalidate direct primary evidence"
     },
     {
       "date": "2026-07-10",
       "evidence_url": "https://www.taifex.com.tw/enl/eng11/newsDetail?idx=10470&newsType=1",
       "found_in_candidate_listing": false,
+      "found_in_all_official_links": false,
       "listing_years": [],
-      "matching_rule": "exact_url_or_official_notice_idx",
+      "matching_rule": "exact_url_or_official_notice_idx_against_all_official_links",
       "warning": "Listing absence does not invalidate direct primary evidence"
     },
     {
       "date": "2026-10-23",
       "evidence_url": "https://www.taifex.com.tw/cht/11/announcement",
       "found_in_candidate_listing": false,
+      "found_in_all_official_links": false,
       "listing_years": [],
-      "matching_rule": "exact_url_or_official_notice_idx",
+      "matching_rule": "exact_url_or_official_notice_idx_against_all_official_links",
       "warning": "Listing absence does not invalidate direct primary evidence"
     }
   ],
   "known_dates_total": 10,
   "known_dates_in_listing": 0,
+  "known_dates_in_all_official_links": 0,
   "year_listing_completeness_verified": false,
   "full_notice_sweep_verified": false,
   "primary_evidence_complete": false,
