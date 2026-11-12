@@ -1,0 +1,1014 @@
+{
+  "status": "research_only_posthoc_PIT_corrected",
+  "method": "Same six-factor fixed-rule 70/30 chronological holdout, using historical ALFRED vintages",
+  "pit_data_sha256": "c5a18734f21611c6e1fe1c7a9c26336889cbd8a2f97199faffe25f2c0ffa9529",
+  "data_coverage": {
+    "fx": 718,
+    "hy": 673,
+    "ig": 673,
+    "vix": 718,
+    "us10y": 718,
+    "nfci": 718
+  },
+  "PIT_vintage_comparison_validated_samples": 18,
+  "variants": {
+    "signal_delay_0_taiwan_sessions": {
+      "train_observations": 482,
+      "train_threshold_from_PIT_only": 64.8715,
+      "holdout_range": [
+        "2025-12-05",
+        "2026-10-30"
+      ],
+      "results": {
+        "5d": {
+          "warning_event_threshold_pct": -3.0,
+          "metrics": {
+            "n": 211,
+            "alert_n": 54,
+            "event_n": 53,
+            "alert_event_n": 22,
+            "precision": 0.4074,
+            "base_rate": 0.2512,
+            "precision_minus_base": 0.1562
+          },
+          "nonoverlap_grid": [
+            {
+              "offset": 0,
+              "n": 43,
+              "alert_n": 12,
+              "event_n": 10,
+              "alert_event_n": 5,
+              "precision": 0.4167,
+              "base_rate": 0.2326,
+              "precision_minus_base": 0.1841,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 1,
+              "n": 42,
+              "alert_n": 10,
+              "event_n": 10,
+              "alert_event_n": 1,
+              "precision": 0.1,
+              "base_rate": 0.2381,
+              "precision_minus_base": -0.1381,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 2,
+              "n": 42,
+              "alert_n": 11,
+              "event_n": 10,
+              "alert_event_n": 5,
+              "precision": 0.4545,
+              "base_rate": 0.2381,
+              "precision_minus_base": 0.2165,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 3,
+              "n": 42,
+              "alert_n": 10,
+              "event_n": 10,
+              "alert_event_n": 4,
+              "precision": 0.4,
+              "base_rate": 0.2381,
+              "precision_minus_base": 0.1619,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 4,
+              "n": 42,
+              "alert_n": 11,
+              "event_n": 13,
+              "alert_event_n": 7,
+              "precision": 0.6364,
+              "base_rate": 0.3095,
+              "precision_minus_base": 0.3268,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            }
+          ],
+          "calendar_quarter_breakdown": {
+            "2025-Q4": {
+              "summary": {
+                "n": 18,
+                "alert_n": 0,
+                "event_n": 1,
+                "alert_event_n": 0,
+                "precision": null,
+                "base_rate": 0.0556,
+                "precision_minus_base": null
+              },
+              "minimum_alert_count_for_interpretation": 8,
+              "enough_alerts": false
+            },
+            "2026-Q1": {
+              "summary": {
+                "n": 55,
+                "alert_n": 21,
+                "event_n": 14,
+                "alert_event_n": 9,
+                "precision": 0.4286,
+                "base_rate": 0.2545,
+                "precision_minus_base": 0.174
+              },
+              "minimum_alert_count_for_interpretation": 8,
+              "enough_alerts": true
+            },
+            "2026-Q2": {
+              "summary": {
+                "n": 61,
+                "alert_n": 7,
+                "event_n": 14,
+                "alert_event_n": 0,
+                "precision": 0.0,
+                "base_rate": 0.2295,
+                "precision_minus_base": -0.2295
+              },
+              "minimum_alert_count_for_interpretation": 8,
+              "enough_alerts": false
+            },
+            "2026-Q3": {
+              "summary": {
+                "n": 63,
+                "alert_n": 19,
+                "event_n": 18,
+                "alert_event_n": 10,
+                "precision": 0.5263,
+                "base_rate": 0.2857,
+                "precision_minus_base": 0.2406
+              },
+              "minimum_alert_count_for_interpretation": 8,
+              "enough_alerts": true
+            },
+            "2026-Q4": {
+              "summary": {
+                "n": 14,
+                "alert_n": 7,
+                "event_n": 6,
+                "alert_event_n": 3,
+                "precision": 0.4286,
+                "base_rate": 0.4286,
+                "precision_minus_base": 0.0
+              },
+              "minimum_alert_count_for_interpretation": 8,
+              "enough_alerts": false
+            }
+          },
+          "approximate_block_bootstrap": {
+            "method": "deterministic_moving_block_bootstrap",
+            "block_size_sessions": 5,
+            "replicates_attempted": 600,
+            "valid_replicates": 600,
+            "precision_approx_95pct_interval": [
+              0.25,
+              0.5532
+            ],
+            "precision_minus_base_approx_95pct_interval": [
+              0.0126,
+              0.2847
+            ],
+            "warning": "Exploratory approximate intervals only; limited single-period time series, overlapping outcomes, regime nonstationarity, and prior result inspection prevent confirmatory inference."
+          },
+          "unchanged_original_phase2_metrics": {
+            "status": "diagnostic_descriptive_only",
+            "warning_event_threshold_pct": -3.0,
+            "holdout_cases": 211,
+            "holdout_event_cases": 53,
+            "holdout_alert_cases": 58,
+            "alerted_event_cases": 25,
+            "holdout_event_base_rate": 0.2512,
+            "alert_precision": 0.431,
+            "mean_alert_forward_return_pct": 0.4473,
+            "mean_alert_worst_forward_drawdown_pct": -2.365,
+            "note": "Forward windows overlap; confidence intervals and effective independent sample size not established."
+          },
+          "same_holdout_dates_not_independent_new_test": true
+        },
+        "20d": {
+          "warning_event_threshold_pct": -5.0,
+          "metrics": {
+            "n": 196,
+            "alert_n": 47,
+            "event_n": 45,
+            "alert_event_n": 25,
+            "precision": 0.5319,
+            "base_rate": 0.2296,
+            "precision_minus_base": 0.3023
+          },
+          "nonoverlap_grid": [
+            {
+              "offset": 0,
+              "n": 10,
+              "alert_n": 2,
+              "event_n": 2,
+              "alert_event_n": 1,
+              "precision": 0.5,
+              "base_rate": 0.2,
+              "precision_minus_base": 0.3,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 1,
+              "n": 10,
+              "alert_n": 2,
+              "event_n": 1,
+              "alert_event_n": 0,
+              "precision": 0.0,
+              "base_rate": 0.1,
+              "precision_minus_base": -0.1,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 2,
+              "n": 10,
+              "alert_n": 2,
+              "event_n": 2,
+              "alert_event_n": 2,
+              "precision": 1.0,
+              "base_rate": 0.2,
+              "precision_minus_base": 0.8,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 3,
+              "n": 10,
+              "alert_n": 2,
+              "event_n": 2,
+              "alert_event_n": 2,
+              "precision": 1.0,
+              "base_rate": 0.2,
+              "precision_minus_base": 0.8,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 4,
+              "n": 10,
+              "alert_n": 2,
+              "event_n": 2,
+              "alert_event_n": 2,
+              "precision": 1.0,
+              "base_rate": 0.2,
+              "precision_minus_base": 0.8,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 5,
+              "n": 10,
+              "alert_n": 2,
+              "event_n": 3,
+              "alert_event_n": 2,
+              "precision": 1.0,
+              "base_rate": 0.3,
+              "precision_minus_base": 0.7,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 6,
+              "n": 10,
+              "alert_n": 2,
+              "event_n": 2,
+              "alert_event_n": 1,
+              "precision": 0.5,
+              "base_rate": 0.2,
+              "precision_minus_base": 0.3,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 7,
+              "n": 10,
+              "alert_n": 2,
+              "event_n": 2,
+              "alert_event_n": 1,
+              "precision": 0.5,
+              "base_rate": 0.2,
+              "precision_minus_base": 0.3,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 8,
+              "n": 10,
+              "alert_n": 2,
+              "event_n": 4,
+              "alert_event_n": 2,
+              "precision": 1.0,
+              "base_rate": 0.4,
+              "precision_minus_base": 0.6,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 9,
+              "n": 10,
+              "alert_n": 2,
+              "event_n": 3,
+              "alert_event_n": 1,
+              "precision": 0.5,
+              "base_rate": 0.3,
+              "precision_minus_base": 0.2,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 10,
+              "n": 10,
+              "alert_n": 2,
+              "event_n": 3,
+              "alert_event_n": 1,
+              "precision": 0.5,
+              "base_rate": 0.3,
+              "precision_minus_base": 0.2,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 11,
+              "n": 10,
+              "alert_n": 3,
+              "event_n": 2,
+              "alert_event_n": 1,
+              "precision": 0.3333,
+              "base_rate": 0.2,
+              "precision_minus_base": 0.1333,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 12,
+              "n": 10,
+              "alert_n": 4,
+              "event_n": 2,
+              "alert_event_n": 2,
+              "precision": 0.5,
+              "base_rate": 0.2,
+              "precision_minus_base": 0.3,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 13,
+              "n": 10,
+              "alert_n": 4,
+              "event_n": 1,
+              "alert_event_n": 1,
+              "precision": 0.25,
+              "base_rate": 0.1,
+              "precision_minus_base": 0.15,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 14,
+              "n": 10,
+              "alert_n": 4,
+              "event_n": 3,
+              "alert_event_n": 2,
+              "precision": 0.5,
+              "base_rate": 0.3,
+              "precision_minus_base": 0.2,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 15,
+              "n": 10,
+              "alert_n": 4,
+              "event_n": 4,
+              "alert_event_n": 2,
+              "precision": 0.5,
+              "base_rate": 0.4,
+              "precision_minus_base": 0.1,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 16,
+              "n": 9,
+              "alert_n": 2,
+              "event_n": 2,
+              "alert_event_n": 0,
+              "precision": 0.0,
+              "base_rate": 0.2222,
+              "precision_minus_base": -0.2222,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 17,
+              "n": 9,
+              "alert_n": 2,
+              "event_n": 1,
+              "alert_event_n": 0,
+              "precision": 0.0,
+              "base_rate": 0.1111,
+              "precision_minus_base": -0.1111,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 18,
+              "n": 9,
+              "alert_n": 1,
+              "event_n": 2,
+              "alert_event_n": 1,
+              "precision": 1.0,
+              "base_rate": 0.2222,
+              "precision_minus_base": 0.7778,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 19,
+              "n": 9,
+              "alert_n": 1,
+              "event_n": 2,
+              "alert_event_n": 1,
+              "precision": 1.0,
+              "base_rate": 0.2222,
+              "precision_minus_base": 0.7778,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            }
+          ],
+          "calendar_quarter_breakdown": {
+            "2025-Q4": {
+              "summary": {
+                "n": 18,
+                "alert_n": 0,
+                "event_n": 0,
+                "alert_event_n": 0,
+                "precision": null,
+                "base_rate": 0.0,
+                "precision_minus_base": null
+              },
+              "minimum_alert_count_for_interpretation": 8,
+              "enough_alerts": false
+            },
+            "2026-Q1": {
+              "summary": {
+                "n": 55,
+                "alert_n": 21,
+                "event_n": 15,
+                "alert_event_n": 11,
+                "precision": 0.5238,
+                "base_rate": 0.2727,
+                "precision_minus_base": 0.2511
+              },
+              "minimum_alert_count_for_interpretation": 8,
+              "enough_alerts": true
+            },
+            "2026-Q2": {
+              "summary": {
+                "n": 61,
+                "alert_n": 7,
+                "event_n": 11,
+                "alert_event_n": 2,
+                "precision": 0.2857,
+                "base_rate": 0.1803,
+                "precision_minus_base": 0.1054
+              },
+              "minimum_alert_count_for_interpretation": 8,
+              "enough_alerts": false
+            },
+            "2026-Q3": {
+              "summary": {
+                "n": 62,
+                "alert_n": 19,
+                "event_n": 19,
+                "alert_event_n": 12,
+                "precision": 0.6316,
+                "base_rate": 0.3065,
+                "precision_minus_base": 0.3251
+              },
+              "minimum_alert_count_for_interpretation": 8,
+              "enough_alerts": true
+            }
+          },
+          "approximate_block_bootstrap": {
+            "method": "deterministic_moving_block_bootstrap",
+            "block_size_sessions": 20,
+            "replicates_attempted": 600,
+            "valid_replicates": 597,
+            "precision_approx_95pct_interval": [
+              0.2174,
+              0.7636
+            ],
+            "precision_minus_base_approx_95pct_interval": [
+              0.1118,
+              0.507
+            ],
+            "warning": "Exploratory approximate intervals only; limited single-period time series, overlapping outcomes, regime nonstationarity, and prior result inspection prevent confirmatory inference."
+          },
+          "unchanged_original_phase2_metrics": {
+            "status": "diagnostic_descriptive_only",
+            "warning_event_threshold_pct": -5.0,
+            "holdout_cases": 196,
+            "holdout_event_cases": 45,
+            "holdout_alert_cases": 49,
+            "alerted_event_cases": 28,
+            "holdout_event_base_rate": 0.2296,
+            "alert_precision": 0.5714,
+            "mean_alert_forward_return_pct": 6.2451,
+            "mean_alert_worst_forward_drawdown_pct": -5.4147,
+            "note": "Forward windows overlap; confidence intervals and effective independent sample size not established."
+          },
+          "same_holdout_dates_not_independent_new_test": true
+        }
+      }
+    },
+    "signal_delay_2_taiwan_sessions": {
+      "train_observations": 480,
+      "train_threshold_from_PIT_only": 65.1581,
+      "holdout_range": [
+        "2025-12-05",
+        "2026-10-30"
+      ],
+      "results": {
+        "5d": {
+          "warning_event_threshold_pct": -3.0,
+          "metrics": {
+            "n": 211,
+            "alert_n": 51,
+            "event_n": 53,
+            "alert_event_n": 19,
+            "precision": 0.3725,
+            "base_rate": 0.2512,
+            "precision_minus_base": 0.1214
+          },
+          "nonoverlap_grid": [
+            {
+              "offset": 0,
+              "n": 43,
+              "alert_n": 10,
+              "event_n": 10,
+              "alert_event_n": 4,
+              "precision": 0.4,
+              "base_rate": 0.2326,
+              "precision_minus_base": 0.1674,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 1,
+              "n": 42,
+              "alert_n": 10,
+              "event_n": 10,
+              "alert_event_n": 2,
+              "precision": 0.2,
+              "base_rate": 0.2381,
+              "precision_minus_base": -0.0381,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 2,
+              "n": 42,
+              "alert_n": 10,
+              "event_n": 10,
+              "alert_event_n": 4,
+              "precision": 0.4,
+              "base_rate": 0.2381,
+              "precision_minus_base": 0.1619,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 3,
+              "n": 42,
+              "alert_n": 10,
+              "event_n": 10,
+              "alert_event_n": 3,
+              "precision": 0.3,
+              "base_rate": 0.2381,
+              "precision_minus_base": 0.0619,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 4,
+              "n": 42,
+              "alert_n": 11,
+              "event_n": 13,
+              "alert_event_n": 6,
+              "precision": 0.5455,
+              "base_rate": 0.3095,
+              "precision_minus_base": 0.2359,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            }
+          ],
+          "calendar_quarter_breakdown": {
+            "2025-Q4": {
+              "summary": {
+                "n": 18,
+                "alert_n": 0,
+                "event_n": 1,
+                "alert_event_n": 0,
+                "precision": null,
+                "base_rate": 0.0556,
+                "precision_minus_base": null
+              },
+              "minimum_alert_count_for_interpretation": 8,
+              "enough_alerts": false
+            },
+            "2026-Q1": {
+              "summary": {
+                "n": 55,
+                "alert_n": 19,
+                "event_n": 14,
+                "alert_event_n": 8,
+                "precision": 0.4211,
+                "base_rate": 0.2545,
+                "precision_minus_base": 0.1665
+              },
+              "minimum_alert_count_for_interpretation": 8,
+              "enough_alerts": true
+            },
+            "2026-Q2": {
+              "summary": {
+                "n": 61,
+                "alert_n": 7,
+                "event_n": 14,
+                "alert_event_n": 0,
+                "precision": 0.0,
+                "base_rate": 0.2295,
+                "precision_minus_base": -0.2295
+              },
+              "minimum_alert_count_for_interpretation": 8,
+              "enough_alerts": false
+            },
+            "2026-Q3": {
+              "summary": {
+                "n": 63,
+                "alert_n": 20,
+                "event_n": 18,
+                "alert_event_n": 10,
+                "precision": 0.5,
+                "base_rate": 0.2857,
+                "precision_minus_base": 0.2143
+              },
+              "minimum_alert_count_for_interpretation": 8,
+              "enough_alerts": true
+            },
+            "2026-Q4": {
+              "summary": {
+                "n": 14,
+                "alert_n": 5,
+                "event_n": 6,
+                "alert_event_n": 1,
+                "precision": 0.2,
+                "base_rate": 0.4286,
+                "precision_minus_base": -0.2286
+              },
+              "minimum_alert_count_for_interpretation": 8,
+              "enough_alerts": false
+            }
+          },
+          "approximate_block_bootstrap": {
+            "method": "deterministic_moving_block_bootstrap",
+            "block_size_sessions": 5,
+            "replicates_attempted": 600,
+            "valid_replicates": 600,
+            "precision_approx_95pct_interval": [
+              0.2,
+              0.5435
+            ],
+            "precision_minus_base_approx_95pct_interval": [
+              -0.0334,
+              0.2751
+            ],
+            "warning": "Exploratory approximate intervals only; limited single-period time series, overlapping outcomes, regime nonstationarity, and prior result inspection prevent confirmatory inference."
+          },
+          "unchanged_original_phase2_metrics": {
+            "status": "diagnostic_descriptive_only",
+            "warning_event_threshold_pct": -3.0,
+            "holdout_cases": 211,
+            "holdout_event_cases": 53,
+            "holdout_alert_cases": 58,
+            "alerted_event_cases": 25,
+            "holdout_event_base_rate": 0.2512,
+            "alert_precision": 0.431,
+            "mean_alert_forward_return_pct": 0.4473,
+            "mean_alert_worst_forward_drawdown_pct": -2.365,
+            "note": "Forward windows overlap; confidence intervals and effective independent sample size not established."
+          },
+          "same_holdout_dates_not_independent_new_test": true
+        },
+        "20d": {
+          "warning_event_threshold_pct": -5.0,
+          "metrics": {
+            "n": 196,
+            "alert_n": 46,
+            "event_n": 45,
+            "alert_event_n": 23,
+            "precision": 0.5,
+            "base_rate": 0.2296,
+            "precision_minus_base": 0.2704
+          },
+          "nonoverlap_grid": [
+            {
+              "offset": 0,
+              "n": 10,
+              "alert_n": 1,
+              "event_n": 2,
+              "alert_event_n": 1,
+              "precision": 1.0,
+              "base_rate": 0.2,
+              "precision_minus_base": 0.8,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 1,
+              "n": 10,
+              "alert_n": 1,
+              "event_n": 1,
+              "alert_event_n": 0,
+              "precision": 0.0,
+              "base_rate": 0.1,
+              "precision_minus_base": -0.1,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 2,
+              "n": 10,
+              "alert_n": 1,
+              "event_n": 2,
+              "alert_event_n": 1,
+              "precision": 1.0,
+              "base_rate": 0.2,
+              "precision_minus_base": 0.8,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 3,
+              "n": 10,
+              "alert_n": 2,
+              "event_n": 2,
+              "alert_event_n": 1,
+              "precision": 0.5,
+              "base_rate": 0.2,
+              "precision_minus_base": 0.3,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 4,
+              "n": 10,
+              "alert_n": 2,
+              "event_n": 2,
+              "alert_event_n": 2,
+              "precision": 1.0,
+              "base_rate": 0.2,
+              "precision_minus_base": 0.8,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 5,
+              "n": 10,
+              "alert_n": 2,
+              "event_n": 3,
+              "alert_event_n": 2,
+              "precision": 1.0,
+              "base_rate": 0.3,
+              "precision_minus_base": 0.7,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 6,
+              "n": 10,
+              "alert_n": 2,
+              "event_n": 2,
+              "alert_event_n": 1,
+              "precision": 0.5,
+              "base_rate": 0.2,
+              "precision_minus_base": 0.3,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 7,
+              "n": 10,
+              "alert_n": 2,
+              "event_n": 2,
+              "alert_event_n": 1,
+              "precision": 0.5,
+              "base_rate": 0.2,
+              "precision_minus_base": 0.3,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 8,
+              "n": 10,
+              "alert_n": 2,
+              "event_n": 4,
+              "alert_event_n": 2,
+              "precision": 1.0,
+              "base_rate": 0.4,
+              "precision_minus_base": 0.6,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 9,
+              "n": 10,
+              "alert_n": 2,
+              "event_n": 3,
+              "alert_event_n": 1,
+              "precision": 0.5,
+              "base_rate": 0.3,
+              "precision_minus_base": 0.2,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 10,
+              "n": 10,
+              "alert_n": 2,
+              "event_n": 3,
+              "alert_event_n": 1,
+              "precision": 0.5,
+              "base_rate": 0.3,
+              "precision_minus_base": 0.2,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 11,
+              "n": 10,
+              "alert_n": 2,
+              "event_n": 2,
+              "alert_event_n": 1,
+              "precision": 0.5,
+              "base_rate": 0.2,
+              "precision_minus_base": 0.3,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 12,
+              "n": 10,
+              "alert_n": 2,
+              "event_n": 2,
+              "alert_event_n": 0,
+              "precision": 0.0,
+              "base_rate": 0.2,
+              "precision_minus_base": -0.2,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 13,
+              "n": 10,
+              "alert_n": 3,
+              "event_n": 1,
+              "alert_event_n": 1,
+              "precision": 0.3333,
+              "base_rate": 0.1,
+              "precision_minus_base": 0.2333,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 14,
+              "n": 10,
+              "alert_n": 4,
+              "event_n": 3,
+              "alert_event_n": 2,
+              "precision": 0.5,
+              "base_rate": 0.3,
+              "precision_minus_base": 0.2,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 15,
+              "n": 10,
+              "alert_n": 4,
+              "event_n": 4,
+              "alert_event_n": 2,
+              "precision": 0.5,
+              "base_rate": 0.4,
+              "precision_minus_base": 0.1,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 16,
+              "n": 9,
+              "alert_n": 4,
+              "event_n": 2,
+              "alert_event_n": 1,
+              "precision": 0.25,
+              "base_rate": 0.2222,
+              "precision_minus_base": 0.0278,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 17,
+              "n": 9,
+              "alert_n": 4,
+              "event_n": 1,
+              "alert_event_n": 1,
+              "precision": 0.25,
+              "base_rate": 0.1111,
+              "precision_minus_base": 0.1389,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 18,
+              "n": 9,
+              "alert_n": 2,
+              "event_n": 2,
+              "alert_event_n": 1,
+              "precision": 0.5,
+              "base_rate": 0.2222,
+              "precision_minus_base": 0.2778,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            },
+            {
+              "offset": 19,
+              "n": 9,
+              "alert_n": 2,
+              "event_n": 2,
+              "alert_event_n": 1,
+              "precision": 0.5,
+              "base_rate": 0.2222,
+              "precision_minus_base": 0.2778,
+              "warning": "Samples on this grid have disjoint h-session future windows; grid selection is not optimized."
+            }
+          ],
+          "calendar_quarter_breakdown": {
+            "2025-Q4": {
+              "summary": {
+                "n": 18,
+                "alert_n": 0,
+                "event_n": 0,
+                "alert_event_n": 0,
+                "precision": null,
+                "base_rate": 0.0,
+                "precision_minus_base": null
+              },
+              "minimum_alert_count_for_interpretation": 8,
+              "enough_alerts": false
+            },
+            "2026-Q1": {
+              "summary": {
+                "n": 55,
+                "alert_n": 19,
+                "event_n": 15,
+                "alert_event_n": 10,
+                "precision": 0.5263,
+                "base_rate": 0.2727,
+                "precision_minus_base": 0.2536
+              },
+              "minimum_alert_count_for_interpretation": 8,
+              "enough_alerts": true
+            },
+            "2026-Q2": {
+              "summary": {
+                "n": 61,
+                "alert_n": 7,
+                "event_n": 11,
+                "alert_event_n": 1,
+                "precision": 0.1429,
+                "base_rate": 0.1803,
+                "precision_minus_base": -0.0375
+              },
+              "minimum_alert_count_for_interpretation": 8,
+              "enough_alerts": false
+            },
+            "2026-Q3": {
+              "summary": {
+                "n": 62,
+                "alert_n": 20,
+                "event_n": 19,
+                "alert_event_n": 12,
+                "precision": 0.6,
+                "base_rate": 0.3065,
+                "precision_minus_base": 0.2935
+              },
+              "minimum_alert_count_for_interpretation": 8,
+              "enough_alerts": true
+            }
+          },
+          "approximate_block_bootstrap": {
+            "method": "deterministic_moving_block_bootstrap",
+            "block_size_sessions": 20,
+            "replicates_attempted": 600,
+            "valid_replicates": 596,
+            "precision_approx_95pct_interval": [
+              0.1724,
+              0.8077
+            ],
+            "precision_minus_base_approx_95pct_interval": [
+              0.0679,
+              0.5561
+            ],
+            "warning": "Exploratory approximate intervals only; limited single-period time series, overlapping outcomes, regime nonstationarity, and prior result inspection prevent confirmatory inference."
+          },
+          "unchanged_original_phase2_metrics": {
+            "status": "diagnostic_descriptive_only",
+            "warning_event_threshold_pct": -5.0,
+            "holdout_cases": 196,
+            "holdout_event_cases": 45,
+            "holdout_alert_cases": 49,
+            "alerted_event_cases": 28,
+            "holdout_event_base_rate": 0.2296,
+            "alert_precision": 0.5714,
+            "mean_alert_forward_return_pct": 6.2451,
+            "mean_alert_worst_forward_drawdown_pct": -5.4147,
+            "note": "Forward windows overlap; confidence intervals and effective independent sample size not established."
+          },
+          "same_holdout_dates_not_independent_new_test": true
+        }
+      }
+    }
+  },
+  "cautions": [
+    "The holdout was already inspected in Phase 2 and 3; this is not new out-of-sample verification.",
+    "ALFRED calendar-date vintage availability is not source-specific intraday release time proof.",
+    "Only three independent ALFRED as-of checkpoints per series were tested.",
+    "S&P/VIX/H10/TWSE settlement and publishing times require additional provenance checks.",
+    "NFCI not part of six-factor model despite being archived.",
+    "Signals measured after Taiwan closing bell cannot be traded at the same closing price.",
+    "Index levels and early warning events do not imply executable transaction returns.",
+    "TXF contract roll, fees, spreads and slippage are not modeled.",
+    "No live thresholds or production risk scores were modified."
+  ],
+  "full_model_backtest_authorized": false,
+  "full_model_validated": false,
+  "recommended_live_threshold": null
+}
