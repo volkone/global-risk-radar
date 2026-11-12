@@ -1,0 +1,68 @@
+name: Phase 2 historical TAIEX and US risk factor collection
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/phase2_historical_panel.yml'
+      - 'scripts/collect_phase2_histories.py'
+      - 'scripts/build_phase2_panel.py'
+permissions:
+  contents: write
+concurrency:
+  group: phase2-historical-research-panel
+  cancel-in-progress: false
+jobs:
+  build-panel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Collect 36 monthly TWSE index tables and official US series
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+        run: python scripts/collect_phase2_histories.py
+      - name: Assemble strict research-only TX/TWSE/TAIEX/FX panel
+        run: python scripts/build_phase2_panel.py
+      - name: Validate immutable safety flags and panel size
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for p in ["docs/phase2_historical_collection.json","docs/phase2_join_audit.json"]:
+              j=json.loads(Path(p).read_text(encoding="utf-8"))
+              assert j["full_model_backtest_authorized"] is False
+              assert j["live_threshold_changes_authorized"] is False
+          panel=json.loads(Path("storage/phase2_joined_panel.json").read_text(encoding="utf-8"))
+          assert len(panel["rows"])==718
+          assert panel["formal_backtest_authorized"] is False
+          assert all(x["us_previous_dated_observations"]["fx"]["observed_date"] is None or
+                     x["us_previous_dated_observations"]["fx"]["observed_date"] < x["date"]
+                     for x in panel["rows"])
+          print("Verified research panel rows:",len(panel["rows"]))
+          PY
+      - name: Upload reports even on a blocked data collection
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase2-historical-research-report
+          if-no-files-found: warn
+          path: |
+            docs/phase2_historical_collection.json
+            docs/phase2_join_audit.json
+      - name: Commit raw source snapshots and diagnostic reports
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add storage/historical_taiex_close.json storage/historical_fred_factors.json storage/phase2_joined_panel.json docs/phase2_historical_collection.json docs/phase2_join_audit.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Publish phase-2 historical input and joined research panel [skip ci]'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
