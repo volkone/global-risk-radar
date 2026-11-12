@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-12T14:27:38.202431+00:00",
+  "generated_at": "2026-11-12T14:29:37.752782+00:00",
   "model_status": "research_only_not_backtested",
   "notes": [
     "Percentile calibration is descriptive, not a validated predictive risk threshold.",
@@ -60,7 +60,7 @@
       "status": "experimental",
       "score": 84.06,
       "current_date": "2026-11-12",
-      "current_value": 32.963,
+      "current_value": 32.966,
       "raw_observations": 90,
       "transformed_observations": 70,
       "min_prior_transformed_observations": 60,
