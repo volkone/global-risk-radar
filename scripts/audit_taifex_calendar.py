@@ -11,10 +11,10 @@ ROOT=Path(__file__).resolve().parents[1]
 START=dt.date(2023,11,11)
 END=dt.date(2026,10,31)
 SOURCES={
-  2023:"https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1110003783號函.pdf",
-  2024:"https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1120003542號函.pdf",
-  2025:"https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140001929號函.pdf",
-  2026:"https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140003036號函.pdf",
+  2023:"https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/%E5%8F%B0%E6%9C%9F%E4%BA%A4%E5%AD%97%E7%AC%AC1110003783%E8%99%9F%E5%87%BD.pdf",
+  2024:"https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/%E5%8F%B0%E6%9C%9F%E4%BA%A4%E5%AD%97%E7%AC%AC1120003542%E8%99%9F%E5%87%BD.pdf",
+  2025:"https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/%E5%8F%B0%E6%9C%9F%E4%BA%A4%E5%AD%97%E7%AC%AC1140001929%E8%99%9F%E5%87%BD.pdf",
+  2026:"https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/%E5%8F%B0%E6%9C%9F%E4%BA%A4%E5%AD%97%E7%AC%AC1140003036%E8%99%9F%E5%87%BD.pdf",
 }
 # Weekday holidays, including Lunar New Year market closure before/after statutory holidays.
 CLOSED={
