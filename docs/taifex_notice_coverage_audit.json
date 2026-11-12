@@ -11,6 +11,8 @@
         "2023"
       ],
       "candidate_count": 0,
+      "all_official_notice_link_count": 15,
+      "announcement_page_controls": [],
       "candidate_notice_ids": [],
       "pagination_exhaustiveness_verified": false,
       "limitations": "Only first response was captured; form selection does not prove full archive pagination."
@@ -22,6 +24,8 @@
         "2024"
       ],
       "candidate_count": 0,
+      "all_official_notice_link_count": 6,
+      "announcement_page_controls": [],
       "candidate_notice_ids": [],
       "pagination_exhaustiveness_verified": false,
       "limitations": "Only first response was captured; form selection does not prove full archive pagination."
@@ -33,6 +37,8 @@
         "2025"
       ],
       "candidate_count": 4,
+      "all_official_notice_link_count": 31,
+      "announcement_page_controls": [],
       "candidate_notice_ids": [],
       "pagination_exhaustiveness_verified": false,
       "limitations": "Only first response was captured; form selection does not prove full archive pagination."
@@ -44,6 +50,8 @@
         "2026"
       ],
       "candidate_count": 9,
+      "all_official_notice_link_count": 204,
+      "announcement_page_controls": [],
       "candidate_notice_ids": [
         "17441",
         "17137"
@@ -141,5 +149,5 @@
   "primary_evidence_complete": false,
   "independent_taifex_calendar_verified": false,
   "full_model_backtest_authorized": false,
-  "next_required": "Identify and verify pagination/query endpoint; reconcile all special closure notices across each year."
+  "next_required": "Verify whether each year listing is exhaustive using total notice counts or documented archive paging; reconcile known notices via direct evidence independently of keyword matches."
 }
