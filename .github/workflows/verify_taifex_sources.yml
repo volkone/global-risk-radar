@@ -9,7 +9,7 @@ concurrency:
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
@@ -17,16 +17,26 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Verify official source batch (up to 10 paced requests (hard cap 40))
-        run: python scripts/verify_taifex_sources.py --limit 10
-      - name: Save verification checkpoints
+      - name: Verify up to 50 records, checkpoint every 10
+        shell: bash
         run: |
+          set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add docs/taifex_source_verification.json
-          if ! git diff --cached --quiet; then
-            git commit -m 'Checkpoint TAIFEX source verification [skip ci]'
+          for chunk in 1 2 3 4 5; do
+            echo "TAIFEX verification chunk ${chunk}/5 (up to 10 records)"
+            python scripts/verify_taifex_sources.py --limit 10
+            git add docs/taifex_source_verification.json
+            if git diff --cached --quiet; then
+              echo "No new verification results; stopping."
+              break
+            fi
+            git commit -m "Checkpoint TAIFEX source verification chunk ${chunk}/5 [skip ci]"
             git fetch origin main
             git rebase origin/main
             git push origin HEAD:main
-          fi
+            if python -c 'import json; d=json.load(open("docs/taifex_source_verification.json")); exit(0 if d.get("retry_after_utc") or d.get("status") == "pass" else 1)'; then
+              echo "Cooldown or all records passed; stopping."
+              break
+            fi
+          done
