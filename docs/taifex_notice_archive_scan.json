@@ -17,12 +17,394 @@
   ],
   "partitions": [
     {
-      "month": "unfiltered_listing",
+      "year": 2023,
       "url": "https://www.taifex.com.tw/cht/11/announcement",
-      "filter_applied": false,
+      "request_method": "POST",
+      "query_year": "2023",
+      "coverage_verified": false,
+      "http_status": 200,
+      "sha256": "3c9c67ea38d5e0dbecae586249112df26d814f7a10769ce2b2f0f4d01b717319",
+      "selected_year": [
+        "2023"
+      ],
+      "year_filter_confirmed": true,
+      "candidates": [],
+      "form_controls": {
+        "forms": [
+          {
+            "action": null,
+            "method": "post"
+          },
+          {
+            "action": null,
+            "method": "post"
+          },
+          {
+            "action": null,
+            "method": "post"
+          },
+          {
+            "action": "announcement",
+            "method": "post"
+          }
+        ],
+        "selects": [
+          {
+            "name": "query_year",
+            "id": "query_year",
+            "options": [
+              {
+                "value": "2026",
+                "selected": false
+              },
+              {
+                "value": "2025",
+                "selected": false
+              },
+              {
+                "value": "2024",
+                "selected": false
+              },
+              {
+                "value": "2023",
+                "selected": true
+              },
+              {
+                "value": "2022",
+                "selected": false
+              },
+              {
+                "value": "2021",
+                "selected": false
+              },
+              {
+                "value": "2019",
+                "selected": false
+              }
+            ]
+          }
+        ],
+        "buttons": [
+          {
+            "tag": "button",
+            "name": null,
+            "id": null,
+            "value": null
+          },
+          {
+            "tag": "button",
+            "name": null,
+            "id": "pause",
+            "value": null
+          },
+          {
+            "tag": "button",
+            "name": null,
+            "id": null,
+            "value": null
+          },
+          {
+            "tag": "input",
+            "name": "button",
+            "id": "button",
+            "value": "確定"
+          },
+          {
+            "tag": "input",
+            "name": "button2",
+            "id": "button2",
+            "value": "取消"
+          },
+          {
+            "tag": "input",
+            "name": "button",
+            "id": "button",
+            "value": "確定"
+          },
+          {
+            "tag": "input",
+            "name": "button2",
+            "id": "button2",
+            "value": "取消"
+          },
+          {
+            "tag": "button",
+            "name": null,
+            "id": null,
+            "value": null
+          }
+        ]
+      }
+    },
+    {
+      "year": 2024,
+      "url": "https://www.taifex.com.tw/cht/11/announcement",
+      "request_method": "POST",
+      "query_year": "2024",
+      "coverage_verified": false,
+      "http_status": 200,
+      "sha256": "06590b30a9f5f99523369608dcc699f03b76b5a0c82dcdee71d89d52ec1ec968",
+      "selected_year": [
+        "2024"
+      ],
+      "year_filter_confirmed": true,
+      "candidates": [],
+      "form_controls": {
+        "forms": [
+          {
+            "action": null,
+            "method": "post"
+          },
+          {
+            "action": null,
+            "method": "post"
+          },
+          {
+            "action": null,
+            "method": "post"
+          },
+          {
+            "action": "announcement",
+            "method": "post"
+          }
+        ],
+        "selects": [
+          {
+            "name": "query_year",
+            "id": "query_year",
+            "options": [
+              {
+                "value": "2026",
+                "selected": false
+              },
+              {
+                "value": "2025",
+                "selected": false
+              },
+              {
+                "value": "2024",
+                "selected": true
+              },
+              {
+                "value": "2023",
+                "selected": false
+              },
+              {
+                "value": "2022",
+                "selected": false
+              },
+              {
+                "value": "2021",
+                "selected": false
+              },
+              {
+                "value": "2019",
+                "selected": false
+              }
+            ]
+          }
+        ],
+        "buttons": [
+          {
+            "tag": "button",
+            "name": null,
+            "id": null,
+            "value": null
+          },
+          {
+            "tag": "button",
+            "name": null,
+            "id": "pause",
+            "value": null
+          },
+          {
+            "tag": "button",
+            "name": null,
+            "id": null,
+            "value": null
+          },
+          {
+            "tag": "input",
+            "name": "button",
+            "id": "button",
+            "value": "確定"
+          },
+          {
+            "tag": "input",
+            "name": "button2",
+            "id": "button2",
+            "value": "取消"
+          },
+          {
+            "tag": "input",
+            "name": "button",
+            "id": "button",
+            "value": "確定"
+          },
+          {
+            "tag": "input",
+            "name": "button2",
+            "id": "button2",
+            "value": "取消"
+          },
+          {
+            "tag": "button",
+            "name": null,
+            "id": null,
+            "value": null
+          }
+        ]
+      }
+    },
+    {
+      "year": 2025,
+      "url": "https://www.taifex.com.tw/cht/11/announcement",
+      "request_method": "POST",
+      "query_year": "2025",
+      "coverage_verified": false,
+      "http_status": 200,
+      "sha256": "4dfd1083a351a9f634e7e41dff1727822edb6d7bc6b71586a3af5e7c1999940a",
+      "selected_year": [
+        "2025"
+      ],
+      "year_filter_confirmed": true,
+      "candidates": [
+        {
+          "title": "公告本公司期貨集中交易市場115年農曆春節休市暨相關事宜。",
+          "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202563號函.pdf"
+        },
+        {
+          "title": "公告114年12月25日(星期四)為行憲紀念日及115年1月1日 (星期四)為中華民國開國紀念日，依規定各放假一日，本公司期貨集中交易市場配合休市。",
+          "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202601號函.pdf"
+        },
+        {
+          "title": "公告正崴期貨（契約代號：GL）自114年11月13日起暫停交易。",
+          "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202393號函.pdf"
+        },
+        {
+          "title": "公告台積電期貨及小型台積電期貨(契約代號：CD、QF)自114年11月11日18時25分起盤後交易時段暫停交易，114年11月12日一般交易時段恢復交易。",
+          "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202382號函.pdf"
+        }
+      ],
+      "form_controls": {
+        "forms": [
+          {
+            "action": null,
+            "method": "post"
+          },
+          {
+            "action": null,
+            "method": "post"
+          },
+          {
+            "action": null,
+            "method": "post"
+          },
+          {
+            "action": "announcement",
+            "method": "post"
+          }
+        ],
+        "selects": [
+          {
+            "name": "query_year",
+            "id": "query_year",
+            "options": [
+              {
+                "value": "2026",
+                "selected": false
+              },
+              {
+                "value": "2025",
+                "selected": true
+              },
+              {
+                "value": "2024",
+                "selected": false
+              },
+              {
+                "value": "2023",
+                "selected": false
+              },
+              {
+                "value": "2022",
+                "selected": false
+              },
+              {
+                "value": "2021",
+                "selected": false
+              },
+              {
+                "value": "2019",
+                "selected": false
+              }
+            ]
+          }
+        ],
+        "buttons": [
+          {
+            "tag": "button",
+            "name": null,
+            "id": null,
+            "value": null
+          },
+          {
+            "tag": "button",
+            "name": null,
+            "id": "pause",
+            "value": null
+          },
+          {
+            "tag": "button",
+            "name": null,
+            "id": null,
+            "value": null
+          },
+          {
+            "tag": "input",
+            "name": "button",
+            "id": "button",
+            "value": "確定"
+          },
+          {
+            "tag": "input",
+            "name": "button2",
+            "id": "button2",
+            "value": "取消"
+          },
+          {
+            "tag": "input",
+            "name": "button",
+            "id": "button",
+            "value": "確定"
+          },
+          {
+            "tag": "input",
+            "name": "button2",
+            "id": "button2",
+            "value": "取消"
+          },
+          {
+            "tag": "button",
+            "name": null,
+            "id": null,
+            "value": null
+          }
+        ]
+      }
+    },
+    {
+      "year": 2026,
+      "url": "https://www.taifex.com.tw/cht/11/announcement",
+      "request_method": "POST",
+      "query_year": "2026",
       "coverage_verified": false,
       "http_status": 200,
       "sha256": "431b1f34c409d8dbecdb823b07975bcac50bda55390235402c48f55119f91fcf",
+      "selected_year": [
+        "2026"
+      ],
+      "year_filter_confirmed": true,
       "candidates": [
         {
           "title": "因薔琵颱風來襲，115年10月23日(星期五)臺灣期貨交易所集中交易市場休市1日(包含一般交易時段及盤後交易時段)，店頭集中結算業務暫停營業1日。本公司115年10月23日到期結算之臺指選擇權週五到期契約，其最後交易日及最後結算日順延至最近之次一營業日。",
@@ -170,7 +552,19 @@
     }
   ],
   "partitions_total": 36,
-  "listing_fetches": 1,
+  "listing_fetches": 4,
+  "years_requested": [
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "years_filter_confirmed": [
+    2023,
+    2024,
+    2025,
+    2026
+  ],
   "months_pending_verification": [
     "2023-11",
     "2023-12",
@@ -214,5 +608,5 @@
   "primary_evidence_complete": false,
   "independent_taifex_calendar_verified": false,
   "full_model_backtest_authorized": false,
-  "limitations": "The listing is not proven to be month-filtered or exhaustive; repeated responses must not be counted as independent month coverage."
+  "limitations": "Year-specific POST requests are exploratory. Selected year and complete server-side pagination must be independently verified; do not infer full archive coverage."
 }
