@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-12T14:33:44.850816+00:00",
+  "generated_at": "2026-11-12T14:34:59.601816+00:00",
   "model_status": "uncalibrated_prototype",
   "disclaimer": "Risk scores are provisional and not validated by historical backtests.",
   "global": {
     "status": "provisional",
-    "score": 23.3,
+    "score": 23.2,
     "coverage": 0.85,
     "min_coverage": 0.85,
     "components": [
@@ -33,7 +33,7 @@
       {
         "metric": "indices",
         "weight": 20,
-        "signal": 33.87,
+        "signal": 33.33,
         "eligible": true,
         "reason": null
       },
