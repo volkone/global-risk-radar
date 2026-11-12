@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-12",
+  "use_scope": "Research-only forward first-seen snapshots. The timestamp when the collector actually fetched data is available-time evidence; it is not proof of an earlier publisher posting time.",
+  "sources": {
+    "taiex": {
+      "provider": "TWSE",
+      "source": "https://www.twse.com.tw/rwd/zh/afterTrading/FMTQIK",
+      "historical_release_minute_certified": false,
+      "forward_rule": "Fetch after Taiwan 20:00 and require exact cash-market trading date and raw response hash"
+    },
+    "margin": {
+      "provider": "TWSE",
+      "source": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN",
+      "historical_release_minute_certified": false,
+      "forward_rule": "Fetch after Taiwan 20:00, require response date equals current trading session"
+    },
+    "cash_inst": {
+      "provider": "TWSE",
+      "source": "https://www.twse.com.tw/rwd/zh/fund/BFI82U",
+      "historical_release_minute_certified": false,
+      "forward_rule": "Fetch after Taiwan 20:00, require response date equals current trading session"
+    },
+    "tx_oi": {
+      "provider": "TAIFEX",
+      "source": "https://www.taifex.com.tw/cht/3/futContractsDate",
+      "historical_release_minute_certified": false,
+      "forward_rule": "Fetch after Taiwan 20:00, check requested date, official TXF contract and foreign-investor OI arithmetic"
+    },
+    "fx": {
+      "series_id": "DEXTAUS",
+      "provider": "Federal Reserve H.10 / FRED",
+      "official_schedule": "Normally Mondays 16:15 Eastern, prior business week; holiday shifts to next business day",
+      "official_schedule_link": "https://www.federalreserve.gov/releases/h10/",
+      "historical_release_minute_certified": false,
+      "forward_rule": "Capture first-seen returned observation and fetch time; never assign earlier time"
+    },
+    "us10y": {
+      "series_id": "DGS10",
+      "provider": "Federal Reserve H.15 / FRED",
+      "official_schedule": "Normally U.S. business days 16:15 Eastern",
+      "official_schedule_link": "https://www.federalreserve.gov/data/releaseschedule.htm",
+      "historical_release_minute_certified": false,
+      "forward_rule": "Actual first-seen time only; historical source clock requires independent review"
+    },
+    "nfci": {
+      "series_id": "NFCI",
+      "provider": "Chicago Fed",
+      "official_schedule": "Wednesday 08:30 Eastern for period through previous Friday; Thursday in affected holiday weeks",
+      "official_schedule_link": "https://www.chicagofed.org/research/data/nfci/current-data",
+      "historical_release_minute_certified": false,
+      "forward_rule": "First-seen only; no 6-factor score input"
+    },
+    "hy": {
+      "series_id": "BAMLH0A0HYM2",
+      "provider": "ICE Data Indices LLC through FRED",
+      "data_frequency": "Daily, Close",
+      "source": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2",
+      "historical_release_minute_certified": false,
+      "forward_rule": "FRED first-seen UTC fetch timestamp stored; no inferred vendor release minute"
+    },
+    "ig": {
+      "series_id": "BAMLC0A0CM",
+      "provider": "ICE Data Indices LLC through FRED",
+      "data_frequency": "Daily, Close",
+      "source": "https://fred.stlouisfed.org/series/BAMLC0A0CM",
+      "historical_release_minute_certified": false,
+      "forward_rule": "FRED first-seen UTC fetch timestamp stored; no inferred vendor release minute; not a 6-factor feature"
+    },
+    "vix": {
+      "series_id": "VIXCLS",
+      "provider": "CBOE Market Statistics through FRED",
+      "data_frequency": "Daily, Close",
+      "source": "https://fred.stlouisfed.org/series/VIXCLS",
+      "historical_release_minute_certified": false,
+      "forward_rule": "FRED first-seen UTC fetch timestamp stored; source vendor exact release minute not certified"
+    }
+  },
+  "controls": {
+    "first_prospective_date": "2026-11-13",
+    "timezone": "Asia/Taipei",
+    "earliest_capture_local": "20:00",
+    "github_schedule_utc": [
+      "12:30",
+      "14:30"
+    ],
+    "same_date_first_seen_only": true,
+    "repeat_probes_do_not_overwrite_first_snapshot": true,
+    "applicable_to_trading_alerts": false,
+    "formal_model_gate_blocked": true
+  }
+}
