@@ -1,0 +1,11 @@
+{
+  "record_count": 718,
+  "annual_source_links_present": true,
+  "special_source_links_present": true,
+  "special_date_coverage": 10,
+  "calendar_data_consistent": true,
+  "full_notice_sweep_verified": false,
+  "independent_taifex_calendar_verified": false,
+  "full_model_backtest_authorized": false,
+  "execution_method": "Equivalent pre-backtest gate logic run against live GitHub repository files; Python script itself not executed."
+}
