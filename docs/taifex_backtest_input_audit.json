@@ -11,7 +11,7 @@
     "storage/official_calendar/trading_days.csv": "02b6126a174c03461bf280c380e9c42d0daa98a14de228bd8373580895d56601",
     "docs/taifex_source_verification.json": "e155c7e85f525ad0f613e1f36bf0405cc9dddaef6c0049d0767e4a14c12aedd3",
     "docs/taifex_calendar_evidence.json": "c7753aa20eca64995accf22a4e06d00cb43e821c1032ad0ef31de3c2bccc7c26",
-    "docs/data.json": "64690cb50925b7cb3e36674dccea08e20e8444d7b1a614ca6841cf8531972fda"
+    "docs/data.json": "9fa8b225f4381d04ad7e986d37b29e03067e390c7f2845288a119281f1d026aa"
   },
   "tx_panel": {
     "raw_rows": 718,
@@ -174,7 +174,11 @@
       "matching_tx_sessions": 81,
       "missing_tx_sessions": 637,
       "duplicate_history_dates": 0,
-      "is_historical_718_session_panel": false
+      "is_historical_718_session_panel": false,
+      "history_begins_after_target_start": true,
+      "alignment_rule": "same_twse_trading_session",
+      "unmatched_dates_are_confirmed_data_gaps": true,
+      "frequency": "daily"
     },
     "fx": {
       "history_records": 90,
@@ -185,7 +189,11 @@
       "matching_tx_sessions": 64,
       "missing_tx_sessions": 654,
       "duplicate_history_dates": 0,
-      "is_historical_718_session_panel": false
+      "is_historical_718_session_panel": false,
+      "history_begins_after_target_start": true,
+      "alignment_rule": "point_in_time_asof_join_with_source_market_calendar",
+      "unmatched_dates_are_confirmed_data_gaps": false,
+      "frequency": "daily"
     },
     "hy": {
       "history_records": 90,
@@ -196,7 +204,11 @@
       "matching_tx_sessions": 78,
       "missing_tx_sessions": 640,
       "duplicate_history_dates": 0,
-      "is_historical_718_session_panel": false
+      "is_historical_718_session_panel": false,
+      "history_begins_after_target_start": true,
+      "alignment_rule": "point_in_time_asof_join_with_source_market_calendar",
+      "unmatched_dates_are_confirmed_data_gaps": false,
+      "frequency": "daily"
     },
     "ig": {
       "history_records": 90,
@@ -207,7 +219,11 @@
       "matching_tx_sessions": 78,
       "missing_tx_sessions": 640,
       "duplicate_history_dates": 0,
-      "is_historical_718_session_panel": false
+      "is_historical_718_session_panel": false,
+      "history_begins_after_target_start": true,
+      "alignment_rule": "point_in_time_asof_join_with_source_market_calendar",
+      "unmatched_dates_are_confirmed_data_gaps": false,
+      "frequency": "daily"
     },
     "vix": {
       "history_records": 90,
@@ -218,7 +234,11 @@
       "matching_tx_sessions": 77,
       "missing_tx_sessions": 641,
       "duplicate_history_dates": 0,
-      "is_historical_718_session_panel": false
+      "is_historical_718_session_panel": false,
+      "history_begins_after_target_start": true,
+      "alignment_rule": "point_in_time_asof_join_with_source_market_calendar",
+      "unmatched_dates_are_confirmed_data_gaps": false,
+      "frequency": "daily"
     },
     "indices": {
       "history_records": 90,
@@ -229,7 +249,11 @@
       "matching_tx_sessions": 76,
       "missing_tx_sessions": 642,
       "duplicate_history_dates": 0,
-      "is_historical_718_session_panel": false
+      "is_historical_718_session_panel": false,
+      "history_begins_after_target_start": true,
+      "alignment_rule": "point_in_time_asof_join_with_source_market_calendar",
+      "unmatched_dates_are_confirmed_data_gaps": false,
+      "frequency": "daily"
     },
     "us10y": {
       "history_records": 89,
@@ -240,7 +264,11 @@
       "matching_tx_sessions": 77,
       "missing_tx_sessions": 641,
       "duplicate_history_dates": 0,
-      "is_historical_718_session_panel": false
+      "is_historical_718_session_panel": false,
+      "history_begins_after_target_start": true,
+      "alignment_rule": "point_in_time_asof_join_with_source_market_calendar",
+      "unmatched_dates_are_confirmed_data_gaps": false,
+      "frequency": "daily"
     },
     "nfci": {
       "history_records": 18,
@@ -251,14 +279,25 @@
       "matching_tx_sessions": 14,
       "missing_tx_sessions": 704,
       "duplicate_history_dates": 0,
-      "is_historical_718_session_panel": false
+      "is_historical_718_session_panel": false,
+      "history_begins_after_target_start": true,
+      "alignment_rule": "point_in_time_asof_join_with_source_market_calendar",
+      "unmatched_dates_are_confirmed_data_gaps": false,
+      "frequency": "weekly"
     }
   },
+  "cross_market_alignment_caution": "US holidays and weekly series (such as NFCI) cannot be audited by demanding one observation on every TX session. Require a date/time-aware as-of join, max staleness limits, and publication lag.",
   "tx_taiex_fx_same_day_intersection": {
     "count": 64,
     "first_date": "2026-07-09",
     "last_date": "2026-10-30",
     "note": "Same-date intersections alone do not ensure availability-time alignment or enough holdout samples."
+  },
+  "backtest_engine_input_contract": {
+    "reads_tx_archive": false,
+    "reads_twse_archive": false,
+    "script": "scripts/backtest.py",
+    "scope": "Current implementation computes USD/TWD vs TAIEX diagnostic returns, not full Taiwan risk model."
   },
   "current_diagnostic_backtest": {
     "status": "insufficient_samples",
@@ -269,6 +308,7 @@
     "taiex_historical_outcome_prices_incomplete",
     "fx_historical_signal_incomplete",
     "global_risk_factor_histories_incomplete_for_full_model",
+    "current_backtest_engine_does_not_use_tx_or_twse_historical_archive",
     "point_in_time_release_lag_and_holdout_method_not_frozen",
     "independent_taifex_calendar_evidence_not_finalized"
   ],
