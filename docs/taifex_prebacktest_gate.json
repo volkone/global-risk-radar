@@ -5,6 +5,7 @@
   "special_date_coverage": 10,
   "calendar_data_consistent": true,
   "full_notice_sweep_verified": false,
+  "primary_evidence_complete": false,
   "independent_taifex_calendar_verified": false,
   "full_model_backtest_authorized": false
 }
