@@ -1,0 +1,50 @@
+name: Execute TAIFEX quality gate with explicit blocked outcome
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/execute_taifex_quality_gate.yml'
+permissions:
+  contents: read
+jobs:
+  quality-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Reconcile calendar
+        run: python scripts/audit_taifex_calendar.py
+      - name: Check official evidence URLs
+        run: python scripts/verify_taifex_evidence_urls.py
+      - name: Execute gate and validate expected exit semantics
+        shell: bash
+        run: |
+          set +e
+          python scripts/check_taifex_evidence.py
+          rc=$?
+          set -e
+          python - "$rc" <<'PY'
+          import json,sys
+          from pathlib import Path
+          rc=int(sys.argv[1])
+          j=json.loads(Path("docs/taifex_prebacktest_gate.json").read_text(encoding="utf-8"))
+          assert rc in (0,2), f"Unexpected gate crash: {rc}"
+          assert (rc==0)==(len(j["blockers"])==0), "Gate return code inconsistent with blockers"
+          assert not j["full_model_backtest_authorized"], "Never authorize TX model in this diagnostic workflow"
+          print("QUALITY_GATE_STATUS:", "PASS" if rc==0 else "BLOCKED")
+          print("BLOCKERS:",j["blockers"])
+          PY
+      - name: Upload quality reports even when blocked
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: taifex-quality-gate-reports
+          path: |
+            docs/taifex_calendar_audit.json
+            docs/taifex_evidence_url_check.json
+            docs/taifex_prebacktest_gate.json
