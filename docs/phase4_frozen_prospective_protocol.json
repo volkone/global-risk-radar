@@ -1,0 +1,65 @@
+{
+  "status": "preregistered_research_protocol_awaiting_genuinely_unseen_future_market_data",
+  "freeze_declaration_date_taipei": "2026-11-12",
+  "initial_candidate_data_cutoff": "2026-10-30",
+  "first_prospective_session_not_used_in_research": "2026-11-13",
+  "past_data_note": "All 2023-11-13 to 2026-10-30 records have been available to researchers; neither 70/30 holdout nor alternative chronological splits are untouched.",
+  "experimental_target": "Warning probability for future TAIEX price-only drawdown; no executable TXF trading strategy.",
+  "factor_weights": "Fixed equal weights across available factors, minimum 5 of 6",
+  "model_features": [
+    "foreign_tx_short_pressure",
+    "margin_deleveraging_20d",
+    "institutional_net_selling_5d",
+    "twd_depreciation_20d",
+    "hy_oas_widening_20d",
+    "prior_us_vix_level"
+  ],
+  "predictor_lookback_taiwan_sessions": 20,
+  "post_close_feature_action_lag_taiwan_sessions": 2,
+  "signal_quantile_calculation": "Current feature value percentile among pre-forward historical factor values; no re-estimation using future outcomes.",
+  "alert_score_threshold_frozen_before_future_outcomes": 63.91871,
+  "historical_score_count_used_to_freeze": 696,
+  "warning_events_taiwan_trading_days_worst_forward_close_drawdown_pct": {
+    "5d": -3.0,
+    "20d": -5.0
+  },
+  "future_evaluation_plan": {
+    "primary_metric": "precision versus unconditional risk-event rate by fixed horizon",
+    "secondary_metrics": [
+      "alert_count",
+      "true_positive",
+      "false_positive",
+      "event_count",
+      "recall",
+      "nonoverlap_event_precision",
+      "lead_time"
+    ],
+    "minimum_fully_matured_nonoverlapping_events": 30,
+    "publication_control": "Every prediction must store observable source effective datetime, snapshot SHA-256 and collection timestamp BEFORE corresponding forward outcome exists.",
+    "outcome_maturity": "Do not evaluate an alert until all 5 or 20 subsequent Taiwan trading sessions are complete.",
+    "model_changes": "Version bump and separate forward cohort required; never retroactively alter recorded alerts.",
+    "historical_retesting": "All previously viewed historical periods are exploratory diagnostics, not new out-of-sample confirmation.",
+    "no_trading_pnl_claims": true
+  },
+  "source_clock_and_reliability_not_complete": true,
+  "collect_new_records_automatically": false,
+  "forward_prediction_engine_started": false,
+  "new_unseen_outcome_count": 0,
+  "frozen_artifact_sha256": {
+    "storage/phase4_publication_aware_panel.json": "161505e9ee16550400c21749236ab5d4c4eb3690d07003bbf986ba09b48fe472",
+    "storage/phase3_fred_pit_vintages.json": "7cb9c5dd9595d51f79cad339127432cea9d59fcdcf9bc873995f55c2c576337d",
+    "scripts/backtest_phase2_research.py": "20e8736b9793b4e0b7c0610ce777217d2c16ffb27823bd392ee323556a1dca4a",
+    "scripts/audit_phase3_robustness.py": "fc6a5cfa01e1a144648e99ec83ab03cecd8ba368b92bbe1ecf24a2c840822e0d",
+    "scripts/audit_phase4_publication_timing.py": "898bd6f5bd7110b450cf5fa112651bacf9552a092b5efad9eead1c91276fc98e"
+  },
+  "quality_gate_status": "BLOCKED",
+  "blocking_reasons": [
+    "No new forward prediction is available after 2026-11-12.",
+    "HY/IG/VIX per-observation release hour has not been certified.",
+    "ALFRED 94 sampled historical checks do not prove all 718 sessions independent.",
+    "TAIFEX independent exceptional-closure evidence sweep remains incomplete.",
+    "Transaction cost, contract roll and legally executable instrument are not specified."
+  ],
+  "formal_full_model_backtest_authorized": false,
+  "live_threshold_changes_authorized": false
+}
