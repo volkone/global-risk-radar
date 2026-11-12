@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "scope": "TAIFEX TXF foreign open-interest calendar 2023-11-11 through 2026-10-31",
-  "method": "Direct review of TAIFEX official notice webpages; annual PDFs remain unverified",
+  "method": "Evidence ledger with primary-source URLs and explicitly tracked verification gaps; repository checks are not a substitute for full archive review.",
   "annual_calendar": {
     "status": "verified_primary_pdf_opened",
     "sources": [
@@ -102,7 +102,7 @@
     "primary_evidence_complete": false,
     "independent_taifex_calendar_verified": false,
     "full_model_backtest_authorized": false,
-    "reason": "Individual primary notices verified for several closures, but archive-wide completeness not established; 2024-07-25 still needs separate direct notice. Do not authorize backtest.",
+    "reason": "2024-07-25 primary notice resolved; full archive-wide ad-hoc closure sweep and independent audit still outstanding.",
     "full_notice_sweep_verified": false
   },
   "review_note": "Do not infer official calendar validity from agreement with TWSE reference dates or hard-coded exceptions.",
@@ -140,6 +140,15 @@
       "url": "https://www.taifex.com.tw/cht/11/announcement",
       "finding": "TAIFEX notice listing explicitly describes full closure",
       "status": "verified_official_listing"
+    },
+    {
+      "dates": [
+        "2024-07-24",
+        "2024-07-25"
+      ],
+      "url": "https://www.taifex.com.tw/enl/eng11/newsDetail?idx=8785&newsType=1",
+      "finding": "TAIFEX notice dated 2024-07-24 explicitly states closure on both July 24 and July 25, 2024",
+      "status": "verified_direct_page"
     }
   ]
 }
