@@ -18,9 +18,19 @@ data_consistent=(len(dates)==718 and len(set(dates))==718 and len(set(dates)&exp
 full_notice_sweep=e.get("gate",{}).get("full_notice_sweep_verified",False) is True
 primary_evidence_complete=e.get("gate",{}).get("primary_evidence_complete",False) is True
 
-report={"record_count":len(dates),"annual_source_links_present":source_coverage,"special_source_links_present":special_coverage,"special_date_coverage":len(covered&expected),"calendar_data_consistent":data_consistent,"full_notice_sweep_verified":full_notice_sweep,"primary_evidence_complete":primary_evidence_complete,"independent_taifex_calendar_verified":bool(source_coverage and special_coverage and data_consistent and full_notice_sweep and primary_evidence_complete),"full_model_backtest_authorized":False}
+url_check_path=ROOT/"docs/taifex_evidence_url_check.json"
+url_report=json.loads(url_check_path.read_text(encoding="utf-8")) if url_check_path.exists() else {}
+urls_ok=bool(url_report.get("unique_urls")) and url_report.get("failed")==0 and url_report.get("ok")==url_report.get("unique_urls")
+blockers=[]
+if not source_coverage:blockers.append("annual_source_links_missing")
+if not special_coverage:blockers.append("special_date_evidence_missing")
+if not data_consistent:blockers.append("calendar_data_mismatch")
+if not urls_ok:blockers.append("official_evidence_urls_failed_or_not_checked")
+if not full_notice_sweep:blockers.append("full_notice_sweep_not_verified")
+if not primary_evidence_complete:blockers.append("primary_evidence_not_complete")
+report={"blockers":blockers,"evidence_urls_accessible":urls_ok,"record_count":len(dates),"annual_source_links_present":source_coverage,"special_source_links_present":special_coverage,"special_date_coverage":len(covered&expected),"calendar_data_consistent":data_consistent,"full_notice_sweep_verified":full_notice_sweep,"primary_evidence_complete":primary_evidence_complete,"independent_taifex_calendar_verified":bool(not blockers),"full_model_backtest_authorized":False}
 (ROOT/"docs/taifex_prebacktest_gate.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 print(json.dumps(report,ensure_ascii=False,indent=2))
 if not report["independent_taifex_calendar_verified"]:
-    print("BLOCKED: independent TAIFEX calendar evidence gate is not satisfied",file=sys.stderr)
+    print("BLOCKED: "+", ".join(blockers),file=sys.stderr)
     sys.exit(2)
