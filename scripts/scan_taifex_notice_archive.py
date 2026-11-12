@@ -85,6 +85,6 @@ def main():
     # Year selection and matching HTML do not prove pagination completeness.
     verified_years=[x["year"] for x in partitions if x.get("year_filter_confirmed")]
     result={"window":[START.isoformat(),END.isoformat()],"keywords":KEYWORDS,"partitions":partitions,"partitions_total":len(list(months())),"listing_fetches":len(partitions),"years_requested":years,"years_filter_confirmed":verified_years,"months_pending_verification":list(months()),"partitions_coverage_verified":0,"full_notice_sweep_verified":False,"primary_evidence_complete":False,"independent_taifex_calendar_verified":False,"full_model_backtest_authorized":False,"limitations":"Year-specific POST requests are exploratory. Selected year and complete server-side pagination must be independently verified; do not infer full archive coverage."}
-    OUTPUT.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
+    OUTPUT.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(f"Requested years {years}; selected-year confirmation {verified_years}; candidate notices {sum(len(x.get('candidates',[])) for x in partitions)}; archive coverage remains unverified")
 if __name__=="__main__":main()
