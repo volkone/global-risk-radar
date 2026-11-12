@@ -1,0 +1,127 @@
+{
+  "status": "conservative_time_gate_research_panel_built",
+  "sessions": 718,
+  "source_pit_sha256": "c5a18734f21611c6e1fe1c7a9c26336889cbd8a2f97199faffe25f2c0ffa9529",
+  "output_sha256": "54e50ec70e571e2c742ec2490e417630f48762b117300ab8605bfff9a969f8f1",
+  "factor_eligible_sessions": {
+    "fx": 298,
+    "vix": 718,
+    "us10y": 718,
+    "nfci": 597,
+    "hy": 673,
+    "ig": 673
+  },
+  "deferred_by_official_schedule_buffer": {
+    "fx": 420,
+    "nfci": 121
+  },
+  "not_source_time_certified_records": {
+    "vix": 718,
+    "hy": 673,
+    "ig": 673
+  },
+  "examples": [
+    {
+      "session": "2023-11-14",
+      "factor": "fx",
+      "observation_date": "2023-11-09",
+      "conservative_eligible_at_taipei": "2023-11-17T05:15:00+08:00"
+    },
+    {
+      "session": "2023-11-15",
+      "factor": "fx",
+      "observation_date": "2023-11-09",
+      "conservative_eligible_at_taipei": "2023-11-17T05:15:00+08:00"
+    },
+    {
+      "session": "2023-11-16",
+      "factor": "fx",
+      "observation_date": "2023-11-09",
+      "conservative_eligible_at_taipei": "2023-11-17T05:15:00+08:00"
+    },
+    {
+      "session": "2023-11-16",
+      "factor": "nfci",
+      "observation_date": "2023-11-10",
+      "conservative_eligible_at_taipei": "2023-11-16T21:30:00+08:00"
+    },
+    {
+      "session": "2023-11-21",
+      "factor": "fx",
+      "observation_date": "2023-11-17",
+      "conservative_eligible_at_taipei": "2023-11-24T05:15:00+08:00"
+    },
+    {
+      "session": "2023-11-22",
+      "factor": "fx",
+      "observation_date": "2023-11-17",
+      "conservative_eligible_at_taipei": "2023-11-24T05:15:00+08:00"
+    },
+    {
+      "session": "2023-11-23",
+      "factor": "fx",
+      "observation_date": "2023-11-17",
+      "conservative_eligible_at_taipei": "2023-11-24T05:15:00+08:00"
+    },
+    {
+      "session": "2023-11-23",
+      "factor": "nfci",
+      "observation_date": "2023-11-17",
+      "conservative_eligible_at_taipei": "2023-11-23T21:30:00+08:00"
+    },
+    {
+      "session": "2023-11-28",
+      "factor": "fx",
+      "observation_date": "2023-11-24",
+      "conservative_eligible_at_taipei": "2023-12-01T05:15:00+08:00"
+    },
+    {
+      "session": "2023-11-29",
+      "factor": "fx",
+      "observation_date": "2023-11-24",
+      "conservative_eligible_at_taipei": "2023-12-01T05:15:00+08:00"
+    },
+    {
+      "session": "2023-11-30",
+      "factor": "fx",
+      "observation_date": "2023-11-24",
+      "conservative_eligible_at_taipei": "2023-12-01T05:15:00+08:00"
+    },
+    {
+      "session": "2023-11-30",
+      "factor": "nfci",
+      "observation_date": "2023-11-24",
+      "conservative_eligible_at_taipei": "2023-11-30T21:30:00+08:00"
+    },
+    {
+      "session": "2023-12-05",
+      "factor": "fx",
+      "observation_date": "2023-12-01",
+      "conservative_eligible_at_taipei": "2023-12-08T05:15:00+08:00"
+    },
+    {
+      "session": "2023-12-06",
+      "factor": "fx",
+      "observation_date": "2023-12-01",
+      "conservative_eligible_at_taipei": "2023-12-08T05:15:00+08:00"
+    }
+  ],
+  "policy": {
+    "decision_time": "16:00 Asia/Taipei on each Taiwan cash session",
+    "h10": "Weekly Monday 16:15 US Eastern previous-week rates. Conservative eligible timestamp: next Thursday 16:15 ET, not the historical actual release.",
+    "h15": "Business days 16:15 US Eastern; observation-date schedule proxy, subject to holidays and source posting checks.",
+    "nfci": "Normally Wednesdays 08:30 US Eastern; conservative following Thursday 08:30 ET.",
+    "hy_ig_vix": "ALFRED vintage as-of prior US calendar date but no independently verified source minute; not trading-certified."
+  },
+  "source_urls": {
+    "fx": "https://www.federalreserve.gov/releases/h10/",
+    "us10y": "https://www.federalreserve.gov/releases/h15/",
+    "nfci": "https://www.chicagofed.org/research/data/nfci/current-data",
+    "alfred": "https://fred.stlouisfed.org/docs/api/fred/realtime_period.html"
+  },
+  "actual_publication_timestamps_verified_for_all_718": false,
+  "source_clock_gates_fully_certified": false,
+  "data_revisions_independently_verified_for_all_718": false,
+  "formal_full_model_backtest_authorized": false,
+  "live_threshold_changes_authorized": false
+}
