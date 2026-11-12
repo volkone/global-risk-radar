@@ -2,19 +2,24 @@
   "status": "conservative_time_gate_research_panel_built",
   "sessions": 718,
   "source_pit_sha256": "c5a18734f21611c6e1fe1c7a9c26336889cbd8a2f97199faffe25f2c0ffa9529",
-  "output_sha256": "54e50ec70e571e2c742ec2490e417630f48762b117300ab8605bfff9a969f8f1",
+  "output_sha256": "161505e9ee16550400c21749236ab5d4c4eb3690d07003bbf986ba09b48fe472",
   "factor_eligible_sessions": {
-    "fx": 298,
+    "fx": 718,
     "vix": 718,
     "us10y": 718,
-    "nfci": 597,
+    "nfci": 718,
     "hy": 673,
     "ig": 673
   },
-  "deferred_by_official_schedule_buffer": {
+  "newer_observation_deferred_by_schedule_buffer": {
     "fx": 420,
     "nfci": 121
   },
+  "older_asof_release_eligible_observation_used": {
+    "fx": 420,
+    "nfci": 121
+  },
+  "no_usable_older_observation_after_filter": {},
   "not_source_time_certified_records": {
     "vix": 718,
     "hy": 673,
@@ -24,86 +29,98 @@
     {
       "session": "2023-11-14",
       "factor": "fx",
-      "observation_date": "2023-11-09",
-      "conservative_eligible_at_taipei": "2023-11-17T05:15:00+08:00"
+      "newer_unreleased_observation_date": "2023-11-09",
+      "conservative_earliest_use_at_taipei": "2023-11-17T05:15:00+08:00",
+      "selected_older_observation_date": "2023-11-03",
+      "selected_older_observation_age_days": 11
     },
     {
       "session": "2023-11-15",
       "factor": "fx",
-      "observation_date": "2023-11-09",
-      "conservative_eligible_at_taipei": "2023-11-17T05:15:00+08:00"
+      "newer_unreleased_observation_date": "2023-11-09",
+      "conservative_earliest_use_at_taipei": "2023-11-17T05:15:00+08:00",
+      "selected_older_observation_date": "2023-11-03",
+      "selected_older_observation_age_days": 12
     },
     {
       "session": "2023-11-16",
       "factor": "fx",
-      "observation_date": "2023-11-09",
-      "conservative_eligible_at_taipei": "2023-11-17T05:15:00+08:00"
+      "newer_unreleased_observation_date": "2023-11-09",
+      "conservative_earliest_use_at_taipei": "2023-11-17T05:15:00+08:00",
+      "selected_older_observation_date": "2023-11-03",
+      "selected_older_observation_age_days": 13
     },
     {
       "session": "2023-11-16",
       "factor": "nfci",
-      "observation_date": "2023-11-10",
-      "conservative_eligible_at_taipei": "2023-11-16T21:30:00+08:00"
+      "newer_unreleased_observation_date": "2023-11-10",
+      "conservative_earliest_use_at_taipei": "2023-11-16T21:30:00+08:00",
+      "selected_older_observation_date": "2023-11-03",
+      "selected_older_observation_age_days": 13
     },
     {
       "session": "2023-11-21",
       "factor": "fx",
-      "observation_date": "2023-11-17",
-      "conservative_eligible_at_taipei": "2023-11-24T05:15:00+08:00"
+      "newer_unreleased_observation_date": "2023-11-17",
+      "conservative_earliest_use_at_taipei": "2023-11-24T05:15:00+08:00",
+      "selected_older_observation_date": "2023-11-09",
+      "selected_older_observation_age_days": 12
     },
     {
       "session": "2023-11-22",
       "factor": "fx",
-      "observation_date": "2023-11-17",
-      "conservative_eligible_at_taipei": "2023-11-24T05:15:00+08:00"
+      "newer_unreleased_observation_date": "2023-11-17",
+      "conservative_earliest_use_at_taipei": "2023-11-24T05:15:00+08:00",
+      "selected_older_observation_date": "2023-11-09",
+      "selected_older_observation_age_days": 13
     },
     {
       "session": "2023-11-23",
       "factor": "fx",
-      "observation_date": "2023-11-17",
-      "conservative_eligible_at_taipei": "2023-11-24T05:15:00+08:00"
+      "newer_unreleased_observation_date": "2023-11-17",
+      "conservative_earliest_use_at_taipei": "2023-11-24T05:15:00+08:00",
+      "selected_older_observation_date": "2023-11-09",
+      "selected_older_observation_age_days": 14
     },
     {
       "session": "2023-11-23",
       "factor": "nfci",
-      "observation_date": "2023-11-17",
-      "conservative_eligible_at_taipei": "2023-11-23T21:30:00+08:00"
+      "newer_unreleased_observation_date": "2023-11-17",
+      "conservative_earliest_use_at_taipei": "2023-11-23T21:30:00+08:00",
+      "selected_older_observation_date": "2023-11-10",
+      "selected_older_observation_age_days": 13
     },
     {
       "session": "2023-11-28",
       "factor": "fx",
-      "observation_date": "2023-11-24",
-      "conservative_eligible_at_taipei": "2023-12-01T05:15:00+08:00"
+      "newer_unreleased_observation_date": "2023-11-24",
+      "conservative_earliest_use_at_taipei": "2023-12-01T05:15:00+08:00",
+      "selected_older_observation_date": "2023-11-17",
+      "selected_older_observation_age_days": 11
     },
     {
       "session": "2023-11-29",
       "factor": "fx",
-      "observation_date": "2023-11-24",
-      "conservative_eligible_at_taipei": "2023-12-01T05:15:00+08:00"
+      "newer_unreleased_observation_date": "2023-11-24",
+      "conservative_earliest_use_at_taipei": "2023-12-01T05:15:00+08:00",
+      "selected_older_observation_date": "2023-11-17",
+      "selected_older_observation_age_days": 12
     },
     {
       "session": "2023-11-30",
       "factor": "fx",
-      "observation_date": "2023-11-24",
-      "conservative_eligible_at_taipei": "2023-12-01T05:15:00+08:00"
+      "newer_unreleased_observation_date": "2023-11-24",
+      "conservative_earliest_use_at_taipei": "2023-12-01T05:15:00+08:00",
+      "selected_older_observation_date": "2023-11-17",
+      "selected_older_observation_age_days": 13
     },
     {
       "session": "2023-11-30",
       "factor": "nfci",
-      "observation_date": "2023-11-24",
-      "conservative_eligible_at_taipei": "2023-11-30T21:30:00+08:00"
-    },
-    {
-      "session": "2023-12-05",
-      "factor": "fx",
-      "observation_date": "2023-12-01",
-      "conservative_eligible_at_taipei": "2023-12-08T05:15:00+08:00"
-    },
-    {
-      "session": "2023-12-06",
-      "factor": "fx",
-      "observation_date": "2023-12-01",
-      "conservative_eligible_at_taipei": "2023-12-08T05:15:00+08:00"
+      "newer_unreleased_observation_date": "2023-11-24",
+      "conservative_earliest_use_at_taipei": "2023-11-30T21:30:00+08:00",
+      "selected_older_observation_date": "2023-11-17",
+      "selected_older_observation_age_days": 13
     }
   ],
   "policy": {
@@ -111,7 +128,8 @@
     "h10": "Weekly Monday 16:15 US Eastern previous-week rates. Conservative eligible timestamp: next Thursday 16:15 ET, not the historical actual release.",
     "h15": "Business days 16:15 US Eastern; observation-date schedule proxy, subject to holidays and source posting checks.",
     "nfci": "Normally Wednesdays 08:30 US Eastern; conservative following Thursday 08:30 ET.",
-    "hy_ig_vix": "ALFRED vintage as-of prior US calendar date but no independently verified source minute; not trading-certified."
+    "hy_ig_vix": "ALFRED vintage as-of prior US calendar date but no independently verified source minute; not trading-certified.",
+    "historical_last_known_value": "When most recent ALFRED observation is not yet scheduled release-eligible, select the most recent OLDER observed value available at the prior vintage, at most 21 calendar days old. Never backfill from future."
   },
   "source_urls": {
     "fx": "https://www.federalreserve.gov/releases/h10/",
