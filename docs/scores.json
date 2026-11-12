@@ -1,45 +1,45 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-12T15:06:40.568976+00:00",
+  "generated_at": "2026-11-12T18:20:16.226532+00:00",
   "model_status": "uncalibrated_prototype",
   "disclaimer": "Risk scores are provisional and not validated by historical backtests.",
   "global": {
     "status": "provisional",
-    "score": 23.0,
+    "score": 20.8,
     "coverage": 0.85,
     "min_coverage": 0.85,
     "components": [
       {
         "metric": "hy",
         "weight": 25,
-        "signal": 22.33,
+        "signal": 21.67,
         "eligible": true,
         "reason": null,
-        "contribution": 6.567647058823529
+        "contribution": 6.373529411764705
       },
       {
         "metric": "ig",
         "weight": 10,
-        "signal": 16.4,
+        "signal": 16.0,
         "eligible": true,
         "reason": null,
-        "contribution": 1.9294117647058824
+        "contribution": 1.8823529411764706
       },
       {
         "metric": "vix",
         "weight": 20,
-        "signal": 22.61,
+        "signal": 16.64,
         "eligible": true,
         "reason": null,
-        "contribution": 5.32
+        "contribution": 3.915294117647059
       },
       {
         "metric": "indices",
         "weight": 20,
-        "signal": 32.73,
+        "signal": 30.23,
         "eligible": true,
         "reason": null,
-        "contribution": 7.701176470588234
+        "contribution": 7.1129411764705885
       },
       {
         "metric": "nfci",
@@ -66,7 +66,7 @@
         "contribution": null
       }
     ],
-    "as_of": "2026-11-12T15:06:40.359442+00:00"
+    "as_of": "2026-11-12T18:20:15.983814+00:00"
   },
   "taiwan": {
     "status": "formal_model_blocked",
@@ -151,15 +151,15 @@
   "taiwan_legacy_prototype": {
     "status": "insufficient_coverage",
     "score": null,
-    "coverage": 0.0,
+    "coverage": 0.35,
     "min_coverage": 0.85,
     "components": [
       {
         "metric": "taiex",
         "weight": 35,
-        "signal": null,
-        "eligible": false,
-        "reason": "quality_gate_not_passed"
+        "signal": 37.23,
+        "eligible": true,
+        "reason": null
       },
       {
         "metric": "margin",
