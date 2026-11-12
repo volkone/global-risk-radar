@@ -1,0 +1,57 @@
+name: Freeze future-only risk warning research protocol
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/phase4_freeze_prospective.yml'
+      - 'scripts/freeze_phase4_prospective_protocol.py'
+permissions:
+  contents: write
+jobs:
+  freeze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Freeze pre-forward signal rules and threshold without using unseen future outcomes
+        run: python scripts/freeze_phase4_prospective_protocol.py
+      - name: Check experiment cannot be used for live trading or prior-holdout relabeling
+        run: |
+          python - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          j=json.loads(Path("docs/phase4_frozen_prospective_protocol.json").read_text(encoding="utf-8"))
+          assert j["status"]=="preregistered_research_protocol_awaiting_genuinely_unseen_future_market_data"
+          assert j["quality_gate_status"]=="BLOCKED"
+          assert j["new_unseen_outcome_count"]==0
+          assert j["live_threshold_changes_authorized"] is False
+          assert j["formal_full_model_backtest_authorized"] is False
+          assert j["first_prospective_session_not_used_in_research"]=="2026-11-13"
+          assert j["frozen_artifact_sha256"]["storage/phase4_publication_aware_panel.json"]==hashlib.sha256(
+              Path("storage/phase4_publication_aware_panel.json").read_bytes()).hexdigest()
+          print("Frozen research-only forward experiment:",j["first_prospective_session_not_used_in_research"])
+          print("Threshold (NOT live):",j["alert_score_threshold_frozen_before_future_outcomes"])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: phase4-frozen-forward-research-protocol
+          path: docs/phase4_frozen_prospective_protocol.json
+          if-no-files-found: warn
+      - name: Publish immutable forward research experiment specification
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/phase4_frozen_prospective_protocol.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Freeze prospective-only risk research rules [skip ci]'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
