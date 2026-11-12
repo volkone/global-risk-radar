@@ -99,10 +99,10 @@
   ],
   "gate": {
     "calendar_set_comparison": "718 of 718 matched provisional rule set",
-    "primary_evidence_complete": true,
+    "primary_evidence_complete": false,
     "independent_taifex_calendar_verified": false,
     "full_model_backtest_authorized": false,
-    "reason": "Evidence links reviewed; automated evidence-to-rule consistency checks and full closure sweep not yet performed."
+    "reason": "Four annual PDFs and 2024 Gaemi/Krathon notices verified; remaining typhoon notice links require direct per-page confirmation and full closure sweep before independent signoff."
   },
   "review_note": "Do not infer official calendar validity from agreement with TWSE reference dates or hard-coded exceptions."
 }
