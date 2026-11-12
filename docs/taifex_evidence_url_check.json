@@ -1,0 +1,85 @@
+{
+  "checked_at_utc": "2026-11-12T08:57:06.157803+00:00",
+  "unique_urls": 9,
+  "ok": 9,
+  "failed": 0,
+  "checks": [
+    {
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/%E5%8F%B0%E6%9C%9F%E4%BA%A4%E5%AD%97%E7%AC%AC1110003783%E8%99%9F%E5%87%BD.pdf",
+      "status": "ok",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "bytes": 136952,
+      "sha256": "58a92dde64a64ed161121c682a3d0176eb2598afabb1812c0646444cfe91fc50"
+    },
+    {
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/%E5%8F%B0%E6%9C%9F%E4%BA%A4%E5%AD%97%E7%AC%AC1120003542%E8%99%9F%E5%87%BD.pdf",
+      "status": "ok",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "bytes": 139984,
+      "sha256": "b217fe4dd9fc02fdf39ea6d52bb5a1953a1f00afff5c488c5ea7126721620590"
+    },
+    {
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/%E5%8F%B0%E6%9C%9F%E4%BA%A4%E5%AD%97%E7%AC%AC1140001929%E8%99%9F%E5%87%BD.pdf",
+      "status": "ok",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "bytes": 159974,
+      "sha256": "07af59e66494954e2aedddcc37daaab5c5f94f3df43c97b7348936798aad19d7"
+    },
+    {
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/%E5%8F%B0%E6%9C%9F%E4%BA%A4%E5%AD%97%E7%AC%AC1140003036%E8%99%9F%E5%87%BD.pdf",
+      "status": "ok",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "bytes": 135879,
+      "sha256": "b6900b179b05f9deaf9003f28943a3a7ad4199dec4803412177a308afa849de7"
+    },
+    {
+      "url": "https://www.taifex.com.tw/enl/eng11/newsDetail?idx=8785&newsType=1",
+      "status": "ok",
+      "http_status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 6303,
+      "sha256": "b793b5184ad0ae3e6529ec60e5b3ab40d2550fcc4629bf31ae43e20edbf5fc76"
+    },
+    {
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail.do?idx=15394&thetype=2",
+      "status": "ok",
+      "http_status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 7666,
+      "sha256": "65c9b8787619adb2818a1e794a75550dd40d7dabf1f26417a5356ccd717b06be"
+    },
+    {
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?idx=15446&newsType=1",
+      "status": "ok",
+      "http_status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 7496,
+      "sha256": "879a31aa2d2531c74f11ac7bde35843d4ae727aef7cf62f48c9d7b058918203e"
+    },
+    {
+      "url": "https://www.taifex.com.tw/enl/eng11/newsDetail?idx=10470&newsType=1",
+      "status": "ok",
+      "http_status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 6717,
+      "sha256": "081affb417e2503290d5e00e766a3c9a7ce01ea94e2ad1cfacf14e6996558637"
+    },
+    {
+      "url": "https://www.taifex.com.tw/cht/11/announcement",
+      "status": "ok",
+      "http_status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 218082,
+      "sha256": "431b1f34c409d8dbecdb823b07975bcac50bda55390235402c48f55119f91fcf"
+    }
+  ],
+  "semantic_notice_verification": false,
+  "full_notice_sweep_verified": false,
+  "independent_taifex_calendar_verified": false,
+  "full_model_backtest_authorized": false,
+  "note": "A successful HTTP response does not prove document content, applicability to each session, or archive-wide completeness."
+}
