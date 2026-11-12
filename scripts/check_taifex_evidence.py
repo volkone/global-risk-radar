@@ -1,5 +1,6 @@
 """Fail-closed evidence and calendar gate. Run before any backtest."""
 import json
+import sys
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -15,6 +16,11 @@ source_coverage=len(annual)==4 and all(x.get("official_url","").startswith("http
 special_coverage=expected==covered and all(x.get("official_url","").startswith("https://www.taifex.com.tw/") for x in special)
 data_consistent=(len(dates)==718 and len(set(dates))==718 and len(set(dates)&expected)==0 and not a.get("missing_from_observations") and not a.get("unexpected_observations") and not a.get("duplicate_observation_dates"))
 full_notice_sweep=e.get("gate",{}).get("full_notice_sweep_verified",False) is True
-report={"record_count":len(dates),"annual_source_links_present":source_coverage,"special_source_links_present":special_coverage,"special_date_coverage":len(covered&expected),"calendar_data_consistent":data_consistent,"full_notice_sweep_verified":full_notice_sweep,"independent_taifex_calendar_verified":bool(source_coverage and special_coverage and data_consistent and full_notice_sweep),"full_model_backtest_authorized":False}
+primary_evidence_complete=e.get("gate",{}).get("primary_evidence_complete",False) is True
+
+report={"record_count":len(dates),"annual_source_links_present":source_coverage,"special_source_links_present":special_coverage,"special_date_coverage":len(covered&expected),"calendar_data_consistent":data_consistent,"full_notice_sweep_verified":full_notice_sweep,"primary_evidence_complete":primary_evidence_complete,"independent_taifex_calendar_verified":bool(source_coverage and special_coverage and data_consistent and full_notice_sweep and primary_evidence_complete),"full_model_backtest_authorized":False}
 (ROOT/"docs/taifex_prebacktest_gate.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 print(json.dumps(report,ensure_ascii=False,indent=2))
+if not report["independent_taifex_calendar_verified"]:
+    print("BLOCKED: independent TAIFEX calendar evidence gate is not satisfied",file=sys.stderr)
+    sys.exit(2)
