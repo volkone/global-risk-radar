@@ -5,7 +5,7 @@
     "2026-10-31"
   ],
   "observed_count": 718,
-  "annual_calendar_candidate_count": 728,
+  "annual_calendar_candidate_count": 718,
   "provisional_candidate_only_dates": [
     "2024-07-24",
     "2024-07-25",
@@ -22,7 +22,7 @@
   "duplicate_observation_dates": [],
   "independent_taifex_calendar_verified": false,
   "full_model_backtest_authorized": false,
-  "note": "All 10 provisional differences accounted for by special market closures and revised official holidays. Still requires complete independent source-document verification and a repository-run audit before independent_taifex_calendar_verified can be set true.",
+  "note": "Zero candidate-date differences does not independently verify official closure notices. Retain gate until documentary evidence reviewed.",
   "reconciled_special_closures": {
     "2024-07-24": "Typhoon Gaemi",
     "2024-07-25": "Typhoon Gaemi",
@@ -35,5 +35,8 @@
     "2026-07-10": "Typhoon Bavi",
     "2026-10-23": "Typhoon Changpi"
   },
-  "unresolved_candidate_date_differences": []
+  "unresolved_candidate_date_differences": [],
+  "missing_from_observations": [],
+  "twse_reference_only_discrepancies": [],
+  "execution_method": "Equivalent calendar-set logic evaluated against GitHub source files; GitHub-hosted Python script not executed."
 }
