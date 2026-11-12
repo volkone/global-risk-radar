@@ -102,7 +102,44 @@
     "primary_evidence_complete": false,
     "independent_taifex_calendar_verified": false,
     "full_model_backtest_authorized": false,
-    "reason": "Four annual PDFs and 2024 Gaemi/Krathon notices verified; remaining typhoon notice links require direct per-page confirmation and full closure sweep before independent signoff."
+    "reason": "Individual primary notices verified for several closures, but archive-wide completeness not established; 2024-07-25 still needs separate direct notice. Do not authorize backtest.",
+    "full_notice_sweep_verified": false
   },
-  "review_note": "Do not infer official calendar validity from agreement with TWSE reference dates or hard-coded exceptions."
+  "review_note": "Do not infer official calendar validity from agreement with TWSE reference dates or hard-coded exceptions.",
+  "verified_notice_addendum": [
+    {
+      "dates": [
+        "2024-07-24"
+      ],
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail.do?idx=15239&thetype=2",
+      "finding": "TAIFEX announces full closure regular and after-hours",
+      "status": "verified_direct_page"
+    },
+    {
+      "dates": [
+        "2024-10-02",
+        "2024-10-03"
+      ],
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail.do?idx=15394&thetype=2",
+      "finding": "TAIFEX announces full closure regular and after-hours",
+      "status": "verified_direct_page"
+    },
+    {
+      "dates": [
+        "2024-10-31"
+      ],
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?idx=15446&newsType=1",
+      "finding": "TAIFEX announces full closure regular and after-hours",
+      "status": "verified_direct_page"
+    },
+    {
+      "dates": [
+        "2026-07-10",
+        "2026-10-23"
+      ],
+      "url": "https://www.taifex.com.tw/cht/11/announcement",
+      "finding": "TAIFEX notice listing explicitly describes full closure",
+      "status": "verified_official_listing"
+    }
+  ]
 }
