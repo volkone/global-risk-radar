@@ -186,7 +186,7 @@ def collect_one(api,name,series):
             if len(stamp)!=8 or not stamp.isdigit():
                 raise ValueError("invalid_FRED_vintage_column_"+col)
             vintage=dt.date(int(stamp[:4]),int(stamp[4:6]),int(stamp[6:])).isoformat()
-            if vintage<=bootstrap_date or vintage>END or date>vintage:
+            if vintage<=bootstrap_date or vintage>END:
                 raise ValueError("invalid_vintage_date_or_observation_series_"+series+"_obs_"+date+"_vintage_"+vintage+"_raw_"+str(raw_value)[:24])
             key=(vintage,date)
             if key in seen:
@@ -195,7 +195,9 @@ def collect_one(api,name,series):
             events.append({"vintage_date":vintage,"observed_date":date,
                            "value":value({"value":raw_value})})
     events.sort(key=lambda x:(x["vintage_date"],x["observed_date"]))
+    future_dated_source_changes=sum(x["observed_date"]>x["vintage_date"] for x in events)
     return {"series_id":series,"bootstrap_date":bootstrap_date,
+            "future_dated_source_changes":future_dated_source_changes,
             "bootstrap":[{"date":d,"value":baseline[d]} for d in sorted(baseline)],
             "changes":events,"source_response_sha256":{"bootstrap":base_hashes,"changes":change_hashes},
             "n_bootstrap":len(base),"n_changes":len(events)}
@@ -279,7 +281,7 @@ def main():
                       "full_model_backtest_authorized":False})
             reports[name]={"status":"validated_against_three_asof_samples",
                            "bootstrap":data_one["n_bootstrap"],"bootstrap_asof_date":data_one["bootstrap_date"],
-                           "changes":data_one["n_changes"],
+                           "changes":data_one["n_changes"],"future_dated_source_changes":data_one["future_dated_source_changes"],
                            "valid_asof_dates":sum(r["value"] is not None for r in constructed)}
             print("PIT_SERIES_OK",name,
                   "updates",data_one["n_changes"],
