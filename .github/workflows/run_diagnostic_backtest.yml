@@ -1,0 +1,53 @@
+name: Diagnostic FX TAIEX backtest (not TX full model)
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/run_diagnostic_backtest.yml'
+permissions:
+  contents: write
+jobs:
+  diagnostic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Confirm TX full-model quality gate stays blocked
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          gate=json.loads(Path("docs/taifex_prebacktest_gate.json").read_text(encoding="utf-8"))
+          assert gate["full_model_backtest_authorized"] is False
+          print("TX full-model backtest remains blocked:",gate.get("blockers"))
+          PY
+      - name: Execute separate diagnostic-only FX TAIEX backtest
+        run: python scripts/backtest.py
+      - name: Verify diagnostic report is not represented as full-model validation
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          j=json.loads(Path("docs/backtest.json").read_text(encoding="utf-8"))
+          assert j["full_model_validated"] is False
+          assert j["recommended_live_threshold"] is None
+          assert j["status"] in ("diagnostic_only","insufficient_samples")
+          print("Diagnostic-only result:",j["status"],"sessions:",j["common_sessions"])
+          PY
+      - name: Save diagnostic report
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/backtest.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Save diagnostic-only FX TAIEX backtest [skip ci]'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
