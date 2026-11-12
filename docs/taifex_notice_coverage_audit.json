@@ -1,0 +1,64 @@
+{
+  "window": [
+    "2023-11-11",
+    "2026-10-31"
+  ],
+  "year_summary": [
+    {
+      "year": 2023,
+      "http_status": 200,
+      "selected_year": [
+        "2023"
+      ],
+      "candidate_count": 0,
+      "candidate_notice_ids": [],
+      "pagination_exhaustiveness_verified": false,
+      "limitations": "Only first response was captured; form selection does not prove full archive pagination."
+    },
+    {
+      "year": 2024,
+      "http_status": 200,
+      "selected_year": [
+        "2024"
+      ],
+      "candidate_count": 0,
+      "candidate_notice_ids": [],
+      "pagination_exhaustiveness_verified": false,
+      "limitations": "Only first response was captured; form selection does not prove full archive pagination."
+    },
+    {
+      "year": 2025,
+      "http_status": 200,
+      "selected_year": [
+        "2025"
+      ],
+      "candidate_count": 4,
+      "candidate_notice_ids": [],
+      "pagination_exhaustiveness_verified": false,
+      "limitations": "Only first response was captured; form selection does not prove full archive pagination."
+    },
+    {
+      "year": 2026,
+      "http_status": 200,
+      "selected_year": [
+        "2026"
+      ],
+      "candidate_count": 9,
+      "candidate_notice_ids": [
+        "17441",
+        "17137"
+      ],
+      "pagination_exhaustiveness_verified": false,
+      "limitations": "Only first response was captured; form selection does not prove full archive pagination."
+    }
+  ],
+  "known_special_dates": [],
+  "known_dates_total": 0,
+  "known_dates_in_listing": 0,
+  "year_listing_completeness_verified": false,
+  "full_notice_sweep_verified": false,
+  "primary_evidence_complete": false,
+  "independent_taifex_calendar_verified": false,
+  "full_model_backtest_authorized": false,
+  "next_required": "Identify and verify pagination/query endpoint; reconcile all special closure notices across each year."
+}
