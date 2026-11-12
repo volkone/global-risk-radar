@@ -157,6 +157,9 @@ def collect_one(api,name,series):
     # Multiple changes to same observation on a vintage day must not be ambiguous.
     seen=set()
     events=[]
+    if changes and "realtime_start" not in changes[0]:
+        print("ALFRED_OUTPUT_TYPE_3_FIELD_NAMES",list(changes[0].keys())[:12],flush=True)
+        print("ALFRED_OUTPUT_TYPE_3_FIRST_ROW_VALUE_TYPES",[(k,type(v).__name__) for k,v in list(changes[0].items())[:12]],flush=True)
     for x in changes:
         date=parsed_date(x["date"])
         vintage=parsed_date(x["realtime_start"])
