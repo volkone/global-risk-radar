@@ -58,16 +58,16 @@ def months():
         if m==13:y,m=y+1,1
 
 def main():
-    # The TAIFEX announcement page may require form submission or JavaScript.
-    # Month labels are audit partitions, NOT verified server-side date filters.
     partitions=[]
-    for month in ["unfiltered_listing"]:
+    years=sorted({int(m[:4]) for m in months()})
+    for year in years:
         url=BASE
-        item={"month":month,"url":url,"filter_applied":False,"coverage_verified":False}
+        item={"year":year,"url":url,"request_method":"POST","query_year":str(year),"coverage_verified":False}
         try:
-            req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0"})
-            with urllib.request.urlopen(req,timeout=20) as res:
-                raw=res.read(2_000_000)
+            data=urllib.parse.urlencode({"query_year":str(year)}).encode("ascii")
+            req=urllib.request.Request(url,data=data,headers={"User-Agent":"Mozilla/5.0","Content-Type":"application/x-www-form-urlencoded"})
+            with urllib.request.urlopen(req,timeout=25) as res:
+                raw=res.read(3_000_000)
                 html=raw.decode("utf-8",errors="replace")
                 parser=Links();parser.feed(html)
                 controls=Controls();controls.feed(html)
@@ -77,13 +77,14 @@ def main():
                         absolute=urllib.parse.urljoin(url,href)
                         if urllib.parse.urlparse(absolute).netloc=="www.taifex.com.tw":
                             matches.append({"title":label,"url":absolute})
-                item.update(http_status=res.status,sha256=hashlib.sha256(raw).hexdigest(),candidates=matches,form_controls={"forms":controls.forms,"selects":controls.selects,"buttons":controls.buttons})
+                selected=[o["value"] for sel in controls.selects if sel["name"]=="query_year" for o in sel["options"] if o["selected"]]
+                item.update(http_status=res.status,sha256=hashlib.sha256(raw).hexdigest(),selected_year=selected,year_filter_confirmed=(selected==[str(year)]),candidates=matches,form_controls={"forms":controls.forms,"selects":controls.selects,"buttons":controls.buttons})
         except Exception as exc:
             item["error"]=f"{type(exc).__name__}: {str(exc)[:200]}"
         partitions.append(item)
-    # Never mark a month complete unless date-scoped server-side filtering
-    # and full pagination have been independently verified.
-    result={"window":[START.isoformat(),END.isoformat()],"keywords":KEYWORDS,"partitions":partitions,"partitions_total":len(list(months())),"listing_fetches":len(partitions),"months_pending_verification":list(months()),"partitions_coverage_verified":0,"full_notice_sweep_verified":False,"primary_evidence_complete":False,"independent_taifex_calendar_verified":False,"full_model_backtest_authorized":False,"limitations":"The listing is not proven to be month-filtered or exhaustive; repeated responses must not be counted as independent month coverage."}
-    OUTPUT.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-    print(f"Scanned {len(partitions)} provisional partitions; verified coverage 0; candidates {sum(len(x.get('candidates',[])) for x in partitions)}")
+    # Year selection and matching HTML do not prove pagination completeness.
+    verified_years=[x["year"] for x in partitions if x.get("year_filter_confirmed")]
+    result={"window":[START.isoformat(),END.isoformat()],"keywords":KEYWORDS,"partitions":partitions,"partitions_total":len(list(months())),"listing_fetches":len(partitions),"years_requested":years,"years_filter_confirmed":verified_years,"months_pending_verification":list(months()),"partitions_coverage_verified":0,"full_notice_sweep_verified":False,"primary_evidence_complete":False,"independent_taifex_calendar_verified":False,"full_model_backtest_authorized":False,"limitations":"Year-specific POST requests are exploratory. Selected year and complete server-side pagination must be independently verified; do not infer full archive coverage."}
+    OUTPUT.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
+    print(f"Requested years {years}; selected-year confirmation {verified_years}; candidate notices {sum(len(x.get('candidates',[])) for x in partitions)}; archive coverage remains unverified")
 if __name__=="__main__":main()
