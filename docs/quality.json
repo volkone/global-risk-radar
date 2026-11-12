@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "evaluated_at": "2026-11-11T18:42:20.114245+00:00",
-  "snapshot_updated_at": "2026-11-11T18:42:20.003246+00:00",
-  "history_generated_at": "2026-11-11T18:42:20.061459+00:00",
+  "evaluated_at": "2026-11-12T01:32:51.521567+00:00",
+  "snapshot_updated_at": "2026-11-12T01:32:51.434356+00:00",
+  "history_generated_at": "2026-11-12T01:32:51.483349+00:00",
   "summary": {
-    "pass": 11,
-    "caution": 0,
+    "pass": 10,
+    "caution": 1,
     "blocked": 9
   },
   "metrics": {
@@ -13,7 +13,7 @@
       "quality": "pass",
       "source": "hy",
       "date": "2026-11-09",
-      "age_days": 2,
+      "age_days": 3,
       "errors": [],
       "warnings": []
     },
@@ -21,7 +21,7 @@
       "quality": "pass",
       "source": "ig",
       "date": "2026-11-09",
-      "age_days": 2,
+      "age_days": 3,
       "errors": [],
       "warnings": []
     },
@@ -29,7 +29,7 @@
       "quality": "pass",
       "source": "vix",
       "date": "2026-11-10",
-      "age_days": 1,
+      "age_days": 2,
       "errors": [],
       "warnings": []
     },
@@ -37,7 +37,7 @@
       "quality": "pass",
       "source": "us10y",
       "date": "2026-11-09",
-      "age_days": 2,
+      "age_days": 3,
       "errors": [],
       "warnings": []
     },
@@ -45,7 +45,7 @@
       "quality": "pass",
       "source": "nfci",
       "date": "2026-10-30",
-      "age_days": 12,
+      "age_days": 13,
       "errors": [],
       "warnings": []
     },
@@ -53,7 +53,7 @@
       "quality": "pass",
       "source": "indices",
       "date": "2026-11-11",
-      "age_days": 0,
+      "age_days": 1,
       "errors": [],
       "warnings": []
     },
@@ -61,7 +61,7 @@
       "quality": "blocked",
       "source": "breadth",
       "date": "2026-11-11",
-      "age_days": 0,
+      "age_days": 1,
       "errors": [
         "source_not_verified"
       ],
@@ -149,7 +149,7 @@
       "quality": "pass",
       "source": "margin.margin",
       "date": "2026-11-11",
-      "age_days": 0,
+      "age_days": 1,
       "errors": [],
       "warnings": []
     },
@@ -170,7 +170,7 @@
       "quality": "blocked",
       "source": "inst",
       "date": "2026-11-10",
-      "age_days": 1,
+      "age_days": 2,
       "errors": [
         "source_not_verified",
         "missing_or_invalid_numeric_value",
@@ -179,17 +179,19 @@
       "warnings": []
     },
     "taiex": {
-      "quality": "pass",
+      "quality": "caution",
       "source": "taiex.tw_price",
       "date": "2026-11-10",
-      "age_days": 1,
+      "age_days": 2,
       "errors": [],
-      "warnings": []
+      "warnings": [
+        "taiex_cross_source_not_comparable"
+      ]
     },
     "fx": {
       "quality": "pass",
       "source": "fx",
-      "date": "2026-11-11",
+      "date": "2026-11-12",
       "age_days": 0,
       "errors": [],
       "warnings": []
@@ -198,7 +200,7 @@
       "quality": "pass",
       "source": "inst.cash_inst",
       "date": "2026-11-11",
-      "age_days": 0,
+      "age_days": 1,
       "errors": [],
       "warnings": []
     },
@@ -206,7 +208,7 @@
       "quality": "pass",
       "source": "inst.futures",
       "date": "2026-11-10",
-      "age_days": 1,
+      "age_days": 2,
       "errors": [],
       "warnings": []
     }
@@ -371,6 +373,11 @@
       "metric": "inst",
       "severity": "error",
       "code": "missing_unit"
+    },
+    {
+      "metric": "taiex",
+      "severity": "warning",
+      "code": "taiex_cross_source_not_comparable"
     }
   ],
   "policy": "Only pass metrics are eligible for automatic risk scoring; caution requires review; blocked excluded."
