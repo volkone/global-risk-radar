@@ -1,0 +1,84 @@
+name: Phase 3 point-in-time vintage and robustness audit
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/phase3_pit_robustness.yml'
+      - 'scripts/audit_phase3_vintages.py'
+      - 'scripts/audit_phase3_robustness.py'
+      - 'scripts/check_phase3_readiness.py'
+permissions:
+  contents: write
+concurrency:
+  group: phase3-pit-research-validation
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate original research inputs still match frozen SHA-256
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib,json
+          blob=Path("storage/phase2_joined_panel.json").read_bytes()
+          d=json.loads(Path("docs/phase2_join_audit.json").read_text(encoding="utf-8"))
+          assert hashlib.sha256(blob).hexdigest()==d["snapshot_sha256"]
+          assert d["full_model_backtest_authorized"] is False
+          print("Verified input SHA-256:",d["snapshot_sha256"])
+          PY
+      - name: Query ALFRED as-of vintages on three historical sessions
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+        run: python scripts/audit_phase3_vintages.py
+      - name: Compute fixed post-hoc delay, nonoverlap and regime robustness
+        run: python scripts/audit_phase3_robustness.py
+      - name: Enforce fail-closed Phase 3 readiness gate
+        run: python scripts/check_phase3_readiness.py
+      - name: Validate all reports preserve blocked formal model status
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for name in ["phase3_vintage_audit","phase3_robustness_audit","phase3_readiness_gate"]:
+              report=json.loads(Path("docs/"+name+".json").read_text(encoding="utf-8"))
+              assert report["full_model_backtest_authorized"] is False
+              assert report["live_threshold_changes_authorized"] is False
+          gate=json.loads(Path("docs/phase3_readiness_gate.json").read_text(encoding="utf-8"))
+          assert gate["status"].startswith("BLOCKED_")
+          print("Phase 3 diagnostics completed; formal model remains BLOCKED.")
+          print("Sample vintage conflicts:",gate["source_sample_audit"])
+          PY
+      - name: Upload complete audit reports even if interrupted
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase3-point-in-time-and-robustness
+          if-no-files-found: warn
+          path: |
+            docs/phase3_vintage_audit.json
+            docs/phase3_robustness_audit.json
+            docs/phase3_readiness_gate.json
+      - name: Persist reproducible Phase 3 reports
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for name in phase3_vintage_audit phase3_robustness_audit phase3_readiness_gate; do
+            if test -f "docs/$name.json"; then git add "docs/$name.json"; fi
+          done
+          if ! git diff --cached --quiet; then
+            git commit -m 'Store Phase 3 PIT vintage and robustness audit [skip ci]'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
