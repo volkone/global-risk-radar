@@ -1,0 +1,63 @@
+{
+  "status": "research_only_no_trading_validation",
+  "method": "fixed_direction_6_factor_rank_signal_70_30_chronological_holdout",
+  "signal_observation_timing": "TX/TWSE EOD on date t; earliest action next Taiwan session; US FX/risks strictly prior source date",
+  "research_signal_features": [
+    "foreign_tx_short_pressure",
+    "margin_deleveraging_20d",
+    "institutional_net_selling_5d",
+    "twd_depreciation_20d",
+    "hy_oas_widening_20d",
+    "prior_us_vix_level"
+  ],
+  "fixed_alert_quantile": 0.8,
+  "train_samples": 481,
+  "train_range": [
+    "2023-12-11",
+    "2025-12-04"
+  ],
+  "holdout_range": [
+    "2025-12-05",
+    "2026-10-30"
+  ],
+  "alert_score_threshold_from_train_only": 65.0381,
+  "holdout": {
+    "5d": {
+      "status": "diagnostic_descriptive_only",
+      "warning_event_threshold_pct": -3.0,
+      "holdout_cases": 211,
+      "holdout_event_cases": 53,
+      "holdout_alert_cases": 58,
+      "alerted_event_cases": 25,
+      "holdout_event_base_rate": 0.2512,
+      "alert_precision": 0.431,
+      "mean_alert_forward_return_pct": 0.4473,
+      "mean_alert_worst_forward_drawdown_pct": -2.365,
+      "note": "Forward windows overlap; confidence intervals and effective independent sample size not established."
+    },
+    "20d": {
+      "status": "diagnostic_descriptive_only",
+      "warning_event_threshold_pct": -5.0,
+      "holdout_cases": 196,
+      "holdout_event_cases": 45,
+      "holdout_alert_cases": 49,
+      "alerted_event_cases": 28,
+      "holdout_event_base_rate": 0.2296,
+      "alert_precision": 0.5714,
+      "mean_alert_forward_return_pct": 6.2451,
+      "mean_alert_worst_forward_drawdown_pct": -5.4147,
+      "note": "Forward windows overlap; confidence intervals and effective independent sample size not established."
+    }
+  },
+  "data_sha256": "20e0c7ecf9ead9393b6f1518b1c6cb659ea2745335c00293a253808c4777edc8",
+  "restrictions": [
+    "This is NOT the complete Taiwan/global model or a transaction-cost-adjusted trading strategy.",
+    "Signals use fixed illustrative weights and directions; no optimization against holdout labels.",
+    "FRED publication timing and vintage revision historical verification remains pending.",
+    "Index forward return describes price index changes, not dividend-inclusive investor returns.",
+    "The formal TX evidence gate remains blocked; no live parameter changes."
+  ],
+  "full_model_backtest_authorized": false,
+  "full_model_validated": false,
+  "recommended_live_threshold": null
+}
