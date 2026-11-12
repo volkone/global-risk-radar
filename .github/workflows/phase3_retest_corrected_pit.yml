@@ -1,0 +1,63 @@
+name: Retest six-factor research signal on corrected ALFRED PIT panel
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/phase3_retest_corrected_pit.yml'
+      - 'scripts/retest_phase3_pit_research.py'
+permissions:
+  contents: write
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Recheck original and PIT input audit hashes
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          p=Path("storage/phase3_pit_joined_panel.json")
+          a=json.loads(Path("docs/phase3_pit_join_audit.json").read_text(encoding="utf-8"))
+          assert hashlib.sha256(p.read_bytes()).hexdigest()==a["new_pit_snapshot_sha256"]
+          assert not a["full_model_backtest_authorized"]
+          print("PIT research input fingerprint verified")
+          PY
+      - name: Re-evaluate unchanged 70/30 research design on PIT as-of values
+        run: python scripts/retest_phase3_pit_research.py
+      - name: Assert post-hoc flag and immutable model gate
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path("docs/phase3_pit_research_retest.json").read_text(encoding="utf-8"))
+          assert r["status"]=="research_only_posthoc_PIT_corrected"
+          assert r["full_model_backtest_authorized"] is False
+          assert r["full_model_validated"] is False
+          assert r["recommended_live_threshold"] is None
+          assert len(r["variants"])==2
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: phase3-retest-pit-corrected-research
+          path: docs/phase3_pit_research_retest.json
+          if-no-files-found: warn
+      - name: Store post-hoc research-only comparison
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/phase3_pit_research_retest.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Store post-hoc PIT-corrected risk diagnostics [skip ci]'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
