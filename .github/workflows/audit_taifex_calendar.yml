@@ -19,6 +19,9 @@ jobs:
           python-version: '3.11'
       - name: Audit calendar dates
         run: python scripts/audit_taifex_calendar.py
+      - name: Verify official evidence URL integrity
+        continue-on-error: true
+        run: python scripts/verify_taifex_evidence_urls.py
       - name: Check pre-backtest gate (fail closed)
         run: python scripts/check_taifex_evidence.py
       - name: Save audit reports
@@ -29,6 +32,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add docs/taifex_calendar_audit.json docs/taifex_prebacktest_gate.json
+          if test -f docs/taifex_evidence_url_check.json; then git add docs/taifex_evidence_url_check.json; fi
           if git diff --cached --quiet; then
             echo 'Audit reports unchanged'
           else
