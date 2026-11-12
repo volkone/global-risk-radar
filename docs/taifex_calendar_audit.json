@@ -4,39 +4,19 @@
     "2023-11-11",
     "2026-10-31"
   ],
+  "annual_official_sources": {
+    "2023": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/%E5%8F%B0%E6%9C%9F%E4%BA%A4%E5%AD%97%E7%AC%AC1110003783%E8%99%9F%E5%87%BD.pdf",
+    "2024": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/%E5%8F%B0%E6%9C%9F%E4%BA%A4%E5%AD%97%E7%AC%AC1120003542%E8%99%9F%E5%87%BD.pdf",
+    "2025": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/%E5%8F%B0%E6%9C%9F%E4%BA%A4%E5%AD%97%E7%AC%AC1140001929%E8%99%9F%E5%87%BD.pdf",
+    "2026": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/%E5%8F%B0%E6%9C%9F%E4%BA%A4%E5%AD%97%E7%AC%AC1140003036%E8%99%9F%E5%87%BD.pdf"
+  },
   "observed_count": 718,
   "annual_calendar_candidate_count": 718,
-  "provisional_candidate_only_dates": [
-    "2024-07-24",
-    "2024-07-25",
-    "2024-10-02",
-    "2024-10-03",
-    "2024-10-31",
-    "2025-09-29",
-    "2025-10-24",
-    "2025-12-25",
-    "2026-07-10",
-    "2026-10-23"
-  ],
+  "missing_from_observations": [],
   "unexpected_observations": [],
+  "twse_reference_only_discrepancies": [],
   "duplicate_observation_dates": [],
   "independent_taifex_calendar_verified": false,
   "full_model_backtest_authorized": false,
-  "note": "Zero candidate-date differences does not independently verify official closure notices. Retain gate until documentary evidence reviewed.",
-  "reconciled_special_closures": {
-    "2024-07-24": "Typhoon Gaemi",
-    "2024-07-25": "Typhoon Gaemi",
-    "2024-10-02": "Typhoon Krathon",
-    "2024-10-03": "Typhoon Krathon",
-    "2024-10-31": "Typhoon Kong-rey",
-    "2025-09-29": "Teachers Day observed",
-    "2025-10-24": "Retrocession Day observed",
-    "2025-12-25": "Constitution Day",
-    "2026-07-10": "Typhoon Bavi",
-    "2026-10-23": "Typhoon Changpi"
-  },
-  "unresolved_candidate_date_differences": [],
-  "missing_from_observations": [],
-  "twse_reference_only_discrepancies": [],
-  "execution_method": "Equivalent calendar-set logic evaluated against GitHub source files; GitHub-hosted Python script not executed."
+  "note": "Annual notices alone do not prove absence of typhoon or ad-hoc closures. Resolve all exceptions with dated TAIFEX notices before enabling backtest."
 }
