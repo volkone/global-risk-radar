@@ -43,7 +43,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add docs/data.json docs/history/observations.json docs/quality.json docs/calibration.json docs/backtest.json docs/scores.json storage/history.sqlite
+          git add docs/data.json docs/history/observations.json docs/quality.json docs/calibration.json docs/backtest.json docs/scores.json docs/risk_dashboard.json storage/history.sqlite
           if ! git diff --cached --quiet; then
             git commit -m 'Update radar snapshot [skip ci]'
             for attempt in 1 2 3; do

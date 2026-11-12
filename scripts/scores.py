@@ -101,6 +101,8 @@ def evaluate(data, quality):
 def main():
     report = evaluate(json.loads(DATA.read_text(encoding="utf-8")),
                       json.loads(QUALITY.read_text(encoding="utf-8")))
+    from dashboard_scores import integrate
+    report = integrate(report, json.loads(DATA.read_text(encoding="utf-8")))
     OUT.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
     print("Scores:", {k: (report[k]["status"], report[k]["coverage"]) for k in ("global", "taiwan")})
 
