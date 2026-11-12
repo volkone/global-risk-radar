@@ -1,12 +1,5 @@
 name: Verify TAIFEX official source provenance
 on:
-  push:
-    paths:
-      - 'scripts/verify_taifex_sources.py'
-      - '.github/workflows/verify_taifex_sources.yml'
-      - '.github/workflows/taifex_verification_fallback.yml'
-  schedule:
-    - cron: '*/5 * * * *'
   workflow_dispatch:
 permissions:
   contents: write
