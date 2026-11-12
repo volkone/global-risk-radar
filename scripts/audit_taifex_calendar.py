@@ -20,7 +20,7 @@ SOURCES={
 CLOSED={
   2023:[],
   2024:["01-01","02-06","02-07","02-08","02-09","02-12","02-13","02-14","02-28","04-04","04-05","05-01","06-10","09-17","10-10"],
-  2025:["01-01","01-23","01-24","01-27","01-28","01-29","01-30","01-31","02-28","04-03","04-04","05-01","05-30","10-06","10-10"],
+  2025:["09-29","10-24","12-25","01-01","01-23","01-24","01-27","01-28","01-29","01-30","01-31","02-28","04-03","04-04","05-01","05-30","10-06","10-10"],
   2026:["01-01","02-12","02-13","02-16","02-17","02-18","02-19","02-20","02-27","04-03","04-06","05-01","06-19","09-25","09-28","10-09","10-26"],
 }
 def main():
@@ -29,14 +29,15 @@ def main():
         twse={r["date"] for r in csv.DictReader(f) if r["is_trading_day"]=="1"}
     observed={r["date"] for r in records}
     holidays={f"{y}-{d}" for y,days in CLOSED.items() for d in days}
+    ad_hoc_closed={"2024-07-24","2024-07-25","2024-10-02","2024-10-03","2024-10-31","2026-07-10","2026-10-23"}
     days=set()
     d=START
     while d<=END:
-        if d.weekday()<5 and d.isoformat() not in holidays:
+        if d.weekday()<5 and d.isoformat() not in holidays and d.isoformat() not in ad_hoc_closed:
             days.add(d.isoformat())
         d+=dt.timedelta(days=1)
     result={
-      "status":"needs_ad_hoc_closure_review",
+      "status":"calendar_dates_reconciled_pending_documentary_audit",
       "window":[START.isoformat(),END.isoformat()],
       "annual_official_sources":SOURCES,
       "observed_count":len(records),
