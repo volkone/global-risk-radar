@@ -1,7 +1,5 @@
 name: TAIFEX source verification fallback
 on:
-  schedule:
-    - cron: '17 * * * *'
   workflow_dispatch:
 permissions:
   contents: write
