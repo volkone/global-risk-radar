@@ -1,10 +1,10 @@
 {
   "status": "blocked",
   "total_records": 718,
-  "checked_records": 350,
+  "checked_records": 360,
   "retry_after_utc": null,
   "counts": {
-    "pass": 340,
+    "pass": 350,
     "hash_mismatch": 0,
     "value_mismatch": 0,
     "fetch_or_parse_error": 10,
@@ -2103,6 +2103,66 @@
       "record_fingerprint": "c6544632e41ccf9edce9c5a5e87955ef4fe6b6c391702a31ed5146814140b875",
       "actual_sha256": "b8ba5ae0fa963c3ea80ddfb248fbfb89af40b8b2050041ae2035ddc41e0c18ee",
       "expected_sha256": "b8ba5ae0fa963c3ea80ddfb248fbfb89af40b8b2050041ae2035ddc41e0c18ee"
+    },
+    "2025-04-29": {
+      "status": "pass",
+      "record_fingerprint": "be7ba124e3ea37c276828ba16eee182b95b80ce9e5c42eda3065ba7be760d29a",
+      "actual_sha256": "a7c8710961138938fc72891ce4fc7ae944c2296a732932bd3147530fcd8a73f1",
+      "expected_sha256": "a7c8710961138938fc72891ce4fc7ae944c2296a732932bd3147530fcd8a73f1"
+    },
+    "2025-04-30": {
+      "status": "pass",
+      "record_fingerprint": "b629a77141aa1842c5d62ca329beed320988324605b028cecd809042592848fa",
+      "actual_sha256": "c0e9993c12f07d24cc3221e05cbca3c7f0c5c18f9917afb2402bf585b4519e1a",
+      "expected_sha256": "c0e9993c12f07d24cc3221e05cbca3c7f0c5c18f9917afb2402bf585b4519e1a"
+    },
+    "2025-05-02": {
+      "status": "pass",
+      "record_fingerprint": "b7f94ae83da770cce7f53f12571eafe226d46caac8959e2593808f45f2467615",
+      "actual_sha256": "6bf81a2514bf22ca234dea5a730cc4b0907893ffed23dca9efa4883cd7158159",
+      "expected_sha256": "6bf81a2514bf22ca234dea5a730cc4b0907893ffed23dca9efa4883cd7158159"
+    },
+    "2025-05-05": {
+      "status": "pass",
+      "record_fingerprint": "90de1d45d0d2feb2cd8f201f80471b4bfcb06def0e27634bdecfa9ca7844ca6e",
+      "actual_sha256": "b6ba03f3f701dd657082889aa00be6bc2f58b2dfa05a48f3a291c8162ad675f9",
+      "expected_sha256": "b6ba03f3f701dd657082889aa00be6bc2f58b2dfa05a48f3a291c8162ad675f9"
+    },
+    "2025-05-06": {
+      "status": "pass",
+      "record_fingerprint": "00f61f8739f51a7b21ab8553b2f36d166a2cfeb3a291a0caae5f3bcc10e68d15",
+      "actual_sha256": "e361fd667d28f750adfb3670d180abdcf37c034cc476f028cf0db88f928b62cb",
+      "expected_sha256": "e361fd667d28f750adfb3670d180abdcf37c034cc476f028cf0db88f928b62cb"
+    },
+    "2025-05-07": {
+      "status": "pass",
+      "record_fingerprint": "c90d4e6393bff0394e9aa9d6d5853b5cc8d681ae19d8753d9df12e1c49533568",
+      "actual_sha256": "30bd00afa15be3d21a9b939b53d7fb7d1a2948b335f37122bdde29070240afec",
+      "expected_sha256": "30bd00afa15be3d21a9b939b53d7fb7d1a2948b335f37122bdde29070240afec"
+    },
+    "2025-05-08": {
+      "status": "pass",
+      "record_fingerprint": "903b3a3915e0c3c533081932f1c53022ed4ffa30da6aeaa560f219b2f39c36e3",
+      "actual_sha256": "e22e26512953572bde4a909db20f2618a8e79fa338f6f6a5527d0dac4443cefe",
+      "expected_sha256": "e22e26512953572bde4a909db20f2618a8e79fa338f6f6a5527d0dac4443cefe"
+    },
+    "2025-05-09": {
+      "status": "pass",
+      "record_fingerprint": "cff18ea6759a12f22d9bc0fa1069a34a5ffcab713c9b9c89b1117ec2866618a1",
+      "actual_sha256": "cb5c6e525ba5cd53ae77d6e4b92289742509a6b9ec6f9f196d9b88b98bff62cd",
+      "expected_sha256": "cb5c6e525ba5cd53ae77d6e4b92289742509a6b9ec6f9f196d9b88b98bff62cd"
+    },
+    "2025-05-12": {
+      "status": "pass",
+      "record_fingerprint": "621e2ff6eaeb32e78dc6b2334f0b6c073e0c7b781c1de2ebe0dcaff9c9016ea8",
+      "actual_sha256": "c8a41f94a608f9a23dcf5659fbeec6f7182a5600bae4910becb9e48bd0ab245a",
+      "expected_sha256": "c8a41f94a608f9a23dcf5659fbeec6f7182a5600bae4910becb9e48bd0ab245a"
+    },
+    "2025-05-13": {
+      "status": "pass",
+      "record_fingerprint": "be08b31a6cc03fbf2cb5e69009f98a9d2552943db6d42ab023558d28689a920a",
+      "actual_sha256": "8ea2104202f2cddcd5ffcba4a04b09ea6f71698b090b53ee3a63bff9d1b41bb9",
+      "expected_sha256": "8ea2104202f2cddcd5ffcba4a04b09ea6f71698b090b53ee3a63bff9d1b41bb9"
     }
   }
 }
