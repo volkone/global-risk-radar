@@ -44,7 +44,8 @@ jobs:
           assert not a["formal_full_model_backtest_authorized"]
           assert not b["full_model_backtest_authorized"]
           print("PIT as-of sample:",b["counts"])
-          print("Publisher buffer deferred:",a["deferred_by_official_schedule_buffer"])
+          print("Publisher buffer deferred:",a["newer_observation_deferred_by_schedule_buffer"])
+          print("Older PIT observations recovered:",a["older_asof_release_eligible_observation_used"])
           PY
       - name: Upload audit evidence regardless of pass/failure
         if: always()
