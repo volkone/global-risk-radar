@@ -1,0 +1,49 @@
+name: Discover TAIFEX official notices
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/scan_taifex_notices.yml'
+permissions:
+  contents: write
+concurrency:
+  group: taifex-notice-discovery
+  cancel-in-progress: false
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Scan official TAIFEX notice listing
+        run: python scripts/scan_taifex_notice_archive.py
+      - name: Validate report and preserve blocked state
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("docs/taifex_notice_archive_scan.json")
+          j=json.loads(p.read_text(encoding="utf-8"))
+          assert j["full_notice_sweep_verified"] is False
+          assert j["full_model_backtest_authorized"] is False
+          assert j["listing_fetches"]==1
+          print("Discovery completed; archive coverage is NOT verified")
+          PY
+      - name: Save discovery report
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/taifex_notice_archive_scan.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Save TAIFEX notice discovery candidates [skip ci]'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
