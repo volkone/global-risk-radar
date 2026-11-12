@@ -1,0 +1,65 @@
+name: Phase 2 research-only TX risk diagnostic
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/phase2_research_diagnostic.yml'
+      - 'scripts/backtest_phase2_research.py'
+permissions:
+  contents: write
+jobs:
+  diagnostic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate input panel snapshot and research-only authorization
+        run: |
+          python - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          panel=Path("storage/phase2_joined_panel.json")
+          audit=json.loads(Path("docs/phase2_join_audit.json").read_text(encoding="utf-8"))
+          assert hashlib.sha256(panel.read_bytes()).hexdigest()==audit["snapshot_sha256"]
+          assert audit["full_model_backtest_authorized"] is False
+          assert audit["field_coverage_count"]["taiex_close"]==718
+          assert audit["field_coverage_count"]["tx_oi"]==718
+          print("Research-only input snapshot verified")
+          PY
+      - name: Execute fixed-rule chronological 70/30 diagnostic holdout
+        run: python scripts/backtest_phase2_research.py
+      - name: Enforce non-trading experimental interpretation
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=json.loads(Path("docs/phase2_risk_research_backtest.json").read_text(encoding="utf-8"))
+          assert p["full_model_backtest_authorized"] is False
+          assert p.get("full_model_validated",False) is False
+          assert p.get("recommended_live_threshold") is None
+          assert p["status"]=="research_only_no_trading_validation"
+          print("Research-only diagnostic:",p["holdout"])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: phase2-research-diagnostic
+          path: docs/phase2_risk_research_backtest.json
+          if-no-files-found: warn
+      - name: Save research-only diagnostic
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/phase2_risk_research_backtest.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Save TX risk research-only chronological holdout [skip ci]'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
