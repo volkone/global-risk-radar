@@ -9,7 +9,7 @@ concurrency:
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
@@ -17,21 +17,21 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Verify up to 50 records, checkpoint every 10
+      - name: Verify up to 100 records, checkpoint every 10
         shell: bash
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          for chunk in 1 2 3 4 5; do
-            echo "TAIFEX verification chunk ${chunk}/5 (up to 10 records)"
+          for chunk in 1 2 3 4 5 6 7 8 9 10; do
+            echo "TAIFEX verification chunk ${chunk}/10 (up to 10 records)"
             python scripts/verify_taifex_sources.py --limit 10
             git add docs/taifex_source_verification.json
             if git diff --cached --quiet; then
               echo "No new verification results; stopping."
               break
             fi
-            git commit -m "Checkpoint TAIFEX source verification chunk ${chunk}/5 [skip ci]"
+            git commit -m "Checkpoint TAIFEX source verification chunk ${chunk}/10 [skip ci]"
             git fetch origin main
             git rebase origin/main
             git push origin HEAD:main
