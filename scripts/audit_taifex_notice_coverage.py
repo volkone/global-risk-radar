@@ -22,8 +22,9 @@ for entry in evidence.get("special_dates",[]):
     url=entry.get("official_url","")
     for date in entry.get("dates",[]):
         if "2023-11-11"<=date<="2026-10-31":
-            matches=[p["year"] for p in scan["partitions"] if any(x["url"]==url for x in p.get("candidates",[]))]
-            known.append({"date":date,"evidence_url":url,"found_in_candidate_listing":bool(matches),"listing_years":matches})
+            evidence_ids=set(parse_qs(urlparse(url).query).get("idx",[]))
+            matches=[p["year"] for p in scan["partitions"] if any(x["url"]==url or (evidence_ids and evidence_ids.intersection(parse_qs(urlparse(x["url"]).query).get("idx",[]))) for x in p.get("candidates",[]))]
+            known.append({"date":date,"evidence_url":url,"found_in_candidate_listing":bool(matches),"listing_years":matches,"matching_rule":"exact_url_or_official_notice_idx","warning":"Listing absence does not invalidate direct primary evidence"})
 assert known, "Expected known special closure dates from evidence ledger"
 report={"window":scan["window"],"year_summary":rows,"known_special_dates":known,"known_dates_total":len(known),"known_dates_in_listing":sum(x["found_in_candidate_listing"] for x in known),"year_listing_completeness_verified":False,"full_notice_sweep_verified":False,"primary_evidence_complete":False,"independent_taifex_calendar_verified":False,"full_model_backtest_authorized":False,"next_required":"Identify and verify pagination/query endpoint; reconcile all special closure notices across each year."}
 out=ROOT/"docs/taifex_notice_coverage_audit.json"
