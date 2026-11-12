@@ -43,7 +43,7 @@ def main():
     # The TAIFEX announcement page may require form submission or JavaScript.
     # Month labels are audit partitions, NOT verified server-side date filters.
     partitions=[]
-    for month in months():
+    for month in ["unfiltered_listing"]:
         url=BASE
         item={"month":month,"url":url,"filter_applied":False,"coverage_verified":False}
         try:
@@ -64,7 +64,7 @@ def main():
         partitions.append(item)
     # Never mark a month complete unless date-scoped server-side filtering
     # and full pagination have been independently verified.
-    result={"window":[START.isoformat(),END.isoformat()],"keywords":KEYWORDS,"partitions":partitions,"partitions_total":len(partitions),"partitions_coverage_verified":0,"full_notice_sweep_verified":False,"primary_evidence_complete":False,"independent_taifex_calendar_verified":False,"full_model_backtest_authorized":False,"limitations":"The listing is not proven to be month-filtered or exhaustive; repeated responses must not be counted as independent month coverage."}
+    result={"window":[START.isoformat(),END.isoformat()],"keywords":KEYWORDS,"partitions":partitions,"partitions_total":len(list(months())),"listing_fetches":len(partitions),"months_pending_verification":list(months()),"partitions_coverage_verified":0,"full_notice_sweep_verified":False,"primary_evidence_complete":False,"independent_taifex_calendar_verified":False,"full_model_backtest_authorized":False,"limitations":"The listing is not proven to be month-filtered or exhaustive; repeated responses must not be counted as independent month coverage."}
     OUTPUT.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(f"Scanned {len(partitions)} provisional partitions; verified coverage 0; candidates {sum(len(x.get('candidates',[])) for x in partitions)}")
 if __name__=="__main__":main()
