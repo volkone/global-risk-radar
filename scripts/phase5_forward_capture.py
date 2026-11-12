@@ -155,6 +155,18 @@ def gather(day,started):
         except Exception as exc:
             errors[name]=type(exc).__name__+":"+str(exc)[:160]
     collect("taiex",tw_url,lambda b: parse_fmtqik(b,day))
+    # At month boundaries obtain the final prior-month trading-session list.
+    # This detects missing last-of-month sessions even if no snapshot was
+    # collected on the final business day. It is source evidence, not a
+    # backdated prospective forecast or first-seen historical market data.
+    if int(day[-2:])<=8:
+        previous_end=dt.date.fromisoformat(day[:7]+"-01")-dt.timedelta(days=1)
+        prior_day=previous_end.isoformat()
+        prior_month=prior_day.replace("-","")[:6]
+        previous_url="https://www.twse.com.tw/rwd/zh/afterTrading/FMTQIK?"+urllib.parse.urlencode(
+            {"response":"json","date":prior_month+"01"})
+        collect("previous_month_calendar",previous_url,
+                lambda blob: parse_fmtqik(blob,prior_day))
     datearg=day.replace("-","")
     margin_url="https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?"+urllib.parse.urlencode(
         {"date":datearg,"selectType":"ALL","response":"json"})
