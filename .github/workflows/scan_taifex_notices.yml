@@ -5,6 +5,7 @@ on:
     paths:
       - '.github/workflows/scan_taifex_notices.yml'
       - 'scripts/scan_taifex_notice_archive.py'
+      - 'scripts/audit_taifex_notice_coverage.py'
 permissions:
   contents: write
 concurrency:
@@ -36,13 +37,15 @@ jobs:
           assert j["years_requested"]==[2023,2024,2025,2026]
           print("Discovery completed; archive coverage is NOT verified")
           PY
+      - name: Audit known closure notices and year coverage
+        run: python scripts/audit_taifex_notice_coverage.py
       - name: Save discovery report
         shell: bash
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add docs/taifex_notice_archive_scan.json
+          git add docs/taifex_notice_archive_scan.json docs/taifex_notice_coverage_audit.json
           if ! git diff --cached --quiet; then
             git commit -m 'Save TAIFEX notice discovery candidates [skip ci]'
             git fetch origin main
