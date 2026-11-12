@@ -154,22 +154,30 @@ def collect_one(api,name,series):
             if d in baseline:
                 raise ValueError("duplicate_bootstrap_date")
             baseline[d]=v
-    # Multiple changes to same observation on a vintage day must not be ambiguous.
+    # FRED JSON output_type=3 is a wide pivot: each observation row includes
+    # a date plus series_id_YYYYMMDD columns for NEW or REVISED vintages.
+    # It is NOT a list of records carrying realtime_start, as output_type=1 is.
     seen=set()
     events=[]
-    if changes and "realtime_start" not in changes[0]:
-        print("ALFRED_OUTPUT_TYPE_3_FIELD_NAMES",list(changes[0].keys())[:12],flush=True)
-        print("ALFRED_OUTPUT_TYPE_3_FIRST_ROW_VALUE_TYPES",[(k,type(v).__name__) for k,v in list(changes[0].items())[:12]],flush=True)
+    prefix=series+"_"
     for x in changes:
         date=parsed_date(x["date"])
-        vintage=parsed_date(x["realtime_start"])
-        if vintage<UPDATES_START or vintage>END or date>vintage:
-            raise ValueError("invalid_vintage_date_or_observation")
-        key=(vintage,date)
-        if key in seen:
-            raise ValueError("duplicate_FRED_vintage_observation")
-        seen.add(key)
-        events.append({"vintage_date":vintage,"observed_date":date,"value":value(x)})
+        columns=[(k,v) for k,v in x.items() if k.startswith(prefix)]
+        if not columns:
+            raise ValueError("missing_FRED_wide_vintage_columns")
+        for col,raw_value in columns:
+            stamp=col[len(prefix):]
+            if len(stamp)!=8 or not stamp.isdigit():
+                raise ValueError("invalid_FRED_vintage_column_"+col)
+            vintage=dt.date(int(stamp[:4]),int(stamp[4:6]),int(stamp[6:])).isoformat()
+            if vintage<UPDATES_START or vintage>END or date>vintage:
+                raise ValueError("invalid_vintage_date_or_observation")
+            key=(vintage,date)
+            if key in seen:
+                raise ValueError("duplicate_FRED_vintage_observation")
+            seen.add(key)
+            events.append({"vintage_date":vintage,"observed_date":date,
+                           "value":value({"value":raw_value})})
     events.sort(key=lambda x:(x["vintage_date"],x["observed_date"]))
     return {"series_id":series,"bootstrap_date":BOOTSTRAP_DATE,
             "bootstrap":[{"date":d,"value":baseline[d]} for d in sorted(baseline)],
