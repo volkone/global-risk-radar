@@ -1,5 +1,5 @@
 {
-  "status": "needs_ad_hoc_closure_review",
+  "status": "calendar_dates_reconciled_pending_documentary_audit",
   "window": [
     "2023-11-11",
     "2026-10-31"
@@ -22,5 +22,18 @@
   "duplicate_observation_dates": [],
   "independent_taifex_calendar_verified": false,
   "full_model_backtest_authorized": false,
-  "note": "Provisional JavaScript execution of the audit's hard-coded holiday logic against live GitHub data. Candidate-only dates are NOT confirmed missing sessions; independently validate official annual calendars, statutory holiday changes, typhoon and ad-hoc closures before unlocking."
+  "note": "All 10 provisional differences accounted for by special market closures and revised official holidays. Still requires complete independent source-document verification and a repository-run audit before independent_taifex_calendar_verified can be set true.",
+  "reconciled_special_closures": {
+    "2024-07-24": "Typhoon Gaemi",
+    "2024-07-25": "Typhoon Gaemi",
+    "2024-10-02": "Typhoon Krathon",
+    "2024-10-03": "Typhoon Krathon",
+    "2024-10-31": "Typhoon Kong-rey",
+    "2025-09-29": "Teachers Day observed",
+    "2025-10-24": "Retrocession Day observed",
+    "2025-12-25": "Constitution Day",
+    "2026-07-10": "Typhoon Bavi",
+    "2026-10-23": "Typhoon Changpi"
+  },
+  "unresolved_candidate_date_differences": []
 }
