@@ -1,6 +1,6 @@
 """Conservative, reproducible discovery of TAIFEX official closure notices.
 
-Searches an official announcements listing by month, saving candidate links.
+Fetches the unfiltered official announcements listing, saves candidate links\nand discovers year-selection form controls for a future verified archive sweep.
 Discovery is NOT proof of exhaustive archive coverage; never auto-unlocks gates.
 """
 import datetime as dt
@@ -32,6 +32,24 @@ class Links(HTMLParser):
             self.links.append((self.href," ".join(" ".join(self.label).split())))
             self.href=None;self.label=[]
 
+
+class Controls(HTMLParser):
+    """Capture actual form and year-select controls without guessing API params."""
+    def __init__(self):
+        super().__init__();self.forms=[];self.selects=[];self.buttons=[];self.current=None
+    def handle_starttag(self,tag,attrs):
+        d=dict(attrs)
+        if tag=="form":self.forms.append({"action":d.get("action"),"method":d.get("method","GET")})
+        if tag=="select":
+            self.current={"name":d.get("name"),"id":d.get("id"),"options":[]}
+            self.selects.append(self.current)
+        if tag=="option" and self.current is not None:
+            self.current["options"].append({"value":d.get("value"),"selected":"selected" in d})
+        if tag in ("button","input") and (tag=="button" or d.get("type") in ("submit","button")):
+            self.buttons.append({"tag":tag,"name":d.get("name"),"id":d.get("id"),"value":d.get("value")})
+    def handle_endtag(self,tag):
+        if tag=="select":self.current=None
+
 def months():
     y,m=START.year,START.month
     while (y,m)<=(END.year,END.month):
@@ -52,13 +70,14 @@ def main():
                 raw=res.read(2_000_000)
                 html=raw.decode("utf-8",errors="replace")
                 parser=Links();parser.feed(html)
+                controls=Controls();controls.feed(html)
                 matches=[]
                 for href,label in parser.links:
                     if any(k in label for k in KEYWORDS):
                         absolute=urllib.parse.urljoin(url,href)
                         if urllib.parse.urlparse(absolute).netloc=="www.taifex.com.tw":
                             matches.append({"title":label,"url":absolute})
-                item.update(http_status=res.status,sha256=hashlib.sha256(raw).hexdigest(),candidates=matches)
+                item.update(http_status=res.status,sha256=hashlib.sha256(raw).hexdigest(),candidates=matches,form_controls={"forms":controls.forms,"selects":controls.selects,"buttons":controls.buttons})
         except Exception as exc:
             item["error"]=f"{type(exc).__name__}: {str(exc)[:200]}"
         partitions.append(item)
