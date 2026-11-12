@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - '.github/workflows/scan_taifex_notices.yml'
+      - 'scripts/scan_taifex_notice_archive.py'
 permissions:
   contents: write
 concurrency:
