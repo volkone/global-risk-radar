@@ -78,15 +78,24 @@ def main():
                         absolute=urllib.parse.urljoin(url,href)
                         if urllib.parse.urlparse(absolute).netloc=="www.taifex.com.tw":
                             matches.append({"title":label,"url":absolute})
+                official_notice_links=[]
+                for href,label in parser.links:
+                    absolute=urllib.parse.urljoin(url,href)
+                    parsed=urllib.parse.urlparse(absolute)
+                    if parsed.netloc=="www.taifex.com.tw" and ("/cht/11/newsDetail" in parsed.path or "/enl/eng11/newsDetail" in parsed.path or "/file/taifex/CHINESE/11/attach/" in parsed.path):
+                        official_notice_links.append({"title":label,"url":absolute})
+                official_notice_links=list({x["url"]:x for x in official_notice_links}.values())
+                # Only page controls tied to the announcement form count; unrelated site carousel links do not.
+                page_controls=[{"name":i.get("name"),"value":i.get("value")} for i in controls.inputs if i.get("name") and re.search(r"page|offset|start|rows",i["name"],re.I)]
                 selected=[o["value"] for sel in controls.selects if sel["name"]=="query_year" for o in sel["options"] if o["selected"]]
                 pagination_links=[{"label":label,"url":urllib.parse.urljoin(url,href)} for href,label in parser.links if re.search(r"(下一頁|上一頁|末頁|首頁|next|prev|page|分頁|^[0-9]{1,3}$)",label,re.I) or re.search(r"(page|offset|start|pagination)",href,re.I)]
-                item.update(pagination_links=pagination_links[:100],html_pagination_hints=re.findall(r".{0,65}(?:totalPage|totalCount|pageSize|currentPage|query_year|pagination|pageNo).{0,100}",html,re.I)[:35],http_status=res.status,sha256=hashlib.sha256(raw).hexdigest(),selected_year=selected,year_filter_confirmed=(selected==[str(year)]),candidates=matches,form_controls={"forms":controls.forms,"selects":controls.selects,"buttons":controls.buttons,"inputs":controls.inputs})
+                item.update(official_notice_links=official_notice_links,official_notice_link_count=len(official_notice_links),announcement_page_controls=page_controls,pagination_links=pagination_links[:100],html_pagination_hints=re.findall(r".{0,65}(?:totalPage|totalCount|pageSize|currentPage|query_year|pagination|pageNo).{0,100}",html,re.I)[:35],http_status=res.status,sha256=hashlib.sha256(raw).hexdigest(),selected_year=selected,year_filter_confirmed=(selected==[str(year)]),candidates=matches,form_controls={"forms":controls.forms,"selects":controls.selects,"buttons":controls.buttons,"inputs":controls.inputs})
         except Exception as exc:
             item["error"]=f"{type(exc).__name__}: {str(exc)[:200]}"
         partitions.append(item)
     # Year selection and matching HTML do not prove pagination completeness.
     verified_years=[x["year"] for x in partitions if x.get("year_filter_confirmed")]
-    result={"window":[START.isoformat(),END.isoformat()],"keywords":KEYWORDS,"partitions":partitions,"partitions_total":len(list(months())),"listing_fetches":len(partitions),"years_requested":years,"years_filter_confirmed":verified_years,"months_pending_verification":list(months()),"partitions_coverage_verified":0,"full_notice_sweep_verified":False,"primary_evidence_complete":False,"independent_taifex_calendar_verified":False,"full_model_backtest_authorized":False,"limitations":"Year-specific POST requests are exploratory. Selected year and complete server-side pagination must be independently verified; do not infer full archive coverage."}
+    result={"window":[START.isoformat(),END.isoformat()],"keywords":KEYWORDS,"partitions":partitions,"partitions_total":len(list(months())),"listing_fetches":len(partitions),"years_requested":years,"years_filter_confirmed":verified_years,"months_pending_verification":list(months()),"partitions_coverage_verified":0,"full_notice_sweep_verified":False,"primary_evidence_complete":False,"independent_taifex_calendar_verified":False,"full_model_backtest_authorized":False,"limitations":"Year-specific POST requests are exploratory. No announcement-specific pagination controls have been proven; generic website carousel and page links are not evidence of archive pagination. Do not infer full archive coverage."}
     OUTPUT.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(f"Requested years {years}; selected-year confirmation {verified_years}; candidate notices {sum(len(x.get('candidates',[])) for x in partitions)}; archive coverage remains unverified")
 if __name__=="__main__":main()
