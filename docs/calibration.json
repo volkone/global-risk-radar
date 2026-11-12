@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-12T14:33:16.382006+00:00",
+  "generated_at": "2026-11-12T14:33:44.760168+00:00",
   "model_status": "research_only_not_backtested",
   "notes": [
     "Percentile calibration is descriptive, not a validated predictive risk threshold.",

@@ -5,7 +5,7 @@
     "tw_margin": "2026-11-11T16:43:06.654465+00:00",
     "tw_tw_price": "2026-11-11T16:43:06.654465+00:00"
   },
-  "updated_utc": "2026-11-12T14:33:16.268143+00:00",
+  "updated_utc": "2026-11-12T14:33:44.598609+00:00",
   "request_stats": {
     "requests": 6,
     "success": 6,
@@ -1628,7 +1628,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 28039.74,
+      "value": 28053.293,
       "date": "2026-11-12",
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ENDX/",
@@ -1991,13 +1991,13 @@
         },
         {
           "date": "2026-11-12",
-          "value": 28039.74
+          "value": 28053.293
         }
       ],
-      "drawdown_pct": 10.2,
+      "drawdown_pct": 10.16,
       "reference": "近一年最高收盤價",
-      "spx": 7570.56,
-      "checked_at": "2026-11-12T14:33:14.850888+00:00"
+      "spx": 7572.8,
+      "checked_at": "2026-11-12T14:33:44.152023+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -2006,7 +2006,7 @@
       "frequency": "daily",
       "status": "partial",
       "reason": "只有半導體相對強弱，市場廣度未取得",
-      "value": 0.3658,
+      "value": 0.367,
       "date": "2026-11-12",
       "unit": "SOX/NDX",
       "source_url": "https://finance.yahoo.com/quote/%5ESOX/"
@@ -2621,7 +2621,7 @@
       ],
       "drawdown_pct": 13.51,
       "reference": "近一年最高收盤價",
-      "checked_at": "2026-11-12T14:33:14.850888+00:00"
+      "checked_at": "2026-11-12T14:33:44.152023+00:00"
     },
     "fx": {
       "name": "美元兌新台幣與美元指數",
@@ -2996,14 +2996,14 @@
           "value": 32.966
         }
       ],
-      "checked_at": "2026-11-12T14:33:14.850888+00:00",
+      "checked_at": "2026-11-12T14:33:44.152023+00:00",
       "dxy": 102.87
     }
   },
   "active_alerts": {
     "ndx10": {
       "severity": "warning",
-      "message": "Nasdaq 100 近一年高點回撤 ≥10%：10.2%",
+      "message": "Nasdaq 100 近一年高點回撤 ≥10%：10.16%",
       "first_seen": "2026-11-12T14:30:36.303393+00:00"
     },
     "tw5": {
