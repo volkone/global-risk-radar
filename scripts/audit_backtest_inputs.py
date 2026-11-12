@@ -48,7 +48,11 @@ def market_history(metrics, key, expected):
             "matching_tx_sessions": len(actual & expected),
             "missing_tx_sessions": len(expected - actual),
             "duplicate_history_dates": len(dates) - len(set(dates)),
-            "is_historical_718_session_panel": expected <= actual}
+            "is_historical_718_session_panel": expected <= actual,
+            "history_begins_after_target_start": bool(dates) and min(dates) > START,
+            "alignment_rule": "same_twse_trading_session" if key == "taiex" else "point_in_time_asof_join_with_source_market_calendar",
+            "unmatched_dates_are_confirmed_data_gaps": key == "taiex",
+            "frequency": metrics.get(key, {}).get("frequency")}
 
 def main():
     tx = read("storage/taifex_backfill.json").get("records", [])
@@ -58,6 +62,7 @@ def main():
     evidence = read("docs/taifex_calendar_evidence.json")
     live = read("docs/data.json")
     model_report = read("docs/backtest.json")
+    backtest_code = (ROOT / "scripts/backtest.py").read_text(encoding="utf-8")
     with (ROOT / "storage/official_calendar/trading_days.csv").open(encoding="utf-8-sig", newline="") as f:
         csv_rows = list(csv.DictReader(f))
     twse_sessions = {r["date"] for r in csv_rows if r["is_trading_day"] == "1"
@@ -163,11 +168,13 @@ def main():
         blockers.append("known_closure_dates_conflict_or_incomplete")
     if not market["taiex"]["is_historical_718_session_panel"]:
         blockers.append("taiex_historical_outcome_prices_incomplete")
-    if not market["fx"]["is_historical_718_session_panel"]:
+    if market["fx"]["history_begins_after_target_start"] or not market["fx"]["history_records"]:
         blockers.append("fx_historical_signal_incomplete")
     # Needed for the planned *full* cross-market model, not for isolated TX-factor diagnostics.
-    if any(not market[k]["is_historical_718_session_panel"] for k in ("hy", "ig", "vix", "indices", "us10y", "nfci")):
+    if any(market[k]["history_begins_after_target_start"] or not market[k]["history_records"] for k in ("hy", "ig", "vix", "indices", "us10y", "nfci")):
         blockers.append("global_risk_factor_histories_incomplete_for_full_model")
+    if "taifex_backfill.json" not in backtest_code or "twse_backfill.json" not in backtest_code:
+        blockers.append("current_backtest_engine_does_not_use_tx_or_twse_historical_archive")
     blockers.append("point_in_time_release_lag_and_holdout_method_not_frozen")
     if not evidence.get("gate", {}).get("independent_taifex_calendar_verified", False):
         blockers.append("independent_taifex_calendar_evidence_not_finalized")
@@ -212,12 +219,17 @@ def main():
         },
         "twse_overlap": twse_counts,
         "current_market_histories": market,
+        "cross_market_alignment_caution": "US holidays and weekly series (such as NFCI) cannot be audited by demanding one observation on every TX session. Require a date/time-aware as-of join, max staleness limits, and publication lag.",
         "tx_taiex_fx_same_day_intersection": {
             "count": len(taiex_fx_tx_intersection),
             "first_date": min(taiex_fx_tx_intersection) if taiex_fx_tx_intersection else None,
             "last_date": max(taiex_fx_tx_intersection) if taiex_fx_tx_intersection else None,
             "note": "Same-date intersections alone do not ensure availability-time alignment or enough holdout samples."
         },
+        "backtest_engine_input_contract": {"reads_tx_archive": "taifex_backfill.json" in backtest_code,
+                                          "reads_twse_archive": "twse_backfill.json" in backtest_code,
+                                          "script": "scripts/backtest.py",
+                                          "scope": "Current implementation computes USD/TWD vs TAIEX diagnostic returns, not full Taiwan risk model."},
         "current_diagnostic_backtest": {
             "status": model_report.get("status"),
             "common_sessions": model_report.get("common_sessions"),
