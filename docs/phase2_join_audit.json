@@ -1,0 +1,41 @@
+{
+  "status": "aligned_research_panel",
+  "window": [
+    "2023-11-11",
+    "2026-10-31"
+  ],
+  "calendar_reference": "TWSE monthly FMTQIK verified trading dates",
+  "trading_sessions": 718,
+  "field_coverage_count": {
+    "tx_oi": 718,
+    "margin": 718,
+    "cash_inst": 718,
+    "taiex_close": 718,
+    "fx": 717,
+    "hy": 717,
+    "ig": 717,
+    "vix": 717,
+    "us10y": 717
+  },
+  "full_tx_twse_price_fx_candidate_sessions": 717,
+  "missing_taiex_price_dates": [],
+  "missing_twse_dates": [],
+  "blocking_gaps": [
+    "FRED_historical_vintage_and_actual_release_time_not_certified",
+    "NFCI_weekly_publication_date_join_not_certified",
+    "out_of_sample_holdout_and_transaction_cost_contract_not_approved",
+    "independent_taifex_calendar_evidence_not_finalized"
+  ],
+  "point_in_time_safeguards": {
+    "same_day_TWSE_TX_data_not_tradable_at_same_day_close": true,
+    "us_market_and_fx_observations_strictly_earlier_calendar_date": true,
+    "prior_us_data_max_age_calendar_days": 7,
+    "NFCI_weekly_factor_joined": false,
+    "FRED_anti_revision_vintage_check_passed": false,
+    "futures_roll_and_executable_prices_present": false
+  },
+  "snapshot_sha256": "20e0c7ecf9ead9393b6f1518b1c6cb659ea2745335c00293a253808c4777edc8",
+  "full_model_backtest_authorized": false,
+  "live_threshold_changes_authorized": false,
+  "note": "Lagged same-date semantics are preliminary; source's actual posting lag remains unverified. No PnL computed."
+}

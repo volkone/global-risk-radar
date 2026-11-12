@@ -1,0 +1,283 @@
+{
+  "phase": 2,
+  "status": "data_collection_pass",
+  "window": [
+    "2023-11-11",
+    "2026-10-31"
+  ],
+  "twse": {
+    "months": {
+      "2023-11": {
+        "status": "pass",
+        "rows": 14,
+        "source_rows": 22,
+        "sha256": "a0298e141ff2a9ccf2528330d5936e71cbd3147a39d5f244d91145a8828a51f3"
+      },
+      "2023-12": {
+        "status": "pass",
+        "rows": 21,
+        "source_rows": 21,
+        "sha256": "4257e5d0d837c299b79c083410421a6c690b2c482c14f604417eca3e13ccc774"
+      },
+      "2024-01": {
+        "status": "pass",
+        "rows": 22,
+        "source_rows": 22,
+        "sha256": "457483d91fc98ba2e4a65a3fa6ae360cf698999231a02e95a8215bc24ed363a0"
+      },
+      "2024-02": {
+        "status": "pass",
+        "rows": 13,
+        "source_rows": 13,
+        "sha256": "53e7251786dbed22568879613f932c653e42fb587820a1c170282a4991b6ca6a"
+      },
+      "2024-03": {
+        "status": "pass",
+        "rows": 21,
+        "source_rows": 21,
+        "sha256": "05a3c537d038ab4990310484b695c6b6498ddfb8bdcb0a76199ea29cc5a99520"
+      },
+      "2024-04": {
+        "status": "pass",
+        "rows": 20,
+        "source_rows": 20,
+        "sha256": "265202eaf09cb7731cca7bd7d0719ecdaf130d25694f7d62b1943e7d9aed0216"
+      },
+      "2024-05": {
+        "status": "pass",
+        "rows": 22,
+        "source_rows": 22,
+        "sha256": "8514eb8c1843cf1850068efa622119d441928ee3e349ad91053a56c213e8c7d2"
+      },
+      "2024-06": {
+        "status": "pass",
+        "rows": 19,
+        "source_rows": 19,
+        "sha256": "ea93275ac63ab242433bb8f2fe08ea16fab4064f708663656100212d6886a216"
+      },
+      "2024-07": {
+        "status": "pass",
+        "rows": 21,
+        "source_rows": 21,
+        "sha256": "dc1a367c680cafd2e091a426b59b28e13cbfb436442875c2d5b12288fb5b83b2"
+      },
+      "2024-08": {
+        "status": "pass",
+        "rows": 22,
+        "source_rows": 22,
+        "sha256": "01e76e0e02536431fc0186dc34520aad53a474bd875b9fff40e1966c1565cf98"
+      },
+      "2024-09": {
+        "status": "pass",
+        "rows": 20,
+        "source_rows": 20,
+        "sha256": "a95945a33f010fa24402efb9d1d753300ab4f537c5215da8876846770a53c389"
+      },
+      "2024-10": {
+        "status": "pass",
+        "rows": 19,
+        "source_rows": 19,
+        "sha256": "dcde54608c679f6a9f331528eb806e86cd2998483624a52048a21f9c2edf7d9e"
+      },
+      "2024-11": {
+        "status": "pass",
+        "rows": 21,
+        "source_rows": 21,
+        "sha256": "f59ce0bbe5983e71d85292f210382bcfc3f68acbd2ab1e57d1a398e77f71bfc6"
+      },
+      "2024-12": {
+        "status": "pass",
+        "rows": 22,
+        "source_rows": 22,
+        "sha256": "751dc47deffe8c7b1b103d158df1c043115b2429a2130d0449c0ae391a93b527"
+      },
+      "2025-01": {
+        "status": "pass",
+        "rows": 15,
+        "source_rows": 15,
+        "sha256": "3a1d2607ec86cf684e9f302660f4679084aca50587d6f34c936cfcd4268bf7f9"
+      },
+      "2025-02": {
+        "status": "pass",
+        "rows": 19,
+        "source_rows": 19,
+        "sha256": "f021fab23c2911a056f07dafa999bbeed5e31166e34a1cb1f031eb1974040d36"
+      },
+      "2025-03": {
+        "status": "pass",
+        "rows": 21,
+        "source_rows": 21,
+        "sha256": "ac5977b105e93aab3628bbaf7f26ac8eaaf625840cde60d27f8b8277a84d1bf8"
+      },
+      "2025-04": {
+        "status": "pass",
+        "rows": 20,
+        "source_rows": 20,
+        "sha256": "c70878c091765a9311f62cb80bc879babdb9ec6438618b67f1fd4acf2336518a"
+      },
+      "2025-05": {
+        "status": "pass",
+        "rows": 20,
+        "source_rows": 20,
+        "sha256": "15f5cc370c219ddd1fc00cfcd7d3c31f6a679bb441fa2ed184f92d6c06d6b974"
+      },
+      "2025-06": {
+        "status": "pass",
+        "rows": 21,
+        "source_rows": 21,
+        "sha256": "c7d8f9c078bfb127e251554824bfc698ef2fc3e74d590c78dff47245489146b5"
+      },
+      "2025-07": {
+        "status": "pass",
+        "rows": 23,
+        "source_rows": 23,
+        "sha256": "cdd1077207f9ccb66cdcd7936e15febf5debe2342b571c8f65a3003a00771259"
+      },
+      "2025-08": {
+        "status": "pass",
+        "rows": 21,
+        "source_rows": 21,
+        "sha256": "db9a3812d7f33e5826a4837a880116b78b0489785275596dda264a9610b68a61"
+      },
+      "2025-09": {
+        "status": "pass",
+        "rows": 21,
+        "source_rows": 21,
+        "sha256": "5f1601af698c9ceeb9b89f8183963e366a81274bbed3d35117dd4d20f19cf70c"
+      },
+      "2025-10": {
+        "status": "pass",
+        "rows": 20,
+        "source_rows": 20,
+        "sha256": "ea54ed486f1667925057cc4788ec389755ec595c7e979e826bd2a6760c273644"
+      },
+      "2025-11": {
+        "status": "pass",
+        "rows": 20,
+        "source_rows": 20,
+        "sha256": "480173e3b0068a3c9070bbd7762bdfa2951a1a4a88b8443af90b46ec940f4565"
+      },
+      "2025-12": {
+        "status": "pass",
+        "rows": 22,
+        "source_rows": 22,
+        "sha256": "a1053aa44eeb0a3d17c9d2b0ad8aedb508c6f96a57e5fea0dcedc4515f114d85"
+      },
+      "2026-01": {
+        "status": "pass",
+        "rows": 21,
+        "source_rows": 21,
+        "sha256": "96b5b6fbb0786d26d9ddf441fe20e81e51a6e0f3ea63d29fa52eda1395a064ce"
+      },
+      "2026-02": {
+        "status": "pass",
+        "rows": 12,
+        "source_rows": 12,
+        "sha256": "85c2b0ef57ffd8fb34b602843573b194981f20c05d359a2be507a27ac125f5bb"
+      },
+      "2026-03": {
+        "status": "pass",
+        "rows": 22,
+        "source_rows": 22,
+        "sha256": "2d6538e4695495541557e270c4108446af9e365f4c756bcdcd099c64a2cd5199"
+      },
+      "2026-04": {
+        "status": "pass",
+        "rows": 20,
+        "source_rows": 20,
+        "sha256": "cf0ce4e9bc7230e8ac61c529ad0b93411280cab5cb93a7ab892effe46b9ac8b6"
+      },
+      "2026-05": {
+        "status": "pass",
+        "rows": 20,
+        "source_rows": 20,
+        "sha256": "c804629521b509e2889a83bfe6a1d420e8f46573b3a8d7b5f98ab17b6eafdd29"
+      },
+      "2026-06": {
+        "status": "pass",
+        "rows": 21,
+        "source_rows": 21,
+        "sha256": "c83c935b5b46be4a67ed16209780b4645068938b7920ed8a5226c7deb0c7a2e6"
+      },
+      "2026-07": {
+        "status": "pass",
+        "rows": 22,
+        "source_rows": 22,
+        "sha256": "988f05a25e28f70d0b048ee1114d4b787813dc6ef2a132b36505bdc792c7ae10"
+      },
+      "2026-08": {
+        "status": "pass",
+        "rows": 21,
+        "source_rows": 21,
+        "sha256": "824c3225784653e2d10a1e979064a0baf8f2a61c45fa4eddc10e7fd607d24b55"
+      },
+      "2026-09": {
+        "status": "pass",
+        "rows": 20,
+        "source_rows": 20,
+        "sha256": "dc712c7f16a9d732d9d4e21606e8927cd4d78039505c3256d697a005b17394d5"
+      },
+      "2026-10": {
+        "status": "pass",
+        "rows": 19,
+        "source_rows": 19,
+        "sha256": "23c2920bfdb3f891c6d5aed655262b5ea6d9c289752a7b0e2a434ac8d272bab9"
+      }
+    },
+    "matched_target_sessions": 718,
+    "missing_target_sessions": []
+  },
+  "fred": {
+    "fx": {
+      "status": "pass",
+      "observations": 743,
+      "first": "2023-11-13",
+      "last": "2026-10-30",
+      "method": "fred_api"
+    },
+    "hy": {
+      "status": "pass",
+      "observations": 778,
+      "first": "2023-11-13",
+      "last": "2026-10-30",
+      "method": "fred_api"
+    },
+    "ig": {
+      "status": "pass",
+      "observations": 777,
+      "first": "2023-11-13",
+      "last": "2026-10-30",
+      "method": "fred_api"
+    },
+    "vix": {
+      "status": "pass",
+      "observations": 766,
+      "first": "2023-11-13",
+      "last": "2026-10-30",
+      "method": "fred_api"
+    },
+    "us10y": {
+      "status": "pass",
+      "observations": 741,
+      "first": "2023-11-13",
+      "last": "2026-10-30",
+      "method": "fred_api"
+    },
+    "nfci": {
+      "status": "pass",
+      "observations": 155,
+      "first": "2023-11-17",
+      "last": "2026-10-30",
+      "method": "fred_api"
+    }
+  },
+  "source_notes": {
+    "taiex": "TWSE price-only index, dividends not reinvested; FMTQIK monthly rows must equal official TWSE session dates.",
+    "fx": "DEXTAUS is Federal Reserve NY noon USD/TWD rate; do NOT join same calendar day to Taipei market close without checking timezone.",
+    "crossmarket": "Missing US days/weekend/weekly observations are not Taiwan data errors. Use lagged as-of align and point-in-time availability audit.",
+    "history_vintage": "FRED present-day history has NOT been independently validated for revisions or as-of release timing."
+  },
+  "full_model_backtest_authorized": false,
+  "live_threshold_changes_authorized": false,
+  "generated_at_utc": "2026-11-12T13:14:55.149342+00:00"
+}
