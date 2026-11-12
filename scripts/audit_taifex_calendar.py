@@ -26,7 +26,7 @@ CLOSED={
 def main():
     records=json.loads((ROOT/"storage/taifex_backfill.json").read_text(encoding="utf-8"))["records"]
     with (ROOT/"storage/official_calendar/trading_days.csv").open(encoding="utf-8-sig",newline="") as f:
-        twse={r["date"] for r in csv.DictReader(f) if r["is_trading_day"]=="1"}
+        twse={r["date"] for r in csv.DictReader(f) if r["is_trading_day"]=="1" and START.isoformat()<=r["date"]<=END.isoformat()}
     observed={r["date"] for r in records}
     holidays={f"{y}-{d}" for y,days in CLOSED.items() for d in days}
     ad_hoc_closed={"2024-07-24","2024-07-25","2024-10-02","2024-10-03","2024-10-31","2026-07-10","2026-10-23"}
