@@ -23,8 +23,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Verify official source batch (maximum 40 requests)
-        run: python scripts/verify_taifex_sources.py --limit 40
+      - name: Verify official source batch (up to 10 paced requests (hard cap 40))
+        run: python scripts/verify_taifex_sources.py --limit 10
       - name: Save verification checkpoints
         run: |
           git config user.name 'github-actions[bot]'
