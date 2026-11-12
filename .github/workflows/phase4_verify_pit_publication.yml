@@ -1,0 +1,73 @@
+name: Phase 4 verify historical ALFRED availability and publication timing
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/phase4_verify_pit_publication.yml'
+      - 'scripts/audit_phase4_publication_timing.py'
+      - 'scripts/audit_phase4_stratified_asof.py'
+permissions:
+  contents: write
+concurrency:
+  group: phase4-pit-publication-audit
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Enforce publisher-time conservative eligibility on PIT panel
+        run: python scripts/audit_phase4_publication_timing.py
+      - name: Independently crosscheck 16 stratified dates per FRED series
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+        run: python -u scripts/audit_phase4_stratified_asof.py
+      - name: Assert official model approval remains blocked
+        run: |
+          python - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          a=json.loads(Path("docs/phase4_publication_timing_audit.json").read_text(encoding="utf-8"))
+          b=json.loads(Path("docs/phase4_stratified_asof_audit.json").read_text(encoding="utf-8"))
+          raw=Path("storage/phase4_publication_aware_panel.json").read_bytes()
+          assert len(json.loads(raw)["rows"])==718
+          assert hashlib.sha256(raw).hexdigest()==a["output_sha256"]
+          assert a["status"]=="conservative_time_gate_research_panel_built"
+          assert b["status"]=="stratified_asof_sample_pass"
+          assert b["independent_asof_verified_for_every_session"] is False
+          assert not a["formal_full_model_backtest_authorized"]
+          assert not b["full_model_backtest_authorized"]
+          print("PIT as-of sample:",b["counts"])
+          print("Publisher buffer deferred:",a["deferred_by_official_schedule_buffer"])
+          PY
+      - name: Upload audit evidence regardless of pass/failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase4-pit-publication-research-audit
+          if-no-files-found: warn
+          path: |
+            docs/phase4_publication_timing_audit.json
+            docs/phase4_stratified_asof_audit.json
+      - name: Save research PIT timing results
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for path in docs/phase4_publication_timing_audit.json docs/phase4_stratified_asof_audit.json storage/phase4_publication_aware_panel.json; do
+            if test -f "$path"; then git add "$path"; fi
+          done
+          if ! git diff --cached --quiet; then
+            git commit -m 'Publish phase-4 release-timing and independent ALFRED PIT checks [skip ci]'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
