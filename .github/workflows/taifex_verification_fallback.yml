@@ -1,0 +1,49 @@
+name: TAIFEX source verification fallback
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: taifex-source-verification
+  cancel-in-progress: false
+jobs:
+  catch-up:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify only if progress has been stale for 20 minutes
+        id: stale
+        shell: bash
+        run: |
+          last=$(git log -1 --format=%ct -- docs/taifex_source_verification.json)
+          now=$(date -u +%s)
+          if [ -z "$last" ] || [ $((now-last)) -ge 1200 ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "Progress updated within 20 minutes; skipping fallback"
+          fi
+      - name: Run conservative catch-up batch
+        if: steps.stale.outputs.run == 'true'
+        run: python scripts/verify_taifex_sources.py --limit 10
+      - name: Persist checkpoint
+        if: steps.stale.outputs.run == 'true'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/taifex_source_verification.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Checkpoint TAIFEX fallback verification [skip ci]'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
