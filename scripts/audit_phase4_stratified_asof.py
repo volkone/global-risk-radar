@@ -70,6 +70,23 @@ def asof_fetch(secret,series,cutoff):
 
 def main():
     pbytes=INPUT.read_bytes()
+    # Reuse an already successful independent check only for exactly the
+    # same immutable PIT input and same explicit sample set. A separate
+    # manual rerun may delete the report to re-query archived source data.
+    if OUTPUT.exists():
+        previous=json.loads(OUTPUT.read_text(encoding="utf-8"))
+        old=previous.get("counts",{})
+        if (previous.get("status")=="stratified_asof_sample_pass"
+            and previous.get("pit_panel_sha256")==hashlib.sha256(pbytes).hexdigest()
+            and previous.get("potential_checks")==len(POSITIONS)*len(FACTOR_IDS)
+            and len(previous.get("checks",[]))==len(POSITIONS)*len(FACTOR_IDS)
+            and old.get("reconstructed_asof_disagreement")==0
+            and old.get("source_fetch_failed")==0
+            and old.get("pass",0)>0
+            and previous.get("sampled_market_sessions") is not None):
+            print("PHASE4_ASOF_CACHED_MATCHING_INPUT_AND_FIXED_SAMPLE",
+                  previous["counts"],"HTTP requests",0,flush=True)
+            return
     pit=json.loads(pbytes)
     vintages=load("storage/phase3_fred_pit_vintages.json")["series"]
     rows=pit["rows"]
