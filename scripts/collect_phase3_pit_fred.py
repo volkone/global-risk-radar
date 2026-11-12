@@ -187,7 +187,7 @@ def collect_one(api,name,series):
                 raise ValueError("invalid_FRED_vintage_column_"+col)
             vintage=dt.date(int(stamp[:4]),int(stamp[4:6]),int(stamp[6:])).isoformat()
             if vintage<=bootstrap_date or vintage>END or date>vintage:
-                raise ValueError("invalid_vintage_date_or_observation")
+                raise ValueError("invalid_vintage_date_or_observation_series_"+series+"_obs_"+date+"_vintage_"+vintage+"_raw_"+str(raw_value)[:24])
             key=(vintage,date)
             if key in seen:
                 raise ValueError("duplicate_FRED_vintage_observation")
