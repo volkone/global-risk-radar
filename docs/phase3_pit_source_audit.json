@@ -1,0 +1,61 @@
+{
+  "status": "source_pit_collection_validated_sampled",
+  "window": [
+    "2023-11-11",
+    "2026-10-31"
+  ],
+  "comparison_method": "Every recovered 718-day series matched against existing independent ALFRED as-of samples (three per factor)",
+  "series_status": {
+    "fx": {
+      "status": "cached_validated",
+      "mismatches": [],
+      "valid_asof_dates": 718
+    },
+    "hy": {
+      "status": "cached_validated",
+      "mismatches": [],
+      "valid_asof_dates": 673
+    },
+    "ig": {
+      "status": "cached_validated",
+      "mismatches": [],
+      "valid_asof_dates": 673
+    },
+    "vix": {
+      "status": "validated_against_three_asof_samples",
+      "bootstrap": 50,
+      "bootstrap_asof_date": "2023-11-09",
+      "changes": 776,
+      "future_dated_source_changes": 20,
+      "valid_asof_dates": 718
+    },
+    "us10y": {
+      "status": "validated_against_three_asof_samples",
+      "bootstrap": 49,
+      "bootstrap_asof_date": "2023-11-09",
+      "changes": 776,
+      "future_dated_source_changes": 0,
+      "valid_asof_dates": 718
+    },
+    "nfci": {
+      "status": "validated_against_three_asof_samples",
+      "bootstrap": 10,
+      "bootstrap_asof_date": "2023-11-09",
+      "changes": 11678,
+      "future_dated_source_changes": 0,
+      "valid_asof_dates": 718
+    }
+  },
+  "api_requests_total": 6,
+  "max_api_requests": 42,
+  "missing_or_bad_series": [],
+  "limitations": [
+    "Only 3 independent per-series date samples validated, though every series has vintage updates over full time window.",
+    "ALFRED real-time dates are calendar dates, not source-specific intraday publication timestamps.",
+    "Source H10, Treasury and weekly series publication behavior and holidays must be independently reviewed.",
+    "Source data are not authorized for trading, TXF PnL or live risk recalibration."
+  ],
+  "full_model_backtest_authorized": false,
+  "historical_pit_daily_panel_ready": true,
+  "source_file_sha256": "7cb9c5dd9595d51f79cad339127432cea9d59fcdcf9bc873995f55c2c576337d"
+}

@@ -1,0 +1,50 @@
+{
+  "status": "pit_joined_research_panel_ready",
+  "sessions": 718,
+  "field_coverage_count": {
+    "fx": 718,
+    "hy": 673,
+    "ig": 673,
+    "vix": 718,
+    "us10y": 718,
+    "nfci": 718
+  },
+  "changed_vs_previous_latest_history": {
+    "fx": 718,
+    "hy": 44,
+    "ig": 45,
+    "vix": 31,
+    "us10y": 716,
+    "nfci": 718
+  },
+  "stale_unusable_count": {
+    "fx": 0,
+    "hy": 0,
+    "ig": 0,
+    "vix": 0,
+    "us10y": 0,
+    "nfci": 0
+  },
+  "original_stage2_sha256": "20e0c7ecf9ead9393b6f1518b1c6cb659ea2745335c00293a253808c4777edc8",
+  "vintage_data_sha256": "7cb9c5dd9595d51f79cad339127432cea9d59fcdcf9bc873995f55c2c576337d",
+  "new_pit_snapshot_sha256": "c5a18734f21611c6e1fe1c7a9c26336889cbd8a2f97199faffe25f2c0ffa9529",
+  "sampled_vintage_checks_valid": 18,
+  "p0_gap_no_prior_history": {
+    "fx": 0,
+    "hy": 45,
+    "ig": 45,
+    "vix": 0,
+    "us10y": 0,
+    "nfci": 0
+  },
+  "publication_qualification": [
+    "ALFRED vintage effective calendar date is historical availability, not exact intraday timestamp",
+    "Using as-of previous US calendar date is conservative for Taiwan market close but source timestamp still subject to review",
+    "TWSE/TAIFEX end-of-day observations are not traded at the same close",
+    "NFCI vintage included for research inventory only; not part of six-factor signal",
+    "No FX forward-fill from later vintages or later observations",
+    "Do not interpret 718 matched rows as 718 economically independent event samples"
+  ],
+  "full_model_backtest_authorized": false,
+  "live_threshold_changes_authorized": false
+}
