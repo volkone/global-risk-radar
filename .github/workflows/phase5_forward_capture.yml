@@ -1,0 +1,92 @@
+name: Capture immutable forward risk research snapshots
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Probe current public sources or capture first-seen prospective session'
+        type: choice
+        options: [probe, capture]
+        default: probe
+        required: true
+  push:
+    paths:
+      - '.github/workflows/phase5_forward_capture.yml'
+      - 'scripts/phase5_forward_capture.py'
+      - 'scripts/phase5_forward_ledger.py'
+  schedule:
+    # 20:30 and 22:30 Taipei on weekdays. Retries do NOT overwrite the first snapshot.
+    - cron: '30 12,14 * * 1-5'
+permissions:
+  contents: write
+concurrency:
+  group: phase5-append-only-prospective-first-seen
+  cancel-in-progress: false
+jobs:
+  capture-and-validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check frozen model and future-date rejection without external requests
+        run: |
+          python scripts/phase5_forward_capture.py --mode selftest
+          python scripts/phase5_forward_ledger.py --mode selftest
+      - name: Probe or capture today's actual first-seen sources
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+        run: |
+          set -euo pipefail
+          if [[ "${{ github.event_name }}" == "schedule" ]]; then
+            python -u scripts/phase5_forward_capture.py --mode capture
+          elif [[ "${{ github.event_name }}" == "workflow_dispatch" && "${{ inputs.mode }}" == "capture" ]]; then
+            python -u scripts/phase5_forward_capture.py --mode capture
+          else
+            python -u scripts/phase5_forward_capture.py --mode probe
+          fi
+      - name: Append future-only research score and matured labels (never backdate)
+        run: python scripts/phase5_forward_ledger.py --mode record
+      - name: Enforce the independent quality gate remains closed
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          frozen=json.loads(Path("docs/phase4_frozen_prospective_protocol.json").read_text(encoding="utf-8"))
+          status=json.loads(Path("docs/phase5_forward_status.json").read_text(encoding="utf-8"))
+          snap=json.loads(Path("docs/phase5_forward_capture_latest.json").read_text(encoding="utf-8"))
+          assert frozen["formal_full_model_backtest_authorized"] is False
+          assert status["formal_full_model_backtest_authorized"] is False
+          assert status["live_threshold_changes_authorized"] is False
+          assert not (snap.get("prospective_snapshot_created") and snap.get("session_date","") < "2026-11-13")
+          print("Capture result:",snap["status"])
+          print("Forward ledger result:",status["status"])
+          print("All outputs research only, formal model still BLOCKED.")
+          PY
+      - name: Upload snapshot quality report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase5-forward-capture-quality
+          if-no-files-found: warn
+          path: |
+            docs/phase5_forward_capture_latest.json
+            docs/phase5_forward_status.json
+      - name: Commit immutable snapshots, forecast and outcome evidence
+        if: always()
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for path in docs/phase5_forward_capture_latest.json docs/phase5_forward_status.json storage/prospective; do
+            if test -e "$path"; then git add "$path"; fi
+          done
+          if ! git diff --cached --quiet; then
+            git commit -m 'Persist first-seen prospective research evidence [skip ci]'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
