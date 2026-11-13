@@ -1,11 +1,11 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-13T19:54:45.249484+00:00",
+  "generated_at": "2026-11-13T22:38:35.887280+00:00",
   "model_status": "separate_global_prototype_and_evidence_gated_taiwan",
   "disclaimer": "Global is provisional; historical Taiwan reconstruction is research-only. Formal Taiwan eligibility is recorded in quality_gate.",
   "global": {
     "status": "provisional",
-    "score": 22.0,
+    "score": 21.9,
     "coverage": 0.9,
     "min_coverage": 0.85,
     "components": [
@@ -36,10 +36,10 @@
       {
         "metric": "indices",
         "weight": 20,
-        "signal": 35.67,
+        "signal": 35.03,
         "eligible": true,
         "reason": null,
-        "contribution": 7.926666666666668
+        "contribution": 7.7844444444444445
       },
       {
         "metric": "nfci",
@@ -67,7 +67,7 @@
       }
     ],
     "model_id": "global_rate_v2",
-    "as_of": "2026-11-13T19:54:43.020396+00:00"
+    "as_of": "2026-11-13T22:38:33.933674+00:00"
   },
   "taiwan": {
     "status": "formal_model_blocked",
