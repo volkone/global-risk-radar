@@ -1,45 +1,45 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-13T16:26:13.494151+00:00",
+  "generated_at": "2026-11-13T19:54:45.249484+00:00",
   "model_status": "separate_global_prototype_and_evidence_gated_taiwan",
   "disclaimer": "Global is provisional; historical Taiwan reconstruction is research-only. Formal Taiwan eligibility is recorded in quality_gate.",
   "global": {
     "status": "provisional",
-    "score": 21.6,
+    "score": 22.0,
     "coverage": 0.9,
     "min_coverage": 0.85,
     "components": [
       {
         "metric": "hy",
         "weight": 25,
-        "signal": 21.67,
+        "signal": 20.0,
         "eligible": true,
         "reason": null,
-        "contribution": 6.019444444444445
+        "contribution": 5.555555555555555
       },
       {
         "metric": "ig",
         "weight": 10,
-        "signal": 16.0,
+        "signal": 15.6,
         "eligible": true,
         "reason": null,
-        "contribution": 1.7777777777777777
+        "contribution": 1.7333333333333334
       },
       {
         "metric": "vix",
         "weight": 20,
-        "signal": 16.64,
+        "signal": 20.3,
         "eligible": true,
         "reason": null,
-        "contribution": 3.697777777777778
+        "contribution": 4.511111111111111
       },
       {
         "metric": "indices",
         "weight": 20,
-        "signal": 37.67,
+        "signal": 35.67,
         "eligible": true,
         "reason": null,
-        "contribution": 8.371111111111112
+        "contribution": 7.926666666666668
       },
       {
         "metric": "nfci",
@@ -52,10 +52,10 @@
       {
         "metric": "us10y",
         "weight": 5,
-        "signal": 5.0,
+        "signal": 15.0,
         "eligible": true,
         "reason": null,
-        "contribution": 0.2777777777777778
+        "contribution": 0.8333333333333334
       },
       {
         "metric": "breadth",
@@ -67,7 +67,7 @@
       }
     ],
     "model_id": "global_rate_v2",
-    "as_of": "2026-11-13T16:26:11.113515+00:00"
+    "as_of": "2026-11-13T19:54:43.020396+00:00"
   },
   "taiwan": {
     "status": "formal_model_blocked",
@@ -198,15 +198,15 @@
   "taiwan_legacy_prototype": {
     "status": "insufficient_coverage",
     "score": null,
-    "coverage": 0.0,
+    "coverage": 0.35,
     "min_coverage": 0.85,
     "components": [
       {
         "metric": "taiex",
         "weight": 35,
-        "signal": null,
-        "eligible": false,
-        "reason": "quality_gate_not_passed"
+        "signal": 45.03,
+        "eligible": true,
+        "reason": null
       },
       {
         "metric": "margin",
