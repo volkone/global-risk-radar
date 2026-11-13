@@ -1,0 +1,13 @@
+{
+  "checked_at_utc": "2026-11-13T13:22:17.202527+00:00",
+  "taipei_date": "2026-11-13",
+  "status": "captured",
+  "canonical_snapshot_present": true,
+  "last_capture_check_utc": "2026-11-13T13:22:17.119661+00:00",
+  "capture_errors": {},
+  "snapshots": 1,
+  "predictions": 0,
+  "outcomes": 0,
+  "schedule_firing_verified": false,
+  "note": "Capture evidence does not prove GitHub cron delivery. Missing dates cannot be backfilled as first-seen."
+}
