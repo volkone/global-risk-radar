@@ -51,6 +51,8 @@ jobs:
           fi
       - name: Append future-only research score and matured labels (never backdate)
         run: python scripts/phase5_forward_ledger.py --mode record
+      - name: Audit matured prospective outcomes
+        run: python scripts/evaluate_forward.py
       - name: Enforce the independent quality gate remains closed
         run: |
           python - <<'PY'
@@ -82,7 +84,7 @@ jobs:
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          for path in docs/phase5_forward_capture_latest.json docs/phase5_forward_status.json storage/prospective; do
+          for path in docs/phase5_forward_capture_latest.json docs/phase5_forward_status.json docs/prospective_evaluation.json storage/prospective; do
             if test -e "$path"; then git add "$path"; fi
           done
           if ! git diff --cached --quiet; then

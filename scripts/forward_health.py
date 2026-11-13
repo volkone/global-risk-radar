@@ -35,6 +35,7 @@ def main():
     if args.capture_if_due and due(now):
         subprocess.run([sys.executable,str(ROOT/'scripts/phase5_forward_capture.py'),'--mode','capture'],check=True)
     subprocess.run([sys.executable,str(ROOT/'scripts/phase5_forward_ledger.py'),'--mode','record'],check=True)
+    subprocess.run([sys.executable,str(ROOT/'scripts/evaluate_forward.py')],check=True)
     snap=ROOT/'storage/prospective/snapshots'/f'{now.date().isoformat()}.json'
     if snap.exists():
         from phase5_forward_ledger import verified_snapshot
