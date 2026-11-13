@@ -1,6 +1,6 @@
 {
   "status": "BLOCKED",
-  "evaluated_for_date": "2026-11-13",
+  "evaluated_for_date": "2026-11-14",
   "checks": [
     {
       "id": "publication",
@@ -30,7 +30,7 @@
       "id": "current_forecast",
       "label": "當日可追溯前瞻分數",
       "passed": false,
-      "evidence": "storage/prospective/forecasts/2026-11-13.json"
+      "evidence": "storage/prospective/forecasts/2026-11-14.json"
     }
   ],
   "blockers": [
