@@ -132,11 +132,21 @@ def evaluate(data, quality, history):
 
 
 def main():
-    report = evaluate(json.loads(DATA.read_text(encoding="utf-8")),
-                      json.loads(QUALITY.read_text(encoding="utf-8")),
-                      json.loads(HISTORY.read_text(encoding="utf-8")))
+    from dashboard_scores import PANEL, clean_rows, reconstruct, calibration_report
+    from phase5_forward_capture import verify_frozen
+    from phase5_forward_ledger import frozen_distributions
+    import hashlib
+    frozen = verify_frozen()
+    raw = PANEL.read_bytes()
+    digest = hashlib.sha256(raw).hexdigest()
+    timing = json.loads((ROOT/'docs/phase4_publication_timing_audit.json').read_text())
+    if timing.get('output_sha256') != digest:
+        raise ValueError('publication_panel_audit_hash_mismatch')
+    panel = json.loads(raw)
+    rows = reconstruct(panel['rows'], frozen_distributions(), frozen['post_close_feature_action_lag_taiwan_sessions'])
+    report = calibration_report(panel, digest, frozen, rows)
     OUT.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
-    print("Calibration:", {k: (v["status"], v["raw_observations"], v["score"])
+    print("Calibration:", {k: (v["status"], v["raw_observations"], v.get("signal"))
                            for k, v in report["signals"].items()})
 
 
