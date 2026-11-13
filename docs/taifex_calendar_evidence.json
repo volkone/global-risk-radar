@@ -84,17 +84,31 @@
         "2026-07-10"
       ],
       "reason": "Typhoon closure",
-      "status": "previously_verified_primary",
-      "official_url": "https://www.taifex.com.tw/enl/eng11/newsDetail?idx=10470&newsType=1"
+      "status": "verified_direct_page",
+      "official_url": "https://www.taifex.com.tw/enl/eng11/newsDetail?idx=10470&newsType=1",
+      "raw_evidence": {
+        "date": "2026-07-10",
+        "url": "https://www.taifex.com.tw/enl/eng11/newsDetail?idx=10470&newsType=1",
+        "sha256": "081affb417e2503290d5e00e766a3c9a7ce01ea94e2ad1cfacf14e6996558637",
+        "raw_path": "storage/calendar_evidence/2026-07-10.html",
+        "retrieved_at_utc": "2026-11-13T11:25:23.360366+00:00"
+      }
     },
     {
       "dates": [
         "2026-10-23"
       ],
       "reason": "Typhoon closure",
-      "status": "verified_official_announcement_listing",
-      "official_url": "https://www.taifex.com.tw/cht/11/announcement",
-      "published": "2026-10-22"
+      "status": "verified_direct_page",
+      "official_url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17441",
+      "published": "2026-10-22",
+      "raw_evidence": {
+        "date": "2026-10-23",
+        "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17441",
+        "sha256": "8622da924401a026538e742d980f6dddd7fa0237890b45de50a69201d2ba720b",
+        "raw_path": "storage/calendar_evidence/2026-10-23.html",
+        "retrieved_at_utc": "2026-11-13T11:25:16.848561+00:00"
+      }
     }
   ],
   "gate": {
@@ -105,7 +119,7 @@
     "reason": "2024-07-25 primary notice resolved; full archive-wide ad-hoc closure sweep and independent audit still outstanding.",
     "full_notice_sweep_verified": false
   },
-  "review_note": "Do not infer official calendar validity from agreement with TWSE reference dates or hard-coded exceptions.",
+  "review_note": "Do not infer official calendar validity from agreement with TWSE reference dates or hard-coded exceptions. Direct 2026-07-10 and 2026-10-23 notices rechecked and raw HTML retained; archive completeness remains unverified.",
   "verified_notice_addendum": [
     {
       "dates": [
