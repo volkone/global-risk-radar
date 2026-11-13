@@ -255,6 +255,13 @@ def main():
         return
     path=SNAPSHOTS/(date+".json")
     if args.mode=="capture" and path.exists():
+        from phase5_forward_ledger import verified_snapshot
+        snapshot, digest = verified_snapshot(path)
+        write_latest({"status":"existing_snapshot_preserved", "session_date":date,
+                      "checked_at_utc":started.isoformat(), "canonical_snapshot_sha256":digest,
+                      "canonical_snapshot_path":str(path.relative_to(ROOT)),
+                      "prospective_snapshot_created":False,
+                      "original_completed_at_utc":snapshot["completed_at_utc"]})
         print("PHASE5_ALREADY_RECORDED",date,"immutable snapshot preserved")
         return
     evidence=gather(date,started)

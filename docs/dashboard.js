@@ -44,5 +44,10 @@
     el('risk-error').textContent='';renderHistory();
   }catch(e){el('risk-error').textContent=e.message+'；請勿將空白解讀為低風險。';}}
   el('risk-series').onchange=renderHistory;el('risk-range').onchange=renderHistory;
-  load();setInterval(load,60000);
+  async function forwardHealth(){try{
+    const r=await fetch('./forward_health.json?'+Date.now(),{cache:'no-store'});if(!r.ok)throw Error();
+    const h=await r.json();const labels={captured:'當日快照已保存',capture_incomplete:'當日擷取未完整',capture_due_no_current_attempt:'晚間應擷取但未見當日紀錄',outside_capture_window:'目前不在擷取時段'};
+    el('forward-health').textContent=h.taipei_date+'｜'+(labels[h.status]||h.status)+'｜累積快照 '+h.snapshots+'、預測 '+h.predictions+'、結果 '+h.outcomes+'｜檢查時間 '+h.checked_at_utc;
+  }catch(e){el('forward-health').textContent='無法取得前瞻健康報告，不能視為正常執行。';}}
+  load();forwardHealth();setInterval(()=>{load();forwardHealth();},60000);
 })();
