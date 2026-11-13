@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-13T00:25:37.269288+00:00",
+  "generated_at": "2026-11-13T07:58:39.556541+00:00",
   "model_status": "uncalibrated_prototype",
   "disclaimer": "Risk scores are provisional and not validated by historical backtests.",
   "global": {
@@ -66,7 +66,7 @@
         "contribution": null
       }
     ],
-    "as_of": "2026-11-13T00:25:37.013600+00:00"
+    "as_of": "2026-11-13T07:58:39.301354+00:00"
   },
   "taiwan": {
     "status": "formal_model_blocked",
@@ -151,15 +151,15 @@
   "taiwan_legacy_prototype": {
     "status": "insufficient_coverage",
     "score": null,
-    "coverage": 0.35,
+    "coverage": 0.0,
     "min_coverage": 0.85,
     "components": [
       {
         "metric": "taiex",
         "weight": 35,
-        "signal": 37.23,
-        "eligible": true,
-        "reason": null
+        "signal": null,
+        "eligible": false,
+        "reason": "quality_gate_not_passed"
       },
       {
         "metric": "margin",

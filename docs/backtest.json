@@ -4,12 +4,12 @@
   "target": "TAIEX forward return and maximum intra-window drawdown",
   "train_min": 40,
   "test_min": 20,
-  "common_sessions": 55,
+  "common_sessions": 57,
   "thresholds": {
     "5d_p70": {
       "status": "insufficient_samples",
-      "test_cases": 10,
-      "alert_cases": 10,
+      "test_cases": 12,
+      "alert_cases": 12,
       "mean_forward_return_pct": null,
       "mean_worst_drawdown_pct": null,
       "baseline_mean_return_pct": null,
@@ -17,8 +17,8 @@
     },
     "5d_p80": {
       "status": "insufficient_samples",
-      "test_cases": 10,
-      "alert_cases": 10,
+      "test_cases": 12,
+      "alert_cases": 12,
       "mean_forward_return_pct": null,
       "mean_worst_drawdown_pct": null,
       "baseline_mean_return_pct": null,
@@ -26,8 +26,8 @@
     },
     "5d_p90": {
       "status": "insufficient_samples",
-      "test_cases": 10,
-      "alert_cases": 8,
+      "test_cases": 12,
+      "alert_cases": 10,
       "mean_forward_return_pct": null,
       "mean_worst_drawdown_pct": null,
       "baseline_mean_return_pct": null,
@@ -64,5 +64,5 @@
   "status": "insufficient_samples",
   "full_model_validated": false,
   "recommended_live_threshold": null,
-  "generated_at": "2026-11-13T00:25:37.222818+00:00"
+  "generated_at": "2026-11-13T07:58:39.511616+00:00"
 }

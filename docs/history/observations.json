@@ -1,17 +1,26 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-13T00:25:37.073880+00:00",
-  "record_count": 35,
-  "revision_count": 161,
+  "generated_at": "2026-11-13T07:58:39.358630+00:00",
+  "record_count": 36,
+  "revision_count": 163,
   "observations": [
     {
       "metric_id": "fx",
       "provider": "Yahoo Finance 非官方",
       "scope": "",
       "observation_date": "2026-11-13",
-      "value": 32.933,
+      "value": 32.858,
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/"
+    },
+    {
+      "metric_id": "taiex",
+      "provider": "Yahoo Finance 非官方",
+      "scope": "",
+      "observation_date": "2026-11-13",
+      "value": 43675.121,
+      "unit": "points",
+      "source_url": "https://finance.yahoo.com/quote/%5ETWII/"
     },
     {
       "metric_id": "fx",
@@ -27,7 +36,7 @@
       "provider": "Yahoo Finance 非官方",
       "scope": "",
       "observation_date": "2026-11-12",
-      "value": 28289.188,
+      "value": 28289.189,
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ENDX/"
     },
