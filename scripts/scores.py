@@ -5,6 +5,7 @@ are present. No trade instructions, and no conflation of data quality with risk.
 """
 import datetime as dt
 import json
+import math
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -39,8 +40,29 @@ def drawdown(metric):
     return float(value) if isinstance(value, (int, float)) and not isinstance(value, bool) else None
 
 
+def rate_change_signal(metric):
+    """Research-only upward-rate pressure: 20 sessions vs 60 prior changes."""
+    cutoff = metric.get('date')
+    if not cutoff:
+        return None
+    rows = [p for p in metric.get('history', []) if p['date'] <= cutoff]
+    dates = [p['date'] for p in rows]
+    if dates != sorted(set(dates)):
+        raise ValueError('invalid_rate_dates')
+    values = [float(p['value']) for p in rows]
+    if any(not math.isfinite(v) for v in values):
+        raise ValueError('invalid_rate_values')
+    if len(values) < 81 or dates[-1] != cutoff or values[-1] != float(metric['value']):
+        return None
+    changes = [values[i]-values[i-20] for i in range(20,len(values))]
+    current, prior = changes[-1], changes[-61:-1]
+    return 100 * (sum(v < current for v in prior) + .5 * sum(v == current for v in prior)) / 60
+
+
 def signal(key, metrics):
     metric = metrics.get(key.split(".")[0], {})
+    if key == "us10y":
+        return rate_change_signal(metric)
     if key == "hy":
         return scale(metric["value"], 2, 8)
     if key == "ig":
