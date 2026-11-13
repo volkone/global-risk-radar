@@ -1,0 +1,71 @@
+{
+  "status": "internal_replay_pass",
+  "sessions": 718,
+  "checks": 4308,
+  "per_factor": {
+    "fx": {
+      "checked": 718,
+      "matched_values": 718,
+      "expected_missing": 0,
+      "mismatches": 0,
+      "uncertified_release_values": 718
+    },
+    "hy": {
+      "checked": 718,
+      "matched_values": 673,
+      "expected_missing": 45,
+      "mismatches": 0,
+      "uncertified_release_values": 673
+    },
+    "ig": {
+      "checked": 718,
+      "matched_values": 673,
+      "expected_missing": 45,
+      "mismatches": 0,
+      "uncertified_release_values": 673
+    },
+    "vix": {
+      "checked": 718,
+      "matched_values": 718,
+      "expected_missing": 0,
+      "mismatches": 0,
+      "uncertified_release_values": 718
+    },
+    "us10y": {
+      "checked": 718,
+      "matched_values": 718,
+      "expected_missing": 0,
+      "mismatches": 0,
+      "uncertified_release_values": 718
+    },
+    "nfci": {
+      "checked": 718,
+      "matched_values": 718,
+      "expected_missing": 0,
+      "mismatches": 0,
+      "uncertified_release_values": 718
+    }
+  },
+  "mismatch_count": 0,
+  "mismatches": [],
+  "source_future_dated_changes": {
+    "fx": 0,
+    "hy": 0,
+    "ig": 0,
+    "vix": 20,
+    "us10y": 0,
+    "nfci": 0
+  },
+  "independent_source_query_validation": false,
+  "actual_publication_time_certification": false,
+  "limitations": [
+    "Replays existing archived vintages; no new independent ALFRED response.",
+    "Conservative schedule compatibility is not proof of actual publication time.",
+    "Future-observation source entries are excluded until observation date is no later than cutoff."
+  ],
+  "input_sha256": {
+    "storage/phase4_publication_aware_panel.json": "161505e9ee16550400c21749236ab5d4c4eb3690d07003bbf986ba09b48fe472",
+    "storage/phase3_fred_pit_vintages.json": "7cb9c5dd9595d51f79cad339127432cea9d59fcdcf9bc873995f55c2c576337d"
+  },
+  "checked_at_utc": "2026-11-13T11:26:48.125809+00:00"
+}
