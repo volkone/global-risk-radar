@@ -2,6 +2,9 @@ name: Update and deploy global risk radar
 on:
   push:
     branches: [main]
+  workflow_run:
+    workflows: ["Capture immutable forward risk research snapshots"]
+    types: [completed]
   schedule:
     - cron: '17 * * * *'
   workflow_dispatch:
@@ -29,6 +32,10 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python scripts/collect.py
+      - name: Capture missing same-day forward snapshot after 20:00 Taipei
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+        run: python scripts/forward_health.py --capture-if-due
       - name: Record validated historical observations
         run: python scripts/history.py
       - name: Validate data quality before risk scoring
@@ -45,7 +52,8 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add docs/data.json docs/history/observations.json docs/quality.json docs/calibration.json docs/backtest.json docs/scores.json docs/risk_dashboard.json docs/model_readiness.json docs/pit_full_replay_audit.json storage/history.sqlite
+          git add docs/data.json docs/history/observations.json docs/quality.json docs/calibration.json docs/backtest.json docs/scores.json docs/risk_dashboard.json docs/model_readiness.json docs/pit_full_replay_audit.json storage/history.sqlite docs/forward_health.json docs/phase5_forward_capture_latest.json docs/phase5_forward_status.json
+          if test -d storage/prospective; then git add storage/prospective; fi
           if ! git diff --cached --quiet; then
             git commit -m 'Update radar snapshot [skip ci]'
             for attempt in 1 2 3; do

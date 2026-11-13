@@ -9,6 +9,7 @@ on:
         default: probe
         required: true
   push:
+    branches: [main]
     paths:
       - '.github/workflows/phase5_forward_capture.yml'
       - 'scripts/phase5_forward_capture.py'
@@ -19,7 +20,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: phase5-append-only-prospective-first-seen
+  group: global-risk-radar
   cancel-in-progress: false
 jobs:
   capture-and-validate:
@@ -41,7 +42,7 @@ jobs:
           FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
         run: |
           set -euo pipefail
-          if [[ "${{ github.event_name }}" == "schedule" ]]; then
+          if [[ "${{ github.event_name }}" == "schedule" || "${{ github.event_name }}" == "push" ]]; then
             python -u scripts/phase5_forward_capture.py --mode capture
           elif [[ "${{ github.event_name }}" == "workflow_dispatch" && "${{ inputs.mode }}" == "capture" ]]; then
             python -u scripts/phase5_forward_capture.py --mode capture
