@@ -1,76 +1,176 @@
 {
-  "schema_version": 1,
-  "generated_at": "2026-11-13T07:58:39.469546+00:00",
-  "model_status": "research_only_not_backtested",
-  "notes": [
-    "Percentile calibration is descriptive, not a validated predictive risk threshold.",
-    "20-session FX appreciation/depreciation is directional; negative FX change is not a safe-market guarantee.",
-    "Margin decreases may indicate deleveraging or forced liquidation; directional risk must be tested against future returns.",
-    "Historical backtesting requires timestamped observations, benchmark forward returns and out-of-sample evaluation."
-  ],
+  "schema_version": 2,
+  "model_id": "frozen_six_factor_research",
+  "model_status": "research_only",
+  "source_panel_sha256": "161505e9ee16550400c21749236ab5d4c4eb3690d07003bbf986ba09b48fe472",
+  "historical_sessions": 718,
+  "valid_historical_scores": 696,
+  "method": "frozen_reference_distribution_descriptive_reconstruction",
   "signals": {
-    "margin": {
-      "status": "insufficient_history",
-      "score": null,
-      "current_date": "2026-11-12",
-      "current_value": 533474629000,
-      "raw_observations": 3,
-      "transformed_observations": 0,
-      "min_prior_transformed_observations": 60,
-      "lookback_sessions": 20,
-      "method": "prior_only_empirical_percentile",
-      "errors": [
-        "insufficient_historical_sessions",
-        "insufficient_transformed_history"
-      ]
+    "foreign_tx_short_pressure": {
+      "metric": "foreign_tx_short_pressure",
+      "label": "外資台指期淨空壓力",
+      "raw_value": 0.8015801844492482,
+      "signal": 92.12034383954155,
+      "eligible": true,
+      "reason": null,
+      "effective_weight": 0.16666666666666666,
+      "contribution": 15.35339063992359,
+      "raw_observations": 718,
+      "transformed_observations": 698,
+      "reference_observations": 698,
+      "current_date": "2026-10-28",
+      "status": "research_calibrated"
     },
-    "inst.cash_inst": {
-      "status": "insufficient_history",
-      "score": null,
-      "current_date": "2026-11-12",
-      "current_value": 5342087635,
-      "raw_observations": 3,
-      "transformed_observations": 0,
-      "min_prior_transformed_observations": 60,
-      "lookback_sessions": null,
-      "method": "awaiting_turnover_or_open_interest_normalization",
-      "errors": [
-        "insufficient_historical_sessions",
-        "normalization_denominator_unavailable",
-        "insufficient_transformed_history"
-      ]
+    "margin_deleveraging_20d": {
+      "metric": "margin_deleveraging_20d",
+      "label": "融資 20 日減槓桿",
+      "raw_value": -4.276565739264737,
+      "signal": 53.58166189111748,
+      "eligible": true,
+      "reason": null,
+      "effective_weight": 0.16666666666666666,
+      "contribution": 8.930276981852913,
+      "raw_observations": 718,
+      "transformed_observations": 698,
+      "reference_observations": 698,
+      "current_date": "2026-10-28",
+      "status": "research_calibrated"
     },
-    "inst.futures": {
-      "status": "insufficient_history",
-      "score": null,
-      "current_date": "2026-11-11",
-      "current_value": -104271,
-      "raw_observations": 3,
-      "transformed_observations": 0,
-      "min_prior_transformed_observations": 60,
-      "lookback_sessions": null,
-      "method": "awaiting_turnover_or_open_interest_normalization",
-      "errors": [
-        "insufficient_historical_sessions",
-        "normalization_denominator_unavailable",
-        "insufficient_transformed_history"
-      ]
+    "institutional_net_selling_5d": {
+      "metric": "institutional_net_selling_5d",
+      "label": "法人現貨 5 日淨賣超",
+      "raw_value": 158753594469,
+      "signal": 86.81948424068769,
+      "eligible": true,
+      "reason": null,
+      "effective_weight": 0.16666666666666666,
+      "contribution": 14.469914040114615,
+      "raw_observations": 718,
+      "transformed_observations": 698,
+      "reference_observations": 698,
+      "current_date": "2026-10-28",
+      "status": "research_calibrated"
     },
-    "fx": {
-      "status": "experimental",
-      "score": 73.91,
-      "current_date": "2026-11-13",
-      "current_value": 32.858,
-      "raw_observations": 90,
-      "transformed_observations": 70,
-      "min_prior_transformed_observations": 60,
-      "lookback_sessions": 20,
-      "method": "prior_only_empirical_percentile",
-      "errors": []
+    "twd_depreciation_20d": {
+      "metric": "twd_depreciation_20d",
+      "label": "台幣 20 日貶值",
+      "raw_value": 2.402022756005051,
+      "signal": 95.12893982808023,
+      "eligible": true,
+      "reason": null,
+      "effective_weight": 0.16666666666666666,
+      "contribution": 15.854823304680039,
+      "raw_observations": 718,
+      "transformed_observations": 698,
+      "reference_observations": 698,
+      "current_date": "2026-10-28",
+      "status": "research_calibrated"
+    },
+    "hy_oas_widening_20d": {
+      "metric": "hy_oas_widening_20d",
+      "label": "高收益債利差 20 日擴大",
+      "raw_value": 0.5,
+      "signal": 94.48698315467075,
+      "eligible": true,
+      "reason": null,
+      "effective_weight": 0.16666666666666666,
+      "contribution": 15.74783052577846,
+      "raw_observations": 718,
+      "transformed_observations": 653,
+      "reference_observations": 653,
+      "current_date": "2026-10-28",
+      "status": "research_calibrated"
+    },
+    "prior_us_vix_level": {
+      "metric": "prior_us_vix_level",
+      "label": "VIX 水準",
+      "raw_value": 17.52,
+      "signal": 64.61318051575931,
+      "eligible": true,
+      "reason": null,
+      "effective_weight": 0.16666666666666666,
+      "contribution": 10.768863419293218,
+      "raw_observations": 718,
+      "transformed_observations": 698,
+      "reference_observations": 698,
+      "current_date": "2026-10-28",
+      "status": "research_calibrated"
     }
   },
-  "backtest": {
-    "status": "not_run",
-    "reason": "No complete synchronized historical panel and forward return labels."
-  }
+  "latest_research": {
+    "date": "2026-10-30",
+    "score": 81.1251,
+    "coverage": 1.0,
+    "signal_date": "2026-10-28",
+    "components": [
+      {
+        "metric": "foreign_tx_short_pressure",
+        "label": "外資台指期淨空壓力",
+        "raw_value": 0.8015801844492482,
+        "signal": 92.12034383954155,
+        "eligible": true,
+        "reason": null,
+        "effective_weight": 0.16666666666666666,
+        "contribution": 15.35339063992359
+      },
+      {
+        "metric": "margin_deleveraging_20d",
+        "label": "融資 20 日減槓桿",
+        "raw_value": -4.276565739264737,
+        "signal": 53.58166189111748,
+        "eligible": true,
+        "reason": null,
+        "effective_weight": 0.16666666666666666,
+        "contribution": 8.930276981852913
+      },
+      {
+        "metric": "institutional_net_selling_5d",
+        "label": "法人現貨 5 日淨賣超",
+        "raw_value": 158753594469,
+        "signal": 86.81948424068769,
+        "eligible": true,
+        "reason": null,
+        "effective_weight": 0.16666666666666666,
+        "contribution": 14.469914040114615
+      },
+      {
+        "metric": "twd_depreciation_20d",
+        "label": "台幣 20 日貶值",
+        "raw_value": 2.402022756005051,
+        "signal": 95.12893982808023,
+        "eligible": true,
+        "reason": null,
+        "effective_weight": 0.16666666666666666,
+        "contribution": 15.854823304680039
+      },
+      {
+        "metric": "hy_oas_widening_20d",
+        "label": "高收益債利差 20 日擴大",
+        "raw_value": 0.5,
+        "signal": 94.48698315467075,
+        "eligible": true,
+        "reason": null,
+        "effective_weight": 0.16666666666666666,
+        "contribution": 15.74783052577846
+      },
+      {
+        "metric": "prior_us_vix_level",
+        "label": "VIX 水準",
+        "raw_value": 17.52,
+        "signal": 64.61318051575931,
+        "eligible": true,
+        "reason": null,
+        "effective_weight": 0.16666666666666666,
+        "contribution": 10.768863419293218
+      }
+    ],
+    "status": "historical_reconstruction"
+  },
+  "research_threshold": 63.91871,
+  "notes": [
+    "使用與儀表板相同六因子、PIT 資料及凍結參考分布。",
+    "歷史重建不是當時已發出的訊號，也不是新的獨立回測。",
+    "舊五項加權原型已停用；不將三年資料直接拼接到不同定義的舊訊號。"
+  ]
 }

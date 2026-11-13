@@ -1,0 +1,45 @@
+{
+  "status": "BLOCKED",
+  "evaluated_for_date": "2026-11-13",
+  "checks": [
+    {
+      "id": "publication",
+      "label": "歷史發布時間與版本逐筆認證",
+      "passed": false,
+      "evidence": "docs/phase4_publication_timing_audit.json"
+    },
+    {
+      "id": "calendar",
+      "label": "期交所獨立交易日曆認證",
+      "passed": false,
+      "evidence": "docs/taifex_prebacktest_gate.json"
+    },
+    {
+      "id": "validation",
+      "label": "獨立前瞻驗證",
+      "passed": false,
+      "evidence": "docs/independent_model_validation.json"
+    },
+    {
+      "id": "authorization",
+      "label": "模型版本與證據授權",
+      "passed": false,
+      "evidence": "docs/production_model_authorization.json"
+    },
+    {
+      "id": "current_forecast",
+      "label": "當日可追溯前瞻分數",
+      "passed": false,
+      "evidence": "storage/prospective/forecasts/2026-11-13.json"
+    }
+  ],
+  "blockers": [
+    "歷史發布時間與版本逐筆認證",
+    "期交所獨立交易日曆認證",
+    "獨立前瞻驗證",
+    "模型版本與證據授權",
+    "當日可追溯前瞻分數"
+  ],
+  "source_panel_sha256": "161505e9ee16550400c21749236ab5d4c4eb3690d07003bbf986ba09b48fe472",
+  "frozen_protocol_sha256": "5bdab8f8ae59e2081b9ac84e59237a0d6c717b6c7162c5140b6c1136ed45fc08"
+}
