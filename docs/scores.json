@@ -1,11 +1,11 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-12T18:20:16.226532+00:00",
+  "generated_at": "2026-11-13T00:25:37.269288+00:00",
   "model_status": "uncalibrated_prototype",
   "disclaimer": "Risk scores are provisional and not validated by historical backtests.",
   "global": {
     "status": "provisional",
-    "score": 20.8,
+    "score": 21.1,
     "coverage": 0.85,
     "min_coverage": 0.85,
     "components": [
@@ -36,10 +36,10 @@
       {
         "metric": "indices",
         "weight": 20,
-        "signal": 30.23,
+        "signal": 31.33,
         "eligible": true,
         "reason": null,
-        "contribution": 7.1129411764705885
+        "contribution": 7.371764705882351
       },
       {
         "metric": "nfci",
@@ -66,7 +66,7 @@
         "contribution": null
       }
     ],
-    "as_of": "2026-11-12T18:20:15.983814+00:00"
+    "as_of": "2026-11-13T00:25:37.013600+00:00"
   },
   "taiwan": {
     "status": "formal_model_blocked",

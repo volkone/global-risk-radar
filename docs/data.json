@@ -5,16 +5,12 @@
     "tw_margin": "2026-11-12T18:20:10.297490+00:00",
     "tw_tw_price": "2026-11-12T18:20:10.297490+00:00"
   },
-  "updated_utc": "2026-11-12T18:20:15.983814+00:00",
+  "updated_utc": "2026-11-13T00:25:37.013600+00:00",
   "request_stats": {
-    "requests": 14,
-    "success": 14,
+    "requests": 6,
+    "success": 6,
     "failure": 0,
     "by_host": {
-      "api.stlouisfed.org": 4,
-      "www.twse.com.tw": 2,
-      "openapi.twse.com.tw": 1,
-      "openapi.taifex.com.tw": 1,
       "query1.finance.yahoo.com": 6
     },
     "errors": [],
@@ -406,7 +402,8 @@
       ],
       "provider": "FRED official API",
       "checked_at": "2026-11-12T18:20:10.297490+00:00",
-      "change20bp": 14.0
+      "change20bp": 14.0,
+      "cache_status": "cached"
     },
     "ig": {
       "name": "美國投資等級債利差",
@@ -782,7 +779,8 @@
         }
       ],
       "provider": "FRED official API",
-      "checked_at": "2026-11-12T18:20:10.297490+00:00"
+      "checked_at": "2026-11-12T18:20:10.297490+00:00",
+      "cache_status": "cached"
     },
     "vix": {
       "name": "VIX",
@@ -1158,7 +1156,8 @@
         }
       ],
       "provider": "FRED official API",
-      "checked_at": "2026-11-12T18:20:10.297490+00:00"
+      "checked_at": "2026-11-12T18:20:10.297490+00:00",
+      "cache_status": "cached"
     },
     "us10y": {
       "name": "美國10年期公債殖利率",
@@ -1530,7 +1529,8 @@
         }
       ],
       "provider": "FRED official API",
-      "checked_at": "2026-11-12T18:20:10.297490+00:00"
+      "checked_at": "2026-11-12T18:20:10.297490+00:00",
+      "cache_status": "cached"
     },
     "nfci": {
       "name": "芝加哥金融情勢指數",
@@ -1628,7 +1628,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 28390.994,
+      "value": 28289.188,
       "date": "2026-11-12",
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ENDX/",
@@ -1991,13 +1991,13 @@
         },
         {
           "date": "2026-11-12",
-          "value": 28390.994
+          "value": 28289.188
         }
       ],
-      "drawdown_pct": 9.07,
+      "drawdown_pct": 9.4,
       "reference": "近一年最高收盤價",
-      "spx": 7625.5,
-      "checked_at": "2026-11-12T18:20:10.297490+00:00"
+      "spx": 7592.4,
+      "checked_at": "2026-11-13T00:25:36.446354+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -2621,7 +2621,7 @@
       ],
       "drawdown_pct": 11.17,
       "reference": "近一年最高收盤價",
-      "checked_at": "2026-11-12T18:20:10.297490+00:00"
+      "checked_at": "2026-11-13T00:25:36.446354+00:00"
     },
     "fx": {
       "name": "美元兌新台幣與美元指數",
@@ -2630,15 +2630,11 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 32.999,
-      "date": "2026-11-12",
+      "value": 32.933,
+      "date": "2026-11-13",
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/",
       "history": [
-        {
-          "date": "2026-07-09",
-          "value": 32.097
-        },
         {
           "date": "2026-07-12",
           "value": 32.099
@@ -2993,11 +2989,15 @@
         },
         {
           "date": "2026-11-12",
-          "value": 32.999
+          "value": 32.862
+        },
+        {
+          "date": "2026-11-13",
+          "value": 32.933
         }
       ],
-      "checked_at": "2026-11-12T18:20:10.297490+00:00",
-      "dxy": 103.2
+      "checked_at": "2026-11-13T00:25:36.446354+00:00",
+      "dxy": 103.17
     }
   },
   "active_alerts": {
