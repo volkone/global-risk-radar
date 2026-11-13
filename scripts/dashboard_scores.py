@@ -9,7 +9,7 @@ import json
 import sqlite3
 from zoneinfo import ZoneInfo
 from phase5_forward_capture import verify_frozen
-from phase5_forward_ledger import KEYS, frozen_distributions, verified_snapshot
+from phase5_forward_ledger import KEYS, frozen_distributions, verified_snapshot, score as frozen_score
 from backtest_phase2_research import prepare, percentile, numeric
 from history import ROOT, DATABASE
 
@@ -72,6 +72,31 @@ def reconstruct(rows, distributions, lag):
     return history
 
 
+def calibration_report(panel, digest, frozen, history):
+    features = prepare(clean_rows(panel['rows']))
+    distributions = frozen_distributions()
+    latest = next((r for r in reversed(history) if r['score'] is not None), None)
+    signals = {}
+    for key, label in zip(KEYS, LABELS):
+        c = next((c for c in (latest or {}).get('components',[]) if c['metric']==key), {})
+        signals[key] = dict(c, label=label,
+            raw_observations=len(panel['rows']),
+            transformed_observations=sum(numeric((f or {}).get(key)) for f in features),
+            reference_observations=len(distributions[key]),
+            current_date=(latest or {}).get('signal_date'),
+            status='research_calibrated' if c.get('eligible') else 'insufficient_history')
+    return {'schema_version':2,'model_id':'frozen_six_factor_research',
+            'model_status':'research_only','source_panel_sha256':digest,
+            'historical_sessions':len(panel['rows']),
+            'valid_historical_scores':sum(r['score'] is not None for r in history),
+            'method':'frozen_reference_distribution_descriptive_reconstruction',
+            'signals':signals,'latest_research':latest,
+            'research_threshold':frozen['alert_score_threshold_frozen_before_future_outcomes'],
+            'notes':['使用與儀表板相同六因子、PIT 資料及凍結參考分布。',
+                     '歷史重建不是當時已發出的訊號，也不是新的獨立回測。',
+                     '舊五項加權原型已停用；不將三年資料直接拼接到不同定義的舊訊號。']}
+
+
 def integrate(report, data):
     frozen = verify_frozen()
     raw = PANEL.read_bytes()
@@ -93,24 +118,40 @@ def integrate(report, data):
             _, actual_hash = verified_snapshot(ROOT/'storage/prospective/snapshots'/f'{date}.json')
             if actual_hash != expected_hash:
                 raise ValueError('forecast_snapshot_hash_mismatch')
+        created = dt.datetime.fromisoformat(pred['created_at_utc'])
+        if (created.astimezone(ZoneInfo('Asia/Taipei')).date().isoformat() != pred['forecast_session']
+                or path.stem != pred['forecast_session']
+                or len(pred['feature_source_snapshots_sha256']) < 23
+                or frozen_score(pred['model_feature_values'], frozen_distributions()) != pred['score']):
+            raise ValueError('forecast_time_or_model_score_mismatch')
         forecasts.append({'date':pred['forecast_session'],'score':pred['score'],
                           'signal_date':pred['signal_observed_session'],
                           'components':components(pred['model_feature_values'], frozen_distributions()),
                           'status':'prospective_research','created_at_utc':pred['created_at_utc']})
-    report['taiwan_legacy_prototype'] = report['taiwan']
+    from model_gate import evaluate_gate
+    today = dt.datetime.now(ZoneInfo('Asia/Taipei')).date().isoformat()
+    gate = evaluate_gate(ROOT, digest, protocol_hash, forecasts[-1] if forecasts else None, today)
+    (ROOT/'docs/model_readiness.json').write_text(json.dumps(gate,ensure_ascii=False,indent=2)+'\n')
+    official = forecasts[-1] if gate['status'] == 'PASS' else None
+    calibration = calibration_report(panel, digest, frozen, history)
+    (ROOT/'docs/calibration.json').write_text(json.dumps(calibration,ensure_ascii=False,indent=2)+'\n')
+    report['taiwan_legacy_prototype'] = dict(report['taiwan'], deprecated=True, use_scope='inactive_legacy_diagnostic')
     report['taiwan'] = {
-        'status':'formal_model_blocked','score':None,'coverage':(latest or {}).get('coverage',0),
-        'components':[], 'formal_model_validated':False,
-        'reason':'來源發布時刻、交易日曆證據與獨立驗證尚未完成',
+        'status':'validated' if official else 'formal_model_blocked','score':official['score'] if official else None,'coverage':sum(c['eligible'] for c in official['components'])/6 if official else 0,
+        'components':official['components'] if official else [], 'formal_model_validated':bool(official),
+        'as_of':official['date'] if official else None,'quality_gate':gate,
+        'reason':'；'.join(gate['blockers']),
         'latest_research':forecasts[-1] if forecasts else latest,
         'research_threshold':frozen['alert_score_threshold_frozen_before_future_outcomes'],
         'research_min_factors':5,'research_factor_count':6}
-    report['schema_version'] = 2
+    report['schema_version'] = 3
+    report['model_status'] = 'separate_global_prototype_and_evidence_gated_taiwan'
+    report['disclaimer'] = 'Global is provisional; historical Taiwan reconstruction is research-only. Formal Taiwan eligibility is recorded in quality_gate.'
     report['global']['as_of'] = data.get('updated_utc')
     used = sum(c['weight'] for c in report['global']['components'] if c['eligible'])
     for c in report['global']['components']:
         c['contribution'] = c['signal']*c['weight']/used if c['eligible'] and used else None
-    report['formal_model_status'] = 'BLOCKED'
+    report['formal_model_status'] = gate['status']
     stamp = data.get('updated_utc') or report['generated_at']
     with sqlite3.connect(DATABASE) as db:
         db.execute('CREATE TABLE IF NOT EXISTS pit_panel_versions (sha256 TEXT, session_date TEXT, row_json TEXT NOT NULL, PRIMARY KEY(sha256,session_date))')
@@ -122,14 +163,14 @@ def integrate(report, data):
         global_history = [dict(date=s, **json.loads(payload)) for s,payload in db.execute(
             "SELECT observed_at,payload FROM dashboard_score_snapshots WHERE model='global_prototype_v1' ORDER BY observed_at")]
     payload = {'schema_version':1,'generated_at':report['generated_at'],
-               'formal_model_status':'BLOCKED','source_panel_sha256':digest,
+               'formal_model_status':gate['status'],'source_panel_sha256':digest,
                'historical_sessions':len(history), 'valid_historical_scores':sum(r['score'] is not None for r in history),
                'global':report['global'],'taiwan':report['taiwan'],
                'taiwan_history':history,'global_history':global_history,'prospective_history':forecasts,
                'limitations':['台灣歷史曲線使用全期間凍結分布重建，並非當時發出的預測，不能作為無前視回測績效。',
                               '全球歷史分數從本次整合起逐次留存；不以缺少的歷史因子回填三年分數。',
                               '研究分數不是下跌機率；全球原型與台灣六因子模型不宜直接比較高低。',
-                              '正式模型仍為 BLOCKED；資料不齊不等於低風險。']}
+                              '正式評分依獨立證據關卡判定；資料不齊不等於低風險。']}
     OUT.write_text(json.dumps(payload,ensure_ascii=False,separators=(',',':'),allow_nan=False)+'\n')
-    print('3B dashboard:',len(history),'sessions;',payload['valid_historical_scores'],'research scores; formal BLOCKED')
+    print('3B dashboard:',len(history),'sessions;',payload['valid_historical_scores'],'research scores; formal',gate['status'])
     return report

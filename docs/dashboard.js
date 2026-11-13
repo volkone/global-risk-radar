@@ -34,7 +34,11 @@
     el('global-score-date').textContent='資料擷取：'+(g.as_of||'未知');
     el('taiwan-score').textContent=num(t?.score);el('taiwan-score-info').textContent=t?'評分日 '+t.date+'｜訊號日 '+t.signal_date:'等待合格資料';
     el('taiwan-score-date').textContent=t?.status==='prospective_research'?'已留存前瞻研究預測':'歷史重建分數 · 非今日訊號';
-    el('risk-gate').textContent='正式模型 BLOCKED';
+    el('risk-gate').textContent='正式模型 '+data.formal_model_status;
+    el('formal-score').textContent=Number.isFinite(data.taiwan.score)?num(data.taiwan.score):'尚未符合條件';
+    el('formal-reason').textContent=data.taiwan.reason||('評分日 '+data.taiwan.as_of);
+    el('gate-checks').innerHTML='<ul>'+ (data.taiwan.quality_gate?.checks||[]).map(c=>'<li class="'+(c.passed?'':'warn')+'">'+esc(c.label)+'：'+(c.passed?'通過':'待完成')+'</li>').join('')+'</ul><a href="model_readiness.json">查看品質關卡報告</a>';
+
     el('risk-count').textContent=data.historical_sessions+' 個交易日已整合 · '+data.valid_historical_scores+' 筆歷史研究分數';
     el('risk-limitations').innerHTML=data.limitations.map(s=>'<li>'+esc(s)+'</li>').join('');
     el('risk-error').textContent='';renderHistory();

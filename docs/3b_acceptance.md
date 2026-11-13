@@ -1,0 +1,18 @@
+# 3B 統一校準與品質關卡
+
+校準與儀表板共用 `dashboard_scores.calibration_report`、同一份經雜湊核對的 PIT panel、六因子及凍結參考分布。`calibration.json` schema 2 的 signals 使用六因子名稱；舊四訊號校準 API 保留為離線測試工具，不再是日常主流程。舊五項台灣原型在 scores.json 標示 deprecated，不用於正式評分。
+
+歷史重建仍是描述性研究，並非無前視績效。研究參數與前瞻紀錄均不修改。當日正式分數僅可取自已留存、來源快照雜湊與凍結模型分數均核對過的當日前瞻預測；歷史重建不得轉為正式分數。非交易日或尚未有當日前瞻紀錄時，正式分數為空。
+
+`model_readiness.json` 每次評分重建，列出五項實際檢查：
+
+1. PIT 發布時刻及修訂逐筆認證，且認證對應目前 panel 雜湊。
+2. 期交所獨立日曆、完整公告及主要證據認證。
+3. 獨立驗證報告：`docs/independent_model_validation.json`，必須有 `independent_validation_passed: true`、`source_panel_sha256`、`frozen_protocol_sha256`，以及 `matured_nonoverlapping_events` 中 `5d`、`20d` 各至少 30。30 是既有凍結方案的樣本下限，不代表統計效果自動合格；通過判定仍須獨立驗證。
+4. 獨立正式評分授權：`docs/production_model_authorization.json`，必須有 `production_scoring_authorized: true`、上述兩項模型／資料雜湊，以及 `evidence_sha256` 對應三份完整證據檔路徑與 SHA-256。證據修改後，舊授權失效。
+5. 當日可追溯、數值有效的前瞻預測。
+
+第 3、4 項檔案目前不存在；本程式不自行產生合格證書。它們需在未來完成獨立查核後，經儲存庫審查建立。缺件、錯誤雜湊、不合格證據或過期預測都維持 BLOCKED。所有檢查通過才輸出正式分數，並不啟動交易或變更警報門檻。
+
+已完成：統一研究校準資料、動態證據關卡、前後端狀態銜接、缺值及失敗阻擋測試。
+尚未完成：發布時刻與版本完整認證、日曆最終認證、成熟獨立前瞻驗證、正式授權、全球缺項校準與三年全球曲線。
