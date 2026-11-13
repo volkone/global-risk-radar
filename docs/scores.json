@@ -1,12 +1,12 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-13T16:25:21.135586+00:00",
+  "generated_at": "2026-11-13T16:26:13.494151+00:00",
   "model_status": "separate_global_prototype_and_evidence_gated_taiwan",
   "disclaimer": "Global is provisional; historical Taiwan reconstruction is research-only. Formal Taiwan eligibility is recorded in quality_gate.",
   "global": {
     "status": "provisional",
-    "score": 22.6,
-    "coverage": 0.85,
+    "score": 21.6,
+    "coverage": 0.9,
     "min_coverage": 0.85,
     "components": [
       {
@@ -15,7 +15,7 @@
         "signal": 21.67,
         "eligible": true,
         "reason": null,
-        "contribution": 6.373529411764705
+        "contribution": 6.019444444444445
       },
       {
         "metric": "ig",
@@ -23,7 +23,7 @@
         "signal": 16.0,
         "eligible": true,
         "reason": null,
-        "contribution": 1.8823529411764706
+        "contribution": 1.7777777777777777
       },
       {
         "metric": "vix",
@@ -31,15 +31,15 @@
         "signal": 16.64,
         "eligible": true,
         "reason": null,
-        "contribution": 3.915294117647059
+        "contribution": 3.697777777777778
       },
       {
         "metric": "indices",
         "weight": 20,
-        "signal": 37.7,
+        "signal": 37.67,
         "eligible": true,
         "reason": null,
-        "contribution": 8.870588235294118
+        "contribution": 8.371111111111112
       },
       {
         "metric": "nfci",
@@ -47,15 +47,15 @@
         "signal": 12.93,
         "eligible": true,
         "reason": null,
-        "contribution": 1.5211764705882354
+        "contribution": 1.4366666666666668
       },
       {
         "metric": "us10y",
         "weight": 5,
-        "signal": null,
-        "eligible": false,
-        "reason": "signal_not_yet_calibrated",
-        "contribution": null
+        "signal": 5.0,
+        "eligible": true,
+        "reason": null,
+        "contribution": 0.2777777777777778
       },
       {
         "metric": "breadth",
@@ -66,7 +66,8 @@
         "contribution": null
       }
     ],
-    "as_of": "2026-11-13T16:25:18.075344+00:00"
+    "model_id": "global_rate_v2",
+    "as_of": "2026-11-13T16:26:11.113515+00:00"
   },
   "taiwan": {
     "status": "formal_model_blocked",
