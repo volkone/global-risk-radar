@@ -147,6 +147,7 @@ def integrate(report, data):
     report['schema_version'] = 3
     report['model_status'] = 'separate_global_prototype_and_evidence_gated_taiwan'
     report['disclaimer'] = 'Global is provisional; historical Taiwan reconstruction is research-only. Formal Taiwan eligibility is recorded in quality_gate.'
+    report['global']['model_id'] = 'global_rate_v2'
     report['global']['as_of'] = data.get('updated_utc')
     used = sum(c['weight'] for c in report['global']['components'] if c['eligible'])
     for c in report['global']['components']:
@@ -159,16 +160,16 @@ def integrate(report, data):
                        [(digest,r['date'],json.dumps(r,ensure_ascii=False,allow_nan=False)) for r in panel['rows']])
         db.execute('CREATE TABLE IF NOT EXISTS dashboard_score_snapshots (observed_at TEXT, model TEXT, payload TEXT NOT NULL, PRIMARY KEY(observed_at,model))')
         db.execute('INSERT OR IGNORE INTO dashboard_score_snapshots VALUES(?,?,?)',
-                   (stamp,'global_prototype_v1',json.dumps(report['global'],ensure_ascii=False,allow_nan=False)))
+                   (stamp,'global_rate_v2',json.dumps(report['global'],ensure_ascii=False,allow_nan=False)))
         global_history = [dict(date=s, **json.loads(payload)) for s,payload in db.execute(
-            "SELECT observed_at,payload FROM dashboard_score_snapshots WHERE model='global_prototype_v1' ORDER BY observed_at")]
+            "SELECT observed_at,payload FROM dashboard_score_snapshots WHERE model='global_rate_v2' ORDER BY observed_at")]
     payload = {'schema_version':1,'generated_at':report['generated_at'],
                'formal_model_status':gate['status'],'source_panel_sha256':digest,
                'historical_sessions':len(history), 'valid_historical_scores':sum(r['score'] is not None for r in history),
                'global':report['global'],'taiwan':report['taiwan'],
                'taiwan_history':history,'global_history':global_history,'prospective_history':forecasts,
                'limitations':['台灣歷史曲線使用全期間凍結分布重建，並非當時發出的預測，不能作為無前視回測績效。',
-                              '全球歷史分數從本次整合起逐次留存；不以缺少的歷史因子回填三年分數。',
+                              '全球逐次留存與三年描述性重建分開顯示；重建曲線不是事前預測或 PIT 回測。',
                               '研究分數不是下跌機率；全球原型與台灣六因子模型不宜直接比較高低。',
                               '正式評分依獨立證據關卡判定；資料不齊不等於低風險。']}
     OUT.write_text(json.dumps(payload,ensure_ascii=False,separators=(',',':'),allow_nan=False)+'\n')

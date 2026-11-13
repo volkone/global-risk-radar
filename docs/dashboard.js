@@ -3,7 +3,7 @@
   const el=id=>document.getElementById(id), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const num=v=>Number.isFinite(v)?v.toFixed(1):'—';
   const names={hy:'高收益債利差',ig:'投資級債利差',vix:'VIX',indices:'Nasdaq 100 回撤',nfci:'金融情勢',us10y:'美國十年債',breadth:'市場廣度'};
-  let data;
+  let data,globalArchive=null;
   function factors(list){return '<table><thead><tr><th>風險因子</th><th>強度 / 100</th><th>貢獻分數</th><th>有效權重</th></tr></thead><tbody>'+list.map(c=>'<tr><td>'+esc(c.label||names[c.metric]||c.metric)+(c.eligible?'':'<div class="muted small">'+esc(c.reason==='signal_not_yet_calibrated'?'尚未校準':c.reason==='quality_gate_not_passed'?'品質門檻未通過':c.reason)+'</div>')+'</td><td>'+num(c.signal)+'</td><td>'+num(c.contribution)+'</td><td>'+(c.eligible?num(c.effective_weight!=null?c.effective_weight*100:c.weight/data.global.coverage)+'%':'—')+'</td></tr>').join('')+'</tbody></table>';}
   function chart(rows,threshold){
     const points=rows.filter(r=>Number.isFinite(r.score));
@@ -18,17 +18,18 @@
   }
   function renderHistory(){
     const kind=el('risk-series').value;
-    let rows=kind==='global'?data.global_history:kind==='forward'?data.prospective_history:data.taiwan_history;
+    let rows=kind==='global_archive'?(globalArchive?.records||[]):kind==='global'?data.global_history:kind==='forward'?data.prospective_history:data.taiwan_history;
     const limit=el('risk-range').value;
     if(limit!=='all')rows=rows.slice(-Number(limit));
-    el('risk-chart').innerHTML=chart(rows,kind==='global'?null:data.taiwan.research_threshold);
-    el('risk-chart-note').textContent=kind==='global'?'全球分數按實際執行留存，尚未具備三年完整因子，沒有回填歷史分數。':kind==='forward'?'僅顯示已事前留存的研究預測；缺資料期間不補發。':'歷史重建使用凍結的全期間參考分布；不是無前視回測或前瞻績效。虛線為研究門檻 '+data.taiwan.research_threshold+'。';
+    el('risk-chart').innerHTML=chart(rows,kind.startsWith('global')?null:data.taiwan.research_threshold);
+    el('risk-chart-note').textContent=kind==='global_archive'?(globalArchive?'三年描述性重建：'+globalArchive.valid_scores+' / '+globalArchive.sessions+' 筆有效分數；按觀測日配對，可能包含後續修訂，非當時已知訊號。最高覆蓋率 90%（早期利率暖機期為 85%），不與實際留存紀錄混接。':'全球歷史資料無法取得，不能視為零風險。'):kind==='global'?'按實際執行時間留存；不將事後重建值混入。':kind==='forward'?'僅顯示已事前留存的研究預測；缺資料期間不補發。':'歷史重建使用凍結的全期間參考分布；不是無前視回測或前瞻績效。虛線為研究門檻 '+data.taiwan.research_threshold+'。';
     el('risk-date').innerHTML=rows.filter(r=>Number.isFinite(r.score)).slice().reverse().map(r=>'<option value="'+esc(r.date)+'">'+esc(r.date)+'</option>').join('');
     el('risk-date').onchange=()=>showDetail(rows);showDetail(rows);
   }
   function showDetail(rows){const row=rows.find(r=>r.date===el('risk-date').value);el('risk-factors').innerHTML=row?'<p class="small muted">所選日期：'+esc(row.date)+(row.signal_date?'｜訊號資料日：'+esc(row.signal_date):'')+'｜分數 '+num(row.score)+'</p>'+factors(row.components||[]):'<p class="muted">尚無可檢視的因子紀錄。</p>';}
   async function load(){try{
     const response=await fetch('./risk_dashboard.json?'+Date.now(),{cache:'no-store'});if(!response.ok)throw Error('評分資料暫時無法取得');data=await response.json();
+    try{const archive=await fetch('./global_history.json?'+Date.now(),{cache:'no-store'});globalArchive=archive.ok?await archive.json():null;}catch(e){globalArchive=null;}
     const g=data.global,t=data.taiwan.latest_research;
     el('global-score').textContent=num(g.score);el('global-score-info').textContent='品質覆蓋 '+num(g.coverage*100)+'%｜最低 '+num(g.min_coverage*100)+'%';
     el('global-score-date').textContent='資料擷取：'+(g.as_of||'未知');
