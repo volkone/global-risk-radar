@@ -1,0 +1,45 @@
+name: Uptrend deterioration early-warning research
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/research_uptrend_early_warning.yml'
+permissions:
+  contents: write
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m py_compile scripts/research_uptrend_early_warning.py
+      - run: python scripts/research_uptrend_early_warning.py
+      - name: Assert fail-closed research only
+        run: |
+          python - <<'PY'
+          import json
+          j=json.load(open('docs/p2_03_uptrend_early_warning_research.json',encoding='utf-8'))
+          assert j['live_trading_authorized'] is False and j['recommended_live_threshold'] is None
+          assert j['status']=='retrospective_walk_forward_complete_prospective_confirmation_pending'
+          for h,r in j['results'].items():
+            assert len(r['folds'])==3
+            assert r['aggregate']['n']==sum(x['uptrend_eligible']['n'] for x in r['folds'])
+            print(h,r['aggregate'],r['bonferroni_two_horizons_p'])
+          PY
+      - name: Commit report
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/p2_03_uptrend_early_warning_research.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Save uptrend early-warning research [skip ci]'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
