@@ -1,0 +1,404 @@
+{
+  "stage": "P2-02_followup",
+  "status": "diagnostics_and_multiplicity_computed",
+  "input_sha256": "20e0c7ecf9ead9393b6f1518b1c6cb659ea2745335c00293a253808c4777edc8",
+  "first_fold_diagnostics": {
+    "5d": {
+      "first_fold": {
+        "n": 100,
+        "alerts": 16,
+        "events": 8,
+        "hits": 2,
+        "false_alerts": 14,
+        "missed_events": 6,
+        "precision": 0.125,
+        "base_rate": 0.08,
+        "alert_rate": 0.16
+      },
+      "later_folds": {
+        "n": 200,
+        "alerts": 48,
+        "events": 47,
+        "hits": 20,
+        "false_alerts": 28,
+        "missed_events": 27,
+        "precision": 0.4166666666666667,
+        "base_rate": 0.235,
+        "alert_rate": 0.24
+      },
+      "first_fold_regimes": {
+        "up": {
+          "n": 80,
+          "alerts": 8,
+          "events": 5,
+          "hits": 0,
+          "false_alerts": 8,
+          "missed_events": 5,
+          "precision": 0.0,
+          "base_rate": 0.0625,
+          "alert_rate": 0.1
+        },
+        "down": {
+          "n": 9,
+          "alerts": 6,
+          "events": 0,
+          "hits": 0,
+          "false_alerts": 6,
+          "missed_events": 0,
+          "precision": 0.0,
+          "base_rate": 0.0,
+          "alert_rate": 0.6666666666666666
+        },
+        "sideways": {
+          "n": 11,
+          "alerts": 2,
+          "events": 3,
+          "hits": 2,
+          "false_alerts": 0,
+          "missed_events": 1,
+          "precision": 1.0,
+          "base_rate": 0.2727272727272727,
+          "alert_rate": 0.18181818181818182
+        }
+      },
+      "later_fold_regimes": {
+        "up": {
+          "n": 146,
+          "alerts": 16,
+          "events": 33,
+          "hits": 8,
+          "false_alerts": 8,
+          "missed_events": 25,
+          "precision": 0.5,
+          "base_rate": 0.22602739726027396,
+          "alert_rate": 0.1095890410958904
+        },
+        "down": {
+          "n": 24,
+          "alerts": 22,
+          "events": 9,
+          "hits": 9,
+          "false_alerts": 13,
+          "missed_events": 0,
+          "precision": 0.4090909090909091,
+          "base_rate": 0.375,
+          "alert_rate": 0.9166666666666666
+        },
+        "sideways": {
+          "n": 30,
+          "alerts": 10,
+          "events": 5,
+          "hits": 3,
+          "false_alerts": 7,
+          "missed_events": 2,
+          "precision": 0.3,
+          "base_rate": 0.16666666666666666,
+          "alert_rate": 0.3333333333333333
+        }
+      },
+      "first_fold_alert_dates": [
+        "2025-08-04",
+        "2025-10-13",
+        "2025-10-14",
+        "2025-10-15",
+        "2025-10-17",
+        "2025-11-05",
+        "2025-11-07",
+        "2025-11-10",
+        "2025-11-14",
+        "2025-11-18",
+        "2025-11-19",
+        "2025-11-20",
+        "2025-11-21",
+        "2025-11-24",
+        "2025-11-25",
+        "2025-11-26"
+      ],
+      "first_fold_hit_dates": [
+        "2025-11-14",
+        "2025-11-20"
+      ],
+      "first_fold_missed_event_dates": [
+        "2025-08-13",
+        "2025-08-18",
+        "2025-11-11",
+        "2025-11-12",
+        "2025-11-13",
+        "2025-11-17"
+      ],
+      "first_fold_event_dates": [
+        "2025-08-13",
+        "2025-08-18",
+        "2025-11-11",
+        "2025-11-12",
+        "2025-11-13",
+        "2025-11-14",
+        "2025-11-17",
+        "2025-11-20"
+      ],
+      "warning": "Descriptive decomposition only; changes in prevalence/regimes and clustered events are possible explanations, not proven causes"
+    },
+    "20d": {
+      "first_fold": {
+        "n": 100,
+        "alerts": 16,
+        "events": 11,
+        "hits": 1,
+        "false_alerts": 15,
+        "missed_events": 10,
+        "precision": 0.0625,
+        "base_rate": 0.11,
+        "alert_rate": 0.16
+      },
+      "later_folds": {
+        "n": 198,
+        "alerts": 47,
+        "events": 45,
+        "hits": 26,
+        "false_alerts": 21,
+        "missed_events": 19,
+        "precision": 0.5531914893617021,
+        "base_rate": 0.22727272727272727,
+        "alert_rate": 0.23737373737373738
+      },
+      "first_fold_regimes": {
+        "up": {
+          "n": 80,
+          "alerts": 8,
+          "events": 11,
+          "hits": 1,
+          "false_alerts": 7,
+          "missed_events": 10,
+          "precision": 0.125,
+          "base_rate": 0.1375,
+          "alert_rate": 0.1
+        },
+        "down": {
+          "n": 9,
+          "alerts": 6,
+          "events": 0,
+          "hits": 0,
+          "false_alerts": 6,
+          "missed_events": 0,
+          "precision": 0.0,
+          "base_rate": 0.0,
+          "alert_rate": 0.6666666666666666
+        },
+        "sideways": {
+          "n": 11,
+          "alerts": 2,
+          "events": 0,
+          "hits": 0,
+          "false_alerts": 2,
+          "missed_events": 0,
+          "precision": 0.0,
+          "base_rate": 0.0,
+          "alert_rate": 0.18181818181818182
+        }
+      },
+      "later_fold_regimes": {
+        "up": {
+          "n": 144,
+          "alerts": 15,
+          "events": 30,
+          "hits": 11,
+          "false_alerts": 4,
+          "missed_events": 19,
+          "precision": 0.7333333333333333,
+          "base_rate": 0.20833333333333334,
+          "alert_rate": 0.10416666666666667
+        },
+        "down": {
+          "n": 24,
+          "alerts": 22,
+          "events": 8,
+          "hits": 8,
+          "false_alerts": 14,
+          "missed_events": 0,
+          "precision": 0.36363636363636365,
+          "base_rate": 0.3333333333333333,
+          "alert_rate": 0.9166666666666666
+        },
+        "sideways": {
+          "n": 30,
+          "alerts": 10,
+          "events": 7,
+          "hits": 7,
+          "false_alerts": 3,
+          "missed_events": 0,
+          "precision": 0.7,
+          "base_rate": 0.23333333333333334,
+          "alert_rate": 0.3333333333333333
+        }
+      },
+      "first_fold_alert_dates": [
+        "2025-08-04",
+        "2025-10-13",
+        "2025-10-14",
+        "2025-10-15",
+        "2025-10-17",
+        "2025-11-05",
+        "2025-11-07",
+        "2025-11-10",
+        "2025-11-14",
+        "2025-11-18",
+        "2025-11-19",
+        "2025-11-20",
+        "2025-11-21",
+        "2025-11-24",
+        "2025-11-25",
+        "2025-11-26"
+      ],
+      "first_fold_hit_dates": [
+        "2025-11-10"
+      ],
+      "first_fold_missed_event_dates": [
+        "2025-10-27",
+        "2025-10-28",
+        "2025-10-29",
+        "2025-10-30",
+        "2025-10-31",
+        "2025-11-03",
+        "2025-11-04",
+        "2025-11-06",
+        "2025-11-12",
+        "2025-11-13"
+      ],
+      "first_fold_event_dates": [
+        "2025-10-27",
+        "2025-10-28",
+        "2025-10-29",
+        "2025-10-30",
+        "2025-10-31",
+        "2025-11-03",
+        "2025-11-04",
+        "2025-11-06",
+        "2025-11-10",
+        "2025-11-12",
+        "2025-11-13"
+      ],
+      "warning": "Descriptive decomposition only; changes in prevalence/regimes and clustered events are possible explanations, not proven causes"
+    }
+  },
+  "familywise_adjustment": {
+    "method": "Joint max-absolute-centered paired circular moving-block bootstrap, simultaneous 95% confidence intervals across 12 horizon-factor comparisons",
+    "replicates_requested": 2500,
+    "joint_valid_replicates": 2497,
+    "simultaneous_half_width": 0.22065287653522953,
+    "blocks": "5d and 20d respectively, same bootstrap index across full and ablated model within horizon",
+    "caution": "Exploratory nonstudentized max-deviation bootstrap, sensitive to block choice, small samples and regime nonstationarity; not a calibrated exact p-value"
+  },
+  "factor_comparisons": {
+    "5d": {
+      "foreign_tx_short_pressure": {
+        "full_minus_removed_precision": 0.06933235509904617,
+        "simultaneous_95pct_ci": [
+          -0.15132052143618335,
+          0.2899852316342757
+        ],
+        "familywise_ci_excludes_zero": false
+      },
+      "margin_deleveraging_20d": {
+        "full_minus_removed_precision": 0.03359858532272325,
+        "simultaneous_95pct_ci": [
+          -0.18705429121250627,
+          0.2542514618579528
+        ],
+        "familywise_ci_excludes_zero": false
+      },
+      "institutional_net_selling_5d": {
+        "full_minus_removed_precision": 0.10376175548589339,
+        "simultaneous_95pct_ci": [
+          -0.11689112104933613,
+          0.3244146320211229
+        ],
+        "familywise_ci_excludes_zero": false
+      },
+      "twd_depreciation_20d": {
+        "full_minus_removed_precision": 0.10900058445353594,
+        "simultaneous_95pct_ci": [
+          -0.11165229208169358,
+          0.32965346098876547
+        ],
+        "familywise_ci_excludes_zero": false
+      },
+      "hy_oas_widening_20d": {
+        "full_minus_removed_precision": 0.04214559386973177,
+        "simultaneous_95pct_ci": [
+          -0.17850728266549776,
+          0.2627984704049613
+        ],
+        "familywise_ci_excludes_zero": false
+      },
+      "prior_us_vix_level": {
+        "full_minus_removed_precision": 0.02119841718485016,
+        "simultaneous_95pct_ci": [
+          -0.19945445935037937,
+          0.24185129372007969
+        ],
+        "familywise_ci_excludes_zero": false
+      }
+    },
+    "20d": {
+      "foreign_tx_short_pressure": {
+        "full_minus_removed_precision": 0.08362369337979092,
+        "simultaneous_95pct_ci": [
+          -0.1370291831554386,
+          0.30427656991502045
+        ],
+        "familywise_ci_excludes_zero": false
+      },
+      "margin_deleveraging_20d": {
+        "full_minus_removed_precision": 0.0714285714285714,
+        "simultaneous_95pct_ci": [
+          -0.14922430510665813,
+          0.2920814479638009
+        ],
+        "familywise_ci_excludes_zero": false
+      },
+      "institutional_net_selling_5d": {
+        "full_minus_removed_precision": 0.14589665653495437,
+        "simultaneous_95pct_ci": [
+          -0.07475622000027515,
+          0.3665495330701839
+        ],
+        "familywise_ci_excludes_zero": false
+      },
+      "twd_depreciation_20d": {
+        "full_minus_removed_precision": 0.16758241758241754,
+        "simultaneous_95pct_ci": [
+          -0.05307045895281198,
+          0.38823529411764707
+        ],
+        "familywise_ci_excludes_zero": false
+      },
+      "hy_oas_widening_20d": {
+        "full_minus_removed_precision": 0.020408163265306145,
+        "simultaneous_95pct_ci": [
+          -0.20024471326992338,
+          0.24106103980053567
+        ],
+        "familywise_ci_excludes_zero": false
+      },
+      "prior_us_vix_level": {
+        "full_minus_removed_precision": 0.022408963585434094,
+        "simultaneous_95pct_ci": [
+          -0.19824391294979543,
+          0.24306184012066362
+        ],
+        "familywise_ci_excludes_zero": false
+      }
+    }
+  },
+  "conclusion_policy": "Do not claim confirmed factor importance unless simultaneous CI excludes zero, and even then only exploratory within this holdout",
+  "limitations": [
+    "One initial weak fold does not identify a causal failure mechanism",
+    "Event rarity and alert clustering make first-fold precision unstable",
+    "First and later folds differ in historical periods and training sizes",
+    "Repeated overlapping outcomes are not independent",
+    "Historical FRED vintages and official TXF one-day evidence unresolved"
+  ],
+  "full_model_validated": false,
+  "full_model_backtest_authorized": false,
+  "recommended_live_threshold": null
+}
