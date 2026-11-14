@@ -1,0 +1,65 @@
+"""Collect bounded official announcement candidates, reconcile known closures; fail closed."""
+import datetime as dt, hashlib, json, re, urllib.parse, urllib.request
+from html.parser import HTMLParser
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1]
+URL="https://www.taifex.com.tw/cht/11/announcement"
+OUT=ROOT/"docs/taifex_announcement_three_year_audit.json"
+EVIDENCE=ROOT/"docs/taifex_calendar_evidence.json"
+YEARS=(2023,2024,2025,2026)
+class Rows(HTMLParser):
+ def __init__(self):super().__init__();self.row=None;self.cell=None;self.anchor=None;self.rows=[]
+ def handle_starttag(self,tag,attrs):
+  a=dict(attrs)
+  if tag=="tr":self.row=[]
+  if tag=="td" and self.row is not None:self.cell={"parts":[],"links":[]}
+  if tag=="a" and self.cell is not None:self.anchor={"href":a.get("href",""),"parts":[]}
+ def handle_data(self,data):
+  if self.cell is not None:self.cell["parts"].append(data)
+  if self.anchor is not None:self.anchor["parts"].append(data)
+ def handle_endtag(self,tag):
+  if tag=="a" and self.anchor is not None:
+   self.cell["links"].append({"url":urllib.parse.urljoin(URL,self.anchor["href"]),"title":" ".join(" ".join(self.anchor["parts"]).split())});self.anchor=None
+  if tag=="td" and self.cell is not None:self.row.append(self.cell);self.cell=None
+  if tag=="tr" and self.row is not None:self.rows.append(self.row);self.row=None
+def request(year,mode):
+ fields={"query_year":str(year)}
+ if mode=="post":data=urllib.parse.urlencode(fields).encode();url=URL
+ else:data=None;url=URL+"?"+urllib.parse.urlencode(fields)
+ req=urllib.request.Request(url,data=data,headers={"User-Agent":"Mozilla/5.0","Content-Type":"application/x-www-form-urlencoded"})
+ with urllib.request.urlopen(req,timeout=40) as response:raw=response.read(5000000);status=response.status
+ parser=Rows();parser.feed(raw.decode("utf-8","replace"))
+ records=[]
+ for row in parser.rows:
+  if len(row)<2:continue
+  date=" ".join(" ".join(row[0]["parts"]).split())
+  if not re.fullmatch(r"20\\d{2}/\\d{1,2}/\\d{1,2}",date):continue
+  title=" ".join(" ".join(row[1]["parts"]).split())
+  links=row[1]["links"]
+  if title:records.append({"published":date.replace("/","-"),"title":title,"url":links[0]["url"] if links else None})
+ return {"method":mode,"year":year,"http_status":status,"sha256":hashlib.sha256(raw).hexdigest(),"bytes":len(raw),"record_count":len(records),"records":records,"year_match":bool(records) and all(x["published"].startswith(str(year)+"-") for x in records)}
+def main():
+ evidence=json.loads(EVIDENCE.read_text(encoding="utf-8"))
+ report={"source":URL,"scope":["2023-11-11","2026-10-31"],"years":[],"special_date_reconciliation":[],"full_notice_sweep_verified":False,"full_model_backtest_authorized":False}
+ allrecords={}
+ for year in YEARS:
+  attempts=[]
+  for mode in ("post","get"):
+   try:attempts.append(request(year,mode))
+   except Exception as e:attempts.append({"method":mode,"year":year,"error":str(e)[:200]})
+  usable=next((x for x in attempts if x.get("year_match")),None)
+  report["years"].append({"year":year,"attempts":[{k:v for k,v in a.items() if k!="records"} for a in attempts],"selected_method":usable["method"] if usable else None,"verified_year_filter":bool(usable),"record_count":usable["record_count"] if usable else 0})
+  allrecords[year]=usable["records"] if usable else []
+  print(year,report["years"][-1]["verified_year_filter"],report["years"][-1]["record_count"],flush=True)
+ report["records"]=[x for year in YEARS for x in allrecords[year] if "2023-11-11"<=x["published"]<="2026-10-31"]
+ for entry in evidence["special_dates"]:
+  dates=entry["dates"]
+  official=entry.get("official_url","")
+  matches=[x for x in report["records"] if any(d.replace("-","/") in x["title"] or d in x["title"] for d in dates) or (official and x["url"] and urllib.parse.parse_qs(urllib.parse.urlparse(x["url"]).query).get("idx")==urllib.parse.parse_qs(urllib.parse.urlparse(official).query).get("idx") and "idx=" in official)]
+  report["special_date_reconciliation"].append({"dates":dates,"reason":entry["reason"],"known_official_url":official,"matching_archive_records":matches[:12],"matched":bool(matches),"note":"A missing match does not negate separately verified official primary evidence"})
+ report["all_year_filters_verified"]=all(x["verified_year_filter"] for x in report["years"])
+ report["unmatched_special_dates"]=[x["dates"] for x in report["special_date_reconciliation"] if not x["matched"]]
+ report["blockers"]=["historical_year_filters_not_all_verified"] if not report["all_year_filters_verified"] else []
+ report["blockers"]+=["archive_pagination_and_total_not_proven","independent_official_txf_2023_11_13_pending"]
+ OUT.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+if __name__=="__main__":main()
