@@ -1,0 +1,103 @@
+{
+  "stage": "P2-01",
+  "status": "statistical_validation_completed",
+  "panel_sha256": "20e0c7ecf9ead9393b6f1518b1c6cb659ea2745335c00293a253808c4777edc8",
+  "method": "Fixed train-only alert threshold, chronological holdout, exact circular shift null and seeded moving-block bootstrap",
+  "seed": 20261114,
+  "bootstrap_replicates": 3000,
+  "multiple_testing": "Bonferroni across 5d and 20d horizons; family-wise alpha 0.05",
+  "holdout": {
+    "5d": {
+      "event_threshold_pct": -3.0,
+      "range": [
+        "2025-12-05",
+        "2026-10-21"
+      ],
+      "confusion_matrix": {
+        "tp": 25,
+        "fp": 33,
+        "fn": 28,
+        "tn": 125,
+        "n": 211,
+        "precision": 0.43103448275862066,
+        "recall": 0.4716981132075472,
+        "specificity": 0.7911392405063291,
+        "false_positive_rate": 0.2088607594936709,
+        "false_negative_rate": 0.5283018867924528,
+        "base_rate": 0.25118483412322273,
+        "precision_lift": 1.7160052049446974
+      },
+      "effect_precision_minus_base_rate": 0.17984964863539793,
+      "moving_block_bootstrap": {
+        "block_length": 5,
+        "replicates_valid": 3000,
+        "precision_minus_base_rate_ci95": [
+          0.059433841424362754,
+          0.31042654028436023
+        ]
+      },
+      "circular_shift_null": {
+        "test": "circular_shift_one_sided_precision_lift",
+        "shifts_evaluated": 210,
+        "p_value": 0.052132701421800945,
+        "assumption": "Stationarity under cyclic shifts; not reliable under regime changes; overlapping outcomes retained"
+      },
+      "bonferroni_adjusted_p_value": 0.10426540284360189,
+      "nominal_significance_0_05": false,
+      "limitations": [
+        "Overlapping forward event labels and clustered alerts reduce effective sample size",
+        "Circular shift assumes approximate stationarity",
+        "Block bootstrap intervals depend on chosen block size",
+        "No economic profitability or calibration validation"
+      ]
+    },
+    "20d": {
+      "event_threshold_pct": -5.0,
+      "range": [
+        "2025-12-05",
+        "2026-09-29"
+      ],
+      "confusion_matrix": {
+        "tp": 28,
+        "fp": 21,
+        "fn": 17,
+        "tn": 130,
+        "n": 196,
+        "precision": 0.5714285714285714,
+        "recall": 0.6222222222222222,
+        "specificity": 0.8609271523178808,
+        "false_positive_rate": 0.1390728476821192,
+        "false_negative_rate": 0.37777777777777777,
+        "base_rate": 0.22959183673469388,
+        "precision_lift": 2.4888888888888885
+      },
+      "effect_precision_minus_base_rate": 0.34183673469387754,
+      "moving_block_bootstrap": {
+        "block_length": 20,
+        "replicates_valid": 2999,
+        "precision_minus_base_rate_ci95": [
+          0.14421768707482993,
+          0.5653061224489796
+        ]
+      },
+      "circular_shift_null": {
+        "test": "circular_shift_one_sided_precision_lift",
+        "shifts_evaluated": 195,
+        "p_value": 0.08163265306122448,
+        "assumption": "Stationarity under cyclic shifts; not reliable under regime changes; overlapping outcomes retained"
+      },
+      "bonferroni_adjusted_p_value": 0.16326530612244897,
+      "nominal_significance_0_05": false,
+      "limitations": [
+        "Overlapping forward event labels and clustered alerts reduce effective sample size",
+        "Circular shift assumes approximate stationarity",
+        "Block bootstrap intervals depend on chosen block size",
+        "No economic profitability or calibration validation"
+      ]
+    }
+  },
+  "statistical_significance_not_equal_to_live_readiness": true,
+  "full_model_backtest_authorized": false,
+  "recommended_live_threshold": null,
+  "caveat": "Exploratory research; historical publication vintages and official TXF exception remain uncertified"
+}
