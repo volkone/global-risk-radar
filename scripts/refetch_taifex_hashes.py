@@ -18,6 +18,7 @@ def main():
  p.add_argument("--limit",type=int,default=10)
  p.add_argument("--pause",type=float,default=3.0)
  p.add_argument("--timeout",type=int,default=12)
+ p.add_argument("--retry-after-hours",type=float,default=24.0)
  a=p.parse_args()
  if not 1<=a.limit<=20 or a.pause<2:raise SystemExit("limit must be 1..20 and pause >=2s")
  records=json.loads((ROOT/"storage/taifex_backfill.json").read_text(encoding="utf-8"))["records"]
@@ -37,8 +38,12 @@ def main():
    continue
   if previous.get("parsed_values_match") is True and previous.get("status") in ("match","mismatch"):
    continue
-  if previous.get("status")=="rate_limited":continue  # requires explicit reset after cooldown
+  if previous.get("status")=="rate_limited":continue  # no automatic retry of a rate-limited response
   if previous.get("status")=="fetch_error" and previous.get("error")=="ValueError":continue  # investigate source date before retry
+  if previous.get("error_detail","").startswith("HTTP Error 429"):
+   last=dt.datetime.fromisoformat(previous["verified_at_utc"])
+   if (dt.datetime.now(dt.timezone.utc)-last).total_seconds()<a.retry_after_hours*3600:
+    continue
   if attempted>=a.limit:break
   attempted+=1
   try:
