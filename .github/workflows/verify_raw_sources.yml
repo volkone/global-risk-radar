@@ -3,15 +3,12 @@ on:
   push:
     branches: [main]
     paths: ['.github/workflows/verify_raw_sources.yml']
-  schedule:
-    # Once per weekday; bounded 10 requests, 24h cooldown after HTTP 429.
-    - cron: '40 3 * * 1-5'
   workflow_dispatch:
     inputs:
       limit:
-        description: 'Maximum raw source downloads per run (1-20)'
+        description: 'Maximum raw source downloads per run (1-50)'
         required: false
-        default: '10'
+        default: '50'
 permissions:
   contents: write
   actions: write
@@ -29,8 +26,8 @@ jobs:
           python-version: '3.11'
       - name: Independently download and hash-check bounded source batch
         env:
-          LIMIT: ${{ inputs.limit || '10' }}
-        run: python scripts/refetch_taifex_hashes.py --limit "$LIMIT"
+          LIMIT: ${{ inputs.limit || '50' }}
+        run: python scripts/refetch_taifex_hashes.py --limit "$LIMIT" --retry-after-hours 0
       - name: Save verification ledger and summary
         run: |
           git config user.name 'github-actions[bot]'
