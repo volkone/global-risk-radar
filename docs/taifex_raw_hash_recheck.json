@@ -2,28 +2,19 @@
   "schema_version": 2,
   "dataset": "TAIFEX TXF official historical source HTML",
   "expected_records": 718,
-  "attempted_this_run": 30,
+  "attempted_this_run": 10,
   "checked": 718,
   "counts": {
-    "match": 302,
+    "match": 312,
     "mismatch": 0,
-    "fetch_error": 416
+    "fetch_error": 406,
+    "rate_limited": 0
   },
-  "semantic_values_verified": 302,
-  "semantic_values_unverified": 416,
+  "semantic_values_verified": 312,
+  "semantic_values_unverified": 406,
   "raw_hash_mismatch_dates": [],
   "discrepancy_dates": [
     "2023-11-13",
-    "2025-02-18",
-    "2025-02-19",
-    "2025-02-20",
-    "2025-02-21",
-    "2025-02-24",
-    "2025-02-25",
-    "2025-02-26",
-    "2025-02-27",
-    "2025-03-03",
-    "2025-03-04",
     "2025-03-05",
     "2025-03-06",
     "2025-03-07",
@@ -432,6 +423,8 @@
   ],
   "all_raw_hashes_verified": false,
   "all_values_independently_verified": false,
+  "source_rate_limited": false,
+  "retries_paused_until_manual_review": false,
   "limitations": [
     "Raw HTML SHA mismatch is not equivalent to a data mismatch.",
     "Original HTML bytes were not archived; precise HTML diff is not possible without them."
