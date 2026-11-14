@@ -1,0 +1,37 @@
+name: Diagnose TAIFEX historical notice query
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/diagnose_taifex_hisnews.yml'
+permissions:
+  contents: write
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate diagnostic Python syntax
+        run: python -m py_compile scripts/diagnose_taifex_hisnews.py
+      - name: Probe official GET and July 2024 POST
+        run: python scripts/diagnose_taifex_hisnews.py
+      - name: Commit diagnostic evidence
+        if: always()
+        run: |
+          if [ -f docs/taifex_hisnews_diagnostic.json ]; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add docs/taifex_hisnews_diagnostic.json
+            if ! git diff --cached --quiet; then
+              git commit -m 'Record TAIFEX historical news query diagnostics [skip ci]'
+              git fetch origin main
+              git rebase origin/main
+              git push origin HEAD:main
+            fi
+          fi
