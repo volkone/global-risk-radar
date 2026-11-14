@@ -20,7 +20,7 @@ def main():
  attempted=0
  for rec in records:
   d=rec["date"]
-  if done.get(d,{}).get("status") in ("match","mismatch","content_mismatch","unparseable") or (done.get(d,{}).get("status")=="fetch_error" and done[d].get("attempts",0)>=2):continue
+  if done.get(d,{}).get("status") in ("match","content_mismatch","unparseable") or (done.get(d,{}).get("status")=="mismatch" and "parsed_values_match" in done[d]) or (done.get(d,{}).get("status")=="fetch_error" and done[d].get("attempts",0)>=2):continue
   if attempted>=a.limit:break
   attempted+=1
   try:
