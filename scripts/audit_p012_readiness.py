@@ -43,13 +43,15 @@ def evaluate():
             "p1":p1,"p2":p2,"evidence_gaps":{
                 "p0":[{"metric":x["metric"],"issue":x["quality_errors"],"required_evidence":"fresh source observation" if x["metric"]=="nfci" else "verified market-breadth source and calibrated signal"} for x in missing],
                 "p1":[{"check":x,"evidence_file":"docs/taifex_prebacktest_gate.json"} for x in p1["unmet_checks"]],
-                "p2":[{"check":x,"evidence_file":"docs/phase4_publication_timing_audit.json" if x!="independent_source_query_validation" else "docs/pit_full_replay_audit.json"} for x in p2["unmet_checks"]]},\n            "formal_backtest_authorized":False,
+                "p2":[{"check":x,"evidence_file":"docs/phase4_publication_timing_audit.json" if x!="independent_source_query_validation" else "docs/pit_full_replay_audit.json"} for x in p2["unmet_checks"]]},
+            "formal_backtest_authorized":False,
             "notes":["Crosschecking TWSE sessions is not the same as independently certifying TAIFEX notices.",
                      "Conservative release-time proxies and internal vintage replay do not prove actual publication timestamps.",
                      "No missing or paid metric is imputed."]}
 def main():
     report=evaluate()
     out=ROOT/"docs/p012_readiness.json"
-    out.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    out.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"
+",encoding="utf-8")
     print("P0/P1/P2:",{k:report[k]["complete"] for k in ("p0","p1","p2")})
 if __name__=="__main__":main()
