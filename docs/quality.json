@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "evaluated_at": "2026-11-14T09:02:57.593548+00:00",
-  "snapshot_updated_at": "2026-11-14T09:02:57.267679+00:00",
-  "history_generated_at": "2026-11-14T09:02:57.540071+00:00",
+  "evaluated_at": "2026-11-14T09:04:16.704677+00:00",
+  "snapshot_updated_at": "2026-11-14T09:04:16.391960+00:00",
+  "history_generated_at": "2026-11-14T09:04:16.643890+00:00",
   "summary": {
     "pass": 10,
     "caution": 1,
