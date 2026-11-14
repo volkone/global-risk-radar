@@ -1,5 +1,5 @@
 name: Audit TAIFEX historical notices month by month
-# Diagnostic rerun 2: capture search form and response contexts for zero-result anomaly
+# Diagnostic rerun 3: reject parser errors and inspect form response contexts
 on:
   workflow_dispatch:
   push:
@@ -29,7 +29,7 @@ jobs:
           import json
           j=json.load(open('docs/taifex_notice_monthly_audit.json'))
           assert len(j['months'])==36
-          assert j['full_notice_sweep_verified'] is False
+          assert not any(m.get('error') for m in j['months']), 'Monthly scan contains parser/runtime errors'\n          assert j['full_notice_sweep_verified'] is False
           assert j['full_model_backtest_authorized'] is False
           print('Months queried:',j['all_months_queried'])
           PY
