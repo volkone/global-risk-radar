@@ -10510,404 +10510,1354 @@
       "verified_at_utc": "2026-11-14T07:01:26.936595+00:00"
     },
     "2025-07-29": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-07-29",
+        "long_oi": 21498,
+        "short_oi": 62374,
+        "value": -40876,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-07-29",
+        "long_oi": 21498,
+        "short_oi": 62374,
+        "value": -40876,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "9a36397590fefd2e3e8ccceb344874c7a49f4968bc704554e0dc2eda59a5d500",
+      "actual_sha256": "9a36397590fefd2e3e8ccceb344874c7a49f4968bc704554e0dc2eda59a5d500",
+      "http_status": 200,
+      "bytes": 320060,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F07%2F29&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:04.660433+00:00"
+      "verified_at_utc": "2026-11-14T07:02:25.357489+00:00"
     },
     "2025-07-30": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-07-30",
+        "long_oi": 22950,
+        "short_oi": 60781,
+        "value": -37831,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-07-30",
+        "long_oi": 22950,
+        "short_oi": 60781,
+        "value": -37831,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "7318eb36c586806de38c925e7d725a144df74604461ad4295524956b6a44a835",
+      "actual_sha256": "7318eb36c586806de38c925e7d725a144df74604461ad4295524956b6a44a835",
+      "http_status": 200,
+      "bytes": 320057,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F07%2F30&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:04.823206+00:00"
+      "verified_at_utc": "2026-11-14T07:02:28.833781+00:00"
     },
     "2025-07-31": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-07-31",
+        "long_oi": 26613,
+        "short_oi": 60257,
+        "value": -33644,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-07-31",
+        "long_oi": 26613,
+        "short_oi": 60257,
+        "value": -33644,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "5fd7532c4c78921e06e983e8431a23f29a82dca8ccac4fe5ed09bd0ac12991e4",
+      "actual_sha256": "5fd7532c4c78921e06e983e8431a23f29a82dca8ccac4fe5ed09bd0ac12991e4",
+      "http_status": 200,
+      "bytes": 320055,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F07%2F31&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:04.981942+00:00"
+      "verified_at_utc": "2026-11-14T07:02:32.449827+00:00"
     },
     "2025-08-01": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-08-01",
+        "long_oi": 19393,
+        "short_oi": 58930,
+        "value": -39537,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-08-01",
+        "long_oi": 19393,
+        "short_oi": 58930,
+        "value": -39537,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "3357bfc905517f425fb184dd8ed423620863c7d9caf6be54e3fd1275aeacf977",
+      "actual_sha256": "3357bfc905517f425fb184dd8ed423620863c7d9caf6be54e3fd1275aeacf977",
+      "http_status": 200,
+      "bytes": 320065,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F08%2F01&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:05.140141+00:00"
+      "verified_at_utc": "2026-11-14T07:02:36.454726+00:00"
     },
     "2025-08-04": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-08-04",
+        "long_oi": 19178,
+        "short_oi": 58258,
+        "value": -39080,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-08-04",
+        "long_oi": 19178,
+        "short_oi": 58258,
+        "value": -39080,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "68f319c6c8d18d9c6648860a600dcee3a7a5500232d6052907c6f1171c4e2d2a",
+      "actual_sha256": "68f319c6c8d18d9c6648860a600dcee3a7a5500232d6052907c6f1171c4e2d2a",
+      "http_status": 200,
+      "bytes": 320049,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F08%2F04&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:05.298681+00:00"
+      "verified_at_utc": "2026-11-14T07:02:41.455093+00:00"
     },
     "2025-08-05": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-08-05",
+        "long_oi": 22761,
+        "short_oi": 58090,
+        "value": -35329,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-08-05",
+        "long_oi": 22761,
+        "short_oi": 58090,
+        "value": -35329,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "1a2afd1e062d5ddd280328e4fd3d0609b700a1fbf858dd2924c056803c22cfb9",
+      "actual_sha256": "1a2afd1e062d5ddd280328e4fd3d0609b700a1fbf858dd2924c056803c22cfb9",
+      "http_status": 200,
+      "bytes": 320046,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F08%2F05&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:05.459451+00:00"
+      "verified_at_utc": "2026-11-14T07:02:46.106555+00:00"
     },
     "2025-08-06": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-08-06",
+        "long_oi": 20044,
+        "short_oi": 56424,
+        "value": -36380,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-08-06",
+        "long_oi": 20044,
+        "short_oi": 56424,
+        "value": -36380,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "ee57a4852625914a32c345de8ad37082984a61c3f36aba030abe4008b171fe6b",
+      "actual_sha256": "ee57a4852625914a32c345de8ad37082984a61c3f36aba030abe4008b171fe6b",
+      "http_status": 200,
+      "bytes": 320057,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F08%2F06&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:05.617212+00:00"
+      "verified_at_utc": "2026-11-14T07:02:50.335345+00:00"
     },
     "2025-08-07": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-08-07",
+        "long_oi": 24437,
+        "short_oi": 59226,
+        "value": -34789,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-08-07",
+        "long_oi": 24437,
+        "short_oi": 59226,
+        "value": -34789,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "55e359d13bfae3b3b83d34c0d22ba5239cf5557b50dbb8ef0faca0c695ab60c2",
+      "actual_sha256": "55e359d13bfae3b3b83d34c0d22ba5239cf5557b50dbb8ef0faca0c695ab60c2",
+      "http_status": 200,
+      "bytes": 320047,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F08%2F07&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:05.779105+00:00"
+      "verified_at_utc": "2026-11-14T07:02:53.985516+00:00"
     },
     "2025-08-08": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-08-08",
+        "long_oi": 21099,
+        "short_oi": 58689,
+        "value": -37590,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-08-08",
+        "long_oi": 21099,
+        "short_oi": 58689,
+        "value": -37590,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "bf974554f6f50a6401df6a2f46e5be77c83f8ac0fb3f55e5d0886df7401d1c22",
+      "actual_sha256": "bf974554f6f50a6401df6a2f46e5be77c83f8ac0fb3f55e5d0886df7401d1c22",
+      "http_status": 200,
+      "bytes": 320053,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F08%2F08&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:05.940749+00:00"
+      "verified_at_utc": "2026-11-14T07:02:57.801865+00:00"
     },
     "2025-08-11": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-08-11",
+        "long_oi": 21672,
+        "short_oi": 57247,
+        "value": -35575,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-08-11",
+        "long_oi": 21672,
+        "short_oi": 57247,
+        "value": -35575,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "b3980795b067b2a9d014c6226c5205217c5807974a22916a055c95beaad626aa",
+      "actual_sha256": "b3980795b067b2a9d014c6226c5205217c5807974a22916a055c95beaad626aa",
+      "http_status": 200,
+      "bytes": 320044,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F08%2F11&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:06.104516+00:00"
+      "verified_at_utc": "2026-11-14T07:03:01.329776+00:00"
     },
     "2025-08-12": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-08-12",
+        "long_oi": 21633,
+        "short_oi": 56935,
+        "value": -35302,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-08-12",
+        "long_oi": 21633,
+        "short_oi": 56935,
+        "value": -35302,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "878f454c35316a6984b8158c198ce3267bcd86cfe73c4083bfaedfe597ccd4f2",
+      "actual_sha256": "878f454c35316a6984b8158c198ce3267bcd86cfe73c4083bfaedfe597ccd4f2",
+      "http_status": 200,
+      "bytes": 320039,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F08%2F12&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:06.265912+00:00"
+      "verified_at_utc": "2026-11-14T07:03:04.906513+00:00"
     },
     "2025-08-13": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-08-13",
+        "long_oi": 22724,
+        "short_oi": 56294,
+        "value": -33570,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-08-13",
+        "long_oi": 22724,
+        "short_oi": 56294,
+        "value": -33570,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "47831455a2380fdd4f1d85599e55813aef647d155267c62ac395a25fe66c6507",
+      "actual_sha256": "47831455a2380fdd4f1d85599e55813aef647d155267c62ac395a25fe66c6507",
+      "http_status": 200,
+      "bytes": 320049,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F08%2F13&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:06.426890+00:00"
+      "verified_at_utc": "2026-11-14T07:03:08.323863+00:00"
     },
     "2025-08-14": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-08-14",
+        "long_oi": 21900,
+        "short_oi": 56279,
+        "value": -34379,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-08-14",
+        "long_oi": 21900,
+        "short_oi": 56279,
+        "value": -34379,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "0cf65945663e77adf286a96841ac435d748b89ad44b75b1ed14b4f2d78ee06e9",
+      "actual_sha256": "0cf65945663e77adf286a96841ac435d748b89ad44b75b1ed14b4f2d78ee06e9",
+      "http_status": 200,
+      "bytes": 320045,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F08%2F14&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:06.589818+00:00"
+      "verified_at_utc": "2026-11-14T07:03:11.961700+00:00"
     },
     "2025-08-15": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-08-15",
+        "long_oi": 20968,
+        "short_oi": 55175,
+        "value": -34207,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-08-15",
+        "long_oi": 20968,
+        "short_oi": 55175,
+        "value": -34207,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "c30fd77257d3837ff0aad0b8de8cecce51bec4bb4a1f848c1a2118399d39f81b",
+      "actual_sha256": "c30fd77257d3837ff0aad0b8de8cecce51bec4bb4a1f848c1a2118399d39f81b",
+      "http_status": 200,
+      "bytes": 320055,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F08%2F15&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:06.750657+00:00"
+      "verified_at_utc": "2026-11-14T07:03:15.566137+00:00"
     },
     "2025-08-18": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-08-18",
+        "long_oi": 26199,
+        "short_oi": 55825,
+        "value": -29626,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-08-18",
+        "long_oi": 26199,
+        "short_oi": 55825,
+        "value": -29626,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "fb284e90375dc4e261560a1147847b047d827d0137bd1e397768c795ca5fbf75",
+      "actual_sha256": "fb284e90375dc4e261560a1147847b047d827d0137bd1e397768c795ca5fbf75",
+      "http_status": 200,
+      "bytes": 320068,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F08%2F18&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:06.908879+00:00"
+      "verified_at_utc": "2026-11-14T07:03:19.122778+00:00"
     },
     "2025-08-19": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-08-19",
+        "long_oi": 27019,
+        "short_oi": 59652,
+        "value": -32633,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-08-19",
+        "long_oi": 27019,
+        "short_oi": 59652,
+        "value": -32633,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "92fadc81b1b1da3596f8ca536a39a64f48bc0e37eaa854da3df9a3abf9cd0c54",
+      "actual_sha256": "92fadc81b1b1da3596f8ca536a39a64f48bc0e37eaa854da3df9a3abf9cd0c54",
+      "http_status": 200,
+      "bytes": 320075,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F08%2F19&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:07.066018+00:00"
+      "verified_at_utc": "2026-11-14T07:03:22.851125+00:00"
     },
     "2025-08-20": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-08-20",
+        "long_oi": 17105,
+        "short_oi": 52248,
+        "value": -35143,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-08-20",
+        "long_oi": 17105,
+        "short_oi": 52248,
+        "value": -35143,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "978b32f62fc6f475fa9a8931704e3ec5c5912c4be80fd7bb3f8e0a9f40c35767",
+      "actual_sha256": "978b32f62fc6f475fa9a8931704e3ec5c5912c4be80fd7bb3f8e0a9f40c35767",
+      "http_status": 200,
+      "bytes": 320071,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F08%2F20&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:07.224083+00:00"
+      "verified_at_utc": "2026-11-14T07:03:26.279031+00:00"
     },
     "2025-08-21": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-08-21",
+        "long_oi": 19173,
+        "short_oi": 49560,
+        "value": -30387,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-08-21",
+        "long_oi": 19173,
+        "short_oi": 49560,
+        "value": -30387,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "5435075c4ce00071a0459b0a260cc9d3603b300379785c1eea6e523aa6c7ad23",
+      "actual_sha256": "5435075c4ce00071a0459b0a260cc9d3603b300379785c1eea6e523aa6c7ad23",
+      "http_status": 200,
+      "bytes": 320050,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F08%2F21&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:07.384667+00:00"
+      "verified_at_utc": "2026-11-14T07:03:29.772161+00:00"
     },
     "2025-08-22": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-08-22",
+        "long_oi": 21716,
+        "short_oi": 48451,
+        "value": -26735,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-08-22",
+        "long_oi": 21716,
+        "short_oi": 48451,
+        "value": -26735,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "18e6dff7d7826b40136c45f4cb38e6990748da8d190c0da94f68ecc2a6e0bc71",
+      "actual_sha256": "18e6dff7d7826b40136c45f4cb38e6990748da8d190c0da94f68ecc2a6e0bc71",
+      "http_status": 200,
+      "bytes": 320044,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F08%2F22&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:07.547884+00:00"
+      "verified_at_utc": "2026-11-14T07:03:33.218653+00:00"
     },
     "2025-08-25": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-08-25",
+        "long_oi": 21711,
+        "short_oi": 47320,
+        "value": -25609,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-08-25",
+        "long_oi": 21711,
+        "short_oi": 47320,
+        "value": -25609,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "005dcf92035d00d450ed36d3a8d7e6573231322ad6658f6029afc3aa22b5f8c7",
+      "actual_sha256": "005dcf92035d00d450ed36d3a8d7e6573231322ad6658f6029afc3aa22b5f8c7",
+      "http_status": 200,
+      "bytes": 320030,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F08%2F25&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:07.708170+00:00"
+      "verified_at_utc": "2026-11-14T07:03:36.647862+00:00"
     },
     "2025-08-26": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-08-26",
+        "long_oi": 20592,
+        "short_oi": 47724,
+        "value": -27132,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-08-26",
+        "long_oi": 20592,
+        "short_oi": 47724,
+        "value": -27132,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "c9bc2b81c5753df7e38ef1ce856531c13b2d0e1ff390bae4eb1a23581b528778",
+      "actual_sha256": "c9bc2b81c5753df7e38ef1ce856531c13b2d0e1ff390bae4eb1a23581b528778",
+      "http_status": 200,
+      "bytes": 320037,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F08%2F26&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:07.879104+00:00"
+      "verified_at_utc": "2026-11-14T07:03:40.226947+00:00"
     },
     "2025-08-27": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-08-27",
+        "long_oi": 22813,
+        "short_oi": 47584,
+        "value": -24771,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-08-27",
+        "long_oi": 22813,
+        "short_oi": 47584,
+        "value": -24771,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "4fe21d48d12b9e0f16e8a2c570549dc371db00ac0781b07a68183b713f44867b",
+      "actual_sha256": "4fe21d48d12b9e0f16e8a2c570549dc371db00ac0781b07a68183b713f44867b",
+      "http_status": 200,
+      "bytes": 320035,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F08%2F27&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:08.040492+00:00"
+      "verified_at_utc": "2026-11-14T07:03:43.630738+00:00"
     },
     "2025-08-28": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-08-28",
+        "long_oi": 21168,
+        "short_oi": 47255,
+        "value": -26087,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-08-28",
+        "long_oi": 21168,
+        "short_oi": 47255,
+        "value": -26087,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "57c77f5c7aeb4389d3f13262dff9b9ecd8ae7a709de93493384e57d856121ed2",
+      "actual_sha256": "57c77f5c7aeb4389d3f13262dff9b9ecd8ae7a709de93493384e57d856121ed2",
+      "http_status": 200,
+      "bytes": 320043,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F08%2F28&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:08.202713+00:00"
+      "verified_at_utc": "2026-11-14T07:03:48.587098+00:00"
     },
     "2025-08-29": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-08-29",
+        "long_oi": 21342,
+        "short_oi": 47651,
+        "value": -26309,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-08-29",
+        "long_oi": 21342,
+        "short_oi": 47651,
+        "value": -26309,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "cfe395e550953bed6f0effdfee731211c085e2c8607c30db848e7762461d142b",
+      "actual_sha256": "cfe395e550953bed6f0effdfee731211c085e2c8607c30db848e7762461d142b",
+      "http_status": 200,
+      "bytes": 320043,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F08%2F29&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:08.364477+00:00"
+      "verified_at_utc": "2026-11-14T07:03:52.006639+00:00"
     },
     "2025-09-01": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-09-01",
+        "long_oi": 21375,
+        "short_oi": 48039,
+        "value": -26664,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-09-01",
+        "long_oi": 21375,
+        "short_oi": 48039,
+        "value": -26664,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "87478f17fc2b452a1b9355ea34af70fdf12501a1fcbfed1da1b4268cdefe54cf",
+      "actual_sha256": "87478f17fc2b452a1b9355ea34af70fdf12501a1fcbfed1da1b4268cdefe54cf",
+      "http_status": 200,
+      "bytes": 320031,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F09%2F01&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:08.522498+00:00"
+      "verified_at_utc": "2026-11-14T07:03:55.469626+00:00"
     },
     "2025-09-02": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-09-02",
+        "long_oi": 23319,
+        "short_oi": 47614,
+        "value": -24295,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-09-02",
+        "long_oi": 23319,
+        "short_oi": 47614,
+        "value": -24295,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "ea6ed25bf001725389f795ec8afc56e35047436c97284e8c9911537c7c46f2d2",
+      "actual_sha256": "ea6ed25bf001725389f795ec8afc56e35047436c97284e8c9911537c7c46f2d2",
+      "http_status": 200,
+      "bytes": 320043,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F09%2F02&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:08.682233+00:00"
+      "verified_at_utc": "2026-11-14T07:03:58.919864+00:00"
     },
     "2025-09-03": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-09-03",
+        "long_oi": 23273,
+        "short_oi": 48061,
+        "value": -24788,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-09-03",
+        "long_oi": 23273,
+        "short_oi": 48061,
+        "value": -24788,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "579e79e7ad7e9eb1367ee92900f7db9b0c39065687ab4ce5de957d70096ab295",
+      "actual_sha256": "579e79e7ad7e9eb1367ee92900f7db9b0c39065687ab4ce5de957d70096ab295",
+      "http_status": 200,
+      "bytes": 320041,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F09%2F03&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:08.842195+00:00"
+      "verified_at_utc": "2026-11-14T07:04:07.329912+00:00"
     },
     "2025-09-04": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-09-04",
+        "long_oi": 23910,
+        "short_oi": 47413,
+        "value": -23503,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-09-04",
+        "long_oi": 23910,
+        "short_oi": 47413,
+        "value": -23503,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "66be8083acbaf63fa1003118bf116bc9568569f6714e5543e96bbcf8c3354242",
+      "actual_sha256": "66be8083acbaf63fa1003118bf116bc9568569f6714e5543e96bbcf8c3354242",
+      "http_status": 200,
+      "bytes": 320041,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F09%2F04&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:09.001462+00:00"
+      "verified_at_utc": "2026-11-14T07:04:10.802470+00:00"
     },
     "2025-09-05": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-09-05",
+        "long_oi": 25250,
+        "short_oi": 46554,
+        "value": -21304,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-09-05",
+        "long_oi": 25250,
+        "short_oi": 46554,
+        "value": -21304,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "e5c53852d74f3a2d77d0cf78b26516fb42a524c6ec416ca36270588722aaace4",
+      "actual_sha256": "e5c53852d74f3a2d77d0cf78b26516fb42a524c6ec416ca36270588722aaace4",
+      "http_status": 200,
+      "bytes": 320042,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F09%2F05&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:09.166907+00:00"
+      "verified_at_utc": "2026-11-14T07:04:16.466119+00:00"
     },
     "2025-09-08": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-09-08",
+        "long_oi": 25384,
+        "short_oi": 47383,
+        "value": -21999,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-09-08",
+        "long_oi": 25384,
+        "short_oi": 47383,
+        "value": -21999,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "8c5c3c88365025d75a781f609b0c08a0a87454a5ea272cf508d2f819dbd1fd78",
+      "actual_sha256": "8c5c3c88365025d75a781f609b0c08a0a87454a5ea272cf508d2f819dbd1fd78",
+      "http_status": 200,
+      "bytes": 320038,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F09%2F08&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:09.326467+00:00"
+      "verified_at_utc": "2026-11-14T07:04:19.868310+00:00"
     },
     "2025-09-09": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-09-09",
+        "long_oi": 28521,
+        "short_oi": 47313,
+        "value": -18792,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-09-09",
+        "long_oi": 28521,
+        "short_oi": 47313,
+        "value": -18792,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "33152b8da55c4fc973751e4abee34c4794af55a3f7e62cb83322ed3c2229f0e2",
+      "actual_sha256": "33152b8da55c4fc973751e4abee34c4794af55a3f7e62cb83322ed3c2229f0e2",
+      "http_status": 200,
+      "bytes": 320036,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F09%2F09&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:09.486330+00:00"
+      "verified_at_utc": "2026-11-14T07:04:23.302100+00:00"
     },
     "2025-09-10": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-09-10",
+        "long_oi": 32440,
+        "short_oi": 50253,
+        "value": -17813,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-09-10",
+        "long_oi": 32440,
+        "short_oi": 50253,
+        "value": -17813,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "00c04c30078454d71eebd7248bb94777af72c94f3e490102d5b819942bc68de8",
+      "actual_sha256": "00c04c30078454d71eebd7248bb94777af72c94f3e490102d5b819942bc68de8",
+      "http_status": 200,
+      "bytes": 320028,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F09%2F10&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:09.644344+00:00"
+      "verified_at_utc": "2026-11-14T07:04:28.411827+00:00"
     },
     "2025-09-11": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-09-11",
+        "long_oi": 35061,
+        "short_oi": 51378,
+        "value": -16317,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-09-11",
+        "long_oi": 35061,
+        "short_oi": 51378,
+        "value": -16317,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "350939d68d490b5293da332dc523c3ad318896f3f83b82976cbefd5cdffed378",
+      "actual_sha256": "350939d68d490b5293da332dc523c3ad318896f3f83b82976cbefd5cdffed378",
+      "http_status": 200,
+      "bytes": 320032,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F09%2F11&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:09.807138+00:00"
+      "verified_at_utc": "2026-11-14T07:04:31.818856+00:00"
     },
     "2025-09-12": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-09-12",
+        "long_oi": 33002,
+        "short_oi": 51560,
+        "value": -18558,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-09-12",
+        "long_oi": 33002,
+        "short_oi": 51560,
+        "value": -18558,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "f1674d0c78873f01d148d074a4451250009284de8435280b5d76ac8bf7d1da71",
+      "actual_sha256": "f1674d0c78873f01d148d074a4451250009284de8435280b5d76ac8bf7d1da71",
+      "http_status": 200,
+      "bytes": 320068,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F09%2F12&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:09.964238+00:00"
+      "verified_at_utc": "2026-11-14T07:04:35.267367+00:00"
     },
     "2025-09-15": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-09-15",
+        "long_oi": 31187,
+        "short_oi": 50083,
+        "value": -18896,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-09-15",
+        "long_oi": 31187,
+        "short_oi": 50083,
+        "value": -18896,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "19630a0371621ad153ba94ec981c3b8f92650f8a5f2fc7ffdfb3486733ac11a4",
+      "actual_sha256": "19630a0371621ad153ba94ec981c3b8f92650f8a5f2fc7ffdfb3486733ac11a4",
+      "http_status": 200,
+      "bytes": 320072,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F09%2F15&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:10.123237+00:00"
+      "verified_at_utc": "2026-11-14T07:04:40.249552+00:00"
     },
     "2025-09-16": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-09-16",
+        "long_oi": 30363,
+        "short_oi": 48607,
+        "value": -18244,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-09-16",
+        "long_oi": 30363,
+        "short_oi": 48607,
+        "value": -18244,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "14e1c26f034cd39b5b515f02ae67bd0af1e996629ccb3299fc4fa19ac0bfb314",
+      "actual_sha256": "14e1c26f034cd39b5b515f02ae67bd0af1e996629ccb3299fc4fa19ac0bfb314",
+      "http_status": 200,
+      "bytes": 320044,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F09%2F16&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:10.284009+00:00"
+      "verified_at_utc": "2026-11-14T07:04:43.666555+00:00"
     },
     "2025-09-17": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-09-17",
+        "long_oi": 24198,
+        "short_oi": 43060,
+        "value": -18862,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-09-17",
+        "long_oi": 24198,
+        "short_oi": 43060,
+        "value": -18862,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "f29fdb335b328a81f8af71ccf002fd6d5fba3432eacf7eedf8cff2b712886d15",
+      "actual_sha256": "f29fdb335b328a81f8af71ccf002fd6d5fba3432eacf7eedf8cff2b712886d15",
+      "http_status": 200,
+      "bytes": 320057,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F09%2F17&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:10.440975+00:00"
+      "verified_at_utc": "2026-11-14T07:04:47.116281+00:00"
     },
     "2025-09-18": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-09-18",
+        "long_oi": 25411,
+        "short_oi": 43963,
+        "value": -18552,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-09-18",
+        "long_oi": 25411,
+        "short_oi": 43963,
+        "value": -18552,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "e3ba744a319131bebec2f018a94a03942c5a95a00b4913dfef40498cc69788fe",
+      "actual_sha256": "e3ba744a319131bebec2f018a94a03942c5a95a00b4913dfef40498cc69788fe",
+      "http_status": 200,
+      "bytes": 320028,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F09%2F18&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:10.600806+00:00"
+      "verified_at_utc": "2026-11-14T07:04:50.539577+00:00"
     },
     "2025-09-19": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-09-19",
+        "long_oi": 26660,
+        "short_oi": 44263,
+        "value": -17603,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-09-19",
+        "long_oi": 26660,
+        "short_oi": 44263,
+        "value": -17603,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "276c1baaf3de0224d178f7af2e359f3a6ee1d0109175b00968010ed308a37568",
+      "actual_sha256": "276c1baaf3de0224d178f7af2e359f3a6ee1d0109175b00968010ed308a37568",
+      "http_status": 200,
+      "bytes": 320030,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F09%2F19&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:10.758892+00:00"
+      "verified_at_utc": "2026-11-14T07:04:53.967144+00:00"
     },
     "2025-09-22": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-09-22",
+        "long_oi": 25588,
+        "short_oi": 42827,
+        "value": -17239,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-09-22",
+        "long_oi": 25588,
+        "short_oi": 42827,
+        "value": -17239,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "580f7b0714f39206657e226aa417897a10bcb296032e8c65d30c318631af58f8",
+      "actual_sha256": "580f7b0714f39206657e226aa417897a10bcb296032e8c65d30c318631af58f8",
+      "http_status": 200,
+      "bytes": 320030,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F09%2F22&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:10.920867+00:00"
+      "verified_at_utc": "2026-11-14T07:04:57.379899+00:00"
     },
     "2025-09-23": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-09-23",
+        "long_oi": 26491,
+        "short_oi": 42691,
+        "value": -16200,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-09-23",
+        "long_oi": 26491,
+        "short_oi": 42691,
+        "value": -16200,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "8e424d37a2cb38ac26d726eb2045f1cd164c40991d35a1761c87653f37da615d",
+      "actual_sha256": "8e424d37a2cb38ac26d726eb2045f1cd164c40991d35a1761c87653f37da615d",
+      "http_status": 200,
+      "bytes": 320030,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F09%2F23&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:11.077181+00:00"
+      "verified_at_utc": "2026-11-14T07:05:02.758049+00:00"
     },
     "2025-09-24": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-09-24",
+        "long_oi": 23983,
+        "short_oi": 43900,
+        "value": -19917,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-09-24",
+        "long_oi": 23983,
+        "short_oi": 43900,
+        "value": -19917,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "d9f71cbfd566233f79cd7ec0e6c76451698883f465368f78b0e3f21fa75c8a4c",
+      "actual_sha256": "d9f71cbfd566233f79cd7ec0e6c76451698883f465368f78b0e3f21fa75c8a4c",
+      "http_status": 200,
+      "bytes": 320033,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F09%2F24&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:11.237399+00:00"
+      "verified_at_utc": "2026-11-14T07:05:06.793100+00:00"
     },
     "2025-09-25": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-09-25",
+        "long_oi": 22398,
+        "short_oi": 44177,
+        "value": -21779,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-09-25",
+        "long_oi": 22398,
+        "short_oi": 44177,
+        "value": -21779,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "f5095f8da271a6f63246e3026b8937db047d646dcb8a834c162a64af09bc3045",
+      "actual_sha256": "f5095f8da271a6f63246e3026b8937db047d646dcb8a834c162a64af09bc3045",
+      "http_status": 200,
+      "bytes": 320027,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F09%2F25&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:11.395337+00:00"
+      "verified_at_utc": "2026-11-14T07:05:10.428792+00:00"
     },
     "2025-09-26": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-09-26",
+        "long_oi": 20928,
+        "short_oi": 46047,
+        "value": -25119,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-09-26",
+        "long_oi": 20928,
+        "short_oi": 46047,
+        "value": -25119,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "e52f546a5d04d514bc08c7938d73835857b20267cc40fa0e570208627a8bfe9f",
+      "actual_sha256": "e52f546a5d04d514bc08c7938d73835857b20267cc40fa0e570208627a8bfe9f",
+      "http_status": 200,
+      "bytes": 320060,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F09%2F26&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:11.553035+00:00"
+      "verified_at_utc": "2026-11-14T07:05:14.356331+00:00"
     },
     "2025-09-30": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-09-30",
+        "long_oi": 22485,
+        "short_oi": 44415,
+        "value": -21930,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-09-30",
+        "long_oi": 22485,
+        "short_oi": 44415,
+        "value": -21930,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "ce0189daf94974726b2dc15bb6eb9a18bab4fa893e2123506694cdcd9c30cc23",
+      "actual_sha256": "ce0189daf94974726b2dc15bb6eb9a18bab4fa893e2123506694cdcd9c30cc23",
+      "http_status": 200,
+      "bytes": 320044,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F09%2F30&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:11.720365+00:00"
+      "verified_at_utc": "2026-11-14T07:05:18.218496+00:00"
     },
     "2025-10-01": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-10-01",
+        "long_oi": 21328,
+        "short_oi": 43677,
+        "value": -22349,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-10-01",
+        "long_oi": 21328,
+        "short_oi": 43677,
+        "value": -22349,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "6de2024056ba1235065598a3428e06e9b70ccf093478bacede91f5028d935a7a",
+      "actual_sha256": "6de2024056ba1235065598a3428e06e9b70ccf093478bacede91f5028d935a7a",
+      "http_status": 200,
+      "bytes": 320036,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F10%2F01&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:11.879586+00:00"
+      "verified_at_utc": "2026-11-14T07:05:22.049252+00:00"
     },
     "2025-10-02": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-10-02",
+        "long_oi": 21563,
+        "short_oi": 44750,
+        "value": -23187,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-10-02",
+        "long_oi": 21563,
+        "short_oi": 44750,
+        "value": -23187,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "c4a08c38620c283cb5d72026b22baef924e04bc711bb7ec627d0b60659fb0cc6",
+      "actual_sha256": "c4a08c38620c283cb5d72026b22baef924e04bc711bb7ec627d0b60659fb0cc6",
+      "http_status": 200,
+      "bytes": 320027,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F10%2F02&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:12.039857+00:00"
+      "verified_at_utc": "2026-11-14T07:05:26.324596+00:00"
     },
     "2025-10-03": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-10-03",
+        "long_oi": 23773,
+        "short_oi": 44625,
+        "value": -20852,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-10-03",
+        "long_oi": 23773,
+        "short_oi": 44625,
+        "value": -20852,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "87a14742067de9fadf5318c006b81566be73409333e35e310ccba5ad1557a38c",
+      "actual_sha256": "87a14742067de9fadf5318c006b81566be73409333e35e310ccba5ad1557a38c",
+      "http_status": 200,
+      "bytes": 320045,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F10%2F03&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:12.198102+00:00"
+      "verified_at_utc": "2026-11-14T07:05:30.133938+00:00"
     },
     "2025-10-07": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-10-07",
+        "long_oi": 23925,
+        "short_oi": 47626,
+        "value": -23701,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-10-07",
+        "long_oi": 23925,
+        "short_oi": 47626,
+        "value": -23701,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "19dd260e4635599b79b76585f7fafe6c62acf50d202d748a07b9fd482fa8ce14",
+      "actual_sha256": "19dd260e4635599b79b76585f7fafe6c62acf50d202d748a07b9fd482fa8ce14",
+      "http_status": 200,
+      "bytes": 320046,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F10%2F07&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:12.357350+00:00"
+      "verified_at_utc": "2026-11-14T07:05:34.058865+00:00"
     },
     "2025-10-08": {
-      "status": "fetch_error",
-      "parsed_values_match": false,
-      "error": "HTTPError",
-      "error_detail": "HTTP Error 429: Too Many Requests",
+      "status": "match",
+      "parsed_values_match": true,
+      "verification_basis": "raw_sha256_exact_match",
+      "parsed": {
+        "date": "2025-10-08",
+        "long_oi": 19719,
+        "short_oi": 50124,
+        "value": -30405,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_values": {
+        "date": "2025-10-08",
+        "long_oi": 19719,
+        "short_oi": 50124,
+        "value": -30405,
+        "scope": "TX臺股期貨;外資及陸資;未平倉淨額",
+        "unit": "contracts"
+      },
+      "expected_sha256": "10303c2894acb6b36bd7fcbc9f64ed2ea7a5efb301672fe8c58649326659810c",
+      "actual_sha256": "10303c2894acb6b36bd7fcbc9f64ed2ea7a5efb301672fe8c58649326659810c",
+      "http_status": 200,
+      "bytes": 320057,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2025%2F10%2F08&queryType=1",
-      "verified_at_utc": "2026-11-14T06:20:12.520576+00:00"
+      "verified_at_utc": "2026-11-14T07:05:37.913653+00:00"
     },
     "2025-10-09": {
       "status": "fetch_error",
