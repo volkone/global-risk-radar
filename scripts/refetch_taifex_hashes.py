@@ -20,7 +20,7 @@ def main():
  p.add_argument("--timeout",type=int,default=12)
  p.add_argument("--retry-after-hours",type=float,default=24.0)
  a=p.parse_args()
- if not 1<=a.limit<=50 or a.pause<2 or a.retry_after_hours<0:raise SystemExit("limit must be 1..50, pause >=2s, cooldown >=0")
+ if not 1<=a.limit<=100 or a.pause<2 or a.retry_after_hours<0:raise SystemExit("limit must be 1..100, pause >=2s, cooldown >=0")
  records=json.loads((ROOT/"storage/taifex_backfill.json").read_text(encoding="utf-8"))["records"]
  out=ROOT/"storage/verification/taifex_sha256_recheck.json"
  out.parent.mkdir(parents=True,exist_ok=True)
