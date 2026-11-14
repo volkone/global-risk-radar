@@ -1584,8 +1584,316 @@
       "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/法規異動彙整11412.pdf"
     }
   ],
+  "pagination_probes": [
+    {
+      "year": 2023,
+      "fields": {
+        "pageSize": "10"
+      },
+      "status": 200,
+      "record_count": 14,
+      "year_match": true,
+      "sha256": "3c9c67ea38d5e0dbecae586249112df26d814f7a10769ce2b2f0f4d01b717319",
+      "first_urls": [
+        "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期結字第1120302335號.pdf",
+        "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=14644",
+        "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期結字第11203019371號函(3).pdf"
+      ]
+    },
+    {
+      "year": 2023,
+      "fields": {
+        "pageSize": "10",
+        "pageNo": "2"
+      },
+      "status": 200,
+      "record_count": 14,
+      "year_match": true,
+      "sha256": "3c9c67ea38d5e0dbecae586249112df26d814f7a10769ce2b2f0f4d01b717319",
+      "first_urls": [
+        "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期結字第1120302335號.pdf",
+        "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=14644",
+        "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期結字第11203019371號函(3).pdf"
+      ]
+    },
+    {
+      "year": 2023,
+      "fields": {
+        "pageSize": "10",
+        "pageNum": "2"
+      },
+      "status": 200,
+      "record_count": 14,
+      "year_match": true,
+      "sha256": "3c9c67ea38d5e0dbecae586249112df26d814f7a10769ce2b2f0f4d01b717319",
+      "first_urls": [
+        "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期結字第1120302335號.pdf",
+        "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=14644",
+        "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期結字第11203019371號函(3).pdf"
+      ]
+    },
+    {
+      "year": 2023,
+      "fields": {
+        "pageSize": "10",
+        "page": "2"
+      },
+      "status": 200,
+      "record_count": 14,
+      "year_match": true,
+      "sha256": "3c9c67ea38d5e0dbecae586249112df26d814f7a10769ce2b2f0f4d01b717319",
+      "first_urls": [
+        "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期結字第1120302335號.pdf",
+        "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=14644",
+        "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期結字第11203019371號函(3).pdf"
+      ]
+    },
+    {
+      "year": 2024,
+      "fields": {
+        "pageSize": "10"
+      },
+      "status": 200,
+      "record_count": 7,
+      "year_match": true,
+      "sha256": "06590b30a9f5f99523369608dcc699f03b76b5a0c82dcdee71d89d52ec1ec968",
+      "first_urls": [
+        "https://youtu.be/JsswkL3NkGQ? si=NKjZtSbCdCDRxlbG",
+        "https://cpc.ey.gov.tw/Page/A24D52B481E12568",
+        "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/公告抄本(含附件)(1).pdf"
+      ]
+    },
+    {
+      "year": 2024,
+      "fields": {
+        "pageSize": "10",
+        "pageNo": "2"
+      },
+      "status": 200,
+      "record_count": 7,
+      "year_match": true,
+      "sha256": "06590b30a9f5f99523369608dcc699f03b76b5a0c82dcdee71d89d52ec1ec968",
+      "first_urls": [
+        "https://youtu.be/JsswkL3NkGQ? si=NKjZtSbCdCDRxlbG",
+        "https://cpc.ey.gov.tw/Page/A24D52B481E12568",
+        "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/公告抄本(含附件)(1).pdf"
+      ]
+    },
+    {
+      "year": 2024,
+      "fields": {
+        "pageSize": "10",
+        "pageNum": "2"
+      },
+      "status": 200,
+      "record_count": 7,
+      "year_match": true,
+      "sha256": "06590b30a9f5f99523369608dcc699f03b76b5a0c82dcdee71d89d52ec1ec968",
+      "first_urls": [
+        "https://youtu.be/JsswkL3NkGQ? si=NKjZtSbCdCDRxlbG",
+        "https://cpc.ey.gov.tw/Page/A24D52B481E12568",
+        "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/公告抄本(含附件)(1).pdf"
+      ]
+    },
+    {
+      "year": 2024,
+      "fields": {
+        "pageSize": "10",
+        "page": "2"
+      },
+      "status": 200,
+      "record_count": 7,
+      "year_match": true,
+      "sha256": "06590b30a9f5f99523369608dcc699f03b76b5a0c82dcdee71d89d52ec1ec968",
+      "first_urls": [
+        "https://youtu.be/JsswkL3NkGQ? si=NKjZtSbCdCDRxlbG",
+        "https://cpc.ey.gov.tw/Page/A24D52B481E12568",
+        "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/公告抄本(含附件)(1).pdf"
+      ]
+    },
+    {
+      "year": 2025,
+      "fields": {
+        "pageSize": "10"
+      },
+      "status": 200,
+      "record_count": 34,
+      "year_match": true,
+      "sha256": "468fc7b538f5b3114d21b622010aefda62c45cd3aba69feaaab327f7981acb7a",
+      "first_urls": [
+        "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202633號函(115年期貨交易輔助人交易推廣獎勵活動辦法).pdf",
+        "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/115年法人機構獎勵活動辦法.pdf",
+        "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202563號函.pdf"
+      ]
+    },
+    {
+      "year": 2025,
+      "fields": {
+        "pageSize": "10",
+        "pageNo": "2"
+      },
+      "status": 200,
+      "record_count": 34,
+      "year_match": true,
+      "sha256": "468fc7b538f5b3114d21b622010aefda62c45cd3aba69feaaab327f7981acb7a",
+      "first_urls": [
+        "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202633號函(115年期貨交易輔助人交易推廣獎勵活動辦法).pdf",
+        "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/115年法人機構獎勵活動辦法.pdf",
+        "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202563號函.pdf"
+      ]
+    },
+    {
+      "year": 2025,
+      "fields": {
+        "pageSize": "10",
+        "pageNum": "2"
+      },
+      "status": 200,
+      "record_count": 34,
+      "year_match": true,
+      "sha256": "468fc7b538f5b3114d21b622010aefda62c45cd3aba69feaaab327f7981acb7a",
+      "first_urls": [
+        "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202633號函(115年期貨交易輔助人交易推廣獎勵活動辦法).pdf",
+        "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/115年法人機構獎勵活動辦法.pdf",
+        "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202563號函.pdf"
+      ]
+    },
+    {
+      "year": 2025,
+      "fields": {
+        "pageSize": "10",
+        "page": "2"
+      },
+      "status": 200,
+      "record_count": 34,
+      "year_match": true,
+      "sha256": "468fc7b538f5b3114d21b622010aefda62c45cd3aba69feaaab327f7981acb7a",
+      "first_urls": [
+        "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202633號函(115年期貨交易輔助人交易推廣獎勵活動辦法).pdf",
+        "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/115年法人機構獎勵活動辦法.pdf",
+        "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202563號函.pdf"
+      ]
+    },
+    {
+      "year": 2026,
+      "fields": {
+        "pageSize": "10"
+      },
+      "status": 200,
+      "record_count": 250,
+      "year_match": true,
+      "sha256": "7c02acd05c499b1b0b61977bfc83d9627027648bc4fce1e18b61001bc59e8076",
+      "first_urls": [
+        "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/官網附件.pdf",
+        "https://www.taifex.com.tw/cht/5/futIndxFSP?commodityIds=21&start_year=2025&start_month=11&end_year=2026&end_month=11",
+        "https://www.taifex.com.tw/cht/5/optIndxFSP?commodityIds=2&start_year=2025&start_month=11&end_year=2026&end_month=11"
+      ]
+    },
+    {
+      "year": 2026,
+      "fields": {
+        "pageSize": "10",
+        "pageNo": "2"
+      },
+      "status": 200,
+      "record_count": 250,
+      "year_match": true,
+      "sha256": "7c02acd05c499b1b0b61977bfc83d9627027648bc4fce1e18b61001bc59e8076",
+      "first_urls": [
+        "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/官網附件.pdf",
+        "https://www.taifex.com.tw/cht/5/futIndxFSP?commodityIds=21&start_year=2025&start_month=11&end_year=2026&end_month=11",
+        "https://www.taifex.com.tw/cht/5/optIndxFSP?commodityIds=2&start_year=2025&start_month=11&end_year=2026&end_month=11"
+      ]
+    },
+    {
+      "year": 2026,
+      "fields": {
+        "pageSize": "10",
+        "pageNum": "2"
+      },
+      "status": 200,
+      "record_count": 250,
+      "year_match": true,
+      "sha256": "7c02acd05c499b1b0b61977bfc83d9627027648bc4fce1e18b61001bc59e8076",
+      "first_urls": [
+        "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/官網附件.pdf",
+        "https://www.taifex.com.tw/cht/5/futIndxFSP?commodityIds=21&start_year=2025&start_month=11&end_year=2026&end_month=11",
+        "https://www.taifex.com.tw/cht/5/optIndxFSP?commodityIds=2&start_year=2025&start_month=11&end_year=2026&end_month=11"
+      ]
+    },
+    {
+      "year": 2026,
+      "fields": {
+        "pageSize": "10",
+        "page": "2"
+      },
+      "status": 200,
+      "record_count": 250,
+      "year_match": true,
+      "sha256": "7c02acd05c499b1b0b61977bfc83d9627027648bc4fce1e18b61001bc59e8076",
+      "first_urls": [
+        "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/官網附件.pdf",
+        "https://www.taifex.com.tw/cht/5/futIndxFSP?commodityIds=21&start_year=2025&start_month=11&end_year=2026&end_month=11",
+        "https://www.taifex.com.tw/cht/5/optIndxFSP?commodityIds=2&start_year=2025&start_month=11&end_year=2026&end_month=11"
+      ]
+    }
+  ],
   "pagination_verified": false,
   "all_year_filters_verified": true,
+  "primary_evidence_reconciliation": [
+    {
+      "dates": [
+        "2024-07-24",
+        "2024-07-25"
+      ],
+      "status": "verified_primary",
+      "official_url": "https://www.taifex.com.tw/enl/eng11/newsDetail?idx=8785&newsType=1",
+      "primary_evidence_already_verified": true
+    },
+    {
+      "dates": [
+        "2024-10-02",
+        "2024-10-03"
+      ],
+      "status": "verified_primary",
+      "official_url": "https://www.taifex.com.tw/cht/11/newsDetail.do?idx=15394&thetype=2",
+      "primary_evidence_already_verified": true
+    },
+    {
+      "dates": [
+        "2024-10-31"
+      ],
+      "status": "previously_verified_primary",
+      "official_url": "https://www.taifex.com.tw/cht/11/newsDetail?idx=15446&newsType=1",
+      "primary_evidence_already_verified": true
+    },
+    {
+      "dates": [
+        "2025-09-29",
+        "2025-10-24",
+        "2025-12-25"
+      ],
+      "status": "verified_primary",
+      "official_url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/%E5%8F%B0%E6%9C%9F%E4%BA%A4%E5%AD%97%E7%AC%AC1140001929%E8%99%9F%E5%87%BD.pdf",
+      "primary_evidence_already_verified": true
+    },
+    {
+      "dates": [
+        "2026-07-10"
+      ],
+      "status": "verified_direct_page",
+      "official_url": "https://www.taifex.com.tw/enl/eng11/newsDetail?idx=10470&newsType=1",
+      "primary_evidence_already_verified": true
+    },
+    {
+      "dates": [
+        "2026-10-23"
+      ],
+      "status": "verified_direct_page",
+      "official_url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17441",
+      "primary_evidence_already_verified": true
+    }
+  ],
   "unmatched_special_dates": [
     [
       "2024-07-24",
