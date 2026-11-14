@@ -1,0 +1,23 @@
+{
+  "date": "2023-11-13",
+  "contract": "TXF",
+  "investor": "foreign",
+  "long_open_interest": 38773,
+  "short_open_interest": 35641,
+  "net_open_interest": 3132,
+  "arithmetic_check": true,
+  "source_type": "third_party_broker_post",
+  "source_url": "https://yaci0221.pixnet.net/blog/posts/5070953613",
+  "source_title": "大昌期貨 台指期貨三大法人、大額交易人未平倉口數112/11/13",
+  "source_published": "2023-11-13",
+  "source_values_match_provisional": true,
+  "official_primary_source_authenticated": false,
+  "independent_primary_source_count": 0,
+  "verification_status": "secondary_source_corroborated_not_officially_certified",
+  "full_model_backtest_authorized": false,
+  "limitations": [
+    "Third-party post is not a TAIFEX original record",
+    "No official raw source file or official SHA-256",
+    "No second independent exact three-field source established"
+  ]
+}
