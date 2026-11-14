@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "method": "Separate preexisting primary-evidence ledger from archive-list matching; no live source reauthentication",
+  "special_date_groups": [
+    {
+      "dates": [
+        "2024-07-24",
+        "2024-07-25"
+      ],
+      "reason": "Typhoon Gaemi",
+      "official_url": "https://www.taifex.com.tw/enl/eng11/newsDetail?idx=8785&newsType=1",
+      "official_evidence_recorded": true,
+      "source_status": "verified_primary",
+      "listed_in_announcement_feed": false,
+      "listing_match_count": 0,
+      "source_independently_retrieved_this_run": false
+    },
+    {
+      "dates": [
+        "2024-10-02",
+        "2024-10-03"
+      ],
+      "reason": "Typhoon Krathon",
+      "official_url": "https://www.taifex.com.tw/cht/11/newsDetail.do?idx=15394&thetype=2",
+      "official_evidence_recorded": true,
+      "source_status": "verified_primary",
+      "listed_in_announcement_feed": false,
+      "listing_match_count": 0,
+      "source_independently_retrieved_this_run": false
+    },
+    {
+      "dates": [
+        "2024-10-31"
+      ],
+      "reason": "Typhoon Kong-rey",
+      "official_url": "https://www.taifex.com.tw/cht/11/newsDetail?idx=15446&newsType=1",
+      "official_evidence_recorded": true,
+      "source_status": "previously_verified_primary",
+      "listed_in_announcement_feed": false,
+      "listing_match_count": 0,
+      "source_independently_retrieved_this_run": false
+    },
+    {
+      "dates": [
+        "2025-09-29",
+        "2025-10-24",
+        "2025-12-25"
+      ],
+      "reason": "Revised 2025 TAIFEX annual calendar",
+      "official_url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/%E5%8F%B0%E6%9C%9F%E4%BA%A4%E5%AD%97%E7%AC%AC1140001929%E8%99%9F%E5%87%BD.pdf",
+      "official_evidence_recorded": true,
+      "source_status": "verified_primary",
+      "listed_in_announcement_feed": false,
+      "listing_match_count": 0,
+      "source_independently_retrieved_this_run": false
+    },
+    {
+      "dates": [
+        "2026-07-10"
+      ],
+      "reason": "Typhoon closure",
+      "official_url": "https://www.taifex.com.tw/enl/eng11/newsDetail?idx=10470&newsType=1",
+      "official_evidence_recorded": true,
+      "source_status": "verified_direct_page",
+      "listed_in_announcement_feed": false,
+      "listing_match_count": 0,
+      "source_independently_retrieved_this_run": false
+    },
+    {
+      "dates": [
+        "2026-10-23"
+      ],
+      "reason": "Typhoon closure",
+      "official_url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17441",
+      "official_evidence_recorded": true,
+      "source_status": "verified_direct_page",
+      "listed_in_announcement_feed": true,
+      "listing_match_count": 1,
+      "source_independently_retrieved_this_run": false
+    }
+  ],
+  "special_date_group_count": 6,
+  "special_groups_with_recorded_official_evidence": 6,
+  "special_groups_matched_in_announcement_feed": 1,
+  "annual_calendar_sources": [
+    {
+      "year": 2023,
+      "official_url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/%E5%8F%B0%E6%9C%9F%E4%BA%A4%E5%AD%97%E7%AC%AC1110003783%E8%99%9F%E5%87%BD.pdf",
+      "source_status": "verified_pdf_text",
+      "source_recorded": true
+    },
+    {
+      "year": 2024,
+      "official_url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/%E5%8F%B0%E6%9C%9F%E4%BA%A4%E5%AD%97%E7%AC%AC1120003542%E8%99%9F%E5%87%BD.pdf",
+      "source_status": "verified_pdf_text",
+      "source_recorded": true
+    },
+    {
+      "year": 2025,
+      "official_url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/%E5%8F%B0%E6%9C%9F%E4%BA%A4%E5%AD%97%E7%AC%AC1140001929%E8%99%9F%E5%87%BD.pdf",
+      "source_status": "verified_pdf_text",
+      "source_recorded": true
+    },
+    {
+      "year": 2026,
+      "official_url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/%E5%8F%B0%E6%9C%9F%E4%BA%A4%E5%AD%97%E7%AC%AC1140003036%E8%99%9F%E5%87%BD.pdf",
+      "source_status": "verified_pdf_text",
+      "source_recorded": true
+    }
+  ],
+  "annual_calendar_sources_recorded": 4,
+  "recorded_special_evidence_coverage": true,
+  "archive_exhaustiveness_verified": false,
+  "independent_calendar_verified": false,
+  "full_model_backtest_authorized": false,
+  "remaining_requirements": [
+    "Reauthenticate official source documents independently",
+    "Verify archive coverage by actual navigation or authoritative totals",
+    "Verify the single TXF source or explicitly adopt a separate lower-assurance backtest policy"
+  ]
+}
