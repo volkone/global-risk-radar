@@ -60,6 +60,8 @@ def main():
  report["all_months_queried"]=len(report["months"])==36 and all(x.get("http_status")==200 for x in report["months"])
  report["months_with_query_echo"]=sum(bool(x.get("date_query_echo_confirmed")) for x in report["months"])
  report["candidate_notices_total"]=sum(len(x.get("candidates",[])) for x in report["months"])
- report["blockers"]=["pagination_or_result_total_not_independently_proven","known_special_dates_require_reconciliation"]
+ report["positive_controls"]={"known_official_closure_months":["2024-07","2024-10","2026-07","2026-10"],"months_with_retrieved_notices":[m["month"] for m in report["months"] if m.get("notice_count",0)>0],"passed":all(any(m["month"]==target and m.get("notice_count",0)>0 for m in report["months"]) for target in ("2024-07","2024-10","2026-07","2026-10"))}
+ report["response_content_verified"]=report["positive_controls"]["passed"] and all(not m.get("extraction_suspect") for m in report["months"])
+ report["blockers"]=["query_results_not_validated_against_known_official_notices","pagination_or_result_total_not_independently_proven","known_special_dates_require_reconciliation"]
  OUT.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 if __name__=="__main__":main()
