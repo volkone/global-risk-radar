@@ -46,7 +46,7 @@ def main():
    entry["response_has_news_detail"]=("newsDetail" in html)
    entry["response_has_search_form"]=("queryStartDate" in html and "queryEndDate" in html)
    entry["response_has_result_table"]=bool(re.search(r"<table\\b",html,re.I))
-   entry["response_has_ajax_or_fetch"]=bool(re.search(r"\\$\\.ajax|\\$\\.post|fetch\\s*\\(",html,re.I))
+   entry["response_has_ajax_or_fetch"]=any(s in html for s in ("$.ajax","$.post","fetch("))
    entry["query_marker_contexts"]=[re.sub(r"\\s+"," ",html[max(0,m.start()-180):m.end()+220])[:400] for m in list(re.finditer(r"queryStartDate|isQuery|hisNews|newsDetail",html,re.I))[:14]]
    entry["html_response_identical_to_other_month"]=any(old.get("response_sha256")==entry["response_sha256"] for old in report["months"])
    # Need a documented total count or proven page traversal to certify.
