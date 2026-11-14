@@ -1,0 +1,212 @@
+{
+  "source": "https://www.taifex.com.tw/cht/11/announcement",
+  "scope": [
+    "2023-11-11",
+    "2026-10-31"
+  ],
+  "years": [
+    {
+      "year": 2023,
+      "attempts": [
+        {
+          "method": "post",
+          "year": 2023,
+          "http_status": 200,
+          "sha256": "3c9c67ea38d5e0dbecae586249112df26d814f7a10769ce2b2f0f4d01b717319",
+          "bytes": 116789,
+          "record_count": 0,
+          "year_match": false
+        },
+        {
+          "method": "get",
+          "year": 2023,
+          "http_status": 200,
+          "sha256": "3c9c67ea38d5e0dbecae586249112df26d814f7a10769ce2b2f0f4d01b717319",
+          "bytes": 116789,
+          "record_count": 0,
+          "year_match": false
+        }
+      ],
+      "selected_method": null,
+      "verified_year_filter": false,
+      "record_count": 0
+    },
+    {
+      "year": 2024,
+      "attempts": [
+        {
+          "method": "post",
+          "year": 2024,
+          "http_status": 200,
+          "sha256": "06590b30a9f5f99523369608dcc699f03b76b5a0c82dcdee71d89d52ec1ec968",
+          "bytes": 113449,
+          "record_count": 0,
+          "year_match": false
+        },
+        {
+          "method": "get",
+          "year": 2024,
+          "http_status": 200,
+          "sha256": "06590b30a9f5f99523369608dcc699f03b76b5a0c82dcdee71d89d52ec1ec968",
+          "bytes": 113449,
+          "record_count": 0,
+          "year_match": false
+        }
+      ],
+      "selected_method": null,
+      "verified_year_filter": false,
+      "record_count": 0
+    },
+    {
+      "year": 2025,
+      "attempts": [
+        {
+          "method": "post",
+          "year": 2025,
+          "http_status": 200,
+          "sha256": "468fc7b538f5b3114d21b622010aefda62c45cd3aba69feaaab327f7981acb7a",
+          "bytes": 124827,
+          "record_count": 0,
+          "year_match": false
+        },
+        {
+          "method": "get",
+          "year": 2025,
+          "http_status": 200,
+          "sha256": "468fc7b538f5b3114d21b622010aefda62c45cd3aba69feaaab327f7981acb7a",
+          "bytes": 124827,
+          "record_count": 0,
+          "year_match": false
+        }
+      ],
+      "selected_method": null,
+      "verified_year_filter": false,
+      "record_count": 0
+    },
+    {
+      "year": 2026,
+      "attempts": [
+        {
+          "method": "post",
+          "year": 2026,
+          "http_status": 200,
+          "sha256": "7c02acd05c499b1b0b61977bfc83d9627027648bc4fce1e18b61001bc59e8076",
+          "bytes": 217286,
+          "record_count": 0,
+          "year_match": false
+        },
+        {
+          "method": "get",
+          "year": 2026,
+          "http_status": 200,
+          "sha256": "7c02acd05c499b1b0b61977bfc83d9627027648bc4fce1e18b61001bc59e8076",
+          "bytes": 217286,
+          "record_count": 0,
+          "year_match": false
+        }
+      ],
+      "selected_method": null,
+      "verified_year_filter": false,
+      "record_count": 0
+    }
+  ],
+  "special_date_reconciliation": [
+    {
+      "dates": [
+        "2024-07-24",
+        "2024-07-25"
+      ],
+      "reason": "Typhoon Gaemi",
+      "known_official_url": "https://www.taifex.com.tw/enl/eng11/newsDetail?idx=8785&newsType=1",
+      "matching_archive_records": [],
+      "matched": false,
+      "note": "A missing match does not negate separately verified official primary evidence"
+    },
+    {
+      "dates": [
+        "2024-10-02",
+        "2024-10-03"
+      ],
+      "reason": "Typhoon Krathon",
+      "known_official_url": "https://www.taifex.com.tw/cht/11/newsDetail.do?idx=15394&thetype=2",
+      "matching_archive_records": [],
+      "matched": false,
+      "note": "A missing match does not negate separately verified official primary evidence"
+    },
+    {
+      "dates": [
+        "2024-10-31"
+      ],
+      "reason": "Typhoon Kong-rey",
+      "known_official_url": "https://www.taifex.com.tw/cht/11/newsDetail?idx=15446&newsType=1",
+      "matching_archive_records": [],
+      "matched": false,
+      "note": "A missing match does not negate separately verified official primary evidence"
+    },
+    {
+      "dates": [
+        "2025-09-29",
+        "2025-10-24",
+        "2025-12-25"
+      ],
+      "reason": "Revised 2025 TAIFEX annual calendar",
+      "known_official_url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/%E5%8F%B0%E6%9C%9F%E4%BA%A4%E5%AD%97%E7%AC%AC1140001929%E8%99%9F%E5%87%BD.pdf",
+      "matching_archive_records": [],
+      "matched": false,
+      "note": "A missing match does not negate separately verified official primary evidence"
+    },
+    {
+      "dates": [
+        "2026-07-10"
+      ],
+      "reason": "Typhoon closure",
+      "known_official_url": "https://www.taifex.com.tw/enl/eng11/newsDetail?idx=10470&newsType=1",
+      "matching_archive_records": [],
+      "matched": false,
+      "note": "A missing match does not negate separately verified official primary evidence"
+    },
+    {
+      "dates": [
+        "2026-10-23"
+      ],
+      "reason": "Typhoon closure",
+      "known_official_url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17441",
+      "matching_archive_records": [],
+      "matched": false,
+      "note": "A missing match does not negate separately verified official primary evidence"
+    }
+  ],
+  "full_notice_sweep_verified": false,
+  "full_model_backtest_authorized": false,
+  "records": [],
+  "all_year_filters_verified": false,
+  "unmatched_special_dates": [
+    [
+      "2024-07-24",
+      "2024-07-25"
+    ],
+    [
+      "2024-10-02",
+      "2024-10-03"
+    ],
+    [
+      "2024-10-31"
+    ],
+    [
+      "2025-09-29",
+      "2025-10-24",
+      "2025-12-25"
+    ],
+    [
+      "2026-07-10"
+    ],
+    [
+      "2026-10-23"
+    ]
+  ],
+  "blockers": [
+    "historical_year_filters_not_all_verified",
+    "archive_pagination_and_total_not_proven",
+    "independent_official_txf_2023_11_13_pending"
+  ]
+}
