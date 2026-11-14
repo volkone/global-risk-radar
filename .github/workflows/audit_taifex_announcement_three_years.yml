@@ -1,5 +1,5 @@
 name: Audit TAIFEX 3-year announcements and calendar
-# Re-run bounded pagination probes and special-date primary-evidence reconciliation
+# Re-run explicit pagination-negative controls and six primary closure evidence groups
 on:
   workflow_dispatch:
   push:
