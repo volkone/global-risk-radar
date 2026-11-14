@@ -1,0 +1,46 @@
+name: Audit TAIFEX historical notices month by month
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/scan_taifex_notice_months.yml'
+permissions:
+  contents: write
+concurrency:
+  group: taifex-notice-monthly-audit
+  cancel-in-progress: false
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Query all 36 historical months
+        run: python scripts/scan_taifex_notice_months.py
+      - name: Preserve audit and prevent false certification
+        run: |
+          python - <<'PY'
+          import json
+          j=json.load(open('docs/taifex_notice_monthly_audit.json'))
+          assert len(j['months'])==36
+          assert j['full_notice_sweep_verified'] is False
+          assert j['full_model_backtest_authorized'] is False
+          print('Months queried:',j['all_months_queried'])
+          PY
+      - name: Commit evidence
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/taifex_notice_monthly_audit.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Save monthly TAIFEX notice audit evidence [skip ci]'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
