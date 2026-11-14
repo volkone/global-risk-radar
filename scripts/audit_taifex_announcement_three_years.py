@@ -30,6 +30,9 @@ def request(year,mode):
  with urllib.request.urlopen(req,timeout=40) as response:raw=response.read(5000000);status=response.status
  parser=Rows();parser.feed(raw.decode("utf-8","replace"))
  records=[]
+ # Archive pagination metadata is diagnostic until total pages and navigation are proven.
+ html=raw.decode("utf-8","replace")
+ pagination={"page_parameters":sorted(set(re.findall(r'(?:pageNo|pageNum|pageIndex|pageSize|currentPage|totalPage|totalCount|page=)',html,re.I))),"pagination_contexts":[html[max(0,m.start()-140):m.start()+180] for m in list(re.finditer(r'(?:下一頁|末頁|總筆數|共\\s*\\d+\\s*頁|pageNo|pageNum|pageIndex|totalPage)',html,re.I))[:12]]}
  for row in parser.rows:
   if len(row)<2:continue
   date=" ".join(" ".join(row[0]["parts"]).split())
@@ -37,7 +40,7 @@ def request(year,mode):
   title=" ".join(" ".join(row[1]["parts"]).split())
   links=row[1]["links"]
   if title:records.append({"published":date.replace("/","-"),"title":title,"url":links[0]["url"] if links else None})
- return {"method":mode,"year":year,"http_status":status,"sha256":hashlib.sha256(raw).hexdigest(),"bytes":len(raw),"record_count":len(records),"records":records,"year_match":bool(records) and all(x["published"].startswith(str(year)+"-") for x in records)}
+ return {"method":mode,"year":year,"http_status":status,"sha256":hashlib.sha256(raw).hexdigest(),"bytes":len(raw),"record_count":len(records),"records":records,"pagination":pagination,"year_match":bool(records) and all(x["published"].startswith(str(year)+"-") for x in records)}
 def main():
  evidence=json.loads(EVIDENCE.read_text(encoding="utf-8"))
  report={"source":URL,"scope":["2023-11-11","2026-10-31"],"years":[],"special_date_reconciliation":[],"full_notice_sweep_verified":False,"full_model_backtest_authorized":False}
@@ -57,6 +60,7 @@ def main():
   official=entry.get("official_url","")
   matches=[x for x in report["records"] if any(d.replace("-","/") in x["title"] or d in x["title"] for d in dates) or (official and x["url"] and urllib.parse.parse_qs(urllib.parse.urlparse(x["url"]).query).get("idx")==urllib.parse.parse_qs(urllib.parse.urlparse(official).query).get("idx") and "idx=" in official)]
   report["special_date_reconciliation"].append({"dates":dates,"reason":entry["reason"],"known_official_url":official,"matching_archive_records":matches[:12],"matched":bool(matches),"note":"A missing match does not negate separately verified official primary evidence"})
+ report["pagination_verified"]=False
  report["all_year_filters_verified"]=all(x["verified_year_filter"] for x in report["years"])
  report["unmatched_special_dates"]=[x["dates"] for x in report["special_date_reconciliation"] if not x["matched"]]
  report["blockers"]=["historical_year_filters_not_all_verified"] if not report["all_year_filters_verified"] else []
