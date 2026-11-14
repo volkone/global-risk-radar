@@ -26,13 +26,16 @@ def evaluate():
         "independent_taifex_calendar_certified":calendar.get("independent_taifex_calendar_verified") is True,
         "full_notice_sweep_verified":calendar.get("full_notice_sweep_verified") is True,
         "primary_evidence_complete":calendar.get("primary_evidence_complete") is True}
-    p1["complete"]=all(v is True for k,v in p1.items() if k.endswith(("pass","certified","verified","complete")))
+    required_p1=("source_verification_pass","twse_join_audit_pass","calendar_crosscheck_pass","independent_taifex_calendar_certified","full_notice_sweep_verified","primary_evidence_complete")
+    p1["complete"]=all(p1[k] is True for k in required_p1)
+    p1["unmet_checks"]=[k for k in required_p1 if p1[k] is not True]
     p2={"conservative_time_gate_panel_built":timing.get("status")=="conservative_time_gate_research_panel_built",
         "actual_publication_timestamps_verified":timing.get("actual_publication_timestamps_verified_for_all_718") is True,
         "revisions_independently_verified":timing.get("data_revisions_independently_verified_for_all_718") is True,
         "internal_replay_pass":replay.get("status")=="internal_replay_pass",
         "independent_source_query_validation":replay.get("independent_source_query_validation") is True}
     p2["complete"]=all(p2.values())
+    p2["unmet_checks"]=[k for k,v in p2.items() if k!="complete" and v is not True]
     return {"schema_version":1,"purpose":"P0/P1/P2 independent diagnostics; not production approval",
             "p0":{"global_coverage":g.get("coverage"),"minimum_coverage":g.get("min_coverage"),
                   "score":g.get("score"),"missing_components":missing,
