@@ -71,10 +71,19 @@ def main():
     q=request(year,"post",fields)
     report["pagination_probes"].append({"year":year,"fields":fields,"status":q["http_status"],"record_count":q["record_count"],"year_match":q["year_match"],"sha256":q["sha256"],"first_urls":[x["url"] for x in q["records"][:3]]})
    except Exception as e:report["pagination_probes"].append({"year":year,"fields":fields,"error":str(e)[:200]})
+ # Repeated hashes prove these guessed parameters are ignored, not that the archive is exhausted.
+ report["pagination_probe_distinct_pages"]=[]
+ for year in YEARS:
+  probes=[x for x in report["pagination_probes"] if x["year"]==year and x.get("sha256")]
+  distinct=len(set(x["sha256"] for x in probes))
+  report["pagination_probe_distinct_pages"].append({"year":year,"distinct_response_hashes":distinct,"parameter_probe_effective":distinct>1})
  report["pagination_verified"]=False
+ report["pagination_traversal_status"]="blocked_no_verified_navigation_or_total_count"
+ report["source_scope_warning"]="The annual announcement listing is not independently established as the complete historical news archive."
  report["all_year_filters_verified"]=all(x["verified_year_filter"] for x in report["years"])
  # Distinguish a notice absent from the listing from independently verified primary evidence.
  report["primary_evidence_reconciliation"]=[{"dates":e["dates"],"status":e.get("status"),"official_url":e.get("official_url"),"primary_evidence_already_verified":e.get("status") in ("verified_primary","previously_verified_primary","verified_direct_page")} for e in evidence["special_dates"]]
+ report["special_date_evidence_summary"]={"total_groups":len(report["primary_evidence_reconciliation"]),"primary_evidence_previously_verified":sum(x["primary_evidence_already_verified"] for x in report["primary_evidence_reconciliation"]),"listing_matched":sum(x["matched"] for x in report["special_date_reconciliation"]),"independent_archive_exhaustiveness_verified":False}
  report["unmatched_special_dates"]=[x["dates"] for x in report["special_date_reconciliation"] if not x["matched"]]
  report["blockers"]=["historical_year_filters_not_all_verified"] if not report["all_year_filters_verified"] else []
  report["blockers"]+=["archive_pagination_and_total_not_proven","independent_official_txf_2023_11_13_pending"]
