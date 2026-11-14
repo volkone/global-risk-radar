@@ -37,8 +37,8 @@ def main():
    continue
   if previous.get("parsed_values_match") is True and previous.get("status") in ("match","mismatch"):
    continue
-  if previous.get("status")=="rate_limited":continue
-  if previous.get("status")=="fetch_error" and previous.get("error")=="ValueError":continue
+  if previous.get("status")=="rate_limited":continue  # requires explicit reset after cooldown
+  if previous.get("status")=="fetch_error" and previous.get("error")=="ValueError":continue  # investigate source date before retry
   if attempted>=a.limit:break
   attempted+=1
   try:
@@ -62,15 +62,15 @@ def main():
   except urllib.error.HTTPError as exc:
    if exc.code==429:
     done[d]={"status":"rate_limited","http_status":429,"source_url":rec["source_url"],"verified_at_utc":dt.datetime.now(dt.timezone.utc).isoformat()}
-    out.write_text(json.dumps(state,ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
+    out.write_text(json.dumps(state,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print("Official source rate limit 429: stopping batch without retry",flush=True)
     break
    result={"status":"fetch_error","parsed_values_match":False,"error":"HTTPError","error_detail":str(exc)[:160],"source_url":rec["source_url"],"verified_at_utc":dt.datetime.now(dt.timezone.utc).isoformat()}
   except Exception as exc:
    result={"status":"fetch_error","parsed_values_match":False,"error":type(exc).__name__,"error_detail":str(exc)[:160],"source_url":rec["source_url"],"verified_at_utc":dt.datetime.now(dt.timezone.utc).isoformat()}
   done[d]=result
-  out.write_text(json.dumps(state,ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
-  if attempted%25==0:print("Checked",attempted,"this run",flush=True)
+  out.write_text(json.dumps(state,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+  if attempted%5==0:print("Checked",attempted,"this run",flush=True)
   time.sleep(a.pause)
  total=len(records)
  counts={s:sum(x.get("status")==s for x in done.values()) for s in ("match","mismatch","fetch_error","rate_limited")}
