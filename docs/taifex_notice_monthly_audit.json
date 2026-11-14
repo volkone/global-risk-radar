@@ -20,11 +20,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2023-12",
@@ -44,11 +51,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2024-01",
@@ -68,11 +82,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2024-02",
@@ -92,11 +113,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2024-03",
@@ -116,11 +144,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2024-04",
@@ -140,11 +175,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2024-05",
@@ -164,11 +206,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2024-06",
@@ -188,11 +237,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2024-07",
@@ -212,11 +268,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2024-08",
@@ -236,11 +299,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2024-09",
@@ -260,11 +330,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2024-10",
@@ -284,11 +361,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2024-11",
@@ -308,11 +392,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2024-12",
@@ -332,11 +423,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2025-01",
@@ -356,11 +454,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2025-02",
@@ -380,11 +485,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2025-03",
@@ -404,11 +516,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2025-04",
@@ -428,11 +547,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2025-05",
@@ -452,11 +578,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2025-06",
@@ -476,11 +609,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2025-07",
@@ -500,11 +640,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2025-08",
@@ -524,11 +671,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2025-09",
@@ -548,11 +702,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2025-10",
@@ -572,11 +733,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2025-11",
@@ -596,11 +764,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2025-12",
@@ -620,11 +795,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2026-01",
@@ -644,11 +826,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2026-02",
@@ -668,11 +857,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2026-03",
@@ -692,11 +888,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2026-04",
@@ -716,11 +919,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2026-05",
@@ -740,11 +950,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2026-06",
@@ -764,11 +981,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2026-07",
@@ -788,11 +1012,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2026-08",
@@ -812,11 +1043,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2026-09",
@@ -836,11 +1074,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     },
     {
       "month": "2026-10",
@@ -860,11 +1105,18 @@
       "response_bytes": 114297,
       "notice_count": 0,
       "notices": [],
+      "dated_row_count": 0,
+      "dated_row_samples": [],
+      "known_closure_terms_in_response": [
+        "停止交易",
+        "暫停交易"
+      ],
       "candidates": [],
       "pagination_hints": [
         "<div class=\"pagesize\">\r"
       ],
-      "date_query_echo_confirmed": true
+      "date_query_echo_confirmed": true,
+      "extraction_suspect": true
     }
   ],
   "all_months_queried": true,
