@@ -1,0 +1,34 @@
+name: P2-03 Chromium browser acceptance
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/test_p203_browser.yml'
+      - 'scripts/test_p203_browser.cjs'
+      - 'docs/index.html'
+      - 'docs/dashboard.js'
+      - 'docs/p203_research.js'
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: npm install --no-save playwright
+      - run: npx playwright install --with-deps chromium
+      - name: Browser smoke test and JSON consistency
+        run: node scripts/test_p203_browser.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: p203-browser-screenshot
+          path: p203_browser_acceptance.png
+          if-no-files-found: ignore
