@@ -13,7 +13,8 @@
   "semantic_values_verified": 312,
   "semantic_values_unverified": 406,
   "raw_hash_mismatch_dates": [],
-  "discrepancy_dates": [
+  "discrepancy_dates": [],
+  "unverified_dates": [
     "2023-11-13",
     "2025-03-05",
     "2025-03-06",
