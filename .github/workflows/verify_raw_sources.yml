@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       limit:
-        description: 'Maximum raw source downloads per run (1-30)'
+        description: 'Maximum raw source downloads per run (1-718)'
         required: false
         default: '30'
 permissions:
@@ -18,7 +18,7 @@ concurrency:
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -26,7 +26,7 @@ jobs:
           python-version: '3.11'
       - name: Independently download and hash-check bounded source batch
         env:
-          LIMIT: ${{ inputs.limit || '20' }}
+          LIMIT: ${{ inputs.limit || '718' }}
         run: python scripts/refetch_taifex_hashes.py --limit "$LIMIT"
       - name: Save verification ledger and summary
         run: |
