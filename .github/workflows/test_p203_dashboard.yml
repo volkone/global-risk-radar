@@ -1,0 +1,29 @@
+name: P2-03 dashboard integration regression
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/test_p203_dashboard.yml'
+      - 'scripts/test_p203_dashboard_integration.py'
+      - 'docs/p203_research.js'
+      - 'docs/index.html'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check JavaScript syntax
+        run: |
+          node --check docs/dashboard.js
+          node --check docs/p203_research.js
+      - name: Validate JSON contracts, displayed values and dashboard isolation
+        run: python scripts/test_p203_dashboard_integration.py
