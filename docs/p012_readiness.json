@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "purpose": "P0/P1/P2 independent diagnostics; not production approval",
+  "p0": {
+    "global_coverage": 0.8,
+    "minimum_coverage": 0.85,
+    "score": null,
+    "missing_components": [
+      {
+        "metric": "nfci",
+        "weight": 10,
+        "reason": "quality_gate_not_passed",
+        "quality": "blocked",
+        "quality_errors": [
+          "observation_older_than_limit"
+        ]
+      },
+      {
+        "metric": "breadth",
+        "weight": 10,
+        "reason": "quality_gate_not_passed",
+        "quality": "blocked",
+        "quality_errors": [
+          "source_not_verified"
+        ]
+      }
+    ],
+    "complete": false
+  },
+  "p1": {
+    "source_records_verified": 718,
+    "source_total": 718,
+    "source_verification_pass": true,
+    "twse_join_audit_pass": true,
+    "calendar_crosscheck_pass": true,
+    "independent_taifex_calendar_certified": false,
+    "full_notice_sweep_verified": false,
+    "primary_evidence_complete": false,
+    "complete": false,
+    "unmet_checks": [
+      "independent_taifex_calendar_certified",
+      "full_notice_sweep_verified",
+      "primary_evidence_complete"
+    ]
+  },
+  "p2": {
+    "conservative_time_gate_panel_built": true,
+    "actual_publication_timestamps_verified": false,
+    "revisions_independently_verified": false,
+    "internal_replay_pass": true,
+    "independent_source_query_validation": false,
+    "complete": false,
+    "unmet_checks": [
+      "actual_publication_timestamps_verified",
+      "revisions_independently_verified",
+      "independent_source_query_validation"
+    ]
+  },
+  "formal_backtest_authorized": false,
+  "notes": [
+    "Crosschecking TWSE sessions is not the same as independently certifying TAIFEX notices.",
+    "Conservative release-time proxies and internal vintage replay do not prove actual publication timestamps.",
+    "No missing or paid metric is imputed."
+  ]
+}
