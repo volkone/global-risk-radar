@@ -3,6 +3,9 @@ on:
   push:
     branches: [main]
     paths: ['.github/workflows/verify_raw_sources.yml']
+  schedule:
+    # Once per weekday; bounded 10 requests, 24h cooldown after HTTP 429.
+    - cron: '40 3 * * 1-5'
   workflow_dispatch:
     inputs:
       limit:
