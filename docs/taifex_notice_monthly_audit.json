@@ -1,0 +1,880 @@
+{
+  "schema_version": 1,
+  "source": "https://www.taifex.com.tw/cht/11/hisNews",
+  "months": [
+    {
+      "month": "2023-11",
+      "start": "2023-11-01",
+      "end": "2023-11-30",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "94d4d07401f81f00b53b37da10d60b2e6e91c4db42506d00a8dcd080c056a895",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2023-12",
+      "start": "2023-12-01",
+      "end": "2023-12-31",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "4568f70463a7c6166cad1b87e1aa8f4ea64622bd6b36265bad27abe911cb5a7e",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2024-01",
+      "start": "2024-01-01",
+      "end": "2024-01-31",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "755c7f36732c617e686c030b0f669e4481f8f3272ee595f7b90ff62f8516ceae",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2024-02",
+      "start": "2024-02-01",
+      "end": "2024-02-29",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "302fb369f51fb410477442608979e6318f6b30209401e8c0bd98f010c2685093",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2024-03",
+      "start": "2024-03-01",
+      "end": "2024-03-31",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "86c33a21a6c7affc7fd1abe9795c045fc466f1d2386c362c44bf332cf8e2c789",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2024-04",
+      "start": "2024-04-01",
+      "end": "2024-04-30",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "74c6e0b0b3d87cbeafadfb443d6dbca7ca651075e5bc84f1388f6c4ec1bde147",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2024-05",
+      "start": "2024-05-01",
+      "end": "2024-05-31",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "f5a32d469c492882e0ad6c0450d0d8f5405e98ac302ed601c1b5aa496e95703f",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2024-06",
+      "start": "2024-06-01",
+      "end": "2024-06-30",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "46c891176c0addc499fcd04dedacc2e2fc5cb845e50923adc9ff62c9b49e0ed7",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2024-07",
+      "start": "2024-07-01",
+      "end": "2024-07-31",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "762f0bef16e9119576fb389ce003a2d5325ab846569ed9d4b5863606d32e469f",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2024-08",
+      "start": "2024-08-01",
+      "end": "2024-08-31",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "cfd6d44eb6863d85638edf24145e683911f6b926d8fc74cf031c4c5fd88c37e4",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2024-09",
+      "start": "2024-09-01",
+      "end": "2024-09-30",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "dd65c4245acc16765fd1b91dc1f88cc7fa3ea333d38739047ff6f856caf4b1fd",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2024-10",
+      "start": "2024-10-01",
+      "end": "2024-10-31",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "15b45cb14cb10f9b088321e3e0c84cf7e3fca8c5cb494bc52a62c2ff8a706990",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2024-11",
+      "start": "2024-11-01",
+      "end": "2024-11-30",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "ea4c6d6ca7f80c08129171441fd2f878eb01f417030961b814477b62e16ea25d",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2024-12",
+      "start": "2024-12-01",
+      "end": "2024-12-31",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "3b72627ed1a4ab3e03789783e0bc7ec3168602e547d3ed9e7b0d253af0f1c906",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2025-01",
+      "start": "2025-01-01",
+      "end": "2025-01-31",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "097cbcffce5bdd5bc1d0d5870aa1fce85228b0ac1fdec51b980a5672f8d7adf2",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2025-02",
+      "start": "2025-02-01",
+      "end": "2025-02-28",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "dd824448081560857a5f9e46107f77adde0adc37f5a70a7ce01255f3b9660be9",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2025-03",
+      "start": "2025-03-01",
+      "end": "2025-03-31",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "3574eb453a84244adc2cdb75b8a05e2cf98de9208b40ef2b8d7a5a681d7c0618",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2025-04",
+      "start": "2025-04-01",
+      "end": "2025-04-30",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "1615870b0d960d1c20cd3ed57c0b103bccd8332c3709701600204f3d30f661c5",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2025-05",
+      "start": "2025-05-01",
+      "end": "2025-05-31",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "1d74fcc1e8c057504127a39bd5279b7bbca60625e00cf7b10dc077cf47349b5b",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2025-06",
+      "start": "2025-06-01",
+      "end": "2025-06-30",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "2f0be5cdd34f90494e3ca999077f56fe0ac4558a61ca7226b964a7ea7110055f",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2025-07",
+      "start": "2025-07-01",
+      "end": "2025-07-31",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "60bccc0b4d824d55110070fe1aae5523d52159db3a4659631501cdbcdddad74b",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2025-08",
+      "start": "2025-08-01",
+      "end": "2025-08-31",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "4d4f73daee5f6a180ec2d64348d3b73b97ae6125bff7152d41939c47ac645a88",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2025-09",
+      "start": "2025-09-01",
+      "end": "2025-09-30",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "44b4a1142da3c52ee69f6f5bdb27e831075e05f3aa3505b5c689d969e6f528cb",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2025-10",
+      "start": "2025-10-01",
+      "end": "2025-10-31",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "02e1f5a180c23be07da1246c218aa0348ee8cd21e2f4260e6efd694a99511c3b",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2025-11",
+      "start": "2025-11-01",
+      "end": "2025-11-30",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "a75a077c2aa39ac54742a6f0e50cffd1d9cc61682bbc857fdef2c27d41eb8937",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2025-12",
+      "start": "2025-12-01",
+      "end": "2025-12-31",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "582ed88b86dd994b761d840e52e5a18264ca872f836600df10571a306e03afff",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2026-01",
+      "start": "2026-01-01",
+      "end": "2026-01-31",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "84bda2a5920d563a21a8ab7f401e96c15e316051b92e1598475b095ede8d2771",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2026-02",
+      "start": "2026-02-01",
+      "end": "2026-02-28",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "d4baec1e6baa65af1acc66713d6882e080bed7b53a14fbda8c917ecdbd74d6f8",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2026-03",
+      "start": "2026-03-01",
+      "end": "2026-03-31",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "f021077057611b450c3e477b9369c4fed3144a4927e4222e2770bd4accb1e099",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2026-04",
+      "start": "2026-04-01",
+      "end": "2026-04-30",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "fec0600f4569eb8fdf35b8be13d0923525d1a858542ea0c314ac5d4495789cff",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2026-05",
+      "start": "2026-05-01",
+      "end": "2026-05-31",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "6a03d8a747a54fcfdf42f478527148293c3b99e577d40a828b22e26aa57b4119",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2026-06",
+      "start": "2026-06-01",
+      "end": "2026-06-30",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "36d265f9ad7f7e3fb483005d2db429adbe6b1dd535935e5b1b038dd4da4b3715",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2026-07",
+      "start": "2026-07-01",
+      "end": "2026-07-31",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "17e7e52c7446861a38d2bf67e6e9e5db617523e4d06fcdc12619de20340ec9fe",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2026-08",
+      "start": "2026-08-01",
+      "end": "2026-08-31",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "3aa1f53ec773883f8263048cda22b99587b1ec1437ef2232b0804946f98955e0",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2026-09",
+      "start": "2026-09-01",
+      "end": "2026-09-30",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "5afabfd212b2fb4197665a28c031a54921544ce9a2e650ebb9951923f772b3ac",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    },
+    {
+      "month": "2026-10",
+      "start": "2026-10-01",
+      "end": "2026-10-31",
+      "method": "POST",
+      "submitted_fields": [
+        "isQuery",
+        "queryStartDate",
+        "queryEndDate",
+        "newsType",
+        "queryKeyWord"
+      ],
+      "complete": false,
+      "http_status": 200,
+      "response_sha256": "560b1206ce96d7992d05366ee6daabfaec7b0411e97cf8c44945a6dfeb847514",
+      "response_bytes": 114297,
+      "notice_count": 0,
+      "notices": [],
+      "candidates": [],
+      "pagination_hints": [
+        "<div class=\"pagesize\">\r"
+      ],
+      "date_query_echo_confirmed": true
+    }
+  ],
+  "all_months_queried": true,
+  "pagination_exhaustive": false,
+  "full_notice_sweep_verified": false,
+  "full_model_backtest_authorized": false,
+  "months_with_query_echo": 36,
+  "candidate_notices_total": 0,
+  "blockers": [
+    "pagination_or_result_total_not_independently_proven",
+    "known_special_dates_require_reconciliation"
+  ]
+}
