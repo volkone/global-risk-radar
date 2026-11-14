@@ -53,7 +53,6 @@ def evaluate():
 def main():
     report=evaluate()
     out=ROOT/"docs/p012_readiness.json"
-    out.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"
-",encoding="utf-8")
+    out.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print("P0/P1/P2:",{k:report[k]["complete"] for k in ("p0","p1","p2")})
 if __name__=="__main__":main()
