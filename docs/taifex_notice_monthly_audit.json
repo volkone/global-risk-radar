@@ -31,7 +31,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2023-12",
@@ -62,7 +65,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2024-01",
@@ -93,7 +99,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2024-02",
@@ -124,7 +133,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2024-03",
@@ -155,7 +167,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2024-04",
@@ -186,7 +201,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2024-05",
@@ -217,7 +235,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2024-06",
@@ -248,7 +269,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2024-07",
@@ -279,7 +303,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2024-08",
@@ -310,7 +337,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2024-09",
@@ -341,7 +371,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2024-10",
@@ -372,7 +405,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2024-11",
@@ -403,7 +439,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2024-12",
@@ -434,7 +473,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2025-01",
@@ -465,7 +507,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2025-02",
@@ -496,7 +541,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2025-03",
@@ -527,7 +575,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2025-04",
@@ -558,7 +609,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2025-05",
@@ -589,7 +643,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2025-06",
@@ -620,7 +677,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2025-07",
@@ -651,7 +711,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2025-08",
@@ -682,7 +745,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2025-09",
@@ -713,7 +779,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2025-10",
@@ -744,7 +813,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2025-11",
@@ -775,7 +847,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2025-12",
@@ -806,7 +881,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2026-01",
@@ -837,7 +915,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2026-02",
@@ -868,7 +949,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2026-03",
@@ -899,7 +983,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2026-04",
@@ -930,7 +1017,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2026-05",
@@ -961,7 +1051,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2026-06",
@@ -992,7 +1085,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2026-07",
@@ -1023,7 +1119,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2026-08",
@@ -1054,7 +1153,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2026-09",
@@ -1085,7 +1187,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     },
     {
       "month": "2026-10",
@@ -1116,7 +1221,10 @@
         "<div class=\"pagesize\">\r"
       ],
       "date_query_echo_confirmed": true,
-      "extraction_suspect": true
+      "response_has_news_detail": false,
+      "response_has_search_form": true,
+      "response_has_result_table": false,
+      "error": "error: missing ), unterminated subpattern at position 33"
     }
   ],
   "all_months_queried": true,
