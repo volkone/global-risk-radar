@@ -1,4 +1,5 @@
 name: Diagnose TAIFEX historical notice query
+# Compare announcements listing with historical form before choosing the archive source
 on:
   workflow_dispatch:
   push:
