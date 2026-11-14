@@ -1,0 +1,274 @@
+{
+  "source": "https://www.taifex.com.tw/cht/11/announcement",
+  "base": {
+    "status": 200,
+    "bytes": 217286,
+    "sha256": "7c02acd05c499b1b0b61977bfc83d9627027648bc4fce1e18b61001bc59e8076",
+    "forms": [
+      {
+        "action": null,
+        "method": "post",
+        "fields": [
+          {
+            "name": "pstring",
+            "value": null,
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "action": null,
+        "method": "post",
+        "fields": [
+          {
+            "name": "pstring",
+            "value": null,
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "action": null,
+        "method": "post",
+        "fields": [
+          {
+            "name": "pstring",
+            "value": null,
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "action": "announcement",
+        "method": "post",
+        "fields": []
+      }
+    ],
+    "selects": [
+      {
+        "name": "query_year",
+        "values": [
+          "2026",
+          "2025",
+          "2024",
+          "2023",
+          "2022",
+          "2021",
+          "2019"
+        ]
+      }
+    ],
+    "date_cells": [],
+    "link_count": 70,
+    "link_samples": [
+      {
+        "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17495",
+        "title": "公告調整本公司全新期貨(GUF)保證金適用比例，請查照。"
+      },
+      {
+        "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17489",
+        "title": "公告調整本公司景碩期貨(IXF)保證金適用比例，請查照。"
+      },
+      {
+        "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17486",
+        "title": "公告調整本公司致茂期貨(MJF)、小型致茂期貨(VDF)及台勝科期貨(QDF)保證金適用比例，請查照。"
+      },
+      {
+        "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17473",
+        "title": "公告調整本公司聯茂期貨(KBF)保證金適用比例，請查照。"
+      },
+      {
+        "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17459",
+        "title": "公告調整本公司碩禾期貨(NGF)及精材期貨(QLF)保證金適用 比例，請查照。"
+      }
+    ],
+    "date_count": 0,
+    "date_samples": []
+  },
+  "year_select_candidates": [
+    {
+      "name": "query_year",
+      "values": [
+        "2026",
+        "2025",
+        "2024",
+        "2023",
+        "2022",
+        "2021",
+        "2019"
+      ]
+    }
+  ],
+  "year_queries": [
+    {
+      "year": "2024",
+      "method": "POST",
+      "fields": {
+        "query_year": "2024"
+      },
+      "result": {
+        "status": 200,
+        "bytes": 113449,
+        "sha256": "06590b30a9f5f99523369608dcc699f03b76b5a0c82dcdee71d89d52ec1ec968",
+        "forms": [
+          {
+            "action": null,
+            "method": "post",
+            "fields": [
+              {
+                "name": "pstring",
+                "value": null,
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "action": null,
+            "method": "post",
+            "fields": [
+              {
+                "name": "pstring",
+                "value": null,
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "action": null,
+            "method": "post",
+            "fields": [
+              {
+                "name": "pstring",
+                "value": null,
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "action": "announcement",
+            "method": "post",
+            "fields": []
+          }
+        ],
+        "selects": [
+          {
+            "name": "query_year",
+            "values": [
+              "2026",
+              "2025",
+              "2024",
+              "2023",
+              "2022",
+              "2021",
+              "2019"
+            ]
+          }
+        ],
+        "date_cells": [],
+        "link_count": 0,
+        "link_samples": [],
+        "date_count": 0,
+        "date_samples": []
+      },
+      "year_match": false,
+      "different_from_base": true
+    },
+    {
+      "year": "2026",
+      "method": "POST",
+      "fields": {
+        "query_year": "2026"
+      },
+      "result": {
+        "status": 200,
+        "bytes": 217286,
+        "sha256": "7c02acd05c499b1b0b61977bfc83d9627027648bc4fce1e18b61001bc59e8076",
+        "forms": [
+          {
+            "action": null,
+            "method": "post",
+            "fields": [
+              {
+                "name": "pstring",
+                "value": null,
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "action": null,
+            "method": "post",
+            "fields": [
+              {
+                "name": "pstring",
+                "value": null,
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "action": null,
+            "method": "post",
+            "fields": [
+              {
+                "name": "pstring",
+                "value": null,
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "action": "announcement",
+            "method": "post",
+            "fields": []
+          }
+        ],
+        "selects": [
+          {
+            "name": "query_year",
+            "values": [
+              "2026",
+              "2025",
+              "2024",
+              "2023",
+              "2022",
+              "2021",
+              "2019"
+            ]
+          }
+        ],
+        "date_cells": [],
+        "link_count": 70,
+        "link_samples": [
+          {
+            "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17495",
+            "title": "公告調整本公司全新期貨(GUF)保證金適用比例，請查照。"
+          },
+          {
+            "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17489",
+            "title": "公告調整本公司景碩期貨(IXF)保證金適用比例，請查照。"
+          },
+          {
+            "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17486",
+            "title": "公告調整本公司致茂期貨(MJF)、小型致茂期貨(VDF)及台勝科期貨(QDF)保證金適用比例，請查照。"
+          },
+          {
+            "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17473",
+            "title": "公告調整本公司聯茂期貨(KBF)保證金適用比例，請查照。"
+          },
+          {
+            "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17459",
+            "title": "公告調整本公司碩禾期貨(NGF)及精材期貨(QLF)保證金適用 比例，請查照。"
+          }
+        ],
+        "date_count": 0,
+        "date_samples": []
+      },
+      "year_match": false,
+      "different_from_base": false
+    }
+  ],
+  "known_notice_2026_10_22_found": true,
+  "verified_archive_complete": false,
+  "selector_working": false
+}
