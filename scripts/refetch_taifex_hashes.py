@@ -69,7 +69,7 @@ def main():
   except Exception as exc:
    result={"status":"fetch_error","parsed_values_match":False,"error":type(exc).__name__,"error_detail":str(exc)[:160],"source_url":rec["source_url"],"verified_at_utc":dt.datetime.now(dt.timezone.utc).isoformat()}
   done[d]=result
-  out.write_text(json.dumps(state,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+  out.write_text(json.dumps(state,ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
   if attempted%25==0:print("Checked",attempted,"this run",flush=True)
   time.sleep(a.pause)
  total=len(records)
