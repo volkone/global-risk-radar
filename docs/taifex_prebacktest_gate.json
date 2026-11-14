@@ -19,5 +19,29 @@
   "raw_source_unverified_dates": [
     "2023-11-13"
   ],
-  "official_historical_data_request_required": true
+  "official_historical_data_request_required": true,
+  "official_historical_data_request": {
+    "date": "2023-11-13",
+    "contract": "TXF",
+    "investor": "foreign_and_mainland_investors",
+    "fields": [
+      "long_open_interest",
+      "short_open_interest",
+      "net_open_interest"
+    ],
+    "original_uncertified_values": {
+      "long": 38773,
+      "short": 35641,
+      "net": 3132
+    },
+    "request_page": "https://www.taifex.com.tw/file/taifex/event/cht/HistoricalData/type_01.html",
+    "official_three_year_limit": "https://www.taifex.com.tw/cht/3/futContractsDateView",
+    "status": "awaiting_official_historical_extract",
+    "verification_rule": "Require independently supplied official source file, dated record and raw SHA-256 before unlocking"
+  },
+  "official_archive_audit": {
+    "historical_news_archive": "https://www.taifex.com.tw/cht/11/hisNews",
+    "status": "interface_discovery_only",
+    "required": "Exhaustive date/category/page coverage and primary notice reconciliation; do not infer completeness from yearly announcement landing pages"
+  }
 }
