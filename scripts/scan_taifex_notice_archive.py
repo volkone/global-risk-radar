@@ -15,6 +15,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 OUTPUT=ROOT/"docs/taifex_notice_archive_scan.json"
 BASE="https://www.taifex.com.tw/cht/11/announcement"
+HISTORICAL_ARCHIVE="https://www.taifex.com.tw/cht/11/hisNews"
 KEYWORDS=("颱風","休市","停止交易","停止上班","天然災害","暫停交易","交易日曆","交易日期","補班","交易所停止")
 START=dt.date(2023,11,11)
 END=dt.date(2026,10,31)
@@ -93,9 +94,21 @@ def main():
         except Exception as exc:
             item["error"]=f"{type(exc).__name__}: {str(exc)[:200]}"
         partitions.append(item)
+    # Independently inspect the official historical-news search interface.
+    # A successful page fetch does NOT certify that its search results are exhaustive.
+    archive_interface={"url":HISTORICAL_ARCHIVE,"coverage_verified":False}
+    try:
+        req=urllib.request.Request(HISTORICAL_ARCHIVE,headers={"User-Agent":"Mozilla/5.0"})
+        with urllib.request.urlopen(req,timeout=25) as res:
+            raw=res.read(3_000_000)
+            html=raw.decode("utf-8",errors="replace")
+            controls=Controls();controls.feed(html)
+            archive_interface.update(http_status=res.status,sha256=hashlib.sha256(raw).hexdigest(),form_controls={"forms":controls.forms,"selects":controls.selects,"buttons":controls.buttons,"inputs":controls.inputs},pagination_hints=re.findall(r".{0,60}(?:totalPage|totalCount|pageSize|currentPage|pagination|pageNo).{0,90}",html,re.I)[:30])
+    except Exception as exc:
+        archive_interface["error"]=f"{type(exc).__name__}: {str(exc)[:200]}"
     # Year selection and matching HTML do not prove pagination completeness.
     verified_years=[x["year"] for x in partitions if x.get("year_filter_confirmed")]
-    result={"window":[START.isoformat(),END.isoformat()],"keywords":KEYWORDS,"partitions":partitions,"partitions_total":len(list(months())),"listing_fetches":len(partitions),"years_requested":years,"years_filter_confirmed":verified_years,"months_pending_verification":list(months()),"partitions_coverage_verified":0,"full_notice_sweep_verified":False,"primary_evidence_complete":False,"independent_taifex_calendar_verified":False,"full_model_backtest_authorized":False,"limitations":"Year-specific POST requests are exploratory. No announcement-specific pagination controls have been proven; generic website carousel and page links are not evidence of archive pagination. Do not infer full archive coverage."}
+    result={"window":[START.isoformat(),END.isoformat()],"historical_archive_interface":archive_interface,"keywords":KEYWORDS,"partitions":partitions,"partitions_total":len(list(months())),"listing_fetches":len(partitions),"years_requested":years,"years_filter_confirmed":verified_years,"months_pending_verification":list(months()),"partitions_coverage_verified":0,"full_notice_sweep_verified":False,"primary_evidence_complete":False,"independent_taifex_calendar_verified":False,"full_model_backtest_authorized":False,"limitations":"Year-specific POST requests are exploratory. No announcement-specific pagination controls have been proven; generic website carousel and page links are not evidence of archive pagination. Do not infer full archive coverage."}
     OUTPUT.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(f"Requested years {years}; selected-year confirmation {verified_years}; candidate notices {sum(len(x.get('candidates',[])) for x in partitions)}; archive coverage remains unverified")
 if __name__=="__main__":main()
