@@ -1,0 +1,388 @@
+{
+  "stage": "P2-02_extension",
+  "status": "completed_exploratory_not_confirmatory",
+  "input_sha256": "20e0c7ecf9ead9393b6f1518b1c6cb659ea2745335c00293a253808c4777edc8",
+  "walk_forward": "3 nonoverlapping 100-session OOS blocks starting at indices 400/500/600, expanding training, h-session pretest purge; fixed 80th percentile training-only threshold",
+  "bootstrap": "Paired circular moving-block bootstrap of chronological holdout; block length equals forward horizon; 1500 replicates; deterministic seed",
+  "multiple_comparisons": "Six exploratory ablations per horizon; no familywise correction, so no definitive factor-significance claims",
+  "caveats": [
+    "Walk-forward windows partly reuse dates from original train/holdout; not an independent external validation dataset",
+    "Regime uncertainty estimates may be unreliable for small subgroups",
+    "Overlapping forward labels and serial dependence persist",
+    "Purging is conservative: model fits features only, but gap also prevents label boundary contamination",
+    "Historical source timing and one TXF official record remain uncertified"
+  ],
+  "holdout": {
+    "5d": {
+      "walk_forward_folds": [
+        {
+          "train_range": [
+            "2023-12-11",
+            "2025-07-02"
+          ],
+          "test_range": [
+            "2025-07-10",
+            "2025-12-02"
+          ],
+          "purged_train_rows": 5,
+          "score_threshold": 66.66666666666667,
+          "metrics": {
+            "n": 100,
+            "alerts": 16,
+            "events": 8,
+            "hits": 2,
+            "precision": 0.125,
+            "precision_minus_base_rate": 0.045
+          }
+        },
+        {
+          "train_range": [
+            "2023-12-11",
+            "2025-11-25"
+          ],
+          "test_range": [
+            "2025-12-03",
+            "2026-05-08"
+          ],
+          "purged_train_rows": 5,
+          "score_threshold": 65.15471167369901,
+          "metrics": {
+            "n": 100,
+            "alerts": 24,
+            "events": 15,
+            "hits": 9,
+            "precision": 0.375,
+            "precision_minus_base_rate": 0.225
+          }
+        },
+        {
+          "train_range": [
+            "2023-12-11",
+            "2026-04-30"
+          ],
+          "test_range": [
+            "2026-05-11",
+            "2026-10-01"
+          ],
+          "purged_train_rows": 5,
+          "score_threshold": 65.99883855981416,
+          "metrics": {
+            "n": 100,
+            "alerts": 24,
+            "events": 32,
+            "hits": 11,
+            "precision": 0.4583333333333333,
+            "precision_minus_base_rate": 0.1383333333333333
+          }
+        }
+      ],
+      "walk_forward_aggregate": {
+        "n": 300,
+        "alerts": 64,
+        "events": 55,
+        "hits": 22,
+        "precision": 0.34375,
+        "precision_minus_base_rate": 0.16041666666666668
+      },
+      "regime_uncertainty": {
+        "up_20d": {
+          "metrics": {
+            "n": 157,
+            "alerts": 24,
+            "events": 38,
+            "hits": 12,
+            "precision": 0.5,
+            "precision_minus_base_rate": 0.25796178343949044
+          },
+          "block_bootstrap_precision_minus_base_rate_ci95": [
+            0.06666666666666671,
+            0.45512820512820507
+          ],
+          "valid_bootstrap_draws": 1500,
+          "caution": "Subgroup is observational; CI may be unstable with few alerts"
+        },
+        "down_20d": {
+          "metrics": {
+            "n": 24,
+            "alerts": 22,
+            "events": 9,
+            "hits": 9,
+            "precision": 0.4090909090909091,
+            "precision_minus_base_rate": 0.034090909090909116
+          },
+          "block_bootstrap_precision_minus_base_rate_ci95": [
+            0.0,
+            0.11282051282051286
+          ],
+          "valid_bootstrap_draws": 1500,
+          "caution": "Subgroup is observational; CI may be unstable with few alerts"
+        },
+        "sideways_20d": {
+          "metrics": {
+            "n": 30,
+            "alerts": 12,
+            "events": 6,
+            "hits": 4,
+            "precision": 0.3333333333333333,
+            "precision_minus_base_rate": 0.1333333333333333
+          },
+          "block_bootstrap_precision_minus_base_rate_ci95": [
+            -0.1,
+            0.3796992481203008
+          ],
+          "valid_bootstrap_draws": 1499,
+          "caution": "Subgroup is observational; CI may be unstable with few alerts"
+        }
+      },
+      "paired_factor_ablations": {
+        "foreign_tx_short_pressure": {
+          "full_minus_removed_precision": 0.06933235509904617,
+          "paired_moving_block_bootstrap_ci95": [
+            -0.01176063645797304,
+            0.18
+          ],
+          "valid_bootstrap_draws": 1500,
+          "ci_excludes_zero": false,
+          "note": "Exploratory paired comparison on same dates, no multiplicity-adjusted confirmatory inference"
+        },
+        "margin_deleveraging_20d": {
+          "full_minus_removed_precision": 0.03359858532272325,
+          "paired_moving_block_bootstrap_ci95": [
+            -0.031298904538341166,
+            0.1111111111111111
+          ],
+          "valid_bootstrap_draws": 1500,
+          "ci_excludes_zero": false,
+          "note": "Exploratory paired comparison on same dates, no multiplicity-adjusted confirmatory inference"
+        },
+        "institutional_net_selling_5d": {
+          "full_minus_removed_precision": 0.10376175548589339,
+          "paired_moving_block_bootstrap_ci95": [
+            0.013513513513513487,
+            0.22499999999999998
+          ],
+          "valid_bootstrap_draws": 1500,
+          "ci_excludes_zero": true,
+          "note": "Exploratory paired comparison on same dates, no multiplicity-adjusted confirmatory inference"
+        },
+        "twd_depreciation_20d": {
+          "full_minus_removed_precision": 0.10900058445353594,
+          "paired_moving_block_bootstrap_ci95": [
+            0.02777777777777779,
+            0.2222222222222222
+          ],
+          "valid_bootstrap_draws": 1500,
+          "ci_excludes_zero": true,
+          "note": "Exploratory paired comparison on same dates, no multiplicity-adjusted confirmatory inference"
+        },
+        "hy_oas_widening_20d": {
+          "full_minus_removed_precision": 0.04214559386973177,
+          "paired_moving_block_bootstrap_ci95": [
+            -0.009178743961352653,
+            0.1262626262626263
+          ],
+          "valid_bootstrap_draws": 1500,
+          "ci_excludes_zero": false,
+          "note": "Exploratory paired comparison on same dates, no multiplicity-adjusted confirmatory inference"
+        },
+        "prior_us_vix_level": {
+          "full_minus_removed_precision": 0.02119841718485016,
+          "paired_moving_block_bootstrap_ci95": [
+            -0.020454545454545392,
+            0.06943396226415094
+          ],
+          "valid_bootstrap_draws": 1500,
+          "ci_excludes_zero": false,
+          "note": "Exploratory paired comparison on same dates, no multiplicity-adjusted confirmatory inference"
+        }
+      }
+    },
+    "20d": {
+      "walk_forward_folds": [
+        {
+          "train_range": [
+            "2023-12-11",
+            "2025-06-11"
+          ],
+          "test_range": [
+            "2025-07-10",
+            "2025-12-02"
+          ],
+          "purged_train_rows": 20,
+          "score_threshold": 66.991643454039,
+          "metrics": {
+            "n": 100,
+            "alerts": 16,
+            "events": 11,
+            "hits": 1,
+            "precision": 0.0625,
+            "precision_minus_base_rate": -0.0475
+          }
+        },
+        {
+          "train_range": [
+            "2023-12-11",
+            "2025-11-04"
+          ],
+          "test_range": [
+            "2025-12-03",
+            "2026-05-08"
+          ],
+          "purged_train_rows": 20,
+          "score_threshold": 65.25054466230937,
+          "metrics": {
+            "n": 100,
+            "alerts": 24,
+            "events": 15,
+            "hits": 11,
+            "precision": 0.4583333333333333,
+            "precision_minus_base_rate": 0.30833333333333335
+          }
+        },
+        {
+          "train_range": [
+            "2023-12-11",
+            "2026-04-09"
+          ],
+          "test_range": [
+            "2026-05-11",
+            "2026-09-29"
+          ],
+          "purged_train_rows": 20,
+          "score_threshold": 66.21943947525342,
+          "metrics": {
+            "n": 98,
+            "alerts": 23,
+            "events": 30,
+            "hits": 15,
+            "precision": 0.6521739130434783,
+            "precision_minus_base_rate": 0.3460514640638864
+          }
+        }
+      ],
+      "walk_forward_aggregate": {
+        "n": 298,
+        "alerts": 63,
+        "events": 56,
+        "hits": 27,
+        "precision": 0.42857142857142855,
+        "precision_minus_base_rate": 0.24065196548418022
+      },
+      "regime_uncertainty": {
+        "up_20d": {
+          "metrics": {
+            "n": 144,
+            "alerts": 17,
+            "events": 30,
+            "hits": 13,
+            "precision": 0.7647058823529411,
+            "precision_minus_base_rate": 0.5563725490196078
+          },
+          "block_bootstrap_precision_minus_base_rate_ci95": [
+            0.2526822049574547,
+            0.7886497064579256
+          ],
+          "valid_bootstrap_draws": 1484,
+          "caution": "Subgroup is observational; CI may be unstable with few alerts"
+        },
+        "down_20d": {
+          "metrics": {
+            "n": 24,
+            "alerts": 22,
+            "events": 8,
+            "hits": 8,
+            "precision": 0.36363636363636365,
+            "precision_minus_base_rate": 0.03030303030303033
+          },
+          "block_bootstrap_precision_minus_base_rate_ci95": [
+            0.0,
+            0.08823529411764708
+          ],
+          "valid_bootstrap_draws": 1480,
+          "caution": "Subgroup is observational; CI may be unstable with few alerts"
+        },
+        "sideways_20d": {
+          "metrics": {
+            "n": 28,
+            "alerts": 10,
+            "events": 7,
+            "hits": 7,
+            "precision": 0.7,
+            "precision_minus_base_rate": 0.44999999999999996
+          },
+          "block_bootstrap_precision_minus_base_rate_ci95": [
+            0.0,
+            0.8518518518518519
+          ],
+          "valid_bootstrap_draws": 1485,
+          "caution": "Subgroup is observational; CI may be unstable with few alerts"
+        }
+      },
+      "paired_factor_ablations": {
+        "foreign_tx_short_pressure": {
+          "full_minus_removed_precision": 0.08362369337979092,
+          "paired_moving_block_bootstrap_ci95": [
+            -0.008695652173913049,
+            0.19794871794871793
+          ],
+          "valid_bootstrap_draws": 1499,
+          "ci_excludes_zero": false,
+          "note": "Exploratory paired comparison on same dates, no multiplicity-adjusted confirmatory inference"
+        },
+        "margin_deleveraging_20d": {
+          "full_minus_removed_precision": 0.0714285714285714,
+          "paired_moving_block_bootstrap_ci95": [
+            -0.011111111111111072,
+            0.2691532258064516
+          ],
+          "valid_bootstrap_draws": 1499,
+          "ci_excludes_zero": false,
+          "note": "Exploratory paired comparison on same dates, no multiplicity-adjusted confirmatory inference"
+        },
+        "institutional_net_selling_5d": {
+          "full_minus_removed_precision": 0.14589665653495437,
+          "paired_moving_block_bootstrap_ci95": [
+            -0.011363636363636354,
+            0.3227513227513228
+          ],
+          "valid_bootstrap_draws": 1498,
+          "ci_excludes_zero": false,
+          "note": "Exploratory paired comparison on same dates, no multiplicity-adjusted confirmatory inference"
+        },
+        "twd_depreciation_20d": {
+          "full_minus_removed_precision": 0.16758241758241754,
+          "paired_moving_block_bootstrap_ci95": [
+            0.026695526695526772,
+            0.39743589743589747
+          ],
+          "valid_bootstrap_draws": 1499,
+          "ci_excludes_zero": true,
+          "note": "Exploratory paired comparison on same dates, no multiplicity-adjusted confirmatory inference"
+        },
+        "hy_oas_widening_20d": {
+          "full_minus_removed_precision": 0.020408163265306145,
+          "paired_moving_block_bootstrap_ci95": [
+            0.0,
+            0.08049535603715163
+          ],
+          "valid_bootstrap_draws": 1499,
+          "ci_excludes_zero": false,
+          "note": "Exploratory paired comparison on same dates, no multiplicity-adjusted confirmatory inference"
+        },
+        "prior_us_vix_level": {
+          "full_minus_removed_precision": 0.022408963585434094,
+          "paired_moving_block_bootstrap_ci95": [
+            -0.04939516129032262,
+            0.09818181818181826
+          ],
+          "valid_bootstrap_draws": 1498,
+          "ci_excludes_zero": false,
+          "note": "Exploratory paired comparison on same dates, no multiplicity-adjusted confirmatory inference"
+        }
+      }
+    }
+  },
+  "full_model_validated": false,
+  "full_model_backtest_authorized": false,
+  "recommended_live_threshold": null
+}
