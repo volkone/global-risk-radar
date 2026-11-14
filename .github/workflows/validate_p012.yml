@@ -31,6 +31,7 @@ jobs:
           report=json.loads(Path("docs/p012_readiness.json").read_text(encoding="utf-8"))
           assert all(k in report for k in ("p0","p1","p2"))
           assert report["formal_backtest_authorized"] is False
+          assert all(k in report["evidence_gaps"] for k in ("p0","p1","p2"))
           assert all(isinstance(report[k]["complete"],bool) for k in ("p0","p1","p2"))
           print("P0/P1/P2 report verified", {k:report[k]["complete"] for k in ("p0","p1","p2")})
           PY
