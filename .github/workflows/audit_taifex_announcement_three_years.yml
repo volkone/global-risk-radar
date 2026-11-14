@@ -1,4 +1,5 @@
 name: Audit TAIFEX 3-year announcements and calendar
+# Re-run after date parser fix and inspect pagination metadata
 on:
   workflow_dispatch:
   push:
