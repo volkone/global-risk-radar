@@ -36,8 +36,8 @@
       "selected_year": [
         "2025"
       ],
-      "candidate_count": 4,
-      "all_official_notice_link_count": 31,
+      "candidate_count": 2,
+      "all_official_notice_link_count": 28,
       "announcement_page_controls": [],
       "candidate_notice_ids": [],
       "pagination_exhaustiveness_verified": false,
@@ -50,7 +50,7 @@
         "2026"
       ],
       "candidate_count": 9,
-      "all_official_notice_link_count": 204,
+      "all_official_notice_link_count": 201,
       "announcement_page_controls": [],
       "candidate_notice_ids": [
         "17441",
@@ -144,17 +144,19 @@
     },
     {
       "date": "2026-10-23",
-      "evidence_url": "https://www.taifex.com.tw/cht/11/announcement",
-      "found_in_candidate_listing": false,
-      "found_in_all_official_links": false,
-      "listing_years": [],
+      "evidence_url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17441",
+      "found_in_candidate_listing": true,
+      "found_in_all_official_links": true,
+      "listing_years": [
+        2026
+      ],
       "matching_rule": "exact_url_or_official_notice_idx_against_all_official_links",
       "warning": "Listing absence does not invalidate direct primary evidence"
     }
   ],
   "known_dates_total": 10,
-  "known_dates_in_listing": 0,
-  "known_dates_in_all_official_links": 0,
+  "known_dates_in_listing": 1,
+  "known_dates_in_all_official_links": 1,
   "year_listing_completeness_verified": false,
   "full_notice_sweep_verified": false,
   "primary_evidence_complete": false,

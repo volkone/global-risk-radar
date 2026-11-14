@@ -3,6 +3,222 @@
     "2023-11-11",
     "2026-10-31"
   ],
+  "historical_archive_interface": {
+    "url": "https://www.taifex.com.tw/cht/11/hisNews",
+    "coverage_verified": false,
+    "http_status": 200,
+    "sha256": "29a8068b4954ad2ae70e15901b5b3e45a4c5ce326f1556bb79651b8b9b6ce56a",
+    "form_controls": {
+      "forms": [
+        {
+          "action": null,
+          "method": "post"
+        },
+        {
+          "action": null,
+          "method": "post"
+        },
+        {
+          "action": null,
+          "method": "post"
+        },
+        {
+          "action": "hisNews",
+          "method": "post"
+        }
+      ],
+      "selects": [
+        {
+          "name": "newsType",
+          "id": "newsType",
+          "options": [
+            {
+              "value": "",
+              "selected": false
+            },
+            {
+              "value": "公告",
+              "selected": false
+            },
+            {
+              "value": "新聞稿",
+              "selected": false
+            },
+            {
+              "value": "契約調整",
+              "selected": false
+            }
+          ]
+        }
+      ],
+      "buttons": [
+        {
+          "tag": "button",
+          "name": null,
+          "id": null,
+          "value": null
+        },
+        {
+          "tag": "button",
+          "name": null,
+          "id": "pause",
+          "value": null
+        },
+        {
+          "tag": "button",
+          "name": null,
+          "id": null,
+          "value": null
+        },
+        {
+          "tag": "input",
+          "name": "button5",
+          "id": "button6",
+          "value": "送出查詢"
+        },
+        {
+          "tag": "input",
+          "name": "button",
+          "id": "button",
+          "value": "確定"
+        },
+        {
+          "tag": "input",
+          "name": "button2",
+          "id": "button2",
+          "value": "取消"
+        },
+        {
+          "tag": "input",
+          "name": "button",
+          "id": "button",
+          "value": "確定"
+        },
+        {
+          "tag": "input",
+          "name": "button2",
+          "id": "button2",
+          "value": "取消"
+        },
+        {
+          "tag": "button",
+          "name": null,
+          "id": null,
+          "value": null
+        }
+      ],
+      "inputs": [
+        {
+          "name": null,
+          "id": "api_url",
+          "type": "hidden",
+          "value": "/cht/quotesApi/getQuotes?"
+        },
+        {
+          "name": null,
+          "id": "product_type",
+          "type": "hidden",
+          "value": "1"
+        },
+        {
+          "name": null,
+          "id": "major_type",
+          "type": "hidden",
+          "value": "1"
+        },
+        {
+          "name": null,
+          "id": "major_data_type",
+          "type": "hidden",
+          "value": "1"
+        },
+        {
+          "name": "pstring",
+          "id": "pstring",
+          "type": "text",
+          "value": null
+        },
+        {
+          "name": "pstring",
+          "id": "pstring",
+          "type": "text",
+          "value": null
+        },
+        {
+          "name": "pstring",
+          "id": "m-pstring",
+          "type": "text",
+          "value": null
+        },
+        {
+          "name": "isQuery",
+          "id": "isQuery",
+          "type": "hidden",
+          "value": ""
+        },
+        {
+          "name": "queryStartDate",
+          "id": "queryStartDate",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "queryEndDate",
+          "id": "queryEndDate",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "queryKeyWord",
+          "id": "queryKeyWord",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "button5",
+          "id": "button6",
+          "type": "button",
+          "value": "送出查詢"
+        },
+        {
+          "name": null,
+          "id": "popupbox_url",
+          "type": "hidden",
+          "value": null
+        },
+        {
+          "name": "button",
+          "id": "button",
+          "type": "button",
+          "value": "確定"
+        },
+        {
+          "name": "button2",
+          "id": "button2",
+          "type": "submit",
+          "value": "取消"
+        },
+        {
+          "name": "button",
+          "id": "button",
+          "type": "submit",
+          "value": "確定"
+        },
+        {
+          "name": "button2",
+          "id": "button2",
+          "type": "submit",
+          "value": "取消"
+        }
+      ]
+    },
+    "pagination_hints": [
+      "\t\t\t<div class=\"swiper-pagination\"></div>\r",
+      "<div class=\"pagesize\">\r",
+      "\t    pagination: {\r",
+      "\t      el: '.vision .swiper-pagination',\r"
+    ]
+  },
   "keywords": [
     "颱風",
     "休市",
@@ -612,18 +828,6 @@
           "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/函-公告1120.pdf"
         },
         {
-          "title": "公告正崴期貨（契約代號：GL）自114年11月14日起恢復交易。",
-          "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202395號函.pdf"
-        },
-        {
-          "title": "公告正崴期貨（契約代號：GL）自114年11月13日起暫停交易。",
-          "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202393號函.pdf"
-        },
-        {
-          "title": "公告台積電期貨及小型台積電期貨(契約代號：CD、QF)自114年11月11日18時25分起盤後交易時段暫停交易，114年11月12日一般交易時段恢復交易。",
-          "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202382號函.pdf"
-        },
-        {
           "title": "本公司「電子選擇權契約」交易規則與規格之修正條文，自114年12月8日起實施，請查照。",
           "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202318號.pdf"
         },
@@ -692,7 +896,7 @@
           "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/第11屆期貨鑽石獎活動辦法(公告).pdf"
         }
       ],
-      "official_notice_link_count": 31,
+      "official_notice_link_count": 28,
       "announcement_page_controls": [],
       "pagination_links": [
         {
@@ -725,7 +929,7 @@
         "\t\t\t\t\t\t\t\t\t\t\t<select id=\"query_year\" name=\"query_year\" onChange=\"javascript:document.uForm.submit();\"><option value=\"2026\"\r"
       ],
       "http_status": 200,
-      "sha256": "4dfd1083a351a9f634e7e41dff1727822edb6d7bc6b71586a3af5e7c1999940a",
+      "sha256": "468fc7b538f5b3114d21b622010aefda62c45cd3aba69feaaab327f7981acb7a",
       "selected_year": [
         "2025"
       ],
@@ -738,14 +942,6 @@
         {
           "title": "公告114年12月25日(星期四)為行憲紀念日及115年1月1日 (星期四)為中華民國開國紀念日，依規定各放假一日，本公司期貨集中交易市場配合休市。",
           "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202601號函.pdf"
-        },
-        {
-          "title": "公告正崴期貨（契約代號：GL）自114年11月13日起暫停交易。",
-          "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202393號函.pdf"
-        },
-        {
-          "title": "公告台積電期貨及小型台積電期貨(契約代號：CD、QF)自114年11月11日18時25分起盤後交易時段暫停交易，114年11月12日一般交易時段恢復交易。",
-          "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202382號函.pdf"
         }
       ],
       "form_controls": {
@@ -939,6 +1135,10 @@
         {
           "title": "",
           "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/20250319_應集中新聞稿.pdf"
+        },
+        {
+          "title": "公告修正本公司「股票期貨契約」及「股票選擇權契約」規格及交易規則，以及「動態價格穩定措施作業辦法」、「法人機構申請放寬部位限制作業要點」與「結算保證金收取方式及標準」等條文，並自即日起實施，請查照。",
+          "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/官網附件.pdf"
         },
         {
           "title": "公告調整本公司全新期貨(GUF)保證金適用比例，請查照。",
@@ -1203,10 +1403,6 @@
         {
           "title": "公告115年7月「股票選擇權交易獎勵活動」得獎名單",
           "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/11507得獎名單(1).pdf"
-        },
-        {
-          "title": "公告榮成期貨（契約代號：OS）自115年8月13日起恢復交易。",
-          "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150201642號函.pdf"
         },
         {
           "title": "公告調整本公司晶豪科期貨(IIF)、聯茂期貨(KBF)及聯亞期 貨(OTF)保證金適用比例，請查照。",
@@ -1557,24 +1753,12 @@
           "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150200874號函.pdf"
         },
         {
-          "title": "公告調整本公司川湖期貨契約(FGF)、小型川湖期貨契約(SVF)、健策期貨契約(JMF)及小型健策期貨契約(RGF)所有月份保證金適用比例，請查照。",
-          "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=16840"
-        },
-        {
           "title": "本公司與工商時報合辦「2026年期貨與選擇權論文徵集活動」，歡迎踴躍投稿。",
           "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=16839"
         },
         {
           "title": "公告正崴期貨（契約代號：GL）自115年5月13日起暫停交易。",
           "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150200871號.pdf"
-        },
-        {
-          "title": "公告調整本公司頎邦期貨契約(NSF)、瑞軒期貨契約(HAF)及元晶期貨契約(RLF)所有月份保證金適用比例，並自115年5月13日一般交易時段結束後起實施，請查照。",
-          "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=16833"
-        },
-        {
-          "title": "公告調整本公司信昌電期貨契約(PKF)、合晶期貨契約 (PLF)、環球晶期貨契約(OWF)及小型環球晶期貨契約(PBF) 所有月份保證金適用比例，請查照。",
-          "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=16831"
         },
         {
           "title": "公告115年4月「股票選擇權交易獎勵活動」得獎名單",
@@ -1753,7 +1937,7 @@
           "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/法規異動彙整11412.pdf"
         }
       ],
-      "official_notice_link_count": 204,
+      "official_notice_link_count": 201,
       "announcement_page_controls": [],
       "pagination_links": [
         {
@@ -1777,12 +1961,16 @@
           "url": "https://www.taifex.com.tw/cht/index"
         },
         {
-          "label": "公告本公司小型臺指期貨暨臺指選擇權週三到期契約(契約代號:202611W2)最後結算價",
-          "url": "https://www.taifex.com.tw/cht/5/futIndxFSP?commodityIds=1&start_year=2025&start_month=11&end_year=2026&end_month=11"
+          "label": "公告本公司東證期貨2026年11月契約最後結算價",
+          "url": "https://www.taifex.com.tw/cht/5/futIndxFSP?commodityIds=21&start_year=2025&start_month=11&end_year=2026&end_month=11"
         },
         {
-          "label": "公告本公司臺指選擇權週五到期契約(契約代號:202611F1)最後結算價",
+          "label": "公告本公司臺指選擇權週五到期契約(契約代號:202611F2)最後結算價",
           "url": "https://www.taifex.com.tw/cht/5/optIndxFSP?commodityIds=2&start_year=2025&start_month=11&end_year=2026&end_month=11"
+        },
+        {
+          "label": "公告本公司小型臺指期貨暨臺指選擇權週三到期契約(契約代號:202611W2)最後結算價",
+          "url": "https://www.taifex.com.tw/cht/5/futIndxFSP?commodityIds=1&start_year=2025&start_month=11&end_year=2026&end_month=11"
         },
         {
           "label": "公告本公司小型臺指期貨暨臺指選擇權週三到期契約(契約代號:202611W1)最後結算價",
@@ -1902,7 +2090,7 @@
         "\t\t\t\t\t\t\t\t\t\t\t<select id=\"query_year\" name=\"query_year\" onChange=\"javascript:document.uForm.submit();\"><option value=\"2026\"\r"
       ],
       "http_status": 200,
-      "sha256": "431b1f34c409d8dbecdb823b07975bcac50bda55390235402c48f55119f91fcf",
+      "sha256": "7c02acd05c499b1b0b61977bfc83d9627027648bc4fce1e18b61001bc59e8076",
       "selected_year": [
         "2026"
       ],
