@@ -52,7 +52,8 @@ def main():
    method=(form["method"] or "GET").upper() if form else "GET"
    response=query(target,method,fields)
    result["year_queries"].append({"year":year,"method":method,"fields":fields,"result":compact(response),"year_match":bool(response["date_cells"]) and all(d.startswith(year+"/") for d in response["date_cells"]),"different_from_base":response["sha256"]!=base["sha256"]})
- result["selector_working"]=any(q["year_match"] and q["different_from_base"] for q in result["year_queries"])
+ result["selector_working"]=any(q["year_match"] and q["different_from_base"] and q["result"]["link_count"]>0 for q in result["year_queries"])
+ result["selector_verified"]=result["selector_working"] and any(q["year"]=="2024" and q["year_match"] for q in result["year_queries"])
  OUT.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
  print(json.dumps({"base_links":len(base["links"]),"known_notice":result["known_notice_2026_10_22_found"],"selector_working":result["selector_working"],"year_queries":len(result["year_queries"])},ensure_ascii=False))
 if __name__=="__main__":main()
