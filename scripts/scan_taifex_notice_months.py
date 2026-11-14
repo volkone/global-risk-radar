@@ -42,6 +42,13 @@ def main():
    dated_rows=[row for row in table_rows if re.search(r"20(?:23|24|25|26)[/\\-]\\d{1,2}[/\\-]\\d{1,2}",row)]
    notices=list({x["url"]:x for x in notices}.values())
    entry.update(response_sha256=hashlib.sha256(raw).hexdigest(),response_bytes=len(raw),notice_count=len(notices),notices=notices,dated_row_count=len(dated_rows),dated_row_samples=dated_rows[:12],known_closure_terms_in_response=[k for k in KEYWORDS if k in html],candidates=[x for x in notices if any(k in x["title"] for k in KEYWORDS)],pagination_hints=re.findall(r".{0,55}(?:totalPage|totalCount|pageSize|pageNo|currentPage|下一頁|末頁).{0,80}",html,re.I)[:15],date_query_echo_confirmed=(first.strftime("%Y/%m/%d") in html and last.strftime("%Y/%m/%d") in html))
+   # Preserve bounded diagnostics for determining whether results are server-rendered.
+   entry["response_has_news_detail"]=("newsDetail" in html)
+   entry["response_has_search_form"]=("queryStartDate" in html and "queryEndDate" in html)
+   entry["response_has_result_table"]=bool(re.search(r"<table\\b",html,re.I))
+   entry["response_has_ajax_or_fetch"]=bool(re.search(r"\\$\\.ajax|\\$\\.post|fetch\\s*\\(",html,re.I))
+   entry["query_marker_contexts"]=[re.sub(r"\\s+"," ",html[max(0,m.start()-180):m.end()+220])[:400] for m in list(re.finditer(r"queryStartDate|isQuery|hisNews|newsDetail",html,re.I))[:14]]
+   entry["html_response_identical_to_other_month"]=any(old.get("response_sha256")==entry["response_sha256"] for old in report["months"])
    # Need a documented total count or proven page traversal to certify.
    entry["complete"]=False
    entry["extraction_suspect"]=not notices and not dated_rows
