@@ -1,0 +1,35 @@
+name: Discover TAIFEX historical news form
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/discover_taifex_hisnews_form.yml'
+permissions:
+  contents: write
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m py_compile scripts/discover_taifex_hisnews_form.py
+      - run: python scripts/discover_taifex_hisnews_form.py
+      - name: Save diagnostic
+        if: always()
+        run: |
+          if [ -f docs/taifex_hisnews_form_discovery.json ]; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add docs/taifex_hisnews_form_discovery.json
+            if ! git diff --cached --quiet; then
+              git commit -m 'Save historical news form discovery [skip ci]'
+              git fetch origin main
+              git rebase origin/main
+              git push origin HEAD:main
+            fi
+          fi
