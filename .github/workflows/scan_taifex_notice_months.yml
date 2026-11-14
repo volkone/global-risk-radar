@@ -1,4 +1,5 @@
 name: Audit TAIFEX historical notices month by month
+# Diagnostic rerun: investigate zero-result responses before P1 certification
 on:
   workflow_dispatch:
   push:
