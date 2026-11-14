@@ -1,0 +1,177 @@
+{
+  "url": "https://www.taifex.com.tw/cht/11/hisNews",
+  "http_status": 200,
+  "bytes": 114275,
+  "forms": [
+    {
+      "form_action": null,
+      "form_method": "post",
+      "controls": [
+        {
+          "tag": "input",
+          "name": "pstring",
+          "id": "pstring",
+          "type": "text",
+          "value": null,
+          "onclick": null
+        }
+      ]
+    },
+    {
+      "form_action": null,
+      "form_method": "post",
+      "controls": [
+        {
+          "tag": "input",
+          "name": "pstring",
+          "id": "pstring",
+          "type": "text",
+          "value": null,
+          "onclick": null
+        }
+      ]
+    },
+    {
+      "form_action": null,
+      "form_method": "post",
+      "controls": [
+        {
+          "tag": "input",
+          "name": "pstring",
+          "id": "m-pstring",
+          "type": "text",
+          "value": null,
+          "onclick": null
+        }
+      ]
+    },
+    {
+      "form_action": "hisNews",
+      "form_method": "post",
+      "controls": [
+        {
+          "tag": "input",
+          "name": "isQuery",
+          "id": "isQuery",
+          "type": "hidden",
+          "value": "",
+          "onclick": null
+        },
+        {
+          "tag": "input",
+          "name": "queryStartDate",
+          "id": "queryStartDate",
+          "type": "text",
+          "value": "",
+          "onclick": null
+        },
+        {
+          "tag": "input",
+          "name": "queryEndDate",
+          "id": "queryEndDate",
+          "type": "text",
+          "value": "",
+          "onclick": null
+        },
+        {
+          "tag": "select",
+          "name": "newsType",
+          "id": "newsType",
+          "type": null,
+          "value": null,
+          "onclick": null
+        },
+        {
+          "tag": "input",
+          "name": "queryKeyWord",
+          "id": "queryKeyWord",
+          "type": "text",
+          "value": "",
+          "onclick": null
+        },
+        {
+          "tag": "input",
+          "name": "button5",
+          "id": "button6",
+          "type": "button",
+          "value": "送出查詢",
+          "onclick": "goQuery();"
+        }
+      ]
+    }
+  ],
+  "candidate_links": [
+    {
+      "href": "javascript:searchgosubmit();",
+      "onclick": null
+    },
+    {
+      "href": "javascript:mPopup();",
+      "onclick": null
+    },
+    {
+      "href": "/cht/11/hisNews",
+      "onclick": null
+    },
+    {
+      "href": "/cht/11/hisNews",
+      "onclick": null
+    },
+    {
+      "href": "javascript:mClosed();",
+      "onclick": null
+    },
+    {
+      "href": "javascript:mSearchgosubmit();",
+      "onclick": null
+    },
+    {
+      "href": "https://www.ey.gov.tw/Page/5A8A0CB5B41DA11E/c93637bd-ddc2-4447-8829-246a5ca0befc",
+      "onclick": null
+    },
+    {
+      "href": "/cht/11/hisNews",
+      "onclick": null
+    },
+    {
+      "href": "https://www.facebook.com/sharer/sharer.php?u=https://www.taifex.com.tw/cht/11/hisNews",
+      "onclick": null
+    },
+    {
+      "href": "/cht/11/hisNews",
+      "onclick": null
+    },
+    {
+      "href": "/cht/11/hisNews",
+      "onclick": null
+    },
+    {
+      "href": "javascript:;",
+      "onclick": "printcontent('/cht/resources/','/cht/');"
+    },
+    {
+      "href": "/cht/11/hisNews",
+      "onclick": null
+    }
+  ],
+  "script_sources": [
+    "/cht/resources/front/js/jquery-3.7.1.min.js",
+    "/cht/resources/front/js/jquery-ui-1.12.1.js",
+    "/cht/resources/front/js/jquery.ui.datepicker-zh-TW.js",
+    "/cht/resources/front/js/jquery.placeholder.js",
+    "/cht/resources/front/js/jquery.ifixpng.js",
+    "/cht/resources/front/js/common.js",
+    "/cht/resources/front/js/chart/Chart.min.js",
+    "/cht/resources/front/js/chart/chartjs-plugin-annotation.min.js",
+    "/cht/resources/front/cht/js/main.js",
+    "/cht/resources/front/js/gtm-loader.js",
+    "https://www.googletagmanager.com/gtag/js?id=G-R2R6W36GZV",
+    "/cht/resources/front/js/swiper-bundle.min.js",
+    "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+  ],
+  "pagination_contexts": [
+    "\n<!-- \t\t<div class=\"swiper-button-next\"></div> -->\r\n</div>\r\n</div>\r\n<!--小網 緊急公告 ann-->\r\n<div class=\"pagesize\">\r\n\t</div>\r\n\r\n<!-- JS -->\r\n<script src=\"/cht/resources/front/js/swiper-bundle.min.js\"></script>\r\n\r\n<script>\r\n(function() {\r\n\r\n\r\n\r\n\t  // 大圖輪播\r\n\t  var indexBSwiper = new Swiper('.vision .swiper"
+  ],
+  "archive_complete": false,
+  "note": "Discovery only: do not infer pagination from ignored parameters"
+}
