@@ -1,0 +1,47 @@
+name: P2-02 first fold diagnosis and multiplicity correction
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/diagnose_p2_02_first_fold.yml'
+permissions:
+  contents: write
+jobs:
+  diagnosis:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m py_compile scripts/diagnose_p2_02_first_fold_and_multiplicity.py
+      - run: python scripts/diagnose_p2_02_first_fold_and_multiplicity.py
+      - name: Verify first fold and familywise correction
+        run: |
+          python - <<'PY'
+          import json
+          j=json.load(open('docs/p2_02_failure_and_multiplicity.json',encoding='utf-8'))
+          assert j['full_model_validated'] is False and j['recommended_live_threshold'] is None
+          assert j['familywise_adjustment']['joint_valid_replicates']>=2250
+          for h,x in j['first_fold_diagnostics'].items():
+            assert x['first_fold']['n']==100
+            assert x['first_fold']['alerts']==len(x['first_fold_alert_dates'])
+            assert x['first_fold']['hits']==len(x['first_fold_hit_dates'])
+          assert sum(len(x) for x in j['factor_comparisons'].values())==12
+          print('P2-02 diagnosis and familywise intervals validated')
+          PY
+      - name: Save report
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/p2_02_failure_and_multiplicity.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Save P2-02 first fold diagnosis and familywise intervals [skip ci]'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
