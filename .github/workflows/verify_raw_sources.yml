@@ -1,5 +1,5 @@
 name: Independently recheck TAIFEX source hashes
-# Manual batch 5 of 100, following successful batch 4 verification.
+# Manual batch 6 of up to 100, following successful batch 5 verification.
 on:
   push:
     branches: [main]
