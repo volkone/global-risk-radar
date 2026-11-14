@@ -1,0 +1,47 @@
+name: P2-02 extended statistical robustness
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/validate_p2_02_extended.yml'
+permissions:
+  contents: write
+jobs:
+  extended:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m py_compile scripts/validate_p2_02_extended.py
+      - run: python scripts/validate_p2_02_extended.py
+      - name: Verify outputs and fail-closed validation
+        run: |
+          python - <<'PY'
+          import json
+          p=json.load(open('docs/p2_02_extended_validation.json',encoding='utf-8'))
+          assert p['full_model_validated'] is False and p['recommended_live_threshold'] is None
+          for h,x in p['holdout'].items():
+            assert len(x['walk_forward_folds'])==3
+            assert len(x['paired_factor_ablations'])==6
+            assert len(x['regime_uncertainty'])==3
+            assert all(f['purged_train_rows']==int(h[:-1]) for f in x['walk_forward_folds'])
+            assert x['walk_forward_aggregate']['n']==sum(f['metrics']['n'] for f in x['walk_forward_folds'])
+            print(h,x['walk_forward_aggregate'])
+          PY
+      - name: Save report
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/p2_02_extended_validation.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Save P2-02 extended robustness [skip ci]'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
