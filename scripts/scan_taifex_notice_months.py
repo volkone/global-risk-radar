@@ -34,11 +34,17 @@ def main():
    req=urllib.request.Request(URL,data=data,headers={"User-Agent":"Mozilla/5.0","Content-Type":"application/x-www-form-urlencoded","Referer":URL})
    with urllib.request.urlopen(req,timeout=30) as res: raw=res.read(4000000);entry["http_status"]=res.status
    html=raw.decode("utf-8",errors="replace");p=Parser();p.feed(html)
-   notices=[{"title":title,"url":urllib.parse.urljoin(URL,href)} for href,title in p.links if "/newsDetail" in href]
+   notices=[{"title":title,"url":urllib.parse.urljoin(URL,href)} for href,title in p.links if "/newsDetail" in href or "newsDetail" in title]
+   # Some TAIFEX notice rows are not ordinary anchor URLs. Preserve row text for diagnostics.
+   rows=re.findall(r"<tr\\b[^>]*>.*?</tr>",html,re.I|re.S)
+   table_rows=[re.sub(r"<[^>]+>"," ",row) for row in rows]
+   table_rows=[" ".join(__import__("html").unescape(row).split()) for row in table_rows]
+   dated_rows=[row for row in table_rows if re.search(r"20(?:23|24|25|26)[/\\-]\\d{1,2}[/\\-]\\d{1,2}",row)]
    notices=list({x["url"]:x for x in notices}.values())
-   entry.update(response_sha256=hashlib.sha256(raw).hexdigest(),response_bytes=len(raw),notice_count=len(notices),notices=notices,candidates=[x for x in notices if any(k in x["title"] for k in KEYWORDS)],pagination_hints=re.findall(r".{0,55}(?:totalPage|totalCount|pageSize|pageNo|currentPage|下一頁|末頁).{0,80}",html,re.I)[:15],date_query_echo_confirmed=(first.strftime("%Y/%m/%d") in html and last.strftime("%Y/%m/%d") in html))
+   entry.update(response_sha256=hashlib.sha256(raw).hexdigest(),response_bytes=len(raw),notice_count=len(notices),notices=notices,dated_row_count=len(dated_rows),dated_row_samples=dated_rows[:12],known_closure_terms_in_response=[k for k in KEYWORDS if k in html],candidates=[x for x in notices if any(k in x["title"] for k in KEYWORDS)],pagination_hints=re.findall(r".{0,55}(?:totalPage|totalCount|pageSize|pageNo|currentPage|下一頁|末頁).{0,80}",html,re.I)[:15],date_query_echo_confirmed=(first.strftime("%Y/%m/%d") in html and last.strftime("%Y/%m/%d") in html))
    # Need a documented total count or proven page traversal to certify.
    entry["complete"]=False
+   entry["extraction_suspect"]=not notices and not dated_rows
   except Exception as e:entry["error"]=type(e).__name__+": "+str(e)[:180]
   report["months"].append(entry)
   OUT.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
