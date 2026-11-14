@@ -1,0 +1,172 @@
+{
+  "stage": "uptrend_early_warning_research",
+  "status": "retrospective_walk_forward_complete_prospective_confirmation_pending",
+  "panel_sha256": "20e0c7ecf9ead9393b6f1518b1c6cb659ea2745335c00293a253808c4777edc8",
+  "hypothesis": "Uptrend (past 20-session return >2%) AND 5-session momentum deceleration (recent 5-session return below preceding 5-session return and below +1%) AND trailing 5-session institutional net selling",
+  "evaluation": "Three disjoint historical 100-session forward test blocks, uptrend-only evaluation, future drawdown events 5d -3% / 20d -5%; signal after t close, outcome t+1 onward",
+  "method_note": "Fixed rule, no parameter fitting. Embargo specified for label hygiene; this is retrospective reuse of historical data already studied in P2-02, not an untouched independent confirmation.",
+  "results": {
+    "5d": {
+      "folds": [
+        {
+          "test_dates": [
+            "2025-07-10",
+            "2025-12-02"
+          ],
+          "prior_label_embargo_sessions": 5,
+          "uptrend_eligible": {
+            "n": 80,
+            "alerts": 22,
+            "events": 5,
+            "hits": 1,
+            "precision": 0.045454545454545456,
+            "recall": 0.2,
+            "base_rate": 0.0625,
+            "precision_lift": 0.7272727272727273
+          }
+        },
+        {
+          "test_dates": [
+            "2025-12-03",
+            "2026-05-08"
+          ],
+          "prior_label_embargo_sessions": 5,
+          "uptrend_eligible": {
+            "n": 78,
+            "alerts": 15,
+            "events": 11,
+            "hits": 3,
+            "precision": 0.2,
+            "recall": 0.2727272727272727,
+            "base_rate": 0.14102564102564102,
+            "precision_lift": 1.4181818181818182
+          }
+        },
+        {
+          "test_dates": [
+            "2026-05-11",
+            "2026-10-01"
+          ],
+          "prior_label_embargo_sessions": 5,
+          "uptrend_eligible": {
+            "n": 68,
+            "alerts": 27,
+            "events": 22,
+            "hits": 9,
+            "precision": 0.3333333333333333,
+            "recall": 0.4090909090909091,
+            "base_rate": 0.3235294117647059,
+            "precision_lift": 1.0303030303030303
+          }
+        }
+      ],
+      "aggregate": {
+        "n": 226,
+        "alerts": 64,
+        "events": 38,
+        "hits": 13,
+        "precision": 0.203125,
+        "recall": 0.34210526315789475,
+        "base_rate": 0.168141592920354,
+        "precision_lift": 1.2080592105263157
+      },
+      "lift_difference": 0.034983407079646006,
+      "moving_block_ci95": [
+        -0.04705014749262537,
+        0.12734363281835906
+      ],
+      "circular_shift_one_sided_p": 0.24778761061946902,
+      "bonferroni_two_horizons_p": 0.49557522123893805,
+      "warning": "Regime filtering changes event prevalence; comparison is to uptrend-only base rate, not all-market base rate"
+    },
+    "20d": {
+      "folds": [
+        {
+          "test_dates": [
+            "2025-07-10",
+            "2025-12-02"
+          ],
+          "prior_label_embargo_sessions": 20,
+          "uptrend_eligible": {
+            "n": 80,
+            "alerts": 22,
+            "events": 11,
+            "hits": 4,
+            "precision": 0.18181818181818182,
+            "recall": 0.36363636363636365,
+            "base_rate": 0.1375,
+            "precision_lift": 1.322314049586777
+          }
+        },
+        {
+          "test_dates": [
+            "2025-12-03",
+            "2026-05-08"
+          ],
+          "prior_label_embargo_sessions": 20,
+          "uptrend_eligible": {
+            "n": 78,
+            "alerts": 15,
+            "events": 13,
+            "hits": 3,
+            "precision": 0.2,
+            "recall": 0.23076923076923078,
+            "base_rate": 0.16666666666666666,
+            "precision_lift": 1.2000000000000002
+          }
+        },
+        {
+          "test_dates": [
+            "2026-05-11",
+            "2026-09-29"
+          ],
+          "prior_label_embargo_sessions": 20,
+          "uptrend_eligible": {
+            "n": 66,
+            "alerts": 27,
+            "events": 17,
+            "hits": 5,
+            "precision": 0.18518518518518517,
+            "recall": 0.29411764705882354,
+            "base_rate": 0.25757575757575757,
+            "precision_lift": 0.7189542483660131
+          }
+        }
+      ],
+      "aggregate": {
+        "n": 224,
+        "alerts": 64,
+        "events": 41,
+        "hits": 12,
+        "precision": 0.1875,
+        "recall": 0.2926829268292683,
+        "base_rate": 0.18303571428571427,
+        "precision_lift": 1.024390243902439
+      },
+      "lift_difference": 0.004464285714285726,
+      "moving_block_ci95": [
+        -0.0751575630252101,
+        0.0960956416464891
+      ],
+      "circular_shift_one_sided_p": 0.5044642857142857,
+      "bonferroni_two_horizons_p": 1,
+      "warning": "Regime filtering changes event prevalence; comparison is to uptrend-only base rate, not all-market base rate"
+    }
+  },
+  "data_source_restrictions": [
+    "FRED vintage and TXF official exception unresolved",
+    "Preselected candidate after inspecting historical model failure; selection bias cannot be eliminated retrospectively"
+  ],
+  "prospective_validation_plan": {
+    "start": "First new session after 2026-10-30 for which all PIT data can be certified",
+    "requirements": [
+      "Freeze rule and source hash before observation",
+      "Accumulate new unseen outcomes for both horizons",
+      "No threshold edits during collection",
+      "Re-evaluate serial dependence and uncertainty after sufficient independent event clusters"
+    ]
+  },
+  "live_trading_authorized": false,
+  "full_model_validated": false,
+  "recommended_live_threshold": null
+}
