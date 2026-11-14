@@ -1,0 +1,47 @@
+name: Source-limited 718-session research backtest
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/run_qualified_source_limited_backtest.yml'
+permissions:
+  contents: write
+jobs:
+  qualified-research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile and run limited-provenance research backtest
+        run: |
+          python -m py_compile scripts/backtest_phase2_research.py scripts/run_qualified_source_limited_backtest.py
+          python scripts/run_qualified_source_limited_backtest.py
+      - name: Assert no official validation or live threshold is claimed
+        run: |
+          python - <<'PY'
+          import json
+          p=json.load(open('docs/qualified_source_limited_backtest.json',encoding='utf-8'))
+          assert p['sample_rows']==718
+          assert p['txf_exception']['verification']=='third_party_crosschecked_not_official'
+          assert p['full_model_backtest_authorized'] is False
+          assert p['full_model_validated'] is False
+          assert p['recommended_live_threshold'] is None
+          print(p['label'],p['research_result']['status'])
+          PY
+      - name: Save qualified report
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/qualified_source_limited_backtest.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Save source-limited research backtest [skip ci]'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
