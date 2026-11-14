@@ -1,0 +1,37 @@
+{
+  "series": {
+    "fx": {
+      "status": "downloaded",
+      "vintage_count": 155,
+      "raw_response_sha256": "ca888f78b7eba0f079106db7638c2645d55f1dd0a5c697416cbc50e8ee625a2e"
+    },
+    "hy": {
+      "status": "downloaded",
+      "vintage_count": 777,
+      "raw_response_sha256": "ecc570e4cfafb651b49c5052738d9e3c378ee1f216f1be8744e93e20d160e856"
+    },
+    "ig": {
+      "status": "downloaded",
+      "vintage_count": 775,
+      "raw_response_sha256": "72d9163447a9c5a3d596385fecfbf042829d79ca36237688844fb3335a3a5227"
+    },
+    "vix": {
+      "status": "downloaded",
+      "vintage_count": 739,
+      "raw_response_sha256": "343ea66a75a3949880c9fde1bc36bdde061fe81f83071ce0a24c7d9315db9c93"
+    },
+    "us10y": {
+      "status": "downloaded",
+      "vintage_count": 736,
+      "raw_response_sha256": "3cdbcb1e0bfe3c97e80c7f785467f13dbcc36506f392c7df6c1af1e544e52527"
+    },
+    "nfci": {
+      "status": "downloaded",
+      "vintage_count": 155,
+      "raw_response_sha256": "e5838abec85311ed797805e771e9358348b23c8249506da0395ad10aa0b96997"
+    }
+  },
+  "independent_observation_value_comparison_complete": false,
+  "minute_level_publication_time_certified": false,
+  "note": "Vintage-date downloads do not validate historical values or publication minutes."
+}
