@@ -15,8 +15,9 @@ on:
       - 'scripts/phase5_forward_capture.py'
       - 'scripts/phase5_forward_ledger.py'
   schedule:
-    # 20:30 and 22:30 Taipei on weekdays. Retries do NOT overwrite the first snapshot.
-    - cron: '30 12,14 * * 1-5'
+    # Multiple after-close slots in Taipei (20:10, 21:10, 22:10, 23:10).
+    # GitHub scheduled runs can be delayed; existing first-seen snapshots remain immutable.
+    - cron: '10 12-15 * * 1-5'
 permissions:
   contents: write
 concurrency:
