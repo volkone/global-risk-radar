@@ -2,7 +2,7 @@
   "schema_version": 2,
   "dataset": "TAIFEX TXF official historical source HTML",
   "expected_records": 718,
-  "attempted_this_run": 55,
+  "attempted_this_run": 1,
   "checked": 718,
   "counts": {
     "match": 717,

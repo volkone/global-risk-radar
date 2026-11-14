@@ -6,8 +6,12 @@
       "parsed_values_match": false,
       "error": "ValueError",
       "error_detail": "requested date absent from response",
+      "response_sha256": "ec959d9fbaa3ff0cb5feee1833ad1f2af9aa96d28daf11382d65c950ec126a63",
+      "response_bytes": 99660,
+      "http_status": 200,
+      "requested_date": "2023-11-13",
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2023%2F11%2F13&queryType=1",
-      "verified_at_utc": "2026-11-14T06:25:03.871548+00:00"
+      "verified_at_utc": "2026-11-14T07:31:07.137321+00:00"
     },
     "2023-11-14": {
       "status": "match",
