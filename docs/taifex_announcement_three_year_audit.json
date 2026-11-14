@@ -1838,7 +1838,31 @@
       ]
     }
   ],
+  "pagination_probe_distinct_pages": [
+    {
+      "year": 2023,
+      "distinct_response_hashes": 1,
+      "parameter_probe_effective": false
+    },
+    {
+      "year": 2024,
+      "distinct_response_hashes": 1,
+      "parameter_probe_effective": false
+    },
+    {
+      "year": 2025,
+      "distinct_response_hashes": 1,
+      "parameter_probe_effective": false
+    },
+    {
+      "year": 2026,
+      "distinct_response_hashes": 1,
+      "parameter_probe_effective": false
+    }
+  ],
   "pagination_verified": false,
+  "pagination_traversal_status": "blocked_no_verified_navigation_or_total_count",
+  "source_scope_warning": "The annual announcement listing is not independently established as the complete historical news archive.",
   "all_year_filters_verified": true,
   "primary_evidence_reconciliation": [
     {
@@ -1894,6 +1918,12 @@
       "primary_evidence_already_verified": true
     }
   ],
+  "special_date_evidence_summary": {
+    "total_groups": 6,
+    "primary_evidence_previously_verified": 6,
+    "listing_matched": 1,
+    "independent_archive_exhaustiveness_verified": false
+  },
   "unmatched_special_dates": [
     [
       "2024-07-24",
