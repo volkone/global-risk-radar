@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "evidence_type": "official_public_source_index",
+  "verified_on": "2026-11-14",
+  "scope": "Primary official public documentation and identified historical notice; not a full three-year certification",
+  "taifex": {
+    "contract_specification": {
+      "url": "https://www.taifex.com.tw/cht/2/tX",
+      "claim": "TX contract trading days are the same as TWSE trading days",
+      "status": "official_rule_confirmed"
+    },
+    "special_closure_example": {
+      "date": "2024-10-31",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?idx=15446&newsType=1",
+      "claim": "Typhoon Kong-rey closure includes regular and after-hours sessions",
+      "status": "official_notice_confirmed"
+    },
+    "full_notice_sweep_verified": false,
+    "primary_evidence_complete": false,
+    "independent_taifex_calendar_verified": false
+  },
+  "alfred": {
+    "vintage_dates_api": "https://fred.stlouisfed.org/docs/api/fred/series_vintagedates.html",
+    "asof_observations_api": "https://fred.stlouisfed.org/docs/api/fred/series_observations.html",
+    "realtime_semantics": "https://fred.stlouisfed.org/docs/api/fred/realtime_period.html",
+    "vintage_dates_independently_requeried_for_all_series": false,
+    "observation_values_independently_compared": false
+  },
+  "publication": {
+    "nfci_official_schedule": "https://www.chicagofed.org/research/data/nfci/current-data-aws",
+    "nfci_alfred_release_dates": "https://alfred.stlouisfed.org/release/downloaddates?rid=221",
+    "nfci_release_calendar_2026": "https://fred.stlouisfed.org/releases/calendar?rid=221&y=2026",
+    "nfci_release_date_2026_11_12": "2026-11-12",
+    "nfci_observation_ending_2026_11_06": "2026-11-06",
+    "nfci_series_table": "https://fred.stlouisfed.org/data/NFCI",
+    "historical_minute_level_timestamps_certified": false,
+    "all_718_release_times_certified": false
+  },
+  "authorization": {
+    "full_model_backtest_authorized": false,
+    "live_threshold_changes_authorized": false
+  },
+  "limitations": [
+    "Official contract rule plus one closure notice is not an exhaustive special-date notice sweep.",
+    "ALFRED vintage date is not evidence of intraday publication minute.",
+    "No authenticated API data or source HTML hashes independently retrieved for all 718 sessions."
+  ]
+}
