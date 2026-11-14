@@ -22,6 +22,8 @@ jobs:
         run: python -m py_compile scripts/audit_taifex_announcement_three_years.py
       - name: Collect 2023-2026 official year-filtered announcements
         run: python scripts/audit_taifex_announcement_three_years.py
+      - name: Audit independent calendar evidence separately
+        run: python scripts/audit_taifex_calendar_independently.py
       - name: Verify evidence and maintain backtest gate
         run: |
           python - <<'PY'
@@ -29,6 +31,11 @@ jobs:
           j=json.load(open('docs/taifex_announcement_three_year_audit.json',encoding='utf-8'))
           assert len(j['years'])==4
           assert len(j['special_date_reconciliation'])>=1
+          c=json.load(open('docs/taifex_calendar_independent_audit.json',encoding='utf-8'))
+          assert c['special_date_group_count']==6
+          assert c['special_groups_with_recorded_official_evidence']==6
+          assert c['archive_exhaustiveness_verified'] is False
+          assert c['full_model_backtest_authorized'] is False
           assert j['full_notice_sweep_verified'] is False
           assert j['full_model_backtest_authorized'] is False
           print('Year filters:',[(y['year'],y['verified_year_filter'],y['record_count']) for y in j['years']])
@@ -41,7 +48,7 @@ jobs:
           if [ -f docs/taifex_announcement_three_year_audit.json ]; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git add docs/taifex_announcement_three_year_audit.json
+            git add docs/taifex_announcement_three_year_audit.json docs/taifex_calendar_independent_audit.json
             if ! git diff --cached --quiet; then
               git commit -m 'Save three-year TAIFEX announcement calendar reconciliation [skip ci]'
               git fetch origin main
