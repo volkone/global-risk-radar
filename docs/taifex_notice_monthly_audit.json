@@ -1881,7 +1881,19 @@
   "full_model_backtest_authorized": false,
   "months_with_query_echo": 36,
   "candidate_notices_total": 0,
+  "positive_controls": {
+    "known_official_closure_months": [
+      "2024-07",
+      "2024-10",
+      "2026-07",
+      "2026-10"
+    ],
+    "months_with_retrieved_notices": [],
+    "passed": false
+  },
+  "response_content_verified": false,
   "blockers": [
+    "query_results_not_validated_against_known_official_notices",
     "pagination_or_result_total_not_independently_proven",
     "known_special_dates_require_reconciliation"
   ]
