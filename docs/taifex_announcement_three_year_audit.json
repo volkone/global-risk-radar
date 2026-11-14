@@ -14,8 +14,14 @@
           "http_status": 200,
           "sha256": "3c9c67ea38d5e0dbecae586249112df26d814f7a10769ce2b2f0f4d01b717319",
           "bytes": 116789,
-          "record_count": 0,
-          "year_match": false
+          "record_count": 14,
+          "pagination": {
+            "page_parameters": [
+              "pagesize"
+            ],
+            "pagination_contexts": []
+          },
+          "year_match": true
         },
         {
           "method": "get",
@@ -23,13 +29,19 @@
           "http_status": 200,
           "sha256": "3c9c67ea38d5e0dbecae586249112df26d814f7a10769ce2b2f0f4d01b717319",
           "bytes": 116789,
-          "record_count": 0,
-          "year_match": false
+          "record_count": 14,
+          "pagination": {
+            "page_parameters": [
+              "pagesize"
+            ],
+            "pagination_contexts": []
+          },
+          "year_match": true
         }
       ],
-      "selected_method": null,
-      "verified_year_filter": false,
-      "record_count": 0
+      "selected_method": "post",
+      "verified_year_filter": true,
+      "record_count": 14
     },
     {
       "year": 2024,
@@ -40,8 +52,14 @@
           "http_status": 200,
           "sha256": "06590b30a9f5f99523369608dcc699f03b76b5a0c82dcdee71d89d52ec1ec968",
           "bytes": 113449,
-          "record_count": 0,
-          "year_match": false
+          "record_count": 7,
+          "pagination": {
+            "page_parameters": [
+              "pagesize"
+            ],
+            "pagination_contexts": []
+          },
+          "year_match": true
         },
         {
           "method": "get",
@@ -49,13 +67,19 @@
           "http_status": 200,
           "sha256": "06590b30a9f5f99523369608dcc699f03b76b5a0c82dcdee71d89d52ec1ec968",
           "bytes": 113449,
-          "record_count": 0,
-          "year_match": false
+          "record_count": 7,
+          "pagination": {
+            "page_parameters": [
+              "pagesize"
+            ],
+            "pagination_contexts": []
+          },
+          "year_match": true
         }
       ],
-      "selected_method": null,
-      "verified_year_filter": false,
-      "record_count": 0
+      "selected_method": "post",
+      "verified_year_filter": true,
+      "record_count": 7
     },
     {
       "year": 2025,
@@ -66,8 +90,14 @@
           "http_status": 200,
           "sha256": "468fc7b538f5b3114d21b622010aefda62c45cd3aba69feaaab327f7981acb7a",
           "bytes": 124827,
-          "record_count": 0,
-          "year_match": false
+          "record_count": 34,
+          "pagination": {
+            "page_parameters": [
+              "pagesize"
+            ],
+            "pagination_contexts": []
+          },
+          "year_match": true
         },
         {
           "method": "get",
@@ -75,13 +105,19 @@
           "http_status": 200,
           "sha256": "468fc7b538f5b3114d21b622010aefda62c45cd3aba69feaaab327f7981acb7a",
           "bytes": 124827,
-          "record_count": 0,
-          "year_match": false
+          "record_count": 34,
+          "pagination": {
+            "page_parameters": [
+              "pagesize"
+            ],
+            "pagination_contexts": []
+          },
+          "year_match": true
         }
       ],
-      "selected_method": null,
-      "verified_year_filter": false,
-      "record_count": 0
+      "selected_method": "post",
+      "verified_year_filter": true,
+      "record_count": 34
     },
     {
       "year": 2026,
@@ -92,8 +128,14 @@
           "http_status": 200,
           "sha256": "7c02acd05c499b1b0b61977bfc83d9627027648bc4fce1e18b61001bc59e8076",
           "bytes": 217286,
-          "record_count": 0,
-          "year_match": false
+          "record_count": 250,
+          "pagination": {
+            "page_parameters": [
+              "pagesize"
+            ],
+            "pagination_contexts": []
+          },
+          "year_match": true
         },
         {
           "method": "get",
@@ -101,13 +143,19 @@
           "http_status": 200,
           "sha256": "7c02acd05c499b1b0b61977bfc83d9627027648bc4fce1e18b61001bc59e8076",
           "bytes": 217286,
-          "record_count": 0,
-          "year_match": false
+          "record_count": 250,
+          "pagination": {
+            "page_parameters": [
+              "pagesize"
+            ],
+            "pagination_contexts": []
+          },
+          "year_match": true
         }
       ],
-      "selected_method": null,
-      "verified_year_filter": false,
-      "record_count": 0
+      "selected_method": "post",
+      "verified_year_filter": true,
+      "record_count": 250
     }
   ],
   "special_date_reconciliation": [
@@ -171,15 +219,1373 @@
       ],
       "reason": "Typhoon closure",
       "known_official_url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17441",
-      "matching_archive_records": [],
-      "matched": false,
+      "matching_archive_records": [
+        {
+          "published": "2026-10-22",
+          "title": "因薔琵颱風來襲，115年10月23日(星期五)臺灣期貨交易所集中交易市場休市1日(包含一般交易時段及盤後交易時段)，店頭集中結算業務暫停營業1日。本公司115年10月23日到期結算之臺指選擇權週五到期契約，其最後交易日及最後結算日順延至最近之次一營業日。",
+          "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17441"
+        }
+      ],
+      "matched": true,
       "note": "A missing match does not negate separately verified official primary evidence"
     }
   ],
   "full_notice_sweep_verified": false,
   "full_model_backtest_authorized": false,
-  "records": [],
-  "all_year_filters_verified": false,
+  "records": [
+    {
+      "published": "2023-12-08",
+      "title": "公告本公司「美國費城半導體股價指數期貨契約」整戶風險保證金計收方式(SPAN)參數數值及保證金金額。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期結字第1120302335號.pdf"
+    },
+    {
+      "published": "2024-12-23",
+      "title": "行政院消費者保護處「消費權益停看聽無卡分期要小心」消保教育影片，歡迎多加利用。",
+      "url": "https://youtu.be/JsswkL3NkGQ? si=NKjZtSbCdCDRxlbG"
+    },
+    {
+      "published": "2024-12-23",
+      "title": "行政院消費者保護處本年度製作「小心終身優惠有陷阱」等多則消保圖卡，歡迎多加利用。",
+      "url": "https://cpc.ey.gov.tw/Page/A24D52B481E12568"
+    },
+    {
+      "published": "2024-09-12",
+      "title": "公告更新「期貨商得受託從事期貨交易之國外期貨交易契約」",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/公告抄本(含附件)(1).pdf"
+    },
+    {
+      "published": "2024-07-31",
+      "title": "有關本公司臺股期貨(TX)、小型臺指期貨(MTX)及客製化小型臺指期貨(MXFFX)不適用美國商品期貨交易委員會(CFTC)交易許可(Commission Certification)規定，詳如說明，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/document (3).pdf"
+    },
+    {
+      "published": "2024-04-12",
+      "title": "公告更新「期貨商得受託從事期貨交易之國外期貨交易契約」",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/抄本1130800254_1130412-OSE 3-Month TONA Futures.pdf"
+    },
+    {
+      "published": "2024-02-05",
+      "title": "公告更新「期貨商得受託從事期貨交易之國外期貨交易契約」",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/抄本1130800080_1130205-TFX TONA Futures.pdf"
+    },
+    {
+      "published": "2024-01-09",
+      "title": "公告更新「期貨商得受託從事期貨交易之國外期貨交易契約」",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/抄本1130800002_OSE Nikkei 225微型期貨.小型選擇權.TOPIX Banks期貨.pdf"
+    },
+    {
+      "published": "2025-12-31",
+      "title": "公告本公司「115年期貨交易輔助人交易推廣獎勵活動辦法」1份，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202633號函(115年期貨交易輔助人交易推廣獎勵活動辦法).pdf"
+    },
+    {
+      "published": "2025-12-31",
+      "title": "檢送本公司「115年法人機構交易獎勵活動辦法」1份，自115年2月1日起實施，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/115年法人機構獎勵活動辦法.pdf"
+    },
+    {
+      "published": "2025-12-16",
+      "title": "公告本公司期貨集中交易市場115年農曆春節休市暨相關事宜。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202563號函.pdf"
+    },
+    {
+      "published": "2025-12-12",
+      "title": "公告114年12月25日(星期四)為行憲紀念日及115年1月1日 (星期四)為中華民國開國紀念日，依規定各放假一日，本公司期貨集中交易市場配合休市。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202601號函.pdf"
+    },
+    {
+      "published": "2025-12-12",
+      "title": "公告更新「期貨商得受託從事期貨交易之國外期貨交易契約」",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/1140800805_公告.pdf"
+    },
+    {
+      "published": "2025-12-10",
+      "title": "公告更新「期貨商得受託從事期貨交易之國外期貨交易契約」",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/函_台期企字第1140800792號_公告附件.pdf"
+    },
+    {
+      "published": "2025-12-05",
+      "title": "公告修正本公司「期貨商內部控制制度標準規範」如附件，並自即日起實施，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=16431"
+    },
+    {
+      "published": "2025-12-02",
+      "title": "114年11月份法規異動彙整",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/4_法規異動彙整11411_V2(修正).pdf"
+    },
+    {
+      "published": "2025-11-28",
+      "title": "公告更新「期貨商得受託從事期貨交易之國外期貨交易契約」",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/函_台期企字第1140800763號_公告附件.pdf"
+    },
+    {
+      "published": "2025-11-20",
+      "title": "公告更新「期貨商得受託從事期貨交易之國外期貨交易契約」",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/函-公告1120.pdf"
+    },
+    {
+      "published": "2025-11-11",
+      "title": "本公司「電子選擇權契約」交易規則與規格之修正條文，自114年12月8日起實施，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202318號.pdf"
+    },
+    {
+      "published": "2025-11-11",
+      "title": "本公司「股票選擇權契約」交易規則與規格之修正條文，自114年12月8日起實施，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202315號.pdf"
+    },
+    {
+      "published": "2025-11-10",
+      "title": "司法院「ADR訴訟外紛爭解決機制(司法型)宣導影片」。",
+      "url": "https://reurl.cc/K9V3xm"
+    },
+    {
+      "published": "2025-11-10",
+      "title": "司法院「國民法官：免操煩篇」宣導影片。",
+      "url": "https://reurl.cc/Ln96b9"
+    },
+    {
+      "published": "2025-11-03",
+      "title": "期交所「114年縱橫期海Trade Like a Pro－大專院校模擬交易競賽」得獎名單",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/附件3-得獎名單.pdf"
+    },
+    {
+      "published": "2025-10-31",
+      "title": "公告華南金選擇權等12檔股票選擇權，自114年11月20日起停止加掛新月份契約及新序列。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/停掛公告.pdf"
+    },
+    {
+      "published": "2025-10-31",
+      "title": "公告本公司台積電選擇權(契約代號：CD)、長榮選擇權(契約代號：CZ)、鴻海選擇權(契約代號：DH)、聯發科選擇權(契約代號：DV)及緯創選擇權(契約代號：DX)等5檔股票選擇權加掛週契約，實施日期另行公告，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202277號.pdf"
+    },
+    {
+      "published": "2025-10-27",
+      "title": "公告本公司新增華榮期貨、燿華期貨、建準期貨及小型致茂期貨等4檔股票期貨契約暨其上市相關事宜。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202236號(含附件).pdf"
+    },
+    {
+      "published": "2025-10-22",
+      "title": "公告修正本公司「股票選擇權契約」交易規則與規格，實施日期另行公告，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/股票選擇權修正規章.pdf"
+    },
+    {
+      "published": "2025-10-08",
+      "title": "公告修正本公司「電子選擇權契約」交易規則及規格，實施日期另行公告，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/修正法規附件.pdf"
+    },
+    {
+      "published": "2025-09-16",
+      "title": "公告第11屆期貨鑽石獎得獎名單",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/2.第11屆期貨鑽石獎得獎名單.pdf"
+    },
+    {
+      "published": "2025-09-09",
+      "title": "公告「辦理高資產客戶財富管理業務銀行發行新臺幣計價結構型商品獎勵活動辦法」",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/辦理高資產客戶財富管理業務銀行發行新臺幣計價結構型商品獎勵活動辦法.pdf"
+    },
+    {
+      "published": "2025-09-05",
+      "title": "臺灣指數公司調整「臺灣指數公司臺灣全市場半導體精選30指數」編製規則",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=16228"
+    },
+    {
+      "published": "2025-07-24",
+      "title": "公告本公司新增華泰期貨、良維期貨及小型漢唐期貨等3檔股票期貨契約暨其上市相關事宜。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140201529號(含附件).pdf"
+    },
+    {
+      "published": "2025-07-22",
+      "title": "法務部編製「這次不會再被騙了吧！Part2」詐欺防制法治教育手冊，歡迎至法務部全球資訊網「打擊詐欺專區」下載及運用。",
+      "url": "https://www.moj.gov.tw/2204/2645/181663/181667/Lpsimplelist"
+    },
+    {
+      "published": "2025-07-04",
+      "title": "投信投顧公會、證交所及櫃買中心共同建置「主動式ETF暨被動式多資產ETF教育網站」，歡迎多加利用。",
+      "url": "https://www.sitca.org.tw/ROC/SITCA_ETF/ETF_ACMA/index.htm"
+    },
+    {
+      "published": "2025-06-13",
+      "title": "有關期貨商及期貨交易輔助人申請與其他金融機構合作推廣他業商品或提供相關服務，應辦理事項如說明，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=15937"
+    },
+    {
+      "published": "2025-04-15",
+      "title": "富時羅素(FTSE Russell)調整「英國富時100指數」編製規則",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=15735"
+    },
+    {
+      "published": "2025-03-19",
+      "title": "函轉金融監督管理委員會114年3月18日金管證期字第 1140380894號公告「訂定期貨交易法第三條第二項但書規定符合主管機關規定應集中結算之非在期貨交易所進行期貨交易範圍，並自114年7月1日生效」，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=15691"
+    },
+    {
+      "published": "2025-03-14",
+      "title": "公告修正本公司「期貨商內部控制制度標準規範」如附件，並自114年4月1日起實施，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=15681"
+    },
+    {
+      "published": "2025-01-22",
+      "title": "證券櫃檯買賣中心「黃金現貨交易平台專區」，歡迎多加運用。",
+      "url": "https://www.tpex.org.tw/zh-tw/other/gold/statistics/info.html"
+    },
+    {
+      "published": "2025-01-21",
+      "title": "證基會製作「共同基金投資密碼」宣導漫畫供各界免費下載，歡迎多加運用!",
+      "url": "https://www.sfi.org.tw/News?id=1269"
+    },
+    {
+      "published": "2025-01-20",
+      "title": "法務部與「柴語錄」合製反詐騙宣導教材，歡迎至法務部全球資訊網「打擊詐欺專區」下載及運用。",
+      "url": "https://reurl.cc/WAxVDx"
+    },
+    {
+      "published": "2025-01-15",
+      "title": "公告第11屆期貨鑽石獎活動辦法",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/第11屆期貨鑽石獎活動辦法(公告).pdf"
+    },
+    {
+      "published": "2026-10-30",
+      "title": "公告本公司臺指選擇權週五到期契約(契約代號:202610F5)最後結算價",
+      "url": "https://www.taifex.com.tw/cht/5/optIndxFSP?commodityIds=2&start_year=2025&start_month=10&end_year=2026&end_month=10"
+    },
+    {
+      "published": "2026-10-29",
+      "title": "公告更新「期貨商得受託從事期貨交易之國外期貨交易契約」",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/函_台期企字第1150800678號_公告附件.pdf"
+    },
+    {
+      "published": "2026-10-29",
+      "title": "公告本公司黃金類期貨及選擇權2026年10月契約最後結算價",
+      "url": "https://www.taifex.com.tw/cht/5/goldFSP?commodityIds=10&commodityIds=17&commodityIds=18&start_year=2025&start_month=10&end_year=2026&end_month=10"
+    },
+    {
+      "published": "2026-10-27",
+      "title": "公告本公司新增光聖期貨、小型光聖期貨、鴻勁期貨、小型鴻勁期貨、小型臻鼎-KY期貨及凱基台灣TOP50ETF期貨等6檔股票期貨契約暨其上市相關事宜。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150202061號(完整).pdf"
+    },
+    {
+      "published": "2026-10-27",
+      "title": "公告調整本公司金居期貨(PQF)保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17446"
+    },
+    {
+      "published": "2026-10-27",
+      "title": "公告停止加掛同致期貨新月份契約，詳如說明，並自115年10月29日起實施。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/1150202027.pdf"
+    },
+    {
+      "published": "2026-10-22",
+      "title": "公告「華僑及外國人與大陸地區投資人申請投資國內有價證券或從事國內期貨交易登記作業要點」條文修正對照表及相關登記表，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150003381號函.pdf"
+    },
+    {
+      "published": "2026-10-22",
+      "title": "因薔琵颱風來襲，115年10月23日(星期五)臺灣期貨交易所集中交易市場休市1日(包含一般交易時段及盤後交易時段)，店頭集中結算業務暫停營業1日。本公司115年10月23日到期結算之臺指選擇權週五到期契約，其最後交易日及最後結算日順延至最近之次一營業日。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17441"
+    },
+    {
+      "published": "2026-10-22",
+      "title": "公告本公司取得不動產相關資訊",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/公告本公司取得不動產相關資訊.pdf"
+    },
+    {
+      "published": "2026-10-21",
+      "title": "公告調整本公司「臺股期貨」、「臺指選擇權」及「股票期貨暨選擇權契約」交易人部位限制數。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/部位限制調整公告.pdf"
+    },
+    {
+      "published": "2026-10-19",
+      "title": "公告調整本公司聯茂期貨(KBF)及華新科期貨(HBF)所有月份保證金適用比例，並自115年10月20日一般交易時段結束後起實施，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17435"
+    },
+    {
+      "published": "2026-10-19",
+      "title": "公告本公司小型美元兌人民幣期貨(RTF)2026年10月契約最後結算價",
+      "url": "https://www.taifex.com.tw/cht/5/fXFSP?commodityIds=19&commodityIds=20&commodityIds=22&commodityIds=23&start_year=2025&start_month=10&end_year=2026&end_month=10"
+    },
+    {
+      "published": "2026-10-15",
+      "title": "公告調整大同期貨(CXF)等49檔股票類契約保證金，並自115年10月16日一般交易時段結束後起實施，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17430"
+    },
+    {
+      "published": "2026-10-14",
+      "title": "公告本公司股票選擇權週三到期契約(契約代號:202610W2)最後結算價",
+      "url": "https://www.taifex.com.tw/cht/5/sSOFSP"
+    },
+    {
+      "published": "2026-10-14",
+      "title": "公告本公司小型臺指期貨暨臺指選擇權週三到期契約(契約代號:202610W2)最後結算價",
+      "url": "https://www.taifex.com.tw/cht/5/futIndxFSP?commodityIds=1&start_year=2025&start_month=10&end_year=2026&end_month=10"
+    },
+    {
+      "published": "2026-10-13",
+      "title": "公告調整本公司華新科期貨(HBF)保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17424"
+    },
+    {
+      "published": "2026-10-12",
+      "title": "配合英國夏令日光節約期間將於2026/10/25結束，本公司英國富時100期貨契約到期交割月份(202612、202703)最後交易日交易至臺灣時間下午6:15。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17423"
+    },
+    {
+      "published": "2026-10-12",
+      "title": "配合美國夏令日光節約期間將於2026/11/1結束，本公司布蘭特原油期貨契約到期交割月份(202701、202702、202703及202704)最後交易截止時間將調整為臺灣時間上午3:30。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17422"
+    },
+    {
+      "published": "2026-10-12",
+      "title": "配合美國夏令日光節約期間將於2026/11/1結束，本公司美國道瓊期貨、美國標普500期貨、美國那斯達克100期貨及美國費城半導體期貨契約到期交割月份(202612)最後交易日交易至臺灣時間下午10:30。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17421"
+    },
+    {
+      "published": "2026-10-08",
+      "title": "公告調整本公司聯茂期貨(KBF)及金居期貨(PQF)保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17416"
+    },
+    {
+      "published": "2026-10-08",
+      "title": "公告115年9月「股票選擇權交易獎勵活動」得獎名單",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/11509得獎名單(2).pdf"
+    },
+    {
+      "published": "2026-10-07",
+      "title": "公告本公司股票選擇權週三到期契約(契約代號:202610W1)最後結算價",
+      "url": "https://www.taifex.com.tw/cht/5/sSOFSP"
+    },
+    {
+      "published": "2026-10-07",
+      "title": "公告本公司小型臺指期貨暨臺指選擇權週三到期契約(契約代號:202610W1)最後結算價",
+      "url": "https://www.taifex.com.tw/cht/5/futIndxFSP?commodityIds=1&start_year=2025&start_month=10&end_year=2026&end_month=10"
+    },
+    {
+      "published": "2026-10-07",
+      "title": "公告115年9月「黃金類商品交易獎勵活動」得獎名單",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/11509得獎名單(1).pdf"
+    },
+    {
+      "published": "2026-10-07",
+      "title": "公告115年9月「臺灣中型100期貨交易獎勵活動」得獎名單",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/11509得獎名單.pdf"
+    },
+    {
+      "published": "2026-10-01",
+      "title": "115年9月份法規異動彙整",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/法規異動彙整11509.pdf"
+    },
+    {
+      "published": "2026-10-01",
+      "title": "證交所「臺股儀表板」上線，歡迎推廣利用。",
+      "url": "https://www.twse.com.tw/dashboard/zh/index.html"
+    },
+    {
+      "published": "2026-09-30",
+      "title": "公告調整本公司達發期貨(UGF)及小型達發期貨(UIF)保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17394"
+    },
+    {
+      "published": "2026-09-30",
+      "title": "公告115年第4季「黃金類商品交易獎勵活動」辦法",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/115Q4黃金選擇權交易獎勵活動辦法.pdf"
+    },
+    {
+      "published": "2026-09-30",
+      "title": "公告115年第4季「股票選擇權交易獎勵活動」辦法",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/115Q4股票選擇權交易獎勵活動辦法.pdf"
+    },
+    {
+      "published": "2026-09-30",
+      "title": "公告115年第4季「電子選擇權交易獎勵活動」辦法",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/115Q4電子選擇權交易獎勵活動辦法.pdf"
+    },
+    {
+      "published": "2026-09-30",
+      "title": "公告115年第4季「臺灣中型100期貨交易獎勵活動」辦法",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/115Q4臺灣中型100期貨交易獎勵活動辦法 (2).pdf"
+    },
+    {
+      "published": "2026-09-30",
+      "title": "公告115年第4季「美國費城半導體期貨及半導體30期貨交易獎勵活動」辦法",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/115Q4費城半導體及半導體30期貨交易獎勵活動辦法.pdf"
+    },
+    {
+      "published": "2026-09-29",
+      "title": "公告調整本公司創意期貨(JBF)、小型創意期貨(RWF)及精材期貨(QLF)保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17383"
+    },
+    {
+      "published": "2026-09-29",
+      "title": "公告本公司取得設備相關資訊",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期管字第1150901240號.pdf"
+    },
+    {
+      "published": "2026-09-23",
+      "title": "公告修正「建立期貨商資通安全檢查機制」及「期貨商內部控制制度標準規範」、「內部稽核實施細則」及查核明細表等如附件，自公布日起實施，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17379"
+    },
+    {
+      "published": "2026-09-23",
+      "title": "公告調整本公司全新期貨(GUF)保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17377"
+    },
+    {
+      "published": "2026-09-18",
+      "title": "公告調整本公司金居期貨(PQF)保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17370"
+    },
+    {
+      "published": "2026-09-16",
+      "title": "公告本公司2026年09月份股票期貨與選擇權契約最後結算價",
+      "url": "https://www.taifex.com.tw/cht/5/sSFFSP"
+    },
+    {
+      "published": "2026-09-16",
+      "title": "公告本公司各類指數期貨及選擇權2026年09月契約最後結算價",
+      "url": "https://www.taifex.com.tw/cht/5/futIndxFSP?commodityIds=1&commodityIds=3&commodityIds=4&commodityIds=5&commodityIds=12&commodityIds=13&commodityIds=15&commodityIds=32&commodityIds=34&commodityIds=35&commodityIds=37&commodityIds=38&commodityIds=40&start_year=2025&start_month=09&end_year=2026&end_month=09"
+    },
+    {
+      "published": "2026-09-15",
+      "title": "公告更新「期貨商得受託從事期貨交易之國外期貨交易契約」",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/函_台期企字第1150800576號_公告附件.pdf"
+    },
+    {
+      "published": "2026-09-14",
+      "title": "有關期貨交易輔助人變更委任期貨商及簽訂委任契約作業相 關規定，請依說明辦理，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期輔字第1150002920號.pdf"
+    },
+    {
+      "published": "2026-09-14",
+      "title": "公告本公司歐元兌美元期貨、美元兌日圓期貨、英鎊兌美元期貨及澳幣兌美元期貨2026年09月契約最後結算價",
+      "url": "https://www.taifex.com.tw/cht/5/fXFSP?commodityIds=25&commodityIds=26&commodityIds=29&commodityIds=30&start_year=2025&start_month=09&end_year=2026&end_month=09"
+    },
+    {
+      "published": "2026-09-14",
+      "title": "公告本公司美元兌人民幣期貨(RHF)及小型美元兌人民幣期貨(RTF)2026年09月契約最後結算價",
+      "url": "https://www.taifex.com.tw/cht/5/fXFSP?commodityIds=19&commodityIds=20&commodityIds=22&commodityIds=23&start_year=2025&start_month=09&end_year=2026&end_month=09"
+    },
+    {
+      "published": "2026-09-10",
+      "title": "結算會員調整後淨資本額達本公司「市場部位監視作業辦 法」所訂控管標準之申報作業，自即日起得於期貨商管理系 統辦理",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/函文.pdf"
+    },
+    {
+      "published": "2026-09-09",
+      "title": "公告115年8月「黃金類商品交易獎勵活動」得獎名單",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/11508得獎名單(2).pdf"
+    },
+    {
+      "published": "2026-09-09",
+      "title": "公告115年8月「股票選擇權交易獎勵活動」得獎名單",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/11508得獎名單(1).pdf"
+    },
+    {
+      "published": "2026-09-09",
+      "title": "公告115年8月「臺灣中型100期貨交易獎勵活動」得獎名單",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/11508得獎名單.pdf"
+    },
+    {
+      "published": "2026-09-09",
+      "title": "公告本公司股票選擇權週三到期契約(契約代號:202609W2)最後結算價",
+      "url": "https://www.taifex.com.tw/cht/5/sSOFSP"
+    },
+    {
+      "published": "2026-09-09",
+      "title": "公告本公司小型臺指期貨暨臺指選擇權週三到期契約(契約代號:202609W2)最後結算價",
+      "url": "https://www.taifex.com.tw/cht/5/futIndxFSP?commodityIds=1&start_year=2025&start_month=09&end_year=2026&end_month=09"
+    },
+    {
+      "published": "2026-09-08",
+      "title": "公告調整本公司雙鴻期貨(PTF)及小型雙鴻期貨(ULF)保證金適用比例及延長調整期間，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17345"
+    },
+    {
+      "published": "2026-09-07",
+      "title": "公告調整本公司全新期貨(GUF)保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17342"
+    },
+    {
+      "published": "2026-09-03",
+      "title": "公告調整本公司大立光期貨(IJF)、小型大立光期貨(OLF)、 雙鴻期貨(PTF)、小型雙鴻期貨(ULF)及大立光選擇權(IJO) 保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17333"
+    },
+    {
+      "published": "2026-09-02",
+      "title": "公告調整本公司玉晶光期貨(LEF)、小型玉晶光期貨(QJF)、 金居期貨(PQF)及精材期貨(QLF)保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17331"
+    },
+    {
+      "published": "2026-09-02",
+      "title": "115年8月份法規異動彙整",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/法規異動彙整11508.pdf"
+    },
+    {
+      "published": "2026-09-02",
+      "title": "富時羅素(FTSE Russell)修正「FTSE4Good指數系列」編製規則",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17327"
+    },
+    {
+      "published": "2026-09-02",
+      "title": "公告本公司行情資訊傳輸系統訂於115年9月21日起終止傳送「臺灣指數公司臺灣期貨交易所智慧投資多因子30市場中立指數」之指數揭示資訊，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期規字1150600931號抄本.pdf"
+    },
+    {
+      "published": "2026-09-02",
+      "title": "公告更新「期貨商得受託從事期貨交易之國外期貨交易契約」",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/函1150800526_附件公告.pdf"
+    },
+    {
+      "published": "2026-09-01",
+      "title": "證交所「盤中零股委託及開盤時間與大盤同步」新制宣導",
+      "url": "https://www.taifex.com.tw/file/taifex/event/cht/zero9/index.html"
+    },
+    {
+      "published": "2026-08-28",
+      "title": "公告本公司臺指選擇權週五到期契約(契約代號:202608F4)最後結算價",
+      "url": "https://www.taifex.com.tw/cht/5/optIndxFSP?commodityIds=2&start_year=2025&start_month=08&end_year=2026&end_month=08"
+    },
+    {
+      "published": "2026-08-27",
+      "title": "公告調整本公司一詮期貨(UTF)保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17315"
+    },
+    {
+      "published": "2026-08-25",
+      "title": "公告115年「期貨市場多元商品推廣獎勵活動」辦法",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/公告115年期貨市場多元商品推廣獎勵活動辦法.pdf"
+    },
+    {
+      "published": "2026-08-24",
+      "title": "公告調整本公司全新期貨(GUF)保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17308"
+    },
+    {
+      "published": "2026-08-20",
+      "title": "公告本公司新增中光電投控期貨契約暨其上市相關事宜。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第11502016591號.pdf"
+    },
+    {
+      "published": "2026-08-20",
+      "title": "公告中光電期貨(代號NMF)，契約調整暨終止上市相關事宜。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/5371_20260903.pdf"
+    },
+    {
+      "published": "2026-08-19",
+      "title": "公告本公司微星選擇權(代號GIO)，自115年8月20日起終止上市。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/函_發文抄本+附件.pdf"
+    },
+    {
+      "published": "2026-08-19",
+      "title": "公告本公司各類指數期貨及選擇權2026年08月契約最後結算價",
+      "url": "https://www.taifex.com.tw/cht/5/futIndxFSP?commodityIds=1&commodityIds=3&commodityIds=4&commodityIds=5&commodityIds=12&commodityIds=13&commodityIds=15&commodityIds=32&commodityIds=34&commodityIds=35&commodityIds=37&commodityIds=38&commodityIds=40&start_year=2025&start_month=08&end_year=2026&end_month=08"
+    },
+    {
+      "published": "2026-08-17",
+      "title": "公告「115年縱橫期海Trade Like a Pro－大專院校模擬交易競賽」好學獎及程式交易獎得獎名單",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/得獎名單(13).pdf"
+    },
+    {
+      "published": "2026-08-14",
+      "title": "公告115年7月「黃金類商品交易獎勵活動」得獎名單",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/11507得獎名單(2).pdf"
+    },
+    {
+      "published": "2026-08-14",
+      "title": "公告調整本公司聯茂期貨契約(KBF)保證金適用比例及延長調整期間，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17282"
+    },
+    {
+      "published": "2026-08-14",
+      "title": "本公司自115年8月17日起提供結算會員自設盤後交易時段風 險警示自動通知服務，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/抄本(9).pdf"
+    },
+    {
+      "published": "2026-08-13",
+      "title": "公告115年7月「股票選擇權交易獎勵活動」得獎名單",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/11507得獎名單(1).pdf"
+    },
+    {
+      "published": "2026-08-11",
+      "title": "公告調整本公司晶豪科期貨(IIF)、聯茂期貨(KBF)及聯亞期 貨(OTF)保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17261"
+    },
+    {
+      "published": "2026-08-11",
+      "title": "公告調整臺股期貨(TX)等17檔股價指數類契約及元大台灣50ETF期貨(NYF)等9檔ETF類契約之保證金，並自115年8月12日一般交易時段結束後起實施，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17259"
+    },
+    {
+      "published": "2026-08-11",
+      "title": "公告更新「期貨商得受託從事期貨交易之國外期貨交易契約」",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/函_台期企字第1150800490號_公告附件.pdf"
+    },
+    {
+      "published": "2026-08-11",
+      "title": "公告115年7月「臺灣中型100期貨交易獎勵活動」得獎名單",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/11507得獎名單.pdf"
+    },
+    {
+      "published": "2026-08-10",
+      "title": "公告元大期貨股份有限公司台南分公司終止經營期貨經紀業務。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期輔字第1150002400.pdf"
+    },
+    {
+      "published": "2026-08-10",
+      "title": "公告中光電期貨(代號NMF)契約自115年8月11日起停止加掛新月份契約，並自115年8月24日起停止交易。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150002443號.pdf"
+    },
+    {
+      "published": "2026-08-10",
+      "title": "公告調整本公司川湖期貨(FGF)、小型川湖期貨(SVF)、全新期貨(GUF)、欣興期貨(IRF)、欣興選擇權(IRO)、景碩期貨(IXF)、健策期貨(JMF)、小型健策期貨(RGF)及台燿期貨(OVF)保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17253"
+    },
+    {
+      "published": "2026-08-07",
+      "title": "司法院「精神衛生法專家參審制度」宣導影片。",
+      "url": "https://reurl.cc/Ym94qX"
+    },
+    {
+      "published": "2026-08-06",
+      "title": "配合證券市場修正有價證券處置期間之規定，公告調整本公 司合晶期貨(PLF)、台勝科期貨(QDF)、南電期貨(LYF)及小 型南電期貨(QSF)保證金適用比例調整之期間，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17240"
+    },
+    {
+      "published": "2026-08-06",
+      "title": "公告更新「期貨商得受託從事期貨交易之國外期貨交易契約」",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/函_台期企字第1150800420號_公告附件.pdf"
+    },
+    {
+      "published": "2026-08-05",
+      "title": "公告本公司小型臺指期貨暨臺指選擇權週三到期契約(契約代號:202608W1)最後結算價",
+      "url": "https://www.taifex.com.tw/cht/5/futIndxFSP?commodityIds=1&start_year=2025&start_month=08&end_year=2026&end_month=08"
+    },
+    {
+      "published": "2026-08-04",
+      "title": "公告修正本公司「造市者報價、手續費折減及其他相關規定」，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17224"
+    },
+    {
+      "published": "2026-08-04",
+      "title": "檢送本公司115年9月至12月「股票期貨暨股票選擇權法人機構報價獎勵活動」辦法1份如附件，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17223"
+    },
+    {
+      "published": "2026-08-04",
+      "title": "檢送本公司115年9月至12月「法人機構報價獎勵活動(未含股票期貨暨選擇權)」辦法1份如附件，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17222"
+    },
+    {
+      "published": "2026-08-04",
+      "title": "公告本公司布蘭特原油期貨2026年09月契約最後結算價",
+      "url": "https://www.taifex.com.tw/cht/5/goldFSP?commodityIds=31&start_year=2025&start_month=09&end_year=2026&end_month=09"
+    },
+    {
+      "published": "2026-08-03",
+      "title": "115年7月份法規異動彙整",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/法規異動彙整11507.pdf"
+    },
+    {
+      "published": "2026-08-03",
+      "title": "公告調整本公司南電期貨(LYF)、小型南電期貨(QSF)及合晶期貨(PLF)保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17217"
+    },
+    {
+      "published": "2026-07-31",
+      "title": "公告調整本公司台勝科期貨(QDF)保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17211"
+    },
+    {
+      "published": "2026-07-31",
+      "title": "公告更新「期貨商得受託從事期貨交易之國外期貨交易契約」",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/函_台期企字第1150800466號.pdf"
+    },
+    {
+      "published": "2026-07-27",
+      "title": "公告本公司新增智通期貨、華城期貨、小型華城期貨、小型京元電子期貨及小型日月光投控期貨等5檔股票期貨契約暨其上市相關事宜。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150201495號公告.pdf"
+    },
+    {
+      "published": "2026-07-27",
+      "title": "期交所「115年縱橫期海Trade Like a Pro－大專院校模擬交易競賽」得獎名單",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/得獎名單(12).pdf"
+    },
+    {
+      "published": "2026-07-24",
+      "title": "公告調整本公司合晶期貨(PLF)保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17193"
+    },
+    {
+      "published": "2026-07-24",
+      "title": "公告本公司臺指選擇權週五到期契約(契約代號:202607F4)最後結算價",
+      "url": "https://www.taifex.com.tw/cht/5/optIndxFSP?commodityIds=2&start_year=2025&start_month=07&end_year=2026&end_month=07"
+    },
+    {
+      "published": "2026-07-22",
+      "title": "公告延長本公司信昌電期貨(PKF)保證金調整期間，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17185"
+    },
+    {
+      "published": "2026-07-21",
+      "title": "公告延長本公司華新科期貨(HBF)保證金調整期間，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17179"
+    },
+    {
+      "published": "2026-07-21",
+      "title": "公告調整本公司中纖期貨契約(EYF)所有月份保證金適用比例，並自115年7月22日一般交易時段結束後起實施，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17177"
+    },
+    {
+      "published": "2026-07-17",
+      "title": "公告調整本公司信昌電期貨(PKF)保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17171"
+    },
+    {
+      "published": "2026-07-16",
+      "title": "公告調整本公司華新科期貨(HBF)保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17167"
+    },
+    {
+      "published": "2026-07-15",
+      "title": "公告調整南亞期貨(CAF)等91檔股票類契約之保證金，並自115年7月16日一般交易時段結束後起實施，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17154"
+    },
+    {
+      "published": "2026-07-15",
+      "title": "公告本公司2026年07月份股票期貨與選擇權契約最後結算價",
+      "url": "https://www.taifex.com.tw/cht/5/sSFFSP"
+    },
+    {
+      "published": "2026-07-15",
+      "title": "公告本公司各類指數期貨及選擇權2026年07月契約最後結算價",
+      "url": "https://www.taifex.com.tw/cht/5/futIndxFSP?commodityIds=1&commodityIds=3&commodityIds=4&commodityIds=5&commodityIds=12&commodityIds=13&commodityIds=15&commodityIds=32&commodityIds=34&commodityIds=35&commodityIds=37&commodityIds=38&commodityIds=40&start_year=2025&start_month=07&end_year=2026&end_month=07"
+    },
+    {
+      "published": "2026-07-13",
+      "title": "公告修正本公司「店頭衍生性金融商品集中結算業務施行辦法」條文，並自即日起實施，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期結字第1150301485號(1).pdf"
+    },
+    {
+      "published": "2026-07-09",
+      "title": "因巴威颱風來襲，115年7月10日(星期五)臺灣期貨交易所集中交易市場休市1日(包含一般交易時段及盤後交易時段)，店頭集中結算業務暫停營業1日。本公司115年7月10日到期結算之臺指選擇權週五到期契約，其最後交易日及最後結算日順延至最近之次一營業日，另本公司115年7月到期東證期貨最後結算日順延至最近之次一營業日。原定於 7 月 10 日契約調整的4檔股票期貨及1檔股票選擇權，將同步順延至次一營業日。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17137"
+    },
+    {
+      "published": "2026-07-08",
+      "title": "公告本公司2026年07月份股票期貨與選擇權契約最後結算價",
+      "url": "https://www.taifex.com.tw/cht/5/sSFFSP"
+    },
+    {
+      "published": "2026-07-08",
+      "title": "公告本公司小型臺指期貨暨臺指選擇權週三到期契約(契約代號:202607W2)最後結算價",
+      "url": "https://www.taifex.com.tw/cht/5/futIndxFSP?commodityIds=1&start_year=2025&start_month=07&end_year=2026&end_month=07"
+    },
+    {
+      "published": "2026-07-07",
+      "title": "公告調整本公司中纖期貨(EYF)保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17126"
+    },
+    {
+      "published": "2026-07-07",
+      "title": "公告115年6月「股票選擇權交易獎勵活動」得獎名單",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/11506得獎名單(2).pdf"
+    },
+    {
+      "published": "2026-07-06",
+      "title": "公告115年6月「臺灣中型100期貨交易獎勵活動」得獎名單",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/11506得獎名單(1).pdf"
+    },
+    {
+      "published": "2026-07-06",
+      "title": "公告115年6月「美國費城半導體期貨及半導體30期貨交易獎勵活動」得獎名單",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/11506得獎名單.pdf"
+    },
+    {
+      "published": "2026-07-03",
+      "title": "公告調整本公司景碩期貨(IXF)保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17104"
+    },
+    {
+      "published": "2026-07-03",
+      "title": "公告115年第3季「黃金類商品交易獎勵活動」辦法",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/115年Q3黃金類商品交易獎勵活動.pdf"
+    },
+    {
+      "published": "2026-07-02",
+      "title": "臺灣期貨交易所於115年7月3日調高聯電期貨(CCF)及聯電選擇權(CCO)保證金適用比例為現行所屬級距適用比例之1.5倍。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17092"
+    },
+    {
+      "published": "2026-07-01",
+      "title": "公告本公司盤後交易時段之部位互抵作業，自115年7月6日起實施，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/document (6).pdf"
+    },
+    {
+      "published": "2026-07-01",
+      "title": "115年6月份法規異動彙整",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/法規異動彙整11506.pdf"
+    },
+    {
+      "published": "2026-07-01",
+      "title": "公告修訂本公司「期貨契約保證金計收方式」及「選擇權契 約保證金計收方式」，自115年7月6日起實施，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期結字第1150301327號函.pdf"
+    },
+    {
+      "published": "2026-07-01",
+      "title": "公告本公司「黃金類商品及非金電期貨契約」保證金金額及整戶風險保證金計收方式(SPAN)參數數值，並自115年7月6日一般交易時段起實施，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期結字第1150301341號(含附件).pdf"
+    },
+    {
+      "published": "2026-07-01",
+      "title": "公告修正本公司「造市者報價、手續費折減及其他相關規定」，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17080"
+    },
+    {
+      "published": "2026-07-01",
+      "title": "公告修正本公司115年5月至8月「法人機構報價獎勵活動(未含股票期貨暨選擇權)」辦法1份如附件，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17079"
+    },
+    {
+      "published": "2026-07-01",
+      "title": "配合本公司黃金類商品及非金電期貨契約規格調整，相關規章修正條文自115年7月6日起實施，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150201214號.pdf"
+    },
+    {
+      "published": "2026-06-30",
+      "title": "公告115年第3季「股票選擇權交易獎勵活動」辦法",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/115年第3季股票選擇權交易獎勵活動辦法.pdf"
+    },
+    {
+      "published": "2026-06-30",
+      "title": "公告115年第3季「電子選擇權交易獎勵活動」辦法",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/115年Q3電子選擇權交易獎勵活動.pdf"
+    },
+    {
+      "published": "2026-06-30",
+      "title": "公告115年第3季「臺灣中型100期貨交易獎勵活動」辦法",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/115Q3臺灣中型100期貨交易獎勵活動.pdf"
+    },
+    {
+      "published": "2026-06-30",
+      "title": "公告115年第3季「美國費城半導體期貨及半導體30期貨交易獎勵活動」辦法",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/115Q3費城半導體期貨及半導體30期貨交易獎勵活動.pdf"
+    },
+    {
+      "published": "2026-06-29",
+      "title": "公告本公司黃金類期貨及選擇權2026年06月契約最後結算價",
+      "url": "https://www.taifex.com.tw/cht/5/goldFSP?commodityIds=10&commodityIds=17&commodityIds=18&start_year=2025&start_month=06&end_year=2026&end_month=06"
+    },
+    {
+      "published": "2026-06-26",
+      "title": "公告調整本公司強茂期貨契約(GYF)及台半期貨契約(PEF)保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17049"
+    },
+    {
+      "published": "2026-06-26",
+      "title": "檢送本公司「辦理高資產客戶財富管理業務證券商發行新臺幣計價結構型商品獎勵活動辦法」1份，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/115年證券商高資產獎勵活動辦法.pdf"
+    },
+    {
+      "published": "2026-06-26",
+      "title": "公告本公司臺指選擇權週五到期契約(契約代號:202606F4)最後結算價",
+      "url": "https://www.taifex.com.tw/cht/5/optIndxFSP?commodityIds=2&start_year=2025&start_month=06&end_year=2026&end_month=06"
+    },
+    {
+      "published": "2026-06-25",
+      "title": "檢送本公司「辦理高資產客戶財富管理業務銀行發行新臺幣計價結構型商品獎勵活動辦法」1份，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/115年銀行高資產獎勵活動辦法.pdf"
+    },
+    {
+      "published": "2026-06-24",
+      "title": "公告調整本公司南亞期貨契約(CAF)、華新科期貨契約(HBF)及南亞選擇權契約(CAO)保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17031"
+    },
+    {
+      "published": "2026-06-24",
+      "title": "公告更新「期貨商得受託從事期貨交易之國外期貨交易契約」",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/函_公告.pdf"
+    },
+    {
+      "published": "2026-06-23",
+      "title": "公告修正本公司「期貨商申請緊急支應調整後淨資本額不足作業要點」條文，並自即日起實施，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期結字第1150301344號.pdf"
+    },
+    {
+      "published": "2026-06-22",
+      "title": "公告修正本公司「期貨經紀商受理期貨交易人存入保證金、權利金應行注意事項」第1條、第3條、第5條及第7條，並自即日起實施，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/Merged (43).pdf"
+    },
+    {
+      "published": "2026-06-22",
+      "title": "公告調整本公司全新期貨契約(GUF)、台勝科期貨契約 (QDF)、環球晶期貨契約(OWF)及小型環球晶期貨契約(PBF)所有月份保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17017"
+    },
+    {
+      "published": "2026-06-18",
+      "title": "公告本公司分配114年度現金股利案",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/1150618公告(分配114年度現金股利案).pdf"
+    },
+    {
+      "published": "2026-06-18",
+      "title": "公告本公司宏達電選擇權(代號HCO)，自115年6月22日起終 止上市。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/HCO_20260622終止上市(1).pdf"
+    },
+    {
+      "published": "2026-06-18",
+      "title": "公告調整本公司台光電期貨契約(PJF)及小型台光電期貨契約(SFF)所有月份保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=16998"
+    },
+    {
+      "published": "2026-06-17",
+      "title": "公告調整本公司信昌電期貨契約(PKF)所有月份保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=16993"
+    },
+    {
+      "published": "2026-06-17",
+      "title": "公告調整臺股期貨(TX)等18檔股價指數類契約及元大台灣50ETF期貨(NYF)等11檔ETF類契約之保證金，並自115年6月18日一般交易時段結束後起實施，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=16991"
+    },
+    {
+      "published": "2026-06-17",
+      "title": "公告本公司美元兌人民幣期貨(RHF)及小型美元兌人民幣期貨(RTF)2026年06月契約最後結算價",
+      "url": "https://www.taifex.com.tw/cht/5/fXFSP?commodityIds=19&commodityIds=20&commodityIds=22&commodityIds=23&start_year=2025&start_month=06&end_year=2026&end_month=06"
+    },
+    {
+      "published": "2026-06-12",
+      "title": "公告修正本公司「黃金期貨契約」、「新臺幣計價黃金期貨契約」、「黃金選擇權契約」及「臺灣證券交易所未含金融電子類股價指數期貨契約」交易規則及規格，以及「交易經手費收費標準」與「結算服務費收費標準」等條文，實施日期另行公告，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/1150200958_增修訂規章.pdf"
+    },
+    {
+      "published": "2026-06-12",
+      "title": "公告本公司東證期貨2026年06月契約最後結算價",
+      "url": "https://www.taifex.com.tw/cht/5/futIndxFSP?commodityIds=21&start_year=2025&start_month=06&end_year=2026&end_month=06"
+    },
+    {
+      "published": "2026-06-12",
+      "title": "公告本公司臺指選擇權週五到期契約(契約代號:202606F2)最後結算價",
+      "url": "https://www.taifex.com.tw/cht/5/optIndxFSP?commodityIds=2&start_year=2025&start_month=06&end_year=2026&end_month=06"
+    },
+    {
+      "published": "2026-06-11",
+      "title": "配合本公司國外成分證券ETF期貨及選擇權由現行單一漲跌幅限制±15%改採三階段漲跌幅限制，相關規章修正條文自115年7月6日起實施，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150001759號函.pdf"
+    },
+    {
+      "published": "2026-06-10",
+      "title": "公告貿聯-KY期貨（契約代號：VE）及小型貿聯-KY期貨（契 約代號：VF）自115年6月11日起恢復交易。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150201113號函.pdf"
+    },
+    {
+      "published": "2026-06-10",
+      "title": "公告更新「期貨商得受託從事期貨交易之國外期貨交易契約」",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/函_台期企字第1150800354號_公告附件.pdf"
+    },
+    {
+      "published": "2026-06-09",
+      "title": "公告貿聯-KY期貨（契約代號：VE）及小型貿聯-KY期貨（契約代號：VF）自115年6月10日起暫停交易。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/公告貿聯期貨及小型貿聯期貨暫停交易.pdf"
+    },
+    {
+      "published": "2026-06-08",
+      "title": "公告115年5月「股票選擇權交易獎勵活動」得獎名單",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/11505股票選擇權得獎名單.pdf"
+    },
+    {
+      "published": "2026-06-08",
+      "title": "公告115年5月「臺灣中型100期貨交易獎勵活動」得獎名單",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/115年5月得獎名單.pdf"
+    },
+    {
+      "published": "2026-06-08",
+      "title": "公告115年5月「美國費城半導體期貨及半導體30期貨交易獎勵活動」得獎名單",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/11505得獎名單.pdf"
+    },
+    {
+      "published": "2026-06-08",
+      "title": "公告調整本公司中纖期貨契約(EYF)所有月份保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=16936"
+    },
+    {
+      "published": "2026-06-08",
+      "title": "公告本公司期貨集中交易市場115年6月19日(星期五)端午節休市1日。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150201003號函.pdf"
+    },
+    {
+      "published": "2026-06-05",
+      "title": "因應期貨市場波動及成長，期貨商應確實注意調整後淨資本額占其未沖銷部位所需之客戶保證金總額之變化，控管規劃財務狀況，並適時申請緊急支應調整後淨資本額不足，以保障期貨交易人權益及維持市場正常運作，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期結字第1150301132號.pdf"
+    },
+    {
+      "published": "2026-06-05",
+      "title": "公告調整本公司金居期貨契約(PQF)所有月份保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=16928"
+    },
+    {
+      "published": "2026-06-04",
+      "title": "公告調整本公司群創期貨(DQF)、群創選擇權(DQO)、彩晶期貨(OEF)保證金適用比例及延長華新科期貨(HBF)保證金調整期間，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=16917"
+    },
+    {
+      "published": "2026-06-03",
+      "title": "公告調整本公司旺宏期貨契約(DIF)所有月份保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=16908"
+    },
+    {
+      "published": "2026-06-02",
+      "title": "公告調整本公司力積電期貨契約(QZF)所有月份保證金適用比例及延長合晶期貨契約(PLF)保證金調整期間，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=16902"
+    },
+    {
+      "published": "2026-06-01",
+      "title": "115年5月份法規異動彙整",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/法規異動彙整11505.pdf"
+    },
+    {
+      "published": "2026-06-01",
+      "title": "公告調整本公司彩晶期貨(OEF)、環球晶期貨(OWF)、小型環球晶期貨(PBF)保證金適用比例調整及延長華新科期貨(HBF)保證金調整期間，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=16891"
+    },
+    {
+      "published": "2026-05-29",
+      "title": "公告調整本公司力成期貨契約(KCF)及台勝科期貨契約(QDF)所有月份保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=16881"
+    },
+    {
+      "published": "2026-05-29",
+      "title": "公告本公司臺指選擇權週五到期契約(契約代號:202605F5)最後結算價",
+      "url": "https://www.taifex.com.tw/cht/5/optIndxFSP?commodityIds=2&start_year=2025&start_month=05&end_year=2026&end_month=05"
+    },
+    {
+      "published": "2026-05-28",
+      "title": "公告調整本公司景碩期貨契約(IXF)、同欣電期貨契約 (KDF)、臻鼎-KY期貨契約(LUF)、信昌電期貨契約(PKF)、合晶期貨契約(PLF)及新唐期貨契約(REF)所有月份保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=16875"
+    },
+    {
+      "published": "2026-05-27",
+      "title": "公告調整本公司全新期貨(GUF)、華新科期貨契約(HBF)所有月份保證金適用比例及延長華新科期貨契約(HBF)保證金調整期間，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=16871"
+    },
+    {
+      "published": "2026-05-27",
+      "title": "有關期貨商依本公司「期貨商申請緊急支應調整後淨資本額不足作業要點」規定，緊急支應調整後淨資本額不足之相關會計處理，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期結字第1150301072號.pdf"
+    },
+    {
+      "published": "2026-05-27",
+      "title": "公告更新「期貨商得受託從事期貨交易之國外期貨交易契約」",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/函_台期企字第1150800323號_公告附件.pdf"
+    },
+    {
+      "published": "2026-05-26",
+      "title": "公告修正本公司「股票期貨契約」交易規則與規格，自115年7月6日起實施，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150001529號函.pdf"
+    },
+    {
+      "published": "2026-05-26",
+      "title": "公告調整本公司國巨期貨契約(LXF)及小型國巨期貨契約 (QEF)所有月份保證金適用比例，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=16864"
+    },
+    {
+      "published": "2026-05-26",
+      "title": "公告調整臺股期貨(TX)等20檔股價指數類契約、元大台灣 50ETF期貨(NYF)等11檔ETF類契約及布蘭特原油期貨契約 (BRF)之保證金，並自115年5月27日一般交易時段結束後起實施，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=16862"
+    },
+    {
+      "published": "2026-05-22",
+      "title": "公告修正本公司「業務規則」第18條規定，並自即日起實施，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期輔字第1150001455號函.pdf"
+    },
+    {
+      "published": "2026-05-22",
+      "title": "公告本公司臺指選擇權週五到期契約(契約代號:202605F4)最後結算價",
+      "url": "https://www.taifex.com.tw/cht/5/optIndxFSP?commodityIds=2&start_year=2025&start_month=05&end_year=2026&end_month=05"
+    },
+    {
+      "published": "2026-05-20",
+      "title": "公告調整本公司大立光期貨契約(IJF)、小型大立光期貨契約(OLF)、貿聯-KY期貨契約(VEF)、小型貿聯-KY期貨契約 (VFF)及大立光選擇權契約(IJO)所有月份保證金適用比例， 請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=16854"
+    },
+    {
+      "published": "2026-05-15",
+      "title": "公告調整本公司華新科期貨契約(HBF)、元太期貨契約 (NVF)、金居期貨契約(PQF)所有月份保證金適用比例及延長 信昌電期貨契約(PKF)保證金調整期間，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=16846"
+    },
+    {
+      "published": "2026-05-15",
+      "title": "公告本公司臺指選擇權週五到期契約(契約代號:202605F3)最後結算價",
+      "url": "https://www.taifex.com.tw/cht/5/optIndxFSP?commodityIds=2&start_year=2025&start_month=05&end_year=2026&end_month=05"
+    },
+    {
+      "published": "2026-05-13",
+      "title": "公告正崴期貨（契約代號：GL）自115年5月14日起恢復交易。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150200874號函.pdf"
+    },
+    {
+      "published": "2026-05-13",
+      "title": "本公司與工商時報合辦「2026年期貨與選擇權論文徵集活動」，歡迎踴躍投稿。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=16839"
+    },
+    {
+      "published": "2026-05-13",
+      "title": "證券櫃檯買賣中心製作「國小版金融理財及永續教育分齡教案」數位資源，歡迎瀏覽及觀賞。",
+      "url": "https://www.tpex.org.tw/zh-tw/about/publication/lesson.html"
+    },
+    {
+      "published": "2026-05-12",
+      "title": "公告正崴期貨（契約代號：GL）自115年5月13日起暫停交易。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150200871號.pdf"
+    },
+    {
+      "published": "2026-05-11",
+      "title": "公告115年4月「股票選擇權交易獎勵活動」得獎名單",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/11504得獎名單(2).pdf"
+    },
+    {
+      "published": "2026-05-08",
+      "title": "公告115年4月「臺灣中型100期貨交易獎勵活動」得獎名單",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/11504得獎名單(1).pdf"
+    },
+    {
+      "published": "2026-05-08",
+      "title": "公告115年4月「美國費城半導體期貨及半導體30期貨交易獎勵活動」得獎名單",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/11504得獎名單.pdf"
+    },
+    {
+      "published": "2026-05-08",
+      "title": "公告本公司臺指選擇權週五到期契約(契約代號:202605F2)最後結算價",
+      "url": "https://www.taifex.com.tw/cht/5/optIndxFSP?commodityIds=2&start_year=2025&start_month=05&end_year=2026&end_month=05"
+    },
+    {
+      "published": "2026-05-04",
+      "title": "115年4月份法規異動彙整",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/法規異動彙整11504.pdf"
+    },
+    {
+      "published": "2026-04-27",
+      "title": "公告更新「期貨商得受託從事期貨交易之國外期貨交易契約」",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/函_台期企字第1150800263號.pdf"
+    },
+    {
+      "published": "2026-04-24",
+      "title": "公告本公司新增研華期貨、小型順達期貨及小型亞翔期貨等 3檔股票期貨契約暨其上市相關事宜。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150200729號(含附件).pdf"
+    },
+    {
+      "published": "2026-04-20",
+      "title": "公告本公司期貨集中交易市場115年5月1日(星期五)勞動節休市1日。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150200726號函.pdf"
+    },
+    {
+      "published": "2026-04-20",
+      "title": "法務部廉政署企業誠信微電影《幸福．勻勻仔行》，歡迎瀏覽及觀賞。",
+      "url": "https://www.youtube.com/watch?v=zf7SD17o8jI"
+    },
+    {
+      "published": "2026-04-20",
+      "title": "歡迎至法務部「打擊詐欺專區」中「宣導資源」下載及運用各項宣導影片、文宣。",
+      "url": "https://www.moj.gov.tw/2204/2645/181663/181667/Lpsimplelist"
+    },
+    {
+      "published": "2026-04-17",
+      "title": "115年度期貨商及證券商經營期貨交易輔助業務內部控制制度標準規範修正",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/115年度期貨商及證券商經營期貨交易輔助業務內部控制制度標準規範修正.pdf"
+    },
+    {
+      "published": "2026-04-15",
+      "title": "公告台新期貨股份有限公司期貨自營業務開始營業一案。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/Merged (28).pdf"
+    },
+    {
+      "published": "2026-04-15",
+      "title": "公告更新「期貨商得受託從事期貨交易之國外期貨交易契約」",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/函_台期企字第1150800239號_公告附件.pdf"
+    },
+    {
+      "published": "2026-04-10",
+      "title": "公告停止加掛本公司元晶期貨(代號：RL)新月份契約，並自 115年4月13日起實施。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150000998號.pdf"
+    },
+    {
+      "published": "2026-04-10",
+      "title": "歡迎參加「第十三屆台灣傑出金融業務『菁業獎』選拔活動」!",
+      "url": "https://web.tabf.org.tw/EliteAwards"
+    },
+    {
+      "published": "2026-04-10",
+      "title": "公告115年3月「股票選擇權交易獎勵活動」得獎名單",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/11503得獎名單(2).pdf"
+    },
+    {
+      "published": "2026-04-08",
+      "title": "公告115年3月「臺灣中型100期貨交易獎勵活動」得獎名單",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/11503得獎名單(1).pdf"
+    },
+    {
+      "published": "2026-04-08",
+      "title": "公告115年3月「美國費城半導體期貨及半導體30期貨交易獎勵活動」得獎名單",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/11503得獎名單.pdf"
+    },
+    {
+      "published": "2026-04-02",
+      "title": "公告修正本公司「股票期貨契約」交易規則、規格及「股票選擇權契約」交易規則、規格，實施日期另行公告，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150000840號函(2).pdf"
+    },
+    {
+      "published": "2026-04-01",
+      "title": "115年3月份法規異動彙整",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/法規異動彙整11503.pdf"
+    },
+    {
+      "published": "2026-03-30",
+      "title": "公告115年第2季「股票選擇權交易獎勵活動」辦法",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/115Q2股票選擇權交易獎勵活動辦法.pdf"
+    },
+    {
+      "published": "2026-03-30",
+      "title": "公告115年第2季「電子選擇權交易獎勵活動」辦法",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/115Q2電子選擇權交易獎勵活動辦法.pdf"
+    },
+    {
+      "published": "2026-03-30",
+      "title": "公告115年第2季「臺灣中型100期貨交易獎勵活動」辦法",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/115Q2臺灣中型100期貨交易獎勵活動辦法.pdf"
+    },
+    {
+      "published": "2026-03-30",
+      "title": "公告115年第2季「美國費城半導體期貨及半導體30期貨交易獎勵活動」辦法",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/115Q2費城半導體期貨交易獎勵活動辦法.pdf"
+    },
+    {
+      "published": "2026-03-27",
+      "title": "公告元富證券股份有限公司終止期貨自營業務。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期輔字第1150000759號函.pdf"
+    },
+    {
+      "published": "2026-03-26",
+      "title": "公告台新綜合證券股份有限公司兼營期貨自營業務開始營業一案。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/Merged (29).pdf"
+    },
+    {
+      "published": "2026-03-26",
+      "title": "配合本公司115年度上半年新業務新制度調整，爰增修電文 「TCP/IP TMP電文規範」及「檔案傳輸格式」，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期規字第1150600288號.pdf"
+    },
+    {
+      "published": "2026-03-25",
+      "title": "公告更新「期貨商得受託從事期貨交易之國外期貨交易契約」",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/函_台期企字第1150800173號_公告附件.pdf"
+    },
+    {
+      "published": "2026-03-24",
+      "title": "公告元富期貨股份有限公司終止期貨經紀、自營業務。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期輔字第1150000705號函.pdf"
+    },
+    {
+      "published": "2026-03-24",
+      "title": "公告台新期貨股份有限公司與元富期貨股份有限公司訂115 年4月6日為合併基準日。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期輔字第11500007361號函.pdf"
+    },
+    {
+      "published": "2026-03-18",
+      "title": "公告葡萄王期貨及華南金選擇權等12檔股票選擇權，自115 年3月19日起終止上市。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150200474號(含附件).pdf"
+    },
+    {
+      "published": "2026-03-17",
+      "title": "公告更新「期貨商得受託從事期貨交易之國外期貨交易契約」",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/函_台期企字第11508000361號.pdf"
+    },
+    {
+      "published": "2026-03-13",
+      "title": "公告115年4月4日兒童節適逢星期六及4月5日清明節適逢星期日，依規定於115年4月3日(星期五)及4月6日(星期一)補假2日，本公司期貨集中交易市場配合休市2日。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150200471號函.pdf"
+    },
+    {
+      "published": "2026-03-13",
+      "title": "公告更新「期貨商得受託從事期貨交易之國外期貨交易契約」",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/函_台期企字第1150800159號_公告附件.pdf"
+    },
+    {
+      "published": "2026-03-02",
+      "title": "公告更新「期貨商得受託從事期貨交易之國外期貨交易契約」",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/函_台期企字第1150800120號.pdf"
+    },
+    {
+      "published": "2026-03-02",
+      "title": "內政部警政署「165打詐儀錶板」推出AI智能客服小幫手，歡迎多加運用!",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/165 AI.png"
+    },
+    {
+      "published": "2026-03-02",
+      "title": "內政部警政署製作反詐宣導影片，歡迎下載及觀賞!",
+      "url": "https://drive.google.com/drive/folders/1Z44Fp_qFnGunHKlorVnAt7tpJZxHF9Og?usp=drive_link"
+    },
+    {
+      "published": "2026-02-10",
+      "title": "公告115年2月28日(星期六)為和平紀念日，依規定於115年2 月27日(星期五)補假一日，本公司期貨集中交易市場配合休市1日。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150200266號函.pdf"
+    },
+    {
+      "published": "2026-02-03",
+      "title": "檢送本公司「115年度期心期力 期貨商反詐治理評鑑活動」辦法乙份，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/反詐.pdf"
+    },
+    {
+      "published": "2026-02-01",
+      "title": "115年1月份法規異動彙整",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/法規異動彙整11501.pdf"
+    },
+    {
+      "published": "2026-01-29",
+      "title": "公告更新「期貨商得受託從事期貨交易之國外期貨交易契約」",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/函_函附件_公告_.pdf"
+    },
+    {
+      "published": "2026-01-28",
+      "title": "公告第12屆期貨鑽石獎活動辦法",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/第12屆期貨鑽石獎活動辦法(公告).pdf"
+    },
+    {
+      "published": "2026-01-27",
+      "title": "公告本公司南亞選擇權(契約代號：CA)及聯電選擇權(契約代號：CC)等2檔股票選擇權加掛週契約，自115年2月2日起實施，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150200141號.pdf"
+    },
+    {
+      "published": "2026-01-27",
+      "title": "公告本公司新增中砂期貨、順達期貨、貿聯-KY期貨、小型貿聯-KY期貨、小型金像電期貨及富邦科技ETF期貨等6檔股票期貨契約暨其上市相關事宜。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第11502001411號(含附件).pdf"
+    },
+    {
+      "published": "2026-01-21",
+      "title": "投保中心編印「獨立董事實戰手冊 I－看懂、問對、做好」電子書，歡迎多加運用!",
+      "url": "https://www.sfipc.org.tw/News_Link2.aspx?n=8724&sms=1341"
+    },
+    {
+      "published": "2026-01-20",
+      "title": "有關店頭衍生性金融商品集中結算連線處理費優惠期間展延事宜，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/店頭結算連線處理費優惠期間展延.pdf"
+    },
+    {
+      "published": "2026-01-14",
+      "title": "有關本公司提供「專營期貨商稽核人員取得國際資安證照」獎勵措施如說明。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/1150500040證照補助函及申請書.pdf"
+    },
+    {
+      "published": "2026-01-13",
+      "title": "為辦理期貨商核心系統之可容忍中斷時間評估作業，公告本(115)年度A級期貨商名單如附件，請查照。",
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=16523"
+    },
+    {
+      "published": "2026-01-06",
+      "title": "有關本公司提供「資安分級為第四級且提供網際網路下單服務之期貨商辦理資通安全健診」獎勵措施如說明，請查照。",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/資安健診獎勵辦法公告函.pdf"
+    },
+    {
+      "published": "2026-01-02",
+      "title": "114年12月份法規異動彙整",
+      "url": "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/法規異動彙整11412.pdf"
+    }
+  ],
+  "pagination_verified": false,
+  "all_year_filters_verified": true,
   "unmatched_special_dates": [
     [
       "2024-07-24",
@@ -199,13 +1605,9 @@
     ],
     [
       "2026-07-10"
-    ],
-    [
-      "2026-10-23"
     ]
   ],
   "blockers": [
-    "historical_year_filters_not_all_verified",
     "archive_pagination_and_total_not_proven",
     "independent_official_txf_2023_11_13_pending"
   ]
