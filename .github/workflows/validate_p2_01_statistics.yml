@@ -1,0 +1,48 @@
+name: P2-01 statistical backtest validation
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/validate_p2_01_statistics.yml'
+permissions:
+  contents: write
+jobs:
+  statistical-validation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m py_compile scripts/validate_p2_01_statistics.py
+      - run: python scripts/validate_p2_01_statistics.py
+      - name: Validate confusion matrices and strict research-only gate
+        run: |
+          python - <<'PY'
+          import json
+          r=json.load(open('docs/p2_01_statistical_validation.json',encoding='utf-8'))
+          assert r['status']=='statistical_validation_completed'
+          assert r['full_model_backtest_authorized'] is False
+          assert r['recommended_live_threshold'] is None
+          for h,v in r['holdout'].items():
+            m=v['confusion_matrix']
+            assert m['tp']+m['fp']+m['fn']+m['tn']==m['n']
+            assert v['circular_shift_null']['shifts_evaluated']==m['n']-1
+            assert v['moving_block_bootstrap']['replicates_valid']>2900
+            print(h,'p',v['circular_shift_null']['p_value'],'significant',v['nominal_significance_0_05'])
+          PY
+      - name: Commit validation report
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/p2_01_statistical_validation.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Save P2-01 dependence-aware statistical validation [skip ci]'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
