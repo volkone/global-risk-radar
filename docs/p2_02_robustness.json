@@ -1,0 +1,403 @@
+{
+  "stage": "P2-02",
+  "status": "descriptive_robustness_completed",
+  "input_sha256": "20e0c7ecf9ead9393b6f1518b1c6cb659ea2745335c00293a253808c4777edc8",
+  "regime_definition": "Past 20-session TAIEX return: >2% up, <-2% down, otherwise sideways; chosen for descriptive slicing, not optimization",
+  "time_slices": "Two contiguous halves of fixed original 30% holdout; no reshuffle",
+  "ablation": "Drop one feature, recompute percentile-average score and alert threshold on training only; same holdout dates",
+  "holdout": {
+    "5d": {
+      "overall": {
+        "n": 211,
+        "alerts": 58,
+        "events": 53,
+        "hits": 25,
+        "precision": 0.43103448275862066,
+        "recall": 0.4716981132075472,
+        "base_rate": 0.25118483412322273,
+        "precision_minus_base_rate": 0.17984964863539793,
+        "adequate_for_descriptive_comparison": true
+      },
+      "temporal_halves": {
+        "first_half": {
+          "n": 105,
+          "alerts": 24,
+          "events": 18,
+          "hits": 9,
+          "precision": 0.375,
+          "recall": 0.5,
+          "base_rate": 0.17142857142857143,
+          "precision_minus_base_rate": 0.20357142857142857,
+          "adequate_for_descriptive_comparison": true
+        },
+        "second_half": {
+          "n": 106,
+          "alerts": 34,
+          "events": 35,
+          "hits": 16,
+          "precision": 0.47058823529411764,
+          "recall": 0.45714285714285713,
+          "base_rate": 0.330188679245283,
+          "precision_minus_base_rate": 0.14039955604883464,
+          "adequate_for_descriptive_comparison": true
+        }
+      },
+      "past_only_trend_regimes": {
+        "up_20d": {
+          "n": 157,
+          "alerts": 24,
+          "events": 38,
+          "hits": 12,
+          "precision": 0.5,
+          "recall": 0.3157894736842105,
+          "base_rate": 0.24203821656050956,
+          "precision_minus_base_rate": 0.25796178343949044,
+          "adequate_for_descriptive_comparison": true
+        },
+        "down_20d": {
+          "n": 24,
+          "alerts": 22,
+          "events": 9,
+          "hits": 9,
+          "precision": 0.4090909090909091,
+          "recall": 1.0,
+          "base_rate": 0.375,
+          "precision_minus_base_rate": 0.034090909090909116,
+          "adequate_for_descriptive_comparison": false
+        },
+        "sideways_20d": {
+          "n": 30,
+          "alerts": 12,
+          "events": 6,
+          "hits": 4,
+          "precision": 0.3333333333333333,
+          "recall": 0.6666666666666666,
+          "base_rate": 0.2,
+          "precision_minus_base_rate": 0.1333333333333333,
+          "adequate_for_descriptive_comparison": true
+        },
+        "unknown": {
+          "n": 0,
+          "alerts": 0,
+          "events": 0,
+          "hits": 0,
+          "precision": null,
+          "recall": null,
+          "base_rate": null,
+          "precision_minus_base_rate": null,
+          "adequate_for_descriptive_comparison": false
+        }
+      },
+      "leave_one_factor_out": {
+        "foreign_tx_short_pressure": {
+          "without_factor": {
+            "n": 211,
+            "alerts": 47,
+            "events": 53,
+            "hits": 17,
+            "precision": 0.3617021276595745,
+            "recall": 0.32075471698113206,
+            "base_rate": 0.25118483412322273,
+            "precision_minus_base_rate": 0.11051729353635176,
+            "adequate_for_descriptive_comparison": true
+          },
+          "delta_precision_vs_full": -0.06933235509904617,
+          "delta_recall_vs_full": -0.15094339622641512,
+          "alert_threshold_reestimated_using_training_only": 64.49064449064448,
+          "interpretation": "Diagnostic leave-one-out with reestimated training-only threshold; not causal attribution"
+        },
+        "margin_deleveraging_20d": {
+          "without_factor": {
+            "n": 211,
+            "alerts": 78,
+            "events": 53,
+            "hits": 31,
+            "precision": 0.3974358974358974,
+            "recall": 0.5849056603773585,
+            "base_rate": 0.25118483412322273,
+            "precision_minus_base_rate": 0.14625106331267468,
+            "adequate_for_descriptive_comparison": true
+          },
+          "delta_precision_vs_full": -0.03359858532272325,
+          "delta_recall_vs_full": 0.1132075471698113,
+          "alert_threshold_reestimated_using_training_only": 67.15176715176715,
+          "interpretation": "Diagnostic leave-one-out with reestimated training-only threshold; not causal attribution"
+        },
+        "institutional_net_selling_5d": {
+          "without_factor": {
+            "n": 211,
+            "alerts": 55,
+            "events": 53,
+            "hits": 18,
+            "precision": 0.32727272727272727,
+            "recall": 0.33962264150943394,
+            "base_rate": 0.25118483412322273,
+            "precision_minus_base_rate": 0.07608789314950454,
+            "adequate_for_descriptive_comparison": true
+          },
+          "delta_precision_vs_full": -0.10376175548589339,
+          "delta_recall_vs_full": -0.13207547169811323,
+          "alert_threshold_reestimated_using_training_only": 64.19958419958421,
+          "interpretation": "Diagnostic leave-one-out with reestimated training-only threshold; not causal attribution"
+        },
+        "twd_depreciation_20d": {
+          "without_factor": {
+            "n": 211,
+            "alerts": 59,
+            "events": 53,
+            "hits": 19,
+            "precision": 0.3220338983050847,
+            "recall": 0.3584905660377358,
+            "base_rate": 0.25118483412322273,
+            "precision_minus_base_rate": 0.07084906418186199,
+            "adequate_for_descriptive_comparison": true
+          },
+          "delta_precision_vs_full": -0.10900058445353594,
+          "delta_recall_vs_full": -0.11320754716981135,
+          "alert_threshold_reestimated_using_training_only": 66.52806652806653,
+          "interpretation": "Diagnostic leave-one-out with reestimated training-only threshold; not causal attribution"
+        },
+        "hy_oas_widening_20d": {
+          "without_factor": {
+            "n": 211,
+            "alerts": 54,
+            "events": 53,
+            "hits": 21,
+            "precision": 0.3888888888888889,
+            "recall": 0.39622641509433965,
+            "base_rate": 0.25118483412322273,
+            "precision_minus_base_rate": 0.13770405476566616,
+            "adequate_for_descriptive_comparison": true
+          },
+          "delta_precision_vs_full": -0.04214559386973177,
+          "delta_recall_vs_full": -0.07547169811320753,
+          "alert_threshold_reestimated_using_training_only": 66.27858627858627,
+          "interpretation": "Diagnostic leave-one-out with reestimated training-only threshold; not causal attribution"
+        },
+        "prior_us_vix_level": {
+          "without_factor": {
+            "n": 211,
+            "alerts": 61,
+            "events": 53,
+            "hits": 25,
+            "precision": 0.4098360655737705,
+            "recall": 0.4716981132075472,
+            "base_rate": 0.25118483412322273,
+            "precision_minus_base_rate": 0.15865123145054777,
+            "adequate_for_descriptive_comparison": true
+          },
+          "delta_precision_vs_full": -0.02119841718485016,
+          "delta_recall_vs_full": 0.0,
+          "alert_threshold_reestimated_using_training_only": 65.61330561330563,
+          "interpretation": "Diagnostic leave-one-out with reestimated training-only threshold; not causal attribution"
+        }
+      },
+      "holdout_range": [
+        "2025-12-05",
+        "2026-10-21"
+      ]
+    },
+    "20d": {
+      "overall": {
+        "n": 196,
+        "alerts": 49,
+        "events": 45,
+        "hits": 28,
+        "precision": 0.5714285714285714,
+        "recall": 0.6222222222222222,
+        "base_rate": 0.22959183673469388,
+        "precision_minus_base_rate": 0.34183673469387754,
+        "adequate_for_descriptive_comparison": true
+      },
+      "temporal_halves": {
+        "first_half": {
+          "n": 98,
+          "alerts": 24,
+          "events": 15,
+          "hits": 11,
+          "precision": 0.4583333333333333,
+          "recall": 0.7333333333333333,
+          "base_rate": 0.15306122448979592,
+          "precision_minus_base_rate": 0.3052721088435374,
+          "adequate_for_descriptive_comparison": true
+        },
+        "second_half": {
+          "n": 98,
+          "alerts": 25,
+          "events": 30,
+          "hits": 17,
+          "precision": 0.68,
+          "recall": 0.5666666666666667,
+          "base_rate": 0.30612244897959184,
+          "precision_minus_base_rate": 0.3738775510204082,
+          "adequate_for_descriptive_comparison": true
+        }
+      },
+      "past_only_trend_regimes": {
+        "up_20d": {
+          "n": 144,
+          "alerts": 17,
+          "events": 30,
+          "hits": 13,
+          "precision": 0.7647058823529411,
+          "recall": 0.43333333333333335,
+          "base_rate": 0.20833333333333334,
+          "precision_minus_base_rate": 0.5563725490196078,
+          "adequate_for_descriptive_comparison": true
+        },
+        "down_20d": {
+          "n": 24,
+          "alerts": 22,
+          "events": 8,
+          "hits": 8,
+          "precision": 0.36363636363636365,
+          "recall": 1.0,
+          "base_rate": 0.3333333333333333,
+          "precision_minus_base_rate": 0.03030303030303033,
+          "adequate_for_descriptive_comparison": false
+        },
+        "sideways_20d": {
+          "n": 28,
+          "alerts": 10,
+          "events": 7,
+          "hits": 7,
+          "precision": 0.7,
+          "recall": 1.0,
+          "base_rate": 0.25,
+          "precision_minus_base_rate": 0.44999999999999996,
+          "adequate_for_descriptive_comparison": false
+        },
+        "unknown": {
+          "n": 0,
+          "alerts": 0,
+          "events": 0,
+          "hits": 0,
+          "precision": null,
+          "recall": null,
+          "base_rate": null,
+          "precision_minus_base_rate": null,
+          "adequate_for_descriptive_comparison": false
+        }
+      },
+      "leave_one_factor_out": {
+        "foreign_tx_short_pressure": {
+          "without_factor": {
+            "n": 196,
+            "alerts": 41,
+            "events": 45,
+            "hits": 20,
+            "precision": 0.4878048780487805,
+            "recall": 0.4444444444444444,
+            "base_rate": 0.22959183673469388,
+            "precision_minus_base_rate": 0.2582130413140866,
+            "adequate_for_descriptive_comparison": true
+          },
+          "delta_precision_vs_full": -0.08362369337979092,
+          "delta_recall_vs_full": -0.1777777777777778,
+          "alert_threshold_reestimated_using_training_only": 64.49064449064448,
+          "interpretation": "Diagnostic leave-one-out with reestimated training-only threshold; not causal attribution"
+        },
+        "margin_deleveraging_20d": {
+          "without_factor": {
+            "n": 196,
+            "alerts": 66,
+            "events": 45,
+            "hits": 33,
+            "precision": 0.5,
+            "recall": 0.7333333333333333,
+            "base_rate": 0.22959183673469388,
+            "precision_minus_base_rate": 0.27040816326530615,
+            "adequate_for_descriptive_comparison": true
+          },
+          "delta_precision_vs_full": -0.0714285714285714,
+          "delta_recall_vs_full": 0.11111111111111105,
+          "alert_threshold_reestimated_using_training_only": 67.15176715176715,
+          "interpretation": "Diagnostic leave-one-out with reestimated training-only threshold; not causal attribution"
+        },
+        "institutional_net_selling_5d": {
+          "without_factor": {
+            "n": 196,
+            "alerts": 47,
+            "events": 45,
+            "hits": 20,
+            "precision": 0.425531914893617,
+            "recall": 0.4444444444444444,
+            "base_rate": 0.22959183673469388,
+            "precision_minus_base_rate": 0.19594007815892314,
+            "adequate_for_descriptive_comparison": true
+          },
+          "delta_precision_vs_full": -0.14589665653495437,
+          "delta_recall_vs_full": -0.1777777777777778,
+          "alert_threshold_reestimated_using_training_only": 64.19958419958421,
+          "interpretation": "Diagnostic leave-one-out with reestimated training-only threshold; not causal attribution"
+        },
+        "twd_depreciation_20d": {
+          "without_factor": {
+            "n": 196,
+            "alerts": 52,
+            "events": 45,
+            "hits": 21,
+            "precision": 0.40384615384615385,
+            "recall": 0.4666666666666667,
+            "base_rate": 0.22959183673469388,
+            "precision_minus_base_rate": 0.17425431711145997,
+            "adequate_for_descriptive_comparison": true
+          },
+          "delta_precision_vs_full": -0.16758241758241754,
+          "delta_recall_vs_full": -0.15555555555555556,
+          "alert_threshold_reestimated_using_training_only": 66.52806652806653,
+          "interpretation": "Diagnostic leave-one-out with reestimated training-only threshold; not causal attribution"
+        },
+        "hy_oas_widening_20d": {
+          "without_factor": {
+            "n": 196,
+            "alerts": 49,
+            "events": 45,
+            "hits": 27,
+            "precision": 0.5510204081632653,
+            "recall": 0.6,
+            "base_rate": 0.22959183673469388,
+            "precision_minus_base_rate": 0.3214285714285714,
+            "adequate_for_descriptive_comparison": true
+          },
+          "delta_precision_vs_full": -0.020408163265306145,
+          "delta_recall_vs_full": -0.022222222222222254,
+          "alert_threshold_reestimated_using_training_only": 66.27858627858627,
+          "interpretation": "Diagnostic leave-one-out with reestimated training-only threshold; not causal attribution"
+        },
+        "prior_us_vix_level": {
+          "without_factor": {
+            "n": 196,
+            "alerts": 51,
+            "events": 45,
+            "hits": 28,
+            "precision": 0.5490196078431373,
+            "recall": 0.6222222222222222,
+            "base_rate": 0.22959183673469388,
+            "precision_minus_base_rate": 0.31942777110844345,
+            "adequate_for_descriptive_comparison": true
+          },
+          "delta_precision_vs_full": -0.022408963585434094,
+          "delta_recall_vs_full": 0.0,
+          "alert_threshold_reestimated_using_training_only": 65.61330561330563,
+          "interpretation": "Diagnostic leave-one-out with reestimated training-only threshold; not causal attribution"
+        }
+      },
+      "holdout_range": [
+        "2025-12-05",
+        "2026-09-29"
+      ]
+    }
+  },
+  "warnings": [
+    "Exploratory subgroup comparisons; no statistical significance claims",
+    "Small regime groups and overlapping outcomes can distort results",
+    "Correlated factors mean ablation is not causal feature importance",
+    "Only one holdout period; no walk-forward validation yet",
+    "Do not choose best feature combination using these holdout results",
+    "Historical FRED vintage and TXF official one-day source remain uncertified"
+  ],
+  "full_model_validated": false,
+  "full_model_backtest_authorized": false,
+  "recommended_live_threshold": null
+}
