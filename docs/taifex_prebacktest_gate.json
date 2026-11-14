@@ -1,7 +1,8 @@
 {
   "blockers": [
     "full_notice_sweep_not_verified",
-    "primary_evidence_not_complete"
+    "primary_evidence_not_complete",
+    "2023-11-13_official_source_not_independently_verified"
   ],
   "evidence_urls_accessible": true,
   "record_count": 718,
@@ -12,5 +13,11 @@
   "full_notice_sweep_verified": false,
   "primary_evidence_complete": false,
   "independent_taifex_calendar_verified": false,
-  "full_model_backtest_authorized": false
+  "full_model_backtest_authorized": false,
+  "raw_source_values_verified": 717,
+  "raw_source_values_expected": 718,
+  "raw_source_unverified_dates": [
+    "2023-11-13"
+  ],
+  "official_historical_data_request_required": true
 }
