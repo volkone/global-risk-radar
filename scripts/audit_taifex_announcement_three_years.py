@@ -22,8 +22,9 @@ class Rows(HTMLParser):
    self.cell["links"].append({"url":urllib.parse.urljoin(URL,self.anchor["href"]),"title":" ".join(" ".join(self.anchor["parts"]).split())});self.anchor=None
   if tag=="td" and self.cell is not None:self.row.append(self.cell);self.cell=None
   if tag=="tr" and self.row is not None:self.rows.append(self.row);self.row=None
-def request(year,mode):
+def request(year,mode,extra=None):
  fields={"query_year":str(year)}
+ fields.update(extra or {})
  if mode=="post":data=urllib.parse.urlencode(fields).encode();url=URL
  else:data=None;url=URL+"?"+urllib.parse.urlencode(fields)
  req=urllib.request.Request(url,data=data,headers={"User-Agent":"Mozilla/5.0","Content-Type":"application/x-www-form-urlencoded"})
@@ -60,8 +61,20 @@ def main():
   official=entry.get("official_url","")
   matches=[x for x in report["records"] if any(d.replace("-","/") in x["title"] or d in x["title"] for d in dates) or (official and x["url"] and urllib.parse.parse_qs(urllib.parse.urlparse(x["url"]).query).get("idx")==urllib.parse.parse_qs(urllib.parse.urlparse(official).query).get("idx") and "idx=" in official)]
   report["special_date_reconciliation"].append({"dates":dates,"reason":entry["reason"],"known_official_url":official,"matching_archive_records":matches[:12],"matched":bool(matches),"note":"A missing match does not negate separately verified official primary evidence"})
+ # Probe pagination parameters conservatively. A different response alone does not establish traversal.
+ report["pagination_probes"]=[]
+ for year in YEARS:
+  baseline=next((a for a in report["years"] if a["year"]==year),None)
+  if not baseline or not baseline["verified_year_filter"]:continue
+  for fields in ({"pageSize":"10"},{"pageSize":"10","pageNo":"2"},{"pageSize":"10","pageNum":"2"},{"pageSize":"10","page":"2"}):
+   try:
+    q=request(year,"post",fields)
+    report["pagination_probes"].append({"year":year,"fields":fields,"status":q["http_status"],"record_count":q["record_count"],"year_match":q["year_match"],"sha256":q["sha256"],"first_urls":[x["url"] for x in q["records"][:3]]})
+   except Exception as e:report["pagination_probes"].append({"year":year,"fields":fields,"error":str(e)[:200]})
  report["pagination_verified"]=False
  report["all_year_filters_verified"]=all(x["verified_year_filter"] for x in report["years"])
+ # Distinguish a notice absent from the listing from independently verified primary evidence.
+ report["primary_evidence_reconciliation"]=[{"dates":e["dates"],"status":e.get("status"),"official_url":e.get("official_url"),"primary_evidence_already_verified":e.get("status") in ("verified_primary","previously_verified_primary","verified_direct_page")} for e in evidence["special_dates"]]
  report["unmatched_special_dates"]=[x["dates"] for x in report["special_date_reconciliation"] if not x["matched"]]
  report["blockers"]=["historical_year_filters_not_all_verified"] if not report["all_year_filters_verified"] else []
  report["blockers"]+=["archive_pagination_and_total_not_proven","independent_official_txf_2023_11_13_pending"]
