@@ -32,11 +32,11 @@ def request(year,mode):
  records=[]
  # Archive pagination metadata is diagnostic until total pages and navigation are proven.
  html=raw.decode("utf-8","replace")
- pagination={"page_parameters":sorted(set(re.findall(r'(?:pageNo|pageNum|pageIndex|pageSize|currentPage|totalPage|totalCount|page=)',html,re.I))),"pagination_contexts":[html[max(0,m.start()-140):m.start()+180] for m in list(re.finditer(r'(?:下一頁|末頁|總筆數|共\\s*\\d+\\s*頁|pageNo|pageNum|pageIndex|totalPage)',html,re.I))[:12]]}
+ pagination={"page_parameters":sorted(set(re.findall(r'(?:pageNo|pageNum|pageIndex|pageSize|currentPage|totalPage|totalCount|page=)',html,re.I))),"pagination_contexts":[html[max(0,m.start()-140):m.start()+180] for m in list(re.finditer(r'(?:下一頁|末頁|總筆數|共\\s*\d+\\s*頁|pageNo|pageNum|pageIndex|totalPage)',html,re.I))[:12]]}
  for row in parser.rows:
   if len(row)<2:continue
   date=" ".join(" ".join(row[0]["parts"]).split())
-  if not re.fullmatch(r"20\\d{2}/\\d{1,2}/\\d{1,2}",date):continue
+  if not re.fullmatch(r"20\d{2}/\d{1,2}/\d{1,2}",date):continue
   title=" ".join(" ".join(row[1]["parts"]).split())
   links=row[1]["links"]
   if title:records.append({"published":date.replace("/","-"),"title":title,"url":links[0]["url"] if links else None})
