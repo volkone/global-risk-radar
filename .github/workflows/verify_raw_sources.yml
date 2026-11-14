@@ -1,0 +1,44 @@
+name: Independently recheck TAIFEX source hashes
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/verify_raw_sources.yml']
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Maximum raw source downloads per run (1-30)'
+        required: false
+        default: '20'
+permissions:
+  contents: write
+concurrency:
+  group: taifex-independent-source-verification
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Independently download and hash-check bounded source batch
+        env:
+          LIMIT: ${{ inputs.limit || '20' }}
+        run: python scripts/refetch_taifex_hashes.py --limit "$LIMIT"
+      - name: Save verification ledger and summary
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add storage/verification/taifex_sha256_recheck.json docs/taifex_raw_hash_recheck.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Checkpoint independent TAIFEX source verification [skip ci]'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: taifex-raw-source-hash-audit
+          path: docs/taifex_raw_hash_recheck.json
