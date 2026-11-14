@@ -1,7 +1,5 @@
 name: Verify TWSE historical backfill
 on:
-  schedule:
-    - cron: '43 1,5,9,13 * * *'
   workflow_dispatch:
     inputs:
       month:
