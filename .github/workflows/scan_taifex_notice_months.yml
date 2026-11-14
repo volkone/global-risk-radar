@@ -30,9 +30,13 @@ jobs:
           j=json.load(open('docs/taifex_notice_monthly_audit.json'))
           assert len(j['months'])==36
           assert not any(m.get('error') for m in j['months']), 'Monthly scan contains parser/runtime errors'
+          assert 'positive_controls' in j, 'Missing known-notice positive controls'
           assert j['full_notice_sweep_verified'] is False
           assert j['full_model_backtest_authorized'] is False
           print('Months queried:',j['all_months_queried'])
+          print('Known notice controls:',j['positive_controls'])
+          if not j['positive_controls']['passed']:
+            print('WARNING: known TAIFEX closure notices were not recovered; P1 remains blocked')
           PY
       - name: Commit evidence
         if: always()
