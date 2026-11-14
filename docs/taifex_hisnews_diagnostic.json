@@ -1,0 +1,89 @@
+{
+  "source": "https://www.taifex.com.tw/cht/11/hisNews",
+  "get_status": 200,
+  "post_status": 200,
+  "form": {
+    "action": "hisNews",
+    "method": "post",
+    "fields": [
+      {
+        "tag": "input",
+        "name": "isQuery",
+        "type": "hidden",
+        "value": ""
+      },
+      {
+        "tag": "input",
+        "name": "queryStartDate",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "tag": "input",
+        "name": "queryEndDate",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "tag": "select",
+        "name": "newsType",
+        "type": null,
+        "value": null
+      },
+      {
+        "tag": "input",
+        "name": "queryKeyWord",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "tag": "input",
+        "name": "button5",
+        "type": "button",
+        "value": "送出查詢"
+      }
+    ]
+  },
+  "query": {
+    "isQuery": "Y",
+    "queryStartDate": "2024/07/01",
+    "queryEndDate": "2024/07/31",
+    "newsType": "",
+    "queryKeyWord": ""
+  },
+  "post_sha256": "762f0bef16e9119576fb389ce003a2d5325ab846569ed9d4b5863606d32e469f",
+  "post_bytes": 114297,
+  "post_title_context": [
+    "ty=\"og:image\" -->\r\n<!-- \tcontent=\"https://www.taifex.com.tw/chinese/images/fb_logo.jpg\" /> -->\r\n<!-- <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" /> -->\r\n<!-- <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"> -->\r\n<title>臺灣期貨交易所-最新消息-歷史資料區</title>\r\n<!-- favicon -->\r\n<link rel=\"shortcut icon\" type=\"image/x-icon\"\r\n\thref=\"/cht/resources/front/cht/images/favicon.ico\">\r\n<meta property=\"og:type\" content=\"website\" />\r\n<meta property=\"og:title\" content=\"臺灣期貨交易所\" />\r\n<meta name=\"description\" content=\"臺灣期貨交易所網站摘要\">\r\n<meta property=\"og:image\"\r\n\tcontent=\"http://www.taifex.com.tw/cht/images/fb_logo.jpg\" />\r"
+  ],
+  "post_results_context": [
+    "div>\r\n\t\t<div class=\"swiper-control\">\r\n\t\t\t<div class=\"swiper-pagination\"></div>\r\n\t\t</div>\r\n<!-- \t\t<div class=\"swiper-button-prev\"></div> -->\r\n<!-- \t\t<div class=\"swiper-button-next\"></div> -->\r\n</div>\r\n</div>\r\n<!--小網 緊急公告 ann-->\r\n<div class=\"pagesize\">\r\n\t</div>\r\n\r\n<!-- JS -->\r\n<script src=\"/cht/resources/front/js/swiper-bundle.min.js\"></script>\r\n\r\n<script>\r\n(function() {\r\n\r\n\r\n\r\n\t  // 大圖輪播\r\n\t  var indexBSwiper = new Swiper('.vision .swiper', {\r\n\t    effect: 'creative',\r\n\t    speed: 600,\r\n\t    slidesPerView: 1,\r\n\t    grabCursor: true,\r\n\t    creativeEffect: {\r\n\t      prev: {\r\n\t        shadow: false,\r\n\t        opacity: 0,\r\n\t  "
+  ],
+  "post_form_context": [
+    "_box\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"query_caption\">歷史資料查詢</div>\r\n\t\t\t\t\t\t\t\t\t<fieldset>\r\n\t\t\t\t\t\t\t\t\t\t<legend class=\"free_none\">歷史資料查詢</legend>\r\n\t\t\t\t\t\t\t\t\t\t<ul class=\"query_list\">\r\n\t\t\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"tit\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<label for=\"queryStartDate\">日期(起)：</label>\r\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"box\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"queryStartDate\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tid=\"queryStartDate\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tvalue=\"2024/07/01\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"tit\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<label for=\"queryEndDate\">日期(迄)：</label>\r\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=",
+    "</legend>\r\n\t\t\t\t\t\t\t\t\t\t<ul class=\"query_list\">\r\n\t\t\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"tit\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<label for=\"queryStartDate\">日期(起)：</label>\r\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"box\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"queryStartDate\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tid=\"queryStartDate\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tvalue=\"2024/07/01\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"tit\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<label for=\"queryEndDate\">日期(迄)：</label>\r\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"box\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"queryEndDate\" id=\"queryEndDate\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tvalue=\"2024/07/31\" />\r\n\t\t\t\t\t",
+    "ry_list\">\r\n\t\t\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"tit\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<label for=\"queryStartDate\">日期(起)：</label>\r\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"box\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"queryStartDate\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tid=\"queryStartDate\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tvalue=\"2024/07/01\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"tit\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<label for=\"queryEndDate\">日期(迄)：</label>\r\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"box\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"queryEndDate\" id=\"queryEndDate\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tvalue=\"2024/07/31\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t\t</li>\r\n\t\t",
+    "\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"queryStartDate\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tid=\"queryStartDate\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tvalue=\"2024/07/01\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"tit\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<label for=\"queryEndDate\">日期(迄)：</label>\r\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"box\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"queryEndDate\" id=\"queryEndDate\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tvalue=\"2024/07/31\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"tit\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"web\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <label\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tfor=\"newsType\">類別：</label>",
+    "7/01\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"tit\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<label for=\"queryEndDate\">日期(迄)：</label>\r\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"box\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"queryEndDate\" id=\"queryEndDate\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tvalue=\"2024/07/31\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"tit\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"web\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <label\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tfor=\"newsType\">類別：</label>\r\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"box\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<select id=\"newsType\" name=\"newsType\"><option value=\"",
+    "\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"tit\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<label for=\"queryEndDate\">日期(迄)：</label>\r\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"box\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"queryEndDate\" id=\"queryEndDate\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tvalue=\"2024/07/31\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"tit\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"web\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <label\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tfor=\"newsType\">類別：</label>\r\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"box\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<select id=\"newsType\" name=\"newsType\"><option value=\"\">全部</option>\r\n\t\t\t",
+    "\" id=\"queryEndDate\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tvalue=\"2024/07/31\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"tit\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"web\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <label\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tfor=\"newsType\">類別：</label>\r\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"box\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<select id=\"newsType\" name=\"newsType\"><option value=\"\">全部</option>\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"公告\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t>公告</option>\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"新聞稿\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t>新聞稿</option>\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"契約調整\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t>股票期貨/選擇權契約調整</option>\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</select></di",
+    "\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"tit\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"web\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <label\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tfor=\"newsType\">類別：</label>\r\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"box\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<select id=\"newsType\" name=\"newsType\"><option value=\"\">全部</option>\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"公告\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t>公告</option>\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"新聞稿\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t>新聞稿</option>\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"契約調整\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t>股票期貨/選擇權契約調整</option>\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</select></div>\r\n\t\t\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"tit\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"web"
+  ],
+  "post_table_count": 0,
+  "post_script_srcs": [
+    "/cht/resources/front/js/jquery-3.7.1.min.js",
+    "/cht/resources/front/js/jquery-ui-1.12.1.js",
+    "/cht/resources/front/js/jquery.ui.datepicker-zh-TW.js",
+    "/cht/resources/front/js/jquery.placeholder.js",
+    "/cht/resources/front/js/jquery.ifixpng.js",
+    "/cht/resources/front/js/common.js",
+    "/cht/resources/front/js/chart/Chart.min.js",
+    "/cht/resources/front/js/chart/chartjs-plugin-annotation.min.js",
+    "/cht/resources/front/cht/js/main.js",
+    "/cht/resources/front/js/gtm-loader.js",
+    "https://www.googletagmanager.com/gtag/js?id=G-R2R6W36GZV",
+    "/cht/resources/front/js/swiper-bundle.min.js",
+    "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+  ],
+  "post_has_2024_07_notice_text": false
+}\n
