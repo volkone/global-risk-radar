@@ -13,6 +13,7 @@ def evaluate():
     calendar=load("docs/taifex_prebacktest_gate.json") or {}
     timing=load("docs/phase4_publication_timing_audit.json") or {}
     replay=load("docs/pit_full_replay_audit.json") or {}
+    official=load("docs/official_source_evidence_2026_11_14.json") or {}
     g=scores.get("global",{})
     missing=[{"metric":x.get("metric"),"weight":x.get("weight"),"reason":x.get("reason"),
               "quality":(quality.get("metrics",{}).get(x.get("metric")) or {}).get("quality"),
@@ -44,6 +45,7 @@ def evaluate():
                 "p0":[{"metric":x["metric"],"issue":x["quality_errors"],"required_evidence":"fresh source observation" if x["metric"]=="nfci" else "verified market-breadth source and calibrated signal"} for x in missing],
                 "p1":[{"check":x,"evidence_file":"docs/taifex_prebacktest_gate.json"} for x in p1["unmet_checks"]],
                 "p2":[{"check":x,"evidence_file":"docs/phase4_publication_timing_audit.json" if x!="independent_source_query_validation" else "docs/pit_full_replay_audit.json"} for x in p2["unmet_checks"]]},
+            "official_primary_source_index":{"path":"docs/official_source_evidence_2026_11_14.json","available":bool(official),"taifex_rule_confirmed":official.get("taifex",{}).get("contract_specification",{}).get("status")=="official_rule_confirmed","special_closure_notice_confirmed":official.get("taifex",{}).get("special_closure_example",{}).get("status")=="official_notice_confirmed","alfred_api_documentation_available":bool(official.get("alfred",{}).get("vintage_dates_api"))},
             "formal_backtest_authorized":False,
             "notes":["Crosschecking TWSE sessions is not the same as independently certifying TAIFEX notices.",
                      "Conservative release-time proxies and internal vintage replay do not prove actual publication timestamps.",
