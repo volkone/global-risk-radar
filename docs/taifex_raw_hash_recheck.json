@@ -3,13 +3,17 @@
   "dataset": "TAIFEX TXF source HTML",
   "expected_records": 718,
   "attempted_this_run": 20,
-  "checked": 20,
+  "checked": 40,
   "counts": {
-    "match": 19,
+    "match": 39,
     "mismatch": 1,
+    "content_mismatch": 0,
+    "unparseable": 0,
     "fetch_error": 0
   },
-  "unverified": 699,
+  "unverified": 679,
+  "pending_download": 678,
+  "semantic_matches_with_raw_hash_mismatch": 0,
   "all_raw_hashes_verified": false,
   "limitations": [
     "HTTP response bytes may change due to site templates, anti-bot or server-rendered current content; mismatch requires investigation, never automatic acceptance."

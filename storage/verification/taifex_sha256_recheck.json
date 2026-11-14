@@ -180,6 +180,186 @@
       "bytes": 320032,
       "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2023%2F12%2F08&queryType=1",
       "verified_at_utc": "2026-11-14T06:07:29.774062+00:00"
+    },
+    "2023-12-11": {
+      "status": "match",
+      "expected_sha256": "f3a58408fb6e6674b5164547e5c7a3823e3c0347a6d2a30a868a2ff16b12a300",
+      "actual_sha256": "f3a58408fb6e6674b5164547e5c7a3823e3c0347a6d2a30a868a2ff16b12a300",
+      "http_status": 200,
+      "bytes": 320035,
+      "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2023%2F12%2F11&queryType=1",
+      "verified_at_utc": "2026-11-14T06:11:46.706223+00:00"
+    },
+    "2023-12-12": {
+      "status": "match",
+      "expected_sha256": "cda8a211c4e3cd2a5f6961a5bb59e91834c289ad618984f613815f3e153f949b",
+      "actual_sha256": "cda8a211c4e3cd2a5f6961a5bb59e91834c289ad618984f613815f3e153f949b",
+      "http_status": 200,
+      "bytes": 320045,
+      "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2023%2F12%2F12&queryType=1",
+      "verified_at_utc": "2026-11-14T06:11:47.462442+00:00"
+    },
+    "2023-12-13": {
+      "status": "match",
+      "expected_sha256": "c480e87f418cd3fa3c1301a4a18cfb4eaf956a660f05b28a6cf101f161477839",
+      "actual_sha256": "c480e87f418cd3fa3c1301a4a18cfb4eaf956a660f05b28a6cf101f161477839",
+      "http_status": 200,
+      "bytes": 320037,
+      "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2023%2F12%2F13&queryType=1",
+      "verified_at_utc": "2026-11-14T06:11:50.372445+00:00"
+    },
+    "2023-12-14": {
+      "status": "match",
+      "expected_sha256": "27743a43f50352e4118c43efb50889f69ed16a05028cca484f52d215d5da0190",
+      "actual_sha256": "27743a43f50352e4118c43efb50889f69ed16a05028cca484f52d215d5da0190",
+      "http_status": 200,
+      "bytes": 320037,
+      "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2023%2F12%2F14&queryType=1",
+      "verified_at_utc": "2026-11-14T06:11:51.148425+00:00"
+    },
+    "2023-12-15": {
+      "status": "match",
+      "expected_sha256": "5146185b180f7796a5c12c831220979ed7aa5e646b1f0605c38cac65474b1c0b",
+      "actual_sha256": "5146185b180f7796a5c12c831220979ed7aa5e646b1f0605c38cac65474b1c0b",
+      "http_status": 200,
+      "bytes": 320067,
+      "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2023%2F12%2F15&queryType=1",
+      "verified_at_utc": "2026-11-14T06:11:51.797507+00:00"
+    },
+    "2023-12-18": {
+      "status": "match",
+      "expected_sha256": "0e9b941f191f76839683810828cefd2350b03c2fc58a31305397f3e9c8238558",
+      "actual_sha256": "0e9b941f191f76839683810828cefd2350b03c2fc58a31305397f3e9c8238558",
+      "http_status": 200,
+      "bytes": 320062,
+      "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2023%2F12%2F18&queryType=1",
+      "verified_at_utc": "2026-11-14T06:11:52.470654+00:00"
+    },
+    "2023-12-19": {
+      "status": "match",
+      "expected_sha256": "f9e2379786a7d042b318ce30438dbd3bff0d5027b38a22ff20edb759f1b5a612",
+      "actual_sha256": "f9e2379786a7d042b318ce30438dbd3bff0d5027b38a22ff20edb759f1b5a612",
+      "http_status": 200,
+      "bytes": 320064,
+      "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2023%2F12%2F19&queryType=1",
+      "verified_at_utc": "2026-11-14T06:11:53.114743+00:00"
+    },
+    "2023-12-20": {
+      "status": "match",
+      "expected_sha256": "975a5277399782bf2468168daf56bc925cb353ffe27081c52d96286e3f240cc5",
+      "actual_sha256": "975a5277399782bf2468168daf56bc925cb353ffe27081c52d96286e3f240cc5",
+      "http_status": 200,
+      "bytes": 320048,
+      "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2023%2F12%2F20&queryType=1",
+      "verified_at_utc": "2026-11-14T06:11:53.769441+00:00"
+    },
+    "2023-12-21": {
+      "status": "match",
+      "expected_sha256": "b75457ddffba6c8c383c98890f0918406f9cb60c940e1fb57ca33cc30fec0083",
+      "actual_sha256": "b75457ddffba6c8c383c98890f0918406f9cb60c940e1fb57ca33cc30fec0083",
+      "http_status": 200,
+      "bytes": 320044,
+      "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2023%2F12%2F21&queryType=1",
+      "verified_at_utc": "2026-11-14T06:11:54.412151+00:00"
+    },
+    "2023-12-22": {
+      "status": "match",
+      "expected_sha256": "faadc65791dc5cb9db8ef20e7316e05b6144b7e18f767395e38de0ff3b77aa88",
+      "actual_sha256": "faadc65791dc5cb9db8ef20e7316e05b6144b7e18f767395e38de0ff3b77aa88",
+      "http_status": 200,
+      "bytes": 320024,
+      "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2023%2F12%2F22&queryType=1",
+      "verified_at_utc": "2026-11-14T06:11:55.061385+00:00"
+    },
+    "2023-12-25": {
+      "status": "match",
+      "expected_sha256": "d9c18e12f50473397806d900ac1621abf4006a99b417e4ec6e0796b8701eaf9c",
+      "actual_sha256": "d9c18e12f50473397806d900ac1621abf4006a99b417e4ec6e0796b8701eaf9c",
+      "http_status": 200,
+      "bytes": 320026,
+      "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2023%2F12%2F25&queryType=1",
+      "verified_at_utc": "2026-11-14T06:11:55.715699+00:00"
+    },
+    "2023-12-26": {
+      "status": "match",
+      "expected_sha256": "7fd1756aecdc0802022f7fc97d30c9f0db30de68953ce9bf46c043f5ca6354c4",
+      "actual_sha256": "7fd1756aecdc0802022f7fc97d30c9f0db30de68953ce9bf46c043f5ca6354c4",
+      "http_status": 200,
+      "bytes": 320036,
+      "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2023%2F12%2F26&queryType=1",
+      "verified_at_utc": "2026-11-14T06:11:56.365901+00:00"
+    },
+    "2023-12-27": {
+      "status": "match",
+      "expected_sha256": "ddd9ac98d0150fd59937c8ee30e73812dcebedd967563097cb7d3f21b53730f6",
+      "actual_sha256": "ddd9ac98d0150fd59937c8ee30e73812dcebedd967563097cb7d3f21b53730f6",
+      "http_status": 200,
+      "bytes": 320046,
+      "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2023%2F12%2F27&queryType=1",
+      "verified_at_utc": "2026-11-14T06:11:57.012425+00:00"
+    },
+    "2023-12-28": {
+      "status": "match",
+      "expected_sha256": "ed4a7d9d7908cf8e620f6d6e9fa6bfcfc9d24ba34d3889d656bc922d5827bfae",
+      "actual_sha256": "ed4a7d9d7908cf8e620f6d6e9fa6bfcfc9d24ba34d3889d656bc922d5827bfae",
+      "http_status": 200,
+      "bytes": 320044,
+      "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2023%2F12%2F28&queryType=1",
+      "verified_at_utc": "2026-11-14T06:11:57.649318+00:00"
+    },
+    "2023-12-29": {
+      "status": "match",
+      "expected_sha256": "69eb9683af719a1670c3720d751abcfb2fc12e3b49b809be8e94a1e51c498f6b",
+      "actual_sha256": "69eb9683af719a1670c3720d751abcfb2fc12e3b49b809be8e94a1e51c498f6b",
+      "http_status": 200,
+      "bytes": 320050,
+      "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2023%2F12%2F29&queryType=1",
+      "verified_at_utc": "2026-11-14T06:11:58.289744+00:00"
+    },
+    "2024-01-02": {
+      "status": "match",
+      "expected_sha256": "6a4968561133a3f1706a62da4a75c4a54fa3716b0a8659880ee365b9bd50bb9b",
+      "actual_sha256": "6a4968561133a3f1706a62da4a75c4a54fa3716b0a8659880ee365b9bd50bb9b",
+      "http_status": 200,
+      "bytes": 320036,
+      "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2024%2F01%2F02&queryType=1",
+      "verified_at_utc": "2026-11-14T06:11:58.951863+00:00"
+    },
+    "2024-01-03": {
+      "status": "match",
+      "expected_sha256": "b42514e0792be1a3f35160a1fcc617636282ae17666e4ae46b1fbf97b76961eb",
+      "actual_sha256": "b42514e0792be1a3f35160a1fcc617636282ae17666e4ae46b1fbf97b76961eb",
+      "http_status": 200,
+      "bytes": 320060,
+      "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2024%2F01%2F03&queryType=1",
+      "verified_at_utc": "2026-11-14T06:11:59.608451+00:00"
+    },
+    "2024-01-04": {
+      "status": "match",
+      "expected_sha256": "8444b7d2a5438d02f138c969c55ac70910ca510cf41a2c131d5da29eaff456c6",
+      "actual_sha256": "8444b7d2a5438d02f138c969c55ac70910ca510cf41a2c131d5da29eaff456c6",
+      "http_status": 200,
+      "bytes": 320043,
+      "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2024%2F01%2F04&queryType=1",
+      "verified_at_utc": "2026-11-14T06:12:00.266549+00:00"
+    },
+    "2024-01-05": {
+      "status": "match",
+      "expected_sha256": "2a379e635b6ba4674098a51504ef6bd4f40319c1aef894a45f8ece57b1a8e4f6",
+      "actual_sha256": "2a379e635b6ba4674098a51504ef6bd4f40319c1aef894a45f8ece57b1a8e4f6",
+      "http_status": 200,
+      "bytes": 320027,
+      "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2024%2F01%2F05&queryType=1",
+      "verified_at_utc": "2026-11-14T06:12:00.935524+00:00"
+    },
+    "2024-01-08": {
+      "status": "match",
+      "expected_sha256": "17b5085d7e7fd8e34ed58847f6c474d122e38b62fbe8649e453f941fa9c76baf",
+      "actual_sha256": "17b5085d7e7fd8e34ed58847f6c474d122e38b62fbe8649e453f941fa9c76baf",
+      "http_status": 200,
+      "bytes": 320010,
+      "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2024%2F01%2F08&queryType=1",
+      "verified_at_utc": "2026-11-14T06:12:01.618254+00:00"
     }
   }
 }
