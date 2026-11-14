@@ -2,19 +2,10 @@
   "schema_version": 1,
   "purpose": "P0/P1/P2 independent diagnostics; not production approval",
   "p0": {
-    "global_coverage": 0.8,
+    "global_coverage": 0.9,
     "minimum_coverage": 0.85,
-    "score": null,
+    "score": 21.8,
     "missing_components": [
-      {
-        "metric": "nfci",
-        "weight": 10,
-        "reason": "quality_gate_not_passed",
-        "quality": "blocked",
-        "quality_errors": [
-          "observation_older_than_limit"
-        ]
-      },
       {
         "metric": "breadth",
         "weight": 10,
@@ -25,7 +16,7 @@
         ]
       }
     ],
-    "complete": false
+    "complete": true
   },
   "p1": {
     "source_records_verified": 718,
@@ -55,6 +46,52 @@
       "revisions_independently_verified",
       "independent_source_query_validation"
     ]
+  },
+  "evidence_gaps": {
+    "p0": [
+      {
+        "metric": "breadth",
+        "issue": [
+          "source_not_verified"
+        ],
+        "required_evidence": "verified market-breadth source and calibrated signal"
+      }
+    ],
+    "p1": [
+      {
+        "check": "independent_taifex_calendar_certified",
+        "evidence_file": "docs/taifex_prebacktest_gate.json"
+      },
+      {
+        "check": "full_notice_sweep_verified",
+        "evidence_file": "docs/taifex_prebacktest_gate.json"
+      },
+      {
+        "check": "primary_evidence_complete",
+        "evidence_file": "docs/taifex_prebacktest_gate.json"
+      }
+    ],
+    "p2": [
+      {
+        "check": "actual_publication_timestamps_verified",
+        "evidence_file": "docs/phase4_publication_timing_audit.json"
+      },
+      {
+        "check": "revisions_independently_verified",
+        "evidence_file": "docs/phase4_publication_timing_audit.json"
+      },
+      {
+        "check": "independent_source_query_validation",
+        "evidence_file": "docs/pit_full_replay_audit.json"
+      }
+    ]
+  },
+  "official_primary_source_index": {
+    "path": "docs/official_source_evidence_2026_11_14.json",
+    "available": true,
+    "taifex_rule_confirmed": true,
+    "special_closure_notice_confirmed": true,
+    "alfred_api_documentation_available": true
   },
   "formal_backtest_authorized": false,
   "notes": [

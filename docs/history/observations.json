@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-14T05:59:39.294489+00:00",
-  "record_count": 45,
+  "generated_at": "2026-11-14T06:05:26.852749+00:00",
+  "record_count": 46,
   "revision_count": 179,
   "observations": [
     {
@@ -381,6 +381,15 @@
       "value": 0.93,
       "unit": "%",
       "source_url": "https://fred.stlouisfed.org/series/BAMLC0A0CM"
+    },
+    {
+      "metric_id": "nfci",
+      "provider": "FRED official API",
+      "scope": "",
+      "observation_date": "2026-11-06",
+      "value": -0.462,
+      "unit": "index",
+      "source_url": "https://fred.stlouisfed.org/series/NFCI"
     },
     {
       "metric_id": "us10y",
