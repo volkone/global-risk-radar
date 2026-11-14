@@ -1,11 +1,11 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-14T18:02:14.918251+00:00",
+  "generated_at": "2026-11-14T22:24:54.288442+00:00",
   "model_status": "separate_global_prototype_and_evidence_gated_taiwan",
   "disclaimer": "Global is provisional; historical Taiwan reconstruction is research-only. Formal Taiwan eligibility is recorded in quality_gate.",
   "global": {
     "status": "provisional",
-    "score": 21.8,
+    "score": 22.3,
     "coverage": 0.9,
     "min_coverage": 0.85,
     "components": [
@@ -52,10 +52,10 @@
       {
         "metric": "us10y",
         "weight": 5,
-        "signal": 15.0,
+        "signal": 23.33,
         "eligible": true,
         "reason": null,
-        "contribution": 0.8333333333333334
+        "contribution": 1.296111111111111
       },
       {
         "metric": "breadth",
@@ -67,7 +67,7 @@
       }
     ],
     "model_id": "global_rate_v2",
-    "as_of": "2026-11-14T18:02:12.957936+00:00"
+    "as_of": "2026-11-14T22:24:52.129257+00:00"
   },
   "taiwan": {
     "status": "formal_model_blocked",
@@ -198,15 +198,15 @@
   "taiwan_legacy_prototype": {
     "status": "insufficient_coverage",
     "score": null,
-    "coverage": 0.0,
+    "coverage": 0.35,
     "min_coverage": 0.85,
     "components": [
       {
         "metric": "taiex",
         "weight": 35,
-        "signal": null,
-        "eligible": false,
-        "reason": "quality_gate_not_passed"
+        "signal": 41.13,
+        "eligible": true,
+        "reason": null
       },
       {
         "metric": "margin",

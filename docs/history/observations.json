@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-14T18:02:13.133595+00:00",
-  "record_count": 46,
+  "generated_at": "2026-11-14T22:24:52.312726+00:00",
+  "record_count": 49,
   "revision_count": 179,
   "observations": [
     {
@@ -32,6 +32,15 @@
       "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?response=json"
     },
     {
+      "metric_id": "inst.futures",
+      "provider": "TAIFEX",
+      "scope": "",
+      "observation_date": "2026-11-13",
+      "value": -100870.0,
+      "unit": "口",
+      "source_url": "https://openapi.taifex.com.tw/v1/MarketDataOfMajorInstitutionalTradersDetailsOfFuturesContractsBytheDate"
+    },
+    {
       "metric_id": "margin.margin",
       "provider": "TWSE",
       "scope": "TWSE上市市場",
@@ -48,6 +57,15 @@
       "value": 43675.121,
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ETWII/"
+    },
+    {
+      "metric_id": "taiex.tw_price",
+      "provider": "TWSE",
+      "scope": "",
+      "observation_date": "2026-11-13",
+      "value": 43675.12,
+      "unit": "points",
+      "source_url": "https://openapi.twse.com.tw/v1/exchangeReport/FMTQIK"
     },
     {
       "metric_id": "fx",
@@ -129,6 +147,15 @@
       "value": 43091.87,
       "unit": "points",
       "source_url": "https://openapi.twse.com.tw/v1/exchangeReport/FMTQIK"
+    },
+    {
+      "metric_id": "us10y",
+      "provider": "FRED official API",
+      "scope": "",
+      "observation_date": "2026-11-12",
+      "value": 5.1,
+      "unit": "%",
+      "source_url": "https://fred.stlouisfed.org/series/DGS10"
     },
     {
       "metric_id": "vix",
