@@ -1,5 +1,5 @@
 name: Independently recheck TAIFEX source hashes
-# Manual batch 6 of up to 100, following successful batch 5 verification.
+# P1 exception diagnosis: independently recheck remaining 2023-11-13 source date.
 on:
   push:
     branches: [main]
@@ -9,7 +9,7 @@ on:
       limit:
         description: 'Maximum raw source downloads per run (1-100)'
         required: false
-        default: '100'
+        default: '1'
 permissions:
   contents: write
   actions: write
@@ -27,7 +27,7 @@ jobs:
           python-version: '3.11'
       - name: Independently download and hash-check bounded source batch
         env:
-          LIMIT: ${{ inputs.limit || '100' }}
+          LIMIT: ${{ inputs.limit || '1' }}
         run: python scripts/refetch_taifex_hashes.py --limit "$LIMIT" --retry-after-hours 0
       - name: Save verification ledger and summary
         run: |
