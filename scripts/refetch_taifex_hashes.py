@@ -44,7 +44,6 @@ def main():
    last=dt.datetime.fromisoformat(previous["verified_at_utc"])
    if (dt.datetime.now(dt.timezone.utc)-last).total_seconds()<a.retry_after_hours*3600:
     continue
-  if previous.get("status")=="fetch_error" and previous.get("error")=="ValueError":continue  # investigate source date before retry
   if previous.get("error_detail","").startswith("HTTP Error 429"):
    last=dt.datetime.fromisoformat(previous["verified_at_utc"])
    if (dt.datetime.now(dt.timezone.utc)-last).total_seconds()<a.retry_after_hours*3600:
@@ -58,7 +57,16 @@ def main():
     status=res.status
    actual=hashlib.sha256(body).hexdigest()
    expected=rec["source_sha256"]
-   parsed=extract(body,d,rec["source_url"])
+   try:
+    parsed=extract(body,d,rec["source_url"])
+   except ValueError as exc:
+    # Keep an auditable diagnostic; never interpret a missing date as a valid zero position.
+    done[d]={"status":"fetch_error","parsed_values_match":False,"error":"ValueError","error_detail":str(exc)[:160],
+             "response_sha256":actual,"response_bytes":len(body),"http_status":status,
+             "requested_date":d,"source_url":rec["source_url"],"verified_at_utc":dt.datetime.now(dt.timezone.utc).isoformat()}
+    out.write_text(json.dumps(state,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    time.sleep(a.pause)
+    continue
    fields=("date","long_oi","short_oi","value","scope","unit")
    matches=all(parsed.get(k)==rec.get(k) for k in fields)
    result={"status":"match" if actual==expected else "mismatch",
