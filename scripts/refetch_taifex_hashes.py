@@ -25,20 +25,25 @@ def main():
  out=ROOT/"storage/verification/taifex_sha256_recheck.json"
  out.parent.mkdir(parents=True,exist_ok=True)
  try:state=json.loads(out.read_text(encoding="utf-8"))
- except (FileNotFoundError,ValueError):state={"schema_version":2,"records":{}}
+ except FileNotFoundError:state={"schema_version":2,"records":{}}
+ # A corrupt existing ledger is a hard failure: never discard verification evidence.
  state["schema_version"]=2
  done=state["records"]
  attempted=0
  for rec in records:
   d=rec["date"]
   previous=done.get(d,{})
-  if previous.get("status")=="match" and previous.get("actual_sha256")==rec["source_sha256"]:
-   previous["parsed_values_match"]=True
+  if previous.get("status")=="match" and previous.get("actual_sha256")==rec["source_sha256"] and previous.get("parsed_values_match") is not False:
+   if previous.get("parsed_values_match") is not False:
+    previous["parsed_values_match"]=True
    previous["verification_basis"]="raw_sha256_exact_match"
    continue
   if previous.get("parsed_values_match") is True and previous.get("status") in ("match","mismatch"):
    continue
-  if previous.get("status")=="rate_limited":continue  # no automatic retry of a rate-limited response
+  if previous.get("status")=="rate_limited":
+   last=dt.datetime.fromisoformat(previous["verified_at_utc"])
+   if (dt.datetime.now(dt.timezone.utc)-last).total_seconds()<a.retry_after_hours*3600:
+    continue
   if previous.get("status")=="fetch_error" and previous.get("error")=="ValueError":continue  # investigate source date before retry
   if previous.get("error_detail","").startswith("HTTP Error 429"):
    last=dt.datetime.fromisoformat(previous["verified_at_utc"])
@@ -84,7 +89,8 @@ def main():
          "expected_records":total,"attempted_this_run":attempted,"checked":len(done),
          "counts":counts,"semantic_values_verified":semantic,"semantic_values_unverified":total-semantic,
          "raw_hash_mismatch_dates":[d for d,x in done.items() if x.get("status")=="mismatch"],
-         "discrepancy_dates":[d for d,x in done.items() if x.get("parsed_values_match") is False],
+         "discrepancy_dates":[d for d,x in done.items() if x.get("status")=="mismatch" or (x.get("status")=="match" and x.get("parsed_values_match") is False)],
+         "unverified_dates":[d for d,x in done.items() if x.get("status") in ("fetch_error","rate_limited")],
          "all_raw_hashes_verified":counts["match"]==total and counts["mismatch"]==0,
          "all_values_independently_verified":semantic==total,
          "source_rate_limited":counts["rate_limited"]>0,
