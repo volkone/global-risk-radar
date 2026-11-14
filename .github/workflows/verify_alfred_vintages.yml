@@ -1,0 +1,36 @@
+name: Independently retrieve ALFRED vintage evidence
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/verify_alfred_vintages.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Download six series vintage-date evidence from official API
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+        run: python scripts/refetch_alfred_vintages.py
+      - name: Save ALFRED evidence and hashes
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add storage/verification/alfred_vintage_evidence.json docs/alfred_independent_evidence.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Checkpoint independent ALFRED vintage evidence [skip ci]'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: alfred-independent-evidence
+          path: docs/alfred_independent_evidence.json
