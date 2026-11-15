@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-15T16:39:36.580626+00:00",
+  "generated_at": "2026-11-15T16:45:19.634832+00:00",
   "model_status": "separate_global_prototype_and_evidence_gated_taiwan",
   "disclaimer": "Global is provisional; historical Taiwan reconstruction is research-only. Formal Taiwan eligibility is recorded in quality_gate.",
   "global": {
@@ -67,7 +67,7 @@
       }
     ],
     "model_id": "global_rate_v2",
-    "as_of": "2026-11-15T16:39:34.539409+00:00"
+    "as_of": "2026-11-15T16:45:17.004479+00:00"
   },
   "taiwan": {
     "status": "formal_model_blocked",
