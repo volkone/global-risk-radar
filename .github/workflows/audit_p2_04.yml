@@ -1,0 +1,44 @@
+name: P2-04 evidence certification audit
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/audit_p2_04.yml'
+permissions:
+  contents: write
+concurrency:
+  group: p204-evidence-audit
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile and audit evidence
+        run: |
+          python -m py_compile scripts/audit_p2_04_evidence.py scripts/model_gate.py
+          python scripts/audit_p2_04_evidence.py
+      - name: Enforce no premature authorization
+        run: |
+          python - <<'PY'
+          import json
+          p=json.load(open('docs/p2_04_evidence_audit.json'))
+          assert p['formal_backtest_authorized'] is False
+          assert p['production_scoring_authorized'] is False
+          assert p['steps']['4_formal_quality_gate']['status']=='BLOCKED'
+          PY
+      - name: Commit audit report
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/p2_04_evidence_audit.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update P2-04 evidence audit [skip ci]'
+            git push
+          fi
