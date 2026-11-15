@@ -15,7 +15,7 @@
         getRadarData('p2_02_robustness.json'),getRadarData('p2_02_extended_validation.json'),
         getRadarData('p2_02_failure_and_multiplicity.json'),getRadarData('p2_03_uptrend_early_warning_research.json')
       ]);
-      const blocked=readiness.status!=='READY';
+      const blocked=readiness.status!=='PASS';
       const gates=(readiness.checks||[]).map(c=>'<li>'+esc(c.label)+'：'+(c.passed?'已通過':'未通過')+'</li>').join('');
       const wf=table(['滾動測試','5 日命中率','20 日命中率'],[0,1,2].map(i=>row('第 '+(i+1)+' 段',pct(extended.holdout['5d'].walk_forward_folds[i].metrics.precision),pct(extended.holdout['20d'].walk_forward_folds[i].metrics.precision))).join('')+
         row('合併',pct(extended.holdout['5d'].walk_forward_aggregate.precision),pct(extended.holdout['20d'].walk_forward_aggregate.precision)));

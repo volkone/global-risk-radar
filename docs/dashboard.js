@@ -98,9 +98,9 @@
     const gate=data.taiwan.quality_gate;
     const today=new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Taipei'}).format(new Date());
     const current=gate?.evaluated_for_date===today;
-    const formal=current&&data.formal_model_status==='READY'&&gate.status==='READY'&&gate.checks?.length===5&&
+    const formal=current&&data.formal_model_status==='PASS'&&gate.status==='PASS'&&gate.checks?.length===5&&
       gate.checks.every(check=>check.passed===true)&&data.taiwan.as_of===today&&validScore(data.taiwan.score);
-    el('risk-gate').textContent='正式模型 '+(formal?'READY':data.formal_model_status==='BLOCKED'?'BLOCKED':'資料待更新');
+    el('risk-gate').textContent='正式模型 '+(formal?'PASS':data.formal_model_status==='BLOCKED'?'BLOCKED':'資料待更新');
     el('formal-score').textContent=formal?num(data.taiwan.score):'尚未符合條件';
     el('formal-reason').textContent=current?(data.taiwan.reason||('評分日 '+(data.taiwan.as_of||'—'))):'最近關卡日期 '+(gate?.evaluated_for_date||'未知');
     el('gate-checks').innerHTML='<ul>'+ (data.taiwan.quality_gate?.checks||[]).map(c=>'<li class="'+(c.passed?'':'warn')+'">'+esc(c.label)+'：'+(c.passed?'通過':'待完成')+'</li>').join('')+'</ul><a href="model_readiness.json">查看品質關卡報告</a>';

@@ -60,7 +60,7 @@ def main():
     verify_series(dashboard["prospective_history"], "Prospective predictions")
     require(dashboard["taiwan"]["quality_gate"] == readiness and
             dashboard["formal_model_status"] == readiness["status"], "formal gate mismatch")
-    require(readiness["status"] == "READY" or dashboard["taiwan"]["score"] is None,
+    require(readiness["status"] == "PASS" or dashboard["taiwan"]["score"] is None,
             "unapproved formal score")
     require(all(type(health[key]) is int and health[key] >= 0 for key in ("snapshots", "predictions", "outcomes")),
             "invalid forward collection counters")

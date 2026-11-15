@@ -1,0 +1,29 @@
+name: Verify ALFRED historical effective-date intervals
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/verify_alfred_vintage_intervals.py'
+      - '.github/workflows/verify_alfred_vintage_intervals.yml'
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compare full ALFRED version intervals
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+        run: python scripts/verify_alfred_vintage_intervals.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: alfred-vintage-interval-verification
+          path: |
+            docs/alfred_vintage_interval_verification.json
+            alfred_interval_evidence/
