@@ -1,0 +1,32 @@
+name: P2-04 final evidence gate recheck
+on:
+  push:
+    paths:
+      - '.github/workflows/p204_gate_recheck.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Recheck evidence and formal gate
+        run: python scripts/recheck_p204_gate.py
+      - name: Persist gate evidence
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/p2_04_gate_recheck.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Persist P2-04 fail-closed gate recheck [skip ci]'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
