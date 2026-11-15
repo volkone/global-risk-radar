@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "status": "source_response_reverified_calendar_certification_pending",
+  "source_scope": "Existing independently re-fetched TAIFEX official daily endpoint responses; not official historical purchased extract",
+  "records_total": 718,
+  "records_pass": 718,
+  "hash_mismatch": 0,
+  "value_mismatch": 0,
+  "critical_date": "2023-11-13",
+  "critical_record": {
+    "date": "2023-11-13",
+    "long_oi": 38773,
+    "short_oi": 35641,
+    "net_oi": 3132,
+    "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?commodityId=TXF&doQuery=1&queryDate=2023%2F11%2F13&queryType=1",
+    "expected_sha256": "783f92f1d084e4e7dfb2cc5b78107643ef0030d4245644bc57dd3a21d7e0a096",
+    "retrieved_sha256": "783f92f1d084e4e7dfb2cc5b78107643ef0030d4245644bc57dd3a21d7e0a096",
+    "verification_status": "pass"
+  },
+  "previous_gate_recorded_unverified_date": [
+    "2023-11-13"
+  ],
+  "discrepancy": "Earlier gate is stale relative to later independently refetched source-response verification; this reconciles source response only and does not change historical extract or calendar certification",
+  "historical_extract_certified": false,
+  "official_notice_archive_exhaustive": false,
+  "independent_calendar_verified": false,
+  "full_model_backtest_authorized": false
+}
