@@ -29,7 +29,11 @@ jobs:
           git add docs/qualified_source_limited_backtest.json docs/p2_04_gate_recheck.json
           if ! git diff --cached --quiet; then
             git commit -m 'Record official-daily-source research and unchanged production gate [skip ci]'
-            git fetch origin main
-            git rebase origin/main
-            git push origin HEAD:main
+            for attempt in 1 2 3 4 5; do
+              git fetch origin main
+              git rebase origin/main
+              if git push origin HEAD:main; then exit 0; fi
+              sleep $((attempt * 3))
+            done
+            exit 1
           fi
