@@ -1,0 +1,38 @@
+name: P2-04 independently recheck ALFRED observations
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/p204_alfred_observations.yml'
+permissions:
+  contents: write
+concurrency:
+  group: p204-alfred-observations
+  cancel-in-progress: false
+jobs:
+  recheck:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Requery independent historical observations
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+        run: python scripts/recheck_p204_alfred_observations.py
+      - name: Save source evidence
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add storage/verification/p2_04_alfred_observation_responses.json docs/p2_04_alfred_observation_recheck.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Capture P2-04 independent ALFRED observation evidence [skip ci]'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
