@@ -1,0 +1,48 @@
+name: Validate prospective evidence and 3C strategy scenarios
+on:
+  push:
+    paths:
+      - '.github/workflows/phase3c_prospective_validation.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: phase3c-validation
+  cancel-in-progress: false
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate frozen prospective protocol
+        run: |
+          python scripts/phase5_forward_capture.py --mode selftest
+          python scripts/phase5_forward_ledger.py --mode selftest
+          python scripts/evaluate_forward.py
+      - name: Validate 3C scenario and build report
+        run: |
+          python scripts/phase3c_strategy_integration.py --selftest
+          python scripts/phase3c_strategy_integration.py
+      - name: Preserve production gate
+        run: python scripts/recheck_p204_gate.py
+      - name: Save validation and strategy reports
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/prospective_evaluation.json docs/phase3c_strategy_integration.json docs/p2_04_gate_recheck.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Validate prospective evidence and 3C scenario integration [skip ci]'
+            for attempt in 1 2 3 4 5; do
+              git fetch origin main
+              git rebase origin/main
+              if git push origin HEAD:main; then exit 0; fi
+              sleep $((attempt * 3))
+            done
+            exit 1
+          fi
