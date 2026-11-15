@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "status": "official_primary_documents_individually_reauthenticated_archive_exhaustiveness_pending",
+  "scope": "Individual official annual calendar PDFs and typhoon notices inspected through TAIFEX public pages; not a complete historical archive sweep",
+  "official_tx_contract_rule": {
+    "url": "https://www.taifex.com.tw/cht/2/tX",
+    "verified": true,
+    "statement": "TX trading days follow TWSE trading days"
+  },
+  "annual_calendars": [
+    {
+      "year": 2023,
+      "number": "1110003783",
+      "verified": true
+    },
+    {
+      "year": 2024,
+      "number": "1120003542",
+      "verified": true
+    },
+    {
+      "year": 2025,
+      "number": "1140001929",
+      "verified": true,
+      "note": "revised calendar"
+    },
+    {
+      "year": 2026,
+      "number": "1140003036",
+      "verified": true
+    }
+  ],
+  "special_notices": [
+    {
+      "dates": [
+        "2024-07-24",
+        "2024-07-25"
+      ],
+      "url": "https://www.taifex.com.tw/enl/eng11/newsDetail?idx=8785&newsType=1",
+      "verified": true
+    },
+    {
+      "dates": [
+        "2024-10-02",
+        "2024-10-03"
+      ],
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail.do?idx=15394&thetype=2",
+      "verified": true
+    },
+    {
+      "dates": [
+        "2024-10-31"
+      ],
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?idx=15446&newsType=1",
+      "verified": true
+    },
+    {
+      "dates": [
+        "2026-07-10"
+      ],
+      "url": "https://www.taifex.com.tw/enl/eng11/newsDetail?idx=10470&newsType=1",
+      "verified": true
+    },
+    {
+      "dates": [
+        "2026-10-23"
+      ],
+      "url": "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17441",
+      "verified": true
+    }
+  ],
+  "archive_search_page": "https://www.taifex.com.tw/cht/11/hisNews",
+  "archive_search_interface_verified": true,
+  "all_pages_categories_and_notices_exhaustively_swept": false,
+  "official_historical_data_purchase_page": "https://www.taifex.com.tw/file/taifex/event/cht/HistoricalData/type_01.html",
+  "official_historical_extract_acquired": false,
+  "source_daily_tx_718_reverified": true,
+  "full_calendar_certified": false,
+  "full_model_backtest_authorized": false,
+  "notes": [
+    "2025 revised annual calendar confirms 2025-09-29 and 2025-10-24 closure dates; 2025-12-25 listed as holiday",
+    "Individual document verification is not proof that no other emergency notices exist",
+    "Do not overwrite legacy gate until full archive sweep and independent calendar reconciliation"
+  ]
+}
