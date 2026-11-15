@@ -1,0 +1,1480 @@
+{
+  "checked_at_utc": "2026-11-15T18:08:39.799073+00:00",
+  "window": [
+    "2023-11-11",
+    "2026-10-31"
+  ],
+  "scope": "Unfiltered public Chinese-language hisNews result table",
+  "partitions": [
+    {
+      "partitions": [
+        {
+          "start": "2023-11-11",
+          "end": "2023-11-30",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2023%2F11%2F11&queryEndDate=2023%2F11%2F30&newsType=&queryKeyWord=",
+          "sha256": "6a02ad5d41d637f52cb3a249126b0a05ccad7a6fd79e439975681f0a9308b8f9",
+          "count": 28,
+          "pagination_controls": []
+        },
+        {
+          "start": "2023-11-11",
+          "end": "2023-11-20",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2023%2F11%2F11&queryEndDate=2023%2F11%2F20&newsType=&queryKeyWord=",
+          "sha256": "52d6fd43c77fa77c6e6a5271d1f12aa9099828a172b64a75c1f2bf42e0649b89",
+          "count": 16,
+          "pagination_controls": []
+        },
+        {
+          "start": "2023-11-21",
+          "end": "2023-11-30",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2023%2F11%2F21&queryEndDate=2023%2F11%2F30&newsType=&queryKeyWord=",
+          "sha256": "52699f2367f19dadd3c40660c99f882238e767fb14ae26f8f9e8691fcebfa192",
+          "count": 12,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2023-12-01",
+          "end": "2023-12-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2023%2F12%2F01&queryEndDate=2023%2F12%2F31&newsType=&queryKeyWord=",
+          "sha256": "b51456ec4bd3398c5c60c0d2bd78c7978f872bbff01b84d96a0dde4858d57748",
+          "count": 54,
+          "pagination_controls": []
+        },
+        {
+          "start": "2023-12-01",
+          "end": "2023-12-16",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2023%2F12%2F01&queryEndDate=2023%2F12%2F16&newsType=&queryKeyWord=",
+          "sha256": "7b0c0a6a939dd849e2a0bcc822ba9050866d9fbb387faabd4d0d906b39ca8ac1",
+          "count": 22,
+          "pagination_controls": []
+        },
+        {
+          "start": "2023-12-17",
+          "end": "2023-12-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2023%2F12%2F17&queryEndDate=2023%2F12%2F31&newsType=&queryKeyWord=",
+          "sha256": "a92bbb54b7cdc615128baa71fcde165090fea266e85b7abbe506cadcb0f64092",
+          "count": 32,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2024-01-01",
+          "end": "2024-01-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F01%2F01&queryEndDate=2024%2F01%2F31&newsType=&queryKeyWord=",
+          "sha256": "8c9a1f04946028a06e68940b52216bfd4f6630469f97a870777e4944e3439837",
+          "count": 55,
+          "pagination_controls": []
+        },
+        {
+          "start": "2024-01-01",
+          "end": "2024-01-16",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F01%2F01&queryEndDate=2024%2F01%2F16&newsType=&queryKeyWord=",
+          "sha256": "0c2bb6507b11c3ab4766eb1916c1f14a2cae44312fdfe1e7a702883500697440",
+          "count": 28,
+          "pagination_controls": []
+        },
+        {
+          "start": "2024-01-17",
+          "end": "2024-01-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F01%2F17&queryEndDate=2024%2F01%2F31&newsType=&queryKeyWord=",
+          "sha256": "1c2abbb6efba95bfabe327467f7847016246579d3b458752f6be63628a45b7cb",
+          "count": 27,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2024-02-01",
+          "end": "2024-02-29",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F02%2F01&queryEndDate=2024%2F02%2F29&newsType=&queryKeyWord=",
+          "sha256": "615198c3e3bcd4f28a84db59b984492fec724c51917c5b0fd2fceddbde398301",
+          "count": 39,
+          "pagination_controls": []
+        },
+        {
+          "start": "2024-02-01",
+          "end": "2024-02-15",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F02%2F01&queryEndDate=2024%2F02%2F15&newsType=&queryKeyWord=",
+          "sha256": "a63e84ab77c874fd1d953f7fff541d4ab5d7abeca21e1b8070f59d57ae010d79",
+          "count": 22,
+          "pagination_controls": []
+        },
+        {
+          "start": "2024-02-16",
+          "end": "2024-02-29",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F02%2F16&queryEndDate=2024%2F02%2F29&newsType=&queryKeyWord=",
+          "sha256": "080ab2b1fa25e08995835061dde94a39b4dea55fc06ccd3d2d02efc9969863c2",
+          "count": 17,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2024-03-01",
+          "end": "2024-03-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F03%2F01&queryEndDate=2024%2F03%2F31&newsType=&queryKeyWord=",
+          "sha256": "b528508cebb3ad4862ded49f2eb7d3bf7c42b1377c9e86688250ebee205a99b3",
+          "count": 58,
+          "pagination_controls": []
+        },
+        {
+          "start": "2024-03-01",
+          "end": "2024-03-16",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F03%2F01&queryEndDate=2024%2F03%2F16&newsType=&queryKeyWord=",
+          "sha256": "c1584a8587f1e98238d8d1086c736c5f4fff6124bbb3011b5bfbe337d9969663",
+          "count": 25,
+          "pagination_controls": []
+        },
+        {
+          "start": "2024-03-17",
+          "end": "2024-03-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F03%2F17&queryEndDate=2024%2F03%2F31&newsType=&queryKeyWord=",
+          "sha256": "d694b4303f83ea57b137baa71cb54a8455a15cd626af2db7413cb6bb1eeee382",
+          "count": 33,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true,
+      "retry_reason": "First whole-month query timed out; re-fetched all three partitions."
+    },
+    {
+      "partitions": [
+        {
+          "start": "2024-04-01",
+          "end": "2024-04-30",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F04%2F01&queryEndDate=2024%2F04%2F30&newsType=&queryKeyWord=",
+          "sha256": "e6ffa5c22811abbb95d0f75cc96c3b06f1c39a1fe116557ad66f9b4e63fb5753",
+          "count": 42,
+          "pagination_controls": []
+        },
+        {
+          "start": "2024-04-01",
+          "end": "2024-04-15",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F04%2F01&queryEndDate=2024%2F04%2F15&newsType=&queryKeyWord=",
+          "sha256": "3a6c74e4a0694c22b549e02abb1d47e24e69fc57c0c46901874b557a821d9439",
+          "count": 24,
+          "pagination_controls": []
+        },
+        {
+          "start": "2024-04-16",
+          "end": "2024-04-30",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F04%2F16&queryEndDate=2024%2F04%2F30&newsType=&queryKeyWord=",
+          "sha256": "7741db8b68bc8f3fb084e4666bc6e23eefca97a478ac6e57a4e589f10957e6b9",
+          "count": 18,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2024-05-01",
+          "end": "2024-05-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F05%2F01&queryEndDate=2024%2F05%2F31&newsType=&queryKeyWord=",
+          "sha256": "3329accfa324775f653478869a716e62f74f51497d9f2aa6cd89d51a0427abe6",
+          "count": 56,
+          "pagination_controls": []
+        },
+        {
+          "start": "2024-05-01",
+          "end": "2024-05-16",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F05%2F01&queryEndDate=2024%2F05%2F16&newsType=&queryKeyWord=",
+          "sha256": "e0422f8ee3548150dd48887d94b66d16546730837069824d29ac2510107ceafb",
+          "count": 34,
+          "pagination_controls": []
+        },
+        {
+          "start": "2024-05-17",
+          "end": "2024-05-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F05%2F17&queryEndDate=2024%2F05%2F31&newsType=&queryKeyWord=",
+          "sha256": "b2959e9d5bac04d5bbf05a4b352275f651508aeecb5a67917e344c5549f65013",
+          "count": 22,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2024-06-01",
+          "end": "2024-06-30",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F06%2F01&queryEndDate=2024%2F06%2F30&newsType=&queryKeyWord=",
+          "sha256": "38aa08a16dad1a3f425fbc1d3e8801d730843ecbbfb84484ac76f82e716a3235",
+          "count": 119,
+          "pagination_controls": []
+        },
+        {
+          "start": "2024-06-01",
+          "end": "2024-06-15",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F06%2F01&queryEndDate=2024%2F06%2F15&newsType=&queryKeyWord=",
+          "sha256": "202add24f7cc2d7aed1a86af35d52c37e76eb8e062cc01c0d6aeedd6b3285699",
+          "count": 33,
+          "pagination_controls": []
+        },
+        {
+          "start": "2024-06-16",
+          "end": "2024-06-30",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F06%2F16&queryEndDate=2024%2F06%2F30&newsType=&queryKeyWord=",
+          "sha256": "86f6886432834bb337779ba71d13655b5485e0de5aca65d883d7e27b4839a03a",
+          "count": 86,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2024-07-01",
+          "end": "2024-07-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F07%2F01&queryEndDate=2024%2F07%2F31&newsType=&queryKeyWord=",
+          "sha256": "5bf51707a5f2d86c8ed24c5b4f19ec7ebb79f4564aedd62a54fe93cf1680e3ec",
+          "count": 119,
+          "pagination_controls": []
+        },
+        {
+          "start": "2024-07-01",
+          "end": "2024-07-16",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F07%2F01&queryEndDate=2024%2F07%2F16&newsType=&queryKeyWord=",
+          "sha256": "4c3d7ca9e107df50d59d9ba24159b5ff0bbd9495312dfb67f4d941db0cb175e3",
+          "count": 69,
+          "pagination_controls": []
+        },
+        {
+          "start": "2024-07-17",
+          "end": "2024-07-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F07%2F17&queryEndDate=2024%2F07%2F31&newsType=&queryKeyWord=",
+          "sha256": "6854bd5a8eb38076159a95db2efd6fdb7b984df480aab25bb0daaf6db90b9a75",
+          "count": 50,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2024-08-01",
+          "end": "2024-08-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F08%2F01&queryEndDate=2024%2F08%2F31&newsType=&queryKeyWord=",
+          "sha256": "cf161c9503f51be40ffd937c952712f9d890b50521667b991150644bb904f948",
+          "count": 80,
+          "pagination_controls": []
+        },
+        {
+          "start": "2024-08-01",
+          "end": "2024-08-16",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F08%2F01&queryEndDate=2024%2F08%2F16&newsType=&queryKeyWord=",
+          "sha256": "0370384c793ce94b4e72070acba9d4694bd57f8b8268fc8ff75937729018f755",
+          "count": 46,
+          "pagination_controls": []
+        },
+        {
+          "start": "2024-08-17",
+          "end": "2024-08-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F08%2F17&queryEndDate=2024%2F08%2F31&newsType=&queryKeyWord=",
+          "sha256": "c316abdab5164fd610d7cf9e093e5f9492d1b8de298be7ec323ea0e71e95b5dd",
+          "count": 34,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2024-09-01",
+          "end": "2024-09-30",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F09%2F01&queryEndDate=2024%2F09%2F30&newsType=&queryKeyWord=",
+          "sha256": "b126d17ba11f7073e219753d14bceba6e32b862edae828cba8335a45853a9e28",
+          "count": 54,
+          "pagination_controls": []
+        },
+        {
+          "start": "2024-09-01",
+          "end": "2024-09-15",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F09%2F01&queryEndDate=2024%2F09%2F15&newsType=&queryKeyWord=",
+          "sha256": "755f559378fdb07570694d5f51df449dfe1a725fa60c3fee8d21a1eb5247432f",
+          "count": 27,
+          "pagination_controls": []
+        },
+        {
+          "start": "2024-09-16",
+          "end": "2024-09-30",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F09%2F16&queryEndDate=2024%2F09%2F30&newsType=&queryKeyWord=",
+          "sha256": "18a0c0367966f1d1b59d403bd1261baf8c65deda6a4cd34527dd3f51938c5010",
+          "count": 27,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2024-10-01",
+          "end": "2024-10-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F10%2F01&queryEndDate=2024%2F10%2F31&newsType=&queryKeyWord=",
+          "sha256": "818c55a2d8c69d3fb75c635079236c55f322f89c691de130aa7bf17b0e2a9130",
+          "count": 53,
+          "pagination_controls": []
+        },
+        {
+          "start": "2024-10-01",
+          "end": "2024-10-16",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F10%2F01&queryEndDate=2024%2F10%2F16&newsType=&queryKeyWord=",
+          "sha256": "7c2896ded94d83411cf00375c9c315e407d5a8015e117e4da7cdcdd0d04a19f4",
+          "count": 32,
+          "pagination_controls": []
+        },
+        {
+          "start": "2024-10-17",
+          "end": "2024-10-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F10%2F17&queryEndDate=2024%2F10%2F31&newsType=&queryKeyWord=",
+          "sha256": "f8e63ffbb14a310432ea1c63e502e78308780f5fd6223f331c71fa30b105323c",
+          "count": 21,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2024-11-01",
+          "end": "2024-11-30",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F11%2F01&queryEndDate=2024%2F11%2F30&newsType=&queryKeyWord=",
+          "sha256": "71c7976bb4b95cef35db255b6fa107344498fede8ea55755d4b1b0526a274928",
+          "count": 53,
+          "pagination_controls": []
+        },
+        {
+          "start": "2024-11-01",
+          "end": "2024-11-15",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F11%2F01&queryEndDate=2024%2F11%2F15&newsType=&queryKeyWord=",
+          "sha256": "3e648a74e2400fc9df64449ccbbd8a6de2f81aa9b392f6929cfb6661e81fa4c8",
+          "count": 36,
+          "pagination_controls": []
+        },
+        {
+          "start": "2024-11-16",
+          "end": "2024-11-30",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F11%2F16&queryEndDate=2024%2F11%2F30&newsType=&queryKeyWord=",
+          "sha256": "253304529f84aa7229a33dcc233f172c19324c05f74cef2bb6a3d268bce19773",
+          "count": 17,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2024-12-01",
+          "end": "2024-12-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F12%2F01&queryEndDate=2024%2F12%2F31&newsType=&queryKeyWord=",
+          "sha256": "99ca97b389df5b6c8b45508036be5f1053ee4c5b293e4c04a4f65bd8f0f285ca",
+          "count": 63,
+          "pagination_controls": []
+        },
+        {
+          "start": "2024-12-01",
+          "end": "2024-12-16",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F12%2F01&queryEndDate=2024%2F12%2F16&newsType=&queryKeyWord=",
+          "sha256": "87fb8d66bd58d948ba89f99593c38c386d25296721ec43586f68056a6e1355fc",
+          "count": 28,
+          "pagination_controls": []
+        },
+        {
+          "start": "2024-12-17",
+          "end": "2024-12-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2024%2F12%2F17&queryEndDate=2024%2F12%2F31&newsType=&queryKeyWord=",
+          "sha256": "a714d4a0246ea1eeb1338381fa40b5d049eb1d96eb0dc03faca558df60e22212",
+          "count": 35,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2025-01-01",
+          "end": "2025-01-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F01%2F01&queryEndDate=2025%2F01%2F31&newsType=&queryKeyWord=",
+          "sha256": "254b3186572c85b8bce7acd4f661fe0b53d31ee15b19041ff9f9f3377b5ff62e",
+          "count": 47,
+          "pagination_controls": []
+        },
+        {
+          "start": "2025-01-01",
+          "end": "2025-01-16",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F01%2F01&queryEndDate=2025%2F01%2F16&newsType=&queryKeyWord=",
+          "sha256": "ce83506f1f70ae929091e96bd05b9df2beb5f023ba38375837f27604dfa047b3",
+          "count": 34,
+          "pagination_controls": []
+        },
+        {
+          "start": "2025-01-17",
+          "end": "2025-01-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F01%2F17&queryEndDate=2025%2F01%2F31&newsType=&queryKeyWord=",
+          "sha256": "2ebe4e46d3c04702b8f995a2d26a01c20754ed870dc1bb73f5f483c99c1770ec",
+          "count": 13,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2025-02-01",
+          "end": "2025-02-28",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F02%2F01&queryEndDate=2025%2F02%2F28&newsType=&queryKeyWord=",
+          "sha256": "6ea45aa698cbcc42af528292d9ee425ea7cb55e9f6ca76103c90feeb1ef82b0c",
+          "count": 35,
+          "pagination_controls": []
+        },
+        {
+          "start": "2025-02-01",
+          "end": "2025-02-14",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F02%2F01&queryEndDate=2025%2F02%2F14&newsType=&queryKeyWord=",
+          "sha256": "71e0ddaccc389b165fe948e9b0b4fc7ca8c5cd77197f1ed10382bef41a958ecc",
+          "count": 23,
+          "pagination_controls": []
+        },
+        {
+          "start": "2025-02-15",
+          "end": "2025-02-28",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F02%2F15&queryEndDate=2025%2F02%2F28&newsType=&queryKeyWord=",
+          "sha256": "cba7ddcf111ffc7564272cb79df4ac34a49a303d037f4c96314b58ed0ff6f359",
+          "count": 12,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2025-03-01",
+          "end": "2025-03-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F03%2F01&queryEndDate=2025%2F03%2F31&newsType=&queryKeyWord=",
+          "sha256": "b8fe3a324773374253a35ebf4f6d7a06daa77d073f09ec2866c314730998ab29",
+          "count": 59,
+          "pagination_controls": []
+        },
+        {
+          "start": "2025-03-01",
+          "end": "2025-03-16",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F03%2F01&queryEndDate=2025%2F03%2F16&newsType=&queryKeyWord=",
+          "sha256": "2f31b1880d579fb3a545cab05e42ea92319f3a87c142c7e091899b68efa186b0",
+          "count": 34,
+          "pagination_controls": []
+        },
+        {
+          "start": "2025-03-17",
+          "end": "2025-03-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F03%2F17&queryEndDate=2025%2F03%2F31&newsType=&queryKeyWord=",
+          "sha256": "8656fc44294d84fee4a73706a5e8deb3e719718131cd849c46092c8cc1adc58f",
+          "count": 25,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2025-04-01",
+          "end": "2025-04-30",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F04%2F01&queryEndDate=2025%2F04%2F30&newsType=&queryKeyWord=",
+          "sha256": "bd63f45769062e478c9cee3d8334ed1d56650cc42381096988daeaffff54ef39",
+          "count": 51,
+          "pagination_controls": []
+        },
+        {
+          "start": "2025-04-01",
+          "end": "2025-04-15",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F04%2F01&queryEndDate=2025%2F04%2F15&newsType=&queryKeyWord=",
+          "sha256": "a2e451b452671abb95eeb36c73665e510b260eafd5a60d0dfce56a88d52d789e",
+          "count": 26,
+          "pagination_controls": []
+        },
+        {
+          "start": "2025-04-16",
+          "end": "2025-04-30",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F04%2F16&queryEndDate=2025%2F04%2F30&newsType=&queryKeyWord=",
+          "sha256": "016b071304c3647408718e9f43077e27df766e4f9527ba9784a458eb6dd10576",
+          "count": 25,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2025-05-01",
+          "end": "2025-05-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F05%2F01&queryEndDate=2025%2F05%2F31&newsType=&queryKeyWord=",
+          "sha256": "ab35f7818e3c2ced6459307d8bd4dbd3b958a4d4cacb953efa53c9ffd93842e9",
+          "count": 48,
+          "pagination_controls": []
+        },
+        {
+          "start": "2025-05-01",
+          "end": "2025-05-16",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F05%2F01&queryEndDate=2025%2F05%2F16&newsType=&queryKeyWord=",
+          "sha256": "e0c2ea3544e662ee782664605bef56bfa46e89f3aafb2b320b09cddb74434369",
+          "count": 32,
+          "pagination_controls": []
+        },
+        {
+          "start": "2025-05-17",
+          "end": "2025-05-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F05%2F17&queryEndDate=2025%2F05%2F31&newsType=&queryKeyWord=",
+          "sha256": "6cb9cad32dc9f4ec45db473bd2462e8983883a78ee303309de980aeba8a0de13",
+          "count": 16,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2025-06-01",
+          "end": "2025-06-30",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F06%2F01&queryEndDate=2025%2F06%2F30&newsType=&queryKeyWord=",
+          "sha256": "f212dd5e8d024e05c923f2d8e073f4e7959b889bde07cdb595aa2f2b595ac6e2",
+          "count": 157,
+          "pagination_controls": []
+        },
+        {
+          "start": "2025-06-01",
+          "end": "2025-06-15",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F06%2F01&queryEndDate=2025%2F06%2F15&newsType=&queryKeyWord=",
+          "sha256": "c495ebb164d6780457e53d9a79e94051c52fc534b1f0d99746efc0e026ead3d2",
+          "count": 71,
+          "pagination_controls": []
+        },
+        {
+          "start": "2025-06-16",
+          "end": "2025-06-30",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F06%2F16&queryEndDate=2025%2F06%2F30&newsType=&queryKeyWord=",
+          "sha256": "c2b274eb534c469f46f1e0d40c694ec710fef290acd5ac9b258ae37cea53b8ff",
+          "count": 86,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2025-07-01",
+          "end": "2025-07-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F07%2F01&queryEndDate=2025%2F07%2F31&newsType=&queryKeyWord=",
+          "sha256": "4bbf2ef0c1b641f214b6368027c46ccf9aa73979d9afe2590816fae68b10f77b",
+          "count": 115,
+          "pagination_controls": []
+        },
+        {
+          "start": "2025-07-01",
+          "end": "2025-07-16",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F07%2F01&queryEndDate=2025%2F07%2F16&newsType=&queryKeyWord=",
+          "sha256": "63ca2788aaaef23d2ffc527d7ba3721651cf5e17f1a4d5971408d4816bc64516",
+          "count": 77,
+          "pagination_controls": []
+        },
+        {
+          "start": "2025-07-17",
+          "end": "2025-07-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F07%2F17&queryEndDate=2025%2F07%2F31&newsType=&queryKeyWord=",
+          "sha256": "b33dc41619876860c02e7cb44db015e56cd20fb1226fd56bce8c5aee060c4de6",
+          "count": 38,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2025-08-01",
+          "end": "2025-08-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F08%2F01&queryEndDate=2025%2F08%2F31&newsType=&queryKeyWord=",
+          "sha256": "8ef84aa230add4b74159a207340fc5faa69b0cca0f3c7be9844bdf087236c57a",
+          "count": 92,
+          "pagination_controls": []
+        },
+        {
+          "start": "2025-08-01",
+          "end": "2025-08-16",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F08%2F01&queryEndDate=2025%2F08%2F16&newsType=&queryKeyWord=",
+          "sha256": "7fd9ff47224eef0cc696ce2540341c818a246ec4f2951e870ab7bfab5d9d2b2f",
+          "count": 53,
+          "pagination_controls": []
+        },
+        {
+          "start": "2025-08-17",
+          "end": "2025-08-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F08%2F17&queryEndDate=2025%2F08%2F31&newsType=&queryKeyWord=",
+          "sha256": "c8ff0af88516722948beab50002f7c407ce258d82efd2ffee223c50021e1a440",
+          "count": 39,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2025-09-01",
+          "end": "2025-09-30",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F09%2F01&queryEndDate=2025%2F09%2F30&newsType=&queryKeyWord=",
+          "sha256": "bc8d8c5b0ae420c0e86a587e8135140374e8864319a09aa952c35ffae423dfb5",
+          "count": 70,
+          "pagination_controls": []
+        },
+        {
+          "start": "2025-09-01",
+          "end": "2025-09-15",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F09%2F01&queryEndDate=2025%2F09%2F15&newsType=&queryKeyWord=",
+          "sha256": "ac1e75cc89984cca954025c04e8e8395476b16f4eb64144b13cbe241d487b5c1",
+          "count": 39,
+          "pagination_controls": []
+        },
+        {
+          "start": "2025-09-16",
+          "end": "2025-09-30",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F09%2F16&queryEndDate=2025%2F09%2F30&newsType=&queryKeyWord=",
+          "sha256": "2387a866053fa1c1ba2e201a80a25e4f1c24a022a6df61c588fa3593da8115e4",
+          "count": 31,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2025-10-01",
+          "end": "2025-10-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F10%2F01&queryEndDate=2025%2F10%2F31&newsType=&queryKeyWord=",
+          "sha256": "ab07c1b5ef50844fd5a99ecbb5f9bff36db7543ee252cc6a0702f89928b936df",
+          "count": 78,
+          "pagination_controls": []
+        },
+        {
+          "start": "2025-10-01",
+          "end": "2025-10-16",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F10%2F01&queryEndDate=2025%2F10%2F16&newsType=&queryKeyWord=",
+          "sha256": "40806bcd7de42ea9625973fbd2f4299c352cd646f34fdc45a13cc130c3cc8a2b",
+          "count": 47,
+          "pagination_controls": []
+        },
+        {
+          "start": "2025-10-17",
+          "end": "2025-10-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F10%2F17&queryEndDate=2025%2F10%2F31&newsType=&queryKeyWord=",
+          "sha256": "826c8cf969ceba46daf44cbf997fcad89230f6da0cd3113c4e1f0e4c4f0a8d80",
+          "count": 31,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2025-11-01",
+          "end": "2025-11-30",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F11%2F01&queryEndDate=2025%2F11%2F30&newsType=&queryKeyWord=",
+          "sha256": "dbbc01311e0c2cd8e49bf1eea7ce6484456e89b2c4972e057af87156d7585827",
+          "count": 69,
+          "pagination_controls": []
+        },
+        {
+          "start": "2025-11-01",
+          "end": "2025-11-15",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F11%2F01&queryEndDate=2025%2F11%2F15&newsType=&queryKeyWord=",
+          "sha256": "cd243c56c1ebd4de24b71000be2968e14a3aec1cdbc0c3211e5c9d6859a1ff9f",
+          "count": 43,
+          "pagination_controls": []
+        },
+        {
+          "start": "2025-11-16",
+          "end": "2025-11-30",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F11%2F16&queryEndDate=2025%2F11%2F30&newsType=&queryKeyWord=",
+          "sha256": "b34653713980e26c32a15b0f63970eda2ac590ea364ea340f80d82e3eccd78fd",
+          "count": 26,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2025-12-01",
+          "end": "2025-12-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F12%2F01&queryEndDate=2025%2F12%2F31&newsType=&queryKeyWord=",
+          "sha256": "14313f6d2b5d644a145197804504302f29c9fa02833b50550811495043a82f94",
+          "count": 75,
+          "pagination_controls": []
+        },
+        {
+          "start": "2025-12-01",
+          "end": "2025-12-16",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F12%2F01&queryEndDate=2025%2F12%2F16&newsType=&queryKeyWord=",
+          "sha256": "a83db375851895e8bb4d4898e13fff8ee8e45e1e609d3f473f0deabaae66e1ae",
+          "count": 41,
+          "pagination_controls": []
+        },
+        {
+          "start": "2025-12-17",
+          "end": "2025-12-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2025%2F12%2F17&queryEndDate=2025%2F12%2F31&newsType=&queryKeyWord=",
+          "sha256": "0540318d5a234960dc42d048756245ace74266ae052133271cdc582aa85124e9",
+          "count": 34,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2026-01-01",
+          "end": "2026-01-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2026%2F01%2F01&queryEndDate=2026%2F01%2F31&newsType=&queryKeyWord=",
+          "sha256": "a679865394f38dc02df515f3fd3964a3c7447ab4f33ddb4caabe4e5f9c524d82",
+          "count": 84,
+          "pagination_controls": []
+        },
+        {
+          "start": "2026-01-01",
+          "end": "2026-01-16",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2026%2F01%2F01&queryEndDate=2026%2F01%2F16&newsType=&queryKeyWord=",
+          "sha256": "2aa2b2adf68edb88a0995dc463522152deff673faa8af14c5fd89a3836afda16",
+          "count": 45,
+          "pagination_controls": []
+        },
+        {
+          "start": "2026-01-17",
+          "end": "2026-01-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2026%2F01%2F17&queryEndDate=2026%2F01%2F31&newsType=&queryKeyWord=",
+          "sha256": "d0cf66d90df97d38b272084b74ac1db2b4962575e43bada2f0d8bd8009db92c3",
+          "count": 39,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2026-02-01",
+          "end": "2026-02-28",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2026%2F02%2F01&queryEndDate=2026%2F02%2F28&newsType=&queryKeyWord=",
+          "sha256": "8652aa9dd5d0887fccd846920cbda334811b2bfe6c9992e0ef43c2170fb34229",
+          "count": 45,
+          "pagination_controls": []
+        },
+        {
+          "start": "2026-02-01",
+          "end": "2026-02-14",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2026%2F02%2F01&queryEndDate=2026%2F02%2F14&newsType=&queryKeyWord=",
+          "sha256": "58d4835d5324b0a2f3d793372c322996ca6293795cc146d04ae79e3fcd011c84",
+          "count": 30,
+          "pagination_controls": []
+        },
+        {
+          "start": "2026-02-15",
+          "end": "2026-02-28",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2026%2F02%2F15&queryEndDate=2026%2F02%2F28&newsType=&queryKeyWord=",
+          "sha256": "435c0f0fd29cd1418fa4e52ee137f627373f3ba2da3b6588ca9b2e896daa6b6c",
+          "count": 15,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2026-03-01",
+          "end": "2026-03-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2026%2F03%2F01&queryEndDate=2026%2F03%2F31&newsType=&queryKeyWord=",
+          "sha256": "fbb83fdf5632d5f4bec669b89fd10affda6f76f75ca7586a59a8c40efcb54005",
+          "count": 100,
+          "pagination_controls": []
+        },
+        {
+          "start": "2026-03-01",
+          "end": "2026-03-16",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2026%2F03%2F01&queryEndDate=2026%2F03%2F16&newsType=&queryKeyWord=",
+          "sha256": "fc0f4d0b318b599ed5407b83760149f6f2d7bf3d74923f4ba351792720487c4d",
+          "count": 54,
+          "pagination_controls": []
+        },
+        {
+          "start": "2026-03-17",
+          "end": "2026-03-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2026%2F03%2F17&queryEndDate=2026%2F03%2F31&newsType=&queryKeyWord=",
+          "sha256": "0b843f8880cf24df64384de33bbdb1b851ed061b563847f957620ae519d99eda",
+          "count": 46,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2026-04-01",
+          "end": "2026-04-30",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2026%2F04%2F01&queryEndDate=2026%2F04%2F30&newsType=&queryKeyWord=",
+          "sha256": "8a708170fd220a7a98f45328fc95861bacf8aab61d62b1d2ee9862d2f77c5435",
+          "count": 82,
+          "pagination_controls": []
+        },
+        {
+          "start": "2026-04-01",
+          "end": "2026-04-15",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2026%2F04%2F01&queryEndDate=2026%2F04%2F15&newsType=&queryKeyWord=",
+          "sha256": "3c393ec33a59d83753737d249e5c689208cd55b14912cc000b978374eff9b4f8",
+          "count": 47,
+          "pagination_controls": []
+        },
+        {
+          "start": "2026-04-16",
+          "end": "2026-04-30",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2026%2F04%2F16&queryEndDate=2026%2F04%2F30&newsType=&queryKeyWord=",
+          "sha256": "b13605d19fa47d6752be92ff517ac71f793f0e393a569e035f1592a6d78c0d2d",
+          "count": 35,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2026-05-01",
+          "end": "2026-05-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2026%2F05%2F01&queryEndDate=2026%2F05%2F31&newsType=&queryKeyWord=",
+          "sha256": "54c263ba56c81a1100d0e1f054faf69b8de4a7a939ad7eb0fde63d763b9ddcba",
+          "count": 85,
+          "pagination_controls": []
+        },
+        {
+          "start": "2026-05-01",
+          "end": "2026-05-16",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2026%2F05%2F01&queryEndDate=2026%2F05%2F16&newsType=&queryKeyWord=",
+          "sha256": "f91281868ad6371dec22da962c1d0db22c2ae016fc2d35e5b7a3b5a9173fd3fc",
+          "count": 43,
+          "pagination_controls": []
+        },
+        {
+          "start": "2026-05-17",
+          "end": "2026-05-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2026%2F05%2F17&queryEndDate=2026%2F05%2F31&newsType=&queryKeyWord=",
+          "sha256": "2edaf622a6c1d43b0050df147ef5d6cc5c701f4b20f2bfd0d40533b0d0f8e2b4",
+          "count": 42,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2026-06-01",
+          "end": "2026-06-30",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2026%2F06%2F01&queryEndDate=2026%2F06%2F30&newsType=&queryKeyWord=",
+          "sha256": "e421792868566e74605de5bdef51df7cb47c737c9f6446e0b8f43f34407a1a83",
+          "count": 187,
+          "pagination_controls": []
+        },
+        {
+          "start": "2026-06-01",
+          "end": "2026-06-15",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2026%2F06%2F01&queryEndDate=2026%2F06%2F15&newsType=&queryKeyWord=",
+          "sha256": "353e59caebd90bd9a4f4a6e681fb559114cad179f78152ca926ba963bc0726a7",
+          "count": 81,
+          "pagination_controls": []
+        },
+        {
+          "start": "2026-06-16",
+          "end": "2026-06-30",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2026%2F06%2F16&queryEndDate=2026%2F06%2F30&newsType=&queryKeyWord=",
+          "sha256": "81e78e1baa506ae7db3e0a097c3179cf91218f846f5a39dee999a2df87ce3d20",
+          "count": 106,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2026-07-01",
+          "end": "2026-07-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2026%2F07%2F01&queryEndDate=2026%2F07%2F31&newsType=&queryKeyWord=",
+          "sha256": "2b6ca97ef62e1d48586622dc5279b3a1c973ced9bfb961e37405e5f341ed3eae",
+          "count": 134,
+          "pagination_controls": []
+        },
+        {
+          "start": "2026-07-01",
+          "end": "2026-07-16",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2026%2F07%2F01&queryEndDate=2026%2F07%2F16&newsType=&queryKeyWord=",
+          "sha256": "1e8857f0c2ddd17e859fa3f085ead38ef54d7cb2aeb6de6019e4b3a1f537b7ea",
+          "count": 91,
+          "pagination_controls": []
+        },
+        {
+          "start": "2026-07-17",
+          "end": "2026-07-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2026%2F07%2F17&queryEndDate=2026%2F07%2F31&newsType=&queryKeyWord=",
+          "sha256": "1fd6cbd54a54e1ca189d25b9842d9f63ca8723c2fbb1a1b908073e51599455ea",
+          "count": 43,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2026-08-01",
+          "end": "2026-08-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2026%2F08%2F01&queryEndDate=2026%2F08%2F31&newsType=&queryKeyWord=",
+          "sha256": "f2eb0e98bc4c6b766241c455239d605125439bd3247e6b449e1f9734d1c7a964",
+          "count": 107,
+          "pagination_controls": []
+        },
+        {
+          "start": "2026-08-01",
+          "end": "2026-08-16",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2026%2F08%2F01&queryEndDate=2026%2F08%2F16&newsType=&queryKeyWord=",
+          "sha256": "0e518d05a0f2df3c9a5f921f8d5b8f3a93e449a2b4c747cc3d82b1d13a34033a",
+          "count": 70,
+          "pagination_controls": []
+        },
+        {
+          "start": "2026-08-17",
+          "end": "2026-08-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2026%2F08%2F17&queryEndDate=2026%2F08%2F31&newsType=&queryKeyWord=",
+          "sha256": "7137c81da9413418c20356bb2483881893e1c88da57db987529a0a562ed3bfc2",
+          "count": 37,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2026-09-01",
+          "end": "2026-09-30",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2026%2F09%2F01&queryEndDate=2026%2F09%2F30&newsType=&queryKeyWord=",
+          "sha256": "e48dc25ab94f7de49dc1e188ecf811b07ad9e9fb46fc32eca6334f41a13c6c6a",
+          "count": 74,
+          "pagination_controls": []
+        },
+        {
+          "start": "2026-09-01",
+          "end": "2026-09-15",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2026%2F09%2F01&queryEndDate=2026%2F09%2F15&newsType=&queryKeyWord=",
+          "sha256": "dca2de2316e91725c8cd6661e8351cc2a34377710b1ba0f04886be24e3a782b7",
+          "count": 40,
+          "pagination_controls": []
+        },
+        {
+          "start": "2026-09-16",
+          "end": "2026-09-30",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2026%2F09%2F16&queryEndDate=2026%2F09%2F30&newsType=&queryKeyWord=",
+          "sha256": "15153170010157ec7dfe3dd619d16a9382cf12dba6bdce1edd8883cef59ac16a",
+          "count": 34,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    },
+    {
+      "partitions": [
+        {
+          "start": "2026-10-01",
+          "end": "2026-10-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2026%2F10%2F01&queryEndDate=2026%2F10%2F31&newsType=&queryKeyWord=",
+          "sha256": "d9fc48bbbdef75bdbac763e692886639f900cdc85c32f48ac6213bb5c1f033f5",
+          "count": 58,
+          "pagination_controls": []
+        },
+        {
+          "start": "2026-10-01",
+          "end": "2026-10-16",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2026%2F10%2F01&queryEndDate=2026%2F10%2F16&newsType=&queryKeyWord=",
+          "sha256": "277f84282904d69381eae3a48121ca122aea6c5c803c72d7ee5f55465c078f21",
+          "count": 36,
+          "pagination_controls": []
+        },
+        {
+          "start": "2026-10-17",
+          "end": "2026-10-31",
+          "url": "https://www.taifex.com.tw/cht/11/hisNews?isQuery=1&queryStartDate=2026%2F10%2F17&queryEndDate=2026%2F10%2F31&newsType=&queryKeyWord=",
+          "sha256": "af60f7d4469fa5f195cd82cc71c883ad3269ab434cc4999c5e2b40dd6cae984f",
+          "count": 22,
+          "pagination_controls": []
+        }
+      ],
+      "matched": true
+    }
+  ],
+  "months_matched": 36,
+  "months_total": 36,
+  "notice_count": 2725,
+  "closure_positive_controls": {
+    "2024-07-24": [
+      [
+        "2024-07-24",
+        "因凱米颱風來襲，113年7月24日(星期三)及7月25日(星期四)臺灣期貨交易所集中交易市場休市2日(包含一般交易時段及盤後交易時段)，店頭集中結算業務暫停營業2日。本公司113年7月第4週到期結算之臺指選擇權及小型臺指期貨契約，其最後交易日及最後結算日順延至最近之次一營業日。",
+        "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=15240"
+      ],
+      [
+        "2024-07-23",
+        "因凱米颱風來襲，113年7月24日(星期三)臺灣期貨交易所集中交易市場休市乙日(包含 一般交易時段及盤後交易時段)，店頭集中結算業務暫停營業乙日。本公司113年7月第4 週到期結算之臺指選擇權及小型臺指期貨契約，其最後交易日及最後結算日順延至最近之次一營業日。",
+        "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=15239"
+      ]
+    ],
+    "2024-10-02": [
+      [
+        "2024-10-02",
+        "因山陀兒颱風來襲，113年10月2日(星期三)及10月3日(星期四)臺灣期貨交易所集中交易市場休市2日(包含一般交易時段及盤後交易時段)，店頭集中結算業務暫停營業2日。本公司113年10月第1週到期結算之臺指選擇權及小型臺指期貨契約，其最後交易日及最後結算日順延至最近之次一營業日。另本公司113年11月到期布蘭特原油期貨最後結算日順延至最近之次一營業日。",
+        "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=15394"
+      ],
+      [
+        "2024-10-01",
+        "因山陀兒颱風來襲，113年10月2日(星期三)臺灣期貨交易所集中交易市場休市乙日(包含一般交易時段及盤後交易時段)，店頭集中結算業務暫停營業乙日。本公司113年10月第1週到期結算之臺指選擇權及小型臺指期貨契約，其最後交易日及最後結算日順延至最近之次一營業日。另本公司113年11月到期布蘭特原油期貨最後結算日順延至最近之次一營業日。",
+        "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=15393"
+      ]
+    ],
+    "2024-10-31": [
+      [
+        "2024-10-30",
+        "因康芮颱風來襲，113年10月31日(星期四)臺灣期貨交易所集中交易市場休市乙日(包含一般交易時段及盤後交易時段)，店頭集中結算業務暫停營業乙日。本公司113年12月到期布蘭特原油期貨最後交易日不順延。原定113年10月31日調整臺股期貨等7檔契約保證金，順延至11月1日一般交易時段結束後起實施。",
+        "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=15446"
+      ],
+      [
+        "2024-10-30",
+        "公告調整本公司臺股期貨契約(TX)、小型臺指期貨契約(MTX)、客製化小型臺指期貨契約(MXFFX)、微型臺指期貨契約(TMF)、黃金期貨契約(GDF)、臺幣黃金期貨契約(TGF)及黃金選擇權契約(TGO)之期貨契約保證金及選擇權契約風險保證金(A值)、風險保證金最低值(B值)、混合部位風險保證金(C值)所有月份保證金金額，並自113年10月31日一般交易時段結束後起實施，如實施日遇本公司集中交易市場休市，順延至次一一般交易時段結束後起實施，請查照。",
+        "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=15444"
+      ],
+      [
+        "2024-10-30",
+        "臺灣期貨交易所於113年10月30日公告調整臺股期貨契約(TX)、小型臺指期貨契約(MTX)、客製化小型臺指期貨契約(MXFFX)、微型臺指期貨契約(TMF)、黃金期貨契約(GDF)、臺幣黃金期貨契約(TGF)及黃金選擇權契約(TGO)之期貨契約保證金及選擇權契約風險保證金(A值)、風險保證金最低值(B值)、混合部位風險保證金(C值)所有月份保證金金額，並自113年10月31日一般交易時段結束後起實施，如實施日遇本公司集中交易市場休市，順延至次一一般交易時段結束後起實施。",
+        "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/新聞稿_中文(5).pdf"
+      ],
+      [
+        "2024-11-01",
+        "臺灣期貨交易所於113年11月4日調高網家期貨契約(NUF)所有月份保證金適用比例為現行所屬級距適用比例之1.5倍，本次調高係網家(股票代號：8044)經櫃檯買賣中心於113年10月30日公布為處置有價證券(因颱風來襲，113年10月31日休市乙日，依櫃買中心公告說明，遇休市則順延執行，實際處置期間為113年11月1日至113年11月14日)，期交所依規定調高網家期貨契約(NUF)所有月份保證金適用比例，自113年11月4日(證券市場處置生效日次一營業日)一般交易時段結束後起實施，並於證券市場處置期間結束後，於113年11月14日一般交易時段結束後恢復為調整前之保證金。",
+        "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/新聞稿_處置股票(清稿).pdf"
+      ]
+    ],
+    "2026-07-10": [
+      [
+        "2026-07-09",
+        "因巴威颱風來襲，115年7月10日(星期五)臺灣期貨交易所集中交易市場休市1日(包含一般交易時段及盤後交易時段)，店頭集中結算業務暫停營業1日。本公司115年7月10日到期結算之臺指選擇權週五到期契約，其最後交易日及最後結算日順延至最近之次一營業日，另本公司115年7月到期東證期貨最後結算日順延至最近之次一營業日。原定於 7 月 10 日契約調整的4檔股票期貨及1檔股票選擇權，將同步順延至次一營業日。",
+        "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17137"
+      ]
+    ],
+    "2026-10-23": [
+      [
+        "2026-10-22",
+        "因薔琵颱風來襲，115年10月23日(星期五)臺灣期貨交易所集中交易市場休市1日(包含一般交易時段及盤後交易時段)，店頭集中結算業務暫停營業1日。本公司115年10月23日到期結算之臺指選擇權週五到期契約，其最後交易日及最後結算日順延至最近之次一營業日。",
+        "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17441"
+      ]
+    ]
+  },
+  "closure_candidates": [
+    [
+      "2023-12-12",
+      "公告本公司期貨集中交易市場113年農曆春節休市暨相關事宜。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1120202427號函.pdf"
+    ],
+    [
+      "2023-12-19",
+      "公告本公司期貨集中交易市場113年1月1日(星期一)中華民 國開國紀念日休市1日。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1120202522號.pdf"
+    ],
+    [
+      "2023-12-20",
+      "公告榮剛期貨（契約代號：NJ）自112年12月21日起暫停交易。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1120202559號.pdf"
+    ],
+    [
+      "2023-12-22",
+      "因應本公司期貨集中交易市場113年農曆春節休市，期貨商對期貨交易人之相關風險控管作業，應依說明事項辦理，請查照。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/1120302339函(抄本).pdf"
+    ],
+    [
+      "2024-02-19",
+      "公告本公司期貨集中交易市場113年2月28日(星期三)和平紀念日休市1日。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1130200288號函.pdf"
+    ],
+    [
+      "2024-03-13",
+      "公告113年4月4日(星期四)為兒童節暨民族掃墓節以及113年4月5日(星期五)依規定放假，本公司期貨集中交易市場配合休市2日。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1130200439號函.pdf"
+    ],
+    [
+      "2024-04-16",
+      "公告本公司期貨集中交易市場113年5月1日(星期三)勞動節休市1日。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1130200682號函.pdf"
+    ],
+    [
+      "2024-04-25",
+      "公告京元電子期貨（契約代號：GR）自113年4月26日起暫停交易。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1130200762號.pdf"
+    ],
+    [
+      "2024-05-20",
+      "公告本公司期貨集中交易市場113年6月10日(星期一)端午節休市1日。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1130200910號函.pdf"
+    ],
+    [
+      "2024-06-04",
+      "公告亞泥期貨（契約代號：DY）及世界期貨（契約代號：NL）自113年6月5日起暫停交易。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/20240604公告暫停_亞泥、世界.pdf"
+    ],
+    [
+      "2024-07-23",
+      "因凱米颱風來襲，113年7月24日(星期三)臺灣期貨交易所集中交易市場休市乙日(包含 一般交易時段及盤後交易時段)，店頭集中結算業務暫停營業乙日。本公司113年7月第4 週到期結算之臺指選擇權及小型臺指期貨契約，其最後交易日及最後結算日順延至最近之次一營業日。",
+      "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=15239"
+    ],
+    [
+      "2024-07-24",
+      "因凱米颱風來襲，113年7月24日(星期三)及7月25日(星期四)臺灣期貨交易所集中交易市場休市2日(包含一般交易時段及盤後交易時段)，店頭集中結算業務暫停營業2日。本公司113年7月第4週到期結算之臺指選擇權及小型臺指期貨契約，其最後交易日及最後結算日順延至最近之次一營業日。",
+      "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=15240"
+    ],
+    [
+      "2024-08-08",
+      "公告群創期貨（代號DQF）及選擇權（代號DQO）契約調整及停止交易事宜。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/3481_20240826.pdf"
+    ],
+    [
+      "2024-08-21",
+      "公告台新金期貨及選擇權（契約代號：CM）及新光金期貨及選擇權（契約代號：DD）自113年8月22日起暫停交易。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1130201811號函.pdf"
+    ],
+    [
+      "2024-09-06",
+      "公告本公司期貨集中交易市場113年9月17日(星期二)中秋節休市1日。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1130201914號函.pdf"
+    ],
+    [
+      "2024-09-13",
+      "公告瑞軒期貨（代號HAF）契約調整及停止交易事宜。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/2489_20240930.pdf"
+    ],
+    [
+      "2024-09-25",
+      "公告本公司期貨集中交易市場113年10月10日(星期四)國慶日休市1日。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1130202038號函.pdf"
+    ],
+    [
+      "2024-10-01",
+      "因山陀兒颱風來襲，113年10月2日(星期三)臺灣期貨交易所集中交易市場休市乙日(包含一般交易時段及盤後交易時段)，店頭集中結算業務暫停營業乙日。本公司113年10月第1週到期結算之臺指選擇權及小型臺指期貨契約，其最後交易日及最後結算日順延至最近之次一營業日。另本公司113年11月到期布蘭特原油期貨最後結算日順延至最近之次一營業日。",
+      "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=15393"
+    ],
+    [
+      "2024-10-02",
+      "因山陀兒颱風來襲，113年10月2日(星期三)及10月3日(星期四)臺灣期貨交易所集中交易市場休市2日(包含一般交易時段及盤後交易時段)，店頭集中結算業務暫停營業2日。本公司113年10月第1週到期結算之臺指選擇權及小型臺指期貨契約，其最後交易日及最後結算日順延至最近之次一營業日。另本公司113年11月到期布蘭特原油期貨最後結算日順延至最近之次一營業日。",
+      "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=15394"
+    ],
+    [
+      "2024-10-30",
+      "公告達方期貨（契約代號：KK）自113年11月1日起暫停交易。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/1130202307.pdf"
+    ],
+    [
+      "2024-10-30",
+      "因康芮颱風來襲，113年10月31日(星期四)臺灣期貨交易所集中交易市場休市乙日(包含一般交易時段及盤後交易時段)，店頭集中結算業務暫停營業乙日。本公司113年12月到期布蘭特原油期貨最後交易日不順延。原定113年10月31日調整臺股期貨等7檔契約保證金，順延至11月1日一般交易時段結束後起實施。",
+      "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=15446"
+    ],
+    [
+      "2024-10-30",
+      "公告調整本公司臺股期貨契約(TX)、小型臺指期貨契約(MTX)、客製化小型臺指期貨契約(MXFFX)、微型臺指期貨契約(TMF)、黃金期貨契約(GDF)、臺幣黃金期貨契約(TGF)及黃金選擇權契約(TGO)之期貨契約保證金及選擇權契約風險保證金(A值)、風險保證金最低值(B值)、混合部位風險保證金(C值)所有月份保證金金額，並自113年10月31日一般交易時段結束後起實施，如實施日遇本公司集中交易市場休市，順延至次一一般交易時段結束後起實施，請查照。",
+      "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=15444"
+    ],
+    [
+      "2024-10-30",
+      "臺灣期貨交易所於113年10月30日公告調整臺股期貨契約(TX)、小型臺指期貨契約(MTX)、客製化小型臺指期貨契約(MXFFX)、微型臺指期貨契約(TMF)、黃金期貨契約(GDF)、臺幣黃金期貨契約(TGF)及黃金選擇權契約(TGO)之期貨契約保證金及選擇權契約風險保證金(A值)、風險保證金最低值(B值)、混合部位風險保證金(C值)所有月份保證金金額，並自113年10月31日一般交易時段結束後起實施，如實施日遇本公司集中交易市場休市，順延至次一一般交易時段結束後起實施。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/新聞稿_中文(5).pdf"
+    ],
+    [
+      "2024-11-01",
+      "臺灣期貨交易所於113年11月4日調高網家期貨契約(NUF)所有月份保證金適用比例為現行所屬級距適用比例之1.5倍，本次調高係網家(股票代號：8044)經櫃檯買賣中心於113年10月30日公布為處置有價證券(因颱風來襲，113年10月31日休市乙日，依櫃買中心公告說明，遇休市則順延執行，實際處置期間為113年11月1日至113年11月14日)，期交所依規定調高網家期貨契約(NUF)所有月份保證金適用比例，自113年11月4日(證券市場處置生效日次一營業日)一般交易時段結束後起實施，並於證券市場處置期間結束後，於113年11月14日一般交易時段結束後恢復為調整前之保證金。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/新聞稿_處置股票(清稿).pdf"
+    ],
+    [
+      "2024-11-29",
+      "公告晟德期貨（契約代號：NI）自113年11月29日起暫停交易。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1130202538號.pdf"
+    ],
+    [
+      "2024-12-16",
+      "公告本公司期貨集中交易市場114年農曆春節休市暨相關事宜。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1130202624號函.pdf"
+    ],
+    [
+      "2024-12-18",
+      "公告本公司期貨集中交易市場114年1月1日(星期三)中華民國開國紀念日休市1日。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1130202684號函.pdf"
+    ],
+    [
+      "2024-12-25",
+      "因應本公司期貨集中交易市場114年農曆春節休市，期貨商對期貨交易人之相關風險控管作業，應依說明事項辦理，請查照。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/1130302542(抄本).pdf"
+    ],
+    [
+      "2025-02-12",
+      "公告本公司期貨集中交易市場114年2月28日(星期五)和平紀念日休市1日。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140200243號函.pdf"
+    ],
+    [
+      "2025-03-20",
+      "公告114年4月4日(星期五)為兒童節暨民族掃墓節及114年4 月3日(星期四)依規定放假，本公司期貨集中交易市場配合休市2日。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140200481號函.pdf"
+    ],
+    [
+      "2025-04-17",
+      "公告本公司期貨集中交易市場114年5月1日(星期四)勞動節休市1日。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140200690號函.pdf"
+    ],
+    [
+      "2025-05-13",
+      "公告台積電期貨及小型台積電期貨（契約代號：CD、QF）自114年5月13日18時35分起盤後交易時段暫停交易。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/1140200877.pdf"
+    ],
+    [
+      "2025-05-20",
+      "公告114年5月31日(星期六)為端午節，依規定於114年5月30 日(星期五)補假一日，本公司期貨集中交易市場配合休市1 日。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140200905號函.pdf"
+    ],
+    [
+      "2025-05-20",
+      "公告元大台灣50ETF期貨（代號NYF）、小型元大台灣50ETF 期貨（代號SRF）及元大台灣50ETF選擇權（代號NYO）契約調整及停止交易事宜。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/0050_20250618.pdf"
+    ],
+    [
+      "2025-05-29",
+      "公告大同期貨（代號CXF）契約調整及停止交易事宜。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/2371_20250623.pdf"
+    ],
+    [
+      "2025-07-14",
+      "公告文曄期貨（契約代號：IQ）自114年7月15日起暫停交易。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/網站公告_202507文曄暫停交易.pdf"
+    ],
+    [
+      "2025-07-29",
+      "公告東元期貨（契約代號：EM）、鴻海期貨及選擇權（契約代號：DH）自114年7月30日起暫停交易。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/網站公告_東元、鴻海暫停交易.pdf"
+    ],
+    [
+      "2025-08-06",
+      "公告國巨期貨（代號LXF）及小型國巨期貨（代號QEF）契約調整及停止交易事宜。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/2327_20250825.pdf"
+    ],
+    [
+      "2025-08-12",
+      "公告台泥期貨及選擇權（契約代號：DF）自114年8月13日起暫停交易。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/1101.pdf"
+    ],
+    [
+      "2025-09-09",
+      "公告114年9月28日(星期日)為教師節，依規定於114年9月29 日(星期一)補假一日，本公司期貨集中交易市場配合休市1 日。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140201937號函.pdf"
+    ],
+    [
+      "2025-09-15",
+      "公告佳世達期貨（代號CWF）契約調整及停止交易事宜。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/2352_20251007.pdf"
+    ],
+    [
+      "2025-09-16",
+      "公告瑞軒期貨（代號HAF）契約調整及停止交易事宜。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/2489_20251007.pdf"
+    ],
+    [
+      "2025-09-25",
+      "公告本公司期貨集中交易市場114年10月6日(星期一)中秋節休市1日。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202053號函.pdf"
+    ],
+    [
+      "2025-09-30",
+      "公告威剛期貨（契約代號：ND）自114年10月1日起暫停交易。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/公告內容(1).pdf"
+    ],
+    [
+      "2025-10-01",
+      "公告本公司期貨集中交易市場114年10月10日(星期五)國慶日休市1日。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202085號函.pdf"
+    ],
+    [
+      "2025-10-15",
+      "公告114年10月25日(星期六)為臺灣光復暨金門古寧頭大捷紀念日，依規定於114年10月24日(星期五)補假一日，本公司期貨集中交易市場配合休市1日。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202187號函.pdf"
+    ],
+    [
+      "2025-11-04",
+      "公告玉山金期貨及選擇權（契約代號：DN）自114年11月5日起暫停交易。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/網站公告_玉山金1105暫停交易.pdf"
+    ],
+    [
+      "2025-11-11",
+      "公告台積電期貨及小型台積電期貨(契約代號：CD、QF)自114年11月11日18時25分起盤後交易時段暫停交易，114年11月12日一般交易時段恢復交易。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202382號函.pdf"
+    ],
+    [
+      "2025-11-12",
+      "公告正崴期貨（契約代號：GL）自114年11月13日起暫停交易。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202393號函.pdf"
+    ],
+    [
+      "2025-12-12",
+      "公告114年12月25日(星期四)為行憲紀念日及115年1月1日 (星期四)為中華民國開國紀念日，依規定各放假一日，本公司期貨集中交易市場配合休市。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202601號函.pdf"
+    ],
+    [
+      "2025-12-16",
+      "公告本公司期貨集中交易市場115年農曆春節休市暨相關事宜。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1140202563號函.pdf"
+    ],
+    [
+      "2026-01-13",
+      "因應本公司期貨集中交易市場114年農曆春節休市，期貨商對期貨交易人之相關風險控管作業，應依說明事項辦理，請查照。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/document (2).pdf"
+    ],
+    [
+      "2026-01-27",
+      "臺灣期貨交易所於115年1月28日調高南電期貨契約(LYF)、小型南電期貨契約(QSF)所有月份保證金適用比例為未經處置前所屬級距之2倍。本次調高係南電(股票代號：8046)最近30個營業日內經證交所於115年1月26日第2次公布為處置有價證券(第1次公布為1月21日)，處置期間為1月27日至2月9日，期交所依規定，自115年1月28日(證券市場處置生效日次一營業日)一般交易時段結束後起，調高南電期貨及小型南電期貨所有月份保證金適用比例，原115年1月22日台期結字第11503001751號函停止適用。證券市場處置期間結束後，於115年2月9日一般交易時段結束後恢復為115年1月23日調整前之保證金。參照證券市場處置措施，調整期間如遇休市、有價證券停止買賣、全日暫停交易，則恢復日順延執行。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/新聞稿_中文(14).pdf"
+    ],
+    [
+      "2026-02-10",
+      "公告115年2月28日(星期六)為和平紀念日，依規定於115年2 月27日(星期五)補假一日，本公司期貨集中交易市場配合休市1日。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150200266號函.pdf"
+    ],
+    [
+      "2026-03-13",
+      "公告115年4月4日兒童節適逢星期六及4月5日清明節適逢星期日，依規定於115年4月3日(星期五)及4月6日(星期一)補假2日，本公司期貨集中交易市場配合休市2日。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150200471號函.pdf"
+    ],
+    [
+      "2026-04-07",
+      "公告中石化期貨（契約代號：EG）自115年4月8日起暫停交易。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150200653號.pdf"
+    ],
+    [
+      "2026-04-20",
+      "公告本公司期貨集中交易市場115年5月1日(星期五)勞動節休市1日。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150200726號函.pdf"
+    ],
+    [
+      "2026-05-12",
+      "公告正崴期貨（契約代號：GL）自115年5月13日起暫停交易。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150200871號.pdf"
+    ],
+    [
+      "2026-06-08",
+      "公告本公司期貨集中交易市場115年6月19日(星期五)端午節休市1日。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150201003號函.pdf"
+    ],
+    [
+      "2026-06-09",
+      "公告貿聯-KY期貨（契約代號：VE）及小型貿聯-KY期貨（契約代號：VF）自115年6月10日起暫停交易。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/公告貿聯期貨及小型貿聯期貨暫停交易.pdf"
+    ],
+    [
+      "2026-06-16",
+      "公告璟德期貨（代號NBF）契約調整及停止交易事宜。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/3152_20260630.pdf"
+    ],
+    [
+      "2026-07-09",
+      "因巴威颱風來襲，115年7月10日(星期五)臺灣期貨交易所集中交易市場休市1日(包含一般交易時段及盤後交易時段)，店頭集中結算業務暫停營業1日。本公司115年7月10日到期結算之臺指選擇權週五到期契約，其最後交易日及最後結算日順延至最近之次一營業日，另本公司115年7月到期東證期貨最後結算日順延至最近之次一營業日。原定於 7 月 10 日契約調整的4檔股票期貨及1檔股票選擇權，將同步順延至次一營業日。",
+      "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17137"
+    ],
+    [
+      "2026-07-20",
+      "公告寶雅期貨（代號RPF）及小型寶雅期貨（代號RRF）契約調整及停止交易事宜。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/5904_20260810.pdf"
+    ],
+    [
+      "2026-08-06",
+      "公告瑞儀期貨（代號KAF）契約調整及停止交易事宜。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/6176_20260824.pdf"
+    ],
+    [
+      "2026-08-10",
+      "公告中光電期貨(代號NMF)契約自115年8月11日起停止加掛新月份契約，並自115年8月24日起停止交易。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150002443號.pdf"
+    ],
+    [
+      "2026-08-11",
+      "公告榮成期貨（契約代號：OS）自115年8月12日起暫停交易。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150201641號函.pdf"
+    ],
+    [
+      "2026-09-17",
+      "公告中環期貨（代號CUF）契約調整及停止交易事宜。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/2323_20261012.pdf"
+    ],
+    [
+      "2026-09-18",
+      "公告本公司期貨集中交易市場115年9月25日(星期五)中秋節及9月28日(星期一)教師節休市2日。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/公告115年中秋節 教師節休市.pdf"
+    ],
+    [
+      "2026-10-01",
+      "公告信昌電期貨（代號PKF）契約調整及停止交易事宜。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/6173_20261019.pdf"
+    ],
+    [
+      "2026-10-06",
+      "公告115年10月10日國慶日適逢星期六及10月25日臺灣光復暨金門古寧頭大捷紀念日適逢星期日，依規定於115年10月9 日(星期五)及10月26日(星期一)補假2日，本公司期貨集中交易市場配合休市2日。",
+      "https://www.taifex.com.tw/file/taifex/CHINESE/11/attach/台期交字第1150201963號函.pdf"
+    ],
+    [
+      "2026-10-22",
+      "因薔琵颱風來襲，115年10月23日(星期五)臺灣期貨交易所集中交易市場休市1日(包含一般交易時段及盤後交易時段)，店頭集中結算業務暫停營業1日。本公司115年10月23日到期結算之臺指選擇權週五到期契約，其最後交易日及最後結算日順延至最近之次一營業日。",
+      "https://www.taifex.com.tw/cht/11/newsDetail?newsType=1&idx=17441"
+    ]
+  ],
+  "public_archive_coverage_verified": true,
+  "limitation": "Coverage refers to the public search interface. It cannot attest to records absent from the exchange archive.",
+  "monthly_response_manifest_sha256": "bb8114d40be1870ccc4fed73e2aa6825a801335f18d0e0f895e5704177ede70f"
+}

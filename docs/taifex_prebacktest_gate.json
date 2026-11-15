@@ -1,8 +1,7 @@
 {
   "blockers": [
-    "full_notice_sweep_not_verified",
     "primary_evidence_not_complete",
-    "2023-11-13_official_source_not_independently_verified"
+    "official_historical_extract_not_acquired"
   ],
   "evidence_urls_accessible": true,
   "record_count": 718,
@@ -10,15 +9,13 @@
   "special_source_links_present": true,
   "special_date_coverage": 10,
   "calendar_data_consistent": true,
-  "full_notice_sweep_verified": false,
+  "full_notice_sweep_verified": true,
   "primary_evidence_complete": false,
   "independent_taifex_calendar_verified": false,
   "full_model_backtest_authorized": false,
-  "raw_source_values_verified": 717,
+  "raw_source_values_verified": 718,
   "raw_source_values_expected": 718,
-  "raw_source_unverified_dates": [
-    "2023-11-13"
-  ],
+  "raw_source_unverified_dates": [],
   "official_historical_data_request_required": true,
   "official_historical_data_request": {
     "date": "2023-11-13",
@@ -40,8 +37,11 @@
     "verification_rule": "Require independently supplied official source file, dated record and raw SHA-256 before unlocking"
   },
   "official_archive_audit": {
-    "historical_news_archive": "https://www.taifex.com.tw/cht/11/hisNews",
-    "status": "interface_discovery_only",
-    "required": "Exhaustive date/category/page coverage and primary notice reconciliation; do not infer completeness from yearly announcement landing pages"
-  }
+    "status": "public_chinese_archive_coverage_verified",
+    "evidence": "docs/taifex_hisnews_coverage.json",
+    "notice_count": 2725,
+    "months_verified": 36,
+    "scope": "Unfiltered public Chinese-language archive. Formal primary-evidence certification is tracked separately."
+  },
+  "daily_source_reconciliation": "docs/p2_04_taifex_source_reconciliation.json"
 }

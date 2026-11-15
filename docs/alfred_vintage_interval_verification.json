@@ -1,0 +1,130 @@
+{
+  "checked_at_utc": "2026-11-15T18:06:01.375418+00:00",
+  "source": "https://api.stlouisfed.org/fred/series/observations",
+  "source_vintage_sha256": "7cb9c5dd9595d51f79cad339127432cea9d59fcdcf9bc873995f55c2c576337d",
+  "source_panel_sha256": "161505e9ee16550400c21749236ab5d4c4eb3690d07003bbf986ba09b48fe472",
+  "series": {
+    "fx": {
+      "series": "DEXTAUS",
+      "start": "2023-11-09",
+      "end": "2026-10-31",
+      "observation_start": "2023-09-01",
+      "response_rows": 822,
+      "boundaries_checked": 822,
+      "differences": 0,
+      "examples": [],
+      "response_sha256": [
+        "a815cf71ddfe2d7566d786c5bdb3d9092689101b13c4bd29ee0ed7498fe74b7d"
+      ],
+      "status": "matched",
+      "panel_values_checked": 718,
+      "panel_missing_values": 0,
+      "panel_value_differences": []
+    },
+    "hy": {
+      "series": "BAMLH0A0HYM2",
+      "start": "2024-01-15",
+      "end": "2026-10-31",
+      "observation_start": "2023-11-13",
+      "response_rows": 785,
+      "boundaries_checked": 786,
+      "differences": 1,
+      "examples": [
+        {
+          "observation_date": "2023-11-13",
+          "effective_date": "2024-01-15",
+          "stored": "4.03",
+          "official": "None"
+        }
+      ],
+      "response_sha256": [
+        "f9f791c3bacb22f198c1b54322fd9ac35c3f0ecb7cea799bb73fd3eea64e304f"
+      ],
+      "status": "mismatch",
+      "panel_values_checked": 673,
+      "panel_missing_values": 45,
+      "panel_value_differences": []
+    },
+    "ig": {
+      "series": "BAMLC0A0CM",
+      "start": "2024-01-15",
+      "end": "2026-10-31",
+      "observation_start": "2023-11-13",
+      "response_rows": 786,
+      "boundaries_checked": 787,
+      "differences": 1,
+      "examples": [
+        {
+          "observation_date": "2023-11-13",
+          "effective_date": "2024-01-15",
+          "stored": "1.25",
+          "official": "None"
+        }
+      ],
+      "response_sha256": [
+        "d618741aa20e1831d0ca7e138de094449f21fbc20d07c95bd97d29bd4bdfde08"
+      ],
+      "status": "mismatch",
+      "panel_values_checked": 673,
+      "panel_missing_values": 45,
+      "panel_value_differences": []
+    },
+    "vix": {
+      "series": "VIXCLS",
+      "start": "2023-11-09",
+      "end": "2026-10-31",
+      "observation_start": "2023-09-01",
+      "response_rows": 826,
+      "boundaries_checked": 826,
+      "differences": 0,
+      "examples": [],
+      "response_sha256": [
+        "ee31b01cc59e8f870db46506085197f9fe4fe2284492dd9f67a3d02190ac9b3f"
+      ],
+      "status": "matched",
+      "panel_values_checked": 718,
+      "panel_missing_values": 0,
+      "panel_value_differences": []
+    },
+    "us10y": {
+      "series": "DGS10",
+      "start": "2023-11-09",
+      "end": "2026-10-31",
+      "observation_start": "2023-09-01",
+      "response_rows": 825,
+      "boundaries_checked": 825,
+      "differences": 0,
+      "examples": [],
+      "response_sha256": [
+        "411d938308acdda0ef9e0e1f66ad7982dc115063433222ff2effdb3d90b005ed"
+      ],
+      "status": "matched",
+      "panel_values_checked": 718,
+      "panel_missing_values": 0,
+      "panel_value_differences": []
+    },
+    "nfci": {
+      "series": "NFCI",
+      "start": "2023-11-09",
+      "end": "2026-10-31",
+      "observation_start": "2023-09-01",
+      "response_rows": 11688,
+      "boundaries_checked": 11688,
+      "differences": 0,
+      "examples": [],
+      "response_sha256": [
+        "99f789596f458a2fd5c837dba88dd5597ecc5b4b7321d904baf7e7e7a1b9d73d",
+        "610c45672ea2554636467399c76e705f649156ee22cc8b5f5772b9f0c2f23fc2"
+      ],
+      "status": "matched",
+      "panel_values_checked": 718,
+      "panel_missing_values": 0,
+      "panel_value_differences": []
+    }
+  },
+  "effective_date_intervals_verified": false,
+  "intraday_publication_timestamps_verified": false,
+  "source_run": "https://github.com/volkone/global-risk-radar/actions/runs/43744783948",
+  "panel_nonmissing_values_verified": true,
+  "unmatched_archive_values_review": "Two November 13, 2023 credit-spread observations exist in the saved bootstrap but are absent from the official interval response. Neither is used in the 718-session panel. The archived inputs and frozen research panel were kept intact."
+}

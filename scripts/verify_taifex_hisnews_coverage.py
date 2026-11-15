@@ -75,7 +75,12 @@ def main():
                 middle = first + (last - first) // 2
                 partitions.append([(first, last), (first, middle), (middle + timedelta(days=1), last)])
     with ThreadPoolExecutor(max_workers=5) as executor:
-        results = list(executor.map(query, (span for group in partitions for span in group)))
+        spans = [span for group in partitions for span in group]
+        results = list(executor.map(query, spans))
+        retry_indices = [i for i, result in enumerate(results) if "error" in result]
+        for i, result in zip(retry_indices, executor.map(query, (spans[i] for i in retry_indices))):
+            result["first_attempt_error"] = results[i]["error"]
+            results[i] = result
     groups, notices = [], []
     for i in range(0, len(results), 3):
         month, first, second = results[i:i + 3]
@@ -96,7 +101,8 @@ def main():
         "partitions": groups, "months_matched": sum(group["matched"] for group in groups),
         "months_total": len(groups), "notice_count": len(notices),
         "closure_positive_controls": controls, "closure_candidates": candidates,
-        "catalog_sha256": hashlib.sha256(json.dumps(notices, ensure_ascii=False).encode()).hexdigest(),
+        "monthly_response_manifest_sha256": hashlib.sha256(json.dumps([
+            group["partitions"][0].get("sha256") for group in groups]).encode()).hexdigest(),
         "public_archive_coverage_verified": all(group["matched"] for group in groups) and all(controls.values()),
         "limitation": "Coverage refers to the public search interface. It cannot attest to records absent from the exchange archive."
     }

@@ -1,14 +1,17 @@
 {
   "schema_version": 1,
-  "checked_at_utc": "2026-11-15T16:45:27.714728+00:00",
+  "checked_at_utc": "2026-11-15T18:09:33.694455+00:00",
   "status": "EVIDENCE_RECHECKED_PRODUCTION_BLOCKED",
   "official_txf_daily_records_verified": 718,
   "historical_2023_11_13_daily_source_verified": true,
   "alfred_independent_asof_sample_verified": 18,
   "alfred_mismatch": 0,
+  "alfred_panel_values_verified": 4218,
+  "alfred_vintage_archive_differences": 2,
   "historical_notice_months_queried": 36,
-  "historical_notice_positive_controls_passed": false,
-  "archive_pagination_exhaustive": false,
+  "historical_notice_positive_controls_passed": true,
+  "public_archive_coverage_verified": true,
+  "historical_notice_count": 2725,
   "official_historical_extract_acquired": false,
   "formal_gate": {
     "status": "BLOCKED",
@@ -56,5 +59,5 @@
     "frozen_protocol_sha256": "5bdab8f8ae59e2081b9ac84e59237a0d6c717b6c7162c5140b6c1136ed45fc08"
   },
   "forward_capture_status": "waiting_for_23_consecutive_prospective_market_sessions",
-  "note": "Independent daily TAIFEX endpoint verification does not substitute for requested historical extract; 36 HTTP 200 form responses do not prove result coverage."
+  "note": "Public archive coverage is supported by unfiltered monthly and subdivided searches. Source release timestamps and independently matured forecasts require separate evidence."
 }

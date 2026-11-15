@@ -79,6 +79,24 @@ def compare(archive, stored, start, end):
     return checked, differences
 
 
+def compare_selected_panel_values(panel, factor, archive):
+    checked = missing = 0
+    differences = []
+    for row in panel["rows"]:
+        field = row["us_previous_dated_observations"][factor]
+        if field["value"] is None:
+            missing += 1
+            continue
+        checked += 1
+        day = date.fromisoformat(field["asof_us_calendar_date"])
+        values = [val for first, last, val in archive.get(field["observed_date"], [])
+                  if first <= day <= last]
+        if values != [value(field["value"])]:
+            differences.append({"decision_date": row["date"], "observation_date": field["observed_date"],
+                                "asof_date": str(day)})
+    return checked, missing, differences
+
+
 def main():
     api_key = os.environ["FRED_API_KEY"].strip()
     if not api_key:
@@ -88,6 +106,7 @@ def main():
     raw = VINTAGES.read_bytes()
     vintages = json.loads(raw)
     end = date.fromisoformat(vintages["window"][1])
+    panel = json.loads(PANEL.read_bytes())
     report = {}
     for factor, stored in vintages["series"].items():
         start = date.fromisoformat(stored["bootstrap_date"])
@@ -97,11 +116,14 @@ def main():
         try:
             archive, count, hashes = download(series, start, end, earliest, cache, api_key)
             checked, differences = compare(archive, stored, start, end)
+            used, missing, panel_differences = compare_selected_panel_values(panel, factor, archive)
             report[factor] = {"series": series, "start": str(start), "end": str(end),
                               "observation_start": earliest, "response_rows": count,
                               "boundaries_checked": checked, "differences": len(differences),
                               "examples": differences[:20], "response_sha256": hashes,
-                              "status": "matched" if not differences else "mismatch"}
+                              "panel_values_checked": used, "panel_missing_values": missing,
+                              "panel_value_differences": panel_differences,
+                              "status": "matched" if not differences and not panel_differences else "mismatch"}
             if differences:
                 (cache / f"{series}-differences.json").write_text(json.dumps(differences, indent=2))
         except (OSError, ValueError, KeyError, TypeError) as error:
@@ -112,6 +134,8 @@ def main():
               "source": URL, "source_vintage_sha256": hashlib.sha256(raw).hexdigest(),
               "source_panel_sha256": hashlib.sha256(PANEL.read_bytes()).hexdigest(),
               "series": report, "effective_date_intervals_verified": passed,
+              "panel_nonmissing_values_verified": len(report) == 6 and all(
+                  entry.get("panel_value_differences") == [] for entry in report.values()),
               "intraday_publication_timestamps_verified": False}
     (ROOT / "docs/alfred_vintage_interval_verification.json").write_text(json.dumps(output, indent=2) + "\n")
     return 0 if passed else 1
