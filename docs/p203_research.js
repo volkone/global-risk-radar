@@ -5,16 +5,15 @@
   const esc=x=>String(x??'—').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const pct=x=>typeof x==='number'&&Number.isFinite(x)?(x*100).toFixed(1)+'%':'—';
   const fixed=x=>typeof x==='number'&&Number.isFinite(x)?x.toFixed(2):'—';
-  const get=async p=>{const r=await fetch('./'+p+'?'+Date.now(),{cache:'no-store'});if(!r.ok)throw Error(p+' HTTP '+r.status);return r.json();};
   const row=(label,a,b)=>'<tr><td>'+esc(label)+'</td><td>'+esc(a)+'</td><td>'+esc(b)+'</td></tr>';
   const table=(head,body)=>'<div style="overflow-x:auto"><table><thead><tr>'+head.map(x=>'<th>'+esc(x)+'</th>').join('')+'</tr></thead><tbody>'+body+'</tbody></table></div>';
   const link=(p,label)=>'<a href="'+esc(p)+'" target="_blank" rel="noopener">'+esc(label)+'</a>';
   async function render(){
     try{
       const [readiness,p201,p202,extended,multiple,uptrend]=await Promise.all([
-        get('model_readiness.json'),get('p2_01_statistical_validation.json'),
-        get('p2_02_robustness.json'),get('p2_02_extended_validation.json'),
-        get('p2_02_failure_and_multiplicity.json'),get('p2_03_uptrend_early_warning_research.json')
+        getRadarData('model_readiness.json'),getRadarData('p2_01_statistical_validation.json'),
+        getRadarData('p2_02_robustness.json'),getRadarData('p2_02_extended_validation.json'),
+        getRadarData('p2_02_failure_and_multiplicity.json'),getRadarData('p2_03_uptrend_early_warning_research.json')
       ]);
       const blocked=readiness.status!=='READY';
       const gates=(readiness.checks||[]).map(c=>'<li>'+esc(c.label)+'：'+(c.passed?'已通過':'未通過')+'</li>').join('');
