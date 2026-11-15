@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-11-15T16:33:02.668520+00:00",
+  "status": "EVIDENCE_RECHECKED_PRODUCTION_BLOCKED",
+  "official_txf_daily_records_verified": 718,
+  "historical_2023_11_13_daily_source_verified": true,
+  "alfred_independent_asof_sample_verified": 18,
+  "alfred_mismatch": 0,
+  "historical_notice_months_queried": 36,
+  "historical_notice_positive_controls_passed": false,
+  "archive_pagination_exhaustive": false,
+  "official_historical_extract_acquired": false,
+  "formal_gate": {
+    "status": "BLOCKED",
+    "evaluated_for_date": "2026-11-16",
+    "checks": [
+      {
+        "id": "publication",
+        "label": "歷史發布時間與版本逐筆認證",
+        "passed": false,
+        "evidence": "docs/phase4_publication_timing_audit.json"
+      },
+      {
+        "id": "calendar",
+        "label": "期交所獨立交易日曆認證",
+        "passed": false,
+        "evidence": "docs/taifex_prebacktest_gate.json"
+      },
+      {
+        "id": "validation",
+        "label": "獨立前瞻驗證",
+        "passed": false,
+        "evidence": "docs/independent_model_validation.json"
+      },
+      {
+        "id": "authorization",
+        "label": "模型版本與證據授權",
+        "passed": false,
+        "evidence": "docs/production_model_authorization.json"
+      },
+      {
+        "id": "current_forecast",
+        "label": "當日可追溯前瞻分數",
+        "passed": false,
+        "evidence": "storage/prospective/forecasts/2026-11-16.json"
+      }
+    ],
+    "blockers": [
+      "歷史發布時間與版本逐筆認證",
+      "期交所獨立交易日曆認證",
+      "獨立前瞻驗證",
+      "模型版本與證據授權",
+      "當日可追溯前瞻分數"
+    ],
+    "source_panel_sha256": "161505e9ee16550400c21749236ab5d4c4eb3690d07003bbf986ba09b48fe472",
+    "frozen_protocol_sha256": "5bdab8f8ae59e2081b9ac84e59237a0d6c717b6c7162c5140b6c1136ed45fc08"
+  },
+  "forward_capture_status": "waiting_for_23_consecutive_prospective_market_sessions",
+  "note": "Independent daily TAIFEX endpoint verification does not substitute for requested historical extract; 36 HTTP 200 form responses do not prove result coverage."
+}
