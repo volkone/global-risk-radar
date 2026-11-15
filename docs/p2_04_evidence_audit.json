@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "status": "P2_04_EVIDENCE_INVENTORY_COMPLETE_CERTIFICATION_BLOCKED",
+  "scope": "Reconcile existing repository evidence; no external official source reauthentication performed by this run",
+  "generated_at_utc": "2026-11-15T15:47:27.258444+00:00",
+  "source_evidence_hashes": {
+    "docs/phase4_publication_timing_audit.json": "24c17fc27a841998013dfd5a7c7fef30f4bdd437b43a79cdd386b53713ff5bc5",
+    "docs/phase3_pit_source_audit.json": "e69214464e7acb8d431c24a45ba7b120aa63bea156e4d2ff362d596e3bf643bf",
+    "docs/phase3_vintage_audit.json": "1ccccf211fe74eced71498f483fe25862abceb1f1a7ea1605940b36b3e678841",
+    "docs/taifex_prebacktest_gate.json": "da357da48f886eab401253813f664e1cb7f82418b655fe13d93ee3755cb4c330",
+    "docs/taifex_calendar_independent_audit.json": "8a49ebaf02b86bd56c453201c6fa760ec77d0e8a4fb45e92d0ce83284f321553",
+    "docs/official_source_evidence_2026_11_14.json": "d3dd7a95f9b38576df447edd23ff38c9c3fd25bd3af5e37f439c4158810a629c",
+    "docs/model_readiness.json": "81d967dd5b2f7ccc33aa05c861dbc433ad82916196b9d2ae88370591f2c96aa6",
+    "docs/phase5_forward_status.json": "fb6541775a318763754969df53c178afc2e4c433f87853be60d0a9a5160e2e15"
+  },
+  "steps": {
+    "1_publication_and_PIT": {
+      "sessions": 718,
+      "source_clock_certified": false,
+      "all_actual_publication_timestamps_verified": false,
+      "all_revisions_independently_verified": false,
+      "source_time_uncertified_counts": {
+        "vix": 718,
+        "hy": 673,
+        "ig": 673
+      },
+      "sample_vintage_violations": 9,
+      "sample_vintage_checks": 18,
+      "source_clock_assumptions": {
+        "decision_time": "16:00 Asia/Taipei on each Taiwan cash session",
+        "h10": "Weekly Monday 16:15 US Eastern previous-week rates. Conservative eligible timestamp: next Thursday 16:15 ET, not the historical actual release.",
+        "h15": "Business days 16:15 US Eastern; observation-date schedule proxy, subject to holidays and source posting checks.",
+        "nfci": "Normally Wednesdays 08:30 US Eastern; conservative following Thursday 08:30 ET.",
+        "hy_ig_vix": "ALFRED vintage as-of prior US calendar date but no independently verified source minute; not trading-certified.",
+        "historical_last_known_value": "When most recent ALFRED observation is not yet scheduled release-eligible, select the most recent OLDER observed value available at the prior vintage, at most 21 calendar days old. Never backfill from future."
+      },
+      "status": "BLOCKED"
+    },
+    "2_FRED_vintages": {
+      "series_count": 6,
+      "vintage_dates_covered": {
+        "fx": 718,
+        "hy": 673,
+        "ig": 673,
+        "vix": 718,
+        "us10y": 718,
+        "nfci": 718
+      },
+      "independent_full_series_requery": false,
+      "independent_value_comparison": false,
+      "historical_intraday_publication_certified": false,
+      "limitations": [
+        "Only 3 independent per-series date samples validated, though every series has vintage updates over full time window.",
+        "ALFRED real-time dates are calendar dates, not source-specific intraday publication timestamps.",
+        "Source H10, Treasury and weekly series publication behavior and holidays must be independently reviewed.",
+        "Source data are not authorized for trading, TXF PnL or live risk recalibration."
+      ],
+      "status": "BLOCKED"
+    },
+    "3_TAIFEX_official_calendar_and_TXF": {
+      "records": 718,
+      "official_raw_values_verified": 717,
+      "unverified_dates": [
+        "2023-11-13"
+      ],
+      "annual_calendar_sources_recorded": 4,
+      "special_date_groups": 6,
+      "full_notice_sweep_verified": false,
+      "independent_calendar_verified": false,
+      "primary_evidence_complete": false,
+      "official_historical_data_request": {
+        "date": "2023-11-13",
+        "contract": "TXF",
+        "investor": "foreign_and_mainland_investors",
+        "fields": [
+          "long_open_interest",
+          "short_open_interest",
+          "net_open_interest"
+        ],
+        "original_uncertified_values": {
+          "long": 38773,
+          "short": 35641,
+          "net": 3132
+        },
+        "request_page": "https://www.taifex.com.tw/file/taifex/event/cht/HistoricalData/type_01.html",
+        "official_three_year_limit": "https://www.taifex.com.tw/cht/3/futContractsDateView",
+        "status": "awaiting_official_historical_extract",
+        "verification_rule": "Require independently supplied official source file, dated record and raw SHA-256 before unlocking"
+      },
+      "status": "BLOCKED"
+    },
+    "4_formal_quality_gate": {
+      "status": "BLOCKED",
+      "checks": [
+        {
+          "id": "publication",
+          "label": "歷史發布時間與版本逐筆認證",
+          "passed": false,
+          "evidence": "docs/phase4_publication_timing_audit.json"
+        },
+        {
+          "id": "calendar",
+          "label": "期交所獨立交易日曆認證",
+          "passed": false,
+          "evidence": "docs/taifex_prebacktest_gate.json"
+        },
+        {
+          "id": "validation",
+          "label": "獨立前瞻驗證",
+          "passed": false,
+          "evidence": "docs/independent_model_validation.json"
+        },
+        {
+          "id": "authorization",
+          "label": "模型版本與證據授權",
+          "passed": false,
+          "evidence": "docs/production_model_authorization.json"
+        },
+        {
+          "id": "current_forecast",
+          "label": "當日可追溯前瞻分數",
+          "passed": false,
+          "evidence": "storage/prospective/forecasts/2026-11-15.json"
+        }
+      ],
+      "blockers": [
+        "歷史發布時間與版本逐筆認證",
+        "期交所獨立交易日曆認證",
+        "獨立前瞻驗證",
+        "模型版本與證據授權",
+        "當日可追溯前瞻分數"
+      ],
+      "previously_blocked_conditions_cleared": []
+    },
+    "5_prospective_capture": {
+      "status": "waiting_for_23_consecutive_prospective_market_sessions",
+      "first_observed_session": "2026-11-13",
+      "last_observed_session": "2026-11-13",
+      "snapshots": 1,
+      "predictions": 0,
+      "outcomes": 0,
+      "frozen_protocol_sha256": "5bdab8f8ae59e2081b9ac84e59237a0d6c717b6c7162c5140b6c1136ed45fc08",
+      "must_continue_existing_capture_workflow": true
+    }
+  },
+  "next_required_actions": [
+    "Obtain independently authenticated source release timestamps and revised-value evidence for all relevant sessions",
+    "Requery ALFRED vintages and compare source values across all six series; preserve response hashes",
+    "Obtain official TXF 2023-11-13 investor open-interest extract; reconcile full official closure notice archive",
+    "Rerun production model gate only after actual evidence is updated",
+    "Keep existing forward capture schedule and immutable forecasts; do not backfill retrospective predictions"
+  ],
+  "formal_backtest_authorized": false,
+  "production_scoring_authorized": false,
+  "live_trading_authorized": false
+}
