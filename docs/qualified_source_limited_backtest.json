@@ -1,5 +1,5 @@
 {
-  "status": "source_limited_research_backtest",
+  "status": "official_daily_source_verified_research_backtest",
   "label": "有來源限制的研究回測（非正式模型認證）",
   "basis": "existing fixed six-factor phase2 research methodology, 70/30 chronological holdout",
   "sample_dates": [
@@ -14,9 +14,10 @@
       "tx_oi_short_contracts": 35641,
       "tx_oi_net_contracts": 3132
     },
-    "verification": "third_party_crosschecked_not_official",
+    "verification": "official_daily_endpoint_reverified_2026_11_15",
     "source_url": "https://yaci0221.pixnet.net/blog/posts/5070953613",
-    "crosscheck_sha256": "84c6ba5a1cc83a558ab3b1b9d94debe97d631eb216d1c53bdcc31471e83dc878"
+    "crosscheck_sha256": "84c6ba5a1cc83a558ab3b1b9d94debe97d631eb216d1c53bdcc31471e83dc878",
+    "official_daily_source_sha256": "783f92f1d084e4e7dfb2cc5b78107643ef0030d4245644bc57dd3a21d7e0a096"
   },
   "research_result": {
     "status": "research_only_no_trading_validation",
@@ -82,7 +83,7 @@
     "recommended_live_threshold": null
   },
   "limitations": [
-    "One TXF day is third-party corroborated, not official raw authenticated",
+    "All 718 TXF daily endpoint responses reverified; separate purchased historical extract not acquired",
     "Full announcement archive sweep remains unverified",
     "Historical FRED publication/vintage timing remains unverified",
     "This is a fixed-factor risk-event research evaluation, not a transaction-cost-adjusted trading strategy",
