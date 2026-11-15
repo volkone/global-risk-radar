@@ -77,7 +77,7 @@ const delay=ms=>new Promise(r=>setTimeout(r,ms));
     assert.deepEqual(failed,[],'failed requests after interaction');
     await page.screenshot({path:path.join(ROOT,'p203_browser_acceptance.png'),fullPage:true});
     // Simulate an unavailable snapshot and confirm the normal refresh recovers.
-    const testPage=await page.context().newPage();
+    const testPage=await browser.newPage();
     await testPage.clock.install();
     testPage.on('pageerror',e=>errors.push(e.message));
     await testPage.goto(site||'http://127.0.0.1:8765/',{waitUntil:'networkidle'});
