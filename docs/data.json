@@ -5,16 +5,12 @@
     "tw_margin": "2026-11-14T22:24:47.577714+00:00",
     "tw_tw_price": "2026-11-14T22:24:47.577714+00:00"
   },
-  "updated_utc": "2026-11-14T22:24:52.129257+00:00",
+  "updated_utc": "2026-11-15T02:39:42.237156+00:00",
   "request_stats": {
-    "requests": 14,
-    "success": 14,
+    "requests": 6,
+    "success": 6,
     "failure": 0,
     "by_host": {
-      "api.stlouisfed.org": 4,
-      "www.twse.com.tw": 2,
-      "openapi.twse.com.tw": 1,
-      "openapi.taifex.com.tw": 1,
       "query1.finance.yahoo.com": 6
     },
     "errors": [],
@@ -406,7 +402,8 @@
       ],
       "provider": "FRED official API",
       "checked_at": "2026-11-14T22:24:47.577714+00:00",
-      "change20bp": -5.0
+      "change20bp": -5.0,
+      "cache_status": "cached"
     },
     "ig": {
       "name": "美國投資等級債利差",
@@ -782,7 +779,8 @@
         }
       ],
       "provider": "FRED official API",
-      "checked_at": "2026-11-14T22:24:47.577714+00:00"
+      "checked_at": "2026-11-14T22:24:47.577714+00:00",
+      "cache_status": "cached"
     },
     "vix": {
       "name": "VIX",
@@ -1158,7 +1156,8 @@
         }
       ],
       "provider": "FRED official API",
-      "checked_at": "2026-11-14T22:24:47.577714+00:00"
+      "checked_at": "2026-11-14T22:24:47.577714+00:00",
+      "cache_status": "cached"
     },
     "us10y": {
       "name": "美國10年期公債殖利率",
@@ -1534,7 +1533,8 @@
         }
       ],
       "provider": "FRED official API",
-      "checked_at": "2026-11-14T22:24:47.577714+00:00"
+      "checked_at": "2026-11-14T22:24:47.577714+00:00",
+      "cache_status": "cached"
     },
     "nfci": {
       "name": "芝加哥金融情勢指數",
@@ -2001,7 +2001,7 @@
       "drawdown_pct": 10.51,
       "reference": "近一年最高收盤價",
       "spx": 7561.67,
-      "checked_at": "2026-11-14T22:24:47.577714+00:00"
+      "checked_at": "2026-11-15T02:39:40.816626+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -2625,7 +2625,7 @@
       ],
       "drawdown_pct": 12.34,
       "reference": "近一年最高收盤價",
-      "checked_at": "2026-11-14T22:24:47.577714+00:00"
+      "checked_at": "2026-11-15T02:39:40.816626+00:00"
     },
     "fx": {
       "name": "美元兌新台幣與美元指數",
@@ -3000,7 +3000,7 @@
           "value": 32.939
         }
       ],
-      "checked_at": "2026-11-14T22:24:47.577714+00:00",
+      "checked_at": "2026-11-15T02:39:40.816626+00:00",
       "dxy": 103.41
     }
   },
