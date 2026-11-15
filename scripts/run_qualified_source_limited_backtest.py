@@ -6,9 +6,14 @@ ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/"docs/qualified_source_limited_backtest.json"
 CROSS=ROOT/"docs/taifex_20231113_secondary_crosscheck.json"
 GATE=ROOT/"docs/taifex_prebacktest_gate.json"
+VERIFICATION=ROOT/"docs/taifex_source_verification.json"
 def main():
  cross=json.loads(CROSS.read_text(encoding="utf-8"))
  gate=json.loads(GATE.read_text(encoding="utf-8"))
+ verified=json.loads(VERIFICATION.read_text(encoding="utf-8"))
+ assert verified["checked_records"]==718 and verified["counts"]["pass"]==718
+ assert verified["counts"]["hash_mismatch"]==0 and verified["counts"]["value_mismatch"]==0
+ assert verified["results"]["2023-11-13"]["status"]=="pass"
  panel=json.loads(SOURCE.read_text(encoding="utf-8"))
  row=next(x for x in panel["rows"] if x["date"]=="2023-11-13")
  expected={"tx_oi_long_contracts":cross["long_open_interest"],"tx_oi_short_contracts":cross["short_open_interest"],"tx_oi_net_contracts":cross["net_open_interest"]}
@@ -20,14 +25,14 @@ def main():
  assert len(panel["rows"])==718 and panel["formal_backtest_authorized"] is False
  result=evaluate()
  assert result["full_model_backtest_authorized"] is False
- report={"status":"source_limited_research_backtest","label":"有來源限制的研究回測（非正式模型認證）",
+ report={"status":"official_daily_source_verified_research_backtest","label":"有來源限制的研究回測（非正式模型認證）",
          "basis":"existing fixed six-factor phase2 research methodology, 70/30 chronological holdout",
          "sample_dates":[panel["rows"][0]["date"],panel["rows"][-1]["date"]],
          "sample_rows":len(panel["rows"]),"txf_exception":{"date":"2023-11-13","values":expected,
-             "verification":"third_party_crosschecked_not_official","source_url":cross["source_url"],
-             "crosscheck_sha256":hashlib.sha256(CROSS.read_bytes()).hexdigest()},
+             "verification":"official_daily_endpoint_reverified_2026_11_15","source_url":cross["source_url"],
+             "crosscheck_sha256":hashlib.sha256(CROSS.read_bytes()).hexdigest(),"official_daily_source_sha256":verified["results"]["2023-11-13"]["actual_sha256"]},
          "research_result":result,
-         "limitations":["One TXF day is third-party corroborated, not official raw authenticated",
+         "limitations":["All 718 TXF daily endpoint responses reverified; separate purchased historical extract not acquired",
            "Full announcement archive sweep remains unverified",
            "Historical FRED publication/vintage timing remains unverified",
            "This is a fixed-factor risk-event research evaluation, not a transaction-cost-adjusted trading strategy",
