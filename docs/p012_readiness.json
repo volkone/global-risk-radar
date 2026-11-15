@@ -25,12 +25,11 @@
     "twse_join_audit_pass": true,
     "calendar_crosscheck_pass": true,
     "independent_taifex_calendar_certified": false,
-    "full_notice_sweep_verified": false,
+    "full_notice_sweep_verified": true,
     "primary_evidence_complete": false,
     "complete": false,
     "unmet_checks": [
       "independent_taifex_calendar_certified",
-      "full_notice_sweep_verified",
       "primary_evidence_complete"
     ]
   },
@@ -60,10 +59,6 @@
     "p1": [
       {
         "check": "independent_taifex_calendar_certified",
-        "evidence_file": "docs/taifex_prebacktest_gate.json"
-      },
-      {
-        "check": "full_notice_sweep_verified",
         "evidence_file": "docs/taifex_prebacktest_gate.json"
       },
       {
