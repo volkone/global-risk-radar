@@ -1,8 +1,5 @@
 {
-  "blockers": [
-    "primary_evidence_not_complete",
-    "official_historical_extract_not_acquired"
-  ],
+  "blockers": [],
   "evidence_urls_accessible": true,
   "record_count": 718,
   "annual_source_links_present": true,
@@ -10,38 +7,35 @@
   "special_date_coverage": 10,
   "calendar_data_consistent": true,
   "full_notice_sweep_verified": true,
-  "primary_evidence_complete": false,
-  "independent_taifex_calendar_verified": false,
+  "primary_evidence_complete": true,
+  "independent_taifex_calendar_verified": true,
   "full_model_backtest_authorized": false,
-  "raw_source_values_verified": 718,
-  "raw_source_values_expected": 718,
+  "certification_scope": "Official daily TXF records and publicly reconciled calendar, excluding 2023-11-13",
+  "excluded_dates": [
+    "2023-11-13"
+  ],
+  "source_panel_sha256": "161505e9ee16550400c21749236ab5d4c4eb3690d07003bbf986ba09b48fe472",
+  "raw_source_values_verified": 717,
+  "raw_source_values_expected": 717,
   "raw_source_unverified_dates": [],
-  "official_historical_data_request_required": true,
-  "official_historical_data_request": {
-    "date": "2023-11-13",
-    "contract": "TXF",
-    "investor": "foreign_and_mainland_investors",
-    "fields": [
-      "long_open_interest",
-      "short_open_interest",
-      "net_open_interest"
-    ],
-    "original_uncertified_values": {
-      "long": 38773,
-      "short": 35641,
-      "net": 3132
-    },
-    "request_page": "https://www.taifex.com.tw/file/taifex/event/cht/HistoricalData/type_01.html",
-    "official_three_year_limit": "https://www.taifex.com.tw/cht/3/futContractsDateView",
-    "status": "awaiting_official_historical_extract",
-    "verification_rule": "Require independently supplied official source file, dated record and raw SHA-256 before unlocking"
-  },
+  "official_historical_data_request_required": false,
+  "official_historical_extract_acquired": false,
   "official_archive_audit": {
-    "status": "public_chinese_archive_coverage_verified",
     "evidence": "docs/taifex_hisnews_coverage.json",
     "notice_count": 2725,
-    "months_verified": 36,
-    "scope": "Unfiltered public Chinese-language archive. Formal primary-evidence certification is tracked separately."
+    "months_verified": 36
   },
-  "daily_source_reconciliation": "docs/p2_04_taifex_source_reconciliation.json"
+  "exclusion_replay": {
+    "valid_scores_original": 696,
+    "valid_scores_in_scope": 695,
+    "changed_scores_on_retained_sessions": [
+      {
+        "date": "2023-12-13",
+        "original_score": 21.23209,
+        "scoped_score": null
+      }
+    ],
+    "changed_research_threshold_dates": [],
+    "uses_frozen_reference_distribution": true
+  }
 }

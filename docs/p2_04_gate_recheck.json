@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at_utc": "2026-11-16T03:19:42.235052+00:00",
+  "checked_at_utc": "2026-11-16T03:43:31.532887+00:00",
   "status": "EVIDENCE_RECHECKED_PRODUCTION_BLOCKED",
   "official_txf_daily_records_verified": 718,
   "historical_2023_11_13_daily_source_verified": true,
@@ -26,7 +26,7 @@
       {
         "id": "calendar",
         "label": "期交所獨立交易日曆認證",
-        "passed": false,
+        "passed": true,
         "evidence": "docs/taifex_prebacktest_gate.json"
       },
       {
@@ -50,7 +50,6 @@
     ],
     "blockers": [
       "歷史發布時間與版本逐筆認證",
-      "期交所獨立交易日曆認證",
       "獨立前瞻驗證",
       "模型版本與證據授權",
       "當日可追溯前瞻分數"

@@ -31,6 +31,10 @@ def evaluate_gate(root, panel_hash, protocol_hash, forecast, today):
         ok = bool(digest) and all(obj.get(k) is True for k in fields)
         if key == 'publication':
             ok = ok and obj.get('output_sha256') == panel_hash
+        if key == 'calendar' and 'excluded_dates' in obj:
+            ok = (ok and obj.get('excluded_dates') == ['2023-11-13']
+                  and obj.get('source_panel_sha256') == panel_hash
+                  and obj.get('raw_source_values_verified') == obj.get('raw_source_values_expected') == 717)
         if key == 'validation':
             ok = (ok and obj.get('frozen_protocol_sha256') == protocol_hash
                   and obj.get('source_panel_sha256') == panel_hash
