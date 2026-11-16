@@ -11,7 +11,7 @@
     {
       "id": "calendar",
       "label": "期交所獨立交易日曆認證",
-      "passed": false,
+      "passed": true,
       "evidence": "docs/taifex_prebacktest_gate.json"
     },
     {
@@ -35,7 +35,6 @@
   ],
   "blockers": [
     "歷史發布時間與版本逐筆認證",
-    "期交所獨立交易日曆認證",
     "獨立前瞻驗證",
     "模型版本與證據授權",
     "當日可追溯前瞻分數"

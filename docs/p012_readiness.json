@@ -24,14 +24,11 @@
     "source_verification_pass": true,
     "twse_join_audit_pass": true,
     "calendar_crosscheck_pass": true,
-    "independent_taifex_calendar_certified": false,
+    "independent_taifex_calendar_certified": true,
     "full_notice_sweep_verified": true,
-    "primary_evidence_complete": false,
-    "complete": false,
-    "unmet_checks": [
-      "independent_taifex_calendar_certified",
-      "primary_evidence_complete"
-    ]
+    "primary_evidence_complete": true,
+    "complete": true,
+    "unmet_checks": []
   },
   "p2": {
     "conservative_time_gate_panel_built": true,
@@ -56,16 +53,7 @@
         "required_evidence": "verified market-breadth source and calibrated signal"
       }
     ],
-    "p1": [
-      {
-        "check": "independent_taifex_calendar_certified",
-        "evidence_file": "docs/taifex_prebacktest_gate.json"
-      },
-      {
-        "check": "primary_evidence_complete",
-        "evidence_file": "docs/taifex_prebacktest_gate.json"
-      }
-    ],
+    "p1": [],
     "p2": [
       {
         "check": "actual_publication_timestamps_verified",

@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-16T03:29:08.175071+00:00",
+  "generated_at": "2026-11-16T03:45:01.437463+00:00",
   "model_status": "separate_global_prototype_and_evidence_gated_taiwan",
   "disclaimer": "Global is provisional; historical Taiwan reconstruction is research-only. Formal Taiwan eligibility is recorded in quality_gate.",
   "global": {
@@ -67,7 +67,7 @@
       }
     ],
     "model_id": "global_rate_v2",
-    "as_of": "2026-11-16T03:29:05.492143+00:00"
+    "as_of": "2026-11-16T03:44:59.262073+00:00"
   },
   "taiwan": {
     "status": "formal_model_blocked",
@@ -89,7 +89,7 @@
         {
           "id": "calendar",
           "label": "期交所獨立交易日曆認證",
-          "passed": false,
+          "passed": true,
           "evidence": "docs/taifex_prebacktest_gate.json"
         },
         {
@@ -113,7 +113,6 @@
       ],
       "blockers": [
         "歷史發布時間與版本逐筆認證",
-        "期交所獨立交易日曆認證",
         "獨立前瞻驗證",
         "模型版本與證據授權",
         "當日可追溯前瞻分數"
@@ -121,7 +120,7 @@
       "source_panel_sha256": "161505e9ee16550400c21749236ab5d4c4eb3690d07003bbf986ba09b48fe472",
       "frozen_protocol_sha256": "5bdab8f8ae59e2081b9ac84e59237a0d6c717b6c7162c5140b6c1136ed45fc08"
     },
-    "reason": "歷史發布時間與版本逐筆認證；期交所獨立交易日曆認證；獨立前瞻驗證；模型版本與證據授權；當日可追溯前瞻分數",
+    "reason": "歷史發布時間與版本逐筆認證；獨立前瞻驗證；模型版本與證據授權；當日可追溯前瞻分數",
     "latest_research": {
       "date": "2026-10-30",
       "score": 81.1251,
