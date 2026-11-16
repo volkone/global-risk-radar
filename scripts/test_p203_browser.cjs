@@ -52,6 +52,12 @@ const delay=ms=>new Promise(r=>setTimeout(r,ms));
     assert.equal(await page.locator('#strategy-title').count(),0,'3C scenario removed');
     const snapshot=await read(page,'data.json');
     assert.equal(Object.hasOwn(snapshot,'strategy'),false,'3C strategy state removed');
+    const market = page.locator('#market-analysis');
+    await page.waitForFunction(()=>!document.getElementById('market-analysis').textContent.includes('正在核對'));
+    if (site) {
+      assert.equal(await market.locator('article').count(), 4);
+      assert((await market.textContent()).includes('資料日'));
+    }
     const before=await page.locator('#p203-research').innerText();
     await page.selectOption('#risk-series','global');
     await page.selectOption('#risk-range','60');
@@ -93,6 +99,7 @@ const delay=ms=>new Promise(r=>setTimeout(r,ms));
     assert.equal(await testPage.locator('#global-score').textContent(),'—');
     await testPage.waitForFunction(()=>document.querySelectorAll('#cards .card').length===0);
     assert((await testPage.locator('#alerts').textContent()).includes('不可用'));
+    assert.equal(await testPage.locator('#market-analysis article').count(),0);
     assert.equal(await testPage.locator('#p203-research').getAttribute('data-status'),'loaded');
     await testPage.unroute('**/risk_dashboard.json?*');
     await testPage.unroute('**/data.json?*');
