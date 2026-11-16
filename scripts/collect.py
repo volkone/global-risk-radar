@@ -1,5 +1,6 @@
 import csv,io,json,urllib.request,urllib.parse,datetime,pathlib,os,time
 from concurrent.futures import ThreadPoolExecutor,as_completed
+from collect_taifex_three_year import extract as extract_tx
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 OUT=ROOT/"docs"/"data.json"
 NOW=datetime.datetime.now(datetime.timezone.utc)
@@ -110,9 +111,32 @@ def official_rows(url):
     if all(isinstance(x,list) for x in rows):return [dict(zip(("項目","買進","賣出","現金(券)償還","前日餘額","今日餘額"),x)) for x in rows]
     return rows
  raise ValueError("unexpected_official_schema")
+def official_daily_taiwan(kind, day):
+ if kind == "tw_price":
+  url="https://www.twse.com.tw/rwd/zh/afterTrading/FMTQIK?"+urllib.parse.urlencode(
+   {"response":"json","date":day[:7].replace("-","")+"01"})
+  matching=[r for r in official_rows(url) if date_of(r)==day]
+  if len(matching)!=1:return None
+  row=matching[0]
+  price=num(pick(row,"發行量加權股價指數","加權指數","TAIEX"))
+  volume=num(pick(row,"成交股數","TradeVolume"))
+  turnover=num(pick(row,"成交金額","TradeValue"))
+  if price is None or not 1000<price<100000 or not (volume and volume>0 and turnover and turnover>0):
+   raise ValueError("invalid_dated_TWSE_close")
+  return {"status":"ok","source_url":url,"provider":"TWSE","date":day,"unit":"points",
+          "value":price,"volume_shares":round(volume),"turnover_twd":round(turnover)}
+
+ url="https://www.taifex.com.tw/cht/3/futContractsDate?"+urllib.parse.urlencode(
+  {"queryDate":day.replace("-","/"),"commodityId":"TXF","queryType":"1"})
+ report=extract_tx(fetch(url,timeout=12).encode("utf-8"),day,url)
+ return {"status":"ok","source_url":url,"provider":"TAIFEX","date":day,"unit":"口",
+         "foreign_tx_net_oi":report["value"],"contract":"臺股期貨","trader":"外資及陸資"}
+
 def taiwan(metrics,old):
  previous=old.get("metrics",{})
  checks=old.setdefault("source_checks",{})
+ local=NOW.astimezone(datetime.timezone(datetime.timedelta(hours=8)))
+ day=local.date().isoformat()
  for kind,url in TW_ENDPOINTS.items():
   key="margin" if kind=="margin" else ("taiex" if kind=="tw_price" else "inst")
   prev=previous.get(key,{})
@@ -193,6 +217,16 @@ def taiwan(metrics,old):
     record["last_error"]=type(exc).__name__+": "+str(exc)[:120]
     print("Taiwan",kind,"fallback",type(exc).__name__,flush=True)
   if not record and prev_record:record=dict(prev_record)
+  if (kind in ("tw_price","futures") and local.weekday()<5 and local.hour>=20
+      and (record.get("date")!=day or record.get("status")!="ok" or record.get("cache_status")=="stale")):
+   try:
+    same_day=official_daily_taiwan(kind,day)
+    if same_day:
+     record=dict(same_day,checked_at=NOW.isoformat())
+     checks["tw_"+kind]=NOW.isoformat()
+     print("Taiwan",kind,"verified dated endpoint",day,flush=True)
+   except Exception as exc:
+    print("Taiwan",kind,"dated endpoint unavailable",type(exc).__name__,flush=True)
   if record:metrics[key].setdefault("official_sources",{})[kind]=record
   if kind=="margin" and record.get("status")=="ok" and record.get("unit")=="TWD":
    metrics["margin"].update({k:v for k,v in record.items() if k not in ("sample_fields","records")})
