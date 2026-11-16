@@ -1,4 +1,4 @@
-name: Validate prospective evidence and 3C strategy scenarios
+name: Validate prospective evidence
 on:
   push:
     paths:
@@ -25,19 +25,15 @@ jobs:
           python scripts/phase5_forward_capture.py --mode selftest
           python scripts/phase5_forward_ledger.py --mode selftest
           python scripts/evaluate_forward.py
-      - name: Validate 3C scenario and build report
-        run: |
-          python scripts/phase3c_strategy_integration.py --selftest
-          python scripts/phase3c_strategy_integration.py
       - name: Preserve production gate
         run: python scripts/recheck_p204_gate.py
-      - name: Save validation and strategy reports
+      - name: Save validation reports
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add docs/prospective_evaluation.json docs/phase3c_strategy_integration.json docs/p2_04_gate_recheck.json
+          git add docs/prospective_evaluation.json docs/p2_04_gate_recheck.json
           if ! git diff --cached --quiet; then
-            git commit -m 'Validate prospective evidence and 3C scenario integration [skip ci]'
+            git commit -m 'Validate prospective evidence [skip ci]'
             for attempt in 1 2 3 4 5; do
               git fetch origin main
               git rebase origin/main
