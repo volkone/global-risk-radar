@@ -1,0 +1,481 @@
+{
+  "checked_at_utc": "2026-11-16T03:36:14.515410+00:00",
+  "panel_sha256": "161505e9ee16550400c21749236ab5d4c4eb3690d07003bbf986ba09b48fe472",
+  "vintages_sha256": "7cb9c5dd9595d51f79cad339127432cea9d59fcdcf9bc873995f55c2c576337d",
+  "sessions": 718,
+  "frozen_valid_scores": 696,
+  "zero_delay_replay_identical": true,
+  "research_threshold": 63.91871,
+  "rule": "Shift each of six original US as-of date cutoffs backward by extra calendar days. Keep the original source schedule checks, 21-day maximum observation age, frozen distributions and two-session model lag.",
+  "additional_calendar_days": {
+    "1": {
+      "valid_scores": 696,
+      "paired_scores": 696,
+      "mean_absolute_difference": 1.49115,
+      "max_absolute_difference": 11.68748,
+      "research_threshold_disagreements": 12,
+      "changed_threshold_dates": [
+        {
+          "date": "2024-04-18",
+          "frozen_score": 64.75253,
+          "delayed_score": 61.4245
+        },
+        {
+          "date": "2024-04-26",
+          "frozen_score": 61.1116,
+          "delayed_score": 65.59809
+        },
+        {
+          "date": "2024-08-02",
+          "frozen_score": 66.0989,
+          "delayed_score": 62.49673
+        },
+        {
+          "date": "2024-11-11",
+          "frozen_score": 57.46287,
+          "delayed_score": 69.15035
+        },
+        {
+          "date": "2024-12-27",
+          "frozen_score": 58.22565,
+          "delayed_score": 64.66686
+        },
+        {
+          "date": "2025-01-03",
+          "frozen_score": 67.53958,
+          "delayed_score": 62.0165
+        },
+        {
+          "date": "2025-02-06",
+          "frozen_score": 65.62482,
+          "delayed_score": 59.9066
+        },
+        {
+          "date": "2025-11-07",
+          "frozen_score": 64.12502,
+          "delayed_score": 63.62776
+        },
+        {
+          "date": "2025-11-11",
+          "frozen_score": 62.96737,
+          "delayed_score": 64.09705
+        },
+        {
+          "date": "2025-11-12",
+          "frozen_score": 63.87473,
+          "delayed_score": 64.12996
+        },
+        {
+          "date": "2026-07-03",
+          "frozen_score": 63.03509,
+          "delayed_score": 66.30631
+        },
+        {
+          "date": "2026-07-14",
+          "frozen_score": 63.91871,
+          "delayed_score": 61.63387
+        }
+      ],
+      "historical_event_diagnostics": {
+        "5d": {
+          "common_matured_dates": 691,
+          "events": 111,
+          "frozen": {
+            "alerts": 135,
+            "hits": 40,
+            "precision": 0.296296
+          },
+          "delayed": {
+            "alerts": 135,
+            "hits": 41,
+            "precision": 0.303704
+          }
+        },
+        "20d": {
+          "common_matured_dates": 676,
+          "events": 137,
+          "frozen": {
+            "alerts": 130,
+            "hits": 50,
+            "precision": 0.384615
+          },
+          "delayed": {
+            "alerts": 130,
+            "hits": 51,
+            "precision": 0.392308
+          }
+        }
+      }
+    },
+    "2": {
+      "valid_scores": 696,
+      "paired_scores": 696,
+      "mean_absolute_difference": 2.0144,
+      "max_absolute_difference": 15.10525,
+      "research_threshold_disagreements": 25,
+      "changed_threshold_dates": [
+        {
+          "date": "2024-04-18",
+          "frozen_score": 64.75253,
+          "delayed_score": 60.27595
+        },
+        {
+          "date": "2024-04-19",
+          "frozen_score": 65.65821,
+          "delayed_score": 62.46031
+        },
+        {
+          "date": "2024-04-26",
+          "frozen_score": 61.1116,
+          "delayed_score": 69.37403
+        },
+        {
+          "date": "2024-04-29",
+          "frozen_score": 60.97001,
+          "delayed_score": 65.38319
+        },
+        {
+          "date": "2024-07-30",
+          "frozen_score": 64.70262,
+          "delayed_score": 53.88695
+        },
+        {
+          "date": "2024-08-02",
+          "frozen_score": 66.0989,
+          "delayed_score": 61.13244
+        },
+        {
+          "date": "2024-08-05",
+          "frozen_score": 65.79913,
+          "delayed_score": 63.78613
+        },
+        {
+          "date": "2024-08-19",
+          "frozen_score": 58.20828,
+          "delayed_score": 64.82241
+        },
+        {
+          "date": "2024-11-11",
+          "frozen_score": 57.46287,
+          "delayed_score": 70.2446
+        },
+        {
+          "date": "2024-11-12",
+          "frozen_score": 49.19792,
+          "delayed_score": 64.30317
+        },
+        {
+          "date": "2024-12-23",
+          "frozen_score": 74.30864,
+          "delayed_score": 59.47987
+        },
+        {
+          "date": "2024-12-24",
+          "frozen_score": 75.285,
+          "delayed_score": 63.39651
+        },
+        {
+          "date": "2024-12-27",
+          "frozen_score": 58.22565,
+          "delayed_score": 67.72566
+        },
+        {
+          "date": "2025-01-03",
+          "frozen_score": 67.53958,
+          "delayed_score": 62.0165
+        },
+        {
+          "date": "2025-01-13",
+          "frozen_score": 66.35315,
+          "delayed_score": 61.38581
+        },
+        {
+          "date": "2025-02-06",
+          "frozen_score": 65.62482,
+          "delayed_score": 59.95764
+        },
+        {
+          "date": "2025-08-08",
+          "frozen_score": 57.95239,
+          "delayed_score": 64.24935
+        },
+        {
+          "date": "2025-11-07",
+          "frozen_score": 64.12502,
+          "delayed_score": 61.65665
+        },
+        {
+          "date": "2025-11-12",
+          "frozen_score": 63.87473,
+          "delayed_score": 64.51281
+        },
+        {
+          "date": "2026-06-30",
+          "frozen_score": 65.80732,
+          "delayed_score": 63.49133
+        },
+        {
+          "date": "2026-07-03",
+          "frozen_score": 63.03509,
+          "delayed_score": 68.62157
+        },
+        {
+          "date": "2026-07-06",
+          "frozen_score": 62.54353,
+          "delayed_score": 65.3512
+        },
+        {
+          "date": "2026-07-14",
+          "frozen_score": 63.91871,
+          "delayed_score": 61.60334
+        },
+        {
+          "date": "2026-07-17",
+          "frozen_score": 65.73576,
+          "delayed_score": 60.78901
+        },
+        {
+          "date": "2026-08-10",
+          "frozen_score": 64.55168,
+          "delayed_score": 63.67072
+        }
+      ],
+      "historical_event_diagnostics": {
+        "5d": {
+          "common_matured_dates": 691,
+          "events": 111,
+          "frozen": {
+            "alerts": 135,
+            "hits": 40,
+            "precision": 0.296296
+          },
+          "delayed": {
+            "alerts": 130,
+            "hits": 40,
+            "precision": 0.307692
+          }
+        },
+        "20d": {
+          "common_matured_dates": 676,
+          "events": 137,
+          "frozen": {
+            "alerts": 130,
+            "hits": 50,
+            "precision": 0.384615
+          },
+          "delayed": {
+            "alerts": 125,
+            "hits": 50,
+            "precision": 0.4
+          }
+        }
+      }
+    },
+    "3": {
+      "valid_scores": 696,
+      "paired_scores": 696,
+      "mean_absolute_difference": 2.67771,
+      "max_absolute_difference": 17.42882,
+      "research_threshold_disagreements": 33,
+      "changed_threshold_dates": [
+        {
+          "date": "2024-04-18",
+          "frozen_score": 64.75253,
+          "delayed_score": 58.74456
+        },
+        {
+          "date": "2024-04-19",
+          "frozen_score": 65.65821,
+          "delayed_score": 62.69002
+        },
+        {
+          "date": "2024-04-22",
+          "frozen_score": 66.0789,
+          "delayed_score": 62.26929
+        },
+        {
+          "date": "2024-04-26",
+          "frozen_score": 61.1116,
+          "delayed_score": 69.83345
+        },
+        {
+          "date": "2024-04-29",
+          "frozen_score": 60.97001,
+          "delayed_score": 69.15913
+        },
+        {
+          "date": "2024-07-30",
+          "frozen_score": 64.70262,
+          "delayed_score": 55.05693
+        },
+        {
+          "date": "2024-07-31",
+          "frozen_score": 62.80388,
+          "delayed_score": 65.38604
+        },
+        {
+          "date": "2024-08-02",
+          "frozen_score": 66.0989,
+          "delayed_score": 60.21361
+        },
+        {
+          "date": "2024-08-05",
+          "frozen_score": 65.79913,
+          "delayed_score": 62.42184
+        },
+        {
+          "date": "2024-08-19",
+          "frozen_score": 58.20828,
+          "delayed_score": 64.2296
+        },
+        {
+          "date": "2024-11-11",
+          "frozen_score": 57.46287,
+          "delayed_score": 68.87128
+        },
+        {
+          "date": "2024-11-12",
+          "frozen_score": 49.19792,
+          "delayed_score": 65.39742
+        },
+        {
+          "date": "2024-12-23",
+          "frozen_score": 74.30864,
+          "delayed_score": 57.73763
+        },
+        {
+          "date": "2024-12-24",
+          "frozen_score": 75.285,
+          "delayed_score": 57.85618
+        },
+        {
+          "date": "2024-12-27",
+          "frozen_score": 58.22565,
+          "delayed_score": 67.72566
+        },
+        {
+          "date": "2025-01-03",
+          "frozen_score": 67.53958,
+          "delayed_score": 62.39935
+        },
+        {
+          "date": "2025-01-08",
+          "frozen_score": 61.68382,
+          "delayed_score": 66.13576
+        },
+        {
+          "date": "2025-01-13",
+          "frozen_score": 66.35315,
+          "delayed_score": 62.51625
+        },
+        {
+          "date": "2025-01-22",
+          "frozen_score": 57.7618,
+          "delayed_score": 67.92425
+        },
+        {
+          "date": "2025-02-06",
+          "frozen_score": 65.62482,
+          "delayed_score": 59.9066
+        },
+        {
+          "date": "2025-08-06",
+          "frozen_score": 65.8014,
+          "delayed_score": 57.25993
+        },
+        {
+          "date": "2025-08-08",
+          "frozen_score": 57.95239,
+          "delayed_score": 64.24935
+        },
+        {
+          "date": "2025-11-07",
+          "frozen_score": 64.12502,
+          "delayed_score": 62.24369
+        },
+        {
+          "date": "2025-11-13",
+          "frozen_score": 54.88978,
+          "delayed_score": 64.29718
+        },
+        {
+          "date": "2025-12-02",
+          "frozen_score": 59.53483,
+          "delayed_score": 64.69396
+        },
+        {
+          "date": "2026-06-30",
+          "frozen_score": 65.80732,
+          "delayed_score": 58.57672
+        },
+        {
+          "date": "2026-07-03",
+          "frozen_score": 63.03509,
+          "delayed_score": 68.62157
+        },
+        {
+          "date": "2026-07-06",
+          "frozen_score": 62.54353,
+          "delayed_score": 67.66646
+        },
+        {
+          "date": "2026-07-07",
+          "frozen_score": 60.35095,
+          "delayed_score": 65.37507
+        },
+        {
+          "date": "2026-07-14",
+          "frozen_score": 63.91871,
+          "delayed_score": 62.86883
+        },
+        {
+          "date": "2026-07-17",
+          "frozen_score": 65.73576,
+          "delayed_score": 58.77268
+        },
+        {
+          "date": "2026-07-20",
+          "frozen_score": 64.55007,
+          "delayed_score": 61.02779
+        },
+        {
+          "date": "2026-08-24",
+          "frozen_score": 65.07538,
+          "delayed_score": 60.49019
+        }
+      ],
+      "historical_event_diagnostics": {
+        "5d": {
+          "common_matured_dates": 691,
+          "events": 111,
+          "frozen": {
+            "alerts": 135,
+            "hits": 40,
+            "precision": 0.296296
+          },
+          "delayed": {
+            "alerts": 132,
+            "hits": 43,
+            "precision": 0.325758
+          }
+        },
+        "20d": {
+          "common_matured_dates": 676,
+          "events": 137,
+          "frozen": {
+            "alerts": 130,
+            "hits": 50,
+            "precision": 0.384615
+          },
+          "delayed": {
+            "alerts": 127,
+            "hits": 51,
+            "precision": 0.401575
+          }
+        }
+      }
+    }
+  },
+  "scope": "Descriptive sensitivity analysis on previously viewed data; does not attest to original publication timestamps or provide independent validation.",
+  "formal_publication_timestamp_attested": false
+}
