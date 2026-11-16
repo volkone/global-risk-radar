@@ -1,5 +1,7 @@
 import csv,io,json,urllib.request,urllib.parse,datetime,pathlib,os,time
 from concurrent.futures import ThreadPoolExecutor,as_completed
+import strategy_notices
+
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 OUT=ROOT/"docs"/"data.json"
 NOW=datetime.datetime.now(datetime.timezone.utc)
@@ -72,7 +74,7 @@ def telegram(msg):
  if not token or not chat:return False
  data=urllib.parse.urlencode({"chat_id":chat,"text":msg}).encode()
  req=urllib.request.Request("https://api.telegram.org/bot"+token+"/sendMessage",data=data,method="POST")
- with urllib.request.urlopen(req,timeout=12) as r:return r.status==200
+ with urllib.request.urlopen(req,timeout=12) as r:return r.status==200 and json.load(r).get("ok") is True
 
 # Taiwan official public-data endpoints; field mappings are validated before publishing values.
 TW_ENDPOINTS={
@@ -122,6 +124,8 @@ def taiwan(metrics,old):
   if stamp and prev_record.get("status") in ("ok","partial"):
    try:fresh=(NOW-datetime.datetime.fromisoformat(stamp)).total_seconds()<86400
    except (ValueError,TypeError):pass
+  if kind=="tw_price" and strategy_notices.after_close(NOW):
+   fresh=fresh and strategy_notices.fresh_close(prev_record,NOW)
   record=dict(prev_record) if fresh else {}
   if fresh and kind=="margin" and (record.get("unit")!="TWD" or record.get("source_url")!=url):fresh=False;record={}
   if fresh and kind=="cash_inst" and not record.get("date"):fresh=False;record={}
@@ -250,6 +254,7 @@ def main():
     metrics[k]["checked_at"]=NOW.isoformat()
     print("FRED",k,"unavailable",str(exc)[:150],flush=True)
  taiwan(metrics,old)
+ official=metrics["taiex"].get("official_sources",{}).get("tw_price",{})
  prices={}
  for k,s in YAHOO.items():
   try:prices[k]=yahoo(s)
@@ -301,11 +306,22 @@ def main():
    pending.append({"key":"health_"+key,"message":"資料來源連續失敗3次："+key})
  if STATS["requests"]>=MAX_REQUESTS and old.get("request_stats",{}).get("requests",0)<MAX_REQUESTS:
   pending.append({"key":"health_budget","message":"API請求達單次上限："+str(MAX_REQUESTS)})
- if pending:
+ strategy=strategy_notices.evaluate(official,old.get("strategy",{}),NOW)
+ strategy_message=strategy_notices.message(strategy)
+ messages=[p["message"] for p in pending]
+ if strategy_message:messages.append(strategy_message)
+ if messages:
   try:
-   if telegram("全球金融風險雷達\n"+"\n".join("• "+p["message"] for p in pending)+"\n詳情請查看儀表板"):pending=[]
+   if telegram("全球金融風險雷達\n"+"\n".join("• "+message for message in messages)+"\n詳情請查看儀表板"):
+    pending=[]
+    if strategy_message:
+     strategy["last_delivered"]={"stage":strategy["pending_stage"],"close_date":strategy["close_date"]}
+     strategy["pending_stage"]=None
   except Exception as exc:print("Telegram delivery failed:",type(exc).__name__)
- payload={"source_checks":old.get("source_checks",{}),"updated_utc":datetime.datetime.now(datetime.timezone.utc).isoformat(),"request_stats":STATS,"source_failure_streaks":streaks,"metrics":metrics,"active_alerts":alerts,"pending_notifications":pending,"notes":["無資料不代表安全；免費端點可能延遲或停用","回撤基準：近一年最高收盤價，非個人45,211點加碼基準","18項已列示，但尚未全部完成資料串接"]}
+ print("3C notice:", "official close confirmed" if strategy["official_close_fresh"] else "awaiting official close",
+       "stage", strategy["current_stage"], "pending", strategy["pending_stage"],
+       "Telegram configured", bool(os.getenv("TELEGRAM_BOT_TOKEN") and os.getenv("TELEGRAM_CHAT_ID")), flush=True)
+ payload={"source_checks":old.get("source_checks",{}),"updated_utc":datetime.datetime.now(datetime.timezone.utc).isoformat(),"request_stats":STATS,"source_failure_streaks":streaks,"metrics":metrics,"active_alerts":alerts,"pending_notifications":pending,"strategy":strategy,"notes":["無資料不代表安全；免費端點可能延遲或停用","回撤基準：近一年最高收盤價，非個人45,211點加碼基準","18項已列示，但尚未全部完成資料串接"]}
  OUT.parent.mkdir(parents=True,exist_ok=True)
  OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2))
  print("Updated:",sum(m["status"]=="ok" for m in metrics.values()),"full metrics;",len(alerts),"active alerts; requests",STATS["requests"],"failures",STATS["failure"])

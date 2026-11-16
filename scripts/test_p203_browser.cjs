@@ -49,6 +49,12 @@ const delay=ms=>new Promise(r=>setTimeout(r,ms));
     assert(await page.locator('#risk-chart').innerHTML(),'legacy chart');
     assert(await page.locator('#risk-factors').innerText(),'legacy factors');
     assert(await page.locator('#cards .card').count()>=4,'legacy metric cards');
+    if(site){
+      assert.equal(await page.locator('#strategy-rows tr').count(),5);
+      const summary=await page.locator('#strategy-summary').textContent();
+      assert(summary.includes('45,211')&&summary.includes('8,000,000'));
+      assert((await page.locator('#strategy-rows tr').first().textContent()).includes('42,950.45'));
+    }
     const before=await page.locator('#p203-research').innerText();
     await page.selectOption('#risk-series','global');
     await page.selectOption('#risk-range','60');
