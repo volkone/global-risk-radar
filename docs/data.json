@@ -5,15 +5,12 @@
     "tw_tw_price": "2026-11-16T13:08:08.150669+00:00",
     "tw_futures": "2026-11-16T13:08:08.150669+00:00"
   },
-  "updated_utc": "2026-11-16T13:08:10.720102+00:00",
+  "updated_utc": "2026-11-16T21:58:07.866600+00:00",
   "request_stats": {
-    "requests": 9,
-    "success": 9,
+    "requests": 6,
+    "success": 6,
     "failure": 0,
     "by_host": {
-      "www.twse.com.tw": 1,
-      "openapi.taifex.com.tw": 1,
-      "www.taifex.com.tw": 1,
       "query1.finance.yahoo.com": 6
     },
     "errors": [],
@@ -1627,15 +1624,11 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 27943.74,
-      "date": "2026-11-13",
+      "value": 27197.152,
+      "date": "2026-11-16",
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ENDX/",
       "history": [
-        {
-          "date": "2026-07-10",
-          "value": 29825.109
-        },
         {
           "date": "2026-07-13",
           "value": 29264.1
@@ -1991,12 +1984,16 @@
         {
           "date": "2026-11-13",
           "value": 27943.74
+        },
+        {
+          "date": "2026-11-16",
+          "value": 27197.152
         }
       ],
-      "drawdown_pct": 10.51,
+      "drawdown_pct": 12.9,
       "reference": "近一年最高收盤價",
-      "spx": 7561.67,
-      "checked_at": "2026-11-16T13:08:08.150669+00:00"
+      "spx": 7416.59,
+      "checked_at": "2026-11-16T21:58:06.984644+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -2005,8 +2002,8 @@
       "frequency": "daily",
       "status": "partial",
       "reason": "只有半導體相對強弱，市場廣度未取得",
-      "value": 0.3631,
-      "date": "2026-11-13",
+      "value": 0.3534,
+      "date": "2026-11-16",
       "unit": "SOX/NDX",
       "source_url": "https://finance.yahoo.com/quote/%5ESOX/"
     },
@@ -2225,11 +2222,15 @@
       "official_close_date": "2026-11-16",
       "official_volume_shares": 14120171417,
       "official_turnover_twd": 903115129889,
-      "value": 41040.078,
-      "date": "2026-11-16",
+      "value": 43675.121,
+      "date": "2026-11-13",
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ETWII/",
       "history": [
+        {
+          "date": "2026-07-03",
+          "value": 46780.621
+        },
         {
           "date": "2026-07-06",
           "value": 46556.391
@@ -2585,15 +2586,11 @@
         {
           "date": "2026-11-13",
           "value": 43675.121
-        },
-        {
-          "date": "2026-11-16",
-          "value": 41040.078
         }
       ],
-      "drawdown_pct": 17.63,
+      "drawdown_pct": 12.34,
       "reference": "近一年最高收盤價",
-      "checked_at": "2026-11-16T13:08:08.150669+00:00"
+      "checked_at": "2026-11-16T21:58:06.984644+00:00"
     },
     "fx": {
       "name": "美元兌新台幣與美元指數",
@@ -2602,7 +2599,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 32.936,
+      "value": 32.943,
       "date": "2026-11-16",
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/",
@@ -2965,33 +2962,28 @@
         },
         {
           "date": "2026-11-16",
-          "value": 32.936
+          "value": 32.943
         }
       ],
-      "checked_at": "2026-11-16T13:08:08.150669+00:00",
-      "dxy": 103.46
+      "checked_at": "2026-11-16T21:58:06.984644+00:00",
+      "dxy": 103.58
     }
   },
   "active_alerts": {
     "ndx10": {
       "severity": "warning",
-      "message": "Nasdaq 100 近一年高點回撤 ≥10%：10.51%",
+      "message": "Nasdaq 100 近一年高點回撤 ≥10%：12.9%",
       "first_seen": "2026-11-13T16:07:46.932933+00:00"
     },
     "tw5": {
       "severity": "warning",
-      "message": "台股近一年高點回撤 ≥5%：17.63%",
+      "message": "台股近一年高點回撤 ≥5%：12.34%",
       "first_seen": "2026-11-10T08:42:05.496990+00:00"
     },
     "tw10": {
       "severity": "warning",
-      "message": "台股近一年高點回撤 ≥10%：17.63%",
+      "message": "台股近一年高點回撤 ≥10%：12.34%",
       "first_seen": "2026-11-10T08:42:05.496990+00:00"
-    },
-    "tw15": {
-      "severity": "warning",
-      "message": "台股近一年高點回撤 ≥15%：17.63%",
-      "first_seen": "2026-11-16T03:13:49.017636+00:00"
     }
   },
   "pending_notifications": [
