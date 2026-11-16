@@ -5,7 +5,7 @@
     "tw_margin": "2026-11-15T22:49:14.527112+00:00",
     "tw_tw_price": "2026-11-15T22:49:14.527112+00:00"
   },
-  "updated_utc": "2026-11-16T02:44:21.412419+00:00",
+  "updated_utc": "2026-11-16T03:13:49.510915+00:00",
   "request_stats": {
     "requests": 6,
     "success": 6,
@@ -1997,7 +1997,7 @@
       "drawdown_pct": 10.51,
       "reference": "近一年最高收盤價",
       "spx": 7561.67,
-      "checked_at": "2026-11-16T02:44:20.839899+00:00"
+      "checked_at": "2026-11-16T03:13:49.017636+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -2253,7 +2253,7 @@
       "official_close_date": "2026-11-13",
       "official_volume_shares": 12361786586,
       "official_turnover_twd": 951580008082,
-      "value": 42368.43,
+      "value": 41969.27,
       "date": "2026-11-16",
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ETWII/",
@@ -2616,12 +2616,12 @@
         },
         {
           "date": "2026-11-16",
-          "value": 42368.43
+          "value": 41969.27
         }
       ],
-      "drawdown_pct": 14.96,
+      "drawdown_pct": 15.76,
       "reference": "近一年最高收盤價",
-      "checked_at": "2026-11-16T02:44:20.839899+00:00"
+      "checked_at": "2026-11-16T03:13:49.017636+00:00"
     },
     "fx": {
       "name": "美元兌新台幣與美元指數",
@@ -2630,7 +2630,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 32.946,
+      "value": 32.955,
       "date": "2026-11-16",
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/",
@@ -2993,10 +2993,10 @@
         },
         {
           "date": "2026-11-16",
-          "value": 32.946
+          "value": 32.955
         }
       ],
-      "checked_at": "2026-11-16T02:44:20.839899+00:00",
+      "checked_at": "2026-11-16T03:13:49.017636+00:00",
       "dxy": 103.43
     }
   },
@@ -3008,13 +3008,18 @@
     },
     "tw5": {
       "severity": "warning",
-      "message": "台股近一年高點回撤 ≥5%：14.96%",
+      "message": "台股近一年高點回撤 ≥5%：15.76%",
       "first_seen": "2026-11-10T08:42:05.496990+00:00"
     },
     "tw10": {
       "severity": "warning",
-      "message": "台股近一年高點回撤 ≥10%：14.96%",
+      "message": "台股近一年高點回撤 ≥10%：15.76%",
       "first_seen": "2026-11-10T08:42:05.496990+00:00"
+    },
+    "tw15": {
+      "severity": "warning",
+      "message": "台股近一年高點回撤 ≥15%：15.76%",
+      "first_seen": "2026-11-16T03:13:49.017636+00:00"
     }
   },
   "pending_notifications": [
@@ -3043,6 +3048,55 @@
       "message": "台股近一年高點回撤 ≥15%：16.38%"
     }
   ],
+  "strategy": {
+    "anchor": 45211,
+    "planned_total_twd": 8000000,
+    "stages": [
+      {
+        "drawdown_from_fixed_anchor_pct": -5,
+        "trigger_taiex_points": 42950.45,
+        "planned_twd": 1000000,
+        "historical_scenario_reached": null,
+        "order_authorized": false
+      },
+      {
+        "drawdown_from_fixed_anchor_pct": -10,
+        "trigger_taiex_points": 40689.9,
+        "planned_twd": 1000000,
+        "historical_scenario_reached": null,
+        "order_authorized": false
+      },
+      {
+        "drawdown_from_fixed_anchor_pct": -15,
+        "trigger_taiex_points": 38429.35,
+        "planned_twd": 2000000,
+        "historical_scenario_reached": null,
+        "order_authorized": false
+      },
+      {
+        "drawdown_from_fixed_anchor_pct": -20,
+        "trigger_taiex_points": 36168.8,
+        "planned_twd": 2000000,
+        "historical_scenario_reached": null,
+        "order_authorized": false
+      },
+      {
+        "drawdown_from_fixed_anchor_pct": -25,
+        "trigger_taiex_points": 33908.25,
+        "planned_twd": 2000000,
+        "historical_scenario_reached": null,
+        "order_authorized": false
+      }
+    ],
+    "official_close": 43675.12,
+    "close_date": "2026-11-13",
+    "official_close_fresh": false,
+    "evaluated_at_utc": "2026-11-16T03:13:49.017636+00:00",
+    "current_stage": null,
+    "confirmed_stage": 0,
+    "pending_stage": null,
+    "last_delivered": null
+  },
   "notes": [
     "無資料不代表安全；免費端點可能延遲或停用",
     "回撤基準：近一年最高收盤價，非個人45,211點加碼基準",
