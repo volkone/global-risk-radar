@@ -10,6 +10,8 @@ from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import urlopen
 
+from audit_publication_evidence_scope import exclude_unused_versions
+
 ROOT = Path(__file__).resolve().parents[1]
 VINTAGES = ROOT / "storage/phase3_fred_pit_vintages.json"
 PANEL = ROOT / "storage/phase4_publication_aware_panel.json"
@@ -107,6 +109,13 @@ def main():
     vintages = json.loads(raw)
     end = date.fromisoformat(vintages["window"][1])
     panel = json.loads(PANEL.read_bytes())
+    scoped = exclude_unused_versions(vintages)
+    scope_path = ROOT / "docs/pit_publication_evidence_scope.json"
+    scope = json.loads(scope_path.read_bytes())
+    if (scope["raw_vintages_sha256"] != hashlib.sha256(raw).hexdigest() or
+            scope["panel_sha256"] != hashlib.sha256(PANEL.read_bytes()).hexdigest() or
+            scope["replay_mismatches_after_exclusion"] != 0):
+        raise SystemExit("Exclusion evidence does not match the frozen archive and panel")
     report = {}
     for factor, stored in vintages["series"].items():
         start = date.fromisoformat(stored["bootstrap_date"])
@@ -116,10 +125,12 @@ def main():
         try:
             archive, count, hashes = download(series, start, end, earliest, cache, api_key)
             checked, differences = compare(archive, stored, start, end)
+            _, scoped_differences = compare(archive, scoped["series"][factor], start, end)
             used, missing, panel_differences = compare_selected_panel_values(panel, factor, archive)
             report[factor] = {"series": series, "start": str(start), "end": str(end),
                               "observation_start": earliest, "response_rows": count,
                               "boundaries_checked": checked, "differences": len(differences),
+                              "differences_after_exclusion": len(scoped_differences),
                               "examples": differences[:20], "response_sha256": hashes,
                               "panel_values_checked": used, "panel_missing_values": missing,
                               "panel_value_differences": panel_differences,
@@ -130,15 +141,20 @@ def main():
             report[factor] = {"series": series, "status": "failed", "error_type": type(error).__name__}
         print(f"{series}: {report[factor]['status']}", flush=True)
     passed = len(report) == 6 and all(item["status"] == "matched" for item in report.values())
+    scope_passed = len(report) == 6 and all(
+        x.get("differences_after_exclusion") == 0 and x.get("panel_value_differences") == []
+        for x in report.values())
     output = {"checked_at_utc": datetime.now(timezone.utc).isoformat(),
               "source": URL, "source_vintage_sha256": hashlib.sha256(raw).hexdigest(),
               "source_panel_sha256": hashlib.sha256(PANEL.read_bytes()).hexdigest(),
               "series": report, "effective_date_intervals_verified": passed,
               "panel_nonmissing_values_verified": len(report) == 6 and all(
                   entry.get("panel_value_differences") == [] for entry in report.values()),
+              "effective_date_intervals_verified_after_scoped_exclusion": scope_passed,
+              "exclusion_evidence": "docs/pit_publication_evidence_scope.json",
               "intraday_publication_timestamps_verified": False}
     (ROOT / "docs/alfred_vintage_interval_verification.json").write_text(json.dumps(output, indent=2) + "\n")
-    return 0 if passed else 1
+    return 0 if scope_passed else 1
 
 
 if __name__ == "__main__":
