@@ -1,10 +1,5 @@
 {
-  "source_checks": {
-    "tw_cash_inst": "2026-11-15T22:49:14.527112+00:00",
-    "tw_futures": "2026-11-15T22:49:14.527112+00:00",
-    "tw_margin": "2026-11-15T22:49:14.527112+00:00",
-    "tw_tw_price": "2026-11-15T22:49:14.527112+00:00"
-  },
+  "source_checks": {},
   "updated_utc": "2026-11-16T11:18:24.127696+00:00",
   "request_stats": {
     "requests": 7,
@@ -402,8 +397,7 @@
         }
       ],
       "provider": "FRED official API",
-      "checked_at": "2026-11-15T22:49:14.527112+00:00",
-      "change20bp": -5.0,
+      "change20bp": -5,
       "cache_status": "cached"
     },
     "ig": {
@@ -780,7 +774,6 @@
         }
       ],
       "provider": "FRED official API",
-      "checked_at": "2026-11-15T22:49:14.527112+00:00",
       "cache_status": "cached"
     },
     "vix": {
@@ -1157,7 +1150,6 @@
         }
       ],
       "provider": "FRED official API",
-      "checked_at": "2026-11-15T22:49:14.527112+00:00",
       "cache_status": "cached"
     },
     "us10y": {
@@ -1366,7 +1358,7 @@
         },
         {
           "date": "2026-09-15",
-          "value": 5.0
+          "value": 5
         },
         {
           "date": "2026-09-16",
@@ -1474,11 +1466,11 @@
         },
         {
           "date": "2026-10-23",
-          "value": 5.0
+          "value": 5
         },
         {
           "date": "2026-10-26",
-          "value": 5.0
+          "value": 5
         },
         {
           "date": "2026-10-27",
@@ -1530,7 +1522,6 @@
         }
       ],
       "provider": "FRED official API",
-      "checked_at": "2026-11-15T22:49:14.527112+00:00",
       "cache_status": "cached"
     },
     "nfci": {
@@ -1618,8 +1609,7 @@
           "value": -0.462
         }
       ],
-      "provider": "FRED official API",
-      "checked_at": "2026-11-16T11:18:23.352714+00:00"
+      "provider": "FRED official API"
     },
     "indices": {
       "name": "S&P 500 / Nasdaq 100",
@@ -2468,7 +2458,7 @@
         },
         {
           "date": "2026-09-17",
-          "value": 46288.0
+          "value": 46288
         },
         {
           "date": "2026-09-18",
