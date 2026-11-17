@@ -1,21 +1,21 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-17T04:29:23.710038+00:00",
+  "generated_at": "2026-11-17T14:18:22.484737+00:00",
   "model_status": "separate_global_prototype_and_evidence_gated_taiwan",
   "disclaimer": "Global is provisional; historical Taiwan reconstruction is research-only. Formal Taiwan eligibility is recorded in quality_gate.",
   "global": {
     "status": "provisional",
-    "score": 24.1,
+    "score": 25.5,
     "coverage": 0.9,
     "min_coverage": 0.85,
     "components": [
       {
         "metric": "hy",
         "weight": 25,
-        "signal": 20.0,
+        "signal": 20.5,
         "eligible": true,
         "reason": null,
-        "contribution": 5.555555555555555
+        "contribution": 5.694444444444445
       },
       {
         "metric": "ig",
@@ -28,10 +28,10 @@
       {
         "metric": "vix",
         "weight": 20,
-        "signal": 20.3,
+        "signal": 22.12,
         "eligible": true,
         "reason": null,
-        "contribution": 4.511111111111111
+        "contribution": 4.915555555555556
       },
       {
         "metric": "indices",
@@ -52,10 +52,10 @@
       {
         "metric": "us10y",
         "weight": 5,
-        "signal": 23.33,
+        "signal": 40.0,
         "eligible": true,
         "reason": null,
-        "contribution": 1.296111111111111
+        "contribution": 2.2222222222222223
       },
       {
         "metric": "breadth",
@@ -67,7 +67,7 @@
       }
     ],
     "model_id": "global_rate_v2",
-    "as_of": "2026-11-17T04:29:21.034541+00:00"
+    "as_of": "2026-11-17T14:18:08.324543+00:00"
   },
   "taiwan": {
     "status": "formal_model_blocked",
@@ -197,15 +197,15 @@
   "taiwan_legacy_prototype": {
     "status": "insufficient_coverage",
     "score": null,
-    "coverage": 0.0,
+    "coverage": 0.35,
     "min_coverage": 0.85,
     "components": [
       {
         "metric": "taiex",
         "weight": 35,
-        "signal": null,
-        "eligible": false,
-        "reason": "quality_gate_not_passed"
+        "signal": 65.1,
+        "eligible": true,
+        "reason": null
       },
       {
         "metric": "margin",
