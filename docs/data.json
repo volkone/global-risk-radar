@@ -5,7 +5,7 @@
     "tw_tw_price": "2026-11-17T14:18:00.573710+00:00",
     "tw_futures": "2026-11-17T14:18:00.573710+00:00"
   },
-  "updated_utc": "2026-11-17T20:51:33.916524+00:00",
+  "updated_utc": "2026-11-17T22:52:46.219771+00:00",
   "request_stats": {
     "requests": 6,
     "success": 6,
@@ -1624,7 +1624,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 26835.98,
+      "value": 27001.785,
       "date": "2026-11-17",
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ENDX/",
@@ -1987,13 +1987,13 @@
         },
         {
           "date": "2026-11-17",
-          "value": 26835.98
+          "value": 27001.785
         }
       ],
-      "drawdown_pct": 14.05,
+      "drawdown_pct": 13.52,
       "reference": "近一年最高收盤價",
-      "spx": 7316.45,
-      "checked_at": "2026-11-17T20:51:33.376290+00:00"
+      "spx": 7340.53,
+      "checked_at": "2026-11-17T22:52:44.902369+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -2002,7 +2002,7 @@
       "frequency": "daily",
       "status": "partial",
       "reason": "只有半導體相對強弱，市場廣度未取得",
-      "value": 0.3541,
+      "value": 0.3571,
       "date": "2026-11-17",
       "unit": "SOX/NDX",
       "source_url": "https://finance.yahoo.com/quote/%5ESOX/"
@@ -2590,7 +2590,7 @@
       ],
       "drawdown_pct": 17.63,
       "reference": "近一年最高收盤價",
-      "checked_at": "2026-11-17T20:51:33.376290+00:00"
+      "checked_at": "2026-11-17T22:52:44.902369+00:00"
     },
     "fx": {
       "name": "美元兌新台幣與美元指數",
@@ -2599,7 +2599,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 32.914,
+      "value": 32.915,
       "date": "2026-11-17",
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/",
@@ -2962,17 +2962,17 @@
         },
         {
           "date": "2026-11-17",
-          "value": 32.914
+          "value": 32.915
         }
       ],
-      "checked_at": "2026-11-17T20:51:33.376290+00:00",
-      "dxy": 103.49
+      "checked_at": "2026-11-17T22:52:44.902369+00:00",
+      "dxy": 103.56
     }
   },
   "active_alerts": {
     "ndx10": {
       "severity": "warning",
-      "message": "Nasdaq 100 近一年高點回撤 ≥10%：14.05%",
+      "message": "Nasdaq 100 近一年高點回撤 ≥10%：13.52%",
       "first_seen": "2026-11-13T16:07:46.932933+00:00"
     },
     "tw5": {
