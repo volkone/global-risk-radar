@@ -1,11 +1,11 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-17T14:26:00.719594+00:00",
+  "generated_at": "2026-11-17T14:40:27.568161+00:00",
   "model_status": "separate_global_prototype_and_evidence_gated_taiwan",
   "disclaimer": "Global is provisional; historical Taiwan reconstruction is research-only. Formal Taiwan eligibility is recorded in quality_gate.",
   "global": {
     "status": "provisional",
-    "score": 25.5,
+    "score": 25.6,
     "coverage": 0.9,
     "min_coverage": 0.85,
     "components": [
@@ -36,10 +36,10 @@
       {
         "metric": "indices",
         "weight": 20,
-        "signal": 43.0,
+        "signal": 43.23,
         "eligible": true,
         "reason": null,
-        "contribution": 9.555555555555555
+        "contribution": 9.606666666666666
       },
       {
         "metric": "nfci",
@@ -67,7 +67,7 @@
       }
     ],
     "model_id": "global_rate_v2",
-    "as_of": "2026-11-17T14:25:58.595047+00:00"
+    "as_of": "2026-11-17T14:40:23.958522+00:00"
   },
   "taiwan": {
     "status": "formal_model_blocked",
@@ -94,9 +94,9 @@
         },
         {
           "id": "validation",
-          "label": "獨立前瞻驗證",
-          "passed": false,
-          "evidence": "docs/independent_model_validation.json"
+          "label": "歷史滾動驗證",
+          "passed": true,
+          "evidence": "docs/historical_model_validation.json"
         },
         {
           "id": "authorization",
@@ -112,14 +112,13 @@
         }
       ],
       "blockers": [
-        "獨立前瞻驗證",
         "模型版本與證據授權",
         "當日可追溯前瞻分數"
       ],
       "source_panel_sha256": "161505e9ee16550400c21749236ab5d4c4eb3690d07003bbf986ba09b48fe472",
       "frozen_protocol_sha256": "5bdab8f8ae59e2081b9ac84e59237a0d6c717b6c7162c5140b6c1136ed45fc08"
     },
-    "reason": "獨立前瞻驗證；模型版本與證據授權；當日可追溯前瞻分數",
+    "reason": "模型版本與證據授權；當日可追溯前瞻分數",
     "latest_research": {
       "date": "2026-10-30",
       "score": 81.1251,

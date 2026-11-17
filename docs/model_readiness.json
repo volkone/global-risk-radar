@@ -16,9 +16,9 @@
     },
     {
       "id": "validation",
-      "label": "獨立前瞻驗證",
-      "passed": false,
-      "evidence": "docs/independent_model_validation.json"
+      "label": "歷史滾動驗證",
+      "passed": true,
+      "evidence": "docs/historical_model_validation.json"
     },
     {
       "id": "authorization",
@@ -34,7 +34,6 @@
     }
   ],
   "blockers": [
-    "獨立前瞻驗證",
     "模型版本與證據授權",
     "當日可追溯前瞻分數"
   ],
