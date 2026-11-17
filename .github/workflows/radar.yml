@@ -40,6 +40,8 @@ jobs:
         run: python scripts/history.py
       - name: Validate data quality before risk scoring
         run: python scripts/quality.py
+      - name: Build foreign cash selloff ranking
+        run: python scripts/foreign_cash_ranking.py
       - name: Replay every historical PIT vintage selection
         run: python scripts/audit_pit_full_replay.py
       - name: Calibrate frozen six-factor PIT research model
@@ -60,7 +62,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add docs/p012_readiness.json docs/data.json docs/history/observations.json docs/quality.json docs/calibration.json docs/backtest.json docs/scores.json docs/risk_dashboard.json docs/global_history.json storage/historical_nasdaq100.json docs/model_readiness.json docs/pit_full_replay_audit.json storage/history.sqlite docs/forward_health.json docs/prospective_evaluation.json docs/phase5_forward_capture_latest.json docs/phase5_forward_status.json
+          git add docs/foreign_cash_ranking.json storage/foreign_cash_history.csv docs/p012_readiness.json docs/data.json docs/history/observations.json docs/quality.json docs/calibration.json docs/backtest.json docs/scores.json docs/risk_dashboard.json docs/global_history.json storage/historical_nasdaq100.json docs/model_readiness.json docs/pit_full_replay_audit.json storage/history.sqlite docs/forward_health.json docs/prospective_evaluation.json docs/phase5_forward_capture_latest.json docs/phase5_forward_status.json
           if test -d storage/prospective; then git add storage/prospective; fi
           if ! git diff --cached --quiet; then
             git commit -m 'Update radar snapshot [skip ci]'

@@ -58,6 +58,16 @@ const delay=ms=>new Promise(r=>setTimeout(r,ms));
       assert.equal(await market.locator('article').count(), 4);
       assert((await market.textContent()).includes('資料日'));
     }
+    const foreign = page.locator('#foreign-cash-ranking');
+    await foreign.locator('select').waitFor();
+    await page.waitForFunction(()=>!document.querySelector('#foreign-cash-ranking select').disabled);
+    const ranking = await read(page,'foreign_cash_ranking.json');
+    assert.equal(await foreign.locator('.foreign-top tr').count(),25);
+    assert.equal(await foreign.locator('.foreign-point').count(),ranking.entries.length);
+    await foreign.locator('select').selectOption('25');
+    assert.equal(await foreign.locator('.foreign-point:not([data-rank="25"])').count(),0);
+    assert.equal(await foreign.locator('.foreign-point').count(),ranking.entries.filter(item=>item.rank===25).length);
+    await foreign.locator('select').selectOption('0');
     const before=await page.locator('#p203-research').innerText();
     await page.selectOption('#risk-series','global');
     await page.selectOption('#risk-range','60');
