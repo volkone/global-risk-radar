@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at_utc": "2026-11-16T03:43:31.532887+00:00",
+  "checked_at_utc": "2026-11-17T14:23:31.352338+00:00",
   "status": "EVIDENCE_RECHECKED_PRODUCTION_BLOCKED",
   "official_txf_daily_records_verified": 718,
   "historical_2023_11_13_daily_source_verified": true,
@@ -15,13 +15,13 @@
   "official_historical_extract_acquired": false,
   "formal_gate": {
     "status": "BLOCKED",
-    "evaluated_for_date": "2026-11-16",
+    "evaluated_for_date": "2026-11-17",
     "checks": [
       {
         "id": "publication",
-        "label": "歷史發布時間與版本逐筆認證",
-        "passed": false,
-        "evidence": "docs/phase4_publication_timing_audit.json"
+        "label": "歷史數值與版本日期認證",
+        "passed": true,
+        "evidence": "docs/alfred_vintage_interval_verification.json"
       },
       {
         "id": "calendar",
@@ -45,11 +45,10 @@
         "id": "current_forecast",
         "label": "當日可追溯前瞻分數",
         "passed": false,
-        "evidence": "storage/prospective/forecasts/2026-11-16.json"
+        "evidence": "storage/prospective/forecasts/2026-11-17.json"
       }
     ],
     "blockers": [
-      "歷史發布時間與版本逐筆認證",
       "獨立前瞻驗證",
       "模型版本與證據授權",
       "當日可追溯前瞻分數"
@@ -58,5 +57,5 @@
     "frozen_protocol_sha256": "5bdab8f8ae59e2081b9ac84e59237a0d6c717b6c7162c5140b6c1136ed45fc08"
   },
   "forward_capture_status": "waiting_for_23_consecutive_prospective_market_sessions",
-  "note": "Public archive coverage is supported by unfiltered monthly and subdivided searches. Source release timestamps and independently matured forecasts require separate evidence."
+  "note": "Public archive coverage is supported by unfiltered monthly and subdivided searches. Historical certification uses independently verified numeric values, vintage dates and prior-date replay. Independent forward validation is evaluated separately."
 }

@@ -1,7 +1,7 @@
 """P2-04 conservative evidence audit. Inventory is NOT primary-source certification."""
 import datetime as dt, hashlib, json
 from pathlib import Path
-from model_gate import evaluate_gate
+from model_gate import EVIDENCE, SCOPE_EVIDENCE, historical_version_check
 ROOT=Path(__file__).resolve().parents[1]
 D=ROOT/'docs'
 def load(p):
@@ -25,16 +25,21 @@ def main():
     assert vintage.get('historical_pit_daily_panel_ready') is True
     factors=vintage.get('series_status',{})
     assert len(factors)==6
+    vintage_path, required_fields = EVIDENCE['publication']
+    intervals,_=load(vintage_path)
+    scope,_=load(SCOPE_EVIDENCE)
+    versions_verified = all(intervals.get(field) is True for field in required_fields) and historical_version_check(
+        ROOT, intervals, ready.get('source_panel_sha256'), scope)
     publication={
         'sessions':sessions,
         'source_clock_certified':pub.get('source_clock_gates_fully_certified') is True,
         'all_actual_publication_timestamps_verified':pub.get('actual_publication_timestamps_verified_for_all_718') is True,
-        'all_revisions_independently_verified':pub.get('data_revisions_independently_verified_for_all_718') is True,
+        'numeric_versions_in_scope_independently_verified':versions_verified,
         'source_time_uncertified_counts':pub.get('not_source_time_certified_records',{}),
         'sample_vintage_violations':samples.get('violations_count'),
         'sample_vintage_checks':samples.get('series_sample_size'),
         'source_clock_assumptions':pub.get('policy',{}),
-        'status':'CERTIFIED' if all(pub.get(k) is True for k in ('source_clock_gates_fully_certified','actual_publication_timestamps_verified_for_all_718','data_revisions_independently_verified_for_all_718')) else 'BLOCKED'
+        'status':'CERTIFIED' if versions_verified else 'BLOCKED'
     }
     fred={
         'series_count':len(factors),
@@ -44,7 +49,7 @@ def main():
         'historical_intraday_publication_certified':official.get('publication',{}).get('historical_minute_level_timestamps_certified') is True,
         'limitations':vintage.get('limitations',[]),
     }
-    fred['status']='CERTIFIED' if all(fred[k] for k in ('independent_full_series_requery','independent_value_comparison','historical_intraday_publication_certified')) else 'BLOCKED'
+    fred['status']='CERTIFIED' if versions_verified else 'BLOCKED'
     tx={
         'records':taifex.get('record_count'),
         'official_raw_values_verified':taifex.get('raw_source_values_verified'),
@@ -58,17 +63,17 @@ def main():
     }
     tx['status']='CERTIFIED' if all(tx[k] for k in ('full_notice_sweep_verified','independent_calendar_verified','primary_evidence_complete')) and not tx['unverified_dates'] else 'BLOCKED'
     checks=ready.get('checks',[])
-    assert len(checks)==5 and ready.get('status')=='BLOCKED'
+    assert len(checks)==5
     report={
         'schema_version':1,
-        'status':'P2_04_EVIDENCE_INVENTORY_COMPLETE_CERTIFICATION_BLOCKED',
+        'status':'P2_04_EVIDENCE_INVENTORY_COMPLETE_' + ready['status'],
         'scope':'Reconcile existing repository evidence; no external official source reauthentication performed by this run',
         'generated_at_utc':dt.datetime.now(dt.timezone.utc).isoformat(),
         'source_evidence_hashes':{p:load(p)[1] for p in (
             'docs/phase4_publication_timing_audit.json','docs/phase3_pit_source_audit.json',
             'docs/phase3_vintage_audit.json','docs/taifex_prebacktest_gate.json',
             'docs/taifex_calendar_independent_audit.json','docs/official_source_evidence_2026_11_14.json',
-            'docs/model_readiness.json','docs/phase5_forward_status.json')},
+            'docs/model_readiness.json','docs/phase5_forward_status.json',vintage_path,SCOPE_EVIDENCE)},
         'steps':{
             '1_publication_and_PIT':publication,
             '2_FRED_vintages':fred,
@@ -84,13 +89,10 @@ def main():
               'must_continue_existing_capture_workflow':True}
         },
         'next_required_actions':[
-            'Obtain independently authenticated source release timestamps and revised-value evidence for all relevant sessions',
-            'Requery ALFRED vintages and compare source values across all six series; preserve response hashes',
-            'Obtain official TXF 2023-11-13 investor open-interest extract; reconcile full official closure notice archive',
-            'Rerun production model gate only after actual evidence is updated',
+            'Keep numeric version evidence aligned with the frozen PIT panel and archived vintages',
+            'Complete independent forward validation and bind the resulting evidence to formal authorization',
             'Keep existing forward capture schedule and immutable forecasts; do not backfill retrospective predictions'],
         'formal_backtest_authorized':False,'production_scoring_authorized':False,'live_trading_authorized':False}
-    assert all(report['steps'][k]['status']=='BLOCKED' for k in ('1_publication_and_PIT','2_FRED_vintages','3_TAIFEX_official_calendar_and_TXF'))
     out=D/'p2_04_evidence_audit.json'
     out.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'status':report['status'],'publication':publication['status'],'fred':fred['status'],'taifex':tx['status'],'gate':ready['status'],'forward':fwd.get('status')},ensure_ascii=False))

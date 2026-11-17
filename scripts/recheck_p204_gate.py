@@ -31,7 +31,7 @@ def main():
       'historical_notice_count':notices['notice_count'],
       'official_historical_extract_acquired':official['official_historical_extract_acquired'],
       'formal_gate':result,'forward_capture_status':forward.get('status'),
-      'note':'Public archive coverage is supported by unfiltered monthly and subdivided searches. Source release timestamps and independently matured forecasts require separate evidence.'}
+      'note':'Public archive coverage is supported by unfiltered monthly and subdivided searches. Historical certification uses independently verified numeric values, vintage dates and prior-date replay. Independent forward validation is evaluated separately.'}
  (ROOT/'docs/p2_04_gate_recheck.json').write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
  print(json.dumps({'status':out['status'],'checks':result['checks'],'alfred':18,'txf':718,'public_archive_coverage_verified':notices['public_archive_coverage_verified']},ensure_ascii=False))
 if __name__=='__main__':main()

@@ -5,7 +5,7 @@ import sys
 import tempfile
 import unittest
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-from model_gate import evaluate_gate, EVIDENCE
+from model_gate import evaluate_gate, EVIDENCE, FACTORS, PANEL as PANEL_KEY, VINTAGES, SCOPE_EVIDENCE
 from dashboard_scores import calibration_report, reconstruct, PANEL
 from phase5_forward_capture import verify_frozen
 from phase5_forward_ledger import frozen_distributions
@@ -22,12 +22,33 @@ class GateTests(unittest.TestCase):
         for key,(path,fields) in EVIDENCE.items():
             obj={f:True for f in fields}
             obj.update(output_sha256='panel',source_panel_sha256='panel',frozen_protocol_sha256='protocol',matured_nonoverlapping_events={'5d':30,'20d':30})
+            if key == 'publication':
+                obj.update(source_vintage_sha256='vintage', series={
+                    k: dict(differences_after_exclusion=0, panel_value_differences=[],
+                            panel_values_checked=718, panel_missing_values=0) for k in FACTORS
+                })
             raw=json.dumps(obj).encode();(self.root/path).write_bytes(raw);hashes[path]=hashlib.sha256(raw).hexdigest()
+        scope=json.dumps(dict(panel_sha256='panel',raw_vintages_sha256='vintage',sessions=718,
+                              replay_positions=4308,replay_mismatches_after_exclusion=0)).encode()
+        (self.root/SCOPE_EVIDENCE).write_bytes(scope)
+        hashes[SCOPE_EVIDENCE]=hashlib.sha256(scope).hexdigest()
+        (self.root/'docs/pit_full_replay_audit.json').write_text(json.dumps(dict(
+            status='internal_replay_pass',sessions=718,checks=4308,mismatch_count=0,
+            input_sha256={PANEL_KEY:'panel',VINTAGES:'vintage'},
+            per_factor={k:dict(matched_values=718,expected_missing=0) for k in FACTORS})))
         (self.root/'docs/production_model_authorization.json').write_text(json.dumps(dict(production_scoring_authorized=True,source_panel_sha256='panel',frozen_protocol_sha256='protocol',evidence_sha256=hashes)))
     def test_missing_evidence_blocks(self):
         self.assertEqual(self.evaluate()['status'],'BLOCKED')
     def test_all_verified_evidence_allows_score(self):
         self.certify_fixture();self.assertEqual(self.evaluate()['status'],'PASS')
+    def test_changed_replay_input_blocks_numeric_certification(self):
+        self.certify_fixture()
+        path=self.root/'docs/pit_full_replay_audit.json'
+        report=json.loads(path.read_text())
+        report['input_sha256'][VINTAGES]='different'
+        path.write_text(json.dumps(report))
+        self.assertFalse(self.evaluate()['checks'][0]['passed'])
+
     def test_changed_evidence_requires_new_authorization(self):
         self.certify_fixture()
         p=self.root/EVIDENCE['calendar'][0];p.write_text(p.read_text()+' ')

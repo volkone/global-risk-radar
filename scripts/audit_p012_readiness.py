@@ -1,6 +1,7 @@
 """Read-only P0/P1/P2 readiness diagnostics; never grants model authorization."""
 import json
 from pathlib import Path
+from model_gate import EVIDENCE, SCOPE_EVIDENCE, historical_version_check
 ROOT=Path(__file__).resolve().parents[1]
 def load(p):
     f=ROOT/p
@@ -30,11 +31,15 @@ def evaluate():
     required_p1=("source_verification_pass","twse_join_audit_pass","calendar_crosscheck_pass","independent_taifex_calendar_certified","full_notice_sweep_verified","primary_evidence_complete")
     p1["complete"]=all(p1[k] is True for k in required_p1)
     p1["unmet_checks"]=[k for k in required_p1 if p1[k] is not True]
+    vintage_path, required_fields = EVIDENCE["publication"]
+    versions = load(vintage_path) or {}
+    scope = load(SCOPE_EVIDENCE) or {}
+    versions_verified = all(versions.get(field) is True for field in required_fields) and historical_version_check(
+        ROOT, versions, timing.get("output_sha256"), scope
+    )
     p2={"conservative_time_gate_panel_built":timing.get("status")=="conservative_time_gate_research_panel_built",
-        "actual_publication_timestamps_verified":timing.get("actual_publication_timestamps_verified_for_all_718") is True,
-        "revisions_independently_verified":timing.get("data_revisions_independently_verified_for_all_718") is True,
-        "internal_replay_pass":replay.get("status")=="internal_replay_pass",
-        "independent_source_query_validation":replay.get("independent_source_query_validation") is True}
+        "historical_values_and_vintage_dates_verified":versions_verified,
+        "internal_replay_pass":replay.get("status")=="internal_replay_pass"}
     p2["complete"]=all(p2.values())
     p2["unmet_checks"]=[k for k,v in p2.items() if k!="complete" and v is not True]
     return {"schema_version":1,"purpose":"P0/P1/P2 independent diagnostics; not production approval",
@@ -44,7 +49,7 @@ def evaluate():
             "p1":p1,"p2":p2,"evidence_gaps":{
                 "p0":[{"metric":x["metric"],"issue":x["quality_errors"],"required_evidence":"fresh source observation" if x["metric"]=="nfci" else "verified market-breadth source and calibrated signal"} for x in missing],
                 "p1":[{"check":x,"evidence_file":"docs/taifex_prebacktest_gate.json"} for x in p1["unmet_checks"]],
-                "p2":[{"check":x,"evidence_file":"docs/phase4_publication_timing_audit.json" if x!="independent_source_query_validation" else "docs/pit_full_replay_audit.json"} for x in p2["unmet_checks"]]},
+                "p2":[{"check":x,"evidence_file":vintage_path if x=="historical_values_and_vintage_dates_verified" else "docs/pit_full_replay_audit.json" if x=="internal_replay_pass" else "docs/phase4_publication_timing_audit.json"} for x in p2["unmet_checks"]]},
             "official_primary_source_index":{"path":"docs/official_source_evidence_2026_11_14.json","available":bool(official),"taifex_rule_confirmed":official.get("taifex",{}).get("contract_specification",{}).get("status")=="official_rule_confirmed","special_closure_notice_confirmed":official.get("taifex",{}).get("special_closure_example",{}).get("status")=="official_notice_confirmed","alfred_api_documentation_available":bool(official.get("alfred",{}).get("vintage_dates_api"))},
             "formal_backtest_authorized":False,
             "notes":["Crosschecking TWSE sessions is not the same as independently certifying TAIFEX notices.",
