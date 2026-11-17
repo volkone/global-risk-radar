@@ -1,65 +1,72 @@
 (() => {
   const section = document.getElementById('foreign-cash-ranking');
   const status = section.querySelector('[role=status]');
-  const grid = section.querySelector('.foreign-plot');
   const filter = section.querySelector('select');
-  const selected = section.querySelector('.foreign-selection');
   const top = section.querySelector('.foreign-top');
   const events = section.querySelector('.foreign-events');
+  const previous = section.querySelector('.foreign-prev');
+  const next = section.querySelector('.foreign-next');
+  const counter = section.querySelector('.foreign-page');
   const format = new Intl.NumberFormat('zh-TW');
-  const formatBillions = new Intl.NumberFormat('zh-TW', {minimumFractionDigits: 2, maximumFractionDigits: 2});
-  const amountInHundredMillions = amount => formatBillions.format(amount / 100_000_000);
+  const decimals = new Intl.NumberFormat('zh-TW', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+  const pageSize = 12;
+  let page = 0;
   let data;
-  const time = date => Date.parse(date);
-  const label = item => '第' + item.rank + '名 ' + item.date.replaceAll('-', '');
+  const amount = item => decimals.format(item.net_twd / 100_000_000);
 
-  function fill(table, rows) {
-    table.replaceChildren(...rows.map(item => {
-      const row = document.createElement('tr');
-      for (const value of [label(item), amountInHundredMillions(item.net_twd)]) {
-        row.insertCell().textContent = value;
-      }
-      return row;
-    }));
+  function addCell(row, value) {
+    const cell = row.insertCell();
+    cell.textContent = value;
+    return cell;
   }
 
   function renderEntries() {
     const rank = Number(filter.value);
     const records = data.entries.filter(item => !rank || item.rank === rank);
-    const start = time(data.start_date);
-    const span = time(data.end_date) - start || 1;
-    const active = records.at(-1);
-    selected.textContent = active ? label(active) + ' · ' + amountInHundredMillions(active.net_twd) + ' 億元' : '這個名次目前沒有入榜記錄';
-    grid.replaceChildren(...records.map(item => {
-      const point = document.createElement('button');
-      point.type = 'button';
-      point.className = 'foreign-point';
-      point.dataset.rank = item.rank;
-      point.style.left = (2 + 96 * (time(item.date) - start) / span) + '%';
-      point.style.top = (5 + 90 * (item.rank - 1) / 24) + '%';
-      point.style.setProperty('--point-hue', (item.rank * 43) % 360);
-      point.title = label(item) + ' · ' + amountInHundredMillions(item.net_twd) + ' 億元';
-      point.setAttribute('aria-label', point.title);
-      point.onclick = () => { selected.textContent = point.title; };
-      point.onfocus = point.onclick;
-      return point;
+    const start = page * pageSize;
+    const visible = records.slice(start, start + pageSize);
+    events.replaceChildren(...visible.map(item => {
+      const row = document.createElement('tr');
+      row.dataset.rank = item.rank;
+      addCell(row, item.date);
+      const rarityCell = row.insertCell();
+      const percent = document.createElement('strong');
+      percent.className = 'foreign-rarity';
+      const proportion = 100 * item.rank / item.sessions_to_date;
+      percent.textContent = proportion < 0.01 ? '前不到 0.01%' : '前 ' + decimals.format(proportion) + '%';
+      const fraction = document.createElement('span');
+      fraction.className = 'foreign-denominator';
+      fraction.textContent = '第 ' + item.rank + ' 名／' + format.format(item.sessions_to_date) + ' 日';
+      rarityCell.append(percent, fraction);
+      addCell(row, amount(item));
+      return row;
     }));
-    fill(events, records.slice().reverse());
+    counter.textContent = visible.length
+      ? '第 ' + (start + 1) + '–' + (start + visible.length) + ' 筆，共 ' + format.format(records.length) + ' 筆'
+      : '這個名次目前沒有入榜記錄';
+    previous.disabled = page === 0;
+    next.disabled = start + pageSize >= records.length;
   }
 
   async function load() {
     try {
       data = await getRadarData('foreign_cash_ranking.json');
       if (data.unit !== 'TWD' || !Array.isArray(data.top) || !Array.isArray(data.entries) ||
-          !Number.isFinite(time(data.start_date)) || !Number.isFinite(time(data.end_date))) throw Error();
+          !data.entries.every(item => Number.isInteger(item.sessions_to_date) && item.sessions_to_date >= item.rank)) throw Error();
       status.textContent = data.start_date + ' 至 ' + data.end_date + '，共 ' +
         format.format(data.sessions) + ' 個交易日';
-      section.querySelector('.foreign-start').textContent = data.start_date;
-      section.querySelector('.foreign-end').textContent = data.end_date;
       for (let rank = 1; rank <= 25; rank++) filter.add(new Option('第 ' + rank + ' 名', rank));
+      data.entries.reverse();
       filter.disabled = false;
-      filter.onchange = renderEntries;
-      fill(top, data.top);
+      filter.onchange = () => { page = 0; renderEntries(); };
+      previous.onclick = () => { page--; renderEntries(); };
+      next.onclick = () => { page++; renderEntries(); };
+      top.replaceChildren(...data.top.map(item => {
+        const row = document.createElement('tr');
+        addCell(row, '第' + item.rank + '名 ' + item.date.replaceAll('-', ''));
+        addCell(row, amount(item));
+        return row;
+      }));
       renderEntries();
     } catch {
       status.textContent = '外資賣超排行暫時無法載入，請重新整理。';

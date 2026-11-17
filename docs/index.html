@@ -1,9 +1,12 @@
 <!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>全球金融風險雷達</title><style>:root{font-family:system-ui,"Microsoft JhengHei",sans-serif;color-scheme:dark}body{margin:0;background:#0a1020;color:#e8edf7}main{max-width:1180px;margin:auto;padding:30px 18px}h1{margin-bottom:5px}p,.muted{color:#a7b5ce}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr));gap:14px}.card,.panel{background:#141f35;border:1px solid #2d3b56;border-radius:14px;padding:18px}.card .v{font-size:29px;font-weight:750;margin:9px 0}.panel{margin-top:16px;overflow-x:auto}table{border-collapse:collapse;width:100%}td,th{text-align:left;border-bottom:1px solid #30405b;padding:11px 8px;font-size:14px}a{color:#a8c7ff}.warn{color:#ffd181}.bad{color:#ff9494}.small{font-size:12px}.status{padding:4px 8px;border-radius:7px;background:#263651}header{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}select{background:#263651;color:white;padding:8px;border:1px solid #425576;border-radius:7px}.risk-controls{display:flex;flex-wrap:wrap;gap:18px;margin:24px 0 12px}#risk-chart svg{width:100%;height:auto}#risk-limitations li{margin:10px 0;color:#a7b5ce}details{margin-top:20px}summary{cursor:pointer}select{max-width:100%}@media(max-width:600px){main{padding:18px 12px}.panel{padding:14px}.risk-controls label{width:100%}h1{font-size:26px}}.foreign-layout{display:grid;grid-template-columns:minmax(245px,.8fr) minmax(0,1.2fr);gap:20px}
 .foreign-scroll{max-height:270px;overflow:auto}
-.foreign-plot{position:relative;height:235px;margin:10px 0 0;border:1px solid #34435e;border-radius:8px;background:repeating-linear-gradient(to bottom,transparent 0,transparent 19%,#26334b 20%)}
-.foreign-point{position:absolute;width:11px;height:11px;transform:translate(-50%,-50%);padding:0;border:1px solid #0a1020;border-radius:50%;background:hsl(var(--point-hue) 77% 72%);cursor:pointer}
-.foreign-point:is(:hover,:focus-visible){z-index:1;outline:2px solid white}
-.foreign-axis{display:flex;justify-content:space-between;gap:8px}
+.foreign-controls{display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+.foreign-events{font-variant-numeric:tabular-nums}
+.foreign-rarity{display:block;color:#8de4d4;font-weight:700}
+.foreign-denominator{display:block;color:#a7b5ce;font-size:.85em}
+.foreign-pagination{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:10px}
+.foreign-pagination button{background:#263651;color:white;border:1px solid #425576;border-radius:7px;padding:6px 10px;cursor:pointer}
+.foreign-pagination button:disabled{opacity:.45;cursor:default}
 .foreign-layout td:last-child,.foreign-layout th:last-child{text-align:right;font-variant-numeric:tabular-nums}
 @media(max-width:650px){.foreign-layout{grid-template-columns:minmax(0,1fr)}}
 </style></head><body><main><header><div><h1>全球金融風險雷達</h1><p>美股信用 · 科技與 AI · 台股籌碼 · 匯率</p></div><span class="status">公開資料監控｜非即時行情</span></header><p id="updated" role="status">讀取資料中…</p><section class="panel" aria-labelledby="market-analysis-title"><h2 id="market-analysis-title">市場策略解讀</h2><div id="market-analysis">正在核對市場快照與資料品質…</div></section><section class="panel" id="foreign-cash-ranking" aria-labelledby="foreign-cash-title">
@@ -11,13 +14,11 @@
 <p class="muted" role="status">讀取外資賣超歷史…</p>
 <div class="foreign-layout">
 <div><h3>歷史總榜</h3><div class="foreign-scroll"><table><thead><tr><th>名次與日期</th><th>淨額（億元）</th></tr></thead><tbody class="foreign-top"></tbody></table></div></div>
-<div><h3>逐日入榜標記</h3>
-<label>篩選當日入榜名次 <select disabled><option value="0">所有名次</option></select></label>
-<p class="small muted">每一點代表該交易日以當時可取得的歷史排行進入前 25 名。圖上方為第 1 名。</p>
-<div class="foreign-plot" role="group" aria-label="各交易日進入前 25 名的名次"></div>
-<div class="foreign-axis small muted"><span class="foreign-start"></span><span class="foreign-end"></span></div>
-<p class="foreign-selection" aria-live="polite"></p>
-<details><summary>查看入榜事件明細</summary><div class="foreign-scroll"><table><thead><tr><th>當日名次與日期</th><th>淨額（億元）</th></tr></thead><tbody class="foreign-events"></tbody></table></div></details>
+<div><h3>入榜當時有多罕見</h3>
+<div class="foreign-controls"><label>當日名次 <select disabled><option value="0">全部名次</option></select></label></div>
+<p class="small muted">前百分比＝當日名次 ÷ 截至當天已收錄的交易日數，包含買超日。百分比越小，當時越少見。</p>
+<div><table><thead><tr><th>入榜日期</th><th>當時有多罕見</th><th>淨額（億元）</th></tr></thead><tbody class="foreign-events"></tbody></table></div>
+<div class="foreign-pagination"><button type="button" class="foreign-prev" disabled>上一頁</button><span class="foreign-page small muted" aria-live="polite"></span><button type="button" class="foreign-next" disabled>下一頁</button></div>
 </div></div>
 <p class="small muted">上市大盤外資及陸資現貨淨額，排除另行列示的外資自營商。金額相同時較早日期優先。
 <a href="https://www.twse.com.tw/zh/trading/foreign/bfi82u.html">證交所資料</a> ·
@@ -45,4 +46,4 @@ if(!Number.isFinite(Date.parse(j?.updated_utc)) || !j.metrics || !Object.keys(j.
   marketLoading=false;
 }}
 load();setInterval(load,60000);
-</script><script src="dashboard.js"></script><script src="foreign_cash_ranking.js"></script><script src="p203_research.js"></script></body></html>
+</script><script src="dashboard.js"></script><script src="foreign_cash_ranking.js?v=rarity"></script><script src="p203_research.js"></script></body></html>

@@ -14,7 +14,7 @@ QUALIFIED_NAMES = {"外資及陸資(不含外資自營商)", "外資及陸資（
 
 def rankings(records):
     top, entries = [], []
-    for day, amount in sorted(records.items()):
+    for sessions, (day, amount) in enumerate(sorted(records.items()), 1):
         if amount >= 0:
             continue
         key = (amount, day)
@@ -23,7 +23,7 @@ def rankings(records):
             continue
         top.insert(place, key)
         del top[LIMIT:]
-        entries.append({"date": day, "net_twd": amount, "rank": place + 1})
+        entries.append({"date": day, "net_twd": amount, "rank": place + 1, "sessions_to_date": sessions})
     return [
         {"date": day, "net_twd": amount, "rank": i}
         for i, (amount, day) in enumerate(top, 1)
