@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "evaluated_at": "2026-11-16T22:02:17.208692+00:00",
-  "snapshot_updated_at": "2026-11-16T22:02:16.882549+00:00",
-  "history_generated_at": "2026-11-16T22:02:17.154058+00:00",
+  "evaluated_at": "2026-11-17T04:29:21.335776+00:00",
+  "snapshot_updated_at": "2026-11-17T04:29:21.034541+00:00",
+  "history_generated_at": "2026-11-17T04:29:21.254050+00:00",
   "summary": {
     "pass": 10,
     "caution": 1,
@@ -13,7 +13,7 @@
       "quality": "pass",
       "source": "hy",
       "date": "2026-11-12",
-      "age_days": 4,
+      "age_days": 5,
       "errors": [],
       "warnings": []
     },
@@ -21,7 +21,7 @@
       "quality": "pass",
       "source": "ig",
       "date": "2026-11-12",
-      "age_days": 4,
+      "age_days": 5,
       "errors": [],
       "warnings": []
     },
@@ -29,7 +29,7 @@
       "quality": "pass",
       "source": "vix",
       "date": "2026-11-12",
-      "age_days": 4,
+      "age_days": 5,
       "errors": [],
       "warnings": []
     },
@@ -37,7 +37,7 @@
       "quality": "pass",
       "source": "us10y",
       "date": "2026-11-12",
-      "age_days": 4,
+      "age_days": 5,
       "errors": [],
       "warnings": []
     },
@@ -45,7 +45,7 @@
       "quality": "pass",
       "source": "nfci",
       "date": "2026-11-06",
-      "age_days": 10,
+      "age_days": 11,
       "errors": [],
       "warnings": []
     },
@@ -53,7 +53,7 @@
       "quality": "pass",
       "source": "indices",
       "date": "2026-11-16",
-      "age_days": 0,
+      "age_days": 1,
       "errors": [],
       "warnings": []
     },
@@ -61,7 +61,7 @@
       "quality": "blocked",
       "source": "breadth",
       "date": "2026-11-16",
-      "age_days": 0,
+      "age_days": 1,
       "errors": [
         "source_not_verified"
       ],
@@ -149,7 +149,7 @@
       "quality": "pass",
       "source": "margin.margin",
       "date": "2026-11-16",
-      "age_days": 0,
+      "age_days": 1,
       "errors": [],
       "warnings": []
     },
@@ -170,7 +170,7 @@
       "quality": "blocked",
       "source": "inst",
       "date": "2026-11-16",
-      "age_days": 0,
+      "age_days": 1,
       "errors": [
         "source_not_verified",
         "missing_or_invalid_numeric_value",
@@ -182,7 +182,7 @@
       "quality": "caution",
       "source": "taiex.tw_price",
       "date": "2026-11-16",
-      "age_days": 0,
+      "age_days": 1,
       "errors": [],
       "warnings": [
         "taiex_cross_source_not_comparable"
@@ -191,7 +191,7 @@
     "fx": {
       "quality": "pass",
       "source": "fx",
-      "date": "2026-11-16",
+      "date": "2026-11-17",
       "age_days": 0,
       "errors": [],
       "warnings": []
@@ -200,7 +200,7 @@
       "quality": "pass",
       "source": "inst.cash_inst",
       "date": "2026-11-16",
-      "age_days": 0,
+      "age_days": 1,
       "errors": [],
       "warnings": []
     },
@@ -208,7 +208,7 @@
       "quality": "pass",
       "source": "inst.futures",
       "date": "2026-11-16",
-      "age_days": 0,
+      "age_days": 1,
       "errors": [],
       "warnings": []
     }
