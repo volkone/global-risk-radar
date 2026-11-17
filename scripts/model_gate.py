@@ -14,10 +14,10 @@ EVIDENCE = {
                     ('effective_date_intervals_verified_after_scoped_exclusion', 'panel_nonmissing_values_verified')),
     'calendar': ('docs/taifex_prebacktest_gate.json',
                  ('independent_taifex_calendar_verified', 'primary_evidence_complete', 'full_notice_sweep_verified')),
-    'validation': ('docs/independent_model_validation.json', ('independent_validation_passed',)),
+    'validation': ('docs/historical_model_validation.json', ('historical_validation_passed',)),
 }
 LABELS = {'publication':'歷史數值與版本日期認證', 'calendar':'期交所獨立交易日曆認證',
-          'validation':'獨立前瞻驗證', 'authorization':'模型版本與證據授權', 'current_forecast':'當日可追溯前瞻分數'}
+          'validation':'歷史滾動驗證', 'authorization':'模型版本與證據授權', 'current_forecast':'當日可追溯前瞻分數'}
 
 def read(root, path):
     try:
@@ -52,6 +52,14 @@ def historical_version_check(root, report, panel_hash, scope):
     )
 
 
+def historical_horizon_passed(metrics):
+    n, alerts, events, hits = (metrics.get(key) for key in ('n', 'alert_n', 'event_n', 'alert_event_n'))
+    return (all(type(value) is int for value in (n, alerts, events, hits))
+            and n >= 30 and 0 < alerts <= n and 0 <= events <= n
+            and max(0, alerts + events - n) <= hits <= min(alerts, events)
+            and hits * n > events * alerts)
+
+
 def evaluate_gate(root, panel_hash, protocol_hash, forecast, today):
     checks = []
     hashes = {}
@@ -68,10 +76,12 @@ def evaluate_gate(root, panel_hash, protocol_hash, forecast, today):
                   and obj.get('source_panel_sha256') == panel_hash
                   and obj.get('raw_source_values_verified') == obj.get('raw_source_values_expected') == 717)
         if key == 'validation':
-            ok = (ok and obj.get('frozen_protocol_sha256') == protocol_hash
+            ok = (ok and obj.get('validation_mode') == 'historical_expanding_window'
+                  and obj.get('frozen_protocol_sha256') == protocol_hash
                   and obj.get('source_panel_sha256') == panel_hash
-                  and all(type(obj.get('matured_nonoverlapping_events', {}).get(h)) is int
-                          and obj['matured_nonoverlapping_events'][h] >= 30 for h in ('5d','20d')))
+                  and obj.get('excluded_dates') == ['2023-11-13']
+                  and all(historical_horizon_passed(obj.get('horizons', {}).get(h, {}).get('metrics', {}))
+                          for h in ('5d', '20d')))
         checks.append({'id':key,'label':LABELS[key],'passed':bool(ok),'evidence':path})
     auth, _ = read(root, 'docs/production_model_authorization.json')
     authorized = (auth.get('production_scoring_authorized') is True

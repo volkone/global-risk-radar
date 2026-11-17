@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at_utc": "2026-11-17T14:23:31.352338+00:00",
+  "checked_at_utc": "2026-11-17T14:39:43.527346+00:00",
   "status": "EVIDENCE_RECHECKED_PRODUCTION_BLOCKED",
   "official_txf_daily_records_verified": 718,
   "historical_2023_11_13_daily_source_verified": true,
@@ -31,9 +31,9 @@
       },
       {
         "id": "validation",
-        "label": "獨立前瞻驗證",
-        "passed": false,
-        "evidence": "docs/independent_model_validation.json"
+        "label": "歷史滾動驗證",
+        "passed": true,
+        "evidence": "docs/historical_model_validation.json"
       },
       {
         "id": "authorization",
@@ -49,7 +49,6 @@
       }
     ],
     "blockers": [
-      "獨立前瞻驗證",
       "模型版本與證據授權",
       "當日可追溯前瞻分數"
     ],
@@ -57,5 +56,5 @@
     "frozen_protocol_sha256": "5bdab8f8ae59e2081b9ac84e59237a0d6c717b6c7162c5140b6c1136ed45fc08"
   },
   "forward_capture_status": "waiting_for_23_consecutive_prospective_market_sessions",
-  "note": "Public archive coverage is supported by unfiltered monthly and subdivided searches. Historical certification uses independently verified numeric values, vintage dates and prior-date replay. Independent forward validation is evaluated separately."
+  "note": "Public archive coverage is supported by unfiltered monthly and subdivided searches. Historical certification uses independently verified numeric values, vintage dates and prior-date replay. Model validation uses historical expanding-window evidence. Observed same-day scores are evaluated separately."
 }

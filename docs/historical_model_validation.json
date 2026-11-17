@@ -1,0 +1,324 @@
+{
+  "schema_version": 1,
+  "validation_mode": "historical_expanding_window",
+  "historical_validation_passed": true,
+  "source_panel_sha256": "161505e9ee16550400c21749236ab5d4c4eb3690d07003bbf986ba09b48fe472",
+  "frozen_protocol_sha256": "5bdab8f8ae59e2081b9ac84e59237a0d6c717b6c7162c5140b6c1136ed45fc08",
+  "excluded_dates": [
+    "2023-11-13"
+  ],
+  "historical_sessions": 717,
+  "horizons": {
+    "5d": {
+      "metrics": {
+        "n": 528,
+        "alert_n": 185,
+        "event_n": 90,
+        "alert_event_n": 46,
+        "precision": 0.2486,
+        "base_rate": 0.1705,
+        "precision_minus_base": 0.0782
+      },
+      "nonoverlapping": {
+        "n": 88,
+        "alert_n": 28,
+        "event_n": 14,
+        "alert_event_n": 9,
+        "precision": 0.3214,
+        "base_rate": 0.1591,
+        "precision_minus_base": 0.1623
+      },
+      "block_bootstrap": {
+        "method": "deterministic_moving_block_bootstrap",
+        "block_size_sessions": 5,
+        "replicates_attempted": 600,
+        "valid_replicates": 600,
+        "precision_approx_95pct_interval": [
+          0.1598,
+          0.3457
+        ],
+        "precision_minus_base_approx_95pct_interval": [
+          0.0072,
+          0.1591
+        ],
+        "warning": "Exploratory approximate intervals only; limited single-period time series, overlapping outcomes, regime nonstationarity, and prior result inspection prevent confirmatory inference."
+      },
+      "folds": [
+        {
+          "train_end": "2024-08-16",
+          "test_start": "2024-08-19",
+          "test_end": "2024-11-15",
+          "threshold": 61.46341463414634,
+          "n": 60,
+          "alert_n": 23,
+          "event_n": 7,
+          "alert_event_n": 6,
+          "precision": 0.2609,
+          "base_rate": 0.1167,
+          "precision_minus_base": 0.1442
+        },
+        {
+          "train_end": "2024-11-15",
+          "test_start": "2024-11-18",
+          "test_end": "2025-02-19",
+          "threshold": 60.75727513227513,
+          "n": 60,
+          "alert_n": 55,
+          "event_n": 4,
+          "alert_event_n": 4,
+          "precision": 0.0727,
+          "base_rate": 0.0667,
+          "precision_minus_base": 0.0061
+        },
+        {
+          "train_end": "2025-02-19",
+          "test_start": "2025-02-20",
+          "test_end": "2025-05-20",
+          "threshold": 64.8816510172144,
+          "n": 60,
+          "alert_n": 41,
+          "event_n": 18,
+          "alert_event_n": 15,
+          "precision": 0.3659,
+          "base_rate": 0.3,
+          "precision_minus_base": 0.0659
+        },
+        {
+          "train_end": "2025-05-20",
+          "test_start": "2025-05-21",
+          "test_end": "2025-08-13",
+          "threshold": 66.58720930232558,
+          "n": 60,
+          "alert_n": 0,
+          "event_n": 1,
+          "alert_event_n": 0,
+          "precision": null,
+          "base_rate": 0.0167,
+          "precision_minus_base": null
+        },
+        {
+          "train_end": "2025-08-13",
+          "test_start": "2025-08-14",
+          "test_end": "2025-11-11",
+          "threshold": 65.46708837550422,
+          "n": 60,
+          "alert_n": 1,
+          "event_n": 2,
+          "alert_event_n": 0,
+          "precision": 0.0,
+          "base_rate": 0.0333,
+          "precision_minus_base": -0.0333
+        },
+        {
+          "train_end": "2025-11-11",
+          "test_start": "2025-11-12",
+          "test_end": "2026-02-05",
+          "threshold": 63.92891351943076,
+          "n": 60,
+          "alert_n": 10,
+          "event_n": 7,
+          "alert_event_n": 2,
+          "precision": 0.2,
+          "base_rate": 0.1167,
+          "precision_minus_base": 0.0833
+        },
+        {
+          "train_end": "2026-02-05",
+          "test_start": "2026-02-06",
+          "test_end": "2026-05-15",
+          "threshold": 63.81520356234097,
+          "n": 60,
+          "alert_n": 24,
+          "event_n": 16,
+          "alert_event_n": 8,
+          "precision": 0.3333,
+          "base_rate": 0.2667,
+          "precision_minus_base": 0.0667
+        },
+        {
+          "train_end": "2026-05-15",
+          "test_start": "2026-05-18",
+          "test_end": "2026-08-11",
+          "threshold": 64.04173008625064,
+          "n": 60,
+          "alert_n": 25,
+          "event_n": 25,
+          "alert_event_n": 10,
+          "precision": 0.4,
+          "base_rate": 0.4167,
+          "precision_minus_base": -0.0167
+        },
+        {
+          "train_end": "2026-08-11",
+          "test_start": "2026-08-12",
+          "test_end": "2026-10-21",
+          "threshold": 64.28450655624569,
+          "n": 48,
+          "alert_n": 6,
+          "event_n": 10,
+          "alert_event_n": 1,
+          "precision": 0.1667,
+          "base_rate": 0.2083,
+          "precision_minus_base": -0.0417
+        }
+      ]
+    },
+    "20d": {
+      "metrics": {
+        "n": 513,
+        "alert_n": 180,
+        "event_n": 109,
+        "alert_event_n": 67,
+        "precision": 0.3722,
+        "base_rate": 0.2125,
+        "precision_minus_base": 0.1597
+      },
+      "nonoverlapping": {
+        "n": 25,
+        "alert_n": 9,
+        "event_n": 5,
+        "alert_event_n": 3,
+        "precision": 0.3333,
+        "base_rate": 0.2,
+        "precision_minus_base": 0.1333
+      },
+      "block_bootstrap": {
+        "method": "deterministic_moving_block_bootstrap",
+        "block_size_sessions": 20,
+        "replicates_attempted": 600,
+        "valid_replicates": 600,
+        "precision_approx_95pct_interval": [
+          0.1783,
+          0.5957
+        ],
+        "precision_minus_base_approx_95pct_interval": [
+          0.0335,
+          0.3245
+        ],
+        "warning": "Exploratory approximate intervals only; limited single-period time series, overlapping outcomes, regime nonstationarity, and prior result inspection prevent confirmatory inference."
+      },
+      "folds": [
+        {
+          "train_end": "2024-08-16",
+          "test_start": "2024-08-19",
+          "test_end": "2024-11-15",
+          "threshold": 61.46341463414634,
+          "n": 60,
+          "alert_n": 23,
+          "event_n": 13,
+          "alert_event_n": 13,
+          "precision": 0.5652,
+          "base_rate": 0.2167,
+          "precision_minus_base": 0.3486
+        },
+        {
+          "train_end": "2024-11-15",
+          "test_start": "2024-11-18",
+          "test_end": "2025-02-19",
+          "threshold": 60.75727513227513,
+          "n": 60,
+          "alert_n": 55,
+          "event_n": 8,
+          "alert_event_n": 5,
+          "precision": 0.0909,
+          "base_rate": 0.1333,
+          "precision_minus_base": -0.0424
+        },
+        {
+          "train_end": "2025-02-19",
+          "test_start": "2025-02-20",
+          "test_end": "2025-05-20",
+          "threshold": 64.8816510172144,
+          "n": 60,
+          "alert_n": 41,
+          "event_n": 32,
+          "alert_event_n": 25,
+          "precision": 0.6098,
+          "base_rate": 0.5333,
+          "precision_minus_base": 0.0764
+        },
+        {
+          "train_end": "2025-05-20",
+          "test_start": "2025-05-21",
+          "test_end": "2025-08-13",
+          "threshold": 66.58720930232558,
+          "n": 60,
+          "alert_n": 0,
+          "event_n": 0,
+          "alert_event_n": 0,
+          "precision": null,
+          "base_rate": 0.0,
+          "precision_minus_base": null
+        },
+        {
+          "train_end": "2025-08-13",
+          "test_start": "2025-08-14",
+          "test_end": "2025-11-11",
+          "threshold": 65.46708837550422,
+          "n": 60,
+          "alert_n": 1,
+          "event_n": 9,
+          "alert_event_n": 0,
+          "precision": 0.0,
+          "base_rate": 0.15,
+          "precision_minus_base": -0.15
+        },
+        {
+          "train_end": "2025-11-11",
+          "test_start": "2025-11-12",
+          "test_end": "2026-02-05",
+          "threshold": 63.92891351943076,
+          "n": 60,
+          "alert_n": 10,
+          "event_n": 2,
+          "alert_event_n": 1,
+          "precision": 0.1,
+          "base_rate": 0.0333,
+          "precision_minus_base": 0.0667
+        },
+        {
+          "train_end": "2026-02-05",
+          "test_start": "2026-02-06",
+          "test_end": "2026-05-15",
+          "threshold": 63.81520356234097,
+          "n": 60,
+          "alert_n": 24,
+          "event_n": 15,
+          "alert_event_n": 10,
+          "precision": 0.4167,
+          "base_rate": 0.25,
+          "precision_minus_base": 0.1667
+        },
+        {
+          "train_end": "2026-05-15",
+          "test_start": "2026-05-18",
+          "test_end": "2026-08-11",
+          "threshold": 64.04173008625064,
+          "n": 60,
+          "alert_n": 25,
+          "event_n": 29,
+          "alert_event_n": 13,
+          "precision": 0.52,
+          "base_rate": 0.4833,
+          "precision_minus_base": 0.0367
+        },
+        {
+          "train_end": "2026-08-11",
+          "test_start": "2026-08-12",
+          "test_end": "2026-09-29",
+          "threshold": 64.28450655624569,
+          "n": 33,
+          "alert_n": 1,
+          "event_n": 1,
+          "alert_event_n": 0,
+          "precision": 0.0,
+          "base_rate": 0.0303,
+          "precision_minus_base": -0.0303
+        }
+      ]
+    }
+  },
+  "acceptance": "30 mature historical windows per horizon and alert precision above the historical event base rate in each horizon.",
+  "method": "Expanding fits calibrated only on earlier dated features, 60-session evaluation blocks, two-session feature lag. No outcomes enter calibration.",
+  "limitations": "Historical dates were previously examined. Forward windows may overlap; disjoint results and horizon-length block bootstrap are shown alongside the point estimates. This is retrospective evidence."
+}

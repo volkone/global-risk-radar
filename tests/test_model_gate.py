@@ -21,12 +21,16 @@ class GateTests(unittest.TestCase):
         hashes={}
         for key,(path,fields) in EVIDENCE.items():
             obj={f:True for f in fields}
-            obj.update(output_sha256='panel',source_panel_sha256='panel',frozen_protocol_sha256='protocol',matured_nonoverlapping_events={'5d':30,'20d':30})
+            obj.update(output_sha256='panel',source_panel_sha256='panel',frozen_protocol_sha256='protocol')
             if key == 'publication':
                 obj.update(source_vintage_sha256='vintage', series={
                     k: dict(differences_after_exclusion=0, panel_value_differences=[],
                             panel_values_checked=718, panel_missing_values=0) for k in FACTORS
                 })
+            if key == 'validation':
+                obj.update(validation_mode='historical_expanding_window', excluded_dates=['2023-11-13'],
+                           horizons={h: {'metrics': dict(n=30,alert_n=10,event_n=12,alert_event_n=6)}
+                                     for h in ('5d','20d')})
             raw=json.dumps(obj).encode();(self.root/path).write_bytes(raw);hashes[path]=hashlib.sha256(raw).hexdigest()
         scope=json.dumps(dict(panel_sha256='panel',raw_vintages_sha256='vintage',sessions=718,
                               replay_positions=4308,replay_mismatches_after_exclusion=0)).encode()
@@ -48,6 +52,14 @@ class GateTests(unittest.TestCase):
         report['input_sha256'][VINTAGES]='different'
         path.write_text(json.dumps(report))
         self.assertFalse(self.evaluate()['checks'][0]['passed'])
+
+    def test_historical_metrics_must_exceed_base_rate(self):
+        self.certify_fixture()
+        path=self.root/EVIDENCE['validation'][0]
+        report=json.loads(path.read_text())
+        report['horizons']['20d']['metrics']['alert_event_n']=4
+        path.write_text(json.dumps(report))
+        self.assertFalse(self.evaluate()['checks'][2]['passed'])
 
     def test_changed_evidence_requires_new_authorization(self):
         self.certify_fixture()
