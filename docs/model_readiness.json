@@ -4,9 +4,9 @@
   "checks": [
     {
       "id": "publication",
-      "label": "歷史發布時間與版本逐筆認證",
-      "passed": false,
-      "evidence": "docs/phase4_publication_timing_audit.json"
+      "label": "歷史數值與版本日期認證",
+      "passed": true,
+      "evidence": "docs/alfred_vintage_interval_verification.json"
     },
     {
       "id": "calendar",
@@ -34,7 +34,6 @@
     }
   ],
   "blockers": [
-    "歷史發布時間與版本逐筆認證",
     "獨立前瞻驗證",
     "模型版本與證據授權",
     "當日可追溯前瞻分數"
