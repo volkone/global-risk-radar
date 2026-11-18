@@ -2,6 +2,9 @@
   const section = document.getElementById('foreign-cash-ranking');
   const status = section.querySelector('[role=status]');
   const filter = section.querySelector('select');
+  const windowInput = section.querySelector('.foreign-window');
+  const thresholdInput = section.querySelector('.foreign-threshold');
+  const summary = section.querySelector('.foreign-rebound-summary');
   const top = section.querySelector('.foreign-top');
   const events = section.querySelector('.foreign-events');
   const previous = section.querySelector('.foreign-prev');
@@ -20,12 +23,46 @@
     return cell;
   }
 
+  function rebound(item, days, threshold) {
+    if (item.rebound_window === null) return {complete: false, label: '收盤資料不足'};
+    const observations = item.rebound_window.slice(0, days);
+    const missing = observations.findIndex(row => row.change === null);
+    const known = missing < 0 ? observations : observations.slice(0, missing);
+    const index = known.findIndex(row => row.change * 10_000 >= row.previous * threshold);
+    const complete = known.length === days;
+    if (index >= 0) {
+      const row = known[index];
+      const gain = decimals.format(100 * row.change / row.previous);
+      return {complete, day: index + 1, label: `已確認 · 第 ${index + 1} 日 ${row.date}（+${gain}%）`};
+    }
+    if (missing >= 0) {
+      return {complete, label: '收盤資料不足'};
+    }
+    return {complete, label: complete ? '已逾期' : `等待確認 · ${known.length}/${days} 日`};
+  }
+
   function renderEntries() {
+    if (!windowInput.value || !thresholdInput.value ||
+        !windowInput.checkValidity() || !thresholdInput.checkValidity()) {
+      summary.textContent = '請輸入 1 至 20 個交易日，以及 0.01% 至 100% 的門檻。';
+      return;
+    }
+    const days = Number(windowInput.value);
+    const threshold = Math.round(Number(thresholdInput.value) * 100);
     const rank = Number(filter.value);
     const records = data.entries.filter(item => !rank || item.rank === rank);
+    const results = records.map(item => rebound(item, days, threshold));
+    const eligible = results.filter(result => result.complete);
+    const confirmed = eligible.filter(result => result.day);
+    const counts = Array.from({length: days}, (_, index) =>
+      '第 ' + (index + 1) + ' 日 ' + confirmed.filter(result => result.day === index + 1).length + ' 筆');
+    summary.textContent = `從入榜隔日起算，以證交所加權指數收盤較前收的漲幅判定。官方收盤資料 ${data.rebound.price_start} 至 ${data.rebound.price_end}。 ` +
+      (eligible.length
+        ? `完整觀察 ${eligible.length}/${records.length} 筆，${days} 日內確認 ${confirmed.length} 筆（${decimals.format(100 * confirmed.length / eligible.length)}%）。首次確認分布：${counts.join('、')}。`
+        : '目前沒有完整觀察樣本。');
     const start = page * pageSize;
     const visible = records.slice(start, start + pageSize);
-    events.replaceChildren(...visible.map(item => {
+    events.replaceChildren(...visible.map((item, index) => {
       const row = document.createElement('tr');
       row.dataset.rank = item.rank;
       addCell(row, item.date);
@@ -39,6 +76,7 @@
       fraction.textContent = '第 ' + item.rank + ' 名／' + format.format(item.sessions_to_date) + ' 日';
       rarityCell.append(percent, fraction);
       addCell(row, amount(item));
+      addCell(row, results[start + index].label);
       return row;
     }));
     counter.textContent = visible.length
@@ -52,13 +90,14 @@
     try {
       data = await getRadarData('foreign_cash_ranking.json');
       if (data.unit !== 'TWD' || !Array.isArray(data.top) || !Array.isArray(data.entries) ||
-          !data.entries.every(item => Number.isInteger(item.sessions_to_date) && item.sessions_to_date >= item.rank)) throw Error();
+          !data.rebound || !data.entries.every(item => Number.isInteger(item.sessions_to_date) &&
+            item.sessions_to_date >= item.rank && (item.rebound_window === null || Array.isArray(item.rebound_window)))) throw Error();
       status.textContent = data.start_date + ' 至 ' + data.end_date + '，共 ' +
         format.format(data.sessions) + ' 個交易日';
       for (let rank = 1; rank <= 25; rank++) filter.add(new Option('第 ' + rank + ' 名', rank));
       data.entries.reverse();
       filter.disabled = false;
-      filter.onchange = () => { page = 0; renderEntries(); };
+      filter.onchange = windowInput.oninput = thresholdInput.oninput = () => { page = 0; renderEntries(); };
       previous.onclick = () => { page--; renderEntries(); };
       next.onclick = () => { page++; renderEntries(); };
       top.replaceChildren(...data.top.map(item => {

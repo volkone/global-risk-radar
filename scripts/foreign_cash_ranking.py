@@ -3,6 +3,7 @@ from bisect import bisect_left
 import csv
 from datetime import date
 import json
+from math import isfinite
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -48,6 +49,55 @@ def append_official_cash(records, snapshot, quality):
         records[date.fromisoformat(day).isoformat()] = values[0]
 
 
+MAX_REBOUND_DAYS = 20
+
+
+def rebound_windows(entries, cash_dates, files_root):
+    """Align each event to its next sessions without bridging missing prices."""
+    archive = json.loads((files_root / "storage/historical_taiex_close.json").read_bytes())
+    history = json.loads((files_root / "docs/history/observations.json").read_bytes())
+    closes = {}
+    for rows, metric, day_key, unit in (
+        (archive["records"], "taiex.close", "date", "index_points"),
+        (history["observations"], "taiex.tw_price", "observation_date", "points"),
+    ):
+        for row in rows:
+            value = row.get("value")
+            if (row.get("metric_id") == metric and row.get("provider") == "TWSE"
+                    and row.get("unit") == unit and type(value) in (int, float)
+                    and isfinite(value) and value > 0):
+                closes[row[day_key]] = round(value * 100)
+
+    calendar = files_root / "storage/official_calendar/trading_days.csv"
+    with calendar.open(newline="", encoding="utf-8") as stream:
+        days = {row["date"]: row["is_trading_day"] == "1" for row in csv.DictReader(stream)}
+    # Beyond the calendar archive, use dated official market observations.
+    sessions = sorted({day for day in cash_dates | closes.keys() if days.get(day, True)}
+                      | {day for day, trading in days.items() if trading})
+    positions = {day: index for index, day in enumerate(sessions)}
+    as_of = max(max(cash_dates), max(closes, default=""))
+    for event in entries:
+        day = event["date"]
+        event["rebound_window"] = None
+        if day not in closes or day not in positions:
+            continue
+        event["rebound_window"] = []
+        previous = day
+        index = positions[day] + 1
+        for session in sessions[index:index + MAX_REBOUND_DAYS]:
+            if session > as_of:
+                break
+            current, prior = closes.get(session), closes.get(previous)
+            event["rebound_window"].append({
+                "date": session,
+                "change": current - prior if current and prior else None,
+                "previous": prior,
+            })
+            previous = session
+    return {"max_days": MAX_REBOUND_DAYS, "price_start": min(closes, default=None),
+            "price_end": max(closes, default=None), "calendar_end": max(days, default=None)}
+
+
 def main():
     with HISTORY.open(newline="", encoding="utf-8") as stream:
         rows = list(csv.DictReader(stream))
@@ -72,6 +122,7 @@ def main():
         "sessions": len(records),
         "top": top,
         "entries": entries,
+        "rebound": rebound_windows(entries, records.keys(), ROOT),
     }
     REPORT.write_text(json.dumps(report, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
     print(f"Foreign cash ranking: {report['sessions']} sessions, {len(entries)} historical entry events")

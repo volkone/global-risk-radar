@@ -8,6 +8,8 @@
 .foreign-pagination button{background:#263651;color:white;border:1px solid #425576;border-radius:7px;padding:6px 10px;cursor:pointer}
 .foreign-pagination button:disabled{opacity:.45;cursor:default}
 .foreign-layout td:last-child,.foreign-layout th:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.foreign-controls input{width:5.5rem;color:inherit;background:transparent;border:1px solid #425466;border-radius:4px;padding:3px 5px}
+.foreign-events td:last-child{min-width:9rem}
 @media(max-width:650px){.foreign-layout{grid-template-columns:minmax(0,1fr)}}
 </style></head><body><main><header><div><h1>全球金融風險雷達</h1><p>美股信用 · 科技與 AI · 台股籌碼 · 匯率</p></div><span class="status">公開資料監控｜非即時行情</span></header><p id="updated" role="status">讀取資料中…</p><section class="panel" aria-labelledby="market-analysis-title"><h2 id="market-analysis-title">市場策略解讀</h2><div id="market-analysis">正在核對市場快照與資料品質…</div></section><section class="panel" id="foreign-cash-ranking" aria-labelledby="foreign-cash-title">
 <h2 id="foreign-cash-title">台股外資單日賣超前 25 名</h2>
@@ -15,9 +17,11 @@
 <div class="foreign-layout">
 <div><h3>歷史總榜</h3><div class="foreign-scroll"><table><thead><tr><th>名次與日期</th><th>淨額（億元）</th></tr></thead><tbody class="foreign-top"></tbody></table></div></div>
 <div><h3>入榜當時有多罕見</h3>
-<div class="foreign-controls"><label>當日名次 <select disabled><option value="0">全部名次</option></select></label></div>
+<div class="foreign-controls"><label>觀察交易日 <input class="foreign-window" type="number" min="1" max="20" step="1" value="5"></label> <label>反彈門檻（%） <input class="foreign-threshold" type="number" min="0.01" max="100" step="0.01" value="0.20"></label> <label>當日名次 <select disabled><option value="0">全部名次</option></select></label></div>
 <p class="small muted">前百分比＝當日名次 ÷ 截至當天已收錄的交易日數，包含買超日。百分比越小，當時越少見。</p>
-<div><table><thead><tr><th>入榜日期</th><th>當時有多罕見</th><th>淨額（億元）</th></tr></thead><tbody class="foreign-events"></tbody></table></div>
+<p class="small muted foreign-rebound-summary" aria-live="polite"></p>
+<details class="small muted"><summary>收盤價與交易日覆蓋</summary><p>反彈統計僅採用完整觀察窗口。官方交易日曆範圍以外，依已收錄的證交所收盤或籌碼日期辨識交易日。早於收盤資料的事件仍可查看當時排名。</p></details>
+<div style="overflow-x:auto"><table><thead><tr><th>入榜日期</th><th>當時有多罕見</th><th>淨額（億元）</th><th>反彈狀態</th></tr></thead><tbody class="foreign-events"></tbody></table></div>
 <div class="foreign-pagination"><button type="button" class="foreign-prev" disabled>上一頁</button><span class="foreign-page small muted" aria-live="polite"></span><button type="button" class="foreign-next" disabled>下一頁</button></div>
 </div></div>
 <p class="small muted">上市大盤外資及陸資現貨淨額，排除另行列示的外資自營商。金額相同時較早日期優先。
@@ -46,4 +50,4 @@ if(!Number.isFinite(Date.parse(j?.updated_utc)) || !j.metrics || !Object.keys(j.
   marketLoading=false;
 }}
 load();setInterval(load,60000);
-</script><script src="dashboard.js"></script><script src="foreign_cash_ranking.js?v=rarity"></script><script src="p203_research.js"></script></body></html>
+</script><script src="dashboard.js"></script><script src="foreign_cash_ranking.js?v=rebound"></script><script src="p203_research.js"></script></body></html>
