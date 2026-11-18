@@ -1,37 +1,37 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-18T06:46:45.932622+00:00",
+  "generated_at": "2026-11-18T13:18:51.442527+00:00",
   "model_status": "separate_global_prototype_and_evidence_gated_taiwan",
   "disclaimer": "Global is provisional; historical Taiwan reconstruction is research-only. Formal Taiwan eligibility is recorded in quality_gate.",
   "global": {
     "status": "provisional",
-    "score": 26.0,
+    "score": 28.7,
     "coverage": 0.9,
     "min_coverage": 0.85,
     "components": [
       {
         "metric": "hy",
         "weight": 25,
-        "signal": 20.5,
+        "signal": 22.33,
         "eligible": true,
         "reason": null,
-        "contribution": 5.694444444444445
+        "contribution": 6.2027777777777775
       },
       {
         "metric": "ig",
         "weight": 10,
-        "signal": 15.6,
+        "signal": 16.0,
         "eligible": true,
         "reason": null,
-        "contribution": 1.7333333333333334
+        "contribution": 1.7777777777777777
       },
       {
         "metric": "vix",
         "weight": 20,
-        "signal": 22.12,
+        "signal": 33.06,
         "eligible": true,
         "reason": null,
-        "contribution": 4.915555555555556
+        "contribution": 7.346666666666668
       },
       {
         "metric": "indices",
@@ -52,10 +52,10 @@
       {
         "metric": "us10y",
         "weight": 5,
-        "signal": 40.0,
+        "signal": 35.0,
         "eligible": true,
         "reason": null,
-        "contribution": 2.2222222222222223
+        "contribution": 1.9444444444444444
       },
       {
         "metric": "breadth",
@@ -67,7 +67,7 @@
       }
     ],
     "model_id": "global_rate_v2",
-    "as_of": "2026-11-18T06:46:42.408715+00:00"
+    "as_of": "2026-11-18T13:18:35.872894+00:00"
   },
   "taiwan": {
     "status": "formal_model_blocked",
@@ -195,15 +195,15 @@
   "taiwan_legacy_prototype": {
     "status": "insufficient_coverage",
     "score": null,
-    "coverage": 0.0,
+    "coverage": 0.35,
     "min_coverage": 0.85,
     "components": [
       {
         "metric": "taiex",
         "weight": 35,
-        "signal": null,
-        "eligible": false,
-        "reason": "quality_gate_not_passed"
+        "signal": 64.4,
+        "eligible": true,
+        "reason": null
       },
       {
         "metric": "margin",

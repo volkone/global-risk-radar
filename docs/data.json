@@ -1,11 +1,21 @@
 {
-  "source_checks": {},
-  "updated_utc": "2026-11-18T06:46:42.408715+00:00",
+  "source_checks": {
+    "tw_margin": "2026-11-18T13:18:28.323574+00:00",
+    "tw_cash_inst": "2026-11-18T13:18:28.323574+00:00",
+    "tw_tw_price": "2026-11-18T13:18:28.323574+00:00",
+    "tw_futures": "2026-11-18T13:18:28.323574+00:00"
+  },
+  "updated_utc": "2026-11-18T13:18:35.872894+00:00",
   "request_stats": {
-    "requests": 6,
-    "success": 6,
+    "requests": 17,
+    "success": 17,
     "failure": 0,
     "by_host": {
+      "api.stlouisfed.org": 5,
+      "www.twse.com.tw": 3,
+      "openapi.twse.com.tw": 1,
+      "openapi.taifex.com.tw": 1,
+      "www.taifex.com.tw": 1,
       "query1.finance.yahoo.com": 6
     },
     "errors": [],
@@ -29,15 +39,11 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 3.23,
-      "date": "2026-11-13",
+      "value": 3.34,
+      "date": "2026-11-16",
       "unit": "%",
       "source_url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2",
       "history": [
-        {
-          "date": "2026-07-13",
-          "value": 2.69
-        },
         {
           "date": "2026-07-14",
           "value": 2.72
@@ -393,11 +399,15 @@
         {
           "date": "2026-11-13",
           "value": 3.23
+        },
+        {
+          "date": "2026-11-16",
+          "value": 3.34
         }
       ],
       "provider": "FRED official API",
-      "change20bp": -8,
-      "cache_status": "cached"
+      "checked_at": "2026-11-18T13:18:28.323574+00:00",
+      "change20bp": 5.0
     },
     "ig": {
       "name": "美國投資等級債利差",
@@ -406,15 +416,11 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 0.89,
-      "date": "2026-11-13",
+      "value": 0.9,
+      "date": "2026-11-16",
       "unit": "%",
       "source_url": "https://fred.stlouisfed.org/series/BAMLC0A0CM",
       "history": [
-        {
-          "date": "2026-07-13",
-          "value": 0.78
-        },
         {
           "date": "2026-07-14",
           "value": 0.79
@@ -770,10 +776,14 @@
         {
           "date": "2026-11-13",
           "value": 0.89
+        },
+        {
+          "date": "2026-11-16",
+          "value": 0.9
         }
       ],
       "provider": "FRED official API",
-      "cache_status": "cached"
+      "checked_at": "2026-11-18T13:18:28.323574+00:00"
     },
     "vix": {
       "name": "VIX",
@@ -782,15 +792,11 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 19.3,
-      "date": "2026-11-13",
+      "value": 22.91,
+      "date": "2026-11-16",
       "unit": "index",
       "source_url": "https://fred.stlouisfed.org/series/VIXCLS",
       "history": [
-        {
-          "date": "2026-07-13",
-          "value": 17.16
-        },
         {
           "date": "2026-07-14",
           "value": 16.5
@@ -1146,10 +1152,14 @@
         {
           "date": "2026-11-13",
           "value": 19.3
+        },
+        {
+          "date": "2026-11-16",
+          "value": 22.91
         }
       ],
       "provider": "FRED official API",
-      "cache_status": "cached"
+      "checked_at": "2026-11-18T13:18:28.323574+00:00"
     },
     "us10y": {
       "name": "美國10年期公債殖利率",
@@ -1158,15 +1168,11 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 5.15,
-      "date": "2026-11-13",
+      "value": 5.12,
+      "date": "2026-11-16",
       "unit": "%",
       "source_url": "https://fred.stlouisfed.org/series/DGS10",
       "history": [
-        {
-          "date": "2026-07-10",
-          "value": 4.56
-        },
         {
           "date": "2026-07-13",
           "value": 4.62
@@ -1349,7 +1355,7 @@
         },
         {
           "date": "2026-09-15",
-          "value": 5
+          "value": 5.0
         },
         {
           "date": "2026-09-16",
@@ -1457,11 +1463,11 @@
         },
         {
           "date": "2026-10-23",
-          "value": 5
+          "value": 5.0
         },
         {
           "date": "2026-10-26",
-          "value": 5
+          "value": 5.0
         },
         {
           "date": "2026-10-27",
@@ -1514,10 +1520,14 @@
         {
           "date": "2026-11-13",
           "value": 5.15
+        },
+        {
+          "date": "2026-11-16",
+          "value": 5.12
         }
       ],
       "provider": "FRED official API",
-      "cache_status": "cached"
+      "checked_at": "2026-11-18T13:18:28.323574+00:00"
     },
     "nfci": {
       "name": "芝加哥金融情勢指數",
@@ -1531,10 +1541,6 @@
       "unit": "index",
       "source_url": "https://fred.stlouisfed.org/series/NFCI",
       "history": [
-        {
-          "date": "2026-07-10",
-          "value": -0.523
-        },
         {
           "date": "2026-07-17",
           "value": -0.528
@@ -1605,7 +1611,7 @@
         }
       ],
       "provider": "FRED official API",
-      "cache_status": "cached"
+      "checked_at": "2026-11-18T13:18:28.323574+00:00"
     },
     "indices": {
       "name": "S&P 500 / Nasdaq 100",
@@ -1983,7 +1989,7 @@
       "drawdown_pct": 13.52,
       "reference": "近一年最高收盤價",
       "spx": 7340.53,
-      "checked_at": "2026-11-18T06:46:41.002632+00:00"
+      "checked_at": "2026-11-18T13:18:28.323574+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -2054,7 +2060,7 @@
       "reason": "證交所信用交易統計：融資金額（仟元）今日餘額；次日可能調帳",
       "official_sources": {
         "margin": {
-          "checked_at": "2026-11-17T14:18:00.573710+00:00",
+          "checked_at": "2026-11-18T13:18:28.323574+00:00",
           "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?selectType=ALL&response=json",
           "records": 3,
           "sample_fields": [
@@ -2065,26 +2071,26 @@
             "前日餘額",
             "今日餘額"
           ],
-          "date": "2026-11-17",
+          "date": "2026-11-18",
           "status": "ok",
-          "value": 508721233000,
+          "value": 508026570000,
           "unit": "TWD",
           "provider": "TWSE",
           "scope": "TWSE上市市場",
           "reason": "證交所信用交易統計：融資金額（仟元）今日餘額；次日可能調帳",
           "source_unit": "仟元",
-          "amount_thousands": 508721233
+          "amount_thousands": 508026570
         }
       },
-      "checked_at": "2026-11-17T14:18:00.573710+00:00",
+      "checked_at": "2026-11-18T13:18:28.323574+00:00",
       "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?selectType=ALL&response=json",
-      "date": "2026-11-17",
-      "value": 508721233000,
+      "date": "2026-11-18",
+      "value": 508026570000,
       "unit": "TWD",
       "provider": "TWSE",
       "scope": "TWSE上市市場",
       "source_unit": "仟元",
-      "amount_thousands": 508721233
+      "amount_thousands": 508026570
     },
     "maint": {
       "name": "台股融資維持率",
@@ -2103,7 +2109,7 @@
       "reason": "法人現貨金額與期貨口數分別顯示",
       "official_sources": {
         "cash_inst": {
-          "checked_at": "2026-11-17T14:18:00.573710+00:00",
+          "checked_at": "2026-11-18T13:18:28.323574+00:00",
           "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?response=json",
           "records": 6,
           "sample_fields": [
@@ -2112,24 +2118,24 @@
             "賣出金額",
             "買賣差額"
           ],
-          "date": "2026-11-17",
+          "date": "2026-11-18",
           "status": "ok",
           "categories": [
             {
               "name": "自營商(自行買賣)",
-              "net_twd": 6387463668
+              "net_twd": 5471787397
             },
             {
               "name": "自營商(避險)",
-              "net_twd": -22083692793
+              "net_twd": -9673057479
             },
             {
               "name": "投信",
-              "net_twd": -3820722349
+              "net_twd": 16611584089
             },
             {
               "name": "外資及陸資(不含外資自營商)",
-              "net_twd": -38093637437
+              "net_twd": -76563675949
             },
             {
               "name": "外資自營商",
@@ -2137,7 +2143,7 @@
             },
             {
               "name": "合計",
-              "net_twd": -57610588911
+              "net_twd": -64153361942
             }
           ],
           "unit": "TWD",
@@ -2146,32 +2152,32 @@
         },
         "futures": {
           "status": "ok",
-          "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?queryDate=2026%2F11%2F17&commodityId=TXF&queryType=1",
+          "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?queryDate=2026%2F11%2F18&commodityId=TXF&queryType=1",
           "provider": "TAIFEX",
-          "date": "2026-11-17",
+          "date": "2026-11-18",
           "unit": "口",
-          "foreign_tx_net_oi": -97896,
+          "foreign_tx_net_oi": -99438,
           "contract": "臺股期貨",
           "trader": "外資及陸資",
-          "checked_at": "2026-11-17T14:18:00.573710+00:00"
+          "checked_at": "2026-11-18T13:18:28.323574+00:00"
         }
       },
       "cash_categories": [
         {
           "name": "自營商(自行買賣)",
-          "net_twd": 6387463668
+          "net_twd": 5471787397
         },
         {
           "name": "自營商(避險)",
-          "net_twd": -22083692793
+          "net_twd": -9673057479
         },
         {
           "name": "投信",
-          "net_twd": -3820722349
+          "net_twd": 16611584089
         },
         {
           "name": "外資及陸資(不含外資自營商)",
-          "net_twd": -38093637437
+          "net_twd": -76563675949
         },
         {
           "name": "外資自營商",
@@ -2179,14 +2185,14 @@
         },
         {
           "name": "合計",
-          "net_twd": -57610588911
+          "net_twd": -64153361942
         }
       ],
-      "cash_date": "2026-11-17",
-      "foreign_tx_net_oi": -97896,
-      "futures_date": "2026-11-17",
+      "cash_date": "2026-11-18",
+      "foreign_tx_net_oi": -99438,
+      "futures_date": "2026-11-18",
       "futures_contract": "臺股期貨",
-      "date": "2026-11-17"
+      "date": "2026-11-18"
     },
     "taiex": {
       "name": "台股回撤與成交量",
@@ -2200,18 +2206,18 @@
           "status": "ok",
           "source_url": "https://www.twse.com.tw/rwd/zh/afterTrading/FMTQIK?response=json&date=20261101",
           "provider": "TWSE",
-          "date": "2026-11-17",
+          "date": "2026-11-18",
           "unit": "points",
-          "value": 40092.11,
-          "volume_shares": 14661802735,
-          "turnover_twd": 1012867829864,
-          "checked_at": "2026-11-17T14:18:00.573710+00:00"
+          "value": 40194.91,
+          "volume_shares": 13560477251,
+          "turnover_twd": 1075174308798,
+          "checked_at": "2026-11-18T13:18:28.323574+00:00"
         }
       },
-      "official_close": 40092.11,
-      "official_close_date": "2026-11-17",
-      "official_volume_shares": 14661802735,
-      "official_turnover_twd": 1012867829864,
+      "official_close": 40194.91,
+      "official_close_date": "2026-11-18",
+      "official_volume_shares": 13560477251,
+      "official_turnover_twd": 1075174308798,
       "value": 40194.91,
       "date": "2026-11-18",
       "unit": "points",
@@ -2419,7 +2425,7 @@
         },
         {
           "date": "2026-09-17",
-          "value": 46288
+          "value": 46288.0
         },
         {
           "date": "2026-09-18",
@@ -2580,7 +2586,7 @@
       ],
       "drawdown_pct": 19.32,
       "reference": "近一年最高收盤價",
-      "checked_at": "2026-11-18T06:46:41.002632+00:00"
+      "checked_at": "2026-11-18T13:18:28.323574+00:00"
     },
     "fx": {
       "name": "美元兌新台幣與美元指數",
@@ -2589,7 +2595,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 32.954,
+      "value": 32.945,
       "date": "2026-11-18",
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/",
@@ -2952,11 +2958,11 @@
         },
         {
           "date": "2026-11-18",
-          "value": 32.954
+          "value": 32.945
         }
       ],
-      "checked_at": "2026-11-18T06:46:41.002632+00:00",
-      "dxy": 103.7
+      "checked_at": "2026-11-18T13:18:28.323574+00:00",
+      "dxy": 103.79
     }
   },
   "active_alerts": {
