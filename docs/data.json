@@ -5,7 +5,7 @@
     "tw_tw_price": "2026-11-17T14:18:00.573710+00:00",
     "tw_futures": "2026-11-17T14:18:00.573710+00:00"
   },
-  "updated_utc": "2026-11-18T04:22:10.586891+00:00",
+  "updated_utc": "2026-11-18T06:46:42.408715+00:00",
   "request_stats": {
     "requests": 6,
     "success": 6,
@@ -1624,7 +1624,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 27001.785,
+      "value": 27001.779,
       "date": "2026-11-17",
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ENDX/",
@@ -1987,13 +1987,13 @@
         },
         {
           "date": "2026-11-17",
-          "value": 27001.785
+          "value": 27001.779
         }
       ],
       "drawdown_pct": 13.52,
       "reference": "近一年最高收盤價",
       "spx": 7340.53,
-      "checked_at": "2026-11-18T04:22:09.400075+00:00"
+      "checked_at": "2026-11-18T06:46:41.002632+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -2222,7 +2222,7 @@
       "official_close_date": "2026-11-17",
       "official_volume_shares": 14661802735,
       "official_turnover_twd": 1012867829864,
-      "value": 40196.051,
+      "value": 40194.91,
       "date": "2026-11-18",
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ETWII/",
@@ -2585,12 +2585,12 @@
         },
         {
           "date": "2026-11-18",
-          "value": 40196.051
+          "value": 40194.91
         }
       ],
       "drawdown_pct": 19.32,
       "reference": "近一年最高收盤價",
-      "checked_at": "2026-11-18T04:22:09.400075+00:00"
+      "checked_at": "2026-11-18T06:46:41.002632+00:00"
     },
     "fx": {
       "name": "美元兌新台幣與美元指數",
@@ -2599,7 +2599,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 32.941,
+      "value": 32.954,
       "date": "2026-11-18",
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/",
@@ -2962,11 +2962,11 @@
         },
         {
           "date": "2026-11-18",
-          "value": 32.941
+          "value": 32.954
         }
       ],
-      "checked_at": "2026-11-18T04:22:09.400075+00:00",
-      "dxy": 103.64
+      "checked_at": "2026-11-18T06:46:41.002632+00:00",
+      "dxy": 103.7
     }
   },
   "active_alerts": {
