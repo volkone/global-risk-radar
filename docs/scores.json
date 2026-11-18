@@ -1,11 +1,11 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-18T13:58:59.766457+00:00",
+  "generated_at": "2026-11-18T20:27:53.259114+00:00",
   "model_status": "separate_global_prototype_and_evidence_gated_taiwan",
   "disclaimer": "Global is provisional; historical Taiwan reconstruction is research-only. Formal Taiwan eligibility is recorded in quality_gate.",
   "global": {
     "status": "provisional",
-    "score": 28.7,
+    "score": 28.6,
     "coverage": 0.9,
     "min_coverage": 0.85,
     "components": [
@@ -36,10 +36,10 @@
       {
         "metric": "indices",
         "weight": 20,
-        "signal": 45.07,
+        "signal": 44.5,
         "eligible": true,
         "reason": null,
-        "contribution": 10.015555555555554
+        "contribution": 9.88888888888889
       },
       {
         "metric": "nfci",
@@ -67,7 +67,7 @@
       }
     ],
     "model_id": "global_rate_v2",
-    "as_of": "2026-11-18T13:58:57.178852+00:00"
+    "as_of": "2026-11-18T20:27:49.716594+00:00"
   },
   "taiwan": {
     "status": "formal_model_blocked",
@@ -78,7 +78,7 @@
     "as_of": null,
     "quality_gate": {
       "status": "BLOCKED",
-      "evaluated_for_date": "2026-11-18",
+      "evaluated_for_date": "2026-11-19",
       "checks": [
         {
           "id": "publication",
@@ -108,7 +108,7 @@
           "id": "current_forecast",
           "label": "當日可追溯前瞻分數",
           "passed": false,
-          "evidence": "storage/prospective/forecasts/2026-11-18.json"
+          "evidence": "storage/prospective/forecasts/2026-11-19.json"
         }
       ],
       "blockers": [
@@ -195,15 +195,15 @@
   "taiwan_legacy_prototype": {
     "status": "insufficient_coverage",
     "score": null,
-    "coverage": 0.35,
+    "coverage": 0.0,
     "min_coverage": 0.85,
     "components": [
       {
         "metric": "taiex",
         "weight": 35,
-        "signal": 64.4,
-        "eligible": true,
-        "reason": null
+        "signal": null,
+        "eligible": false,
+        "reason": "quality_gate_not_passed"
       },
       {
         "metric": "margin",

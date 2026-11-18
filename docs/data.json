@@ -5,7 +5,7 @@
     "tw_tw_price": "2026-11-18T13:18:28.323574+00:00",
     "tw_futures": "2026-11-18T13:18:28.323574+00:00"
   },
-  "updated_utc": "2026-11-18T13:58:57.178852+00:00",
+  "updated_utc": "2026-11-18T20:27:49.716594+00:00",
   "request_stats": {
     "requests": 6,
     "success": 6,
@@ -1620,15 +1620,11 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 27001.779,
-      "date": "2026-11-17",
+      "value": 27057.555,
+      "date": "2026-11-18",
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ENDX/",
       "history": [
-        {
-          "date": "2026-07-14",
-          "value": 29586.289
-        },
         {
           "date": "2026-07-15",
           "value": 29502.6
@@ -1984,12 +1980,16 @@
         {
           "date": "2026-11-17",
           "value": 27001.779
+        },
+        {
+          "date": "2026-11-18",
+          "value": 27057.555
         }
       ],
-      "drawdown_pct": 13.52,
+      "drawdown_pct": 13.35,
       "reference": "近一年最高收盤價",
-      "spx": 7340.53,
-      "checked_at": "2026-11-18T13:58:56.231079+00:00"
+      "spx": 7323.47,
+      "checked_at": "2026-11-18T20:27:49.182656+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -1998,8 +1998,8 @@
       "frequency": "daily",
       "status": "partial",
       "reason": "只有半導體相對強弱，市場廣度未取得",
-      "value": 0.3571,
-      "date": "2026-11-17",
+      "value": 0.3544,
+      "date": "2026-11-18",
       "unit": "SOX/NDX",
       "source_url": "https://finance.yahoo.com/quote/%5ESOX/"
     },
@@ -2218,11 +2218,15 @@
       "official_close_date": "2026-11-18",
       "official_volume_shares": 13560477251,
       "official_turnover_twd": 1075174308798,
-      "value": 40194.91,
-      "date": "2026-11-18",
+      "value": 40092.109,
+      "date": "2026-11-17",
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ETWII/",
       "history": [
+        {
+          "date": "2026-07-07",
+          "value": 45479.109
+        },
         {
           "date": "2026-07-08",
           "value": 45734.41
@@ -2578,15 +2582,11 @@
         {
           "date": "2026-11-17",
           "value": 40092.109
-        },
-        {
-          "date": "2026-11-18",
-          "value": 40194.91
         }
       ],
-      "drawdown_pct": 19.32,
+      "drawdown_pct": 19.53,
       "reference": "近一年最高收盤價",
-      "checked_at": "2026-11-18T13:58:56.231079+00:00"
+      "checked_at": "2026-11-18T20:27:49.182656+00:00"
     },
     "fx": {
       "name": "美元兌新台幣與美元指數",
@@ -2595,7 +2595,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 32.914,
+      "value": 32.954,
       "date": "2026-11-18",
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/",
@@ -2958,32 +2958,32 @@
         },
         {
           "date": "2026-11-18",
-          "value": 32.914
+          "value": 32.954
         }
       ],
-      "checked_at": "2026-11-18T13:58:56.231079+00:00",
-      "dxy": 103.75
+      "checked_at": "2026-11-18T20:27:49.182656+00:00",
+      "dxy": 103.86
     }
   },
   "active_alerts": {
     "ndx10": {
       "severity": "warning",
-      "message": "Nasdaq 100 近一年高點回撤 ≥10%：13.52%",
+      "message": "Nasdaq 100 近一年高點回撤 ≥10%：13.35%",
       "first_seen": "2026-11-13T16:07:46.932933+00:00"
     },
     "tw5": {
       "severity": "warning",
-      "message": "台股近一年高點回撤 ≥5%：19.32%",
+      "message": "台股近一年高點回撤 ≥5%：19.53%",
       "first_seen": "2026-11-10T08:42:05.496990+00:00"
     },
     "tw10": {
       "severity": "warning",
-      "message": "台股近一年高點回撤 ≥10%：19.32%",
+      "message": "台股近一年高點回撤 ≥10%：19.53%",
       "first_seen": "2026-11-10T08:42:05.496990+00:00"
     },
     "tw15": {
       "severity": "warning",
-      "message": "台股近一年高點回撤 ≥15%：19.32%",
+      "message": "台股近一年高點回撤 ≥15%：19.53%",
       "first_seen": "2026-11-17T04:29:20.336971+00:00"
     }
   },

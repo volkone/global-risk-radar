@@ -4,7 +4,7 @@
   "p0": {
     "global_coverage": 0.9,
     "minimum_coverage": 0.85,
-    "score": 28.7,
+    "score": 28.6,
     "missing_components": [
       {
         "metric": "breadth",
