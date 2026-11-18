@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-18T20:27:49.994150+00:00",
+  "generated_at": "2026-11-18T21:57:27.007626+00:00",
   "record_count": 79,
-  "revision_count": 218,
+  "revision_count": 220,
   "observations": [
     {
       "metric_id": "fx",
       "provider": "Yahoo Finance 非官方",
       "scope": "",
       "observation_date": "2026-11-18",
-      "value": 32.954,
+      "value": 32.934,
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/"
     },
@@ -18,7 +18,7 @@
       "provider": "Yahoo Finance 非官方",
       "scope": "",
       "observation_date": "2026-11-18",
-      "value": 27057.555,
+      "value": 27116.258,
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ENDX/"
     },
