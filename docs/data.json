@@ -2,15 +2,17 @@
   "source_checks": {
     "tw_margin": "2026-11-18T13:18:28.323574+00:00",
     "tw_cash_inst": "2026-11-18T13:18:28.323574+00:00",
-    "tw_tw_price": "2026-11-18T13:18:28.323574+00:00",
-    "tw_futures": "2026-11-18T13:18:28.323574+00:00"
+    "tw_tw_price": "2026-11-19T13:08:26.720030+00:00",
+    "tw_futures": "2026-11-19T13:08:26.720030+00:00"
   },
-  "updated_utc": "2026-11-19T03:28:33.826052+00:00",
+  "updated_utc": "2026-11-19T13:08:31.951867+00:00",
   "request_stats": {
-    "requests": 6,
-    "success": 6,
+    "requests": 8,
+    "success": 8,
     "failure": 0,
     "by_host": {
+      "www.twse.com.tw": 1,
+      "www.taifex.com.tw": 1,
       "query1.finance.yahoo.com": 6
     },
     "errors": [],
@@ -1620,7 +1622,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 27116.258,
+      "value": 27116.26,
       "date": "2026-11-18",
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ENDX/",
@@ -1983,13 +1985,13 @@
         },
         {
           "date": "2026-11-18",
-          "value": 27116.258
+          "value": 27116.26
         }
       ],
       "drawdown_pct": 13.16,
       "reference": "近一年最高收盤價",
       "spx": 7323.63,
-      "checked_at": "2026-11-19T03:28:32.572238+00:00"
+      "checked_at": "2026-11-19T13:08:26.720030+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -2152,14 +2154,14 @@
         },
         "futures": {
           "status": "ok",
-          "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?queryDate=2026%2F11%2F18&commodityId=TXF&queryType=1",
+          "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?queryDate=2026%2F11%2F19&commodityId=TXF&queryType=1",
           "provider": "TAIFEX",
-          "date": "2026-11-18",
+          "date": "2026-11-19",
           "unit": "口",
-          "foreign_tx_net_oi": -99438,
+          "foreign_tx_net_oi": -99219,
           "contract": "臺股期貨",
           "trader": "外資及陸資",
-          "checked_at": "2026-11-18T13:18:28.323574+00:00"
+          "checked_at": "2026-11-19T13:08:26.720030+00:00"
         }
       },
       "cash_categories": [
@@ -2189,10 +2191,10 @@
         }
       ],
       "cash_date": "2026-11-18",
-      "foreign_tx_net_oi": -99438,
-      "futures_date": "2026-11-18",
+      "foreign_tx_net_oi": -99219,
+      "futures_date": "2026-11-19",
       "futures_contract": "臺股期貨",
-      "date": "2026-11-18"
+      "date": "2026-11-19"
     },
     "taiex": {
       "name": "台股回撤與成交量",
@@ -2206,19 +2208,19 @@
           "status": "ok",
           "source_url": "https://www.twse.com.tw/rwd/zh/afterTrading/FMTQIK?response=json&date=20261101",
           "provider": "TWSE",
-          "date": "2026-11-18",
+          "date": "2026-11-19",
           "unit": "points",
-          "value": 40194.91,
-          "volume_shares": 13560477251,
-          "turnover_twd": 1075174308798,
-          "checked_at": "2026-11-18T13:18:28.323574+00:00"
+          "value": 38426.89,
+          "volume_shares": 15301049840,
+          "turnover_twd": 942988976493,
+          "checked_at": "2026-11-19T13:08:26.720030+00:00"
         }
       },
-      "official_close": 40194.91,
-      "official_close_date": "2026-11-18",
-      "official_volume_shares": 13560477251,
-      "official_turnover_twd": 1075174308798,
-      "value": 38507.66,
+      "official_close": 38426.89,
+      "official_close_date": "2026-11-19",
+      "official_volume_shares": 15301049840,
+      "official_turnover_twd": 942988976493,
+      "value": 38426.891,
       "date": "2026-11-19",
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ETWII/",
@@ -2581,12 +2583,12 @@
         },
         {
           "date": "2026-11-19",
-          "value": 38507.66
+          "value": 38426.891
         }
       ],
-      "drawdown_pct": 22.71,
+      "drawdown_pct": 22.87,
       "reference": "近一年最高收盤價",
-      "checked_at": "2026-11-19T03:28:32.572238+00:00"
+      "checked_at": "2026-11-19T13:08:26.720030+00:00"
     },
     "fx": {
       "name": "美元兌新台幣與美元指數",
@@ -2595,7 +2597,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 32.961,
+      "value": 32.935,
       "date": "2026-11-19",
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/",
@@ -2958,11 +2960,11 @@
         },
         {
           "date": "2026-11-19",
-          "value": 32.961
+          "value": 32.935
         }
       ],
-      "checked_at": "2026-11-19T03:28:32.572238+00:00",
-      "dxy": 103.95
+      "checked_at": "2026-11-19T13:08:26.720030+00:00",
+      "dxy": 103.68
     }
   },
   "active_alerts": {
@@ -2973,22 +2975,22 @@
     },
     "tw5": {
       "severity": "warning",
-      "message": "台股近一年高點回撤 ≥5%：22.71%",
+      "message": "台股近一年高點回撤 ≥5%：22.87%",
       "first_seen": "2026-11-10T08:42:05.496990+00:00"
     },
     "tw10": {
       "severity": "warning",
-      "message": "台股近一年高點回撤 ≥10%：22.71%",
+      "message": "台股近一年高點回撤 ≥10%：22.87%",
       "first_seen": "2026-11-10T08:42:05.496990+00:00"
     },
     "tw15": {
       "severity": "warning",
-      "message": "台股近一年高點回撤 ≥15%：22.71%",
+      "message": "台股近一年高點回撤 ≥15%：22.87%",
       "first_seen": "2026-11-17T04:29:20.336971+00:00"
     },
     "tw20": {
       "severity": "critical",
-      "message": "台股近一年高點回撤 ≥20%：22.71%",
+      "message": "台股近一年高點回撤 ≥20%：22.87%",
       "first_seen": "2026-11-19T03:28:32.572238+00:00"
     }
   },
