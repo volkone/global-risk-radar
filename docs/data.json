@@ -5,7 +5,7 @@
     "tw_tw_price": "2026-11-19T14:55:51.069828+00:00",
     "tw_futures": "2026-11-19T14:55:51.069828+00:00"
   },
-  "updated_utc": "2026-11-19T21:35:32.766390+00:00",
+  "updated_utc": "2026-11-20T03:16:09.086880+00:00",
   "request_stats": {
     "requests": 6,
     "success": 6,
@@ -1997,7 +1997,7 @@
       "drawdown_pct": 15.08,
       "reference": "近一年最高收盤價",
       "spx": 7175.83,
-      "checked_at": "2026-11-19T21:35:32.291449+00:00"
+      "checked_at": "2026-11-20T03:16:08.619434+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -2226,19 +2226,11 @@
       "official_close_date": "2026-11-19",
       "official_volume_shares": 15301049840,
       "official_turnover_twd": 942988976493,
-      "value": 40194.91,
-      "date": "2026-11-18",
+      "value": 36080.789,
+      "date": "2026-11-20",
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ETWII/",
       "history": [
-        {
-          "date": "2026-07-08",
-          "value": 45734.41
-        },
-        {
-          "date": "2026-07-09",
-          "value": 45354.609
-        },
         {
           "date": "2026-07-13",
           "value": 45380.52
@@ -2590,11 +2582,19 @@
         {
           "date": "2026-11-18",
           "value": 40194.91
+        },
+        {
+          "date": "2026-11-19",
+          "value": 38426.891
+        },
+        {
+          "date": "2026-11-20",
+          "value": 36080.789
         }
       ],
-      "drawdown_pct": 19.32,
+      "drawdown_pct": 27.58,
       "reference": "近一年最高收盤價",
-      "checked_at": "2026-11-19T21:35:32.291449+00:00"
+      "checked_at": "2026-11-20T03:16:08.619434+00:00"
     },
     "fx": {
       "name": "美元兌新台幣與美元指數",
@@ -2603,15 +2603,11 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 33.013,
-      "date": "2026-11-19",
+      "value": 32.988,
+      "date": "2026-11-20",
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/",
       "history": [
-        {
-          "date": "2026-07-16",
-          "value": 32.264
-        },
         {
           "date": "2026-07-19",
           "value": 32.313
@@ -2966,11 +2962,15 @@
         },
         {
           "date": "2026-11-19",
-          "value": 33.013
+          "value": 32.93
+        },
+        {
+          "date": "2026-11-20",
+          "value": 32.988
         }
       ],
-      "checked_at": "2026-11-19T21:35:32.291449+00:00",
-      "dxy": 103.95
+      "checked_at": "2026-11-20T03:16:08.619434+00:00",
+      "dxy": 103.86
     }
   },
   "active_alerts": {
@@ -2981,18 +2981,28 @@
     },
     "tw5": {
       "severity": "warning",
-      "message": "台股近一年高點回撤 ≥5%：19.32%",
+      "message": "台股近一年高點回撤 ≥5%：27.58%",
       "first_seen": "2026-11-10T08:42:05.496990+00:00"
     },
     "tw10": {
       "severity": "warning",
-      "message": "台股近一年高點回撤 ≥10%：19.32%",
+      "message": "台股近一年高點回撤 ≥10%：27.58%",
       "first_seen": "2026-11-10T08:42:05.496990+00:00"
     },
     "tw15": {
       "severity": "warning",
-      "message": "台股近一年高點回撤 ≥15%：19.32%",
+      "message": "台股近一年高點回撤 ≥15%：27.58%",
       "first_seen": "2026-11-17T04:29:20.336971+00:00"
+    },
+    "tw20": {
+      "severity": "critical",
+      "message": "台股近一年高點回撤 ≥20%：27.58%",
+      "first_seen": "2026-11-20T03:16:08.619434+00:00"
+    },
+    "tw25": {
+      "severity": "critical",
+      "message": "台股近一年高點回撤 ≥25%：27.58%",
+      "first_seen": "2026-11-20T03:16:08.619434+00:00"
     }
   },
   "pending_notifications": [
@@ -3023,6 +3033,10 @@
     {
       "key": "tw20",
       "message": "台股近一年高點回撤 ≥20%：22.71%"
+    },
+    {
+      "key": "tw25",
+      "message": "台股近一年高點回撤 ≥25%：27.58%"
     }
   ],
   "notes": [
