@@ -100,7 +100,10 @@
       unavailable: '盤中資料待取得' + dated
     };
     const node = card('盤中賣壓擴散', labels[market?.mode] ?? '尚無市場快照');
-    if (!market || !['intraday', 'close'].includes(market.mode)) return node;
+    if (!market || !['intraday', 'close'].includes(market.mode)) {
+      node.append(trendBreadth(snapshot?.trend_breadth));
+      return node;
+    }
     if (market.mode === 'close' && snapshot?.date !== today && clock >= '09:00' && clock <= '13:30') {
       node.append(el('p', '等待今日盤中快照。下方為收盤統計。', 'small muted'));
     }
@@ -128,6 +131,59 @@
         if (data?.source_url) node.append(link(label, data.source_url), document.createTextNode(' '));
       }
     }
+    node.append(trendBreadth(snapshot?.trend_breadth));
+    return node;
+  }
+
+  function trendBreadth(breadth) {
+    const node = el('section', null, 'crash-subsection trend-breadth');
+    node.append(el('h4', '收盤市場廣度'));
+    const markets = [['上市', breadth?.markets?.tse], ['上櫃', breadth?.markets?.otc]];
+    if (!markets.some(([, row]) => row)) {
+      node.append(el('p', '等待完整的日收盤資料。', 'small muted'));
+      return node;
+    }
+    const reading = stat => stat ? `${fmt(stat.pct)}%` : '—';
+    const coverage = stat => stat ? `${fmt(stat.above, 0)} / ${fmt(stat.eligible, 0)} 檔` : '待取得';
+    node.append(table(['市場', '站上 20 日線', '站上 60 日線'], markets.map(([name, row]) =>
+      [name, reading(row?.ma20), reading(row?.ma60)])));
+    for (const [label, row] of markets) {
+      if (!row) continue;
+      const status = row.status === 'stale' ? ' · 新資料待取得' : '';
+      node.append(el('p', `${label} ${row.date}${status} · 20 日 ${coverage(row.ma20)} · 60 日 ${coverage(row.ma60)}`, 'small muted'));
+      if (Number.isFinite(row.ma20_change_5d_pp))
+        node.append(el('p', `${label}近 5 交易日廣度變化 · 20 日線 ${signed(row.ma20_change_5d_pp, ' 個百分點')} · 60 日線 ${signed(row.ma60_change_5d_pp, ' 個百分點')}`, 'small muted'));
+    }
+    node.append(el('p', '普通股、未還原權息。分母為具備該期間完整收盤資料的股票。', 'small muted'),
+      link('市場廣度歷史與來源', 'taiwan_market_breadth.json'));
+    return node;
+  }
+
+  function creditPressure(credit) {
+    const node = el('section', null, 'crash-subsection credit-pressure');
+    node.append(el('h4', '全市場信用交易'));
+    const amount = value => Number.isFinite(value) ? fmt(value / 1e8) + ' 億元' : '—';
+    const accounts = value => Number.isInteger(value) ? fmt(value, 0) + ' 戶' : '—';
+    if (!credit?.date) {
+      node.append(el('p', '證交所信用交易資料待取得。', 'small muted'));
+      return node;
+    }
+    const pending = credit.status === 'pending' ? ` · ${credit.expected_date} 待公布` :
+      credit.status === 'source_error' ? ' · 上次公告值' : '';
+    node.append(el('p', `資料日 ${credit.date}${pending}`, 'small muted'),
+      facts([
+        ['整戶擔保維持率', fmt(credit.maintenance_pct) + '%'],
+        ['整戶維持率 1 日變化', signed(credit.change_1d_pp, ' 個百分點')],
+        ['整戶維持率 5 日變化', signed(credit.change_5d_pp, ' 個百分點')],
+        ['低於 130% 的帳戶', accounts(credit.accounts_below_130)],
+        ['當日通知補繳金額', amount(credit.margin_call_twd)],
+        ['次一營業日應處分戶數', accounts(credit.disposal_accounts)],
+        ['次一營業日應處分金額', amount(credit.disposal_twd)]
+      ]));
+    if (credit.disposal_date) node.append(el('p', '應處分日（依交易日曆） ' + credit.disposal_date, 'small muted'));
+    node.append(el('p', '證交所彙整上市櫃整戶信用交易。應處分為券商須處理的部位。', 'small muted'),
+      link('證交所臺股儀表板', credit.source_url), document.createTextNode(' · '),
+      link('全市場信用交易歷史', 'taiwan_credit_history.json'));
     return node;
   }
 
@@ -136,7 +192,10 @@
     const ready = post?.cash || Number.isFinite(post?.margin_twd);
     const node = card('盤後去槓桿', ready ? '上市市場 · ' + post.date
       : (post?.date ? post.date + ' · 盤後資料待取得' : '尚無盤後資料'));
-    if (!post) return node;
+    if (!post) {
+      node.append(creditPressure(snapshot?.credit));
+      return node;
+    }
     const amount = value => Number.isFinite(value) ? signed(value / 1e8, ' 億元') : '—';
     const balance = Number.isFinite(post.margin_twd) ? fmt(post.margin_twd / 1e8) + ' 億元' : '—';
     node.append(facts([
@@ -152,6 +211,7 @@
     node.append(el('p', '融資變動使用各交易日餘額。法人為現貨買賣超，自營商含自行買賣與避險。', 'small muted'));
     if (post.margin_source_url) node.append(link('融資來源', post.margin_source_url), document.createTextNode(' '));
     if (post.cash?.source_url) node.append(link('法人來源', post.cash.source_url));
+    node.append(creditPressure(snapshot?.credit));
     return node;
   }
 
@@ -190,6 +250,31 @@
     }
   }
 
+  async function renderBreadthResearch() {
+    const panel = root.querySelector('.crash-breadth-research');
+    try {
+      const report = await window.getRadarData('taiwan_breadth_validation.json');
+      const block = report.blocks[0];
+      const rows = Object.entries(block.targets).map(([days, target]) => [
+        `${days === '1' ? '單日跌' : days + ' 日累跌'} ≥${Math.abs(target.threshold_pct)}%`, target.events,
+        target.rule.hits, target.combined.hits,
+        `${target.rule.false_alarms} → ${target.combined.false_alarms}`
+      ]);
+      const rule = report.rule;
+      panel.replaceChildren(
+        el('p', `${block.start} 至 ${block.end} · 模擬台北 08:30 使用前一交易日可重建的收盤資料。`, 'small muted'),
+        el('p', `大盤距近 ${rule.high_window} 日收盤高點在 ${rule.within_high_pct}% 以內，且 20 日廣度在 ${rule.breadth_window} 個交易日下降至少 ${Math.abs(rule.breadth_change_pp)} 個百分點，其中至少 ${rule.min_declining_days} 日轉弱。`),
+        table(['目標', '事件', '現行命中', '加入廣度命中', '誤報'], rows),
+        el('p', '此回測使用公開研究的上市櫃合併廣度。線上廣度使用兩交易所的個股收盤重算。', 'small muted'),
+        link('完整回測與資料來源', 'taiwan_breadth_validation.json')
+      );
+      panel.dataset.status = 'loaded';
+    } catch {
+      panel.textContent = '市場廣度回測暫時無法載入。';
+      panel.dataset.status = 'error';
+    }
+  }
+
   window.renderTaiwanCrashWatch = snapshot => {
     const now = new Date();
     const [today, clock] = formatter.format(now).split(' ');
@@ -207,7 +292,9 @@
       + (stats ? ` · 本區請求 ${stats.requests}/${stats.limit} 次` : '');
   };
   renderResearch();
+  renderBreadthResearch();
   setInterval(() => {
     if (root.querySelector('.crash-research').dataset.status === 'error') renderResearch();
+    if (root.querySelector('.crash-breadth-research').dataset.status === 'error') renderBreadthResearch();
   }, 60000);
 })();

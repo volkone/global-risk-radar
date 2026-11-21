@@ -53,3 +53,11 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+.crash-subsection {
+  border-top: 1px solid #2b3a56;
+  margin-top: 14px;
+  padding-top: 12px;
+}
+.crash-subsection h4 {
+  margin: 0 0 7px;
+}

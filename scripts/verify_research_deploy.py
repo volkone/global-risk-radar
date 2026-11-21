@@ -38,6 +38,27 @@ def main():
     digest = hashlib.sha256((ROOT / PANEL).read_bytes()).hexdigest()
     require(snapshot["metrics"] and snapshot["updated_utc"] == quality["snapshot_updated_at"],
             "market quality must refer to the published snapshot")
+    watch = snapshot["taiwan_crash_watch"]
+    credit = watch.get("credit") or {}
+    if credit.get("date"):
+        source = read("taiwan_credit_history")["records"][credit["date"]]
+        maintenance = snapshot["metrics"]["maint"]
+        require(maintenance["date"] == credit["date"] and maintenance["value"] == credit["maintenance_pct"],
+                "official maintenance metric and credit panel disagree")
+        require(all(credit[key] == value for key, value in source.items()),
+                "credit panel and official archive disagree")
+    breadth = watch.get("trend_breadth") or {}
+    history = read("taiwan_market_breadth")["records"]
+    for market, item in breadth.get("markets", {}).items():
+        source = history[item["date"]][market]
+        for window in ("ma20", "ma60"):
+            if window not in item:
+                continue
+            measure = item[window]
+            require(measure == source[window] and 0 <= measure["above"] <= measure["eligible"]
+                    <= item["stocks_with_close"] and
+                    measure["pct"] == round(100 * measure["above"] / measure["eligible"], 4),
+                    f"{market} {window}: invalid breadth observation")
     require(dashboard["generated_at"] == scores["generated_at"] and
             all(dashboard[key] == scores[key] for key in ("global", "taiwan", "formal_model_status")),
             "dashboard and scores disagree")

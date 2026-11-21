@@ -3,6 +3,8 @@ from concurrent.futures import ThreadPoolExecutor,as_completed
 from threading import Lock
 from collect_taifex_three_year import extract as extract_tx
 import taiwan_crash_watch as crash_watch
+import taiwan_credit
+import taiwan_market_breadth
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 OUT=ROOT/"docs"/"data.json"
 NOW=datetime.datetime.now(datetime.timezone.utc)
@@ -10,7 +12,7 @@ CATALOG=[
 ("hy","美國高收益債利差","信用","FRED","daily"),("ig","美國投資等級債利差","信用","FRED","daily"),("vix","VIX","信用","FRED","daily"),("us10y","美國10年期公債殖利率","信用","FRED","daily"),("nfci","芝加哥金融情勢指數","信用","FRED","weekly"),
 ("indices","S&P 500 / Nasdaq 100","美股","Yahoo Finance 非官方","daily"),("breadth","市場廣度與半導體相對強弱","美股","待授權","daily"),("prime","高盛 Prime Book AI 資金流","美股","高盛授權報告","weekly"),("supply","美股回購與IPO供給","美股","SEC/交易所","monthly"),
 ("capex","AI 巨頭資本支出指引","AI","公司季報","quarterly"),("fcf","AI 巨頭自由現金流","AI","公司季報","quarterly"),("eps","Nasdaq 100 EPS 預估修正","AI","需授權一致預估","weekly"),("airev","AI晶片與雲端營收","AI","公司財報","quarterly"),
-("margin","台股融資餘額","台股","TWSE/TPEx","daily"),("maint","台股融資維持率","台股","待驗證","daily"),("inst","三大法人及期貨部位","台股","TWSE/TAIFEX","daily"),("taiex","台股回撤與成交量","台股","TWSE","daily"),("fx","美元兌新台幣與美元指數","匯率","Yahoo Finance 非官方","daily")]
+("margin","台股融資餘額","台股","TWSE/TPEx","daily"),("maint","全市場整戶擔保維持率","台股","TWSE 臺股儀表板","daily"),("inst","三大法人及期貨部位","台股","TWSE/TAIFEX","daily"),("taiex","台股回撤與成交量","台股","TWSE","daily"),("fx","美元兌新台幣與美元指數","匯率","Yahoo Finance 非官方","daily")]
 FRED={"hy":"BAMLH0A0HYM2","ig":"BAMLC0A0CM","vix":"VIXCLS","us10y":"DGS10","nfci":"NFCI"}
 YAHOO={"ndx":"%5ENDX","spx":"%5EGSPC","tw":"%5ETWII","twd":"TWD%3DX","sox":"%5ESOX","dxy":"DX-Y.NYB"}
 # The existing collector and the supplemental Taiwan monitor use separate
@@ -329,10 +331,13 @@ def main():
    if telegram("全球金融風險雷達\n"+"\n".join("• "+p["message"] for p in pending)+"\n詳情請查看儀表板"):pending=[]
   except Exception as exc:print("Telegram delivery failed:",type(exc).__name__)
  watch_stats=request_stats()
- watch=crash_watch.snapshot(
-  metrics,old.get("taiwan_crash_watch",{}),closes,
-  lambda source:fetch(source,stats=watch_stats,limit=WATCH_MAX_REQUESTS),
-  datetime.datetime.now(datetime.timezone.utc),days)
+ def fetch_watch(source):
+  return fetch(source,stats=watch_stats,limit=WATCH_MAX_REQUESTS)
+ watch=crash_watch.snapshot(metrics,old.get("taiwan_crash_watch",{}),closes,fetch_watch,
+                            datetime.datetime.now(datetime.timezone.utc),days)
+ through=watch.get("leverage",{}).get("date")
+ watch["credit"]=taiwan_credit.refresh(metrics["maint"],fetch_watch,through,days)
+ watch["trend_breadth"]=taiwan_market_breadth.refresh(fetch_watch,through,days)
  watch["request_stats"]=dict(watch_stats,limit=WATCH_MAX_REQUESTS)
  payload={"taiwan_crash_watch":watch,"source_checks":old.get("source_checks",{}),"updated_utc":datetime.datetime.now(datetime.timezone.utc).isoformat(),"request_stats":STATS,"source_failure_streaks":streaks,"metrics":metrics,"active_alerts":alerts,"pending_notifications":pending,"notes":["無資料不代表安全；免費端點可能延遲或停用","回撤基準：近一年最高收盤價","18項已列示，但尚未全部完成資料串接"]}
  OUT.parent.mkdir(parents=True,exist_ok=True)

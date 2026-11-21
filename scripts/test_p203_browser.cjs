@@ -71,7 +71,25 @@ const delay=ms=>new Promise(r=>setTimeout(r,ms));
     } else {
       assert((await crash.locator('.crash-cards').textContent()).includes('暫時不可用'));
     }
-    await crash.locator('summary').click();
+    if (site || watch?.credit) {
+      const credit = crash.locator('.credit-pressure');
+      assert((await credit.innerText()).includes('次一營業日應處分'));
+      assert((await credit.innerText()).includes(watch.credit.date));
+      assert.equal(watch.credit.maintenance_pct,snapshot.metrics.maint.value);
+      const breadth = crash.locator('.trend-breadth');
+      assert((await breadth.innerText()).includes('站上 20 日線'));
+      assert((await breadth.innerText()).includes('站上 60 日線'));
+      for (const market of ['tse','otc']) {
+        const trend = watch.trend_breadth.markets[market];
+        assert(Number.isFinite(trend.ma60.pct),market+' has a 60-day breadth statistic');
+        assert((await breadth.innerText()).includes(trend.date));
+      }
+    }
+    const breadthResearch = crash.locator('#breadth-research');
+    await breadthResearch.locator('summary').click();
+    await page.waitForFunction(()=>document.querySelector('.crash-breadth-research')?.dataset.status==='loaded');
+    assert((await breadthResearch.innerText()).includes('加入廣度命中'));
+    await crash.locator('summary').first().click();
     const validation = await read(page,'taiwan_crash_watch_validation.json');
     const comparison = validation.blocks[0].targets['1'];
     assert((await crash.innerText()).includes(`${comparison.multisource.hits}/${comparison.events}`));

@@ -21,7 +21,10 @@ window.renderMarketAnalysis = function (snapshot, quality) {
   const valueAvailable = (record, key, field = 'value') => approved(record, key) && Number.isFinite(record[field]);
   const num = (n, digits = 2) => n.toLocaleString('zh-TW', {maximumFractionDigits: digits});
   const dated = (record, detail) => detail + '（' + record.date + '）';
-  const {hy, ig, vix, indices, taiex, margin, inst, fx} = metrics;
+  const {hy, ig, vix, indices, taiex, margin, maint, inst, fx} = metrics;
+  const taiwanCredit = snapshot.taiwan_crash_watch?.credit;
+  const creditReady = valueAvailable(maint, 'maint') && taiwanCredit?.status === 'ok' &&
+    maint.date === taiwanCredit.date && Number.isInteger(taiwanCredit.accounts_below_130);
   const hyOk = valueAvailable(hy, 'hy');
   const hyChangeOk = hyOk && Number.isFinite(hy.change20bp);
   const vixOk = valueAvailable(vix, 'vix');
@@ -80,8 +83,10 @@ window.renderMarketAnalysis = function (snapshot, quality) {
     ['融資與新台幣', [
       valueAvailable(margin, 'margin') && margin.unit === 'TWD'
         ? dated(margin, '上市融資餘額 ' + num(margin.value / 1e8) + ' 億元') : '融資餘額待核對',
+      creditReady ? dated(maint, '全市場整戶維持率 ' + num(maint.value) + '%，低於 130% ' +
+        num(taiwanCredit.accounts_below_130, 0) + ' 戶') : '全市場信用交易資料待公布或核對',
       valueAvailable(fx, 'fx') ? dated(fx, '美元兌新台幣 ' + num(fx.value, 3)) : '美元兌新台幣待核對'
-    ].join('；'), '融資餘額需搭配連日變化與盤勢判讀。美元兌台幣上升代表新台幣相對走弱，需與法人現貨趨勢交叉觀察。']
+    ].join('；'), '融資餘額看資金撤出規模。觀察低於 130% 的戶數與應處分金額，可進一步看信用交易壓力。匯率搭配法人現貨趨勢交叉觀察。']
   ];
 
   function element(tag, text, className) {
@@ -97,5 +102,5 @@ window.renderMarketAnalysis = function (snapshot, quality) {
     grid.append(card);
   }
   root.replaceChildren(element('p', summary), grid,
-    element('p', '快照更新 ' + datetime.format(stamp) + '（台灣時間）。各指標依個別資料日解讀，市場廣度、融資維持率等缺項不參與判斷。', 'small muted'));
+    element('p', '快照更新 ' + datetime.format(stamp) + '（台灣時間）。各指標依個別資料日解讀，各來源尚未取得的欄位以待核對標示。', 'small muted'));
 };

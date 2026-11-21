@@ -18,7 +18,7 @@ AGE_LIMITS = {"nfci": 14, "hy": 7, "ig": 7, "us10y": 7, "vix": 7,
               "indices": 5, "taiex": 5, "margin": 5, "fx": 5}
 RANGES = {"hy": (0, 30), "ig": (0, 20), "us10y": (-5, 30),
           "vix": (0, 150), "indices": (100, 100000),
-          "taiex": (100, 100000), "margin": (1e9, 1e14),
+          "taiex": (100, 100000), "margin": (1e9, 1e14), "maint": (0.01, 1000),
           "fx": (10, 100), "nfci": (-10, 10)}
 TOLERANCES = {"taiex.tw_price": 0.005}  # relative fraction; 0.5%
 
@@ -74,6 +74,9 @@ def evaluate(snapshot, history, today=None):
             errors.append("missing_unit")
         if key == "margin" and (unit != "TWD" or record.get("scope") != "TWSE上市市場"):
             errors.append("margin_unit_or_scope_unverified")
+        if key == "maint" and (unit != "%" or record.get("provider") != "TWSE"
+                               or record.get("scope") != "上市櫃整戶信用交易"):
+            errors.append("maintenance_scope_unverified")
         if key == "taiex" and source == "taiex.tw_price":
             authoritative = metric.get("provider") == "TWSE"
             other = metric.get("yahoo_comparison", {}) if authoritative else metric

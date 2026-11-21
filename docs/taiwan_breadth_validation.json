@@ -1,0 +1,328 @@
+{
+  "schema_version": 1,
+  "status": "historical_research",
+  "asof": "08:30 Asia/Taipei",
+  "breadth_source": "https://mofiinvestment.com/tools/margin_maintenance/",
+  "breadth_series": "combined listed and OTC ordinary shares, public historical research series",
+  "assumption": "Previous Taiwan session's end-of-day data, daily publication proxy. Historical publication times are not certified.",
+  "live_series": "Independently rebuilt from official unadjusted TWSE/TPEx closes, reported per market.",
+  "rule": {
+    "high_window": 60,
+    "within_high_pct": 5,
+    "breadth_window": 5,
+    "breadth_change_pp": -10,
+    "min_declining_days": 3
+  },
+  "input_sha256": {
+    "breadth": "c2ad606e94c7676343d4807ce4e2ebf4dc22325ec47c7a7214fde269e68351f1",
+    "taiwan": "0ebd5d6a24ad472a7b6efc7d0c889f998f7fa4209f8d9621349d9c98b461ad2a",
+    "sox": "d06ee0ddf3a96aa7d1c666ccd945613ca11e66eb27f44e14638c7cbd62ca4cad",
+    "tsm": "db71a1266583dfeaf5a0514b8fd04206ec8fef92c3d022be27ebff004c4f27d7"
+  },
+  "taiex_official_overlap_matches": 718,
+  "blocks": [
+    {
+      "start": "2021-07-01",
+      "end": "2025-12-31",
+      "months": 54,
+      "targets": {
+        "1": {
+          "threshold_pct": -4,
+          "sessions": 1092,
+          "events": 8,
+          "rule": {
+            "alerts": 15,
+            "hits": 3,
+            "misses": 5,
+            "false_alarms": 12,
+            "false_per_month": 0.222,
+            "precision_pct": 20.0,
+            "recall_pct": 37.5,
+            "episodes_hit": 3,
+            "episodes": 8,
+            "lead_sessions_median": 0,
+            "lead_sessions_range": [
+              0,
+              0
+            ]
+          },
+          "breadth": {
+            "alerts": 161,
+            "hits": 0,
+            "misses": 8,
+            "false_alarms": 161,
+            "false_per_month": 2.981,
+            "precision_pct": 0.0,
+            "recall_pct": 0.0,
+            "episodes_hit": 0,
+            "episodes": 8,
+            "lead_sessions_median": null,
+            "lead_sessions_range": null
+          },
+          "combined": {
+            "alerts": 176,
+            "hits": 3,
+            "misses": 5,
+            "false_alarms": 173,
+            "false_per_month": 3.204,
+            "precision_pct": 1.7,
+            "recall_pct": 37.5,
+            "episodes_hit": 3,
+            "episodes": 8,
+            "lead_sessions_median": 0,
+            "lead_sessions_range": [
+              0,
+              0
+            ]
+          }
+        },
+        "5": {
+          "threshold_pct": -8,
+          "sessions": 1088,
+          "events": 8,
+          "rule": {
+            "alerts": 15,
+            "hits": 0,
+            "misses": 8,
+            "false_alarms": 15,
+            "false_per_month": 0.278,
+            "precision_pct": 0.0,
+            "recall_pct": 0.0,
+            "episodes_hit": 0,
+            "episodes": 3,
+            "lead_sessions_median": null,
+            "lead_sessions_range": null
+          },
+          "breadth": {
+            "alerts": 161,
+            "hits": 0,
+            "misses": 8,
+            "false_alarms": 161,
+            "false_per_month": 2.981,
+            "precision_pct": 0.0,
+            "recall_pct": 0.0,
+            "episodes_hit": 0,
+            "episodes": 3,
+            "lead_sessions_median": null,
+            "lead_sessions_range": null
+          },
+          "combined": {
+            "alerts": 176,
+            "hits": 0,
+            "misses": 8,
+            "false_alarms": 176,
+            "false_per_month": 3.259,
+            "precision_pct": 0.0,
+            "recall_pct": 0.0,
+            "episodes_hit": 0,
+            "episodes": 3,
+            "lead_sessions_median": null,
+            "lead_sessions_range": null
+          }
+        }
+      }
+    },
+    {
+      "start": "2021-07-01",
+      "end": "2023-12-31",
+      "months": 30,
+      "targets": {
+        "1": {
+          "threshold_pct": -4,
+          "sessions": 607,
+          "events": 1,
+          "rule": {
+            "alerts": 8,
+            "hits": 1,
+            "misses": 0,
+            "false_alarms": 7,
+            "false_per_month": 0.233,
+            "precision_pct": 12.5,
+            "recall_pct": 100.0,
+            "episodes_hit": 1,
+            "episodes": 1,
+            "lead_sessions_median": 0,
+            "lead_sessions_range": [
+              0,
+              0
+            ]
+          },
+          "breadth": {
+            "alerts": 88,
+            "hits": 0,
+            "misses": 1,
+            "false_alarms": 88,
+            "false_per_month": 2.933,
+            "precision_pct": 0.0,
+            "recall_pct": 0.0,
+            "episodes_hit": 0,
+            "episodes": 1,
+            "lead_sessions_median": null,
+            "lead_sessions_range": null
+          },
+          "combined": {
+            "alerts": 96,
+            "hits": 1,
+            "misses": 0,
+            "false_alarms": 95,
+            "false_per_month": 3.167,
+            "precision_pct": 1.04,
+            "recall_pct": 100.0,
+            "episodes_hit": 1,
+            "episodes": 1,
+            "lead_sessions_median": 0,
+            "lead_sessions_range": [
+              0,
+              0
+            ]
+          }
+        },
+        "5": {
+          "threshold_pct": -8,
+          "sessions": 603,
+          "events": 2,
+          "rule": {
+            "alerts": 8,
+            "hits": 0,
+            "misses": 2,
+            "false_alarms": 8,
+            "false_per_month": 0.267,
+            "precision_pct": 0.0,
+            "recall_pct": 0.0,
+            "episodes_hit": 0,
+            "episodes": 1,
+            "lead_sessions_median": null,
+            "lead_sessions_range": null
+          },
+          "breadth": {
+            "alerts": 87,
+            "hits": 0,
+            "misses": 2,
+            "false_alarms": 87,
+            "false_per_month": 2.9,
+            "precision_pct": 0.0,
+            "recall_pct": 0.0,
+            "episodes_hit": 0,
+            "episodes": 1,
+            "lead_sessions_median": null,
+            "lead_sessions_range": null
+          },
+          "combined": {
+            "alerts": 95,
+            "hits": 0,
+            "misses": 2,
+            "false_alarms": 95,
+            "false_per_month": 3.167,
+            "precision_pct": 0.0,
+            "recall_pct": 0.0,
+            "episodes_hit": 0,
+            "episodes": 1,
+            "lead_sessions_median": null,
+            "lead_sessions_range": null
+          }
+        }
+      }
+    },
+    {
+      "start": "2024-01-01",
+      "end": "2025-12-31",
+      "months": 24,
+      "targets": {
+        "1": {
+          "threshold_pct": -4,
+          "sessions": 485,
+          "events": 7,
+          "rule": {
+            "alerts": 7,
+            "hits": 2,
+            "misses": 5,
+            "false_alarms": 5,
+            "false_per_month": 0.208,
+            "precision_pct": 28.57,
+            "recall_pct": 28.57,
+            "episodes_hit": 2,
+            "episodes": 7,
+            "lead_sessions_median": 0.0,
+            "lead_sessions_range": [
+              0,
+              0
+            ]
+          },
+          "breadth": {
+            "alerts": 73,
+            "hits": 0,
+            "misses": 7,
+            "false_alarms": 73,
+            "false_per_month": 3.042,
+            "precision_pct": 0.0,
+            "recall_pct": 0.0,
+            "episodes_hit": 0,
+            "episodes": 7,
+            "lead_sessions_median": null,
+            "lead_sessions_range": null
+          },
+          "combined": {
+            "alerts": 80,
+            "hits": 2,
+            "misses": 5,
+            "false_alarms": 78,
+            "false_per_month": 3.25,
+            "precision_pct": 2.5,
+            "recall_pct": 28.57,
+            "episodes_hit": 2,
+            "episodes": 7,
+            "lead_sessions_median": 0.0,
+            "lead_sessions_range": [
+              0,
+              0
+            ]
+          }
+        },
+        "5": {
+          "threshold_pct": -8,
+          "sessions": 481,
+          "events": 6,
+          "rule": {
+            "alerts": 7,
+            "hits": 0,
+            "misses": 6,
+            "false_alarms": 7,
+            "false_per_month": 0.292,
+            "precision_pct": 0.0,
+            "recall_pct": 0.0,
+            "episodes_hit": 0,
+            "episodes": 2,
+            "lead_sessions_median": null,
+            "lead_sessions_range": null
+          },
+          "breadth": {
+            "alerts": 73,
+            "hits": 0,
+            "misses": 6,
+            "false_alarms": 73,
+            "false_per_month": 3.042,
+            "precision_pct": 0.0,
+            "recall_pct": 0.0,
+            "episodes_hit": 0,
+            "episodes": 2,
+            "lead_sessions_median": null,
+            "lead_sessions_range": null
+          },
+          "combined": {
+            "alerts": 80,
+            "hits": 0,
+            "misses": 6,
+            "false_alarms": 80,
+            "false_per_month": 3.333,
+            "precision_pct": 0.0,
+            "recall_pct": 0.0,
+            "episodes_hit": 0,
+            "episodes": 2,
+            "lead_sessions_median": null,
+            "lead_sessions_range": null
+          }
+        }
+      }
+    }
+  ]
+}
