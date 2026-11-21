@@ -1,0 +1,55 @@
+.crash-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 12px 0;
+}
+.crash-card {
+  min-width: 0;
+  border: 1px solid #2b3a56;
+  border-radius: 10px;
+  padding: 14px;
+  background: #0d172a;
+}
+.crash-card h3 {
+  margin: 0 0 7px;
+}
+.crash-state {
+  margin: 0 0 10px;
+  color: #adc5e9;
+  font-weight: 600;
+}
+.crash-state.warn {
+  color: #ffd17a;
+}
+.crash-facts {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 5px 12px;
+  margin: 10px 0;
+  font-size: .9rem;
+}
+.crash-facts dt {
+  color: #aebcd6;
+}
+.crash-facts dd {
+  margin: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.crash-table {
+  max-width: 100%;
+  overflow-x: auto;
+}
+.crash-table table {
+  font-size: .85rem;
+  white-space: nowrap;
+}
+.crash-watch details {
+  margin-top: 14px;
+}
+@media (max-width: 960px) {
+  .crash-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

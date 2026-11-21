@@ -1,6 +1,8 @@
 import csv,io,json,urllib.request,urllib.parse,datetime,pathlib,os,time
 from concurrent.futures import ThreadPoolExecutor,as_completed
+from threading import Lock
 from collect_taifex_three_year import extract as extract_tx
+import taiwan_crash_watch as crash_watch
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 OUT=ROOT/"docs"/"data.json"
 NOW=datetime.datetime.now(datetime.timezone.utc)
@@ -8,29 +10,37 @@ CATALOG=[
 ("hy","美國高收益債利差","信用","FRED","daily"),("ig","美國投資等級債利差","信用","FRED","daily"),("vix","VIX","信用","FRED","daily"),("us10y","美國10年期公債殖利率","信用","FRED","daily"),("nfci","芝加哥金融情勢指數","信用","FRED","weekly"),
 ("indices","S&P 500 / Nasdaq 100","美股","Yahoo Finance 非官方","daily"),("breadth","市場廣度與半導體相對強弱","美股","待授權","daily"),("prime","高盛 Prime Book AI 資金流","美股","高盛授權報告","weekly"),("supply","美股回購與IPO供給","美股","SEC/交易所","monthly"),
 ("capex","AI 巨頭資本支出指引","AI","公司季報","quarterly"),("fcf","AI 巨頭自由現金流","AI","公司季報","quarterly"),("eps","Nasdaq 100 EPS 預估修正","AI","需授權一致預估","weekly"),("airev","AI晶片與雲端營收","AI","公司財報","quarterly"),
-("margin","台股融資餘額","台股","TWSE/TPEx","daily"),("maint","台股融資維持率","台股","待驗證","daily"),("inst","三大法人及期貨部位","台股","TWSE/TAIFEX","daily"),("taiex","台股回撤與成交量","台股","Yahoo Finance 非官方","daily"),("fx","美元兌新台幣與美元指數","匯率","Yahoo Finance 非官方","daily")]
+("margin","台股融資餘額","台股","TWSE/TPEx","daily"),("maint","台股融資維持率","台股","待驗證","daily"),("inst","三大法人及期貨部位","台股","TWSE/TAIFEX","daily"),("taiex","台股回撤與成交量","台股","TWSE","daily"),("fx","美元兌新台幣與美元指數","匯率","Yahoo Finance 非官方","daily")]
 FRED={"hy":"BAMLH0A0HYM2","ig":"BAMLC0A0CM","vix":"VIXCLS","us10y":"DGS10","nfci":"NFCI"}
 YAHOO={"ndx":"%5ENDX","spx":"%5EGSPC","tw":"%5ETWII","twd":"TWD%3DX","sox":"%5ESOX","dxy":"DX-Y.NYB"}
-# Fixed monthly-friendly request ceiling; all HTTP requests, including fallbacks and alerts, are counted.
+# The existing collector and the supplemental Taiwan monitor use separate
+# request budgets. The monitor fetches issuer quote batches only in trading hours.
 MAX_REQUESTS=int(os.getenv("MAX_REQUESTS_PER_RUN","25"))
 MAX_RETRIES=0
-STATS={"requests":0,"success":0,"failure":0,"by_host":{},"errors":[],"skipped":[]}
-def fetch(url,timeout=9):
+def request_stats():
+ return {"requests":0,"success":0,"failure":0,"by_host":{},"errors":[],"skipped":[]}
+STATS=request_stats()
+WATCH_MAX_REQUESTS=24
+STATS_LOCK=Lock()
+def fetch(url,timeout=9,*,stats=STATS,limit=MAX_REQUESTS):
  host=urllib.parse.urlparse(url).hostname or "unknown"
  last=None
  for attempt in range(MAX_RETRIES+1):
-  if STATS["requests"]>=MAX_REQUESTS:raise RuntimeError("request_budget_exceeded")
-  STATS["requests"]+=1
-  STATS["by_host"][host]=STATS["by_host"].get(host,0)+1
+  with STATS_LOCK:
+   if stats["requests"]>=limit:raise RuntimeError("request_budget_exceeded")
+   stats["requests"]+=1
+   stats["by_host"][host]=stats["by_host"].get(host,0)+1
   try:
    req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0","Accept":"application/json,text/csv,*/*"})
    with urllib.request.urlopen(req,timeout=timeout) as r:body=r.read().decode("utf-8-sig")
-   STATS["success"]+=1
+   with STATS_LOCK:
+    stats["success"]+=1
    return body
   except Exception as exc:
-   STATS["failure"]+=1
+   with STATS_LOCK:
+    stats["failure"]+=1
+    stats["errors"].append(host+":"+type(exc).__name__)
    last=exc
-   STATS["errors"].append(host+":"+type(exc).__name__)
    if attempt<MAX_RETRIES:time.sleep(0.5)
  raise last
 def due(old,key,hours):
@@ -79,7 +89,6 @@ def telegram(msg):
 TW_ENDPOINTS={
  "margin":"https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?selectType=ALL&response=json",
  "cash_inst":"https://www.twse.com.tw/rwd/zh/fund/BFI82U?response=json",
- "tw_price":"https://openapi.twse.com.tw/v1/exchangeReport/FMTQIK",
  "futures":"https://openapi.taifex.com.tw/v1/MarketDataOfMajorInstitutionalTradersDetailsOfFuturesContractsBytheDate",
 }
 def num(value):
@@ -111,21 +120,7 @@ def official_rows(url):
     if all(isinstance(x,list) for x in rows):return [dict(zip(("項目","買進","賣出","現金(券)償還","前日餘額","今日餘額"),x)) for x in rows]
     return rows
  raise ValueError("unexpected_official_schema")
-def official_daily_taiwan(kind, day):
- if kind == "tw_price":
-  url="https://www.twse.com.tw/rwd/zh/afterTrading/FMTQIK?"+urllib.parse.urlencode(
-   {"response":"json","date":day[:7].replace("-","")+"01"})
-  matching=[r for r in official_rows(url) if date_of(r)==day]
-  if len(matching)!=1:return None
-  row=matching[0]
-  price=num(pick(row,"發行量加權股價指數","加權指數","TAIEX"))
-  volume=num(pick(row,"成交股數","TradeVolume"))
-  turnover=num(pick(row,"成交金額","TradeValue"))
-  if price is None or not 1000<price<100000 or not (volume and volume>0 and turnover and turnover>0):
-   raise ValueError("invalid_dated_TWSE_close")
-  return {"status":"ok","source_url":url,"provider":"TWSE","date":day,"unit":"points",
-          "value":price,"volume_shares":round(volume),"turnover_twd":round(turnover)}
-
+def official_daily_taiwan(day):
  url="https://www.taifex.com.tw/cht/3/futContractsDate?"+urllib.parse.urlencode(
   {"queryDate":day.replace("-","/"),"commodityId":"TXF","queryType":"1"})
  report=extract_tx(fetch(url,timeout=12).encode("utf-8"),day,url)
@@ -138,7 +133,7 @@ def taiwan(metrics,old):
  local=NOW.astimezone(datetime.timezone(datetime.timedelta(hours=8)))
  day=local.date().isoformat()
  for kind,url in TW_ENDPOINTS.items():
-  key="margin" if kind=="margin" else ("taiex" if kind=="tw_price" else "inst")
+  key="margin" if kind=="margin" else "inst"
   prev=previous.get(key,{})
   prev_record=prev.get("official_sources",{}).get(kind,{})
   stamp=checks.get("tw_"+kind)
@@ -149,6 +144,10 @@ def taiwan(metrics,old):
   record=dict(prev_record) if fresh else {}
   if fresh and kind=="margin" and (record.get("unit")!="TWD" or record.get("source_url")!=url):fresh=False;record={}
   if fresh and kind=="cash_inst" and not record.get("date"):fresh=False;record={}
+  # A still-cached report from yesterday must not suppress today's post-close check.
+  if (fresh and kind in ("margin","cash_inst") and local.weekday()<5
+      and local.hour>=(21 if kind=="margin" else 17) and record.get("date")!=day):
+   fresh=False;record={}
   if not fresh:
    try:
     raw_date=None
@@ -193,14 +192,6 @@ def taiwan(metrics,old):
       if name is not None and net is not None:categories.append({"name":name,"net_twd":round(net)})
      if len(categories)>=5 and any("合計" in x["name"] for x in categories):
       record.update(status="ok",categories=categories,unit="TWD",provider="TWSE",reason="集中市場法人現貨買賣超金額；外資自營商不重複計入合計")
-    elif kind=="tw_price":
-     r=rows[-1]
-     value=num(pick(r,"TAIEX","TradeIndex","發行量加權股價指數","加權指數"))
-     volume=num(pick(r,"TradeVolume","成交股數"))
-     amount=num(pick(r,"TradeValue","成交金額"))
-     date=date_of(r)
-     if value is not None and volume is not None and amount is not None and date:
-      record.update(status="ok",value=value,date=date,unit="points",volume_shares=round(volume),turnover_twd=round(amount),provider="TWSE")
     elif kind=="futures":
      candidates=[r for r in rows if str(pick(r,"ContractCode","商品名稱","契約") or "").strip() in ("臺股期貨","台股期貨","TX") and "外資" in str(pick(r,"Item","身份別","交易人類別") or "")]
      if len(candidates)==1:
@@ -217,10 +208,10 @@ def taiwan(metrics,old):
     record["last_error"]=type(exc).__name__+": "+str(exc)[:120]
     print("Taiwan",kind,"fallback",type(exc).__name__,flush=True)
   if not record and prev_record:record=dict(prev_record)
-  if (kind in ("tw_price","futures") and local.weekday()<5 and local.hour>=20
+  if (kind == "futures" and local.weekday()<5 and local.hour>=20
       and (record.get("date")!=day or record.get("status")!="ok" or record.get("cache_status")=="stale")):
    try:
-    same_day=official_daily_taiwan(kind,day)
+    same_day=official_daily_taiwan(day)
     if same_day:
      record=dict(same_day,checked_at=NOW.isoformat())
      checks["tw_"+kind]=NOW.isoformat()
@@ -237,11 +228,6 @@ def taiwan(metrics,old):
    metrics["inst"]["foreign_tx_net_oi"]=record["foreign_tx_net_oi"]
    metrics["inst"]["futures_date"]=record.get("date")
    metrics["inst"]["futures_contract"]=record.get("contract")
-  elif kind=="tw_price" and record.get("status")=="ok":
-   metrics["taiex"]["official_close"]=record["value"]
-   metrics["taiex"]["official_close_date"]=record["date"]
-   metrics["taiex"]["official_volume_shares"]=record["volume_shares"]
-   metrics["taiex"]["official_turnover_twd"]=record["turnover_twd"]
  if metrics["inst"].get("cash_categories") or metrics["inst"].get("foreign_tx_net_oi") is not None:
   metrics["inst"]["status"]="partial"
   metrics["inst"]["reason"]="法人現貨金額與期貨口數分別顯示"
@@ -294,22 +280,25 @@ def main():
   if "spx" in prices:e["spx"]=round(prices["spx"][-1][1],2)
   e["checked_at"]=NOW.isoformat()
   metrics["indices"].update(e)
- if "tw" in prices:
-  a=prices["tw"];high=max(v for _,v in a);e=entry(a,"https://finance.yahoo.com/quote/%5ETWII/","points")
-  e["drawdown_pct"]=round(100*(high-a[-1][1])/high,2);e["reference"]="近一年最高收盤價"
-  e["checked_at"]=NOW.isoformat()
-  metrics["taiex"].update(e)
+ # Keep vendor quotes as a same-day comparison only. TWSE owns the display close.
+ days=crash_watch.calendar()
+ closes=crash_watch.publish_official_close(
+  metrics["taiex"],old.get("metrics",{}).get("taiex",{}),fetch,NOW,days)
+ official_date=metrics["taiex"].get("date")
+ comparable_close=next((v for d,v in prices.get("tw",[]) if d==official_date),None)
+ if comparable_close is not None:
+  metrics["taiex"]["yahoo_comparison"]={"date":official_date,"value":comparable_close,"status":"ok"}
  if "twd" in prices:
   metrics["fx"].update(entry(prices["twd"],"https://finance.yahoo.com/quote/TWD=X/","TWD per USD"))
   metrics["fx"]["checked_at"]=NOW.isoformat()
   if "dxy" in prices:metrics["fx"]["dxy"]=round(prices["dxy"][-1][1],2)
  if "sox" in prices and "ndx" in prices:
   metrics["breadth"].update({"status":"partial","value":round(prices["sox"][-1][1]/prices["ndx"][-1][1],4),"date":min(prices["sox"][-1][0],prices["ndx"][-1][0]),"unit":"SOX/NDX","reason":"只有半導體相對強弱，市場廣度未取得","source_url":"https://finance.yahoo.com/quote/%5ESOX/"})
- for key in ("indices","taiex","fx","breadth"):
+ for key in ("indices","fx","breadth"):
   if metrics[key]["status"]=="unavailable" and cached(metrics,old,key):metrics[key]["cache_status"]="stale"
  alerts={}
  for prefix,k in [("hy","hy"),("vix","vix"),("ndx","indices"),("tw","taiex")]:
-  if metrics[k]["status"]!="ok" or metrics[k].get("cache_status")=="stale" or metrics[k].get("last_error"):alerts.update({key:v for key,v in previous.items() if key.startswith(prefix)})
+  if metrics[k]["status"]!="ok" or metrics[k].get("cache_status")=="stale" or metrics[k].get("last_error") or (k=="taiex" and "drawdown_pct" not in metrics[k]):alerts.update({key:v for key,v in previous.items() if key.startswith(prefix)})
  def rule(key,trigger,severity,message):
   if trigger:alerts[key]={"severity":severity,"message":message,"first_seen":previous.get(key,{}).get("first_seen",NOW.isoformat())}
  h=metrics["hy"];v=metrics["vix"];n=metrics["indices"];t=metrics["taiex"]
@@ -320,7 +309,7 @@ def main():
   for threshold in (25,35):rule("vix"+str(threshold),v["value"]>=threshold,"critical" if threshold==35 else "warning","VIX ≥"+str(threshold)+"："+str(v["value"]))
  if n["status"]=="ok" and n.get("cache_status")!="stale":
   for threshold in (10,20):rule("ndx"+str(threshold),n["drawdown_pct"]>=threshold,"critical" if threshold==20 else "warning","Nasdaq 100 近一年高點回撤 ≥"+str(threshold)+"%："+str(n["drawdown_pct"])+"%")
- if t["status"]=="ok" and t.get("cache_status")!="stale":
+ if t["status"]=="ok" and t.get("cache_status")!="stale" and "drawdown_pct" in t:
   for threshold in (5,10,15,20,25):rule("tw"+str(threshold),t["drawdown_pct"]>=threshold,"critical" if threshold>=20 else "warning","台股近一年高點回撤 ≥"+str(threshold)+"%："+str(t["drawdown_pct"])+"%")
  pending=old.get("pending_notifications",[])
  for key,a in alerts.items():
@@ -339,7 +328,13 @@ def main():
   try:
    if telegram("全球金融風險雷達\n"+"\n".join("• "+p["message"] for p in pending)+"\n詳情請查看儀表板"):pending=[]
   except Exception as exc:print("Telegram delivery failed:",type(exc).__name__)
- payload={"source_checks":old.get("source_checks",{}),"updated_utc":datetime.datetime.now(datetime.timezone.utc).isoformat(),"request_stats":STATS,"source_failure_streaks":streaks,"metrics":metrics,"active_alerts":alerts,"pending_notifications":pending,"notes":["無資料不代表安全；免費端點可能延遲或停用","回撤基準：近一年最高收盤價","18項已列示，但尚未全部完成資料串接"]}
+ watch_stats=request_stats()
+ watch=crash_watch.snapshot(
+  metrics,old.get("taiwan_crash_watch",{}),closes,
+  lambda source:fetch(source,stats=watch_stats,limit=WATCH_MAX_REQUESTS),
+  datetime.datetime.now(datetime.timezone.utc),days)
+ watch["request_stats"]=dict(watch_stats,limit=WATCH_MAX_REQUESTS)
+ payload={"taiwan_crash_watch":watch,"source_checks":old.get("source_checks",{}),"updated_utc":datetime.datetime.now(datetime.timezone.utc).isoformat(),"request_stats":STATS,"source_failure_streaks":streaks,"metrics":metrics,"active_alerts":alerts,"pending_notifications":pending,"notes":["無資料不代表安全；免費端點可能延遲或停用","回撤基準：近一年最高收盤價","18項已列示，但尚未全部完成資料串接"]}
  OUT.parent.mkdir(parents=True,exist_ok=True)
  OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2))
  print("Updated:",sum(m["status"]=="ok" for m in metrics.values()),"full metrics;",len(alerts),"active alerts; requests",STATS["requests"],"failures",STATS["failure"])

@@ -75,14 +75,18 @@ def evaluate(snapshot, history, today=None):
         if key == "margin" and (unit != "TWD" or record.get("scope") != "TWSE上市市場"):
             errors.append("margin_unit_or_scope_unverified")
         if key == "taiex" and source == "taiex.tw_price":
-            other = metric
+            authoritative = metric.get("provider") == "TWSE"
+            other = metric.get("yahoo_comparison", {}) if authoritative else metric
             if (other.get("status") == "ok" and date == date_value(other.get("date"))
                     and isinstance(other.get("value"), (int, float)) and isinstance(value, (int, float))
                     and value != 0):
                 difference = abs(value - other["value"]) / abs(value)
                 if difference > TOLERANCES[source]:
-                    errors.append("official_yahoo_taiex_disagreement")
-            else:
+                    if authoritative:
+                        warnings.append("taiex_vendor_comparison_disagreement")
+                    else:
+                        errors.append("official_yahoo_taiex_disagreement")
+            elif not authoritative:
                 warnings.append("taiex_cross_source_not_comparable")
         if key == "margin" and date is not None and isinstance(value, (int, float)):
             matches = [r for r in history.get("observations", [])

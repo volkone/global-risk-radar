@@ -1,0 +1,330 @@
+{
+  "schema_version": 1,
+  "rule_version": "taiwan-selloff-v1",
+  "rule": {
+    "prior_day_pct": -3,
+    "drawdown_20_pct": -8,
+    "sox_pct": -2,
+    "tsm_pct": -2
+  },
+  "as_of_taipei": "08:30",
+  "period": [
+    "2000-01-01",
+    "2025-12-31"
+  ],
+  "sources": [
+    {
+      "name": "FinMind TAIEX",
+      "url": "https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPrice&data_id=TAIEX&start_date=1999-01-01",
+      "sha256": "8206ad639a7365e192988f7352a36f5a3d254f7a88e11d895a23ab6a76a46679"
+    },
+    {
+      "name": "Yahoo Finance SOX",
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5ESOX?interval=1d&period1=915148800&period2=1795305600",
+      "sha256": "4b61fbe41573c1cfcbf06591f52bcdd02c15bb42a18f1521ae1d0519ad181467"
+    },
+    {
+      "name": "Yahoo Finance TSM",
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/TSM?interval=1d&period1=915148800&period2=1795305600",
+      "sha256": "e3c68b8580cb0d50a8458556268f4c388f59954916009ab49e5a5ac0e256bc60"
+    },
+    {
+      "name": "TWSE 台股 11 月收盤",
+      "url": "https://www.twse.com.tw/rwd/zh/afterTrading/FMTQIK?response=json&date=20261101",
+      "sha256": "f9656767f8e906c43a2e465b2db7d677821348f04d0bb6771e3d85524cbaf831"
+    }
+  ],
+  "official_overlap_matches": 718,
+  "blocks": [
+    {
+      "start": "2000-01-01",
+      "end": "2025-12-31",
+      "months": 312,
+      "targets": {
+        "1": {
+          "horizon_sessions": 1,
+          "threshold_pct": -4,
+          "eligible": 6428,
+          "scored": 6428,
+          "excluded_missing_premarket_data": 0,
+          "events": 54,
+          "multisource": {
+            "alerts": 139,
+            "hits": 15,
+            "misses": 39,
+            "false_alarms": 124,
+            "false_per_month": 0.397,
+            "precision_pct": 10.79,
+            "recall_pct": 27.78,
+            "episodes_hit": 15,
+            "episodes": 54,
+            "lead_sessions_median": 0,
+            "lead_sessions_range": [
+              0,
+              0
+            ]
+          },
+          "baseline": {
+            "alerts": 141,
+            "hits": 11,
+            "misses": 43,
+            "false_alarms": 130,
+            "false_per_month": 0.417,
+            "precision_pct": 7.8,
+            "recall_pct": 20.37,
+            "episodes_hit": 11,
+            "episodes": 54,
+            "lead_sessions_median": 0,
+            "lead_sessions_range": [
+              0,
+              0
+            ]
+          }
+        },
+        "5": {
+          "horizon_sessions": 5,
+          "threshold_pct": -8,
+          "eligible": 6424,
+          "scored": 6424,
+          "excluded_missing_premarket_data": 0,
+          "events": 84,
+          "multisource": {
+            "alerts": 139,
+            "hits": 9,
+            "misses": 75,
+            "false_alarms": 130,
+            "false_per_month": 0.417,
+            "precision_pct": 6.47,
+            "recall_pct": 10.71,
+            "episodes_hit": 5,
+            "episodes": 34,
+            "lead_sessions_median": 3,
+            "lead_sessions_range": [
+              2,
+              4
+            ]
+          },
+          "baseline": {
+            "alerts": 141,
+            "hits": 9,
+            "misses": 75,
+            "false_alarms": 132,
+            "false_per_month": 0.423,
+            "precision_pct": 6.38,
+            "recall_pct": 10.71,
+            "episodes_hit": 6,
+            "episodes": 34,
+            "lead_sessions_median": 4,
+            "lead_sessions_range": [
+              2,
+              4
+            ]
+          }
+        }
+      }
+    },
+    {
+      "start": "2000-01-01",
+      "end": "2012-12-31",
+      "months": 156,
+      "targets": {
+        "1": {
+          "horizon_sessions": 1,
+          "threshold_pct": -4,
+          "eligible": 3252,
+          "scored": 3252,
+          "excluded_missing_premarket_data": 0,
+          "events": 38,
+          "multisource": {
+            "alerts": 114,
+            "hits": 10,
+            "misses": 28,
+            "false_alarms": 104,
+            "false_per_month": 0.667,
+            "precision_pct": 8.77,
+            "recall_pct": 26.32,
+            "episodes_hit": 10,
+            "episodes": 38,
+            "lead_sessions_median": 0.0,
+            "lead_sessions_range": [
+              0,
+              0
+            ]
+          },
+          "baseline": {
+            "alerts": 113,
+            "hits": 6,
+            "misses": 32,
+            "false_alarms": 107,
+            "false_per_month": 0.686,
+            "precision_pct": 5.31,
+            "recall_pct": 15.79,
+            "episodes_hit": 6,
+            "episodes": 38,
+            "lead_sessions_median": 0.0,
+            "lead_sessions_range": [
+              0,
+              0
+            ]
+          }
+        },
+        "5": {
+          "horizon_sessions": 5,
+          "threshold_pct": -8,
+          "eligible": 3248,
+          "scored": 3248,
+          "excluded_missing_premarket_data": 0,
+          "events": 64,
+          "multisource": {
+            "alerts": 114,
+            "hits": 6,
+            "misses": 58,
+            "false_alarms": 108,
+            "false_per_month": 0.692,
+            "precision_pct": 5.26,
+            "recall_pct": 9.38,
+            "episodes_hit": 4,
+            "episodes": 27,
+            "lead_sessions_median": 3.0,
+            "lead_sessions_range": [
+              2,
+              4
+            ]
+          },
+          "baseline": {
+            "alerts": 113,
+            "hits": 5,
+            "misses": 59,
+            "false_alarms": 108,
+            "false_per_month": 0.692,
+            "precision_pct": 4.42,
+            "recall_pct": 7.81,
+            "episodes_hit": 4,
+            "episodes": 27,
+            "lead_sessions_median": 4,
+            "lead_sessions_range": [
+              3,
+              4
+            ]
+          }
+        }
+      }
+    },
+    {
+      "start": "2013-01-01",
+      "end": "2025-12-31",
+      "months": 156,
+      "targets": {
+        "1": {
+          "horizon_sessions": 1,
+          "threshold_pct": -4,
+          "eligible": 3176,
+          "scored": 3176,
+          "excluded_missing_premarket_data": 0,
+          "events": 16,
+          "multisource": {
+            "alerts": 25,
+            "hits": 5,
+            "misses": 11,
+            "false_alarms": 20,
+            "false_per_month": 0.128,
+            "precision_pct": 20.0,
+            "recall_pct": 31.25,
+            "episodes_hit": 5,
+            "episodes": 16,
+            "lead_sessions_median": 0,
+            "lead_sessions_range": [
+              0,
+              0
+            ]
+          },
+          "baseline": {
+            "alerts": 28,
+            "hits": 5,
+            "misses": 11,
+            "false_alarms": 23,
+            "false_per_month": 0.147,
+            "precision_pct": 17.86,
+            "recall_pct": 31.25,
+            "episodes_hit": 5,
+            "episodes": 16,
+            "lead_sessions_median": 0,
+            "lead_sessions_range": [
+              0,
+              0
+            ]
+          }
+        },
+        "5": {
+          "horizon_sessions": 5,
+          "threshold_pct": -8,
+          "eligible": 3172,
+          "scored": 3172,
+          "excluded_missing_premarket_data": 0,
+          "events": 20,
+          "multisource": {
+            "alerts": 25,
+            "hits": 3,
+            "misses": 17,
+            "false_alarms": 22,
+            "false_per_month": 0.141,
+            "precision_pct": 12.0,
+            "recall_pct": 15.0,
+            "episodes_hit": 1,
+            "episodes": 7,
+            "lead_sessions_median": 2,
+            "lead_sessions_range": [
+              2,
+              4
+            ]
+          },
+          "baseline": {
+            "alerts": 28,
+            "hits": 4,
+            "misses": 16,
+            "false_alarms": 24,
+            "false_per_month": 0.154,
+            "precision_pct": 14.29,
+            "recall_pct": 20.0,
+            "episodes_hit": 2,
+            "episodes": 7,
+            "lead_sessions_median": 2.5,
+            "lead_sessions_range": [
+              2,
+              4
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "qualification": "research_only",
+  "baseline_comparison": {
+    "1": {
+      "more_hits": true,
+      "fewer_false_alarms": true
+    },
+    "5": {
+      "more_hits": false,
+      "fewer_false_alarms": true
+    }
+  },
+  "case": {
+    "date": "2026-11-20",
+    "type": "historical_replay",
+    "assumed_cutoff_taipei": "2026-11-20T08:30:00+08:00",
+    "taiwan": {
+      "date": "2026-11-19",
+      "prior_day_pct": -4.3986166408,
+      "drawdown_20_pct": -18.3025063154
+    },
+    "us_date": "2026-11-19",
+    "sox_pct": -2.414637026,
+    "tsm_pct": -2.9038660088,
+    "multisource_alert": true,
+    "baseline_alert": true,
+    "close": 36033.29,
+    "change_points": -2393.6,
+    "change_pct": -6.2289714312
+  }
+}

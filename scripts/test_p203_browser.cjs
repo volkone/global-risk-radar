@@ -52,6 +52,26 @@ const delay=ms=>new Promise(r=>setTimeout(r,ms));
     assert.equal(await page.locator('#strategy-title').count(),0,'3C scenario removed');
     const snapshot=await read(page,'data.json');
     assert.equal(Object.hasOwn(snapshot,'strategy'),false,'3C strategy state removed');
+    const crash = page.locator('#taiwan-crash-watch');
+    await page.waitForFunction(()=>document.querySelector('.crash-research')?.dataset.status==='loaded');
+    assert.equal(await crash.locator('article').count(),3,'selloff dashboard has three market phases');
+    const watch = snapshot.taiwan_crash_watch;
+    assert.equal(watch.schema_version,1);
+    const tw = snapshot.metrics.taiex;
+    if (Number.isFinite(tw.official_close)) {
+      assert.equal(tw.provider,'TWSE','Taiwan headline uses the exchange close');
+      assert.equal(tw.value,tw.official_close);
+      assert.equal(tw.date,tw.official_close_date);
+    }
+    if (watch.market?.tse?.down_pct != null)
+      assert((await crash.innerText()).includes(`${watch.market.tse.down}/${watch.market.tse.compared}`));
+    if (watch.leverage?.five_day_pct != null)
+      assert((await crash.innerText()).includes(watch.leverage.five_day_prior_date));
+    await crash.locator('summary').click();
+    const validation = await read(page,'taiwan_crash_watch_validation.json');
+    const comparison = validation.blocks[0].targets['1'];
+    assert((await crash.innerText()).includes(`${comparison.multisource.hits}/${comparison.events}`));
+    assert((await crash.innerText()).includes('11/20 盤前回放'));
     const market = page.locator('#market-analysis');
     await page.waitForFunction(()=>!document.getElementById('market-analysis').textContent.includes('正在核對'));
     if (site) {
@@ -117,12 +137,15 @@ const delay=ms=>new Promise(r=>setTimeout(r,ms));
     await testPage.waitForFunction(()=>document.querySelectorAll('#cards .card').length===0);
     assert((await testPage.locator('#alerts').textContent()).includes('不可用'));
     assert.equal(await testPage.locator('#market-analysis article').count(),0);
+    assert.equal(await testPage.locator('#taiwan-crash-watch article').count(),0);
+    assert((await testPage.locator('.crash-cards').textContent()).includes('暫時不可用'));
     assert.equal(await testPage.locator('#p203-research').getAttribute('data-status'),'loaded');
     await testPage.unroute('**/risk_dashboard.json?*');
     await testPage.unroute('**/data.json?*');
     await testPage.clock.fastForward(61000);
     await testPage.waitForFunction(()=>!document.querySelector('#risk-series').disabled);
     await testPage.waitForFunction(()=>document.querySelectorAll('#cards .card').length>=4);
+    assert.equal(await testPage.locator('#taiwan-crash-watch article').count(),3);
     assert.deepEqual(errors,[],'JS exceptions after recovery');
     console.log(JSON.stringify({status:'PASS',research_json_checks:true,legacy_dashboard:true,controls:true,blocked:true,js_errors:errors,failed_requests:failed,screenshot:'p203_browser_acceptance.png'}));
   }finally{if(browser)await browser.close();server?.kill('SIGTERM');}
