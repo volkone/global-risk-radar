@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-21T09:55:57.511789+00:00",
-  "record_count": 102,
+  "generated_at": "2026-11-21T16:23:19.706426+00:00",
+  "record_count": 104,
   "revision_count": 238,
   "observations": [
     {
@@ -38,7 +38,16 @@
       "observation_date": "2026-11-20",
       "value": -97863.0,
       "unit": "口",
-      "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?queryDate=2026%2F11%2F20&commodityId=TXF&queryType=1"
+      "source_url": "https://openapi.taifex.com.tw/v1/MarketDataOfMajorInstitutionalTradersDetailsOfFuturesContractsBytheDate"
+    },
+    {
+      "metric_id": "maint",
+      "provider": "TWSE",
+      "scope": "上市櫃整戶信用交易",
+      "observation_date": "2026-11-20",
+      "value": 151.78,
+      "unit": "%",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/BFIJ3U_TREND?response=json&days=1&date=20261120"
     },
     {
       "metric_id": "margin.margin",
@@ -147,6 +156,15 @@
       "value": 38426.89,
       "unit": "points",
       "source_url": "https://www.twse.com.tw/rwd/zh/afterTrading/FMTQIK?response=json&date=20261101"
+    },
+    {
+      "metric_id": "us10y",
+      "provider": "FRED official API",
+      "scope": "",
+      "observation_date": "2026-11-19",
+      "value": 5.04,
+      "unit": "%",
+      "source_url": "https://fred.stlouisfed.org/series/DGS10"
     },
     {
       "metric_id": "vix",

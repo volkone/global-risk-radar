@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "evaluated_at": "2026-11-21T09:55:57.557048+00:00",
-  "snapshot_updated_at": "2026-11-21T09:55:57.266349+00:00",
-  "history_generated_at": "2026-11-21T09:55:57.511789+00:00",
+  "evaluated_at": "2026-11-21T16:23:19.756565+00:00",
+  "snapshot_updated_at": "2026-11-21T16:23:19.447633+00:00",
+  "history_generated_at": "2026-11-21T16:23:19.706426+00:00",
   "summary": {
-    "pass": 11,
+    "pass": 12,
     "caution": 0,
-    "blocked": 9
+    "blocked": 8
   },
   "metrics": {
     "hy": {
@@ -36,8 +36,8 @@
     "us10y": {
       "quality": "pass",
       "source": "us10y",
-      "date": "2026-11-18",
-      "age_days": 3,
+      "date": "2026-11-19",
+      "age_days": 2,
       "errors": [],
       "warnings": []
     },
@@ -154,16 +154,11 @@
       "warnings": []
     },
     "maint": {
-      "quality": "blocked",
+      "quality": "pass",
       "source": "maint",
-      "date": null,
-      "age_days": null,
-      "errors": [
-        "source_not_verified",
-        "missing_or_invalid_date",
-        "missing_or_invalid_numeric_value",
-        "missing_unit"
-      ],
+      "date": "2026-11-20",
+      "age_days": 1,
+      "errors": [],
       "warnings": []
     },
     "inst": {
@@ -334,26 +329,6 @@
     },
     {
       "metric": "airev",
-      "severity": "error",
-      "code": "missing_unit"
-    },
-    {
-      "metric": "maint",
-      "severity": "error",
-      "code": "source_not_verified"
-    },
-    {
-      "metric": "maint",
-      "severity": "error",
-      "code": "missing_or_invalid_date"
-    },
-    {
-      "metric": "maint",
-      "severity": "error",
-      "code": "missing_or_invalid_numeric_value"
-    },
-    {
-      "metric": "maint",
       "severity": "error",
       "code": "missing_unit"
     },
