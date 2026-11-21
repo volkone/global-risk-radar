@@ -2,7 +2,7 @@
   "taiwan_crash_watch": {
     "schema_version": 1,
     "date": "2026-11-21",
-    "checked_at": "2026-11-21T03:34:43.330686+00:00",
+    "checked_at": "2026-11-21T03:36:42.024878+00:00",
     "trading_day": false,
     "rule_version": "taiwan-selloff-v1",
     "rule": {
@@ -14,7 +14,7 @@
     "market": {
       "mode": "close",
       "date": "2026-11-20",
-      "checked_at": "2026-11-21T03:34:43.330686+00:00",
+      "checked_at": "2026-11-21T03:36:42.024878+00:00",
       "taiex_pct": -6.2289714312,
       "tse": {
         "up": 16,
@@ -63,13 +63,10 @@
       "five_day_pct": -18.8915153984
     },
     "request_stats": {
-      "requests": 5,
-      "success": 5,
+      "requests": 0,
+      "success": 0,
       "failure": 0,
-      "by_host": {
-        "www.twse.com.tw": 4,
-        "www.tpex.org.tw": 1
-      },
+      "by_host": {},
       "errors": [],
       "skipped": [],
       "limit": 24
@@ -81,14 +78,13 @@
     "tw_tw_price": "2026-11-20T14:40:08.036172+00:00",
     "tw_futures": "2026-11-20T14:40:08.036172+00:00"
   },
-  "updated_utc": "2026-11-21T03:34:48.068480+00:00",
+  "updated_utc": "2026-11-21T03:36:42.024995+00:00",
   "request_stats": {
-    "requests": 7,
-    "success": 7,
+    "requests": 6,
+    "success": 6,
     "failure": 0,
     "by_host": {
-      "query1.finance.yahoo.com": 6,
-      "www.twse.com.tw": 1
+      "query1.finance.yahoo.com": 6
     },
     "errors": [],
     "skipped": []
@@ -2078,7 +2074,7 @@
       "drawdown_pct": 19.84,
       "reference": "近一年最高收盤價",
       "spx": 6910.39,
-      "checked_at": "2026-11-21T03:34:41.720581+00:00"
+      "checked_at": "2026-11-21T03:36:41.515382+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -4099,7 +4095,7 @@
           "value": 33.026
         }
       ],
-      "checked_at": "2026-11-21T03:34:41.720581+00:00",
+      "checked_at": "2026-11-21T03:36:41.515382+00:00",
       "dxy": 103.84
     }
   },
