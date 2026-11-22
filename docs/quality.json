@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "evaluated_at": "2026-11-22T11:39:21.054571+00:00",
-  "snapshot_updated_at": "2026-11-22T11:39:20.651950+00:00",
-  "history_generated_at": "2026-11-22T11:39:20.989297+00:00",
+  "evaluated_at": "2026-11-22T19:41:14.064738+00:00",
+  "snapshot_updated_at": "2026-11-22T19:41:13.773562+00:00",
+  "history_generated_at": "2026-11-22T19:41:13.969652+00:00",
   "summary": {
     "pass": 12,
     "caution": 0,
@@ -184,8 +184,8 @@
     "fx": {
       "quality": "pass",
       "source": "fx",
-      "date": "2026-11-20",
-      "age_days": 2,
+      "date": "2026-11-22",
+      "age_days": 0,
       "errors": [],
       "warnings": []
     },

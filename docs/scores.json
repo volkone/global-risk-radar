@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-22T11:39:23.569668+00:00",
+  "generated_at": "2026-11-22T19:41:15.824388+00:00",
   "model_status": "separate_global_prototype_and_evidence_gated_taiwan",
   "disclaimer": "Global is provisional; historical Taiwan reconstruction is research-only. Formal Taiwan eligibility is recorded in quality_gate.",
   "global": {
@@ -67,7 +67,7 @@
       }
     ],
     "model_id": "global_rate_v2",
-    "as_of": "2026-11-22T11:39:20.651950+00:00"
+    "as_of": "2026-11-22T19:41:13.773562+00:00"
   },
   "taiwan": {
     "status": "formal_model_blocked",
@@ -78,7 +78,7 @@
     "as_of": null,
     "quality_gate": {
       "status": "BLOCKED",
-      "evaluated_for_date": "2026-11-22",
+      "evaluated_for_date": "2026-11-23",
       "checks": [
         {
           "id": "publication",
@@ -108,7 +108,7 @@
           "id": "current_forecast",
           "label": "當日可追溯前瞻分數",
           "passed": false,
-          "evidence": "storage/prospective/forecasts/2026-11-22.json"
+          "evidence": "storage/prospective/forecasts/2026-11-23.json"
         }
       ],
       "blockers": [
