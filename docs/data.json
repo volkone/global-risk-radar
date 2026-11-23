@@ -155,7 +155,7 @@
   "source_checks": {
     "tw_margin": "2026-11-23T13:31:10.341750+00:00",
     "tw_cash_inst": "2026-11-23T13:31:10.341750+00:00",
-    "tw_futures": "2026-11-23T13:31:10.341750+00:00"
+    "tw_futures": "2026-11-23T13:31:46.644936+00:00"
   },
   "updated_utc": "2026-11-23T13:31:39.727260+00:00",
   "request_stats": {
@@ -2315,33 +2315,15 @@
           "reason": "集中市場法人現貨買賣超金額；外資自營商不重複計入合計"
         },
         "futures": {
-          "checked_at": "2026-11-23T13:31:10.341750+00:00",
-          "source_url": "https://openapi.taifex.com.tw/v1/MarketDataOfMajorInstitutionalTradersDetailsOfFuturesContractsBytheDate",
-          "records": 66,
-          "sample_fields": [
-            "Date",
-            "ContractCode",
-            "Item",
-            "TradingVolume(Long)",
-            "TradingValue(Long)(Thousands)",
-            "TradingVolume(Short)",
-            "TradingValue(Short)(Thousands)",
-            "TradingVolume(Net)",
-            "TradingValue(Net)(Thousands)",
-            "OpenInterest(Long)",
-            "ContractValueofOpenInterest(Long)(Thousands)",
-            "OpenInterest(Short)",
-            "ContractValueofOpenInterest(Short)(Thousands)",
-            "OpenInterest(Net)",
-            "ContractValueofOpenInterest(Net)(Thousands)"
-          ],
           "status": "ok",
-          "foreign_tx_net_oi": -97863,
-          "date": "2026-11-20",
-          "unit": "口",
+          "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?queryDate=2026%2F11%2F23&commodityId=TXF&queryType=1",
           "provider": "TAIFEX",
+          "date": "2026-11-23",
+          "unit": "口",
+          "foreign_tx_net_oi": -103432,
           "contract": "臺股期貨",
-          "trader": "外資及陸資"
+          "trader": "外資及陸資",
+          "checked_at": "2026-11-23T13:31:46.644936+00:00"
         }
       },
       "cash_categories": [
@@ -2371,10 +2353,10 @@
         }
       ],
       "cash_date": "2026-11-23",
-      "foreign_tx_net_oi": -97863,
-      "futures_date": "2026-11-20",
+      "foreign_tx_net_oi": -103432,
+      "futures_date": "2026-11-23",
       "futures_contract": "臺股期貨",
-      "date": "2026-11-20"
+      "date": "2026-11-23"
     },
     "taiex": {
       "name": "台股回撤與成交量",
