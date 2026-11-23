@@ -73,8 +73,16 @@ const delay=ms=>new Promise(r=>setTimeout(r,ms));
     }
     if (site || watch?.credit) {
       const credit = crash.locator('.credit-pressure');
-      assert((await credit.innerText()).includes('次一營業日應處分'));
-      assert((await credit.innerText()).includes(watch.credit.date));
+      const creditText = await credit.innerText();
+      if (watch.credit.date === '2026-11-23') {
+        assert(creditText.includes('原統計次日處分金額'));
+        assert(creditText.includes('11/24 起追繳門檻調為 120%'));
+        assert(!creditText.includes('應處分日（依交易日曆）'));
+        assert.equal(await credit.getByRole('link', {name:'證交所追繳門檻公告'}).count(),1);
+      } else {
+        assert(creditText.includes('次一營業日應處分'));
+      }
+      assert(creditText.includes(watch.credit.date));
       assert.equal(watch.credit.maintenance_pct,snapshot.metrics.maint.value);
       const breadth = crash.locator('.trend-breadth');
       assert((await breadth.innerText()).includes('站上 20 日線'));
