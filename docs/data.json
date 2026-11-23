@@ -2363,14 +2363,14 @@
       "reason": "證交所發行量加權股價指數收盤",
       "provider": "TWSE",
       "source_url": "https://www.twse.com.tw/rwd/zh/afterTrading/FMTQIK?response=json&date=20261101",
-      "checked_at": "2026-11-23T09:06:38.456351+00:00",
+      "checked_at": "2026-11-23T13:36:43.913054+00:00",
       "date": "2026-11-23",
       "value": 36811.89,
       "unit": "points",
       "official_close": 36811.89,
       "official_close_date": "2026-11-23",
-      "official_volume_shares": 15927149387,
-      "official_turnover_twd": 1106677379449,
+      "official_volume_shares": 15947613387,
+      "official_turnover_twd": 1113743193221,
       "official_history": [
         [
           "2025-10-29",
@@ -3775,14 +3775,14 @@
         "tw_price": {
           "date": "2026-11-23",
           "value": 36811.89,
-          "volume_shares": 15927149387,
-          "turnover_twd": 1106677379449,
+          "volume_shares": 15947613387,
+          "turnover_twd": 1113743193221,
           "change_points": 778.6,
           "status": "ok",
           "provider": "TWSE",
           "unit": "points",
           "source_url": "https://www.twse.com.tw/rwd/zh/afterTrading/FMTQIK?response=json&date=20261101",
-          "checked_at": "2026-11-23T09:06:38.456351+00:00"
+          "checked_at": "2026-11-23T13:36:43.913054+00:00"
         }
       },
       "drawdown_pct": 26.11,

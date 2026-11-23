@@ -170,18 +170,26 @@
     }
     const pending = credit.status === 'pending' ? ` · ${credit.expected_date} 待公布` :
       credit.status === 'source_error' ? ' · 上次公告值' : '';
+    const transition = credit.date === '2026-11-23';
     node.append(el('p', `資料日 ${credit.date}${pending}`, 'small muted'),
       facts([
         ['整戶擔保維持率', fmt(credit.maintenance_pct) + '%'],
         ['整戶維持率 1 日變化', signed(credit.change_1d_pp, ' 個百分點')],
         ['整戶維持率 5 日變化', signed(credit.change_5d_pp, ' 個百分點')],
         ['低於 130% 的帳戶', accounts(credit.accounts_below_130)],
-        ['當日通知補繳金額', amount(credit.margin_call_twd)],
-        ['次一營業日應處分戶數', accounts(credit.disposal_accounts)],
-        ['次一營業日應處分金額', amount(credit.disposal_twd)]
+        [transition ? '盤後統計補繳金額' : '當日通知補繳金額', amount(credit.margin_call_twd)],
+        [transition ? '原統計次日處分戶數' : '次一營業日應處分戶數', accounts(credit.disposal_accounts)],
+        [transition ? '原統計次日處分金額' : '次一營業日應處分金額', amount(credit.disposal_twd)]
       ]));
-    if (credit.disposal_date) node.append(el('p', '應處分日（依交易日曆） ' + credit.disposal_date, 'small muted'));
-    node.append(el('p', '證交所彙整上市櫃整戶信用交易。應處分為券商須處理的部位。', 'small muted'),
+    if (transition) {
+      node.append(el('p', '11/24 起追繳門檻調為 120%。此前依 130% 門檻已發出的追繳紀錄取消，相關擔保品免處分。', 'small muted'),
+        link('證交所追繳門檻公告', 'https://www.twse.com.tw/staticFiles/news/news/tsecnews/8a8216d6a19afd9c01a2073bb7af0594.pdf'),
+        document.createTextNode(' · '));
+    } else if (credit.disposal_date) {
+      node.append(el('p', '應處分日（依交易日曆） ' + credit.disposal_date, 'small muted'));
+    }
+    node.append(el('p', transition ? '證交所彙整上市櫃整戶信用交易。'
+      : '證交所彙整上市櫃整戶信用交易。應處分為券商須處理的部位。', 'small muted'),
       link('證交所臺股儀表板', credit.source_url), document.createTextNode(' · '),
       link('全市場信用交易歷史', 'taiwan_credit_history.json'));
     return node;
