@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "evaluated_at": "2026-11-23T13:31:51.680670+00:00",
-  "snapshot_updated_at": "2026-11-23T13:31:39.727260+00:00",
-  "history_generated_at": "2026-11-23T13:31:51.639857+00:00",
+  "evaluated_at": "2026-11-23T13:35:43.632303+00:00",
+  "snapshot_updated_at": "2026-11-23T13:35:43.191778+00:00",
+  "history_generated_at": "2026-11-23T13:35:43.579585+00:00",
   "summary": {
     "pass": 12,
     "caution": 0,
@@ -164,8 +164,8 @@
     "inst": {
       "quality": "blocked",
       "source": "inst",
-      "date": "2026-11-20",
-      "age_days": 3,
+      "date": "2026-11-23",
+      "age_days": 0,
       "errors": [
         "source_not_verified",
         "missing_or_invalid_numeric_value",
@@ -200,8 +200,8 @@
     "inst.futures": {
       "quality": "pass",
       "source": "inst.futures",
-      "date": "2026-11-20",
-      "age_days": 3,
+      "date": "2026-11-23",
+      "age_days": 0,
       "errors": [],
       "warnings": []
     }
