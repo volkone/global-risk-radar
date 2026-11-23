@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "evaluated_at": "2026-11-23T00:54:19.054653+00:00",
-  "snapshot_updated_at": "2026-11-23T00:54:18.827024+00:00",
-  "history_generated_at": "2026-11-23T00:54:19.019603+00:00",
+  "evaluated_at": "2026-11-23T09:07:03.870810+00:00",
+  "snapshot_updated_at": "2026-11-23T09:07:03.587199+00:00",
+  "history_generated_at": "2026-11-23T09:07:03.803384+00:00",
   "summary": {
     "pass": 12,
     "caution": 0,
@@ -176,8 +176,8 @@
     "taiex": {
       "quality": "pass",
       "source": "taiex.tw_price",
-      "date": "2026-11-20",
-      "age_days": 3,
+      "date": "2026-11-23",
+      "age_days": 0,
       "errors": [],
       "warnings": []
     },
@@ -192,8 +192,8 @@
     "inst.cash_inst": {
       "quality": "pass",
       "source": "inst.cash_inst",
-      "date": "2026-11-20",
-      "age_days": 3,
+      "date": "2026-11-23",
+      "age_days": 0,
       "errors": [],
       "warnings": []
     },
