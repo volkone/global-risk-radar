@@ -125,6 +125,32 @@ const delay=ms=>new Promise(r=>setTimeout(r,ms));
     assert.equal(await events.count(),Math.min(12,ranking.entries.filter(item=>item.rank===25).length));
     assert(await foreign.locator('.foreign-prev').isDisabled());
     await foreign.locator('select').selectOption('0');
+    const buy = foreign.getByRole('button',{name:'買超前 25 名'});
+    const sell = foreign.getByRole('button',{name:'賣超前 25 名'});
+    assert.equal(await sell.getAttribute('aria-pressed'),'true');
+    await foreign.locator('.foreign-window').fill('');
+    await buy.click();
+    assert.equal(await buy.getAttribute('aria-pressed'),'true');
+    assert.equal(await sell.getAttribute('aria-pressed'),'false');
+    assert.equal(await foreign.locator('.foreign-top tr').count(),25);
+    const buyLeader = ranking.buy.top[0];
+    const buyAmount = (buyLeader.net_twd / 1e8).toLocaleString('zh-TW',
+      {minimumFractionDigits:2,maximumFractionDigits:2});
+    assert.equal(await foreign.locator('.foreign-top tr').first().locator('td').nth(0).textContent(),
+      '第1名 ' + buyLeader.date.replaceAll('-',''));
+    assert.equal(await foreign.locator('.foreign-top tr').first().locator('td').nth(1).textContent(),
+      '+' + buyAmount);
+    assert((await events.first().textContent()).includes(ranking.buy.entries.at(-1).date));
+    assert.equal(await events.first().locator('td').count(),3);
+    assert(await foreign.locator('.foreign-window').isHidden());
+    await foreign.locator('select').selectOption('1');
+    assert.equal(await events.count(),Math.min(12,ranking.buy.entries.filter(item=>item.rank===1).length));
+    assert.equal(await foreign.locator('.foreign-events tr:not([data-rank="1"])').count(),0);
+    await foreign.locator('select').selectOption('0');
+    await sell.click();
+    assert((await events.first().textContent()).includes(latest.date));
+    assert.equal(await events.first().locator('td').count(),4);
+    await foreign.locator('.foreign-window').fill('5');
     const before=await page.locator('#p203-research').innerText();
     await page.selectOption('#risk-series','global');
     await page.selectOption('#risk-range','60');
@@ -147,7 +173,9 @@ const delay=ms=>new Promise(r=>setTimeout(r,ms));
     }
     await page.selectOption('#risk-series','taiwan');
     await page.setViewportSize({width:360,height:800});
+    await buy.click();
     assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'mobile viewport overflow');
+    await sell.click();
     assert.equal(await page.locator('#risk-chart svg').count(),1);
     assert.deepEqual(errors,[],'JS exceptions after interaction');
     assert.deepEqual(failed,[],'failed requests after interaction');

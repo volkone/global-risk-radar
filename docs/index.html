@@ -4,12 +4,16 @@
 .foreign-events{font-variant-numeric:tabular-nums}
 .foreign-rarity{display:block;color:#8de4d4;font-weight:700}
 .foreign-denominator{display:block;color:#a7b5ce;font-size:.85em}
+.foreign-direction{display:flex;flex-wrap:wrap;gap:8px}
+.foreign-direction button{padding:8px 12px;font:inherit}
+.foreign-direction button[aria-pressed="true"]{background:#3a5378;border-color:#8eb8f7}
 .foreign-pagination{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:10px}
-.foreign-pagination button{background:#263651;color:white;border:1px solid #425576;border-radius:7px;padding:6px 10px;cursor:pointer}
-.foreign-pagination button:disabled{opacity:.45;cursor:default}
+.foreign-direction button,.foreign-pagination button{background:#263651;color:white;border:1px solid #425576;border-radius:7px;cursor:pointer}
+.foreign-pagination button{padding:6px 10px}
+.foreign-direction button:disabled,.foreign-pagination button:disabled{opacity:.45;cursor:default}
 .foreign-layout td:last-child,.foreign-layout th:last-child{text-align:right;font-variant-numeric:tabular-nums}
 .foreign-controls input{width:5.5rem;color:inherit;background:transparent;border:1px solid #425466;border-radius:4px;padding:3px 5px}
-.foreign-events td:last-child{min-width:9rem}
+.foreign-events .foreign-rebound-cell{min-width:9rem}
 @media(max-width:650px){.foreign-layout{grid-template-columns:minmax(0,1fr)}}
 </style><link rel="stylesheet" href="taiwan_crash_watch.css?v=credit-breadth"></head><body><main><header><div><h1>全球金融風險雷達</h1><p>美股信用 · 科技與 AI · 台股籌碼 · 匯率</p></div><span class="status">公開資料監控｜非即時行情</span></header><p id="updated" role="status">讀取資料中…</p><section class="panel crash-watch" id="taiwan-crash-watch" aria-labelledby="crash-watch-title">
 <h2 id="crash-watch-title">台股急跌警戒</h2>
@@ -20,21 +24,25 @@
 <details id="breadth-research"><summary>市場廣度回測</summary><div class="crash-breadth-research">正在讀取回測…</div></details>
 </section>
 <section class="panel" aria-labelledby="market-analysis-title"><h2 id="market-analysis-title">市場策略解讀</h2><div id="market-analysis">正在核對市場快照與資料品質…</div></section><section class="panel" id="foreign-cash-ranking" aria-labelledby="foreign-cash-title">
-<h2 id="foreign-cash-title">台股外資單日賣超前 25 名</h2>
-<p class="muted" role="status">讀取外資賣超歷史…</p>
+<h2 id="foreign-cash-title">台股外資單日買賣超前 25 名</h2>
+<div class="foreign-direction" role="group" aria-label="外資買賣超方向">
+<button type="button" data-direction="sell" aria-pressed="true" disabled>賣超前 25 名</button>
+<button type="button" data-direction="buy" aria-pressed="false" disabled>買超前 25 名</button>
+</div>
+<p class="muted" role="status">讀取外資買賣超歷史…</p>
 <div class="foreign-layout">
-<div><h3>歷史總榜</h3><div class="foreign-scroll"><table><thead><tr><th>名次與日期</th><th>淨額（億元）</th></tr></thead><tbody class="foreign-top"></tbody></table></div></div>
+<div><h3 class="foreign-board-title">賣超歷史總榜</h3><div class="foreign-scroll"><table><thead><tr><th>名次與日期</th><th>淨額（億元）</th></tr></thead><tbody class="foreign-top"></tbody></table></div></div>
 <div><h3>入榜當時有多罕見</h3>
-<div class="foreign-controls"><label>觀察交易日 <input class="foreign-window" type="number" min="1" max="20" step="1" value="5"></label> <label>反彈門檻（%） <input class="foreign-threshold" type="number" min="0.01" max="100" step="0.01" value="0.20"></label> <label>當日名次 <select disabled><option value="0">全部名次</option></select></label></div>
-<p class="small muted">前百分比＝當日名次 ÷ 截至當天已收錄的交易日數，包含買超日。百分比越小，當時越少見。</p>
-<p class="small muted foreign-rebound-summary" aria-live="polite"></p>
-<details class="small muted"><summary>收盤價與交易日覆蓋</summary><p>反彈統計僅採用完整觀察窗口。官方交易日曆範圍以外，依已收錄的證交所收盤或籌碼日期辨識交易日。早於收盤資料的事件仍可查看當時排名。</p></details>
-<div style="overflow-x:auto"><table><thead><tr><th>入榜日期</th><th>當時有多罕見</th><th>淨額（億元）</th><th>反彈狀態</th></tr></thead><tbody class="foreign-events"></tbody></table></div>
+<div class="foreign-controls"><label data-sell-only>觀察交易日 <input class="foreign-window" type="number" min="1" max="20" step="1" value="5"></label> <label data-sell-only>反彈門檻（%） <input class="foreign-threshold" type="number" min="0.01" max="100" step="0.01" value="0.20"></label> <label>當日名次 <select disabled><option value="0">全部名次</option></select></label></div>
+<p class="small muted">前百分比＝入榜名次 ÷ 截至當天已收錄的全部交易日。百分比越小，當時越少見。</p>
+<p class="small muted foreign-rebound-summary" data-sell-only aria-live="polite"></p>
+<details class="small muted" data-sell-only><summary>收盤價與交易日覆蓋</summary><p>反彈統計僅採用完整觀察窗口。官方交易日曆範圍以外，依已收錄的證交所收盤或籌碼日期辨識交易日。早於收盤資料的事件仍可查看當時排名。</p></details>
+<div style="overflow-x:auto"><table><thead><tr><th>入榜日期</th><th>當時有多罕見</th><th>淨額（億元）</th><th data-sell-only>反彈狀態</th></tr></thead><tbody class="foreign-events"></tbody></table></div>
 <div class="foreign-pagination"><button type="button" class="foreign-prev" disabled>上一頁</button><span class="foreign-page small muted" aria-live="polite"></span><button type="button" class="foreign-next" disabled>下一頁</button></div>
 </div></div>
 <p class="small muted">上市大盤外資及陸資現貨淨額，排除另行列示的外資自營商。金額相同時較早日期優先。
 <a href="https://www.twse.com.tw/zh/trading/foreign/bfi82u.html">證交所資料</a> ·
-<a href="https://finmind.github.io/en/tutor/TaiwanMarket/Chip/">歷史資料來源</a> · <a href="foreign_cash_source_check.json">證交所核對紀錄</a></p>
+<a href="https://finmind.github.io/en/tutor/TaiwanMarket/Chip/">歷史資料來源</a><span data-sell-only> · <a href="foreign_cash_source_check.json">證交所核對紀錄</a></span></p>
 </section><section class="panel" aria-labelledby="risk-title"><header><div><h2 id="risk-title">風險評分與歷史趨勢</h2><p id="risk-count" class="small muted">讀取歷史資料中…</p></div><span class="status warn" id="risk-gate">正式模型待驗證</span></header><p id="risk-error" class="warn" role="status"></p><div class="grid"><div class="card"><div class="muted">全球風險 · 暫定分數</div><div class="v"><span id="global-score">—</span><span class="small muted"> / 100</span></div><div id="global-score-info"></div><p class="small muted" id="global-score-date"></p></div><div class="card"><div class="muted">台灣風險 · 最近研究分數</div><div class="v"><span id="taiwan-score">—</span><span class="small muted"> / 100</span></div><div id="taiwan-score-info"></div><p class="small warn" id="taiwan-score-date"></p></div><div class="card"><div class="muted">正式台灣模型</div><div class="v" id="formal-score">待檢查</div><p class="small muted"><span id="formal-reason">讀取品質證據中…</span></p></div></div><details>
 <summary>資料完整性與來源</summary>
 <ul id="data-integrity" class="small muted" role="status"><li>讀取檢查結果中…</li></ul>
@@ -59,4 +67,4 @@ if(!Number.isFinite(Date.parse(j?.updated_utc)) || !j.metrics || !Object.keys(j.
   marketLoading=false;
 }}
 load();setInterval(load,60000);
-</script><script src="dashboard.js"></script><script src="foreign_cash_ranking.js?v=rebound"></script><script src="p203_research.js"></script></body></html>
+</script><script src="dashboard.js"></script><script src="foreign_cash_ranking.js?v=buy-sell"></script><script src="p203_research.js"></script></body></html>

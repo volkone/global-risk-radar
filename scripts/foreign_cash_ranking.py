@@ -1,4 +1,4 @@
-"""Rank listed-market foreign cash net selling, retaining each day's entry rank."""
+"""Rank listed-market foreign cash flows, retaining each day's entry rank."""
 from bisect import bisect_left
 import csv
 from datetime import date
@@ -13,12 +13,14 @@ LIMIT = 25
 QUALIFIED_NAMES = {"外資及陸資(不含外資自營商)", "外資及陸資（不含外資自營商）"}
 
 
-def rankings(records):
+def rankings(records, *, buying=False):
     top, entries = [], []
+    order = -1 if buying else 1
     for sessions, (day, amount) in enumerate(sorted(records.items()), 1):
-        if amount >= 0:
+        sort_amount = amount * order
+        if sort_amount >= 0:
             continue
-        key = (amount, day)
+        key = (sort_amount, day)
         place = bisect_left(top, key)
         if place >= LIMIT:
             continue
@@ -26,8 +28,8 @@ def rankings(records):
         del top[LIMIT:]
         entries.append({"date": day, "net_twd": amount, "rank": place + 1, "sessions_to_date": sessions})
     return [
-        {"date": day, "net_twd": amount, "rank": i}
-        for i, (amount, day) in enumerate(top, 1)
+        {"date": day, "net_twd": records[day], "rank": i}
+        for i, (_, day) in enumerate(top, 1)
     ], entries
 
 
@@ -114,6 +116,7 @@ def main():
             writer.writerow(["date", "net_twd"])
             writer.writerows(sorted(records.items()))
     top, entries = rankings(records)
+    buy_top, buy_entries = rankings(records, buying=True)
     report = {
         "scope": "TWSE listed market foreign investors; excludes foreign dealers' proprietary trading",
         "unit": "TWD",
@@ -123,9 +126,11 @@ def main():
         "top": top,
         "entries": entries,
         "rebound": rebound_windows(entries, records.keys(), ROOT),
+        "buy": {"top": buy_top, "entries": buy_entries},
     }
     REPORT.write_text(json.dumps(report, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
-    print(f"Foreign cash ranking: {report['sessions']} sessions, {len(entries)} historical entry events")
+    print(f"Foreign cash rankings: {report['sessions']} sessions, "
+          f"{len(entries)} sell and {len(buy_entries)} buy entry events")
 
 
 if __name__ == "__main__":
