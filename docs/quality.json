@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "evaluated_at": "2026-11-24T06:04:08.757920+00:00",
-  "snapshot_updated_at": "2026-11-24T06:04:08.530003+00:00",
-  "history_generated_at": "2026-11-24T06:04:08.722149+00:00",
+  "evaluated_at": "2026-11-24T14:15:09.672372+00:00",
+  "snapshot_updated_at": "2026-11-24T14:14:54.704322+00:00",
+  "history_generated_at": "2026-11-24T14:15:09.605081+00:00",
   "summary": {
     "pass": 12,
     "caution": 0,
@@ -12,32 +12,32 @@
     "hy": {
       "quality": "pass",
       "source": "hy",
-      "date": "2026-11-19",
-      "age_days": 5,
+      "date": "2026-11-20",
+      "age_days": 4,
       "errors": [],
       "warnings": []
     },
     "ig": {
       "quality": "pass",
       "source": "ig",
-      "date": "2026-11-19",
-      "age_days": 5,
+      "date": "2026-11-20",
+      "age_days": 4,
       "errors": [],
       "warnings": []
     },
     "vix": {
       "quality": "pass",
       "source": "vix",
-      "date": "2026-11-19",
-      "age_days": 5,
+      "date": "2026-11-20",
+      "age_days": 4,
       "errors": [],
       "warnings": []
     },
     "us10y": {
       "quality": "pass",
       "source": "us10y",
-      "date": "2026-11-19",
-      "age_days": 5,
+      "date": "2026-11-20",
+      "age_days": 4,
       "errors": [],
       "warnings": []
     },
@@ -148,24 +148,24 @@
     "margin": {
       "quality": "pass",
       "source": "margin.margin",
-      "date": "2026-11-23",
-      "age_days": 1,
+      "date": "2026-11-24",
+      "age_days": 0,
       "errors": [],
       "warnings": []
     },
     "maint": {
       "quality": "pass",
       "source": "maint",
-      "date": "2026-11-23",
-      "age_days": 1,
+      "date": "2026-11-24",
+      "age_days": 0,
       "errors": [],
       "warnings": []
     },
     "inst": {
       "quality": "blocked",
       "source": "inst",
-      "date": "2026-11-23",
-      "age_days": 1,
+      "date": "2026-11-24",
+      "age_days": 0,
       "errors": [
         "source_not_verified",
         "missing_or_invalid_numeric_value",
@@ -176,8 +176,8 @@
     "taiex": {
       "quality": "pass",
       "source": "taiex.tw_price",
-      "date": "2026-11-23",
-      "age_days": 1,
+      "date": "2026-11-24",
+      "age_days": 0,
       "errors": [],
       "warnings": []
     },
@@ -192,16 +192,16 @@
     "inst.cash_inst": {
       "quality": "pass",
       "source": "inst.cash_inst",
-      "date": "2026-11-23",
-      "age_days": 1,
+      "date": "2026-11-24",
+      "age_days": 0,
       "errors": [],
       "warnings": []
     },
     "inst.futures": {
       "quality": "pass",
       "source": "inst.futures",
-      "date": "2026-11-23",
-      "age_days": 1,
+      "date": "2026-11-24",
+      "age_days": 0,
       "errors": [],
       "warnings": []
     }
