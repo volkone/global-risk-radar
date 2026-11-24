@@ -2,7 +2,7 @@
   "taiwan_crash_watch": {
     "schema_version": 1,
     "date": "2026-11-24",
-    "checked_at": "2026-11-24T03:04:27.315940+00:00",
+    "checked_at": "2026-11-24T06:04:05.816433+00:00",
     "trading_day": true,
     "rule_version": "taiwan-selloff-v1",
     "rule": {
@@ -32,42 +32,35 @@
       }
     },
     "market": {
-      "quote_at": "2026-11-24T11:04:00+08:00",
-      "taiex_pct": 8.9928281324,
-      "tpex_pct": 8.1173864895,
-      "relative_pp": -0.8754416429000003,
-      "gap_pct": 6.3485466245,
-      "mode": "intraday",
-      "date": "2026-11-24",
+      "mode": "close",
+      "date": "2026-11-23",
+      "checked_at": "2026-11-24T06:04:05.816433+00:00",
+      "taiex_pct": 2.1607796568,
       "tse": {
-        "up": 1071,
-        "down": 12,
-        "flat": 3,
-        "limit_down": 3,
+        "up": 652,
+        "down": 362,
+        "flat": 72,
+        "limit_down": 9,
         "compared": 1086,
-        "down_pct": 1.1,
-        "limit_down_pct": 0.28,
-        "members": 1092,
-        "returned": 1092,
-        "coverage_pct": 99.45,
-        "limit_coverage_pct": 100.0
+        "down_pct": 33.33,
+        "limit_down_pct": 0.83,
+        "source_url": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20261123&type=MS&response=json"
       },
       "otc": {
-        "up": 838,
-        "down": 25,
-        "flat": 8,
-        "limit_down": 0,
-        "compared": 871,
-        "down_pct": 2.87,
-        "limit_down_pct": 0.0,
-        "members": 898,
-        "returned": 895,
-        "coverage_pct": 96.99,
-        "limit_coverage_pct": 100.0
+        "up": 560,
+        "down": 254,
+        "flat": 59,
+        "limit_down": 7,
+        "compared": 873,
+        "down_pct": 29.1,
+        "limit_down_pct": 0.8,
+        "index_pct": 2.8825338954,
+        "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/highlight?date=2026%2F11%2F23&response=json"
       },
-      "captured_at": "2026-11-24T03:05:07.283334+00:00",
-      "index_source_url": "https://mis.twse.com.tw/stock/api/getStockInfo.jsp?ex_ch=tse_t00.tw%7Cotc_o00.tw&json=1&delay=0",
-      "breadth_source_url": "https://mis.twse.com.tw/stock/api/getStockInfo.jsp"
+      "tpex_pct": 2.8825338954,
+      "relative_pp": 0.7217542386,
+      "gap_pct": -0.3713510479,
+      "gap_source_url": "https://www.twse.com.tw/rwd/zh/TAIEX/MI_5MINS_HIST?date=20261101&response=json"
     },
     "leverage": {
       "date": "2026-11-23",
@@ -147,12 +140,11 @@
       }
     },
     "request_stats": {
-      "requests": 17,
-      "success": 17,
+      "requests": 3,
+      "success": 3,
       "failure": 0,
       "by_host": {
-        "mis.twse.com.tw": 15,
-        "openapi.twse.com.tw": 1,
+        "www.twse.com.tw": 2,
         "www.tpex.org.tw": 1
       },
       "errors": [],
@@ -165,7 +157,7 @@
     "tw_cash_inst": "2026-11-23T13:31:10.341750+00:00",
     "tw_futures": "2026-11-23T13:31:46.644936+00:00"
   },
-  "updated_utc": "2026-11-24T03:05:07.539326+00:00",
+  "updated_utc": "2026-11-24T06:04:08.530003+00:00",
   "request_stats": {
     "requests": 6,
     "success": 6,
@@ -1784,7 +1776,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 26746.096,
+      "value": 26746.1,
       "date": "2026-11-23",
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ENDX/",
@@ -2147,13 +2139,13 @@
         },
         {
           "date": "2026-11-23",
-          "value": 26746.096
+          "value": 26746.1
         }
       ],
       "drawdown_pct": 14.34,
       "reference": "近一年最高收盤價",
       "spx": 7237.17,
-      "checked_at": "2026-11-24T03:04:26.363408+00:00"
+      "checked_at": "2026-11-24T06:04:05.379229+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -3811,7 +3803,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 32.866,
+      "value": 32.848,
       "date": "2026-11-24",
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/",
@@ -4174,11 +4166,11 @@
         },
         {
           "date": "2026-11-24",
-          "value": 32.866
+          "value": 32.848
         }
       ],
-      "checked_at": "2026-11-24T03:04:26.363408+00:00",
-      "dxy": 104.25
+      "checked_at": "2026-11-24T06:04:05.379229+00:00",
+      "dxy": 104.3
     }
   },
   "active_alerts": {
