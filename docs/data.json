@@ -1,8 +1,8 @@
 {
   "taiwan_crash_watch": {
     "schema_version": 1,
-    "date": "2026-11-24",
-    "checked_at": "2026-11-24T14:14:44.674270+00:00",
+    "date": "2026-11-25",
+    "checked_at": "2026-11-24T17:45:30.258768+00:00",
     "trading_day": true,
     "rule_version": "taiwan-selloff-v1",
     "rule": {
@@ -34,7 +34,7 @@
     "market": {
       "mode": "close",
       "date": "2026-11-24",
-      "checked_at": "2026-11-24T14:14:44.674270+00:00",
+      "checked_at": "2026-11-24T17:45:30.258768+00:00",
       "taiex_pct": 8.9929096278,
       "tse": {
         "up": 1053,
@@ -102,7 +102,6 @@
       "expected_date": "2026-11-24",
       "markets": {
         "tse": {
-          "stocks_with_close": 1087,
           "ma20": {
             "above": 133,
             "eligible": 1067,
@@ -113,6 +112,7 @@
             "eligible": 1029,
             "pct": 7.6774
           },
+          "stocks_with_close": 1087,
           "ma20_change_5d_pp": -0.13,
           "ma60_change_5d_pp": -5.86,
           "date": "2026-11-24",
@@ -120,7 +120,6 @@
           "status": "ok"
         },
         "otc": {
-          "stocks_with_close": 889,
           "ma20": {
             "above": 101,
             "eligible": 765,
@@ -131,6 +130,7 @@
             "eligible": 687,
             "pct": 8.8792
           },
+          "stocks_with_close": 889,
           "ma20_change_5d_pp": 0.64,
           "ma60_change_5d_pp": -3.42,
           "date": "2026-11-24",
@@ -140,13 +140,10 @@
       }
     },
     "request_stats": {
-      "requests": 5,
-      "success": 5,
+      "requests": 0,
+      "success": 0,
       "failure": 0,
-      "by_host": {
-        "www.twse.com.tw": 3,
-        "www.tpex.org.tw": 2
-      },
+      "by_host": {},
       "errors": [],
       "skipped": [],
       "limit": 24
@@ -157,13 +154,12 @@
     "tw_cash_inst": "2026-11-24T14:04:52.519669+00:00",
     "tw_futures": "2026-11-24T14:07:02.539129+00:00"
   },
-  "updated_utc": "2026-11-24T14:14:54.704322+00:00",
+  "updated_utc": "2026-11-24T17:45:30.422863+00:00",
   "request_stats": {
-    "requests": 11,
-    "success": 11,
+    "requests": 6,
+    "success": 6,
     "failure": 0,
     "by_host": {
-      "api.stlouisfed.org": 5,
       "query1.finance.yahoo.com": 6
     },
     "errors": [],
@@ -555,7 +551,8 @@
       ],
       "provider": "FRED official API",
       "checked_at": "2026-11-24T14:14:43.845890+00:00",
-      "change20bp": 38.0
+      "change20bp": 38.0,
+      "cache_status": "cached"
     },
     "ig": {
       "name": "美國投資等級債利差",
@@ -931,7 +928,8 @@
         }
       ],
       "provider": "FRED official API",
-      "checked_at": "2026-11-24T14:14:43.845890+00:00"
+      "checked_at": "2026-11-24T14:14:43.845890+00:00",
+      "cache_status": "cached"
     },
     "vix": {
       "name": "VIX",
@@ -1307,7 +1305,8 @@
         }
       ],
       "provider": "FRED official API",
-      "checked_at": "2026-11-24T14:14:43.845890+00:00"
+      "checked_at": "2026-11-24T14:14:43.845890+00:00",
+      "cache_status": "cached"
     },
     "us10y": {
       "name": "美國10年期公債殖利率",
@@ -1675,7 +1674,8 @@
         }
       ],
       "provider": "FRED official API",
-      "checked_at": "2026-11-24T14:14:43.845890+00:00"
+      "checked_at": "2026-11-24T14:14:43.845890+00:00",
+      "cache_status": "cached"
     },
     "nfci": {
       "name": "芝加哥金融情勢指數",
@@ -1763,7 +1763,8 @@
         }
       ],
       "provider": "FRED official API",
-      "checked_at": "2026-11-24T14:14:43.845890+00:00"
+      "checked_at": "2026-11-24T14:14:43.845890+00:00",
+      "cache_status": "cached"
     },
     "indices": {
       "name": "S&P 500 / Nasdaq 100",
@@ -1772,15 +1773,11 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 26746.1,
-      "date": "2026-11-23",
+      "value": 26313.824,
+      "date": "2026-11-24",
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ENDX/",
       "history": [
-        {
-          "date": "2026-07-20",
-          "value": 28604.23
-        },
         {
           "date": "2026-07-21",
           "value": 29155.18
@@ -2136,12 +2133,16 @@
         {
           "date": "2026-11-23",
           "value": 26746.1
+        },
+        {
+          "date": "2026-11-24",
+          "value": 26313.824
         }
       ],
-      "drawdown_pct": 14.34,
+      "drawdown_pct": 15.73,
       "reference": "近一年最高收盤價",
-      "spx": 7237.17,
-      "checked_at": "2026-11-24T14:14:43.845890+00:00"
+      "spx": 7216.43,
+      "checked_at": "2026-11-24T17:45:29.371177+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -2150,8 +2151,8 @@
       "frequency": "daily",
       "status": "partial",
       "reason": "只有半導體相對強弱，市場廣度未取得",
-      "value": 0.3585,
-      "date": "2026-11-23",
+      "value": 0.3385,
+      "date": "2026-11-24",
       "unit": "SOX/NDX",
       "source_url": "https://finance.yahoo.com/quote/%5ESOX/"
     },
@@ -3777,12 +3778,7 @@
         }
       },
       "drawdown_pct": 19.47,
-      "reference": "證交所近一年最高收盤價",
-      "yahoo_comparison": {
-        "date": "2026-11-24",
-        "value": 40122.3515625,
-        "status": "ok"
-      }
+      "reference": "證交所近一年最高收盤價"
     },
     "fx": {
       "name": "美元兌新台幣與美元指數",
@@ -3791,7 +3787,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 32.947,
+      "value": 32.977,
       "date": "2026-11-24",
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/",
@@ -4154,11 +4150,11 @@
         },
         {
           "date": "2026-11-24",
-          "value": 32.947
+          "value": 32.977
         }
       ],
-      "checked_at": "2026-11-24T14:14:43.845890+00:00",
-      "dxy": 103.87
+      "checked_at": "2026-11-24T17:45:29.371177+00:00",
+      "dxy": 103.8
     }
   },
   "active_alerts": {
@@ -4174,7 +4170,7 @@
     },
     "ndx10": {
       "severity": "warning",
-      "message": "Nasdaq 100 近一年高點回撤 ≥10%：14.34%",
+      "message": "Nasdaq 100 近一年高點回撤 ≥10%：15.73%",
       "first_seen": "2026-11-13T16:07:46.932933+00:00"
     },
     "tw5": {

@@ -1,17 +1,26 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-24T14:15:09.605081+00:00",
-  "record_count": 122,
-  "revision_count": 249,
+  "generated_at": "2026-11-24T17:45:30.621668+00:00",
+  "record_count": 123,
+  "revision_count": 250,
   "observations": [
     {
       "metric_id": "fx",
       "provider": "Yahoo Finance 非官方",
       "scope": "",
       "observation_date": "2026-11-24",
-      "value": 32.947,
+      "value": 32.977,
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/"
+    },
+    {
+      "metric_id": "indices",
+      "provider": "Yahoo Finance 非官方",
+      "scope": "",
+      "observation_date": "2026-11-24",
+      "value": 26313.824,
+      "unit": "points",
+      "source_url": "https://finance.yahoo.com/quote/%5ENDX/"
     },
     {
       "metric_id": "inst.cash_inst",
