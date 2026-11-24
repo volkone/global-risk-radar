@@ -12,12 +12,17 @@ HISTORY = ROOT / "docs/taiwan_credit_history.json"
 BASE_URL = "https://www.twse.com.tw/rwd/zh/marginTrading/BFIJ3U_TREND"
 DASHBOARD = "https://www.twse.com.tw/dashboard/zh/credit/margin.html"
 SCOPE = "上市櫃整戶信用交易"
+NEW_CALL_THRESHOLD_DATE = "2026-11-24"
 COUNTS = {
-    "belowAccNum": "accounts_below_130",
     "callAmt": "margin_call_twd",
     "exeAccNum": "disposal_accounts",
     "exeAmt": "disposal_twd",
 }
+
+
+def low_account_field(day):
+    # The source gives belowAccNum without a threshold label on the new regime.
+    return "low_maintenance_accounts" if day >= NEW_CALL_THRESHOLD_DATE else "accounts_below_130"
 
 
 def source_url(day, count=60):
@@ -34,6 +39,7 @@ def parse_report(obj, through, calendar, retrieved_at):
             raise ValueError("invalid credit observation date")
         ratio = row["keepRate"]
         counts = {field: row[name] for name, field in COUNTS.items()}
+        counts[low_account_field(day)] = row["belowAccNum"]
         if (day in records or type(ratio) not in (int, float) or not isfinite(ratio) or ratio <= 0
                 or any(type(v) is not int or v < 0 for v in counts.values())):
             raise ValueError("invalid official credit values")
@@ -45,7 +51,7 @@ def merge_reports(original, incoming):
     combined = dict(original)
     for day, new in incoming.items():
         old = combined.get(day, {})
-        facts = ("maintenance_pct", *COUNTS.values())
+        facts = ("maintenance_pct", low_account_field(day), *COUNTS.values())
         if not old or any(new[key] != old.get(key) for key in facts):
             combined[day] = new
     return combined
@@ -60,6 +66,8 @@ def summarize(records, through, calendar, status):
     following = min((day.isoformat() for day, trading in calendar.items()
                      if trading and day > date.fromisoformat(latest)), default=None)
     result.update(record, disposal_date=following, sessions=len(records))
+    if latest >= NEW_CALL_THRESHOLD_DATE and "accounts_below_130" in result:
+        result.setdefault("low_maintenance_accounts", result.pop("accounts_below_130"))
     short = sessions_through(date.fromisoformat(latest), 6, calendar)
     for window in (1, 5):
         if len(short) > window and short[-1 - window] in records:

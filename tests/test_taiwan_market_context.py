@@ -33,6 +33,16 @@ class CreditTests(unittest.TestCase):
         self.assertEqual(record["disposal_accounts"], 632)
         self.assertNotIn("change_1d_pp", record)
 
+    def test_new_credit_regime_keeps_the_source_count_without_a_threshold_label(self):
+        day = "2026-11-24"
+        self.calendar[date.fromisoformat(day)] = True
+        report = {"stat": "OK", "data": [dict(self.row, date="20261124", belowAccNum=192)]}
+        records = credit.parse_report(report, day, self.calendar, datetime.now(timezone.utc))
+        record = credit.summarize(records, day, self.calendar, "ok")
+        self.assertEqual(record["low_maintenance_accounts"], 192)
+        self.assertNotIn("accounts_below_130", records[day])
+        self.assertNotIn("accounts_below_130", record)
+
     def test_future_or_malformed_entries_are_rejected(self):
         for updates in ({"date": "20261121"}, {"keepRate": True}, {"exeAmt": -1}):
             with self.assertRaises(ValueError):

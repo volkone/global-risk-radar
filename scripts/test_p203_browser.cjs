@@ -82,6 +82,10 @@ const delay=ms=>new Promise(r=>setTimeout(r,ms));
       } else {
         assert(creditText.includes('次一營業日應處分'));
       }
+      if (watch.credit.date >= '2026-11-24') {
+        assert(creditText.includes('低維持率戶數'));
+        assert(creditText.includes('追繳門檻為 120%'));
+      }
       assert(creditText.includes(watch.credit.date));
       assert.equal(watch.credit.maintenance_pct,snapshot.metrics.maint.value);
       const breadth = crash.locator('.trend-breadth');
@@ -108,6 +112,23 @@ const delay=ms=>new Promise(r=>setTimeout(r,ms));
       assert.equal(await market.locator('article').count(), 4);
       assert((await market.textContent()).includes('資料日'));
     }
+    const marketQuality = await read(page,'quality.json');
+    const close = watch?.market;
+    if (close?.mode === 'close' && close.date === snapshot.metrics.taiex.date &&
+        Math.abs(close.taiex_pct) >= 4 && marketQuality.metrics.taiex.quality === 'pass' &&
+        marketQuality.snapshot_updated_at === snapshot.updated_utc) {
+      const note = market.locator('#market-risk-taiex-change');
+      assert((await note.textContent()).includes('單日漲跌幅絕對值達 4%'));
+      assert((await note.textContent()).includes('下一交易日'));
+      const numeric = crash.locator('[data-risk-number="taiex-change"]');
+      assert.equal(await numeric.getAttribute('aria-describedby'),'market-risk-taiex-change');
+      assert.equal(await numeric.evaluate(e=>getComputedStyle(e).color),'rgb(255, 153, 157)');
+    }
+    await page.evaluate(snapshot => window.renderMarketAnalysis(snapshot, null), snapshot);
+    assert.equal(await page.locator('#cards .risk-number, #taiwan-crash-watch .risk-number').count(),0);
+    assert((await market.textContent()).includes('等待下一輪更新'));
+    await page.evaluate(({snapshot, quality}) => window.renderMarketAnalysis(snapshot, quality),
+      {snapshot,quality:marketQuality});
     const foreign = page.locator('#foreign-cash-ranking');
     await foreign.locator('select').waitFor();
     await page.waitForFunction(()=>!document.querySelector('#foreign-cash-ranking select').disabled);

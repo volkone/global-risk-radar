@@ -32,8 +32,22 @@
 
   function facts(rows) {
     const list = el('dl', null, 'crash-facts');
-    for (const [label, value] of rows) list.append(el('dt', label), el('dd', value));
+    for (const [label, value] of rows) list.append(el('dt', label), valueCell('dd', value));
     return list;
+  }
+
+  function valueCell(tag, value) {
+    const cell = el(tag);
+    if (value instanceof Node) cell.append(value);
+    else cell.textContent = value;
+    return cell;
+  }
+
+  function riskReading(value, key, date) {
+    const number = el('span', value);
+    number.dataset.riskNumber = key;
+    number.dataset.riskDate = date;
+    return number;
   }
 
   function table(headers, rows) {
@@ -50,7 +64,7 @@
     const body = el('tbody');
     for (const row of rows) {
       const next = el('tr');
-      for (const value of row) next.append(el('td', value));
+      for (const value of row) next.append(valueCell('td', value));
       body.append(next);
     }
     table.append(head, body);
@@ -112,7 +126,8 @@
     }
     node.append(facts([
       ['加權指數開盤缺口', signed(market.gap_pct)],
-      ['加權指數漲跌', signed(market.taiex_pct)],
+      ['加權指數漲跌', market.mode === 'close'
+        ? riskReading(signed(market.taiex_pct), 'taiex-change', market.date) : signed(market.taiex_pct)],
       ['櫃買指數漲跌', signed(market.tpex_pct)],
       ['櫃買相對加權', signed(market.relative_pp, ' 個百分點')]
     ]));
@@ -138,15 +153,15 @@
   function trendBreadth(breadth) {
     const node = el('section', null, 'crash-subsection trend-breadth');
     node.append(el('h4', '收盤市場廣度'));
-    const markets = [['上市', breadth?.markets?.tse], ['上櫃', breadth?.markets?.otc]];
+    const markets = [['上市', breadth?.markets?.tse, 'tse'], ['上櫃', breadth?.markets?.otc, 'otc']];
     if (!markets.some(([, row]) => row)) {
       node.append(el('p', '等待完整的日收盤資料。', 'small muted'));
       return node;
     }
     const reading = stat => stat ? `${fmt(stat.pct)}%` : '—';
     const coverage = stat => stat ? `${fmt(stat.above, 0)} / ${fmt(stat.eligible, 0)} 檔` : '待取得';
-    node.append(table(['市場', '站上 20 日線', '站上 60 日線'], markets.map(([name, row]) =>
-      [name, reading(row?.ma20), reading(row?.ma60)])));
+    node.append(table(['市場', '站上 20 日線', '站上 60 日線'], markets.map(([name, row, key]) =>
+      [name, row?.date ? riskReading(reading(row.ma20), key + '-ma20', row.date) : '—', reading(row?.ma60)])));
     for (const [label, row] of markets) {
       if (!row) continue;
       const status = row.status === 'stale' ? ' · 新資料待取得' : '';
@@ -171,12 +186,14 @@
     const pending = credit.status === 'pending' ? ` · ${credit.expected_date} 待公布` :
       credit.status === 'source_error' ? ' · 上次公告值' : '';
     const transition = credit.date === '2026-11-23';
+    const newRegime = credit.date >= '2026-11-24';
     node.append(el('p', `資料日 ${credit.date}${pending}`, 'small muted'),
       facts([
         ['整戶擔保維持率', fmt(credit.maintenance_pct) + '%'],
         ['整戶維持率 1 日變化', signed(credit.change_1d_pp, ' 個百分點')],
         ['整戶維持率 5 日變化', signed(credit.change_5d_pp, ' 個百分點')],
-        ['低於 130% 的帳戶', accounts(credit.accounts_below_130)],
+        [newRegime ? '低維持率戶數' : '低於 130% 的帳戶',
+          accounts(credit.low_maintenance_accounts ?? credit.accounts_below_130)],
         [transition ? '盤後統計補繳金額' : '當日通知補繳金額', amount(credit.margin_call_twd)],
         [transition ? '原統計次日處分戶數' : '次一營業日應處分戶數', accounts(credit.disposal_accounts)],
         [transition ? '原統計次日處分金額' : '次一營業日應處分金額', amount(credit.disposal_twd)]
@@ -187,6 +204,11 @@
         document.createTextNode(' · '));
     } else if (credit.disposal_date) {
       node.append(el('p', '應處分日（依交易日曆） ' + credit.disposal_date, 'small muted'));
+    }
+    if (newRegime) {
+      node.append(el('p', '11/24 起追繳門檻為 120%。來源未標明低維持率戶數採用的統計門檻。', 'small muted'),
+        link('證交所追繳門檻公告', 'https://www.twse.com.tw/staticFiles/news/news/tsecnews/8a8216d6a19afd9c01a2073bb7af0594.pdf'),
+        document.createTextNode(' · '));
     }
     node.append(el('p', transition ? '證交所彙整上市櫃整戶信用交易。'
       : '證交所彙整上市櫃整戶信用交易。應處分為券商須處理的部位。', 'small muted'),
@@ -209,8 +231,8 @@
     node.append(facts([
       ['融資餘額', balance],
       ['融資 1 日變動', signed(post.one_day_pct)],
-      ['融資 5 日變動', signed(post.five_day_pct)],
-      ['外資及陸資', amount(post.cash?.foreign_twd)],
+      ['融資 5 日變動', riskReading(signed(post.five_day_pct), 'margin-five-day', post.date)],
+      ['外資及陸資', riskReading(amount(post.cash?.foreign_twd), 'foreign-cash', post.date)],
       ['投信', amount(post.cash?.trust_twd)],
       ['自營商', amount(post.cash?.dealer_twd)],
       ['三大法人合計', amount(post.cash?.total_twd)]

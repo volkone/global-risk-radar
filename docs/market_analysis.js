@@ -1,6 +1,8 @@
-/* Explain the published snapshot using the radar's existing research thresholds. */
+/* Explain matched observations and mark the specific numbers that triggered a rule. */
 window.renderMarketAnalysis = function (snapshot, quality) {
   const root = document.getElementById('market-analysis');
+  const alerts = document.getElementById('alerts');
+  const signals = new Map();
   const datetime = new Intl.DateTimeFormat('zh-TW', {
     timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit',
     hour: '2-digit', minute: '2-digit', hour12: false
@@ -8,10 +10,12 @@ window.renderMarketAnalysis = function (snapshot, quality) {
   const stamp = Date.parse(snapshot?.updated_utc);
   if (!Number.isFinite(stamp) || quality?.snapshot_updated_at !== snapshot.updated_utc || !quality?.metrics) {
     root.textContent = '市場快照與品質報告尚未取得或版本不同，等待下一輪更新後再解讀。';
+    renderRiskNumbers('市場異常判斷待資料核對。');
     return;
   }
   if (Date.now() - stamp > 24 * 60 * 60 * 1000) {
     root.textContent = '快照上次更新於 ' + datetime.format(stamp) + '（台灣時間），已超過 24 小時。等待更新後再解讀。';
+    renderRiskNumbers('市場異常判斷待快照更新。');
     return;
   }
   const metrics = snapshot.metrics;
@@ -20,11 +24,19 @@ window.renderMarketAnalysis = function (snapshot, quality) {
     quality.metrics[key].date === record.date;
   const valueAvailable = (record, key, field = 'value') => approved(record, key) && Number.isFinite(record[field]);
   const num = (n, digits = 2) => n.toLocaleString('zh-TW', {maximumFractionDigits: digits});
+  const signed = value => (value > 0 ? '+' : '') + num(value);
   const dated = (record, detail) => detail + '（' + record.date + '）';
+  const flag = (id, date, reading, condition, note) => {
+    signals.set(id, {date, reading, condition, note});
+  };
   const {hy, ig, vix, indices, taiex, margin, maint, inst, fx} = metrics;
   const taiwanCredit = snapshot.taiwan_crash_watch?.credit;
   const creditReady = valueAvailable(maint, 'maint') && taiwanCredit?.status === 'ok' &&
-    maint.date === taiwanCredit.date && Number.isInteger(taiwanCredit.accounts_below_130);
+    maint.date === taiwanCredit.date;
+  const newCreditRegime = taiwanCredit?.date >= '2026-11-24';
+  const lowAccounts = taiwanCredit?.low_maintenance_accounts ?? taiwanCredit?.accounts_below_130;
+  const creditCount = Number.isInteger(lowAccounts)
+    ? '，' + (newCreditRegime ? '低維持率帳戶 ' : '低於 130% ') + num(lowAccounts, 0) + ' 戶' : '';
   const hyOk = valueAvailable(hy, 'hy');
   const hyChangeOk = hyOk && Number.isFinite(hy.change20bp);
   const vixOk = valueAvailable(vix, 'vix');
@@ -64,6 +76,62 @@ window.renderMarketAnalysis = function (snapshot, quality) {
   const taiexOk = twSameDay && valueAvailable(taiex, 'taiex', 'drawdown_pct') &&
     twOfficial?.status === 'ok' && twOfficial.cache_status !== 'stale' && !twOfficial.last_error;
   const availableOfficial = Number.isFinite(taiex?.official_close) && taiex.official_close_date;
+  if (hyOk && hy.value >= 4) flag('hy-value', hy.date, '高收益債利差 ' + num(hy.value) + '%', '達 4%',
+    '信用風險溢酬偏高。觀察利差是否連續走闊，以及 VIX 是否同步升高。');
+  if (hyChangeOk && hy.change20bp >= 75) flag('hy-change', hy.date,
+    '高收益債利差 20 日變化 ' + signed(hy.change20bp) + ' bp', '擴大至少 75 bp',
+    '信用市場重新定價速度加快。觀察投資級債利差是否同步擴大。');
+  if (volFlag) flag('vix-value', vix.date, 'VIX ' + num(vix.value), '達 ' + (vix.value >= 35 ? 35 : 25),
+    '美股短期預期波動偏高。觀察 VIX 能否回到 25 以下，以及高收益債利差是否繼續擴大。');
+  if (ndxOk && indices.drawdown_pct >= 10) flag('indices-drawdown', indices.date,
+    'Nasdaq 100 近一年高點回撤 ' + num(indices.drawdown_pct) + '%',
+    '達 ' + (indices.drawdown_pct >= 20 ? 20 : 10) + '%',
+    '科技股距前高仍遠。觀察那斯達克反彈時費半是否同步回升，以及波動是否下降。');
+  if (taiexOk && taiex.drawdown_pct >= 5) {
+    const level = [25, 20, 15, 10, 5].find(threshold => taiex.drawdown_pct >= threshold);
+    flag('taiex-drawdown', taiex.date, '台股近一年高點回撤 ' + num(taiex.drawdown_pct) + '%',
+      '達 ' + level + '%', '加權指數仍低於一年高點。確認上市櫃站上 20 日線的家數是否持續增加。');
+  }
+
+  const watch = snapshot.taiwan_crash_watch;
+  const market = watch?.market;
+  const post = watch?.leverage;
+  const daily = market?.taiex_pct;
+  const largeMove = twSameDay && approved(taiex, 'taiex') && market?.mode === 'close' &&
+    market.date === taiex.date && Number.isFinite(daily) && Math.abs(daily) >= 4;
+  if (largeMove) {
+    flag('taiex-change', market.date, '加權指數單日 ' + signed(daily) + '%', '單日漲跌幅絕對值達 4%',
+      daily > 0
+        ? '單日大幅反彈。下一交易日用成交額與上市櫃上漲家數確認反彈能否延續。'
+        : '單日急跌。下一交易日看開盤缺口、下跌家數與跌停比例是否收斂。');
+    const foreign = post?.cash?.foreign_twd;
+    if (daily >= 4 && cashOk && cash.date === market.date && post?.date === cash.date &&
+        Number.isFinite(foreign) && foreign < 0) {
+      const context = futuresOk && futures.date === market.date && pos < 0
+        ? '同期台指期淨空 ' + num(-pos, 0) + ' 口。' : '';
+      flag('foreign-cash', cash.date, '外資現貨賣超 ' + num(-foreign / 1e8) + ' 億元',
+        '加權漲達 4% 且外資反向賣超',
+        context + '價格與外資現貨方向背離。觀察外資賣超是否縮小、台指期淨空是否收斂。');
+    }
+  }
+  const marginFiveDays = post?.five_day_pct;
+  if (valueAvailable(margin, 'margin') && margin.unit === 'TWD' && post?.date === margin.date &&
+      post.margin_twd === margin.value && Number.isFinite(marginFiveDays) && Math.abs(marginFiveDays) >= 10) {
+    flag('margin-five-day', post.date, '上市融資餘額 5 日 ' + signed(marginFiveDays) + '%',
+      '5 個交易日變動幅度達 10%',
+      marginFiveDays < 0
+        ? '近期槓桿部位快速縮減。觀察維持率與處分金額是否同步改善。'
+        : '融資部位快速回升。觀察加權漲幅、市場廣度與整戶維持率能否同步改善。');
+  }
+  for (const [key, label] of [['tse', '上市'], ['otc', '上櫃']]) {
+    const breadth = watch?.trend_breadth?.markets?.[key];
+    const pct = breadth?.ma20?.pct;
+    if (breadth?.status === 'ok' && breadth.date && breadth.date === watch.trend_breadth.expected_date &&
+        Number.isFinite(pct) && pct >= 0 && pct <= 20 && breadth.ma20.eligible > 0) {
+      flag(key + '-ma20', breadth.date, label + '站上 20 日線 ' + num(pct) + '%', '低於或等於 20%',
+        '多數個股仍在短期均線下。觀察站回均線的家數是否連續增加。');
+    }
+  }
   const credit = [
     hyOk ? dated(hy, '高收益債利差 ' + num(hy.value) + '%' +
       (hyChangeOk ? '，20 交易日變化 ' + num(hy.change20bp) + ' bp' : '，20 交易日變化待核對')) : '高收益債利差待核對',
@@ -83,10 +151,10 @@ window.renderMarketAnalysis = function (snapshot, quality) {
     ['融資與新台幣', [
       valueAvailable(margin, 'margin') && margin.unit === 'TWD'
         ? dated(margin, '上市融資餘額 ' + num(margin.value / 1e8) + ' 億元') : '融資餘額待核對',
-      creditReady ? dated(maint, '全市場整戶維持率 ' + num(maint.value) + '%，低於 130% ' +
-        num(taiwanCredit.accounts_below_130, 0) + ' 戶') : '全市場信用交易資料待公布或核對',
+      creditReady ? dated(maint, '全市場整戶維持率 ' + num(maint.value) + '%' + creditCount)
+        : '全市場信用交易資料待公布或核對',
       valueAvailable(fx, 'fx') ? dated(fx, '美元兌新台幣 ' + num(fx.value, 3)) : '美元兌新台幣待核對'
-    ].join('；'), '融資餘額看資金撤出規模。觀察低於 130% 的戶數與應處分金額，可進一步看信用交易壓力。匯率搭配法人現貨趨勢交叉觀察。']
+    ].join('；'), '融資餘額反映槓桿部位的增減。搭配整戶維持率與應處分金額判讀信用交易壓力，並用匯率交叉觀察法人現貨方向。']
   ];
 
   function element(tag, text, className) {
@@ -95,12 +163,51 @@ window.renderMarketAnalysis = function (snapshot, quality) {
     if (className) node.className = className;
     return node;
   }
+  function renderRiskNumbers(fallback) {
+    for (const node of document.querySelectorAll('[data-risk-number]')) {
+      const signal = signals.get(node.dataset.riskNumber);
+      const active = signal && signal.date === node.dataset.riskDate;
+      node.classList.toggle('risk-number', Boolean(active));
+      if (active) node.setAttribute('aria-describedby', 'market-risk-' + node.dataset.riskNumber);
+      else node.removeAttribute('aria-describedby');
+    }
+    if (!signals.size) {
+      alerts.textContent = fallback;
+      return;
+    }
+    const list = element('ul', '', 'market-risk-links');
+    for (const [key, signal] of signals) {
+      const link = element('a', signal.reading, 'risk-number');
+      link.href = '#market-risk-' + key;
+      const row = element('li', '');
+      row.append(link);
+      list.append(row);
+    }
+    alerts.replaceChildren(list);
+  }
   const grid = element('div', '', 'grid');
   for (const [title, evidence, interpretation] of cards) {
     const card = element('article', '', 'card');
     card.append(element('h3', title), element('p', evidence), element('p', interpretation, 'small muted'));
     grid.append(card);
   }
-  root.replaceChildren(element('p', summary), grid,
+  const risk = element('section', '', 'market-risk');
+  risk.append(element('h3', '異常數據與觀察建議'));
+  if (signals.size) {
+    const list = element('ul', '', 'market-risk-notes');
+    for (const [key, signal] of signals) {
+      const item = element('li', '');
+      item.id = 'market-risk-' + key;
+      item.append(element('strong', signal.reading, 'risk-number'),
+        element('p', signal.date + ' · ' + signal.condition, 'small muted'),
+        element('p', signal.note));
+      list.append(item);
+    }
+    risk.append(list);
+  } else {
+    risk.append(element('p', '本次已核對的指標均在標示門檻內。', 'muted'));
+  }
+  root.replaceChildren(element('p', summary), risk, grid,
     element('p', '快照更新 ' + datetime.format(stamp) + '（台灣時間）。各指標依個別資料日解讀，各來源尚未取得的欄位以待核對標示。', 'small muted'));
+  renderRiskNumbers('本次已核對的指標均在標示門檻內。');
 };

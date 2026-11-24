@@ -75,7 +75,9 @@
       "margin_source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?selectType=ALL&response=json",
       "margin_references": {
         "2026-11-20": 435227267000,
-        "2026-11-16": 524497993000
+        "2026-11-16": 524497993000,
+        "2026-11-17": 508721233000,
+        "2026-11-23": 433807523000
       },
       "prior_date": "2026-11-20",
       "five_day_prior_date": "2026-11-16",
@@ -153,9 +155,9 @@
     }
   },
   "source_checks": {
-    "tw_margin": "2026-11-23T13:31:10.341750+00:00",
-    "tw_cash_inst": "2026-11-23T13:31:10.341750+00:00",
-    "tw_futures": "2026-11-23T13:31:46.644936+00:00"
+    "tw_margin": "2026-11-24T14:04:53.400804+00:00",
+    "tw_cash_inst": "2026-11-24T14:04:52.519669+00:00",
+    "tw_futures": "2026-11-24T14:07:02.539129+00:00"
   },
   "updated_utc": "2026-11-24T06:04:08.530003+00:00",
   "request_stats": {
@@ -2216,26 +2218,17 @@
       "reason": "證交所信用交易統計：融資金額（仟元）今日餘額；次日可能調帳",
       "official_sources": {
         "margin": {
-          "checked_at": "2026-11-23T13:31:10.341750+00:00",
-          "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?selectType=ALL&response=json",
-          "records": 3,
-          "sample_fields": [
-            "項目",
-            "買進",
-            "賣出",
-            "現金(券)償還",
-            "前日餘額",
-            "今日餘額"
-          ],
-          "date": "2026-11-23",
           "status": "ok",
-          "value": 433807523000,
-          "unit": "TWD",
           "provider": "TWSE",
+          "unit": "TWD",
+          "date": "2026-11-24",
           "scope": "TWSE上市市場",
-          "reason": "證交所信用交易統計：融資金額（仟元）今日餘額；次日可能調帳",
+          "value": 453505173000,
+          "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?selectType=ALL&response=json",
+          "checked_at": "2026-11-24T14:04:53.400804+00:00",
           "source_unit": "仟元",
-          "amount_thousands": 433807523
+          "amount_thousands": 453505173,
+          "reason": "證交所信用交易統計：融資金額（仟元）今日餘額；次日可能調帳"
         }
       },
       "checked_at": "2026-11-23T13:31:10.341750+00:00",
@@ -2272,8 +2265,12 @@
       "reason": "法人現貨金額與期貨口數分別顯示",
       "official_sources": {
         "cash_inst": {
-          "checked_at": "2026-11-23T13:31:10.341750+00:00",
+          "status": "ok",
+          "provider": "TWSE",
+          "unit": "TWD",
+          "date": "2026-11-24",
           "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?response=json",
+          "checked_at": "2026-11-24T14:04:52.519669+00:00",
           "records": 6,
           "sample_fields": [
             "單位名稱",
@@ -2281,24 +2278,22 @@
             "賣出金額",
             "買賣差額"
           ],
-          "date": "2026-11-23",
-          "status": "ok",
           "categories": [
             {
               "name": "自營商(自行買賣)",
-              "net_twd": -2899268616
+              "net_twd": 1586416389
             },
             {
               "name": "自營商(避險)",
-              "net_twd": -16101874546
+              "net_twd": -82611487223
             },
             {
               "name": "投信",
-              "net_twd": -4154927586
+              "net_twd": 9763346809
             },
             {
               "name": "外資及陸資(不含外資自營商)",
-              "net_twd": -28947879995
+              "net_twd": -50389912492
             },
             {
               "name": "外資自營商",
@@ -2306,23 +2301,22 @@
             },
             {
               "name": "合計",
-              "net_twd": -52103950743
+              "net_twd": -121651636517
             }
           ],
-          "unit": "TWD",
-          "provider": "TWSE",
           "reason": "集中市場法人現貨買賣超金額；外資自營商不重複計入合計"
         },
         "futures": {
           "status": "ok",
-          "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?queryDate=2026%2F11%2F23&commodityId=TXF&queryType=1",
           "provider": "TAIFEX",
-          "date": "2026-11-23",
           "unit": "口",
-          "foreign_tx_net_oi": -103432,
+          "date": "2026-11-24",
           "contract": "臺股期貨",
           "trader": "外資及陸資",
-          "checked_at": "2026-11-23T13:31:46.644936+00:00"
+          "foreign_tx_net_oi": -103182,
+          "source_url": "https://www.taifex.com.tw/cht/3/futContractsDateExcel?queryDate=2026%2F11%2F24&commodityId=TXF&queryType=1",
+          "source_sha256": "bf1e6b6041ecfbd70e1a6dc78e9513057b610c3202c6ac33dedaaf21d65cc241",
+          "checked_at": "2026-11-24T14:07:02.539129+00:00"
         }
       },
       "cash_categories": [
@@ -3776,16 +3770,16 @@
       ],
       "official_sources": {
         "tw_price": {
-          "date": "2026-11-23",
-          "value": 36811.89,
-          "volume_shares": 15947613387,
-          "turnover_twd": 1113743193221,
-          "change_points": 778.6,
+          "date": "2026-11-24",
+          "value": 40122.35,
+          "volume_shares": 13198964496,
+          "turnover_twd": 432559877529,
+          "change_points": 3310.46,
           "status": "ok",
           "provider": "TWSE",
           "unit": "points",
           "source_url": "https://www.twse.com.tw/rwd/zh/afterTrading/FMTQIK?response=json&date=20261101",
-          "checked_at": "2026-11-23T13:36:43.913054+00:00"
+          "checked_at": "2026-11-24T14:04:52.559769+00:00"
         }
       },
       "drawdown_pct": 26.11,
