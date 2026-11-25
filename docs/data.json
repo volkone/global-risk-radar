@@ -2,7 +2,7 @@
   "taiwan_crash_watch": {
     "schema_version": 1,
     "date": "2026-11-25",
-    "checked_at": "2026-11-25T02:30:36.345265+00:00",
+    "checked_at": "2026-11-25T12:56:22.418627+00:00",
     "trading_day": true,
     "rule_version": "taiwan-selloff-v1",
     "rule": {
@@ -32,156 +32,129 @@
       }
     },
     "market": {
-      "quote_at": "2026-11-25T10:30:00+08:00",
-      "taiex_pct": -7.5945950324,
-      "tpex_pct": -7.2912048563,
-      "relative_pp": 0.30339017609999974,
-      "gap_pct": -0.3450445948,
-      "mode": "intraday",
+      "mode": "close",
       "date": "2026-11-25",
+      "checked_at": "2026-11-25T12:56:22.418627+00:00",
+      "taiex_pct": -4.8026100166,
       "tse": {
-        "up": 0,
-        "down": 41,
-        "flat": 1,
-        "limit_down": 1,
-        "compared": 42,
-        "down_pct": null,
-        "limit_down_pct": null,
-        "members": 1092,
-        "returned": 42,
-        "coverage_pct": 3.85,
-        "limit_coverage_pct": 100.0
+        "up": 39,
+        "down": 1033,
+        "flat": 14,
+        "limit_down": 46,
+        "compared": 1086,
+        "down_pct": 95.12,
+        "limit_down_pct": 4.24,
+        "source_url": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20261125&type=MS&response=json"
       },
       "otc": {
-        "up": 18,
-        "down": 369,
-        "flat": 17,
-        "limit_down": 46,
-        "compared": 404,
-        "down_pct": null,
-        "limit_down_pct": null,
-        "members": 898,
-        "returned": 446,
-        "coverage_pct": 44.99,
-        "limit_coverage_pct": 100.0
+        "up": 66,
+        "down": 774,
+        "flat": 26,
+        "limit_down": 54,
+        "compared": 866,
+        "down_pct": 89.38,
+        "limit_down_pct": 6.24,
+        "index_pct": -5.8861644443,
+        "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/highlight?date=2026%2F11%2F25&response=json"
       },
-      "captured_at": "2026-11-25T02:31:41.321086+00:00",
-      "index_source_url": "https://mis.twse.com.tw/stock/api/getStockInfo.jsp?ex_ch=tse_t00.tw%7Cotc_o00.tw&json=1&delay=0",
-      "breadth_source_url": "https://mis.twse.com.tw/stock/api/getStockInfo.jsp"
+      "tpex_pct": -5.8861644443,
+      "relative_pp": -1.0835544277000002,
+      "gap_pct": -0.3450445948,
+      "gap_source_url": "https://www.twse.com.tw/rwd/zh/TAIEX/MI_5MINS_HIST?date=20261101&response=json"
     },
     "leverage": {
-      "date": "2026-11-24",
+      "date": "2026-11-25",
       "cash": {
-        "foreign_twd": -50389912492,
-        "trust_twd": 9763346809,
-        "dealer_twd": -81025070834,
-        "total_twd": -121651636517,
+        "foreign_twd": -123654798153,
+        "trust_twd": 55034724295,
+        "dealer_twd": -12833216530,
+        "total_twd": -81453290388,
         "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?response=json"
-      },
-      "margin_twd": 453505173000,
-      "margin_source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?selectType=ALL&response=json",
-      "margin_references": {
-        "2026-11-17": 508721233000,
-        "2026-11-23": 433807523000
-      },
-      "prior_date": "2026-11-23",
-      "five_day_prior_date": "2026-11-17",
-      "one_day_pct": 4.5406427864,
-      "five_day_pct": -10.8538933345
+      }
     },
     "credit": {
-      "date": "2026-11-24",
-      "expected_date": "2026-11-24",
+      "date": "2026-11-25",
+      "expected_date": "2026-11-25",
       "status": "ok",
       "source_url": "https://www.twse.com.tw/dashboard/zh/credit/margin.html",
-      "disposal_accounts": 2,
-      "disposal_twd": 10390550,
-      "low_maintenance_accounts": 192,
-      "maintenance_pct": 172.39,
-      "margin_call_twd": 11929000,
-      "observed_at": "2026-11-24T14:07:02.206609+00:00",
-      "disposal_date": "2026-11-25",
-      "sessions": 77,
-      "change_1d_pp": 12.97,
-      "change_5d_pp": 11.14
+      "maintenance_pct": 161.96,
+      "margin_call_twd": 44046000,
+      "disposal_accounts": 7,
+      "disposal_twd": 2112700,
+      "low_maintenance_accounts": 201,
+      "observed_at": "2026-11-25T12:56:26.350715+00:00",
+      "disposal_date": "2026-11-26",
+      "sessions": 78,
+      "change_1d_pp": -10.43,
+      "change_5d_pp": -1.2
     },
     "trend_breadth": {
-      "expected_date": "2026-11-24",
+      "expected_date": "2026-11-25",
       "markets": {
         "tse": {
+          "stocks_with_close": 1086,
           "ma20": {
-            "above": 133,
+            "above": 54,
             "eligible": 1067,
-            "pct": 12.4649
+            "pct": 5.0609
           },
           "ma60": {
-            "above": 79,
-            "eligible": 1029,
-            "pct": 7.6774
+            "above": 45,
+            "eligible": 1030,
+            "pct": 4.3689
           },
-          "stocks_with_close": 1087,
-          "ma20_change_5d_pp": -0.13,
-          "ma60_change_5d_pp": -5.86,
-          "date": "2026-11-24",
-          "source_url": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?response=json&date=20261124&type=ALLBUT0999",
+          "ma20_change_5d_pp": -7.69,
+          "ma60_change_5d_pp": -8.09,
+          "date": "2026-11-25",
+          "source_url": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?response=json&date=20261125&type=ALLBUT0999",
           "status": "ok"
         },
         "otc": {
+          "stocks_with_close": 866,
           "ma20": {
-            "above": 101,
-            "eligible": 765,
-            "pct": 13.2026
+            "above": 49,
+            "eligible": 762,
+            "pct": 6.4304
           },
           "ma60": {
-            "above": 61,
-            "eligible": 687,
-            "pct": 8.8792
+            "above": 40,
+            "eligible": 685,
+            "pct": 5.8394
           },
-          "stocks_with_close": 889,
-          "ma20_change_5d_pp": 0.64,
-          "ma60_change_5d_pp": -3.42,
-          "date": "2026-11-24",
-          "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026%2F11%2F24&id=&response=json",
+          "ma20_change_5d_pp": -6.83,
+          "ma60_change_5d_pp": -5.84,
+          "date": "2026-11-25",
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2026%2F11%2F25&id=&response=json",
           "status": "ok"
         }
       }
     },
     "request_stats": {
-      "requests": 17,
-      "success": 7,
-      "failure": 10,
+      "requests": 6,
+      "success": 6,
+      "failure": 0,
       "by_host": {
-        "mis.twse.com.tw": 15,
-        "openapi.twse.com.tw": 1,
-        "www.tpex.org.tw": 1
+        "www.twse.com.tw": 4,
+        "www.tpex.org.tw": 2
       },
-      "errors": [
-        "mis.twse.com.tw:TimeoutError",
-        "mis.twse.com.tw:TimeoutError",
-        "mis.twse.com.tw:TimeoutError",
-        "mis.twse.com.tw:TimeoutError",
-        "mis.twse.com.tw:TimeoutError",
-        "mis.twse.com.tw:TimeoutError",
-        "mis.twse.com.tw:TimeoutError",
-        "mis.twse.com.tw:TimeoutError",
-        "mis.twse.com.tw:TimeoutError",
-        "mis.twse.com.tw:TimeoutError"
-      ],
+      "errors": [],
       "skipped": [],
       "limit": 24
     }
   },
   "source_checks": {
     "tw_margin": "2026-11-24T14:04:53.400804+00:00",
-    "tw_cash_inst": "2026-11-24T14:04:52.519669+00:00",
-    "tw_futures": "2026-11-24T14:07:02.539129+00:00"
+    "tw_cash_inst": "2026-11-25T12:56:18.550842+00:00",
+    "tw_futures": "2026-11-25T12:56:18.550842+00:00"
   },
-  "updated_utc": "2026-11-25T02:31:41.487689+00:00",
+  "updated_utc": "2026-11-25T12:56:34.495488+00:00",
   "request_stats": {
-    "requests": 6,
-    "success": 6,
+    "requests": 9,
+    "success": 9,
     "failure": 0,
     "by_host": {
+      "www.twse.com.tw": 2,
+      "www.taifex.com.tw": 1,
       "query1.finance.yahoo.com": 6
     },
     "errors": [],
@@ -1795,7 +1768,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 26214.168,
+      "value": 26214.17,
       "date": "2026-11-24",
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ENDX/",
@@ -2158,13 +2131,13 @@
         },
         {
           "date": "2026-11-24",
-          "value": 26214.168
+          "value": 26214.17
         }
       ],
       "drawdown_pct": 16.05,
       "reference": "近一年最高收盤價",
       "spx": 7201.09,
-      "checked_at": "2026-11-25T02:30:35.920968+00:00"
+      "checked_at": "2026-11-25T12:56:18.550842+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -2268,10 +2241,10 @@
       "provider": "TWSE",
       "scope": "上市櫃整戶信用交易",
       "unit": "%",
-      "date": "2026-11-24",
-      "value": 172.39,
-      "checked_at": "2026-11-24T14:07:02.206609+00:00",
-      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/BFIJ3U_TREND?response=json&days=1&date=20261124"
+      "date": "2026-11-25",
+      "value": 161.96,
+      "checked_at": "2026-11-25T12:56:26.350715+00:00",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/BFIJ3U_TREND?response=json&days=1&date=20261125"
     },
     "inst": {
       "name": "三大法人及期貨部位",
@@ -2282,12 +2255,8 @@
       "reason": "法人現貨金額與期貨口數分別顯示",
       "official_sources": {
         "cash_inst": {
-          "status": "ok",
-          "provider": "TWSE",
-          "unit": "TWD",
-          "date": "2026-11-24",
+          "checked_at": "2026-11-25T12:56:18.550842+00:00",
           "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?response=json",
-          "checked_at": "2026-11-24T14:04:52.519669+00:00",
           "records": 6,
           "sample_fields": [
             "單位名稱",
@@ -2295,22 +2264,24 @@
             "賣出金額",
             "買賣差額"
           ],
+          "date": "2026-11-25",
+          "status": "ok",
           "categories": [
             {
               "name": "自營商(自行買賣)",
-              "net_twd": 1586416389
+              "net_twd": -7362852102
             },
             {
               "name": "自營商(避險)",
-              "net_twd": -82611487223
+              "net_twd": -5470364428
             },
             {
               "name": "投信",
-              "net_twd": 9763346809
+              "net_twd": 55034724295
             },
             {
               "name": "外資及陸資(不含外資自營商)",
-              "net_twd": -50389912492
+              "net_twd": -123654798153
             },
             {
               "name": "外資自營商",
@@ -2318,40 +2289,41 @@
             },
             {
               "name": "合計",
-              "net_twd": -121651636517
+              "net_twd": -81453290388
             }
           ],
+          "unit": "TWD",
+          "provider": "TWSE",
           "reason": "集中市場法人現貨買賣超金額；外資自營商不重複計入合計"
         },
         "futures": {
           "status": "ok",
+          "source_url": "https://www.taifex.com.tw/cht/3/futContractsDate?queryDate=2026%2F11%2F25&commodityId=TXF&queryType=1",
           "provider": "TAIFEX",
+          "date": "2026-11-25",
           "unit": "口",
-          "date": "2026-11-24",
+          "foreign_tx_net_oi": -105709,
           "contract": "臺股期貨",
           "trader": "外資及陸資",
-          "foreign_tx_net_oi": -103182,
-          "source_url": "https://www.taifex.com.tw/cht/3/futContractsDateExcel?queryDate=2026%2F11%2F24&commodityId=TXF&queryType=1",
-          "source_sha256": "bf1e6b6041ecfbd70e1a6dc78e9513057b610c3202c6ac33dedaaf21d65cc241",
-          "checked_at": "2026-11-24T14:07:02.539129+00:00"
+          "checked_at": "2026-11-25T12:56:18.550842+00:00"
         }
       },
       "cash_categories": [
         {
           "name": "自營商(自行買賣)",
-          "net_twd": 1586416389
+          "net_twd": -7362852102
         },
         {
           "name": "自營商(避險)",
-          "net_twd": -82611487223
+          "net_twd": -5470364428
         },
         {
           "name": "投信",
-          "net_twd": 9763346809
+          "net_twd": 55034724295
         },
         {
           "name": "外資及陸資(不含外資自營商)",
-          "net_twd": -50389912492
+          "net_twd": -123654798153
         },
         {
           "name": "外資自營商",
@@ -2359,14 +2331,14 @@
         },
         {
           "name": "合計",
-          "net_twd": -121651636517
+          "net_twd": -81453290388
         }
       ],
-      "cash_date": "2026-11-24",
-      "foreign_tx_net_oi": -103182,
-      "futures_date": "2026-11-24",
+      "cash_date": "2026-11-25",
+      "foreign_tx_net_oi": -105709,
+      "futures_date": "2026-11-25",
       "futures_contract": "臺股期貨",
-      "date": "2026-11-24"
+      "date": "2026-11-25"
     },
     "taiex": {
       "name": "台股回撤與成交量",
@@ -2377,19 +2349,15 @@
       "reason": "證交所發行量加權股價指數收盤",
       "provider": "TWSE",
       "source_url": "https://www.twse.com.tw/rwd/zh/afterTrading/FMTQIK?response=json&date=20261101",
-      "checked_at": "2026-11-24T14:04:52.559769+00:00",
-      "date": "2026-11-24",
-      "value": 40122.35,
+      "checked_at": "2026-11-25T12:56:18.550842+00:00",
+      "date": "2026-11-25",
+      "value": 38195.43,
       "unit": "points",
-      "official_close": 40122.35,
-      "official_close_date": "2026-11-24",
-      "official_volume_shares": 13198964496,
-      "official_turnover_twd": 432559877529,
+      "official_close": 38195.43,
+      "official_close_date": "2026-11-25",
+      "official_volume_shares": 17132020810,
+      "official_turnover_twd": 1229761968894,
       "official_history": [
-        [
-          "2025-10-30",
-          28287.53
-        ],
         [
           "2025-10-31",
           28233.35
@@ -3421,13 +3389,13 @@
         [
           "2026-11-24",
           40122.35
+        ],
+        [
+          "2026-11-25",
+          38195.43
         ]
       ],
       "history": [
-        {
-          "date": "2026-07-15",
-          "value": 45631.59
-        },
         {
           "date": "2026-07-16",
           "value": 45624.98
@@ -3783,27 +3751,31 @@
         {
           "date": "2026-11-24",
           "value": 40122.35
+        },
+        {
+          "date": "2026-11-25",
+          "value": 38195.43
         }
       ],
       "official_sources": {
         "tw_price": {
-          "date": "2026-11-24",
-          "value": 40122.35,
-          "volume_shares": 13198964496,
-          "turnover_twd": 432559877529,
-          "change_points": 3310.46,
+          "date": "2026-11-25",
+          "value": 38195.43,
+          "volume_shares": 17132020810,
+          "turnover_twd": 1229761968894,
+          "change_points": -1926.92,
           "status": "ok",
           "provider": "TWSE",
           "unit": "points",
           "source_url": "https://www.twse.com.tw/rwd/zh/afterTrading/FMTQIK?response=json&date=20261101",
-          "checked_at": "2026-11-24T14:04:52.559769+00:00"
+          "checked_at": "2026-11-25T12:56:18.550842+00:00"
         }
       },
-      "drawdown_pct": 19.47,
+      "drawdown_pct": 23.34,
       "reference": "證交所近一年最高收盤價",
       "yahoo_comparison": {
-        "date": "2026-11-24",
-        "value": 40122.3515625,
+        "date": "2026-11-25",
+        "value": 38195.4296875,
         "status": "ok"
       }
     },
@@ -3814,7 +3786,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 32.969,
+      "value": 33.126,
       "date": "2026-11-25",
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/",
@@ -4177,11 +4149,11 @@
         },
         {
           "date": "2026-11-25",
-          "value": 32.969
+          "value": 33.126
         }
       ],
-      "checked_at": "2026-11-25T02:30:35.920968+00:00",
-      "dxy": 103.82
+      "checked_at": "2026-11-25T12:56:18.550842+00:00",
+      "dxy": 103.94
     }
   },
   "active_alerts": {
@@ -4202,18 +4174,23 @@
     },
     "tw5": {
       "severity": "warning",
-      "message": "台股近一年高點回撤 ≥5%：19.47%",
+      "message": "台股近一年高點回撤 ≥5%：23.34%",
       "first_seen": "2026-11-10T08:42:05.496990+00:00"
     },
     "tw10": {
       "severity": "warning",
-      "message": "台股近一年高點回撤 ≥10%：19.47%",
+      "message": "台股近一年高點回撤 ≥10%：23.34%",
       "first_seen": "2026-11-10T08:42:05.496990+00:00"
     },
     "tw15": {
       "severity": "warning",
-      "message": "台股近一年高點回撤 ≥15%：19.47%",
+      "message": "台股近一年高點回撤 ≥15%：23.34%",
       "first_seen": "2026-11-17T04:29:20.336971+00:00"
+    },
+    "tw20": {
+      "severity": "critical",
+      "message": "台股近一年高點回撤 ≥20%：23.34%",
+      "first_seen": "2026-11-25T12:56:18.550842+00:00"
     }
   },
   "pending_notifications": [
