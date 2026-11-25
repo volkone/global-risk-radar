@@ -1,17 +1,26 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-25T12:56:46.643812+00:00",
-  "record_count": 128,
-  "revision_count": 254,
+  "generated_at": "2026-11-25T14:30:40.682997+00:00",
+  "record_count": 135,
+  "revision_count": 255,
   "observations": [
     {
       "metric_id": "fx",
       "provider": "Yahoo Finance 非官方",
       "scope": "",
       "observation_date": "2026-11-25",
-      "value": 33.126,
+      "value": 33.26,
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/"
+    },
+    {
+      "metric_id": "indices",
+      "provider": "Yahoo Finance 非官方",
+      "scope": "",
+      "observation_date": "2026-11-25",
+      "value": 25330.043,
+      "unit": "points",
+      "source_url": "https://finance.yahoo.com/quote/%5ENDX/"
     },
     {
       "metric_id": "inst.cash_inst",
@@ -39,6 +48,15 @@
       "value": 161.96,
       "unit": "%",
       "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/BFIJ3U_TREND?response=json&days=1&date=20261125"
+    },
+    {
+      "metric_id": "margin.margin",
+      "provider": "TWSE",
+      "scope": "TWSE上市市場",
+      "observation_date": "2026-11-25",
+      "value": 434137987000.0,
+      "unit": "TWD",
+      "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?selectType=ALL&response=json"
     },
     {
       "metric_id": "taiex.tw_price",
@@ -122,6 +140,24 @@
       "source_url": "https://finance.yahoo.com/quote/TWD=X/"
     },
     {
+      "metric_id": "hy",
+      "provider": "FRED official API",
+      "scope": "",
+      "observation_date": "2026-11-23",
+      "value": 3.63,
+      "unit": "%",
+      "source_url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
+    },
+    {
+      "metric_id": "ig",
+      "provider": "FRED official API",
+      "scope": "",
+      "observation_date": "2026-11-23",
+      "value": 0.97,
+      "unit": "%",
+      "source_url": "https://fred.stlouisfed.org/series/BAMLC0A0CM"
+    },
+    {
       "metric_id": "indices",
       "provider": "Yahoo Finance 非官方",
       "scope": "",
@@ -174,6 +210,24 @@
       "value": 36811.89,
       "unit": "points",
       "source_url": "https://www.twse.com.tw/rwd/zh/afterTrading/FMTQIK?response=json&date=20261101"
+    },
+    {
+      "metric_id": "us10y",
+      "provider": "FRED official API",
+      "scope": "",
+      "observation_date": "2026-11-23",
+      "value": 4.92,
+      "unit": "%",
+      "source_url": "https://fred.stlouisfed.org/series/DGS10"
+    },
+    {
+      "metric_id": "vix",
+      "provider": "FRED official API",
+      "scope": "",
+      "observation_date": "2026-11-23",
+      "value": 26.62,
+      "unit": "index",
+      "source_url": "https://fred.stlouisfed.org/series/VIXCLS"
     },
     {
       "metric_id": "fx",
@@ -255,6 +309,15 @@
       "value": 435227267000.0,
       "unit": "TWD",
       "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?selectType=ALL&response=json"
+    },
+    {
+      "metric_id": "nfci",
+      "provider": "FRED official API",
+      "scope": "",
+      "observation_date": "2026-11-20",
+      "value": -0.444,
+      "unit": "index",
+      "source_url": "https://fred.stlouisfed.org/series/NFCI"
     },
     {
       "metric_id": "taiex",
