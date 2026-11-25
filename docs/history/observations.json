@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-25T21:39:30.042940+00:00",
+  "generated_at": "2026-11-25T22:33:17.926030+00:00",
   "record_count": 135,
-  "revision_count": 257,
+  "revision_count": 258,
   "observations": [
     {
       "metric_id": "fx",
       "provider": "Yahoo Finance 非官方",
       "scope": "",
       "observation_date": "2026-11-25",
-      "value": 33.166,
+      "value": 33.21,
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/"
     },
