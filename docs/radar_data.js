@@ -7,3 +7,10 @@ window.getRadarData = async function (path) {
   if (!response.ok) throw new Error(path + ' HTTP ' + response.status);
   return response.json();
 };
+
+let foreignCashRankingRequest;
+window.getForeignCashRanking = function () {
+  foreignCashRankingRequest ??= window.getRadarData('foreign_cash_ranking.json')
+    .finally(() => { foreignCashRankingRequest = undefined; });
+  return foreignCashRankingRequest;
+};

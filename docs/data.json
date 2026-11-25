@@ -70,6 +70,10 @@
         "dealer_twd": -12833216530,
         "total_twd": -81453290388,
         "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?response=json"
+      },
+      "margin_references": {
+        "2026-11-24": 453505173000,
+        "2026-11-18": 508026570000
       }
     },
     "credit": {
@@ -143,7 +147,7 @@
     }
   },
   "source_checks": {
-    "tw_margin": "2026-11-24T14:04:53.400804+00:00",
+    "tw_margin": "2026-11-25T14:26:35.497652+00:00",
     "tw_cash_inst": "2026-11-25T12:56:18.550842+00:00",
     "tw_futures": "2026-11-25T12:56:18.550842+00:00"
   },
@@ -2211,13 +2215,13 @@
           "status": "ok",
           "provider": "TWSE",
           "unit": "TWD",
-          "date": "2026-11-24",
+          "date": "2026-11-25",
+          "value": 434137987000,
           "scope": "TWSE上市市場",
-          "value": 453505173000,
           "source_url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?selectType=ALL&response=json",
-          "checked_at": "2026-11-24T14:04:53.400804+00:00",
+          "checked_at": "2026-11-25T14:26:35.497652+00:00",
           "source_unit": "仟元",
-          "amount_thousands": 453505173,
+          "amount_thousands": 434137987,
           "reason": "證交所信用交易統計：融資金額（仟元）今日餘額；次日可能調帳"
         }
       },

@@ -1,5 +1,5 @@
 /* Explain matched observations and mark the specific numbers that triggered a rule. */
-window.renderMarketAnalysis = function (snapshot, quality) {
+window.renderMarketAnalysis = function (snapshot, quality, ranking) {
   const root = document.getElementById('market-analysis');
   const alerts = document.getElementById('alerts');
   const signals = new Map();
@@ -104,14 +104,21 @@ window.renderMarketAnalysis = function (snapshot, quality) {
       daily > 0
         ? '單日大幅反彈。下一交易日用成交額與上市櫃上漲家數確認反彈能否延續。'
         : '單日急跌。下一交易日看開盤缺口、下跌家數與跌停比例是否收斂。');
-    const foreign = post?.cash?.foreign_twd;
-    if (daily >= 4 && cashOk && cash.date === market.date && post?.date === cash.date &&
-        Number.isFinite(foreign) && foreign < 0) {
-      const context = futuresOk && futures.date === market.date && pos < 0
-        ? '同期台指期淨空 ' + num(-pos, 0) + ' 口。' : '';
+  }
+  const foreign = post?.cash?.foreign_twd;
+  if (cashOk && post?.date === cash.date && Number.isFinite(foreign) && foreign < 0) {
+    const rank = ranking?.unit === 'TWD' && ranking.end_date === cash.date && Array.isArray(ranking.top)
+      ? ranking.top.find(row => row?.date === cash.date && row.net_twd === foreign &&
+          Number.isInteger(row.rank) && row.rank >= 1 && row.rank <= 25)
+      : null;
+    const divergence = largeMove && daily >= 4 && market.date === cash.date;
+    if (rank || divergence) {
+      const context = futuresOk && futures.date === cash.date && pos < 0
+        ? '同日外資台指期淨空 ' + num(-pos, 0) + ' 口。' : '';
       flag('foreign-cash', cash.date, '外資現貨賣超 ' + num(-foreign / 1e8) + ' 億元',
-        '加權漲達 4% 且外資反向賣超',
-        context + '價格與外資現貨方向背離。觀察外資賣超是否縮小、台指期淨空是否收斂。');
+        rank ? '歷史單日賣超前 25 名 · 第 ' + rank.rank + ' 名' : '加權漲達 4% 且外資反向賣超',
+        context + (divergence ? '價格與外資現貨方向背離。' : '') +
+        '觀察外資賣超與期貨淨空是否同步收斂，並確認下跌家數是否減少。');
     }
   }
   const marginFiveDays = post?.five_day_pct;

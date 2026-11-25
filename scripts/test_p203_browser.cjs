@@ -113,6 +113,7 @@ const delay=ms=>new Promise(r=>setTimeout(r,ms));
       assert((await market.textContent()).includes('資料日'));
     }
     const marketQuality = await read(page,'quality.json');
+    const ranking = await read(page,'foreign_cash_ranking.json');
     const close = watch?.market;
     if (close?.mode === 'close' && close.date === snapshot.metrics.taiex.date &&
         Math.abs(close.taiex_pct) >= 4 && marketQuality.metrics.taiex.quality === 'pass' &&
@@ -124,15 +125,26 @@ const delay=ms=>new Promise(r=>setTimeout(r,ms));
       assert.equal(await numeric.getAttribute('aria-describedby'),'market-risk-taiex-change');
       assert.equal(await numeric.evaluate(e=>getComputedStyle(e).color),'rgb(255, 153, 157)');
     }
+    const qualifiedCash = marketQuality.metrics['inst.cash_inst'];
+    const cash = watch?.leverage?.cash;
+    const rankedSell = ranking.top.find(row => row.date === watch?.leverage?.date && row.net_twd === cash?.foreign_twd);
+    if (rankedSell && ranking.end_date === rankedSell.date && qualifiedCash?.quality === 'pass' &&
+        qualifiedCash.date === rankedSell.date && marketQuality.snapshot_updated_at === snapshot.updated_utc) {
+      const note = market.locator('#market-risk-foreign-cash');
+      assert((await note.textContent()).includes('第 ' + rankedSell.rank + ' 名'));
+      assert((await note.textContent()).includes('期貨淨空'));
+      const numeric = crash.locator('[data-risk-number="foreign-cash"]');
+      assert.equal(await numeric.getAttribute('aria-describedby'),'market-risk-foreign-cash');
+      assert.equal(await numeric.evaluate(e=>getComputedStyle(e).color),'rgb(255, 153, 157)');
+    }
     await page.evaluate(snapshot => window.renderMarketAnalysis(snapshot, null), snapshot);
     assert.equal(await page.locator('#cards .risk-number, #taiwan-crash-watch .risk-number').count(),0);
     assert((await market.textContent()).includes('等待下一輪更新'));
-    await page.evaluate(({snapshot, quality}) => window.renderMarketAnalysis(snapshot, quality),
-      {snapshot,quality:marketQuality});
+    await page.evaluate(({snapshot, quality, ranking}) => window.renderMarketAnalysis(snapshot, quality, ranking),
+      {snapshot,quality:marketQuality,ranking});
     const foreign = page.locator('#foreign-cash-ranking');
     await foreign.locator('select').waitFor();
     await page.waitForFunction(()=>!document.querySelector('#foreign-cash-ranking select').disabled);
-    const ranking = await read(page,'foreign_cash_ranking.json');
     assert.equal(await foreign.locator('.foreign-top tr').count(),25);
     const events = foreign.locator('.foreign-events tr');
     assert.equal(await events.count(),12);

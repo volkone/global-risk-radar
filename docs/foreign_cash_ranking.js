@@ -127,7 +127,7 @@
 
   async function load() {
     try {
-      data = await getRadarData('foreign_cash_ranking.json');
+      data = await getForeignCashRanking();
       if (data.unit !== 'TWD' || !validRanking(data, -1) || !data.rebound ||
           !data.entries.every(item => item.rebound_window === null || Array.isArray(item.rebound_window))) throw Error();
       const buyReady = validRanking(data.buy, 1);
