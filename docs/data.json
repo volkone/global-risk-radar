@@ -2,7 +2,7 @@
   "taiwan_crash_watch": {
     "schema_version": 1,
     "date": "2026-11-26",
-    "checked_at": "2026-11-25T22:33:17.517608+00:00",
+    "checked_at": "2026-11-26T05:05:26.991122+00:00",
     "trading_day": true,
     "rule_version": "taiwan-selloff-v1",
     "rule": {
@@ -32,35 +32,37 @@
       }
     },
     "market": {
-      "mode": "close",
-      "date": "2026-11-25",
-      "checked_at": "2026-11-25T22:33:17.517608+00:00",
-      "taiex_pct": -4.8026100166,
+      "quote_at": "2026-11-26T13:04:00+08:00",
+      "taiex_pct": 3.0555749732,
+      "tpex_pct": 4.8809653223,
+      "relative_pp": 1.8253903490999996,
+      "gap_pct": 0.6298135667,
+      "mode": "intraday",
+      "date": "2026-11-26",
       "tse": {
-        "up": 39,
-        "down": 1033,
-        "flat": 14,
-        "limit_down": 46,
-        "compared": 1086,
-        "down_pct": 95.12,
-        "limit_down_pct": 4.24,
-        "source_url": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20261125&type=MS&response=json"
+        "up": 968,
+        "down": 94,
+        "flat": 29,
+        "limit_down": 3,
+        "compared": 1091,
+        "down_pct": 8.62,
+        "limit_down_pct": 0.27,
+        "members": 1092,
+        "returned": 1092,
+        "coverage_pct": 99.91,
+        "limit_coverage_pct": 100.0
       },
       "otc": {
-        "up": 66,
-        "down": 774,
-        "flat": 26,
-        "limit_down": 54,
-        "compared": 866,
-        "down_pct": 89.38,
-        "limit_down_pct": 6.24,
-        "index_pct": -5.8861644443,
-        "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/highlight?date=2026%2F11%2F25&response=json"
+        "members": 898,
+        "returned": 0,
+        "coverage_pct": 0.0,
+        "limit_coverage_pct": 0,
+        "down_pct": null,
+        "limit_down_pct": null
       },
-      "tpex_pct": -5.8861644443,
-      "relative_pp": -1.0835544277000002,
-      "gap_pct": -0.3450445948,
-      "gap_source_url": "https://www.twse.com.tw/rwd/zh/TAIEX/MI_5MINS_HIST?date=20261101&response=json"
+      "captured_at": "2026-11-26T05:06:16.251584+00:00",
+      "index_source_url": "https://mis.twse.com.tw/stock/api/getStockInfo.jsp?ex_ch=tse_t00.tw%7Cotc_o00.tw&json=1&delay=0",
+      "breadth_source_url": "https://mis.twse.com.tw/stock/api/getStockInfo.jsp"
     },
     "leverage": {
       "date": "2026-11-25",
@@ -140,11 +142,22 @@
       }
     },
     "request_stats": {
-      "requests": 0,
-      "success": 0,
-      "failure": 0,
-      "by_host": {},
-      "errors": [],
+      "requests": 17,
+      "success": 11,
+      "failure": 6,
+      "by_host": {
+        "mis.twse.com.tw": 15,
+        "openapi.twse.com.tw": 1,
+        "www.tpex.org.tw": 1
+      },
+      "errors": [
+        "mis.twse.com.tw:TimeoutError",
+        "mis.twse.com.tw:TimeoutError",
+        "mis.twse.com.tw:TimeoutError",
+        "mis.twse.com.tw:TimeoutError",
+        "mis.twse.com.tw:TimeoutError",
+        "mis.twse.com.tw:TimeoutError"
+      ],
       "skipped": [],
       "limit": 24
     }
@@ -154,7 +167,7 @@
     "tw_cash_inst": "2026-11-25T12:56:18.550842+00:00",
     "tw_futures": "2026-11-25T12:56:18.550842+00:00"
   },
-  "updated_utc": "2026-11-25T22:33:17.708034+00:00",
+  "updated_utc": "2026-11-26T05:06:16.382689+00:00",
   "request_stats": {
     "requests": 6,
     "success": 6,
@@ -1773,7 +1786,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 26046.896,
+      "value": 26046.9,
       "date": "2026-11-25",
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ENDX/",
@@ -2136,13 +2149,13 @@
         },
         {
           "date": "2026-11-25",
-          "value": 26046.896
+          "value": 26046.9
         }
       ],
       "drawdown_pct": 16.58,
       "reference": "近一年最高收盤價",
       "spx": 7182.78,
-      "checked_at": "2026-11-25T22:33:16.534636+00:00"
+      "checked_at": "2026-11-26T05:05:25.650158+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -3777,7 +3790,12 @@
         }
       },
       "drawdown_pct": 23.34,
-      "reference": "證交所近一年最高收盤價"
+      "reference": "證交所近一年最高收盤價",
+      "yahoo_comparison": {
+        "date": "2026-11-25",
+        "value": 38195.4296875,
+        "status": "ok"
+      }
     },
     "fx": {
       "name": "美元兌新台幣與美元指數",
@@ -3786,15 +3804,11 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 33.21,
-      "date": "2026-11-25",
+      "value": 32.948,
+      "date": "2026-11-26",
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/",
       "history": [
-        {
-          "date": "2026-07-22",
-          "value": 32.379
-        },
         {
           "date": "2026-07-23",
           "value": 32.299
@@ -4149,11 +4163,15 @@
         },
         {
           "date": "2026-11-25",
-          "value": 33.21
+          "value": 32.921
+        },
+        {
+          "date": "2026-11-26",
+          "value": 32.948
         }
       ],
-      "checked_at": "2026-11-25T22:33:16.534636+00:00",
-      "dxy": 103.7
+      "checked_at": "2026-11-26T05:05:25.650158+00:00",
+      "dxy": 103.82
     }
   },
   "active_alerts": {
