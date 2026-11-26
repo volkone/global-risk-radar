@@ -1,37 +1,37 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-26T05:06:18.326847+00:00",
+  "generated_at": "2026-11-26T14:03:24.992320+00:00",
   "model_status": "separate_global_prototype_and_evidence_gated_taiwan",
   "disclaimer": "Global is provisional; historical Taiwan reconstruction is research-only. Formal Taiwan eligibility is recorded in quality_gate.",
   "global": {
     "status": "provisional",
-    "score": 34.8,
+    "score": 35.0,
     "coverage": 0.9,
     "min_coverage": 0.85,
     "components": [
       {
         "metric": "hy",
         "weight": 25,
-        "signal": 27.17,
+        "signal": 28.67,
         "eligible": true,
         "reason": null,
-        "contribution": 7.5472222222222225
+        "contribution": 7.963888888888889
       },
       {
         "metric": "ig",
         "weight": 10,
-        "signal": 18.8,
+        "signal": 19.2,
         "eligible": true,
         "reason": null,
-        "contribution": 2.088888888888889
+        "contribution": 2.1333333333333333
       },
       {
         "metric": "vix",
         "weight": 20,
-        "signal": 44.3,
+        "signal": 43.52,
         "eligible": true,
         "reason": null,
-        "contribution": 9.844444444444445
+        "contribution": 9.671111111111113
       },
       {
         "metric": "indices",
@@ -52,10 +52,10 @@
       {
         "metric": "us10y",
         "weight": 5,
-        "signal": 26.67,
+        "signal": 25.83,
         "eligible": true,
         "reason": null,
-        "contribution": 1.481666666666667
+        "contribution": 1.4349999999999998
       },
       {
         "metric": "breadth",
@@ -67,7 +67,7 @@
       }
     ],
     "model_id": "global_rate_v2",
-    "as_of": "2026-11-26T05:06:16.382689+00:00"
+    "as_of": "2026-11-26T14:03:07.210338+00:00"
   },
   "taiwan": {
     "status": "formal_model_blocked",
@@ -201,7 +201,7 @@
       {
         "metric": "taiex",
         "weight": 35,
-        "signal": 77.8,
+        "signal": 71.4,
         "eligible": true,
         "reason": null
       },
