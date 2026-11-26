@@ -2,7 +2,7 @@
   "taiwan_crash_watch": {
     "schema_version": 1,
     "date": "2026-11-26",
-    "checked_at": "2026-11-26T14:00:20.086963+00:00",
+    "checked_at": "2026-11-26T15:17:55.975545+00:00",
     "trading_day": true,
     "rule_version": "taiwan-selloff-v1",
     "rule": {
@@ -34,7 +34,7 @@
     "market": {
       "mode": "close",
       "date": "2026-11-26",
-      "checked_at": "2026-11-26T14:00:20.086963+00:00",
+      "checked_at": "2026-11-26T15:17:55.975545+00:00",
       "taiex_pct": 2.5039121172,
       "tse": {
         "up": 971,
@@ -102,7 +102,6 @@
       "expected_date": "2026-11-26",
       "markets": {
         "tse": {
-          "stocks_with_close": 1087,
           "ma20": {
             "above": 107,
             "eligible": 1072,
@@ -113,6 +112,7 @@
             "eligible": 1030,
             "pct": 6.1165
           },
+          "stocks_with_close": 1087,
           "ma20_change_5d_pp": 2.53,
           "ma60_change_5d_pp": -1.58,
           "date": "2026-11-26",
@@ -120,7 +120,6 @@
           "status": "ok"
         },
         "otc": {
-          "stocks_with_close": 880,
           "ma20": {
             "above": 78,
             "eligible": 763,
@@ -131,6 +130,7 @@
             "eligible": 684,
             "pct": 6.5789
           },
+          "stocks_with_close": 880,
           "ma20_change_5d_pp": 5.06,
           "ma60_change_5d_pp": -1.01,
           "date": "2026-11-26",
@@ -140,13 +140,10 @@
       }
     },
     "request_stats": {
-      "requests": 5,
-      "success": 5,
+      "requests": 0,
+      "success": 0,
       "failure": 0,
-      "by_host": {
-        "www.twse.com.tw": 3,
-        "www.tpex.org.tw": 2
-      },
+      "by_host": {},
       "errors": [],
       "skipped": [],
       "limit": 24
@@ -157,13 +154,12 @@
     "tw_cash_inst": "2026-11-26T13:58:19.679615+00:00",
     "tw_futures": "2026-11-26T13:58:18.560175+00:00"
   },
-  "updated_utc": "2026-11-26T14:03:07.210338+00:00",
+  "updated_utc": "2026-11-26T15:17:56.228027+00:00",
   "request_stats": {
-    "requests": 11,
-    "success": 11,
+    "requests": 6,
+    "success": 6,
     "failure": 0,
     "by_host": {
-      "api.stlouisfed.org": 5,
       "query1.finance.yahoo.com": 6
     },
     "errors": [],
@@ -555,7 +551,8 @@
       ],
       "provider": "FRED official API",
       "checked_at": "2026-11-26T14:00:13.219318+00:00",
-      "change20bp": 54.0
+      "change20bp": 54.0,
+      "cache_status": "cached"
     },
     "ig": {
       "name": "美國投資等級債利差",
@@ -931,7 +928,8 @@
         }
       ],
       "provider": "FRED official API",
-      "checked_at": "2026-11-26T14:00:13.219318+00:00"
+      "checked_at": "2026-11-26T14:00:13.219318+00:00",
+      "cache_status": "cached"
     },
     "vix": {
       "name": "VIX",
@@ -1307,7 +1305,8 @@
         }
       ],
       "provider": "FRED official API",
-      "checked_at": "2026-11-26T14:00:13.219318+00:00"
+      "checked_at": "2026-11-26T14:00:13.219318+00:00",
+      "cache_status": "cached"
     },
     "us10y": {
       "name": "美國10年期公債殖利率",
@@ -1679,7 +1678,8 @@
         }
       ],
       "provider": "FRED official API",
-      "checked_at": "2026-11-26T14:00:13.219318+00:00"
+      "checked_at": "2026-11-26T14:00:13.219318+00:00",
+      "cache_status": "cached"
     },
     "nfci": {
       "name": "芝加哥金融情勢指數",
@@ -1767,7 +1767,8 @@
         }
       ],
       "provider": "FRED official API",
-      "checked_at": "2026-11-26T14:00:13.219318+00:00"
+      "checked_at": "2026-11-26T14:00:13.219318+00:00",
+      "cache_status": "cached"
     },
     "indices": {
       "name": "S&P 500 / Nasdaq 100",
@@ -2145,7 +2146,7 @@
       "drawdown_pct": 16.58,
       "reference": "近一年最高收盤價",
       "spx": 7182.78,
-      "checked_at": "2026-11-26T14:00:13.219318+00:00"
+      "checked_at": "2026-11-26T15:17:54.720868+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -3795,7 +3796,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 32.951,
+      "value": 32.955,
       "date": "2026-11-26",
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/",
@@ -4158,11 +4159,11 @@
         },
         {
           "date": "2026-11-26",
-          "value": 32.951
+          "value": 32.955
         }
       ],
-      "checked_at": "2026-11-26T14:00:13.219318+00:00",
-      "dxy": 103.68
+      "checked_at": "2026-11-26T15:17:54.720868+00:00",
+      "dxy": 103.7
     }
   },
   "active_alerts": {
