@@ -1,9 +1,9 @@
 {
-  "checked_at_utc": "2026-11-27T15:05:40.369912+00:00",
+  "checked_at_utc": "2026-11-27T15:15:36.201901+00:00",
   "taipei_date": "2026-11-27",
   "status": "captured",
   "canonical_snapshot_present": true,
-  "last_capture_check_utc": "2026-11-27T15:05:40.213480+00:00",
+  "last_capture_check_utc": "2026-11-27T15:15:36.048140+00:00",
   "capture_errors": {},
   "snapshots": 11,
   "predictions": 0,
