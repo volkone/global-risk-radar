@@ -1,0 +1,30 @@
+name: Fat Sheep - official snapshot audit
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: fat-sheep-download
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run screening regression tests
+        run: python -m unittest discover -s scripts -p test_fat_sheep_screen.py -v
+      - name: Collect official snapshots
+        if: success()
+        run: python scripts/fat_sheep_download.py
+      - name: Preserve audit and raw responses
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fat-sheep-snapshot-audit
+          path: data/fat_sheep/download/
+          if-no-files-found: warn
+          retention-days: 30
