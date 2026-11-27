@@ -7,7 +7,7 @@ quarter, eps, net_income, available_date). Per-share values must be adjusted
 to current share basis. Dividend refers to fiscal year. Dates ISO YYYY-MM-DD.
 """
 import json, sys, math
-from datetime import date
+from datetime import date, timedelta
 from statistics import mean
 
 def screen(r):
@@ -33,6 +33,20 @@ def screen(r):
         periods=[x["year"]*4+x["quarter"] for x in q]
         if any(x["quarter"] not in (1,2,3,4) for x in q) or periods!=list(range(periods[0],periods[0]+8)):
             return result("NA","quarter_period_gap")
+        # Conservative freshness gate for calendar-year issuers; not publication evidence.
+        last_annual = d.year - (1 if (d.month,d.day)>=(5,1) else 2)
+        if years[-1] < last_annual:
+            return result("NA","stale_annual")
+        def quarter_end(y,k):
+            return date(y, (3,6,9,12)[k-1], (31,30,30,31)[k-1])
+        eligible = [y*4+k for y in range(d.year-2,d.year+1) for k in range(1,5)
+                    if quarter_end(y,k)+timedelta(days=90 if k==4 else 45)<=d]
+        if periods[-1]<max(eligible):
+            return result("NA","stale_quarters")
+        if any(quarter_end(x["year"],x["quarter"])>d for x in q):
+            return result("NA","future_period")
+        if any(date.fromisoformat(x["available_date"])<date(x["year"],12,31) for x in a) or any(date.fromisoformat(x["available_date"])<quarter_end(x["year"],x["quarter"]) for x in q):
+            return result("NA","invalid_available_date")
         if any(date.fromisoformat(x["available_date"])>d for x in a+q):
             return result("NA","future_information")
         if not all(num(x[k]) for x in a for k in ("eps","roe","dividend")) or not all(num(x[k]) for x in q for k in ("eps","net_income")):
