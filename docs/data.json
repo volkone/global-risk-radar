@@ -2,7 +2,7 @@
   "taiwan_crash_watch": {
     "schema_version": 1,
     "date": "2026-11-27",
-    "checked_at": "2026-11-27T09:03:20.482364+00:00",
+    "checked_at": "2026-11-27T09:05:51.306702+00:00",
     "trading_day": true,
     "rule_version": "taiwan-selloff-v1",
     "rule": {
@@ -34,7 +34,7 @@
     "market": {
       "mode": "close",
       "date": "2026-11-27",
-      "checked_at": "2026-11-27T09:03:20.482364+00:00",
+      "checked_at": "2026-11-27T09:05:51.306702+00:00",
       "taiex_pct": 0.399138635,
       "tse": {
         "up": 438,
@@ -146,13 +146,12 @@
     "tw_cash_inst": "2026-11-27T09:03:18.743117+00:00",
     "tw_futures": "2026-11-26T13:58:18.560175+00:00"
   },
-  "updated_utc": "2026-11-27T09:03:21.962911+00:00",
+  "updated_utc": "2026-11-27T09:05:52.684650+00:00",
   "request_stats": {
-    "requests": 7,
-    "success": 7,
+    "requests": 6,
+    "success": 6,
     "failure": 0,
     "by_host": {
-      "www.twse.com.tw": 1,
       "query1.finance.yahoo.com": 6
     },
     "errors": [],
@@ -2139,7 +2138,7 @@
       "drawdown_pct": 16.58,
       "reference": "近一年最高收盤價",
       "spx": 7182.78,
-      "checked_at": "2026-11-27T09:03:18.743117+00:00"
+      "checked_at": "2026-11-27T09:05:50.797806+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -3793,7 +3792,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 32.932,
+      "value": 32.931,
       "date": "2026-11-27",
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/",
@@ -4156,10 +4155,10 @@
         },
         {
           "date": "2026-11-27",
-          "value": 32.932
+          "value": 32.931
         }
       ],
-      "checked_at": "2026-11-27T09:03:18.743117+00:00",
+      "checked_at": "2026-11-27T09:05:50.797806+00:00",
       "dxy": 103.82
     }
   },
