@@ -1,0 +1,36 @@
+name: Fat Sheep - F3 research data pilot
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/fat-sheep-f3-research.yml'
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: fat-sheep-f3-research
+  cancel-in-progress: false
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: fat-sheep-snapshot-audit
+          path: f3_inputs/snapshot
+          run-id: 45969783270
+          github-token: ${{ github.token }}
+      - run: pip install pandas lxml html5lib beautifulsoup4
+      - run: python -u scripts/fat_sheep_f3_collect.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fat-sheep-f3-research-data
+          path: data/fat_sheep/f3_research/
+          retention-days: 30
