@@ -1,0 +1,29 @@
+name: Fat Sheep - historical financial backfill
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/fat-sheep-backfill.yml'
+permissions:
+  contents: read
+concurrency:
+  group: fat-sheep-backfill
+  cancel-in-progress: false
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pandas lxml
+      - run: python scripts/fat_sheep_backfill.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fat-sheep-history-audit
+          path: data/fat_sheep/history/
+          retention-days: 30
