@@ -1,0 +1,42 @@
+{
+  "as_of": "2026-11-26",
+  "formal_ready": false,
+  "raw_hash": {
+    "passed": 24,
+    "total": 24
+  },
+  "capital_observations": {
+    "changed": 110,
+    "unchanged_observations": 31,
+    "missing": 9
+  },
+  "pe_crosscheck": {
+    "comparable": 31,
+    "within_0_02": 12
+  },
+  "partial_dividend_sensitivity": {
+    "2603": {
+      "factor_first_year": 2.5,
+      "yield_pct": 13.661417322834648,
+      "event": "2022 cash reduction 60%; excludes returned capital",
+      "source": "https://www.cna.com.tw/news/afe/202208230303.aspx"
+    },
+    "9904": {
+      "yield_pct": 5.553319919517103,
+      "event": "unchanged observed capital; not certified"
+    },
+    "9910": {
+      "factor_first_two_years": 0.8928571428571428,
+      "yield_pct": 8.74025974025974,
+      "event": "2023 stock dividend 12%",
+      "source": "https://goodinfo.tw/tw/StockDividendSchedule.asp?STOCK_ID=9910"
+    }
+  },
+  "blockers": [
+    "complete corporate action ledger and EPS basis",
+    "PIT publication evidence",
+    "official dated index membership",
+    "financial statement missing values"
+  ],
+  "notes": "Local audit of archived artifacts 15188481688 and 15184193997; partial sensitivity only; no formal rating changes."
+}
