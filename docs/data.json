@@ -2,7 +2,7 @@
   "taiwan_crash_watch": {
     "schema_version": 1,
     "date": "2026-11-27",
-    "checked_at": "2026-11-26T21:27:15.339518+00:00",
+    "checked_at": "2026-11-27T00:35:41.801360+00:00",
     "trading_day": true,
     "rule_version": "taiwan-selloff-v1",
     "rule": {
@@ -12,29 +12,29 @@
       "tsm_pct": -2
     },
     "premarket": {
-      "date": "2026-11-24",
-      "captured_at": "2026-11-23T23:49:50.658861+00:00",
+      "date": "2026-11-27",
+      "captured_at": "2026-11-27T00:35:41.939213+00:00",
       "status": "clear",
       "taiwan": {
-        "date": "2026-11-23",
-        "prior_day_pct": 2.1607796568,
-        "drawdown_20_pct": -21.736077242
+        "date": "2026-11-26",
+        "prior_day_pct": 2.5039121172,
+        "drawdown_20_pct": -13.4036158236
       },
-      "us_date": "2026-11-23",
+      "us_date": "2026-11-25",
       "rule_version": "taiwan-selloff-v1",
       "sox": {
-        "value": 14.026846152,
+        "value": -0.6525858866,
         "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/%5ESOX?range=1mo&interval=1d"
       },
       "tsm": {
-        "value": 14.0849097462,
+        "value": -1.9644947392,
         "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/TSM?range=1mo&interval=1d"
       }
     },
     "market": {
       "mode": "close",
       "date": "2026-11-26",
-      "checked_at": "2026-11-26T21:27:15.339518+00:00",
+      "checked_at": "2026-11-27T00:35:41.801360+00:00",
       "taiex_pct": 2.5039121172,
       "tse": {
         "up": 971,
@@ -140,10 +140,12 @@
       }
     },
     "request_stats": {
-      "requests": 0,
-      "success": 0,
+      "requests": 2,
+      "success": 2,
       "failure": 0,
-      "by_host": {},
+      "by_host": {
+        "query2.finance.yahoo.com": 2
+      },
       "errors": [],
       "skipped": [],
       "limit": 24
@@ -154,7 +156,7 @@
     "tw_cash_inst": "2026-11-26T13:58:19.679615+00:00",
     "tw_futures": "2026-11-26T13:58:18.560175+00:00"
   },
-  "updated_utc": "2026-11-26T21:27:15.524735+00:00",
+  "updated_utc": "2026-11-27T00:35:42.105712+00:00",
   "request_stats": {
     "requests": 6,
     "success": 6,
@@ -2146,7 +2148,7 @@
       "drawdown_pct": 16.58,
       "reference": "近一年最高收盤價",
       "spx": 7182.78,
-      "checked_at": "2026-11-26T21:27:14.894774+00:00"
+      "checked_at": "2026-11-27T00:35:41.307523+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -3791,15 +3793,11 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 32.939,
-      "date": "2026-11-26",
+      "value": 32.935,
+      "date": "2026-11-27",
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/",
       "history": [
-        {
-          "date": "2026-07-23",
-          "value": 32.299
-        },
         {
           "date": "2026-07-26",
           "value": 32.322
@@ -4154,10 +4152,14 @@
         },
         {
           "date": "2026-11-26",
-          "value": 32.939
+          "value": 33.189
+        },
+        {
+          "date": "2026-11-27",
+          "value": 32.935
         }
       ],
-      "checked_at": "2026-11-26T21:27:14.894774+00:00",
+      "checked_at": "2026-11-27T00:35:41.307523+00:00",
       "dxy": 103.78
     }
   },
