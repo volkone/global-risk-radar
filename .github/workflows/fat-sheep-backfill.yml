@@ -20,7 +20,8 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install pandas lxml
-      - run: python scripts/fat_sheep_backfill.py
+      - name: Collect historical tables with incremental audit
+        run: python -u scripts/fat_sheep_backfill.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
