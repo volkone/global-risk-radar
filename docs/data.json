@@ -66,9 +66,9 @@
       "date": "2026-11-27",
       "cash": {
         "foreign_twd": -29628066640,
-        "trust_twd": 8519063239,
+        "trust_twd": 8520616411,
         "dealer_twd": -195078354,
-        "total_twd": -21304081755,
+        "total_twd": -21302528583,
         "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?response=json"
       },
       "margin_twd": 430171978000,
@@ -153,7 +153,7 @@
   },
   "source_checks": {
     "tw_margin": "2026-11-27T14:10:51.786869+00:00",
-    "tw_cash_inst": "2026-11-27T09:03:18.743117+00:00",
+    "tw_cash_inst": "2026-11-27T14:11:34.641210+00:00",
     "tw_futures": "2026-11-27T14:10:51.786869+00:00"
   },
   "updated_utc": "2026-11-27T14:11:00.143265+00:00",
@@ -2274,7 +2274,7 @@
       "reason": "法人現貨金額與期貨口數分別顯示",
       "official_sources": {
         "cash_inst": {
-          "checked_at": "2026-11-27T09:03:18.743117+00:00",
+          "checked_at": "2026-11-27T14:11:34.641210+00:00",
           "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?response=json",
           "records": 6,
           "sample_fields": [
@@ -2296,7 +2296,7 @@
             },
             {
               "name": "投信",
-              "net_twd": 8519063239
+              "net_twd": 8520616411
             },
             {
               "name": "外資及陸資(不含外資自營商)",
@@ -2308,7 +2308,7 @@
             },
             {
               "name": "合計",
-              "net_twd": -21304081755
+              "net_twd": -21302528583
             }
           ],
           "unit": "TWD",
@@ -2338,7 +2338,7 @@
         },
         {
           "name": "投信",
-          "net_twd": 8519063239
+          "net_twd": 8520616411
         },
         {
           "name": "外資及陸資(不含外資自營商)",
@@ -2350,7 +2350,7 @@
         },
         {
           "name": "合計",
-          "net_twd": -21304081755
+          "net_twd": -21302528583
         }
       ],
       "cash_date": "2026-11-27",
@@ -2368,14 +2368,14 @@
       "reason": "證交所發行量加權股價指數收盤",
       "provider": "TWSE",
       "source_url": "https://www.twse.com.tw/rwd/zh/afterTrading/FMTQIK?response=json&date=20261101",
-      "checked_at": "2026-11-27T08:44:59.026714+00:00",
+      "checked_at": "2026-11-27T14:11:34.696479+00:00",
       "date": "2026-11-27",
       "value": 39308.08,
       "unit": "points",
       "official_close": 39308.08,
       "official_close_date": "2026-11-27",
-      "official_volume_shares": 8643631976,
-      "official_turnover_twd": 681609604843,
+      "official_volume_shares": 8674737476,
+      "official_turnover_twd": 694660790531,
       "official_history": [
         [
           "2025-11-03",
@@ -3784,14 +3784,14 @@
         "tw_price": {
           "date": "2026-11-27",
           "value": 39308.08,
-          "volume_shares": 8643631976,
-          "turnover_twd": 681609604843,
+          "volume_shares": 8674737476,
+          "turnover_twd": 694660790531,
           "change_points": 156.27,
           "status": "ok",
           "provider": "TWSE",
           "unit": "points",
           "source_url": "https://www.twse.com.tw/rwd/zh/afterTrading/FMTQIK?response=json&date=20261101",
-          "checked_at": "2026-11-27T08:44:59.026714+00:00"
+          "checked_at": "2026-11-27T14:11:34.696479+00:00"
         }
       },
       "drawdown_pct": 21.1,
