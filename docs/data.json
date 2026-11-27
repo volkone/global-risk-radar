@@ -1,9 +1,9 @@
 {
   "taiwan_crash_watch": {
     "schema_version": 1,
-    "date": "2026-11-27",
-    "checked_at": "2026-11-27T15:15:35.741065+00:00",
-    "trading_day": true,
+    "date": "2026-11-28",
+    "checked_at": "2026-11-27T19:28:29.165093+00:00",
+    "trading_day": false,
     "rule_version": "taiwan-selloff-v1",
     "rule": {
       "prior_day_pct": -3,
@@ -34,7 +34,7 @@
     "market": {
       "mode": "close",
       "date": "2026-11-27",
-      "checked_at": "2026-11-27T15:15:35.741065+00:00",
+      "checked_at": "2026-11-27T19:28:29.165093+00:00",
       "taiex_pct": 0.399138635,
       "tse": {
         "up": 438,
@@ -154,7 +154,7 @@
     "tw_cash_inst": "2026-11-27T14:11:34.641210+00:00",
     "tw_futures": "2026-11-27T14:10:51.786869+00:00"
   },
-  "updated_utc": "2026-11-27T15:15:35.940248+00:00",
+  "updated_utc": "2026-11-27T19:28:29.295007+00:00",
   "request_stats": {
     "requests": 6,
     "success": 6,
@@ -1777,7 +1777,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 26328.1,
+      "value": 26726.389,
       "date": "2026-11-27",
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ENDX/",
@@ -2140,13 +2140,13 @@
         },
         {
           "date": "2026-11-27",
-          "value": 26328.1
+          "value": 26726.389
         }
       ],
-      "drawdown_pct": 15.68,
+      "drawdown_pct": 14.41,
       "reference": "近一年最高收盤價",
-      "spx": 7238.59,
-      "checked_at": "2026-11-27T15:15:35.161299+00:00"
+      "spx": 7297.49,
+      "checked_at": "2026-11-27T19:28:27.784576+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -2155,7 +2155,7 @@
       "frequency": "daily",
       "status": "partial",
       "reason": "只有半導體相對強弱，市場廣度未取得",
-      "value": 0.3394,
+      "value": 0.3437,
       "date": "2026-11-27",
       "unit": "SOX/NDX",
       "source_url": "https://finance.yahoo.com/quote/%5ESOX/"
@@ -3794,12 +3794,7 @@
         }
       },
       "drawdown_pct": 21.1,
-      "reference": "證交所近一年最高收盤價",
-      "yahoo_comparison": {
-        "date": "2026-11-27",
-        "value": 39308.078125,
-        "status": "ok"
-      }
+      "reference": "證交所近一年最高收盤價"
     },
     "fx": {
       "name": "美元兌新台幣與美元指數",
@@ -3808,7 +3803,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 33.009,
+      "value": 32.954,
       "date": "2026-11-27",
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/",
@@ -4171,11 +4166,11 @@
         },
         {
           "date": "2026-11-27",
-          "value": 33.009
+          "value": 32.954
         }
       ],
-      "checked_at": "2026-11-27T15:15:35.161299+00:00",
-      "dxy": 103.94
+      "checked_at": "2026-11-27T19:28:27.784576+00:00",
+      "dxy": 104.05
     }
   },
   "active_alerts": {
@@ -4186,7 +4181,7 @@
     },
     "ndx10": {
       "severity": "warning",
-      "message": "Nasdaq 100 近一年高點回撤 ≥10%：15.68%",
+      "message": "Nasdaq 100 近一年高點回撤 ≥10%：14.41%",
       "first_seen": "2026-11-13T16:07:46.932933+00:00"
     },
     "tw5": {

@@ -1,11 +1,11 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-27T15:15:38.692492+00:00",
+  "generated_at": "2026-11-27T19:28:31.291399+00:00",
   "model_status": "separate_global_prototype_and_evidence_gated_taiwan",
   "disclaimer": "Global is provisional; historical Taiwan reconstruction is research-only. Formal Taiwan eligibility is recorded in quality_gate.",
   "global": {
     "status": "provisional",
-    "score": 34.3,
+    "score": 33.4,
     "coverage": 0.9,
     "min_coverage": 0.85,
     "components": [
@@ -36,10 +36,10 @@
       {
         "metric": "indices",
         "weight": 20,
-        "signal": 52.27,
+        "signal": 48.03,
         "eligible": true,
         "reason": null,
-        "contribution": 11.615555555555556
+        "contribution": 10.673333333333334
       },
       {
         "metric": "nfci",
@@ -67,7 +67,7 @@
       }
     ],
     "model_id": "global_rate_v2",
-    "as_of": "2026-11-27T15:15:35.940248+00:00"
+    "as_of": "2026-11-27T19:28:29.295007+00:00"
   },
   "taiwan": {
     "status": "formal_model_blocked",
@@ -78,7 +78,7 @@
     "as_of": null,
     "quality_gate": {
       "status": "BLOCKED",
-      "evaluated_for_date": "2026-11-27",
+      "evaluated_for_date": "2026-11-28",
       "checks": [
         {
           "id": "publication",
@@ -108,7 +108,7 @@
           "id": "current_forecast",
           "label": "當日可追溯前瞻分數",
           "passed": false,
-          "evidence": "storage/prospective/forecasts/2026-11-27.json"
+          "evidence": "storage/prospective/forecasts/2026-11-28.json"
         }
       ],
       "blockers": [
