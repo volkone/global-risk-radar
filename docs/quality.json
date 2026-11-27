@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "evaluated_at": "2026-11-27T08:51:58.069634+00:00",
-  "snapshot_updated_at": "2026-11-27T08:51:57.726733+00:00",
-  "history_generated_at": "2026-11-27T08:51:58.007216+00:00",
+  "evaluated_at": "2026-11-27T09:03:22.271882+00:00",
+  "snapshot_updated_at": "2026-11-27T09:03:21.962911+00:00",
+  "history_generated_at": "2026-11-27T09:03:22.204883+00:00",
   "summary": {
     "pass": 12,
     "caution": 0,
@@ -192,8 +192,8 @@
     "inst.cash_inst": {
       "quality": "pass",
       "source": "inst.cash_inst",
-      "date": "2026-11-26",
-      "age_days": 1,
+      "date": "2026-11-27",
+      "age_days": 0,
       "errors": [],
       "warnings": []
     },

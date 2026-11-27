@@ -2,7 +2,7 @@
   "taiwan_crash_watch": {
     "schema_version": 1,
     "date": "2026-11-27",
-    "checked_at": "2026-11-27T08:51:56.235033+00:00",
+    "checked_at": "2026-11-27T09:03:20.482364+00:00",
     "trading_day": true,
     "rule_version": "taiwan-selloff-v1",
     "rule": {
@@ -34,7 +34,7 @@
     "market": {
       "mode": "close",
       "date": "2026-11-27",
-      "checked_at": "2026-11-27T08:51:56.235033+00:00",
+      "checked_at": "2026-11-27T09:03:20.482364+00:00",
       "taiex_pct": 0.399138635,
       "tse": {
         "up": 438,
@@ -64,7 +64,13 @@
     },
     "leverage": {
       "date": "2026-11-27",
-      "cash": null
+      "cash": {
+        "foreign_twd": -29628066640,
+        "trust_twd": 8519063239,
+        "dealer_twd": -195078354,
+        "total_twd": -21304081755,
+        "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?response=json"
+      }
     },
     "credit": {
       "date": "2026-11-26",
@@ -137,15 +143,16 @@
   },
   "source_checks": {
     "tw_margin": "2026-11-26T13:58:19.852672+00:00",
-    "tw_cash_inst": "2026-11-26T13:58:19.679615+00:00",
+    "tw_cash_inst": "2026-11-27T09:03:18.743117+00:00",
     "tw_futures": "2026-11-26T13:58:18.560175+00:00"
   },
-  "updated_utc": "2026-11-27T08:51:57.726733+00:00",
+  "updated_utc": "2026-11-27T09:03:21.962911+00:00",
   "request_stats": {
-    "requests": 6,
-    "success": 6,
+    "requests": 7,
+    "success": 7,
     "failure": 0,
     "by_host": {
+      "www.twse.com.tw": 1,
       "query1.finance.yahoo.com": 6
     },
     "errors": [],
@@ -2132,7 +2139,7 @@
       "drawdown_pct": 16.58,
       "reference": "近一年最高收盤價",
       "spx": 7182.78,
-      "checked_at": "2026-11-27T08:51:55.639493+00:00"
+      "checked_at": "2026-11-27T09:03:18.743117+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -2250,12 +2257,8 @@
       "reason": "法人現貨金額與期貨口數分別顯示",
       "official_sources": {
         "cash_inst": {
-          "status": "ok",
-          "provider": "TWSE",
-          "unit": "TWD",
-          "date": "2026-11-26",
+          "checked_at": "2026-11-27T09:03:18.743117+00:00",
           "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?response=json",
-          "checked_at": "2026-11-26T13:58:19.679615+00:00",
           "records": 6,
           "sample_fields": [
             "單位名稱",
@@ -2263,22 +2266,24 @@
             "賣出金額",
             "買賣差額"
           ],
+          "date": "2026-11-27",
+          "status": "ok",
           "categories": [
             {
               "name": "自營商(自行買賣)",
-              "net_twd": 4003444121
+              "net_twd": 2031596645
             },
             {
               "name": "自營商(避險)",
-              "net_twd": 8861705660
+              "net_twd": -2226674999
             },
             {
               "name": "投信",
-              "net_twd": 21213076619
+              "net_twd": 8519063239
             },
             {
               "name": "外資及陸資(不含外資自營商)",
-              "net_twd": -49181133625
+              "net_twd": -29628066640
             },
             {
               "name": "外資自營商",
@@ -2286,9 +2291,11 @@
             },
             {
               "name": "合計",
-              "net_twd": -15102907225
+              "net_twd": -21304081755
             }
           ],
+          "unit": "TWD",
+          "provider": "TWSE",
           "reason": "集中市場法人現貨買賣超金額；外資自營商不重複計入合計"
         },
         "futures": {
@@ -2307,19 +2314,19 @@
       "cash_categories": [
         {
           "name": "自營商(自行買賣)",
-          "net_twd": 4003444121
+          "net_twd": 2031596645
         },
         {
           "name": "自營商(避險)",
-          "net_twd": 8861705660
+          "net_twd": -2226674999
         },
         {
           "name": "投信",
-          "net_twd": 21213076619
+          "net_twd": 8519063239
         },
         {
           "name": "外資及陸資(不含外資自營商)",
-          "net_twd": -49181133625
+          "net_twd": -29628066640
         },
         {
           "name": "外資自營商",
@@ -2327,10 +2334,10 @@
         },
         {
           "name": "合計",
-          "net_twd": -15102907225
+          "net_twd": -21304081755
         }
       ],
-      "cash_date": "2026-11-26",
+      "cash_date": "2026-11-27",
       "foreign_tx_net_oi": -106275,
       "futures_date": "2026-11-26",
       "futures_contract": "臺股期貨",
@@ -3786,7 +3793,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 32.929,
+      "value": 32.932,
       "date": "2026-11-27",
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/",
@@ -4149,10 +4156,10 @@
         },
         {
           "date": "2026-11-27",
-          "value": 32.929
+          "value": 32.932
         }
       ],
-      "checked_at": "2026-11-27T08:51:55.639493+00:00",
+      "checked_at": "2026-11-27T09:03:18.743117+00:00",
       "dxy": 103.82
     }
   },
