@@ -1,0 +1,93 @@
+{
+  "as_of": "2026-11-26",
+  "cutoff": "2026-11-26T13:30:00+08:00",
+  "formal_ready": false,
+  "f3_allowed": false,
+  "artifacts": [
+    15184193997,
+    15188481688,
+    15205111140
+  ],
+  "event_review": {
+    "total": 162,
+    "declared_terms_price_consistent": 86,
+    "declared_terms_price_mismatch": 12,
+    "terms_missing": 64,
+    "prior_research_terms": 6,
+    "certified_factors": 0
+  },
+  "eps": {
+    "observations": 1790,
+    "numeric": 1790,
+    "weighted_average_shares_verified": 0,
+    "restated_eps_verified": 0
+  },
+  "financial_supplements": [
+    {
+      "code": "2881",
+      "eps_ytd": 8.8,
+      "parent_net_income_thousand": 127238282,
+      "available_at": "2026-11-26T17:11:16+08:00",
+      "available_by_close": false,
+      "source": "https://www.nstock.tw/news/article_m?id=573962"
+    },
+    {
+      "code": "2882",
+      "eps_ytd": 6.94,
+      "parent_net_income_thousand": 105500874,
+      "available_at_upper_bound": "2026-11-13T16:53:00+08:00",
+      "available_by_close": true,
+      "source": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=024b52cd-ff58-4a49-a288-9ce20e7cd7ea&c=MB00"
+    },
+    {
+      "code": "2887",
+      "eps_ytd": 2.47,
+      "parent_net_income_thousand": 64116290,
+      "available_at": "2026-11-26T17:17:52+08:00",
+      "available_by_close": false,
+      "merger_comparability": false,
+      "source": "https://www.tsholdings.com.tw/tsh/relations/major/1795684680000/"
+    }
+  ],
+  "cash": {
+    "matched_components": 485,
+    "all_components_matched": 49,
+    "all_matched_no_observed_share_event": 43,
+    "preliminary_sensitivity_count": 9
+  },
+  "membership_delta": {
+    "source": "https://taiwanindex.com.tw/news/450",
+    "effective": "2026-09-21",
+    "added_present": [
+      "3006",
+      "3661",
+      "6446",
+      "6949",
+      "7610"
+    ],
+    "removed_present": [],
+    "full_certified": false,
+    "historical_certified": false
+  },
+  "research_counts": {
+    "X": 111,
+    "W": 27,
+    "NA": 8,
+    "research_candidate": 3,
+    "R": 1
+  },
+  "formal_candidates": 0,
+  "blockers": [
+    "actual event terms and coverage not certified",
+    "EPS weighted-average shares and restatements not verified",
+    "historical filing times and revisions missing",
+    "dated full official index membership missing",
+    "industry classification, financial gaps and merger comparability unresolved",
+    "disaster recoverability not certified"
+  ],
+  "notes": [
+    "Offline audit reran research screen from archived official data. Supplemental disclosures are stored separately, not silently substituted into historical screening.",
+    "86 consistent provisional event terms use current par value and reference price cross-check; not independent proof of effective event ratios.",
+    "Local full evidence package; repository stores this audit summary only."
+  ]
+}
