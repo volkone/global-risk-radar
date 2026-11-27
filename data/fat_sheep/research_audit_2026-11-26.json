@@ -1,0 +1,77 @@
+{
+  "as_of": "2026-11-26",
+  "formal_ready": false,
+  "source_artifacts": [
+    15184193997,
+    15188481688
+  ],
+  "counts": {
+    "universe": 150,
+    "excluded": 111,
+    "watch": 27,
+    "unresolved": 8,
+    "recovery_review": 1,
+    "research_candidates": 3
+  },
+  "candidate_metrics": [
+    {
+      "code": "2542",
+      "grade": "SSS+",
+      "price": 37.35,
+      "pe_proxy": 7.5,
+      "yield_latest_pct": 10.71,
+      "yield_five_pct": 5.98,
+      "roe_avg_pct": 11.55,
+      "growth_pct": 100.43
+    },
+    {
+      "code": "2603",
+      "grade": "SSS-",
+      "price": 254,
+      "pe_proxy": 6.92,
+      "yield_latest_pct": 6.3,
+      "yield_five_pct": 11.54,
+      "roe_avg_pct": 47.2,
+      "growth_pct": -12.44
+    },
+    {
+      "code": "9904",
+      "grade": "SSS+",
+      "price": 24.85,
+      "pe_proxy": 5.25,
+      "yield_latest_pct": 5.23,
+      "yield_five_pct": 5.55,
+      "roe_avg_pct": 10.1,
+      "growth_pct": 24.4
+    }
+  ],
+  "recovery_review": [
+    {
+      "code": "9910",
+      "growth_pct": -20.73
+    }
+  ],
+  "unresolved": {
+    "industry_review": [
+      "1560",
+      "3167",
+      "8996",
+      "9945"
+    ],
+    "financial_field_missing": [
+      "2633"
+    ],
+    "latest_financial_missing": [
+      "2881",
+      "2882",
+      "2887"
+    ]
+  },
+  "notes": [
+    "Local research calculations from archived MOPS and TWSE artifacts; not production engine acceptance.",
+    "Industry code 36 is digital cloud; 37 is sports and leisure. Telecommunications operator exceptions 2412,3045,4904.",
+    "Annual ROE uses parent net income and average opening/closing parent equity. TTM net income uses full year minus prior YTD plus current YTD. EPS uses same proxy but is not a certified share-adjusted calculation.",
+    "Index membership, historical publication timing, share adjustments, disaster recoverability and historical dividend completeness remain uncertified.",
+    "This summary does not include full normalized data or executable repair code."
+  ]
+}
