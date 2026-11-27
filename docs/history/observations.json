@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-27T14:11:11.778654+00:00",
+  "generated_at": "2026-11-27T14:13:37.432449+00:00",
   "record_count": 151,
-  "revision_count": 274,
+  "revision_count": 275,
   "observations": [
     {
       "metric_id": "fx",
@@ -18,7 +18,7 @@
       "provider": "TWSE",
       "scope": "",
       "observation_date": "2026-11-27",
-      "value": -21304081755.0,
+      "value": -21302528583.0,
       "unit": "TWD",
       "source_url": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?response=json"
     },

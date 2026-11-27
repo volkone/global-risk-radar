@@ -2,7 +2,7 @@
   "taiwan_crash_watch": {
     "schema_version": 1,
     "date": "2026-11-27",
-    "checked_at": "2026-11-27T14:10:55.998845+00:00",
+    "checked_at": "2026-11-27T14:13:36.770172+00:00",
     "trading_day": true,
     "rule_version": "taiwan-selloff-v1",
     "rule": {
@@ -34,7 +34,7 @@
     "market": {
       "mode": "close",
       "date": "2026-11-27",
-      "checked_at": "2026-11-27T14:10:55.998845+00:00",
+      "checked_at": "2026-11-27T14:13:36.770172+00:00",
       "taiex_pct": 0.399138635,
       "tse": {
         "up": 438,
@@ -87,11 +87,11 @@
       "expected_date": "2026-11-27",
       "status": "ok",
       "source_url": "https://www.twse.com.tw/dashboard/zh/credit/margin.html",
-      "maintenance_pct": 168.71,
-      "margin_call_twd": 4013000,
       "disposal_accounts": 18,
       "disposal_twd": 4608600,
       "low_maintenance_accounts": 121,
+      "maintenance_pct": 168.71,
+      "margin_call_twd": 4013000,
       "observed_at": "2026-11-27T14:10:59.949055+00:00",
       "disposal_date": "2026-11-30",
       "sessions": 80,
@@ -140,12 +140,10 @@
       }
     },
     "request_stats": {
-      "requests": 3,
-      "success": 3,
+      "requests": 0,
+      "success": 0,
       "failure": 0,
-      "by_host": {
-        "www.twse.com.tw": 3
-      },
+      "by_host": {},
       "errors": [],
       "skipped": [],
       "limit": 24
@@ -156,16 +154,12 @@
     "tw_cash_inst": "2026-11-27T14:11:34.641210+00:00",
     "tw_futures": "2026-11-27T14:10:51.786869+00:00"
   },
-  "updated_utc": "2026-11-27T14:11:00.143265+00:00",
+  "updated_utc": "2026-11-27T14:13:36.964697+00:00",
   "request_stats": {
-    "requests": 14,
-    "success": 14,
+    "requests": 6,
+    "success": 6,
     "failure": 0,
     "by_host": {
-      "api.stlouisfed.org": 5,
-      "www.twse.com.tw": 1,
-      "openapi.taifex.com.tw": 1,
-      "www.taifex.com.tw": 1,
       "query1.finance.yahoo.com": 6
     },
     "errors": [],
@@ -557,7 +551,8 @@
       ],
       "provider": "FRED official API",
       "checked_at": "2026-11-27T14:10:51.786869+00:00",
-      "change20bp": 54.0
+      "change20bp": 54.0,
+      "cache_status": "cached"
     },
     "ig": {
       "name": "美國投資等級債利差",
@@ -933,7 +928,8 @@
         }
       ],
       "provider": "FRED official API",
-      "checked_at": "2026-11-27T14:10:51.786869+00:00"
+      "checked_at": "2026-11-27T14:10:51.786869+00:00",
+      "cache_status": "cached"
     },
     "vix": {
       "name": "VIX",
@@ -1309,7 +1305,8 @@
         }
       ],
       "provider": "FRED official API",
-      "checked_at": "2026-11-27T14:10:51.786869+00:00"
+      "checked_at": "2026-11-27T14:10:51.786869+00:00",
+      "cache_status": "cached"
     },
     "us10y": {
       "name": "美國10年期公債殖利率",
@@ -1681,7 +1678,8 @@
         }
       ],
       "provider": "FRED official API",
-      "checked_at": "2026-11-27T14:10:51.786869+00:00"
+      "checked_at": "2026-11-27T14:10:51.786869+00:00",
+      "cache_status": "cached"
     },
     "nfci": {
       "name": "芝加哥金融情勢指數",
@@ -1769,7 +1767,8 @@
         }
       ],
       "provider": "FRED official API",
-      "checked_at": "2026-11-27T14:10:51.786869+00:00"
+      "checked_at": "2026-11-27T14:10:51.786869+00:00",
+      "cache_status": "cached"
     },
     "indices": {
       "name": "S&P 500 / Nasdaq 100",
@@ -2147,7 +2146,7 @@
       "drawdown_pct": 16.58,
       "reference": "近一年最高收盤價",
       "spx": 7182.78,
-      "checked_at": "2026-11-27T14:10:51.786869+00:00"
+      "checked_at": "2026-11-27T14:13:35.789106+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -4175,7 +4174,7 @@
           "value": 32.958
         }
       ],
-      "checked_at": "2026-11-27T14:10:51.786869+00:00",
+      "checked_at": "2026-11-27T14:13:35.789106+00:00",
       "dxy": 103.9
     }
   },
