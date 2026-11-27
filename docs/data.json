@@ -2,7 +2,7 @@
   "taiwan_crash_watch": {
     "schema_version": 1,
     "date": "2026-11-27",
-    "checked_at": "2026-11-27T08:45:00.941192+00:00",
+    "checked_at": "2026-11-27T08:48:45.205253+00:00",
     "trading_day": true,
     "rule_version": "taiwan-selloff-v1",
     "rule": {
@@ -34,7 +34,7 @@
     "market": {
       "mode": "close",
       "date": "2026-11-27",
-      "checked_at": "2026-11-27T08:45:00.941192+00:00",
+      "checked_at": "2026-11-27T08:48:45.205253+00:00",
       "taiex_pct": 0.399138635,
       "tse": {
         "up": 438,
@@ -86,7 +86,6 @@
       "expected_date": "2026-11-27",
       "markets": {
         "tse": {
-          "stocks_with_close": 1087,
           "ma20": {
             "above": 144,
             "eligible": 1074,
@@ -97,6 +96,7 @@
             "eligible": 1030,
             "pct": 6.9903
           },
+          "stocks_with_close": 1087,
           "ma20_change_5d_pp": 10.67,
           "ma60_change_5d_pp": 3.39,
           "date": "2026-11-27",
@@ -104,7 +104,6 @@
           "status": "ok"
         },
         "otc": {
-          "stocks_with_close": 862,
           "ma20": {
             "above": 79,
             "eligible": 762,
@@ -115,6 +114,7 @@
             "eligible": 684,
             "pct": 7.0175
           },
+          "stocks_with_close": 862,
           "ma20_change_5d_pp": 7.6,
           "ma60_change_5d_pp": 2.78,
           "date": "2026-11-27",
@@ -124,12 +124,11 @@
       }
     },
     "request_stats": {
-      "requests": 6,
-      "success": 6,
+      "requests": 1,
+      "success": 1,
       "failure": 0,
       "by_host": {
-        "www.twse.com.tw": 4,
-        "www.tpex.org.tw": 2
+        "www.twse.com.tw": 1
       },
       "errors": [],
       "skipped": [],
@@ -141,14 +140,13 @@
     "tw_cash_inst": "2026-11-26T13:58:19.679615+00:00",
     "tw_futures": "2026-11-26T13:58:18.560175+00:00"
   },
-  "updated_utc": "2026-11-27T08:45:35.349815+00:00",
+  "updated_utc": "2026-11-27T08:48:46.177329+00:00",
   "request_stats": {
-    "requests": 7,
-    "success": 7,
+    "requests": 6,
+    "success": 6,
     "failure": 0,
     "by_host": {
-      "query1.finance.yahoo.com": 6,
-      "www.twse.com.tw": 1
+      "query1.finance.yahoo.com": 6
     },
     "errors": [],
     "skipped": []
@@ -2134,7 +2132,7 @@
       "drawdown_pct": 16.58,
       "reference": "近一年最高收盤價",
       "spx": 7182.78,
-      "checked_at": "2026-11-27T08:44:59.026714+00:00"
+      "checked_at": "2026-11-27T08:48:44.696256+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -3788,7 +3786,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 32.933,
+      "value": 32.93,
       "date": "2026-11-27",
       "unit": "TWD per USD",
       "source_url": "https://finance.yahoo.com/quote/TWD=X/",
@@ -4151,10 +4149,10 @@
         },
         {
           "date": "2026-11-27",
-          "value": 32.933
+          "value": 32.93
         }
       ],
-      "checked_at": "2026-11-27T08:44:59.026714+00:00",
+      "checked_at": "2026-11-27T08:48:44.696256+00:00",
       "dxy": 103.81
     }
   },
