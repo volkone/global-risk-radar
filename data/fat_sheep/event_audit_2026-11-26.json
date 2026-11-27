@@ -1,0 +1,84 @@
+{
+  "as_of": "2026-11-26",
+  "source_run": 46013566963,
+  "source_artifact": 15205111140,
+  "raw_hash_pass": 12,
+  "raw_hash_total": 12,
+  "event_count": 927,
+  "classification": {
+    "cash_ex_dividend": 765,
+    "rights_and_cash": 104,
+    "rights": 49,
+    "cash_reduction": 9
+  },
+  "formal_ready": false,
+  "share_basis_certified": false,
+  "pit_certified": false,
+  "focus": [
+    {
+      "code": "2542",
+      "events": 6,
+      "partial_yield_five_pct": 5.139273295510435,
+      "terms": [
+        [
+          "2022-09-26",
+          1.100162711
+        ],
+        [
+          "2023-09-26",
+          1.1
+        ],
+        [
+          "2024-09-26",
+          1.1
+        ],
+        [
+          "2025-09-25",
+          1.05
+        ]
+      ],
+      "revised_2021_cash": 4.00650848,
+      "evidence": [
+        "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=2692e4f9-4e83-4a1b-8273-750c05179792",
+        "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=d211855f-2273-4ec1-8125-e5dd033f71fd",
+        "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=79407b24-ab37-40dc-8213-221e9362af9f",
+        "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=839f73a7-e69e-4280-89d8-6aef0cca1d87"
+      ]
+    },
+    {
+      "code": "2603",
+      "events": 7,
+      "partial_yield_five_pct": 13.661417322834646,
+      "terms": [
+        [
+          "2022-09-19",
+          0.4
+        ]
+      ]
+    },
+    {
+      "code": "9910",
+      "events": 6,
+      "partial_yield_five_pct": 8.74025974025974,
+      "terms": [
+        [
+          "2023-08-03",
+          1.12
+        ]
+      ]
+    },
+    {
+      "code": "9904",
+      "events": 6,
+      "partial_yield_five_pct": 5.5533199195171035,
+      "terms": []
+    }
+  ],
+  "limitations": [
+    "Event dates and categories confirmed by official TWSE raw responses; annual title and range checked but no independent pagination or coverage audit.",
+    "Partial factors from earlier research and public announcement reproductions; not complete official certification.",
+    "Exclude latest financial report fields embedded in historical event results from PIT data.",
+    "EPS share basis, official membership and publication timing remain unverified.",
+    "Full event ledger and runnable audit are local, not committed."
+  ]
+}
