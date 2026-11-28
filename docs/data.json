@@ -2,7 +2,7 @@
   "taiwan_crash_watch": {
     "schema_version": 1,
     "date": "2026-11-28",
-    "checked_at": "2026-11-28T02:41:50.448518+00:00",
+    "checked_at": "2026-11-28T11:45:43.952283+00:00",
     "trading_day": false,
     "rule_version": "taiwan-selloff-v1",
     "rule": {
@@ -34,7 +34,7 @@
     "market": {
       "mode": "close",
       "date": "2026-11-27",
-      "checked_at": "2026-11-28T02:41:50.448518+00:00",
+      "checked_at": "2026-11-28T11:45:43.952283+00:00",
       "taiex_pct": 0.399138635,
       "tse": {
         "up": 438,
@@ -154,7 +154,7 @@
     "tw_cash_inst": "2026-11-27T14:11:34.641210+00:00",
     "tw_futures": "2026-11-27T14:10:51.786869+00:00"
   },
-  "updated_utc": "2026-11-28T02:41:50.640685+00:00",
+  "updated_utc": "2026-11-28T11:45:44.073681+00:00",
   "request_stats": {
     "requests": 6,
     "success": 6,
@@ -1777,7 +1777,7 @@
       "frequency": "daily",
       "status": "ok",
       "reason": "尚未接入可靠來源",
-      "value": 26726.389,
+      "value": 26726.391,
       "date": "2026-11-27",
       "unit": "points",
       "source_url": "https://finance.yahoo.com/quote/%5ENDX/",
@@ -2140,13 +2140,13 @@
         },
         {
           "date": "2026-11-27",
-          "value": 26726.389
+          "value": 26726.391
         }
       ],
       "drawdown_pct": 14.41,
       "reference": "近一年最高收盤價",
       "spx": 7297.49,
-      "checked_at": "2026-11-28T02:41:49.467687+00:00"
+      "checked_at": "2026-11-28T11:45:43.005938+00:00"
     },
     "breadth": {
       "name": "市場廣度與半導體相對強弱",
@@ -4174,7 +4174,7 @@
           "value": 32.918
         }
       ],
-      "checked_at": "2026-11-28T02:41:49.467687+00:00",
+      "checked_at": "2026-11-28T11:45:43.005938+00:00",
       "dxy": 104.01
     }
   },
